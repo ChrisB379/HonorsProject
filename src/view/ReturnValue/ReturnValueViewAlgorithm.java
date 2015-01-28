@@ -11,6 +11,7 @@ package view.ReturnValue;
  */
 
 import javax.swing.JPanel;
+import javax.swing.JLabel;
 
 public class ReturnValueViewAlgorithm extends JPanel {
 
@@ -21,6 +22,9 @@ public class ReturnValueViewAlgorithm extends JPanel {
 	 * Create the panel.
 	 */
 	public ReturnValueViewAlgorithm() {
+		
+		JLabel lblInsertAlgorithmHere = new JLabel("insert algorithm here");
+		add(lblInsertAlgorithmHere);
 
 	}
 
