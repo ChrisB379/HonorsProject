@@ -17,6 +17,10 @@ import javax.swing.border.EmptyBorder;
 
 public class MainMenu extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8282570358801343346L;
 	private JPanel contentPane;
 
 	/**
