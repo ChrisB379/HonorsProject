@@ -16,13 +16,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.CardLayout;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
+
+import javax.swing.JTextArea;
+import javax.swing.UIManager;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ReturnValueView extends JFrame {
 
@@ -38,6 +44,8 @@ public class ReturnValueView extends JFrame {
 			public void run() {
 				try {
 					ReturnValueView frame = new ReturnValueView();
+					//Centres the GUI to the middle of the screen
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,80 +65,154 @@ public class ReturnValueView extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JPanel panel = new JPanel();
+		JPanel cardPanel1 = new JPanel();
+		cardPanel1.setBorder(null);
 		
-		JPanel panel_1 = new JPanel();
+		JPanel cardPanel2 = new JPanel();
+		
+		JPanel cardPanel3 = new JPanel();
+		
+		JPanel cp1GroupPanel = new JPanel();
+		
+		JPanel cp2GroupPanel = new JPanel();
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(56)
-					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 775, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(396, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addContainerGap(940, Short.MAX_VALUE)
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 232, GroupLayout.PREFERRED_SIZE)
-					.addGap(55))
+					.addGap(57)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 557, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
+							.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
+							.addGap(51))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 677, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(493, Short.MAX_VALUE))))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(31)
-					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 411, GroupLayout.PREFERRED_SIZE)
-					.addGap(197)
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(36, Short.MAX_VALUE))
-		);
-		panel_1.setLayout(new CardLayout());
-		
-		JPanel panel_2 = new JPanel();
-		panel_1.add(panel_2, "name_455689991325878");
-		
-		JLabel lblThisIsThe = new JLabel("This is the return value section");
-		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
-		gl_panel_2.setHorizontalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGap(67)
-					.addComponent(lblThisIsThe)
-					.addContainerGap(561, Short.MAX_VALUE))
-		);
-		gl_panel_2.setVerticalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup()
+					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
 					.addGap(33)
-					.addComponent(lblThisIsThe)
-					.addContainerGap(364, Short.MAX_VALUE))
+					.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 284, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(100, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap(628, Short.MAX_VALUE)
+					.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
+					.addGap(51))
 		);
-		panel_2.setLayout(gl_panel_2);
+		cardPanel3.setLayout(new CardLayout(0, 0));
 		
-		JButton btnAdvance = new JButton("Advance");
+		JPanel advancePanel = new JPanel();
+		cardPanel3.add(advancePanel, "name_12410711717075");
 
-		btnAdvance.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				panel_1.add(new ReturnValueViewAlgorithm());
-				panel_1.remove(panel_2);
-				panel.setVisible(false);
-				
-			}
-		});
-		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
-					.addGap(59)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(81, Short.MAX_VALUE))
+		JButton btnAdvance = new JButton("Advance");
+				//Changing the cards to advance to the next screen
+				btnAdvance.addActionListener(new ActionListener() {
+					int count = 0;
+					ReturnValueViewAlgorithmExample r = new ReturnValueViewAlgorithmExample();
+					ReturnValueViewAlgorithm r2 = new ReturnValueViewAlgorithm();
+					public void actionPerformed(ActionEvent e) {
+
+						
+						if(count == 0){
+							System.out.println(count);
+						cardPanel1.add(r);
+						cardPanel1.remove(cp1GroupPanel);
+						cardPanel2.remove(cp2GroupPanel);
+//						cardPanel3.remove(advancePanel);
+//						advancePanel.setVisible(false); 
+						 }
+						
+						if(count == 1){
+						System.out.println("we got here " + count);
+						cardPanel1.add(r2);
+						cardPanel1.remove(r);
+						
+						} 
+						
+						count++;
+						System.out.println("count after increment is " + count);
+					} 
+				});
+				GroupLayout gl_advancePanel = new GroupLayout(advancePanel);
+				gl_advancePanel.setHorizontalGroup(
+					gl_advancePanel.createParallelGroup(Alignment.TRAILING)
+						.addGroup(Alignment.LEADING, gl_advancePanel.createSequentialGroup()
+							.addGap(59)
+							.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(81, Short.MAX_VALUE))
+				);
+				gl_advancePanel.setVerticalGroup(
+					gl_advancePanel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_advancePanel.createSequentialGroup()
+							.addGap(19)
+							.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(29, Short.MAX_VALUE))
+				);
+				advancePanel.setLayout(gl_advancePanel);
+		cardPanel2.setLayout(new CardLayout(0, 0));
+		
+
+		cardPanel2.add(cp2GroupPanel, "name_10730876008561");
+		
+		JTextArea txtrFactorialAlgorithm = new JTextArea();
+		txtrFactorialAlgorithm.setBackground(UIManager.getColor("Panel.background"));
+		txtrFactorialAlgorithm.setLineWrap(true);
+		txtrFactorialAlgorithm.setWrapStyleWord(true);
+		txtrFactorialAlgorithm.setText("The Factorial algorithm:\r\n\r\npublic static int factorial(int n) { \r\n   if (n == 1) \r\n\t\treturn 1; \r\n\r\n   return n * factorial(n-1); \r\n} \r\n\r\n\r\nNow we are going to move onto how the factorial algorithm works.\r\n\r\nPlease click the Advance button to continue.\r\n");
+		txtrFactorialAlgorithm.setEditable(false);
+		GroupLayout gl_cp2GroupPanel = new GroupLayout(cp2GroupPanel);
+		gl_cp2GroupPanel.setHorizontalGroup(
+			gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_cp2GroupPanel.createSequentialGroup()
+					.addGap(26)
+					.addComponent(txtrFactorialAlgorithm, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+					.addContainerGap())
 		);
-		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(19)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(29, Short.MAX_VALUE))
+		gl_cp2GroupPanel.setVerticalGroup(
+			gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_cp2GroupPanel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtrFactorialAlgorithm, GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+					.addContainerGap())
 		);
-		panel.setLayout(gl_panel);
+		cp2GroupPanel.setLayout(gl_cp2GroupPanel);
+		cardPanel1.setLayout(new CardLayout());
+		
+
+		cp1GroupPanel.setBorder(null);
+		cardPanel1.add(cp1GroupPanel, "name_455689991325878");
+		
+		
+		JTextArea txtrIntroduction = new JTextArea();
+		txtrIntroduction.setEditable(false);
+		//Setting line wrap so it automatically forms paragraphs rather than 1 big long line of text
+		txtrIntroduction.setLineWrap(true);
+		txtrIntroduction.setWrapStyleWord(true);
+		txtrIntroduction.setBackground(UIManager.getColor("Panel.background"));
+		txtrIntroduction.setText("This tutorial series focuses on return values in recursive calls. A method returns to the code that invoked it when it completes all the statements in the method, reaches a return statement, or when it throws an exception.\r\n\r\nThe return value of a recursive call is the result of a recursive call after all the statements in the method have been reached which is usually a return statement which itself is a recursive call.\r\n\r\nThe final return value however, is returned once the base case is met(as described in the previous tutorial) and thus a different return statement is met which does not continue the recursive calls.\r\n\r\nIn this tutorial series, the factorial algorithm will be used in order to demonstrate how the final return value of a recursive call is calculated.");
+
+		
+		GroupLayout gl_cp1GroupPanel = new GroupLayout(cp1GroupPanel);
+		gl_cp1GroupPanel.setHorizontalGroup(
+			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
+					.addGap(29)
+					.addComponent(txtrIntroduction, GroupLayout.PREFERRED_SIZE, 619, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(127, Short.MAX_VALUE))
+		);
+		gl_cp1GroupPanel.setVerticalGroup(
+			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtrIntroduction, GroupLayout.PREFERRED_SIZE, 279, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(121, Short.MAX_VALUE))
+		);
+		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 		contentPane.setLayout(gl_contentPane);
 	}
 }
