@@ -85,13 +85,12 @@ public class ReturnValueView extends JFrame {
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(628, Short.MAX_VALUE)
-					.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
-					.addGap(51))
-				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 717, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(30, Short.MAX_VALUE))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+							.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
+							.addGap(51))
+						.addComponent(cardPanel1, GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)))
 		);
 		cardPanel3.setLayout(new CardLayout(0, 0));
 		
@@ -108,7 +107,7 @@ public class ReturnValueView extends JFrame {
 
 						
 						if(count == 0){
-							System.out.println(count);
+//							System.out.println(count);
 						cardPanel1.add(r);
 						cardPanel1.remove(cp1GroupPanel);
 //						cardPanel2.remove(cp2GroupPanel);
@@ -117,14 +116,14 @@ public class ReturnValueView extends JFrame {
 						 }
 						
 						if(count == 1){
-						System.out.println("we got here " + count);
+//						System.out.println("we got here " + count);
 						cardPanel1.add(r2);
 						cardPanel1.remove(r);
 						
 						} 
 						
 						count++;
-						System.out.println("count after increment is " + count);
+//						System.out.println("count after increment is " + count);
 					} 
 				});
 				GroupLayout gl_advancePanel = new GroupLayout(advancePanel);
