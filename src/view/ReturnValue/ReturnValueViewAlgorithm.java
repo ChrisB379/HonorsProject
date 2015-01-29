@@ -24,10 +24,7 @@ public class ReturnValueViewAlgorithm extends JPanel {
 	 * Create the panel.
 	 */
 	public ReturnValueViewAlgorithm() {
-		setBorder(new LineBorder(new Color(0, 0, 0), 5));
-		
-		JLabel lblrdWindow = new JLabel("3rd window");
-		add(lblrdWindow);
+		setBorder(null);
 
 	}
 

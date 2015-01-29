@@ -17,7 +17,7 @@ import javax.swing.UIManager;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import view.JTextFieldLimit;
 
-public class ReturnValueViewAlgorithmExample extends JPanel {
+public class ReturnValueViewExample extends JPanel {
 
 
 	private static final long serialVersionUID = -3578796091219375513L;
@@ -25,7 +25,7 @@ public class ReturnValueViewAlgorithmExample extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueViewAlgorithmExample() {
+	public ReturnValueViewExample() {
 		setBorder(null);
 		
 		JTextArea txtrOnceAgainThis = new JTextArea();
@@ -48,7 +48,7 @@ public class ReturnValueViewAlgorithmExample extends JPanel {
 		//Limits to only 2 digits
 		formattedTextField.setDocument(new JTextFieldLimit(2));
 
-		
+		//TODO figure out what here is making such a massive gap between the 2 text areas
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
