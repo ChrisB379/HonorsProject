@@ -28,7 +28,6 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ReturnValueView extends JFrame {
 
