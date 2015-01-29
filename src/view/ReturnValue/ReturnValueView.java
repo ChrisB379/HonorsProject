@@ -68,41 +68,30 @@ public class ReturnValueView extends JFrame {
 		JPanel cardPanel1 = new JPanel();
 		cardPanel1.setBorder(null);
 		
-		JPanel cardPanel2 = new JPanel();
-		
 		JPanel cardPanel3 = new JPanel();
 		
 		JPanel cp1GroupPanel = new JPanel();
-		
-		JPanel cp2GroupPanel = new JPanel();
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(57)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 557, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
-							.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
-							.addGap(51))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 677, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap(493, Short.MAX_VALUE))))
+					.addGap(31)
+					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 871, GroupLayout.PREFERRED_SIZE)
+					.addGap(32)
+					.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
+					.addGap(51))
 		);
 		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(31)
-					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
-					.addGap(33)
-					.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 284, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(100, Short.MAX_VALUE))
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(628, Short.MAX_VALUE)
 					.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
 					.addGap(51))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 717, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(30, Short.MAX_VALUE))
 		);
 		cardPanel3.setLayout(new CardLayout(0, 0));
 		
@@ -122,7 +111,7 @@ public class ReturnValueView extends JFrame {
 							System.out.println(count);
 						cardPanel1.add(r);
 						cardPanel1.remove(cp1GroupPanel);
-						cardPanel2.remove(cp2GroupPanel);
+//						cardPanel2.remove(cp2GroupPanel);
 //						cardPanel3.remove(advancePanel);
 //						advancePanel.setVisible(false); 
 						 }
@@ -154,33 +143,6 @@ public class ReturnValueView extends JFrame {
 							.addContainerGap(29, Short.MAX_VALUE))
 				);
 				advancePanel.setLayout(gl_advancePanel);
-		cardPanel2.setLayout(new CardLayout(0, 0));
-		
-
-		cardPanel2.add(cp2GroupPanel, "name_10730876008561");
-		
-		JTextArea txtrFactorialAlgorithm = new JTextArea();
-		txtrFactorialAlgorithm.setBackground(UIManager.getColor("Panel.background"));
-		txtrFactorialAlgorithm.setLineWrap(true);
-		txtrFactorialAlgorithm.setWrapStyleWord(true);
-		txtrFactorialAlgorithm.setText("The Factorial algorithm:\r\n\r\npublic static int factorial(int n) { \r\n   if (n == 1) \r\n\t\treturn 1; \r\n\r\n   return n * factorial(n-1); \r\n} \r\n\r\n\r\nNow we are going to move onto how the factorial algorithm works.\r\n\r\nPlease click the Advance button to continue.\r\n");
-		txtrFactorialAlgorithm.setEditable(false);
-		GroupLayout gl_cp2GroupPanel = new GroupLayout(cp2GroupPanel);
-		gl_cp2GroupPanel.setHorizontalGroup(
-			gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp2GroupPanel.createSequentialGroup()
-					.addGap(26)
-					.addComponent(txtrFactorialAlgorithm, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
-					.addContainerGap())
-		);
-		gl_cp2GroupPanel.setVerticalGroup(
-			gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp2GroupPanel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(txtrFactorialAlgorithm, GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
-					.addContainerGap())
-		);
-		cp2GroupPanel.setLayout(gl_cp2GroupPanel);
 		cardPanel1.setLayout(new CardLayout());
 		
 
@@ -194,23 +156,23 @@ public class ReturnValueView extends JFrame {
 		txtrIntroduction.setLineWrap(true);
 		txtrIntroduction.setWrapStyleWord(true);
 		txtrIntroduction.setBackground(UIManager.getColor("Panel.background"));
-		txtrIntroduction.setText("This tutorial series focuses on return values in recursive calls. A method returns to the code that invoked it when it completes all the statements in the method, reaches a return statement, or when it throws an exception.\r\n\r\nThe return value of a recursive call is the result of a recursive call after all the statements in the method have been reached which is usually a return statement which itself is a recursive call.\r\n\r\nThe final return value however, is returned once the base case is met(as described in the previous tutorial) and thus a different return statement is met which does not continue the recursive calls.\r\n\r\nIn this tutorial series, the factorial algorithm will be used in order to demonstrate how the final return value of a recursive call is calculated.");
+		txtrIntroduction.setText("This tutorial series focuses on return values in recursive calls. A method returns to the code that invoked it when it completes all the statements in the method, reaches a return statement, or when it throws an exception.\r\n\r\nThe return value of a recursive call is the result of a recursive call after all the statements in the method have been reached which is usually a return statement which itself is a recursive call.\r\n\r\nThe final return value however, is returned once the base case is met(as described in the previous tutorial) and thus a different return statement is met which does not continue the recursive calls.\r\n\r\nIn this tutorial series, the factorial algorithm will be used in order to demonstrate how the final return value of a recursive call is calculated.\r\n\r\nFactorial is the product of an integer and all the integers below it; e.g. factorial four ( 4! ) is equal to 24.\r\n\r\nThe Factorial algorithm is as follows:\r\n\r\npublic static int factorial(int n) { \r\n   if (n == 1) \r\n\t\treturn 1; \r\n\r\n   return n * factorial(n-1); \r\n} \r\n\r\n\r\nNow we are going to move onto how the factorial algorithm works.\r\n\r\nPlease click the Advance button to continue.");
 
 		
 		GroupLayout gl_cp1GroupPanel = new GroupLayout(cp1GroupPanel);
 		gl_cp1GroupPanel.setHorizontalGroup(
 			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-					.addGap(29)
-					.addComponent(txtrIntroduction, GroupLayout.PREFERRED_SIZE, 619, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(127, Short.MAX_VALUE))
+					.addContainerGap()
+					.addComponent(txtrIntroduction, GroupLayout.PREFERRED_SIZE, 839, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(22, Short.MAX_VALUE))
 		);
 		gl_cp1GroupPanel.setVerticalGroup(
 			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(txtrIntroduction, GroupLayout.PREFERRED_SIZE, 279, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(121, Short.MAX_VALUE))
+					.addComponent(txtrIntroduction, GroupLayout.PREFERRED_SIZE, 663, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(43, Short.MAX_VALUE))
 		);
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 		contentPane.setLayout(gl_contentPane);
