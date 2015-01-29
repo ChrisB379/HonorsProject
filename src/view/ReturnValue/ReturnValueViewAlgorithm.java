@@ -11,9 +11,6 @@ package view.ReturnValue;
  */
 
 import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
 
 public class ReturnValueViewAlgorithm extends JPanel {
 
