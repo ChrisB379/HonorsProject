@@ -10,14 +10,14 @@ package view.ExcessiveRecomputation;
 
 import javax.swing.JPanel;
 
-public class EcessiveRecompExample extends JPanel {
+public class ExcessiveRecompExample extends JPanel {
 
 	private static final long serialVersionUID = 3170105316737825613L;
 
 	/**
 	 * Create the panel.
 	 */
-	public EcessiveRecompExample() {
+	public ExcessiveRecompExample() {
 
 	}
 
