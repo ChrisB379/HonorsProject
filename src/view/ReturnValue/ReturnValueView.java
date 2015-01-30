@@ -102,7 +102,8 @@ public class ReturnValueView extends JFrame {
 					int count = 0;
 					ReturnValueViewExample r = new ReturnValueViewExample();
 					ReturnValueViewAlgorithm r2 = new ReturnValueViewAlgorithm();
-					ReturnValueViewResults r3 = new ReturnValueViewResults();
+					ReturnValueViewAlgorithm2 r3 = new ReturnValueViewAlgorithm2();
+					ReturnValueViewResults r4 = new ReturnValueViewResults();
 					public void actionPerformed(ActionEvent e) {
 
 						
@@ -125,6 +126,13 @@ public class ReturnValueView extends JFrame {
 						if(count == 2){
 						cardPanel1.add(r3);
 						cardPanel1.remove(r2);
+							
+						}
+						
+						if(count == 3){
+						cardPanel1.add(r4);
+						cardPanel1.remove(r3);
+						//TODO remove the advance button and change it so that a Main Menu button is added along with a new advance button that will dispose ReturnValueView and load the next tutorial
 							
 						}
 						
