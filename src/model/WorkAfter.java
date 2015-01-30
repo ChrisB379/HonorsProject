@@ -146,13 +146,13 @@ public class WorkAfter implements IWorkAfter {
 		
 		WorkAfter wa = new WorkAfter();
 		
-		wa.workAfter(7);
+		wa.workAfter(10);
 		
 		System.out.println();
 		System.out.println("New method below");
 		System.out.println();
 		
-		wa.workAfter2(7);
+		wa.workAfter2(5);
 		
 //		File fi = new File("C:/Users/Chris/Desktop/Uni/4th year/CS408 Individual Project");
 //		
