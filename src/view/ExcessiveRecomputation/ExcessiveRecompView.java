@@ -62,6 +62,8 @@ public class ExcessiveRecompView extends JFrame {
 		setContentPane(contentPane);
 		
 		JPanel cardPanel1 = new JPanel();
+		//This line is what makes a card not switch out. It must be up top. NOT AT THE BOTTOM LIKE ITS AUTO GENERATED TO DO!!!!
+		cardPanel1.setLayout(new CardLayout(0, 0));
 		
 		JPanel cardPanel2 = new JPanel();
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -92,13 +94,39 @@ public class ExcessiveRecompView extends JFrame {
 		JPanel cp2GroupPanel = new JPanel();
 		cardPanel2.add(cp2GroupPanel, "name_99302267697702");
 		
+		JTextArea txtrThisTutorialSeries = new JTextArea();
+		txtrThisTutorialSeries.setText("This tutorial series focuses on excessive recomputation in recursion.\r\n\r\nExcessive recomputation highlights an issue with recursion. \r\nExcessive recomputation is when the same calculation is calculated multiple times throughout multiple recursive calls. \r\nThis can make basic recursion not very resource efficient, since it will be wasting time and CPU power calculating sums which it should already know the answer to having already did the same calculation before.\r\n\r\n\r\nIn this tutorial series, the fibonacci algorithm will be used in order to demonstrate how work can be done after a recursive call.\r\nThe Fibonacci sequence is a series of numbers where a number is found by adding up the two numbers before it. Starting with 0 and 1, the sequence goes 1, 1, 2, 3, 5, 8, 13, 21, 34, and so forth.\r\n\r\n\r\nThe algorithm is as follows:\r\n\r\n\tpublic int fib(int n) {\r\n\t\t//Base case\r\n\t\tif (n == 0 || n == 1)\r\n\t\t    return 1;\r\n\t\t\r\n\t\telse\r\n\t\t   //Recursive call\r\n\t\t   return fib(n-1) + fib(n-2);\r\n\t}\r\n\r\nNow we are going to move onto how the factorial algorithm works.\r\n\r\nPlease click the Advance button to continue.");
+		txtrThisTutorialSeries.setWrapStyleWord(true);
+		txtrThisTutorialSeries.setLineWrap(true);
+		txtrThisTutorialSeries.setBackground(UIManager.getColor("Panel.background"));
+		txtrThisTutorialSeries.setEditable(false);
+
+		
+		GroupLayout gl_cp1GroupPanel = new GroupLayout(cp1GroupPanel);
+		gl_cp1GroupPanel.setHorizontalGroup(
+			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
+					.addGap(27)
+					.addComponent(txtrThisTutorialSeries, GroupLayout.PREFERRED_SIZE, 795, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(116, Short.MAX_VALUE))
+		);
+		gl_cp1GroupPanel.setVerticalGroup(
+			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
+					.addGap(21)
+					.addComponent(txtrThisTutorialSeries, GroupLayout.PREFERRED_SIZE, 674, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(49, Short.MAX_VALUE))
+		);
+		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
+		
 		JButton btnAdvance = new JButton("Advance");
 		
 		btnAdvance.addActionListener(new ActionListener() {
 			int count = 0;
 			ExcessiveRecompExample e1 = new ExcessiveRecompExample();
-			ExcessiveRecompViewAlgorithm e2 = new ExcessiveRecompViewAlgorithm();
-			ExcessiveRecompViewResult e3 = new ExcessiveRecompViewResult();
+			ExcessiveRecompViewExample2 e2 = new ExcessiveRecompViewExample2();
+			ExcessiveRecompViewAlgorithm e3 = new ExcessiveRecompViewAlgorithm();
+			ExcessiveRecompViewResult e4 = new ExcessiveRecompViewResult();
 			public void actionPerformed(ActionEvent e) {
 
 				
@@ -119,6 +147,11 @@ public class ExcessiveRecompView extends JFrame {
 				if(count == 2){
 				cardPanel1.add(e3);
 				cardPanel1.remove(e2);
+				}
+				
+				if(count == 3){
+				cardPanel1.add(e4);
+				cardPanel1.remove(e3);
 				//TODO remove the advance button and change it so that a Main Menu button is added along with a new advance button that will dispose ReturnValueView and load the next tutorial	
 				}
 				
@@ -144,31 +177,10 @@ public class ExcessiveRecompView extends JFrame {
 					.addGap(19))
 		);
 		cp2GroupPanel.setLayout(gl_cp2GroupPanel);
-		cardPanel1.setLayout(new CardLayout(0, 0));
+
 		
 		
-		JTextArea txtrThisTutorialSeries = new JTextArea();
-		txtrThisTutorialSeries.setText("This tutorial series focuses on excessive recomputation in recursion.\r\n\r\nExcessive recomputation highlights an issue with recursion. \r\nExcessive recomputation is when the same calculation is calculated multiple times throughout multiple recursive calls. \r\nThis can make basic recursion not very resource efficient, since it will be wasting time and CPU power calculating sums which it should already know the answer to having already did the same calculation before.\r\n\r\n\r\nIn this tutorial series, the fibonacci algorithm will be used in order to demonstrate how work can be done after a recursive call.\r\n\r\n\r\nThe algorithm is as follows:\r\n\r\n\tpublic int fib(int n) {\r\n\t\t//Base case\r\n\t\tif (n == 0 || n == 1)\r\n\t\t\treturn 1;\r\n\t\t\r\n\t\telse\r\n\t\t\t//Recursive call\r\n\t\t\treturn fib(n-1) + fib(n-2);\r\n\t}\r\n\r\nNow we are going to move onto how the factorial algorithm works.\r\n\r\nPlease click the Advance button to continue.");
-		txtrThisTutorialSeries.setWrapStyleWord(true);
-		txtrThisTutorialSeries.setLineWrap(true);
-		txtrThisTutorialSeries.setBackground(UIManager.getColor("Panel.background"));
-		txtrThisTutorialSeries.setEditable(false);
-		GroupLayout gl_cp1GroupPanel = new GroupLayout(cp1GroupPanel);
-		gl_cp1GroupPanel.setHorizontalGroup(
-			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-					.addGap(27)
-					.addComponent(txtrThisTutorialSeries, GroupLayout.PREFERRED_SIZE, 795, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(116, Short.MAX_VALUE))
-		);
-		gl_cp1GroupPanel.setVerticalGroup(
-			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-					.addGap(21)
-					.addComponent(txtrThisTutorialSeries, GroupLayout.PREFERRED_SIZE, 674, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(49, Short.MAX_VALUE))
-		);
-		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
+
 		contentPane.setLayout(gl_contentPane);
 	}
 
