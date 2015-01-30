@@ -102,6 +102,7 @@ public class ReturnValueView extends JFrame {
 					int count = 0;
 					ReturnValueViewExample r = new ReturnValueViewExample();
 					ReturnValueViewAlgorithm r2 = new ReturnValueViewAlgorithm();
+					ReturnValueViewResults r3 = new ReturnValueViewResults();
 					public void actionPerformed(ActionEvent e) {
 
 						
@@ -120,6 +121,12 @@ public class ReturnValueView extends JFrame {
 						cardPanel1.remove(r);
 						
 						} 
+						
+						if(count == 2){
+						cardPanel1.add(r3);
+						cardPanel1.remove(r2);
+							
+						}
 						
 						count++;
 //						System.out.println("count after increment is " + count);
