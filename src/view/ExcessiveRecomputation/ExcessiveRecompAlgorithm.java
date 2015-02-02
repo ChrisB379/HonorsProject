@@ -20,7 +20,7 @@ import javax.swing.JButton;
 
 import view.JTextFieldLimit;
 
-public class ExcessiveRecompViewAlgorithm extends JPanel {
+public class ExcessiveRecompAlgorithm extends JPanel {
 
 	private static final long serialVersionUID = 7616226097911941809L;
 	private JTextField txtRtrnVal;
@@ -29,7 +29,7 @@ public class ExcessiveRecompViewAlgorithm extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public ExcessiveRecompViewAlgorithm() {
+	public ExcessiveRecompAlgorithm() {
 		
 		JTextArea txtrPublicIntFibint = new JTextArea();
 		txtrPublicIntFibint.setText("\tpublic int fib(int n) {\r\n\t//Base case\r\n\tif (n == 0 || n == 1)\r\n\t\treturn 1;\r\n\t\t\r\n\telse\r\n\t\t//Recursive call\r\n\t\treturn fib(n-1) + fib(n-2);\r\n}");

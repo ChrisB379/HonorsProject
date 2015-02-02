@@ -18,7 +18,7 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class WorkAfterViewResult extends JPanel {
+public class WorkAfterResult extends JPanel {
 
 
 	private static final long serialVersionUID = -7033188402119066408L;
@@ -26,7 +26,7 @@ public class WorkAfterViewResult extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public WorkAfterViewResult() {
+	public WorkAfterResult() {
 		
 		JTextArea txtrTheResultsFrom = new JTextArea();
 		txtrTheResultsFrom.setText("The results from the previous two pages are as follows: \r\n\r\nThe algorithm worked on was workAfter(INSERTuserINPUThere)\r\n\r\nYour answer for workAfter(INSERTuserINPUThere) was : \r\n\r\nThe correct answer for workAfter(INSERTuserINPUThere) is :\r\n\r\nWe get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");

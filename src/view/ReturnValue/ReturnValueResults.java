@@ -19,14 +19,14 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class ReturnValueViewResults extends JPanel {
+public class ReturnValueResults extends JPanel {
 
 	private static final long serialVersionUID = 8198343565299698957L;
 
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueViewResults() {
+	public ReturnValueResults() {
 		
 		JLabel lblResults = new JLabel("Results");
 		

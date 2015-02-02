@@ -100,10 +100,10 @@ public class ReturnValueView extends JFrame {
 				//Changing the cards to advance to the next screen
 				btnAdvance.addActionListener(new ActionListener() {
 					int count = 0;
-					ReturnValueViewExample r = new ReturnValueViewExample();
-					ReturnValueViewAlgorithm r2 = new ReturnValueViewAlgorithm();
-					ReturnValueViewAlgorithm2 r3 = new ReturnValueViewAlgorithm2();
-					ReturnValueViewResults r4 = new ReturnValueViewResults();
+					ReturnValueExample r = new ReturnValueExample();
+					ReturnValueAlgorithm r2 = new ReturnValueAlgorithm();
+					ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
+					ReturnValueResults r4 = new ReturnValueResults();
 					public void actionPerformed(ActionEvent e) {
 
 						

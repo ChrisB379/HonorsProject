@@ -124,9 +124,9 @@ public class ExcessiveRecompView extends JFrame {
 		btnAdvance.addActionListener(new ActionListener() {
 			int count = 0;
 			ExcessiveRecompExample e1 = new ExcessiveRecompExample();
-			ExcessiveRecompViewExample2 e2 = new ExcessiveRecompViewExample2();
-			ExcessiveRecompViewAlgorithm e3 = new ExcessiveRecompViewAlgorithm();
-			ExcessiveRecompViewResult e4 = new ExcessiveRecompViewResult();
+			ExcessiveRecompExample2 e2 = new ExcessiveRecompExample2();
+			ExcessiveRecompAlgorithm e3 = new ExcessiveRecompAlgorithm();
+			ExcessiveRecompResult e4 = new ExcessiveRecompResult();
 			public void actionPerformed(ActionEvent e) {
 
 				

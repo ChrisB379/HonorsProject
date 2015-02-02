@@ -22,7 +22,7 @@ import javax.swing.JButton;
 
 import view.JTextFieldLimit;
 
-public class WorkAfterViewAlgorithm extends JPanel {
+public class WorkAfterAlgorithm extends JPanel {
 
 
 	private static final long serialVersionUID = -1965751494479483614L;
@@ -32,7 +32,7 @@ public class WorkAfterViewAlgorithm extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public WorkAfterViewAlgorithm() {
+	public WorkAfterAlgorithm() {
 		
 		JLabel lblExample = new JLabel("Example");
 		

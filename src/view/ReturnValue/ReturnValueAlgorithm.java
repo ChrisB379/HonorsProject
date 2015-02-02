@@ -24,7 +24,7 @@ import javax.swing.JButton;
 import view.JTextFieldLimit;
 import javax.swing.JLabel;
 
-public class ReturnValueViewAlgorithm extends JPanel {
+public class ReturnValueAlgorithm extends JPanel {
 
 
 	private static final long serialVersionUID = -6312065891931236710L;
@@ -34,7 +34,7 @@ public class ReturnValueViewAlgorithm extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueViewAlgorithm() {
+	public ReturnValueAlgorithm() {
 		setBorder(null);
 		
 		JTextArea txtFactorial = new JTextArea();

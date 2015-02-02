@@ -17,7 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 
-public class ReturnValueViewAlgorithm2 extends JPanel {
+public class ReturnValueAlgorithm2 extends JPanel {
 
 
 	private static final long serialVersionUID = 558449680019022130L;
@@ -25,7 +25,7 @@ public class ReturnValueViewAlgorithm2 extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueViewAlgorithm2() {
+	public ReturnValueAlgorithm2() {
 		
 		JLabel lblExample = new JLabel("Example 2");
 		

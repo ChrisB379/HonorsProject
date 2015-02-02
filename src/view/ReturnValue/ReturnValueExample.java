@@ -17,7 +17,7 @@ import javax.swing.UIManager;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import view.JTextFieldLimit;
 
-public class ReturnValueViewExample extends JPanel {
+public class ReturnValueExample extends JPanel {
 
 
 	private static final long serialVersionUID = -3578796091219375513L;
@@ -25,7 +25,7 @@ public class ReturnValueViewExample extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueViewExample() {
+	public ReturnValueExample() {
 		setBorder(null);
 		
 		JTextArea txtrOnceAgainThis = new JTextArea();

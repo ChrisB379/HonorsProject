@@ -11,7 +11,7 @@ package view.Quiz;
 
 import javax.swing.JPanel;
 
-public class QuizViewResults extends JPanel {
+public class QuizResults extends JPanel {
 
 
 	private static final long serialVersionUID = -56664460019307114L;
@@ -19,7 +19,7 @@ public class QuizViewResults extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public QuizViewResults() {
+	public QuizResults() {
 
 	}
 

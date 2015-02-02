@@ -17,14 +17,14 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 
-public class ExcessiveRecompViewResult extends JPanel {
+public class ExcessiveRecompResult extends JPanel {
 
 	private static final long serialVersionUID = -5302119559920880728L;
 
 	/**
 	 * Create the panel.
 	 */
-	public ExcessiveRecompViewResult() {
+	public ExcessiveRecompResult() {
 		
 		JTextArea txtrTheResultsFrom = new JTextArea();
 		txtrTheResultsFrom.setWrapStyleWord(true);

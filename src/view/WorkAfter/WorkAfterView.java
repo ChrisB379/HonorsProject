@@ -117,9 +117,9 @@ public class WorkAfterView extends JFrame {
 		
 		btnAdvance.addActionListener(new ActionListener() {
 			int count = 0;
-			WorkAfterViewExample w = new WorkAfterViewExample();
-			WorkAfterViewAlgorithm w2 = new WorkAfterViewAlgorithm();
-			WorkAfterViewResult w3 = new WorkAfterViewResult();
+			WorkAfterExample w = new WorkAfterExample();
+			WorkAfterAlgorithm w2 = new WorkAfterAlgorithm();
+			WorkAfterResult w3 = new WorkAfterResult();
 			public void actionPerformed(ActionEvent e) {
 
 				
