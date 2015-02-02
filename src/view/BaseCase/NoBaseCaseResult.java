@@ -31,11 +31,7 @@ public class NoBaseCaseResult extends JPanel {
 		JLabel lblResults = new JLabel("Results");
 		
 		JTextArea txtrTheResultsFrom = new JTextArea();
-		txtrTheResultsFrom.setText("The results from the previous two pages are as follows: "
-				+ "\r\n\r\nThe algorithm worked on was noBaseCase(INSERTuserINPUThere)\r\n\r\n"
-				+ "Your answer for noBaseCase(INSERTuserINPUThere) was : \r\n\r\n"
-				+ "The correct answer for noBaseCase(INSERTuserINPUThere) is :\r\n\r\n"
-				+ "We get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");
+		txtrTheResultsFrom.setText("The results from the previous two pages are as follows: \r\n\r\nThe algorithm worked on was noBaseCase(INSERTuserINPUThere)\r\n\r\nYour answer for noBaseCase(INSERTuserINPUThere) was : \r\n\r\nThe correct answer for noBaseCase(INSERTuserINPUThere) is :\r\n\r\nWe get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");
 		
 		txtrTheResultsFrom.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheResultsFrom.setWrapStyleWord(true);
@@ -43,11 +39,7 @@ public class NoBaseCaseResult extends JPanel {
 		txtrTheResultsFrom.setEditable(false);
 		
 		JTextArea txtrSummaryInThis = new JTextArea();
-		txtrSummaryInThis.setText("\t\t\t\tSummary\r\n\r\n"
-				+ "In this tutorial series, the importance of base cases in recursion were presented.\r\n\r\n"
-				+ "A base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow, "
-				+ "crashing any programing running the recursive call.\r\n\r\n"
-				+ "The next pages will cover the second algorithm in the base series. This will be about convergence.");
+		txtrSummaryInThis.setText("\t\t\t\tSummary\r\n\r\nIn this tutorial series, the importance of base cases in recursion were presented.\r\n\r\nA base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow, crashing any programing running the recursive call.\r\n\r\nThe next pages will cover the second algorithm in the base series. This will be about convergence.");
 		
 		txtrSummaryInThis.setBackground(UIManager.getColor("Panel.background"));
 		txtrSummaryInThis.setWrapStyleWord(true);

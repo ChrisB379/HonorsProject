@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import view.JTextFieldLimit;
+import javax.swing.JLabel;
 
 public class NoBaseCaseAlgorithm extends JPanel {
 
@@ -68,6 +69,8 @@ public class NoBaseCaseAlgorithm extends JPanel {
 		txtRtrnVal.setColumns(10);
 		
 		JButton btnSubmit = new JButton("Submit");
+		
+		JLabel lblExample = new JLabel("Example 1");
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -87,13 +90,18 @@ public class NoBaseCaseAlgorithm extends JPanel {
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(txtRtrnVal, 0, 0, Short.MAX_VALUE)
-								.addComponent(txtNVal, GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))))
+								.addComponent(txtNVal, GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(498)
+							.addComponent(lblExample)))
 					.addContainerGap(68, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(45)
+					.addContainerGap()
+					.addComponent(lblExample)
+					.addGap(20)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtAlgorithm, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtrInsertVariablesHere, GroupLayout.PREFERRED_SIZE, 225, GroupLayout.PREFERRED_SIZE))

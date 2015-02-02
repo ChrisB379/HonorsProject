@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import view.JTextFieldLimit;
+import javax.swing.JLabel;
 
 public class ConvergenceAlgorithm extends JPanel {
 
@@ -69,6 +70,8 @@ public class ConvergenceAlgorithm extends JPanel {
 		txtRtrnVal.setColumns(10);
 		
 		JButton btnSubmit = new JButton("Submit");
+		
+		JLabel lblExample = new JLabel("Example 2");
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -90,7 +93,10 @@ public class ConvergenceAlgorithm extends JPanel {
 									.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)
 									.addGap(31)
 									.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
-								.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE))))
+								.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(484)
+							.addComponent(lblExample)))
 					.addContainerGap(71, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
@@ -98,7 +104,9 @@ public class ConvergenceAlgorithm extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(51)
+							.addContainerGap()
+							.addComponent(lblExample)
+							.addGap(26)
 							.addComponent(txtrPublicIntConvergenceint, GroupLayout.PREFERRED_SIZE, 151, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(43)
