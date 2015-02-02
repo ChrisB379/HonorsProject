@@ -18,6 +18,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+import view.JTextFieldLimit;
+
 public class NoBaseCaseAlgorithm extends JPanel {
 
 	private static final long serialVersionUID = 2183900996591652759L;
@@ -58,9 +60,11 @@ public class NoBaseCaseAlgorithm extends JPanel {
 		txtrTheReturnValue.setText("The return value is : ");
 		
 		txtNVal = new JTextField();
+		txtNVal.setDocument(new JTextFieldLimit(2));
 		txtNVal.setColumns(10);
 		
 		txtRtrnVal = new JTextField();
+		txtRtrnVal.setDocument(new JTextFieldLimit(2));
 		txtRtrnVal.setColumns(10);
 		
 		JButton btnSubmit = new JButton("Submit");

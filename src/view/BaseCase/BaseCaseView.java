@@ -105,7 +105,7 @@ public class BaseCaseView extends JFrame {
 			NoBaseCaseAlgorithm bc2 = new NoBaseCaseAlgorithm();
 			NoBaseCaseResult bc3 = new NoBaseCaseResult();
 			ConvergenceExample bc4 = new ConvergenceExample();
-			ConvergenceViewAlgorithm bc5 = new ConvergenceViewAlgorithm();
+			ConvergenceAlgorithm bc5 = new ConvergenceAlgorithm();
 			ConvergenceViewResult bc6 = new ConvergenceViewResult();
 
 			public void actionPerformed(ActionEvent e) {
