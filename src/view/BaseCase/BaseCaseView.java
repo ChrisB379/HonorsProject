@@ -101,7 +101,7 @@ public class BaseCaseView extends JFrame {
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
 			int count = 0;
-			NoBaseCaseView bc1 = new NoBaseCaseView();
+			NoBaseCaseExample bc1 = new NoBaseCaseExample();
 			NoBaseCaseViewAlgorithm bc2 = new NoBaseCaseViewAlgorithm();
 			NoBaseCaseViewResult bc3 = new NoBaseCaseViewResult();
 			ConvergenceView bc4 = new ConvergenceView();

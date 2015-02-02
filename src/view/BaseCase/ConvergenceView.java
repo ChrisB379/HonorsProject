@@ -12,6 +12,9 @@ package view.BaseCase;
 
 
 import javax.swing.JPanel;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JTextArea;
 
 public class ConvergenceView extends JPanel {
 
@@ -22,6 +25,24 @@ public class ConvergenceView extends JPanel {
 	 * Create the panel.
 	 */
 	public ConvergenceView() {
+		
+		JTextArea textArea = new JTextArea();
+		GroupLayout groupLayout = new GroupLayout(this);
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(23)
+					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 761, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(114, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(29)
+					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 625, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(108, Short.MAX_VALUE))
+		);
+		setLayout(groupLayout);
 
 	}
 
