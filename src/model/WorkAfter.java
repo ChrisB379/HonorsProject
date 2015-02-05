@@ -7,7 +7,7 @@ package model;
  * Algorithms here are made up and may need to be changed
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 1.1
  * @since 1.0
  */
 
@@ -22,6 +22,52 @@ public class WorkAfter implements IWorkAfter {
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 	
 	//TODO decide how appropriate the algorithms are and which to really use
+	
+	/**
+	 * Simple example of work after. If the base is not met it recurses until it's met
+	 * A print statement comes after the recursive call to show work being done after
+	 * 
+	 * @param n an integer greater than 1 and less than 10
+	 * @since 1.1
+	 */
+	public void workAfterNew(int n){
+		
+		if(n == 1)
+			System.out.println("Base case statement " + n);
+		
+		else
+			workAfterNew(n-1);
+		
+		
+		System.out.println("After the recursive call " + n*2);
+		
+		
+	}
+	
+	
+	/**
+	 * Simple example of work after similar to above but uses return rather than just a print statement
+	 * Recurses until the base case is met
+	 * Then prints a line showing its after the recursive call and then returns n*2
+	 * 
+	 * 
+	 * @param n an integer greater than 1 and less than 10
+	 * @since 1.1
+	 */
+	public int workAfterNew2(int n){
+		
+		if (n == 1)
+			return n;
+		
+		else
+			workAfterNew2(n-1);
+		
+		System.out.println("This is after the recursive call");
+		return n*2;
+		
+		
+		
+	}
 	
 	/**
 	 * A basic method which takes in an integer parameter
@@ -146,13 +192,17 @@ public class WorkAfter implements IWorkAfter {
 		
 		WorkAfter wa = new WorkAfter();
 		
-		wa.workAfter(10);
+		wa.workAfterNew(5);
 		
-		System.out.println();
-		System.out.println("New method below");
-		System.out.println();
+		wa.workAfterNew2(5);
 		
-		wa.workAfter2(5);
+//		wa.workAfter(10);
+//		
+//		System.out.println();
+//		System.out.println("New method below");
+//		System.out.println();
+//		
+//		wa.workAfter2(5);
 		
 //		File fi = new File("C:/Users/Chris/Desktop/Uni/4th year/CS408 Individual Project");
 //		
