@@ -51,13 +51,13 @@ public class ReturnValueAlgorithm extends JPanel {
 				+ "<br>} </code> </html>");
 		txtFactorial.setEditable(false);
 		
-		JTextArea txtrN = new JTextArea();
-		txtrN.setBorder(BorderFactory.createLineBorder(Color.black));
-		txtrN.setBackground(UIManager.getColor("Panel.background"));
-		txtrN.setWrapStyleWord(true);
-		txtrN.setLineWrap(true);
-		txtrN.setEditable(false);
-		txtrN.setText("Variables will be inserted here");
+		JTextArea txtVariables = new JTextArea();
+		txtVariables.setBorder(BorderFactory.createLineBorder(Color.black));
+		txtVariables.setBackground(UIManager.getColor("Panel.background"));
+		txtVariables.setWrapStyleWord(true);
+		txtVariables.setLineWrap(true);
+		txtVariables.setEditable(false);
+		txtVariables.setText("Variables will be inserted here");
 		
 		JTextArea txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
@@ -107,7 +107,7 @@ public class ReturnValueAlgorithm extends JPanel {
 									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 										.addGroup(groupLayout.createSequentialGroup()
 											.addGap(85)
-											.addComponent(txtrN, GroupLayout.PREFERRED_SIZE, 390, GroupLayout.PREFERRED_SIZE))
+											.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 390, GroupLayout.PREFERRED_SIZE))
 										.addGroup(groupLayout.createSequentialGroup()
 											.addGap(5)
 											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
@@ -127,7 +127,7 @@ public class ReturnValueAlgorithm extends JPanel {
 							.addContainerGap()
 							.addComponent(lblExample)
 							.addGap(19)
-							.addComponent(txtrN, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE))
+							.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(54)
 							.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)))
