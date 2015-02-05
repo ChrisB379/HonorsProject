@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 
 import view.JTextFieldLimit;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JTextPane;
 
 public class WorkAfterExample extends JPanel {
 
@@ -26,12 +27,13 @@ public class WorkAfterExample extends JPanel {
 
 	public WorkAfterExample() {
 		
-		JTextArea txtrTheAlgorithmIs = new JTextArea();
-		txtrTheAlgorithmIs.setText("The algorithm is as follows: \r\n\r\npublic void workAfter(int n){\r\n\tint x = 0;\r\n\t\t\r\n\tint[] numbers = new int[n];\r\n\t\t\r\n\t//Fills the numbers array from 0 to n and fills each space with the value n\r\n\tArrays.fill(numbers, 0, n, n);\r\n\t\t\r\n\t//Recursive call\r\n\tif(n > 1)\r\n\tworkAfter(n-1);\r\n\t\t\r\n\t//Base case\r\n\tif(n == 1){\r\n\tfor(int num : numbers)\r\n\t\tx = num + 5;\r\n\t\t\r\n\tSystem.out.println(\"Value of x is \" + x);\r\n\t\t\r\n\t\t\r\n\t}\r\n\t\t\r\n}\r\n\r\nHow this algorithm works:\r\n\r\nStep 1:\tA new array is initialised of length n (the integer input parameter)\r\nStep 2:\tThe array is then filled with the value n from index 0 to the size of the array(n)\r\nStep 3:\tRecursively this method is called until the array is size 1 and only holds the value 1\r\nStep 4:\tOnce this happens the if statement is met and 5 is added to every element in the array\r\nStep 5:\tThere is only one element so the sum will be 1+5\r\nStep 6:\tFinally we just print the value of x which will be 6\r\n\r\nNext you will be working through your own example of this algorithm. \r\nPlease enter a number in the field provided which will be the parameter for your algorithm workAfter(n) .");
-		txtrTheAlgorithmIs.setBackground(UIManager.getColor("Panel.background"));
-		txtrTheAlgorithmIs.setWrapStyleWord(true);
-		txtrTheAlgorithmIs.setLineWrap(true);
-		txtrTheAlgorithmIs.setEditable(false);
+		JTextPane txtExample = new JTextPane();
+		txtExample.setContentType("text/html");
+		txtExample.setText("<html>\r\n<br>The algorithm is as follows: \r\n<br>\r\n<br><code> \r\n<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfterNew(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement</font> \" + n);\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfterNew(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t}\r\n<br></code> \r\n<br>\r\n<br>How this algorithm works:\r\n<br>\r\n<br>Step 1:\tThe parameter is checked by the base case\r\n<br>Step 2:\tIf the base case is not met then we go to the else statement; the recursive call\r\n<br>Step 3:\tRecursively this method is called until the base is met\r\n<br>Step 4:\tOnce this happens the print statement in the base case is printed\r\n<br>Step 5:\tThen the work after the recursive call is done and the final print statement is printed showing n*2 for each recursive call\r\n<br>\r\n<br>Next you will be working through your own example of this algorithm. \r\n<br>Please enter a number in the field provided which will be the parameter for your algorithm workAfter(n) .\r\n</html>");
+		
+		
+		txtExample.setBackground(UIManager.getColor("Panel.background"));
+		txtExample.setEditable(false);
 		
 		txtParameterField = new JTextField();
 		txtParameterField.setDocument(new JTextFieldLimit(2));
@@ -43,17 +45,17 @@ public class WorkAfterExample extends JPanel {
 					.addGap(21)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtrTheAlgorithmIs, GroupLayout.PREFERRED_SIZE, 797, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtExample, GroupLayout.PREFERRED_SIZE, 797, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(76, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(txtrTheAlgorithmIs, GroupLayout.PREFERRED_SIZE, 687, GroupLayout.PREFERRED_SIZE)
+					.addComponent(txtExample, GroupLayout.PREFERRED_SIZE, 559, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(39, Short.MAX_VALUE))
+					.addContainerGap(314, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 

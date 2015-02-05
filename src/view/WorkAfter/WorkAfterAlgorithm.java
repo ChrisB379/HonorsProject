@@ -21,6 +21,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import view.JTextFieldLimit;
+import javax.swing.JTextPane;
+import java.awt.Color;
 
 public class WorkAfterAlgorithm extends JPanel {
 
@@ -36,19 +38,34 @@ public class WorkAfterAlgorithm extends JPanel {
 		
 		JLabel lblExample = new JLabel("Example");
 		
-		JTextArea txtrDsfdsfs = new JTextArea();
-		txtrDsfdsfs.setText("public void workAfter(int n){\r\n\tint x = 0;\r\n\t\t\r\n\tint[] numbers = new int[n];\r\n\t\t\r\n\t//Fills the numbers array from 0 to n and fills each \r\n        //space with the value n\r\n\tArrays.fill(numbers, 0, n, n);\r\n\t\t\r\n\t//Recursive call\r\n\tif(n > 1)\r\n\tworkAfter(n-1);\r\n\t\t\r\n\t//Base case\r\n\tif(n == 1){\r\n\tfor(int num : numbers)\r\n\t\tx = num + 5;\r\n\t\t\r\n\tSystem.out.println(\"Value of x is \" + x);\r\n\t\t\r\n\t\t\r\n\t}\r\n\t\t\r\n}");
-		txtrDsfdsfs.setBackground(UIManager.getColor("Panel.background"));
-		txtrDsfdsfs.setWrapStyleWord(true);
-		txtrDsfdsfs.setLineWrap(true);
-		txtrDsfdsfs.setEditable(false);
+		JTextPane txtAlgorithm = new JTextPane();
+		txtAlgorithm.setContentType("text/html");
+		txtAlgorithm.setText("<html>"
+				+ "\r\n<code> \r\n"
+				+ "<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfterNew(<font color = rgb(127,0,85)><b>int</b> </font> n){"
+				+ "\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)"
+				+ "\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement</font> \" + n);"
+				+ "\r\n<br>"
+				+ "\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>"
+				+ "\r\n<br>\t\t\t&nbsp&nbsp workAfterNew(n-1);"
+				+ "\r\n<br>\t\t\r\n<br>"
+				+ "\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call</font> \" + n*2);"
+				+ "\r\n<br>"
+				+ "\t\t\r\n<br>"
+				+ "\t\t\r\n<br>"
+				+ "\t}\r\n<br>"
+				+ "</code> \r\n\r\n"
+				+ "</html>");
 		
-		JTextArea txtrAsdad = new JTextArea();
-		txtrAsdad.setBackground(UIManager.getColor("Panel.background"));
-		txtrAsdad.setEditable(false);
-		txtrAsdad.setLineWrap(true);
-		txtrAsdad.setWrapStyleWord(true);
-		txtrAsdad.setText("Variables will be inserted here");
+		txtAlgorithm.setBackground(Color.WHITE);
+		txtAlgorithm.setEditable(false);
+		
+		JTextArea txtVariables = new JTextArea();
+		txtVariables.setBackground(UIManager.getColor("Panel.background"));
+		txtVariables.setEditable(false);
+		txtVariables.setLineWrap(true);
+		txtVariables.setWrapStyleWord(true);
+		txtVariables.setText("Variables will be inserted here");
 		
 		JTextArea txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
@@ -80,9 +97,9 @@ public class WorkAfterAlgorithm extends JPanel {
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(25)
-							.addComponent(txtrDsfdsfs, GroupLayout.PREFERRED_SIZE, 495, GroupLayout.PREFERRED_SIZE)
-							.addGap(6)
-							.addComponent(txtrAsdad, GroupLayout.PREFERRED_SIZE, 306, GroupLayout.PREFERRED_SIZE))
+							.addComponent(txtAlgorithm, GroupLayout.PREFERRED_SIZE, 412, GroupLayout.PREFERRED_SIZE)
+							.addGap(28)
+							.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 362, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(374)
 							.addComponent(lblExample))
@@ -90,40 +107,38 @@ public class WorkAfterAlgorithm extends JPanel {
 							.addGap(49)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
-								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 									.addGroup(groupLayout.createSequentialGroup()
 										.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE)
 										.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(txtNval, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE))
-									.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createSequentialGroup()
 										.addComponent(txtrTheCurrentReturn, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE)
 										.addGap(18)
 										.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE))))))
-					.addContainerGap(35, Short.MAX_VALUE))
+					.addContainerGap(40, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblExample)
+					.addGap(33)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 374, GroupLayout.PREFERRED_SIZE)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(lblExample)
-							.addGap(33)
-							.addComponent(txtrDsfdsfs, GroupLayout.PREFERRED_SIZE, 446, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(49)
-							.addComponent(txtrAsdad, GroupLayout.PREFERRED_SIZE, 369, GroupLayout.PREFERRED_SIZE)))
-					.addGap(36)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtNval, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(34)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtrTheCurrentReturn, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(48)
-					.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(63, Short.MAX_VALUE))
+							.addComponent(txtAlgorithm, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
+							.addGap(122)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtNval, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(34)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(txtrTheCurrentReturn, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(48)
+							.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(155, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 
