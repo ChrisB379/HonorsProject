@@ -23,6 +23,7 @@ import javax.swing.JButton;
 
 import view.JTextFieldLimit;
 import javax.swing.JLabel;
+import javax.swing.JTextPane;
 
 public class ReturnValueAlgorithm extends JPanel {
 
@@ -36,13 +37,17 @@ public class ReturnValueAlgorithm extends JPanel {
 	 */
 	public ReturnValueAlgorithm() {
 		setBorder(null);
-		
-		JTextArea txtFactorial = new JTextArea();
+		//blue rgb value (0,0,192)
+		//purple rgb value (127,0,85)
+
+		JTextPane txtFactorial = new JTextPane();
+		txtFactorial.setContentType("text/html");
 		txtFactorial.setBorder(BorderFactory.createLineBorder(Color.black));
-		txtFactorial.setBackground(UIManager.getColor("Panel.background"));
-		txtFactorial.setText("public static int factorial(int n) { \r\n   if (n == 1) \r\n\treturn 1; \r\n   return n * factorial(n-1); \r\n} \r\n");
-		txtFactorial.setWrapStyleWord(true);
-		txtFactorial.setLineWrap(true);
+		txtFactorial.setBackground(Color.WHITE);
+		txtFactorial.setText("<html> <code> <font color = rgb(127,0,85)> <b>public static</b> </font> int factorial(<font color = rgb(127,0,85)><b>int</b> </font> n) {   "
+				+ "<br> <font color = rgb(127,0,85)><b>if</b></font> (n == 1) <br>&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; "
+				+ "<br> <font color = rgb(127,0,85)><b>return</b></font> n * factorial(n-1); "
+				+ "<br>} </code> </html>");
 		txtFactorial.setEditable(false);
 		
 		JTextArea txtrN = new JTextArea();

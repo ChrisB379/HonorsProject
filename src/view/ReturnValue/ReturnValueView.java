@@ -184,8 +184,8 @@ public class ReturnValueView extends JFrame {
 			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(txtrIntroduction, GroupLayout.PREFERRED_SIZE, 663, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(43, Short.MAX_VALUE))
+					.addComponent(txtrIntroduction, GroupLayout.PREFERRED_SIZE, 548, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(188, Short.MAX_VALUE))
 		);
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 		contentPane.setLayout(gl_contentPane);

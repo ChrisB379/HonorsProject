@@ -56,15 +56,15 @@ public class WorkAfter implements IWorkAfter {
 	 */
 	public int workAfterNew2(int n){
 		
-		if (n == 1)
+		if (n == 1){
+			System.out.println("This is the base case");
 			return n;
-		
+		}
 		else
 			workAfterNew2(n-1);
 		
 		System.out.println("This is after the recursive call");
 		return n*2;
-		
 		
 		
 	}
