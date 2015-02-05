@@ -20,6 +20,7 @@ import javax.swing.JButton;
 
 import view.JTextFieldLimit;
 import javax.swing.JLabel;
+import javax.swing.JTextPane;
 
 public class ConvergenceAlgorithm extends JPanel {
 
@@ -33,19 +34,19 @@ public class ConvergenceAlgorithm extends JPanel {
 	 */
 	public ConvergenceAlgorithm() {
 		
-		JTextArea txtrPublicIntConvergenceint = new JTextArea();
-		txtrPublicIntConvergenceint.setBackground(UIManager.getColor("Panel.background"));
-		txtrPublicIntConvergenceint.setWrapStyleWord(true);
-		txtrPublicIntConvergenceint.setLineWrap(true);
-		txtrPublicIntConvergenceint.setEditable(false);
-		txtrPublicIntConvergenceint.setText("\tpublic int convergence(int n) {\r\n\t\t//Base case\r\n\t\tif(n == 1)\r\n\t\t\treturn 5;\r\n\t\telse \r\n\t\t\treturn convergence(n+1) + 2*n;\r\n\t}");
+		JTextPane txtConvergence = new JTextPane();
+		txtConvergence.setContentType("text/html");
+		txtConvergence.setToolTipText("");
+		txtConvergence.setBackground(UIManager.getColor("Panel.background"));
+		txtConvergence.setEditable(false);
+		txtConvergence.setText("<html>\r\n<code>\r\n<font color = rgb(127,0,85)> <b>public int</b> </font> convergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> convergence(n+1) + 2*n;\r\n<br>\t}\r\n</code>\r\n</html>");
 		
-		JTextArea txtrInserVariablesHere = new JTextArea();
-		txtrInserVariablesHere.setWrapStyleWord(true);
-		txtrInserVariablesHere.setLineWrap(true);
-		txtrInserVariablesHere.setBackground(UIManager.getColor("Panel.background"));
-		txtrInserVariablesHere.setEditable(false);
-		txtrInserVariablesHere.setText("Insert variables here");
+		JTextArea txtVariables = new JTextArea();
+		txtVariables.setWrapStyleWord(true);
+		txtVariables.setLineWrap(true);
+		txtVariables.setBackground(UIManager.getColor("Panel.background"));
+		txtVariables.setEditable(false);
+		txtVariables.setText("Insert variables here");
 		
 		JTextArea txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setWrapStyleWord(true);
@@ -78,25 +79,27 @@ public class ConvergenceAlgorithm extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(53)
-							.addComponent(txtrPublicIntConvergenceint, GroupLayout.PREFERRED_SIZE, 459, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(txtrInserVariablesHere, GroupLayout.PREFERRED_SIZE, 467, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(90)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(txtrTheReturnValue, GroupLayout.PREFERRED_SIZE, 182, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(txtRtrnVal, 0, 0, Short.MAX_VALUE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)
-									.addGap(31)
-									.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
-								.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(484)
-							.addComponent(lblExample)))
+							.addComponent(lblExample))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGap(53)
+									.addComponent(txtConvergence))
+								.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+									.addGap(90)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(txtrTheReturnValue, GroupLayout.PREFERRED_SIZE, 182, GroupLayout.PREFERRED_SIZE)
+											.addGap(18)
+											.addComponent(txtRtrnVal, 0, 0, Short.MAX_VALUE))
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)
+											.addGap(31)
+											.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
+										.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE))))
+							.addGap(195)
+							.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 467, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(71, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
@@ -107,10 +110,10 @@ public class ConvergenceAlgorithm extends JPanel {
 							.addContainerGap()
 							.addComponent(lblExample)
 							.addGap(26)
-							.addComponent(txtrPublicIntConvergenceint, GroupLayout.PREFERRED_SIZE, 151, GroupLayout.PREFERRED_SIZE))
+							.addComponent(txtConvergence, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(43)
-							.addComponent(txtrInserVariablesHere, GroupLayout.PREFERRED_SIZE, 177, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 177, GroupLayout.PREFERRED_SIZE)))
 					.addGap(65)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)

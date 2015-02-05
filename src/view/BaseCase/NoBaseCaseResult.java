@@ -30,21 +30,21 @@ public class NoBaseCaseResult extends JPanel {
 		
 		JLabel lblResults = new JLabel("Results");
 		
-		JTextArea txtrTheResultsFrom = new JTextArea();
-		txtrTheResultsFrom.setText("The results from the previous two pages are as follows: \r\n\r\nThe algorithm worked on was noBaseCase(INSERTuserINPUThere)\r\n\r\nYour answer for noBaseCase(INSERTuserINPUThere) was : \r\n\r\nThe correct answer for noBaseCase(INSERTuserINPUThere) is :\r\n\r\nWe get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");
+		JTextArea txtResult = new JTextArea();
+		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\nThe algorithm worked on was noBaseCase(INSERTuserINPUThere)\r\n\r\nYour answer for noBaseCase(INSERTuserINPUThere) was : \r\n\r\nThe correct answer for noBaseCase(INSERTuserINPUThere) is :\r\n\r\nWe get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");
 		
-		txtrTheResultsFrom.setBackground(UIManager.getColor("Panel.background"));
-		txtrTheResultsFrom.setWrapStyleWord(true);
-		txtrTheResultsFrom.setLineWrap(true);
-		txtrTheResultsFrom.setEditable(false);
+		txtResult.setBackground(UIManager.getColor("Panel.background"));
+		txtResult.setWrapStyleWord(true);
+		txtResult.setLineWrap(true);
+		txtResult.setEditable(false);
 		
-		JTextArea txtrSummaryInThis = new JTextArea();
-		txtrSummaryInThis.setText("\t\t\t\tSummary\r\n\r\nIn this tutorial series, the importance of base cases in recursion were presented.\r\n\r\nA base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow, crashing any programing running the recursive call.\r\n\r\nThe next pages will cover the second algorithm in the base series. This will be about convergence.");
+		JTextArea txtSummary = new JTextArea();
+		txtSummary.setText("\t\t\t\tSummary\r\n\r\nIn this tutorial series, the importance of base cases in recursion were presented.\r\n\r\nA base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow, crashing any programing running the recursive call.\r\n\r\nThe next pages will cover the second algorithm in the base series. This will be about convergence.");
 		
-		txtrSummaryInThis.setBackground(UIManager.getColor("Panel.background"));
-		txtrSummaryInThis.setWrapStyleWord(true);
-		txtrSummaryInThis.setLineWrap(true);
-		txtrSummaryInThis.setEditable(false);
+		txtSummary.setBackground(UIManager.getColor("Panel.background"));
+		txtSummary.setWrapStyleWord(true);
+		txtSummary.setLineWrap(true);
+		txtSummary.setEditable(false);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -56,8 +56,8 @@ public class NoBaseCaseResult extends JPanel {
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(28)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(txtrSummaryInThis, GroupLayout.PREFERRED_SIZE, 853, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtrTheResultsFrom, GroupLayout.PREFERRED_SIZE, 805, GroupLayout.PREFERRED_SIZE))))
+								.addComponent(txtSummary, GroupLayout.PREFERRED_SIZE, 853, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtResult, GroupLayout.PREFERRED_SIZE, 805, GroupLayout.PREFERRED_SIZE))))
 					.addContainerGap(74, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
@@ -66,10 +66,10 @@ public class NoBaseCaseResult extends JPanel {
 					.addContainerGap()
 					.addComponent(lblResults)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(txtrTheResultsFrom, GroupLayout.PREFERRED_SIZE, 218, GroupLayout.PREFERRED_SIZE)
+					.addComponent(txtResult, GroupLayout.PREFERRED_SIZE, 218, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
-					.addComponent(txtrSummaryInThis, GroupLayout.PREFERRED_SIZE, 416, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(75, Short.MAX_VALUE))
+					.addComponent(txtSummary, GroupLayout.PREFERRED_SIZE, 218, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(273, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 

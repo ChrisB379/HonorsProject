@@ -20,6 +20,7 @@ import javax.swing.JButton;
 
 import view.JTextFieldLimit;
 import javax.swing.JLabel;
+import javax.swing.JTextPane;
 
 public class NoBaseCaseAlgorithm extends JPanel {
 
@@ -32,19 +33,26 @@ public class NoBaseCaseAlgorithm extends JPanel {
 	 */
 	public NoBaseCaseAlgorithm() {
 		
-		JTextArea txtAlgorithm = new JTextArea();
-		txtAlgorithm.setText("\r\n\tpublic int noBaseCase(int n) {\r\n\t\t\r\n\t\treturn noBaseCase(n-1) + n;\r\n\t}");
+		JTextPane txtAlgorithm = new JTextPane();
+		txtAlgorithm.setContentType("text/html");
+		txtAlgorithm.setText("<html>"
+				+ "\r\n<code>"
+				+ "\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {"
+				+ "\r\n<br>"
+				+ "\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;"
+				+ "\r\n<br>"
+				+ "\t}\r\n</code>\r\n"
+				+ "</html>");
+		
 		txtAlgorithm.setBackground(UIManager.getColor("Panel.background"));
-		txtAlgorithm.setWrapStyleWord(true);
-		txtAlgorithm.setLineWrap(true);
 		txtAlgorithm.setEditable(false);
 		
-		JTextArea txtrInsertVariablesHere = new JTextArea();
-		txtrInsertVariablesHere.setBackground(UIManager.getColor("Panel.background"));
-		txtrInsertVariablesHere.setWrapStyleWord(true);
-		txtrInsertVariablesHere.setLineWrap(true);
-		txtrInsertVariablesHere.setEditable(false);
-		txtrInsertVariablesHere.setText("Insert variables here");
+		JTextArea txtVariables = new JTextArea();
+		txtVariables.setBackground(UIManager.getColor("Panel.background"));
+		txtVariables.setWrapStyleWord(true);
+		txtVariables.setLineWrap(true);
+		txtVariables.setEditable(false);
+		txtVariables.setText("Insert variables here");
 		
 		JTextArea txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
@@ -78,9 +86,9 @@ public class NoBaseCaseAlgorithm extends JPanel {
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(37)
-							.addComponent(txtAlgorithm, GroupLayout.PREFERRED_SIZE, 396, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(txtrInsertVariablesHere, GroupLayout.PREFERRED_SIZE, 585, GroupLayout.PREFERRED_SIZE))
+							.addComponent(txtAlgorithm, GroupLayout.PREFERRED_SIZE, 252, GroupLayout.PREFERRED_SIZE)
+							.addGap(154)
+							.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 585, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(80)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
@@ -104,7 +112,7 @@ public class NoBaseCaseAlgorithm extends JPanel {
 					.addGap(20)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtAlgorithm, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtrInsertVariablesHere, GroupLayout.PREFERRED_SIZE, 225, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 225, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
