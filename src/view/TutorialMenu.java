@@ -27,7 +27,9 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 
+import model.BaseCase;
 import view.BaseCase.BaseCaseView;
+import view.ExcessiveRecomputation.ExcessiveRecompView;
 import view.Quiz.QuizView;
 import view.ReturnValue.ReturnValueView;
 import view.WorkAfter.WorkAfterView;
@@ -73,7 +75,10 @@ public class TutorialMenu extends JFrame {
 		btnBaseCase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new BaseCaseView().setVisible(true);
+				BaseCaseView bcv = new BaseCaseView();
+				bcv.setVisible(true);
+				bcv.setLocationRelativeTo(null);
+//				new BaseCaseView().setVisible(true);
 			}
 		});
 		btnBaseCase.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -83,7 +88,10 @@ public class TutorialMenu extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new ReturnValueView().setVisible(true);
+				ReturnValueView rvv = new ReturnValueView();
+				rvv.setVisible(true);
+				rvv.setLocationRelativeTo(null);
+				//new ReturnValueView().setVisible(true);
 			}
 		});
 		
@@ -91,7 +99,10 @@ public class TutorialMenu extends JFrame {
 		btnMultipleChoiceQuiz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new QuizView().setVisible(true);
+				QuizView qzv = new QuizView();
+				qzv.setVisible(true);
+				qzv.setLocationRelativeTo(null);
+				//new QuizView().setVisible(true);
 			}
 		});
 		btnMultipleChoiceQuiz.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -100,7 +111,10 @@ public class TutorialMenu extends JFrame {
 		btnReturnValue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new ReturnValueView().setVisible(true);
+				ExcessiveRecompView erv = new ExcessiveRecompView();
+				erv.setVisible(true);
+				erv.setLocationRelativeTo(null);
+				//new ReturnValueView().setVisible(true);
 			}
 		});
 		btnReturnValue.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -109,7 +123,10 @@ public class TutorialMenu extends JFrame {
 		btnWorkAfter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new WorkAfterView().setVisible(true);
+				WorkAfterView wav = new WorkAfterView();
+				wav.setVisible(true);
+				wav.setLocationRelativeTo(null);
+//				new WorkAfterView().setVisible(true);
 			}
 		});
 		btnWorkAfter.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -119,7 +136,10 @@ public class TutorialMenu extends JFrame {
 		btnReturnToMain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new MainMenu().setVisible(true);
+				MainMenu m = new MainMenu();
+				m.setVisible(true);
+				m.setLocationRelativeTo(null);
+				//new MainMenu().setVisible(true);
 			}
 		});
 		
