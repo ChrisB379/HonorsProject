@@ -64,7 +64,7 @@ public class MainMenu extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new ExamplesMenu().setVisible(true);
+				new TutorialMenu().setVisible(true);
 			}
 		});
 

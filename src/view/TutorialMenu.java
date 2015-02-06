@@ -32,7 +32,7 @@ import view.Quiz.QuizView;
 import view.ReturnValue.ReturnValueView;
 import view.WorkAfter.WorkAfterView;
 
-public class ExamplesMenu extends JFrame {
+public class TutorialMenu extends JFrame {
 
 	/**
 	 * 
@@ -47,7 +47,7 @@ public class ExamplesMenu extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ExamplesMenu frame = new ExamplesMenu();
+					TutorialMenu frame = new TutorialMenu();
 					//Centres the GUI to the middle of the screen
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
@@ -61,7 +61,7 @@ public class ExamplesMenu extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ExamplesMenu() {
+	public TutorialMenu() {
 		setTitle("Tutorials");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 587, 414);
