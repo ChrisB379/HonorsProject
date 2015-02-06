@@ -34,6 +34,8 @@ import javax.swing.JMenuItem;
 
 import view.About;
 import view.MainMenu;
+import view.ExcessiveRecomputation.ExcessiveRecompView;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ReturnValueView extends JFrame {
 
@@ -130,15 +132,27 @@ public class ReturnValueView extends JFrame {
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(cardPanel1, GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
 						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-							.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
-							.addGap(51))
-						.addComponent(cardPanel1, GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)))
+							.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
+							.addGap(51))))
 		);
 		cardPanel3.setLayout(new CardLayout(0, 0));
 		
 		JPanel advancePanel = new JPanel();
 		cardPanel3.add(advancePanel, "name_12410711717075");
+		
+		JButton btnMenu = new JButton("Main Menu");
+		//Only want it visible once the user is on the last tutorial slide
+		btnMenu.setVisible(false);
+		btnMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				MainMenu m = new MainMenu();
+				m.setVisible(true);
+				m.setLocationRelativeTo(null);
+			}
+		});
 
 		JButton btnAdvance = new JButton("Advance");
 				//Changing the cards to advance to the next screen
@@ -176,7 +190,16 @@ public class ReturnValueView extends JFrame {
 						if(count == 3){
 						cardPanel1.add(r4);
 						cardPanel1.remove(r3);
-						//TODO remove the advance button and change it so that a Main Menu button is added along with a new advance button that will dispose ReturnValueView and load the next tutorial
+						btnAdvance.setText("Tutorial 3");
+						btnMenu.setVisible(true);
+							
+						}
+						
+						if(count == 4){
+							dispose();
+							ExcessiveRecompView erv = new ExcessiveRecompView();
+							erv.setVisible(true);
+							erv.setLocationRelativeTo(null);
 							
 						}
 						
@@ -184,20 +207,26 @@ public class ReturnValueView extends JFrame {
 //						System.out.println("count after increment is " + count);
 					} 
 				});
+				
+
 				GroupLayout gl_advancePanel = new GroupLayout(advancePanel);
 				gl_advancePanel.setHorizontalGroup(
-					gl_advancePanel.createParallelGroup(Alignment.TRAILING)
-						.addGroup(Alignment.LEADING, gl_advancePanel.createSequentialGroup()
-							.addGap(59)
-							.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap(81, Short.MAX_VALUE))
+					gl_advancePanel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_advancePanel.createSequentialGroup()
+							.addGap(55)
+							.addGroup(gl_advancePanel.createParallelGroup(Alignment.TRAILING)
+								.addComponent(btnMenu, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btnAdvance, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE))
+							.addContainerGap(60, Short.MAX_VALUE))
 				);
 				gl_advancePanel.setVerticalGroup(
 					gl_advancePanel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_advancePanel.createSequentialGroup()
-							.addGap(19)
+						.addGroup(Alignment.TRAILING, gl_advancePanel.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(btnMenu, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
 							.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap(29, Short.MAX_VALUE))
+							.addGap(32))
 				);
 				advancePanel.setLayout(gl_advancePanel);
 		cardPanel1.setLayout(new CardLayout());

@@ -31,6 +31,8 @@ import javax.swing.JMenuItem;
 
 import view.About;
 import view.MainMenu;
+import view.ReturnValue.ReturnValueView;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class BaseCaseView extends JFrame {
 
@@ -60,6 +62,7 @@ public class BaseCaseView extends JFrame {
 	 * Create the frame.
 	 */
 	public BaseCaseView() {
+		setTitle("Tutorial 1: Base Case");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1253, 802);
 		
@@ -122,15 +125,17 @@ public class BaseCaseView extends JFrame {
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 730, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(12, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addContainerGap(649, Short.MAX_VALUE)
-					.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-					.addGap(44))
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE)
+							.addGap(33))
+						.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 730, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 
 		
@@ -140,6 +145,18 @@ public class BaseCaseView extends JFrame {
 		
 		JPanel cp2GroupPanel = new JPanel();
 		cardPanel2.add(cp2GroupPanel, "name_60155849133626");
+		
+		JButton btnMenu = new JButton("Main Menu");
+		//Don't want it to be visible until the last page
+		btnMenu.setVisible(false);
+		btnMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				MainMenu m = new MainMenu();
+				m.setVisible(true);
+				m.setLocationRelativeTo(null);
+			}
+		});
 		
 		JButton btnAdvance = new JButton("Advance");
 		//Changing the cards to advance to the next screen
@@ -151,6 +168,9 @@ public class BaseCaseView extends JFrame {
 			ConvergenceExample bc4 = new ConvergenceExample();
 			ConvergenceAlgorithm bc5 = new ConvergenceAlgorithm();
 			ConvergenceResult bc6 = new ConvergenceResult();
+			
+			
+			
 
 			public void actionPerformed(ActionEvent e) {
 
@@ -189,7 +209,16 @@ public class BaseCaseView extends JFrame {
 				if(count == 5){
 				cardPanel1.add(bc6);
 				cardPanel1.remove(bc5);
-				//TODO remove the advance button and change it so that a Main Menu button is added along with a new advance button that will dispose ReturnValueView and load the next tutorial
+				btnAdvance.setText("Tutorial 2");
+				btnMenu.setVisible(true);
+					
+				}
+				
+				if(count == 6){
+					dispose();
+					ReturnValueView rvv = new ReturnValueView();
+					rvv.setVisible(true);
+					rvv.setLocationRelativeTo(null);
 					
 				}
 				
@@ -198,6 +227,8 @@ public class BaseCaseView extends JFrame {
 			} 
 		});
 		
+
+		
 		
 		
 		GroupLayout gl_cp2GroupPanel = new GroupLayout(cp2GroupPanel);
@@ -205,14 +236,18 @@ public class BaseCaseView extends JFrame {
 			gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_cp2GroupPanel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(btnAdvance, GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+					.addGroup(gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
+						.addComponent(btnMenu, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+						.addComponent(btnAdvance, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
 					.addGap(20))
 		);
 		gl_cp2GroupPanel.setVerticalGroup(
 			gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp2GroupPanel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(btnAdvance, GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+				.addGroup(Alignment.TRAILING, gl_cp2GroupPanel.createSequentialGroup()
+					.addGap(25)
+					.addComponent(btnMenu, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		cp2GroupPanel.setLayout(gl_cp2GroupPanel);

@@ -32,6 +32,9 @@ import javax.swing.JMenuItem;
 
 import view.About;
 import view.MainMenu;
+import view.WorkAfter.WorkAfterView;
+
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ExcessiveRecompView extends JFrame {
 
@@ -61,8 +64,9 @@ public class ExcessiveRecompView extends JFrame {
 	 * Create the frame.
 	 */
 	public ExcessiveRecompView() {
+		setTitle("Tutorial 3: Excessive Recomputation");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1253, 802);
+		setBounds(100, 100, 1239, 792);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -118,7 +122,7 @@ public class ExcessiveRecompView extends JFrame {
 					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addGap(37)
 					.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 197, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(42, Short.MAX_VALUE))
+					.addContainerGap(17, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -126,11 +130,11 @@ public class ExcessiveRecompView extends JFrame {
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-							.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
-							.addGap(83))
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
 							.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 694, GroupLayout.PREFERRED_SIZE)
-							.addGap(50))))
+							.addGap(50))
+						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+							.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)
+							.addGap(83))))
 		);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 		
@@ -166,6 +170,18 @@ public class ExcessiveRecompView extends JFrame {
 		);
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 		
+		JButton btnMenu = new JButton("Main Menu");
+		//Don't want it to be visible until the last page
+		btnMenu.setVisible(false);
+		btnMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				MainMenu m = new MainMenu();
+				m.setVisible(true);
+				m.setLocationRelativeTo(null);
+			}
+		});
+		
 		JButton btnAdvance = new JButton("Advance");
 		
 		btnAdvance.addActionListener(new ActionListener() {
@@ -199,7 +215,16 @@ public class ExcessiveRecompView extends JFrame {
 				if(count == 3){
 				cardPanel1.add(e4);
 				cardPanel1.remove(e3);
-				//TODO remove the advance button and change it so that a Main Menu button is added along with a new advance button that will dispose ReturnValueView and load the next tutorial	
+				btnAdvance.setText("Tutorial 4");
+				btnMenu.setVisible(true);
+				}
+				
+				if(count == 4){
+					dispose();
+					WorkAfterView wav = new WorkAfterView();
+					wav.setVisible(true);
+					wav.setLocationRelativeTo(null);
+					
 				}
 				
 				
@@ -208,19 +233,25 @@ public class ExcessiveRecompView extends JFrame {
 			} 
 		});
 		
+
+		
 		GroupLayout gl_cp2GroupPanel = new GroupLayout(cp2GroupPanel);
 		gl_cp2GroupPanel.setHorizontalGroup(
-			gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_cp2GroupPanel.createSequentialGroup()
-					.addContainerGap(38, Short.MAX_VALUE)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
-					.addGap(36))
+			gl_cp2GroupPanel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_cp2GroupPanel.createSequentialGroup()
+					.addGap(38)
+					.addGroup(gl_cp2GroupPanel.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(btnMenu, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnAdvance, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
+					.addContainerGap(36, Short.MAX_VALUE))
 		);
 		gl_cp2GroupPanel.setVerticalGroup(
 			gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp2GroupPanel.createSequentialGroup()
+				.addGroup(Alignment.TRAILING, gl_cp2GroupPanel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(btnAdvance, GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+					.addComponent(btnMenu, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
 					.addGap(19))
 		);
 		cp2GroupPanel.setLayout(gl_cp2GroupPanel);

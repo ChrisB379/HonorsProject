@@ -31,6 +31,7 @@ import javax.swing.JMenuItem;
 
 import view.About;
 import view.MainMenu;
+import view.ReturnValue.ReturnValueView;
 
 public class WorkAfterView extends JFrame {
 
@@ -60,6 +61,7 @@ public class WorkAfterView extends JFrame {
 	 * Create the frame.
 	 */
 	public WorkAfterView() {
+		setTitle("Tutorial 4: Work After ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1229, 795);
 		
@@ -109,21 +111,21 @@ public class WorkAfterView extends JFrame {
 		JPanel cardPanel1 = new JPanel();
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(25)
 					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 888, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+					.addGap(51)
 					.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(29))
+					.addContainerGap(29, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(cardPanel1, GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
-						.addComponent(cardPanel2, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)))
+						.addComponent(cardPanel1, GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
+						.addComponent(cardPanel2, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)))
 		);
 		cardPanel1.setLayout(new CardLayout(0, 0));
 		
@@ -159,6 +161,18 @@ public class WorkAfterView extends JFrame {
 		JPanel advancePanel = new JPanel();
 		cardPanel2.add(advancePanel, "name_94944655089283");
 		
+		JButton btnMenu = new JButton("Main Menu");
+		//Don't want it to be visible until the last page
+		btnMenu.setVisible(false);
+		btnMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				MainMenu m = new MainMenu();
+				m.setVisible(true);
+				m.setLocationRelativeTo(null);
+			}
+		});
+		
 		JButton btnAdvance = new JButton("Advance");
 		
 		btnAdvance.addActionListener(new ActionListener() {
@@ -186,7 +200,16 @@ public class WorkAfterView extends JFrame {
 				if(count == 2){
 				cardPanel1.add(w3);
 				cardPanel1.remove(w2);
-				//TODO remove the advance button and change it so that a Main Menu button is added along with a new advance button that will dispose ReturnValueView and load the next tutorial	
+				btnAdvance.setText("Tutorial 2");
+				btnMenu.setVisible(true);
+				}
+				//TODO change this
+				if(count == 3){
+					dispose();
+					ReturnValueView rvv = new ReturnValueView();
+					rvv.setVisible(true);
+					rvv.setLocationRelativeTo(null);
+					
 				}
 				
 				
@@ -195,20 +218,26 @@ public class WorkAfterView extends JFrame {
 			} 
 		});
 		
+
+		
 		GroupLayout gl_advancePanel = new GroupLayout(advancePanel);
 		gl_advancePanel.setHorizontalGroup(
 			gl_advancePanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_advancePanel.createSequentialGroup()
-					.addGap(33)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(45, Short.MAX_VALUE))
+					.addGap(37)
+					.addGroup(gl_advancePanel.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(btnMenu, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnAdvance, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
+					.addContainerGap(41, Short.MAX_VALUE))
 		);
 		gl_advancePanel.setVerticalGroup(
 			gl_advancePanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_advancePanel.createSequentialGroup()
-					.addGap(26)
+				.addGroup(Alignment.TRAILING, gl_advancePanel.createSequentialGroup()
+					.addGap(21)
+					.addComponent(btnMenu, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
 					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(26, Short.MAX_VALUE))
+					.addGap(28))
 		);
 		advancePanel.setLayout(gl_advancePanel);
 		contentPane.setLayout(gl_contentPane);

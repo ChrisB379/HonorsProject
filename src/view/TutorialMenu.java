@@ -145,10 +145,10 @@ public class TutorialMenu extends JFrame {
 		JLabel lblNewLabel = new JLabel("Tutorials");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 32));
 		
-		JLabel lblTutorial = new JLabel("Tutorial 1 : The base case");
+		JLabel lblTutorial = new JLabel("Tutorial 1 : The Base Case");
 		lblTutorial.setFont(new Font("Arial", Font.PLAIN, 15));
 		
-		JLabel lblTutorial_1 = new JLabel("Tutorial 2 : Return values");
+		JLabel lblTutorial_1 = new JLabel("Tutorial 2 : Return Values");
 		lblTutorial_1.setFont(new Font("Arial", Font.PLAIN, 15));
 		
 		JLabel lblTutorialExcessive = new JLabel("Tutorial 3: Excessive Recomputation");
