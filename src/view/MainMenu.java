@@ -39,6 +39,8 @@ public class MainMenu extends JFrame {
 			public void run() {
 				try {
 					MainMenu frame = new MainMenu();
+					//Centres the GUI to the middle of the screen
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

@@ -48,6 +48,8 @@ public class ExamplesMenu extends JFrame {
 			public void run() {
 				try {
 					ExamplesMenu frame = new ExamplesMenu();
+					//Centres the GUI to the middle of the screen
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
