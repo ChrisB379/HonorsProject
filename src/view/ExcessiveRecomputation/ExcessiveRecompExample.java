@@ -11,7 +11,6 @@ package view.ExcessiveRecomputation;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JTextPane;
 

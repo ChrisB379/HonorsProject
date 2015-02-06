@@ -12,12 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextField;
-import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import view.JTextFieldLimit;
 import javax.swing.JTextPane;
-import java.awt.Color;
 import java.awt.Font;
 
 public class ReturnValueExample extends JPanel {

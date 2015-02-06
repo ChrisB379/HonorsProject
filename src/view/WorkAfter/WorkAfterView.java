@@ -23,7 +23,6 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JTextPane;
 

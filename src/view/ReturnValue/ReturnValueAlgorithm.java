@@ -24,7 +24,6 @@ import javax.swing.JButton;
 import view.JTextFieldLimit;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ReturnValueAlgorithm extends JPanel {
 
