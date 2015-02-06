@@ -34,12 +34,7 @@ public class ExcessiveRecompResult extends JPanel {
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\nThe algorithm worked on was fib(INSERTuserINPUThere)\r\n\r\nYour answer for fib(INSERTuserINPUThere) was : \r\n\r\nThe correct answer for fib(INSERTuserINPUThere) is :\r\n\r\nWe get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");
 		
 		JTextArea txtSummary = new JTextArea();
-		txtSummary.setText("\t\t\tSummary\r\n\r\n"
-				+ "In this tutorial series, the issue of excessive recomputation was presented.\r\n\r\n"
-				+ "Excessive recomputation occurs when the same calculation is done multiple times wasting CPU resources and time because after the first time a calculation is done, it shouldn't have to be done again.\r\n\r\n"
-				+ "For more releveant examples in this area and more challenging, please have a look at memoization and fibonacci with memoization. \r\n\r\n"
-				+ "Memoization is the solution to excessive recomputation. It stores results of calculations in some way such as a list so when a calculation is repeated then the result can simply be fetched which is much faster "
-				+ "and more efficient than recalculating eveytime. The first time a calculation is done, if it is not in the \"list\" then the calculation and result will be added to the list so it can be used later if needed.");
+		txtSummary.setText("\t\t\tSummary\r\n\r\nIn this tutorial series, the issue of excessive recomputation was presented.\r\n\r\nExcessive recomputation occurs when the same calculation is done multiple times wasting CPU resources and time because after the first time a calculation is done, it shouldn't have to be done again.\r\n\r\nFor more releveant examples in this area and more challenging, please have a look at memoization and fibonacci with memoization. \r\n\r\nYou can choose to do so now via the memoization button or you can continue to Tutorial 4 if you wish.\r\n\r\n");
 		
 		
 		

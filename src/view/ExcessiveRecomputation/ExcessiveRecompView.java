@@ -133,7 +133,7 @@ public class ExcessiveRecompView extends JFrame {
 							.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 694, GroupLayout.PREFERRED_SIZE)
 							.addGap(50))
 						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-							.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)
+							.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 230, GroupLayout.PREFERRED_SIZE)
 							.addGap(83))))
 		);
 		cardPanel2.setLayout(new CardLayout(0, 0));
@@ -181,8 +181,38 @@ public class ExcessiveRecompView extends JFrame {
 				m.setLocationRelativeTo(null);
 			}
 		});
-		
 		JButton btnAdvance = new JButton("Advance");
+		
+		JButton btnMemoization = new JButton("Memoization");
+		//Only want it visible for the last page
+		btnMemoization.setVisible(false);
+		btnMemoization.addActionListener(new ActionListener() {
+			Memoization mem = new Memoization();
+			MemoizationDescription memd = new MemoizationDescription();
+			int count = 0;
+			public void actionPerformed(ActionEvent e) {
+				if(count == 0){
+				cardPanel1.add(mem);
+				cardPanel1.removeAll();
+				cardPanel1.add(mem);
+				btnMenu.setVisible(false);
+				btnAdvance.setVisible(false);
+				}
+				
+				if(count == 1){
+				cardPanel1.add(memd);
+				cardPanel1.remove(mem);
+				
+				btnMemoization.setVisible(false);
+				btnMenu.setVisible(true);
+				btnAdvance.setVisible(true);
+				}
+				
+				count++;
+			}
+		});
+		
+
 		
 		btnAdvance.addActionListener(new ActionListener() {
 			int count = 0;
@@ -217,6 +247,7 @@ public class ExcessiveRecompView extends JFrame {
 				cardPanel1.remove(e3);
 				btnAdvance.setText("Tutorial 4");
 				btnMenu.setVisible(true);
+				btnMemoization.setVisible(true);
 				}
 				
 				if(count == 4){
@@ -235,22 +266,27 @@ public class ExcessiveRecompView extends JFrame {
 		
 
 		
+
+		
 		GroupLayout gl_cp2GroupPanel = new GroupLayout(cp2GroupPanel);
 		gl_cp2GroupPanel.setHorizontalGroup(
-			gl_cp2GroupPanel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_cp2GroupPanel.createSequentialGroup()
+			gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_cp2GroupPanel.createSequentialGroup()
 					.addGap(38)
 					.addGroup(gl_cp2GroupPanel.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(btnMemoization, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(btnMenu, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(btnAdvance, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
 					.addContainerGap(36, Short.MAX_VALUE))
 		);
 		gl_cp2GroupPanel.setVerticalGroup(
-			gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_cp2GroupPanel.createSequentialGroup()
-					.addContainerGap()
+			gl_cp2GroupPanel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_cp2GroupPanel.createSequentialGroup()
+					.addGap(20)
+					.addComponent(btnMemoization, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(45)
 					.addComponent(btnMenu, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
 					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
 					.addGap(19))
 		);
