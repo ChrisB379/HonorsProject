@@ -25,6 +25,12 @@ import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.UIManager;
 import javax.swing.JTextPane;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
+import view.About;
+import view.MainMenu;
 
 public class WorkAfterView extends JFrame {
 
@@ -56,6 +62,44 @@ public class WorkAfterView extends JFrame {
 	public WorkAfterView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1229, 795);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnFile = new JMenu("File");
+		menuBar.add(mnFile);
+		
+		JMenuItem mntmMainMenu = new JMenuItem("Main Menu");
+		mntmMainMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				MainMenu m = new MainMenu();
+				m.setVisible(true);
+				m.setLocationRelativeTo(null);
+			}
+		});
+		mnFile.add(mntmMainMenu);
+		
+		JMenuItem mntmQuit = new JMenuItem("Quit");
+		mntmQuit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		mnFile.add(mntmQuit);
+		
+		JMenu mnAbout = new JMenu("About");
+		menuBar.add(mnAbout);
+		
+		JMenuItem mntmAbout = new JMenuItem("About");
+		mntmAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				About a = new About();
+				a.setVisible(true);
+				a.setLocationRelativeTo(null);
+			}
+		});
+		mnAbout.add(mntmAbout);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

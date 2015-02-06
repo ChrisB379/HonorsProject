@@ -26,6 +26,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.UIManager;
 import javax.swing.JTextPane;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
+import view.About;
+import view.MainMenu;
 
 public class ExcessiveRecompView extends JFrame {
 
@@ -56,7 +62,45 @@ public class ExcessiveRecompView extends JFrame {
 	 */
 	public ExcessiveRecompView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1264, 807);
+		setBounds(100, 100, 1253, 802);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnFile = new JMenu("File");
+		menuBar.add(mnFile);
+		
+		JMenuItem mntmMainMenu = new JMenuItem("Main Menu");
+		mntmMainMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				MainMenu m = new MainMenu();
+				m.setVisible(true);
+				m.setLocationRelativeTo(null);
+			}
+		});
+		mnFile.add(mntmMainMenu);
+		
+		JMenuItem mntmQuit = new JMenuItem("Quit");
+		mntmQuit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		mnFile.add(mntmQuit);
+		
+		JMenu mnAbout = new JMenu("About");
+		menuBar.add(mnAbout);
+		
+		JMenuItem mntmAbout = new JMenuItem("About");
+		mntmAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				About a = new About();
+				a.setVisible(true);
+				a.setLocationRelativeTo(null);
+			}
+		});
+		mnAbout.add(mntmAbout);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -71,7 +115,7 @@ public class ExcessiveRecompView extends JFrame {
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(24)
-					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 938, GroupLayout.PREFERRED_SIZE)
+					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addGap(37)
 					.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 197, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(42, Short.MAX_VALUE))
@@ -79,12 +123,14 @@ public class ExcessiveRecompView extends JFrame {
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(14, Short.MAX_VALUE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(cardPanel1, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 744, GroupLayout.PREFERRED_SIZE)
 						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
 							.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
-							.addGap(83))))
+							.addGap(83))
+						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+							.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 694, GroupLayout.PREFERRED_SIZE)
+							.addGap(50))))
 		);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 		

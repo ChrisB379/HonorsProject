@@ -65,14 +65,10 @@ public class About extends JFrame {
 		txtAbout.setLineWrap(true);
 		txtAbout.setEditable(false);
 		
-		JButton btnReturnMainMenu = new JButton("Return to Main Menu");
+		JButton btnReturnMainMenu = new JButton("Close");
 		btnReturnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				MainMenu m = new MainMenu();
-				m.setVisible(true);
-				m.setLocationRelativeTo(null);
-//				new MainMenu().setVisible(true);
 				
 			}
 		});
@@ -80,15 +76,15 @@ public class About extends JFrame {
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(21, Short.MAX_VALUE)
 					.addComponent(txtAbout, GroupLayout.PREFERRED_SIZE, 393, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(134)
-					.addComponent(btnReturnMainMenu)
-					.addContainerGap(201, Short.MAX_VALUE))
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addGap(147)
+					.addComponent(btnReturnMainMenu, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(175, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)

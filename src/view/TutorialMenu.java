@@ -27,7 +27,6 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 
-import model.BaseCase;
 import view.BaseCase.BaseCaseView;
 import view.ExcessiveRecomputation.ExcessiveRecompView;
 import view.Quiz.QuizView;

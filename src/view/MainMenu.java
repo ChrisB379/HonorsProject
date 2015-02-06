@@ -76,7 +76,6 @@ public class MainMenu extends JFrame {
 		JButton btnAbout = new JButton("About");
 		btnAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
 				About a = new About();
 				a.setVisible(true);
 				a.setLocationRelativeTo(null);
