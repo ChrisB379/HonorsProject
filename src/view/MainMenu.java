@@ -64,12 +64,26 @@ public class MainMenu extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new TutorialMenu().setVisible(true);
+				TutorialMenu tm = new TutorialMenu();
+				tm.setVisible(true);
+				tm.setLocationRelativeTo(null);
+				//new TutorialMenu().setVisible(true);
+				
 			}
 		});
 
 		
 		JButton btnAbout = new JButton("About");
+		btnAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				About a = new About();
+				a.setVisible(true);
+				a.setLocationRelativeTo(null);
+//				new About().setVisible(true);
+				
+			}
+		});
 		
 		JButton btnQuit = new JButton("Quit");
 		
