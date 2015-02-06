@@ -31,7 +31,7 @@ import javax.swing.JMenuItem;
 
 import view.About;
 import view.MainMenu;
-import view.ReturnValue.ReturnValueView;
+import view.Summary;
 
 public class WorkAfterView extends JFrame {
 
@@ -115,9 +115,9 @@ public class WorkAfterView extends JFrame {
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(25)
 					.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 888, GroupLayout.PREFERRED_SIZE)
-					.addGap(51)
+					.addPreferredGap(ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
 					.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(29, Short.MAX_VALUE))
+					.addGap(29))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -125,7 +125,9 @@ public class WorkAfterView extends JFrame {
 					.addContainerGap()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(cardPanel1, GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
-						.addComponent(cardPanel2, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+							.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
+							.addGap(53))))
 		);
 		cardPanel1.setLayout(new CardLayout(0, 0));
 		
@@ -200,15 +202,15 @@ public class WorkAfterView extends JFrame {
 				if(count == 2){
 				cardPanel1.add(w3);
 				cardPanel1.remove(w2);
-				btnAdvance.setText("Tutorial 2");
+				btnAdvance.setText("Summary");
 				btnMenu.setVisible(true);
 				}
-				//TODO change this
+
 				if(count == 3){
 					dispose();
-					ReturnValueView rvv = new ReturnValueView();
-					rvv.setVisible(true);
-					rvv.setLocationRelativeTo(null);
+					Summary summ = new Summary();
+					summ.setVisible(true);
+					summ.setLocationRelativeTo(null);
 					
 				}
 				
