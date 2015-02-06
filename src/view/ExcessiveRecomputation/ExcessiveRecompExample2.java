@@ -47,9 +47,9 @@ public class ExcessiveRecompExample2 extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(33)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtInputField, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtExample2, GroupLayout.PREFERRED_SIZE, 613, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(86, Short.MAX_VALUE))
+						.addComponent(txtExample2, GroupLayout.PREFERRED_SIZE, 776, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtInputField, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(152, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)

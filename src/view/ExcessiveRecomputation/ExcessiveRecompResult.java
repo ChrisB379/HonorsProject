@@ -47,10 +47,10 @@ public class ExcessiveRecompResult extends JPanel {
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(33)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtSummary, GroupLayout.PREFERRED_SIZE, 639, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtResult, GroupLayout.PREFERRED_SIZE, 560, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(82, Short.MAX_VALUE))
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(txtResult, Alignment.LEADING)
+						.addComponent(txtSummary, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE))
+					.addContainerGap(175, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)

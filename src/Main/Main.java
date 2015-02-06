@@ -34,3 +34,5 @@ public class Main {
 	}
 
 }
+
+//TODO Align all text boxes in GUIs to be in the same place to prevent the buttons from moving around
