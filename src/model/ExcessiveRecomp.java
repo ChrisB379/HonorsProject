@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Observable;
+
 
 /**
  *  This will be an example of excessive recomputation shown through the fibonacci algorithm
@@ -9,7 +11,7 @@ package model;
  * @since 1.0
  */
 
-public class ExcessiveRecomp implements IExcessiveRecomp {
+public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 	

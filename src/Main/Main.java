@@ -49,4 +49,4 @@ public class Main {
 //TODO Is parameters the right thing to do? Is it do able? If not then hard code each possible and display them that way?
 //TODO figure out how to auto generate the factorial examples text boxes. Is hard code the best way?
 //TODO change the example screen or add a new one to specific that this is the last recursive call before the base case and so ask the user what they think the final value will be. Make it clear that its the final call
-
+//TODO have a section on iteration v recursion, when to use them, advantages of one over the other etc

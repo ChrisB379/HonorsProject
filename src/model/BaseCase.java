@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Observable;
+
 /**
  * This is used to show how the base case works in recursion
  * 
@@ -8,7 +10,7 @@ package model;
  * @since 1.0
  */
 
-public class BaseCase implements IBaseCase {
+public class BaseCase extends Observable implements IBaseCase  {
 	
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 

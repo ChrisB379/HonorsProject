@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Observable;
+
 
 /**
  * This will be used as an example of how return values work in recursion.
@@ -10,7 +12,7 @@ package model;
  * @since 1.0
  */
 
-public class ReturnValue implements IReturnValue {
+public class ReturnValue extends Observable implements IReturnValue {
 	
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 

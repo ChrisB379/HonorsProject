@@ -16,8 +16,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Observable;
 
-public class WorkAfter implements IWorkAfter {
+public class WorkAfter extends Observable implements IWorkAfter {
 	
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 	
