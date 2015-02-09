@@ -14,14 +14,23 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
 import view.JTextFieldLimit;
+
 import javax.swing.JTextPane;
+
 import java.awt.Font;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 public class ReturnValueExample extends JPanel {
 
 
 	private static final long serialVersionUID = -3578796091219375513L;
+	
+	private int parameter;
+	
+	JTextField txtParameter;
 
 	/**
 	 * Create the panel.
@@ -45,9 +54,25 @@ public class ReturnValueExample extends JPanel {
 		txtNextPage.setEditable(false);
 		
 		
-		JTextField formattedTextField = new JTextField();
+		JTextField txtParameterField = new JTextField();
 		//Limits to only 2 digits
-		formattedTextField.setDocument(new JTextFieldLimit(2));
+		txtParameterField.setDocument(new JTextFieldLimit(2));
+		txtParameterField.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				int n = Integer.parseInt(txtParameterField.getText());
+				setParameter(n);
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 
 		//TODO figure out what here is making such a massive gap between the 2 text areas
 		GroupLayout groupLayout = new GroupLayout(this);
@@ -60,7 +85,7 @@ public class ReturnValueExample extends JPanel {
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(txtNextPage, GroupLayout.PREFERRED_SIZE, 574, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)))
 					.addGap(63))
 		);
 		groupLayout.setVerticalGroup(
@@ -73,7 +98,7 @@ public class ReturnValueExample extends JPanel {
 						.addComponent(txtNextPage, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(11)
-							.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)))
 					.addGap(20))
 		);
 		setLayout(groupLayout);
@@ -81,6 +106,14 @@ public class ReturnValueExample extends JPanel {
 	}
 	
 	
+	public void setParameter(int n){
+		parameter = n;
+		 
+	}
+	
+	public int getParameter(){
+		return parameter;
+	}
 
 	
 }

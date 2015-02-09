@@ -31,6 +31,7 @@ public class ReturnValueAlgorithm extends JPanel {
 	private static final long serialVersionUID = -6312065891931236710L;
 	private JTextField txtNVal;
 	private JTextField txtRtrnVal;
+	
 
 	/**
 	 * Create the panel.
@@ -145,4 +146,6 @@ public class ReturnValueAlgorithm extends JPanel {
 		setLayout(groupLayout);
 
 	}
+	
+
 }

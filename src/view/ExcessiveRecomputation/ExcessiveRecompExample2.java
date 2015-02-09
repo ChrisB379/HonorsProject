@@ -10,6 +10,9 @@ package view.ExcessiveRecomputation;
  */
 
 
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -23,7 +26,9 @@ import view.JTextFieldLimit;
 public class ExcessiveRecompExample2 extends JPanel {
 
 	private static final long serialVersionUID = 2871400796171081840L;
-	private JTextField txtInputField;
+	private JTextField txtParameterField;
+	
+	private int parameter;
 
 	/**
 	 * Create the panel.
@@ -37,9 +42,25 @@ public class ExcessiveRecompExample2 extends JPanel {
 		txtExample2.setLineWrap(true);
 		txtExample2.setEditable(false);
 		
-		txtInputField = new JTextField();
-		txtInputField.setDocument(new JTextFieldLimit(2));
-		txtInputField.setColumns(10);
+		txtParameterField = new JTextField();
+		txtParameterField.setDocument(new JTextFieldLimit(2));
+		txtParameterField.setColumns(10);
+		txtParameterField.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				int n = Integer.parseInt(txtParameterField.getText());
+				setParameter(n);
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -48,7 +69,7 @@ public class ExcessiveRecompExample2 extends JPanel {
 					.addGap(33)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addComponent(txtExample2, GroupLayout.PREFERRED_SIZE, 776, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtInputField, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(152, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
@@ -57,11 +78,20 @@ public class ExcessiveRecompExample2 extends JPanel {
 					.addGap(31)
 					.addComponent(txtExample2, GroupLayout.PREFERRED_SIZE, 499, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(txtInputField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(193, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 
+	}
+	
+	public void setParameter(int n){
+		parameter = n;
+		 
+	}
+	
+	public int getParameter(){
+		return parameter;
 	}
 
 }

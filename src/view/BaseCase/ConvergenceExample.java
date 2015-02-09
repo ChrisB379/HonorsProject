@@ -11,6 +11,9 @@ package view.BaseCase;
  */
 
 
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -19,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import view.JTextFieldLimit;
+
 import javax.swing.JTextPane;
 
 public class ConvergenceExample extends JPanel {
@@ -26,6 +30,7 @@ public class ConvergenceExample extends JPanel {
 
 	private static final long serialVersionUID = -2694986035472196268L;
 	private JTextField txtParameterField;
+	private int parameter;
 
 	/**
 	 * Create the panel.
@@ -41,6 +46,22 @@ public class ConvergenceExample extends JPanel {
 		txtParameterField = new JTextField();
 		txtParameterField.setDocument(new JTextFieldLimit(2));
 		txtParameterField.setColumns(10);
+		txtParameterField.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				int n = Integer.parseInt(txtParameterField.getText());
+				setParameter(n);
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -66,6 +87,15 @@ public class ConvergenceExample extends JPanel {
 		);
 		setLayout(groupLayout);
 
+	}
+	
+	public void setParameter(int n){
+		parameter = n;
+		 
+	}
+	
+	public int getParameter(){
+		return parameter;
 	}
 
 }

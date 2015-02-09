@@ -176,6 +176,7 @@ public class ReturnValueView extends JFrame {
 						
 						if(count == 1){
 //						System.out.println("we got here " + count);
+						System.out.println(r.getParameter());	
 						cardPanel1.add(r2);
 						cardPanel1.remove(r);
 						

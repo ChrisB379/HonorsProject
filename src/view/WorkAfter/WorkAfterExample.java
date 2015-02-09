@@ -8,6 +8,9 @@ package view.WorkAfter;
  * @since 1.0
  */
 
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -15,6 +18,7 @@ import javax.swing.UIManager;
 import javax.swing.JTextField;
 
 import view.JTextFieldLimit;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextPane;
 
@@ -23,6 +27,9 @@ public class WorkAfterExample extends JPanel {
 
 	private static final long serialVersionUID = -5040691956374882581L;
 	private JTextField txtParameterField;
+	
+	private int parameter;
+	
 
 	public WorkAfterExample() {
 		
@@ -37,6 +44,23 @@ public class WorkAfterExample extends JPanel {
 		txtParameterField = new JTextField();
 		txtParameterField.setDocument(new JTextFieldLimit(2));
 		txtParameterField.setColumns(10);
+		txtParameterField.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				int n = Integer.parseInt(txtParameterField.getText());
+				setParameter(n);
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -58,6 +82,15 @@ public class WorkAfterExample extends JPanel {
 		);
 		setLayout(groupLayout);
 
+	}
+	
+	public void setParameter(int n){
+		parameter = n;
+		 
+	}
+	
+	public int getParameter(){
+		return parameter;
 	}
 
 }
