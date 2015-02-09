@@ -12,11 +12,11 @@ import java.util.Observable;
  */
 
 public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
-	
+
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
-	
+
 	int helperMemory[];
-	
+
 	/**
 	 * This is the fibonacci algorithm which will be used to show excessive recomputation.
 	 * With each recursive call e.g fib(8) then fib(6) and fib(7) is calculated.
@@ -34,12 +34,12 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 		//Base case
 		if (n == 0 || n == 1)
 			return 1;
-		
+
 		else
 			//Recursive call
 			return fib(n-1) + fib(n-2);
 	}
-	
+
 
 	/** 
 	 *  This code is based on and sourced from: http://stackoverflow.com/questions/7875380/recursive-fibonacci-memoization%20
@@ -58,20 +58,20 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 		//If there is no helper memory, then initialise it to the size of n
 		if(helperMemory == null)
 			helperMemory = new int[n];
-		
+
 		//The base case
-	    if (n == 0 || n == 1)
-	        return 1;
-	    
-	    if(helperMemory[n-1] != 0)
-	        return helperMemory[n-1];
-	    
-	    else
-	    {
-	    	//recursive call
-	        helperMemory[n-1] = fibMemoization(n - 1) + fibMemoization(n - 2);
-	        return helperMemory[n-1];
-	    }
+		if (n == 0 || n == 1)
+			return 1;
+
+		if(helperMemory[n-1] != 0)
+			return helperMemory[n-1];
+
+		else
+		{
+			//recursive call
+			helperMemory[n-1] = fibMemoization(n - 1) + fibMemoization(n - 2);
+			return helperMemory[n-1];
+		}
 	}
 
 	/**
@@ -81,15 +81,15 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	 * @since 1.0
 	 */
 	public static void main(String[] args){
-		
+
 		ExcessiveRecomp f = new ExcessiveRecomp();
-		
+
 		int x = f.fib(10);
 		int memo = f.fibMemoization(10);
-		
+
 		System.out.println(x);
 		System.out.println(memo);
-		
+
 	}
 
 }

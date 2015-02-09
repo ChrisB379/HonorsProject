@@ -13,8 +13,8 @@ import java.awt.EventQueue;
 import view.MainMenu;
 
 public class Main {
-	
-	
+
+
 	/**
 	 * Launch the application.
 	 */

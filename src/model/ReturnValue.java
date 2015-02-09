@@ -13,7 +13,7 @@ import java.util.Observable;
  */
 
 public class ReturnValue extends Observable implements IReturnValue {
-	
+
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
 	/**
@@ -35,7 +35,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 			//Recursive call
 			return n * factorial(n-1);
 	}
-	
+
 	/**
 	 * Just a test. Will remove later.
 	 * 
@@ -43,11 +43,11 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 * @since 1.0
 	 */
 	public static void main(String[] args){
-		
+
 		ReturnValue f = new ReturnValue();
-		
+
 		int ex1 = f.factorial(4);
-		
+
 		System.out.println(ex1);
 	}
 

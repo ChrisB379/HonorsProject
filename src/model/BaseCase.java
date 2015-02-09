@@ -11,7 +11,7 @@ import java.util.Observable;
  */
 
 public class BaseCase extends Observable implements IBaseCase  {
-	
+
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
 	/**
@@ -28,11 +28,11 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 */
 	@Override
 	public int noBaseCase(int n) {
-		
+
 		return noBaseCase(n-1) + n;
 	}
-	
-	
+
+
 
 	/**
 	 * This is an example of convergence or really, the lack thereof.
@@ -56,24 +56,24 @@ public class BaseCase extends Observable implements IBaseCase  {
 		else 
 			return convergence(n+1) + 2*n;
 	}
-	
+
 	/**
 	 * Just some basic tests. Will be removed later
 	 * 
 	 * 
 	 * @since 1.0
 	 */
-	
+
 	public static void main(String[] args){
-		
+
 		BaseCase bc = new BaseCase();
-		
+
 		int ex1 = bc.noBaseCase(3);
 		int ex2 = bc.convergence(3);
-		
+
 		System.out.println(ex1);
 		System.out.println(ex2);
-		
+
 	}
 
 }

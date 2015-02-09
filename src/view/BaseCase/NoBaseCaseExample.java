@@ -34,7 +34,7 @@ public class NoBaseCaseExample extends JPanel {
 	 * Create the panel.
 	 */
 	public NoBaseCaseExample() {
-		
+
 		JTextPane txtExample1 = new JTextPane();
 		txtExample1.setContentType("text/html");
 		txtExample1.setText("<html>"
@@ -54,58 +54,58 @@ public class NoBaseCaseExample extends JPanel {
 				+ "\r\n<br>"
 				+ "\r\n<br>Next you will be working through your own example of this algorithm. Please enter a number in the field provided which will be the parameter for your algorithm. noBaseCase(n)."
 				+ "\r\n</html>");
-		
+
 		txtExample1.setBackground(UIManager.getColor("Panel.background"));
 		txtExample1.setEditable(false);
-		
+
 		txtParameterField = new JTextField();
 		txtParameterField.setDocument(new JTextFieldLimit(2));
 		txtParameterField.setColumns(10);
 		txtParameterField.addFocusListener(new FocusListener() {
-			
+
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
 				int n = Integer.parseInt(txtParameterField.getText());
 				setParameter(n);
-				
+
 			}
-			
+
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
-		
+
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+				groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(23)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 897, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(58, Short.MAX_VALUE))
-		);
+						.addGap(23)
+						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 897, GroupLayout.PREFERRED_SIZE))
+								.addContainerGap(58, Short.MAX_VALUE))
+				);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+				groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(26)
-					.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 501, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(232, Short.MAX_VALUE))
-		);
+						.addGap(26)
+						.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 501, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(232, Short.MAX_VALUE))
+				);
 		setLayout(groupLayout);
 
 	}
-	
+
 	public void setParameter(int n){
 		parameter = n;
-		 
+
 	}
-	
+
 	public int getParameter(){
 		return parameter;
 	}

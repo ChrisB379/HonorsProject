@@ -10,5 +10,5 @@ package model;
 public interface IReturnValue {
 
 	public int factorial(int n);
-	
+
 }

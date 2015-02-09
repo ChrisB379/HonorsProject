@@ -12,7 +12,7 @@ import java.util.Observable;
  */
 
 public class Quiz extends Observable {
-	
+
 	//TODO make the questions and answers
 
 }

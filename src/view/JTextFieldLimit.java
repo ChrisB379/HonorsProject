@@ -24,47 +24,47 @@ public class JTextFieldLimit extends PlainDocument {
 
 	private static final long serialVersionUID = 6530563563104252452L;
 	private int limit;
-	
-	
-	  public JTextFieldLimit(int limit) {
-	    super();
-	    this.limit = limit;
-	  }
-
-	  JTextFieldLimit(int limit, boolean upper) {
-	    super();
-	    this.limit = limit;
-	  }
-
-	  public void insertString(int offset, String str, AttributeSet attr) throws BadLocationException {
-	    if (str == null)
-	      return;
-	    
-	    /*
-	     * This char array, boolean and for statement are from 
-	     * http://stackoverflow.com/questions/14319064/how-to-validate-a-jtextfield-to-accept-only-integer-numbers
-	     */
-	    char[] chars = str.toCharArray();
-        boolean ok = true;
-
-        for ( int i = 0; i < chars.length; i++ ) {
-
-            try {
-                Integer.parseInt( String.valueOf( chars[i] ) );
-            } catch ( NumberFormatException exc ) {
-                ok = false;
-                break;
-            }
 
 
-        }
-
-	    if ((getLength() + str.length()) <= limit && ok) {
-	      super.insertString(offset, str, attr);
-	    }
-	    
-	    
-	    
-	  }
+	public JTextFieldLimit(int limit) {
+		super();
+		this.limit = limit;
 	}
+
+	JTextFieldLimit(int limit, boolean upper) {
+		super();
+		this.limit = limit;
+	}
+
+	public void insertString(int offset, String str, AttributeSet attr) throws BadLocationException {
+		if (str == null)
+			return;
+
+		/*
+		 * This char array, boolean and for statement are from 
+		 * http://stackoverflow.com/questions/14319064/how-to-validate-a-jtextfield-to-accept-only-integer-numbers
+		 */
+		char[] chars = str.toCharArray();
+		boolean ok = true;
+
+		for ( int i = 0; i < chars.length; i++ ) {
+
+			try {
+				Integer.parseInt( String.valueOf( chars[i] ) );
+			} catch ( NumberFormatException exc ) {
+				ok = false;
+				break;
+			}
+
+
+		}
+
+		if ((getLength() + str.length()) <= limit && ok) {
+			super.insertString(offset, str, attr);
+		}
+
+
+
+	}
+}
 

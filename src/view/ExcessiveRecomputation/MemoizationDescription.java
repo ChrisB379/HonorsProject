@@ -23,7 +23,7 @@ public class MemoizationDescription extends JPanel {
 	 * Create the panel.
 	 */
 	public MemoizationDescription() {
-		
+
 		JTextPane txtMemoDesc = new JTextPane();
 		txtMemoDesc.setBackground(UIManager.getColor("Panel.background"));
 		txtMemoDesc.setContentType("text/html");
@@ -31,19 +31,19 @@ public class MemoizationDescription extends JPanel {
 		txtMemoDesc.setEditable(false);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+				groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(25)
-					.addComponent(txtMemoDesc, GroupLayout.PREFERRED_SIZE, 673, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(59, Short.MAX_VALUE))
-		);
+						.addGap(25)
+						.addComponent(txtMemoDesc, GroupLayout.PREFERRED_SIZE, 673, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(59, Short.MAX_VALUE))
+				);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+				groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(txtMemoDesc, GroupLayout.PREFERRED_SIZE, 713, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(24, Short.MAX_VALUE))
-		);
+						.addContainerGap()
+						.addComponent(txtMemoDesc, GroupLayout.PREFERRED_SIZE, 713, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(24, Short.MAX_VALUE))
+				);
 		setLayout(groupLayout);
 
 	}

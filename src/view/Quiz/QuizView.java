@@ -53,13 +53,13 @@ public class QuizView extends JFrame {
 	public QuizView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
-		
+
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		
+
 		JMenu mnFile = new JMenu("File");
 		menuBar.add(mnFile);
-		
+
 		JMenuItem mntmMainMenu = new JMenuItem("Main Menu");
 		mntmMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -70,7 +70,7 @@ public class QuizView extends JFrame {
 			}
 		});
 		mnFile.add(mntmMainMenu);
-		
+
 		JMenuItem mntmQut = new JMenuItem("Quit");
 		mntmQut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -78,10 +78,10 @@ public class QuizView extends JFrame {
 			}
 		});
 		mnFile.add(mntmQut);
-		
+
 		JMenu mnAbout = new JMenu("About");
 		menuBar.add(mnAbout);
-		
+
 		JMenuItem mntmAbout = new JMenuItem("About");
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -233,7 +233,7 @@ public class ExcessiveRecompView extends JFrame {
 					cardPanel1.remove(cp1GroupPanel);
 					flag = true;
 				}
-				
+
 				//Handles parameters that are not within the specified bound
 				if(count == 1 && e2.getParameter() < 1 || e2.getParameter() > 11){
 					flag = false;
@@ -271,7 +271,7 @@ public class ExcessiveRecompView extends JFrame {
 				}
 
 				if(flag)
-				count++;
+					count++;
 				//				System.out.println("count after increment is " + count);
 			} 
 		});

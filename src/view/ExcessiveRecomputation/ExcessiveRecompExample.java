@@ -22,7 +22,7 @@ public class ExcessiveRecompExample extends JPanel {
 	 * Create the panel.
 	 */
 	public ExcessiveRecompExample() {
-		
+
 		JTextPane txtExample1 = new JTextPane();
 		txtExample1.setContentType("text/html");
 		txtExample1.setText("<html>"
@@ -47,24 +47,24 @@ public class ExcessiveRecompExample extends JPanel {
 				+ "\r\n<br>\r\n<br>Step 4:\tThis repeats until the base case is met and 1 is returned."
 				+ "\r\n<br>\r\n<br>Step 5:\tThe final calculation will then take place and return the result of fibonacci(n)\r\n"
 				+ "</html>\r\n\r\n\r\n");
-		
+
 		txtExample1.setEditable(false);
 		txtExample1.setBackground(UIManager.getColor("Panel.background"));
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+				groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(19)
-					.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 808, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(142, Short.MAX_VALUE))
-		);
+						.addGap(19)
+						.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 808, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(142, Short.MAX_VALUE))
+				);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+				groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 521, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(265, Short.MAX_VALUE))
-		);
+						.addContainerGap()
+						.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 521, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(265, Short.MAX_VALUE))
+				);
 		setLayout(groupLayout);
 
 	}

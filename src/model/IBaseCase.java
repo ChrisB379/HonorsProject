@@ -8,9 +8,9 @@ package model;
  */
 
 public interface IBaseCase {
-	
+
 	public int noBaseCase(int n);
-	
+
 	public int convergence(int n);
 
 }

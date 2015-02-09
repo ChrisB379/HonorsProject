@@ -8,7 +8,7 @@ package model;
  */
 
 public interface IWorkAfter {
-	
+
 	public void workAfter(int n);
 
 }

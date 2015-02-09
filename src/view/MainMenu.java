@@ -59,7 +59,7 @@ public class MainMenu extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
+
 		JButton btnNewButton = new JButton("Start");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -68,63 +68,63 @@ public class MainMenu extends JFrame {
 				tm.setVisible(true);
 				tm.setLocationRelativeTo(null);
 				//new TutorialMenu().setVisible(true);
-				
+
 			}
 		});
 
-		
+
 		JButton btnAbout = new JButton("About");
 		btnAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				About a = new About();
 				a.setVisible(true);
 				a.setLocationRelativeTo(null);
-//				new About().setVisible(true);
-				
+				//				new About().setVisible(true);
+
 			}
 		});
-		
+
 		JButton btnQuit = new JButton("Quit");
-		
+
 		//Used to close the application if the quit button is pressed
 		btnQuit.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e)
-		    {
-		        System.exit(0);
-		    }
+			public void actionPerformed(ActionEvent e)
+			{
+				System.exit(0);
+			}
 		});
-		
+
 		JLabel lblUnderstandingRecursion = new JLabel("Understanding Recursion");
 		lblUnderstandingRecursion.setFont(new Font("Arial", Font.PLAIN, 32));
-		
+
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(114, Short.MAX_VALUE)
-					.addComponent(lblUnderstandingRecursion)
-					.addGap(69))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(209)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(btnQuit, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-						.addComponent(btnAbout, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-						.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
-					.addGap(230))
-		);
+						.addContainerGap(114, Short.MAX_VALUE)
+						.addComponent(lblUnderstandingRecursion)
+						.addGap(69))
+						.addGroup(gl_contentPane.createSequentialGroup()
+								.addGap(209)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+										.addComponent(btnQuit, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+										.addComponent(btnAbout, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+										.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+										.addGap(230))
+				);
 		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(37)
-					.addComponent(lblUnderstandingRecursion)
-					.addGap(71)
-					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-					.addGap(37)
-					.addComponent(btnAbout)
-					.addGap(33)
-					.addComponent(btnQuit)
-					.addContainerGap(80, Short.MAX_VALUE))
-		);
+						.addGap(37)
+						.addComponent(lblUnderstandingRecursion)
+						.addGap(71)
+						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addGap(37)
+						.addComponent(btnAbout)
+						.addGap(33)
+						.addComponent(btnQuit)
+						.addContainerGap(80, Short.MAX_VALUE))
+				);
 		contentPane.setLayout(gl_contentPane);
 	}
 }
