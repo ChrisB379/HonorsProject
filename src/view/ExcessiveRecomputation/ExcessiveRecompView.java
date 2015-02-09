@@ -296,6 +296,7 @@ public class ExcessiveRecompView extends JFrame {
 		
 
 		contentPane.setLayout(gl_contentPane);
+		
 	}
 
 }
