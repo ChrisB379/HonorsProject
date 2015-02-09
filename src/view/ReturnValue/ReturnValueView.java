@@ -26,6 +26,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.JTextPane;
 import javax.swing.JMenuBar;
@@ -35,6 +36,7 @@ import javax.swing.JMenuItem;
 import view.About;
 import view.MainMenu;
 import view.ExcessiveRecomputation.ExcessiveRecompView;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ReturnValueView extends JFrame {
@@ -162,6 +164,8 @@ public class ReturnValueView extends JFrame {
 					ReturnValueAlgorithm r2 = new ReturnValueAlgorithm();
 					ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
 					ReturnValueResults r4 = new ReturnValueResults();
+					//Used for error control
+					boolean flag;
 					public void actionPerformed(ActionEvent e) {
 
 						
@@ -172,20 +176,28 @@ public class ReturnValueView extends JFrame {
 //						cardPanel2.remove(cp2GroupPanel);
 //						cardPanel3.remove(advancePanel);
 //						advancePanel.setVisible(false); 
+						flag = true;
 						 }
 						
-						if(count == 1){
-//						System.out.println("we got here " + count);
-						System.out.println(r.getParameter());	
+						//Handles parameters that are not within the specified bound
+						if(count == 1 && r.getParameter() < 1 || r.getParameter() > 11){
+							flag = false;
+							JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+							count = 1;
+							System.out.println("in error message " + count);
+							System.out.println("flag if error " + flag);
+						}
+						
+						if(count == 1 && r.getParameter() > 0 && r.getParameter() < 11){
+						flag = true;
 						cardPanel1.add(r2);
 						cardPanel1.remove(r);
-						
 						} 
 						
 						if(count == 2){
 						cardPanel1.add(r3);
 						cardPanel1.remove(r2);
-							
+						flag = true;
 						}
 						
 						if(count == 3){
@@ -193,7 +205,7 @@ public class ReturnValueView extends JFrame {
 						cardPanel1.remove(r3);
 						btnAdvance.setText("Tutorial 3");
 						btnMenu.setVisible(true);
-							
+						flag = true;
 						}
 						
 						if(count == 4){
@@ -201,9 +213,10 @@ public class ReturnValueView extends JFrame {
 							ExcessiveRecompView erv = new ExcessiveRecompView();
 							erv.setVisible(true);
 							erv.setLocationRelativeTo(null);
-							
+							flag = true;
 						}
 						
+						if(flag)
 						count++;
 //						System.out.println("count after increment is " + count);
 					} 

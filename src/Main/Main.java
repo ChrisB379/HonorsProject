@@ -50,3 +50,5 @@ public class Main {
 //TODO figure out how to auto generate the factorial examples text boxes. Is hard code the best way?
 //TODO change the example screen or add a new one to specific that this is the last recursive call before the base case and so ask the user what they think the final value will be. Make it clear that its the final call
 //TODO have a section on iteration v recursion, when to use them, advantages of one over the other etc
+//TODO move the counters in the advance buttons so that the algorithm page can loop as much as needed
+//TODO add text to the example classes which states the parameter input must be between 1 and 10
