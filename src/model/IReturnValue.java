@@ -1,5 +1,6 @@
 package model;
 
+
 /**
  * An interface for the return value class
  * 
@@ -7,7 +8,7 @@ package model;
  * @version 1.0
  */
 
-public interface IReturnValue {
+public interface IReturnValue  {
 
 	public int factorial(int n);
 

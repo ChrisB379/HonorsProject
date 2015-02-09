@@ -3,6 +3,7 @@ package model;
 import java.util.Observable;
 
 
+
 /**
  * This will be used as an example of how return values work in recursion.
  * This is done through the factorial algorithm.
@@ -34,6 +35,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 		else
 			//Recursive call
 			return n * factorial(n-1);
+		
 	}
 
 	/**

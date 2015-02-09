@@ -10,9 +10,20 @@ package Main;
 
 import java.awt.EventQueue;
 
+import controller.ReturnValueController;
+import model.ReturnValue;
 import view.MainMenu;
 
 public class Main {
+	
+	
+	Main(){
+		
+		ReturnValue rv = new ReturnValue();
+		ReturnValueController rvc = new ReturnValueController();
+		
+		rv.addObserver(rvc);
+	}
 
 
 	/**
@@ -38,7 +49,6 @@ public class Main {
 //TODO Align all text boxes in GUIs to be in the same place to prevent the buttons from moving around
 //TODO Align each tutorial. Going from 1 to 2 the windows are different size and the buttons do not line up
 //TODO move the example tags to the left as it looks odd being in the middle of their panel but in the frame they are about 1/3rd in
-//TODO Limit input to > 1 && < 10
 //TODO Observer Example
 //TODO Change work after interactivity
 //TODO Add a merge sort set of panels after work after, similar to memoization
@@ -52,3 +62,4 @@ public class Main {
 //TODO have a section on iteration v recursion, when to use them, advantages of one over the other etc
 //TODO move the counters in the advance buttons so that the algorithm page can loop as much as needed
 //TODO add text to the example classes which states the parameter input must be between 1 and 10
+//TODO change input validation on parameters to be > 0 < 11 and not whatever number is used in the example page
