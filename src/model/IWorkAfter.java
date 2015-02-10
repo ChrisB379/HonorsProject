@@ -7,7 +7,7 @@ package model;
  * @version 1.0
  */
 
-public interface IWorkAfter {
+public interface IWorkAfter extends IAlgorithms {
 
 	public void workAfter(int n);
 

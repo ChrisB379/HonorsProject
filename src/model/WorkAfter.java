@@ -19,8 +19,9 @@ import java.util.List;
 import java.util.Observable;
 
 public class WorkAfter extends Observable implements IWorkAfter {
+	
+	private int param;
 
-	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
 	//TODO decide how appropriate the algorithms are and which to really use
 
@@ -209,6 +210,19 @@ public class WorkAfter extends Observable implements IWorkAfter {
 		//		
 		//		wa.getAllFiles(fi);
 
+	}
+
+
+	@Override
+	public void setParam(int n) {
+		param = n;
+		
+	}
+
+
+	@Override
+	public int getParam() {
+		return param;
 	}
 
 }

@@ -12,10 +12,12 @@ import java.util.Observable;
  */
 
 public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
+	
 
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
 	int helperMemory[];
+	private int param;
 
 	/**
 	 * This is the fibonacci algorithm which will be used to show excessive recomputation.
@@ -90,6 +92,19 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 		System.out.println(x);
 		System.out.println(memo);
 
+	}
+
+
+	@Override
+	public void setParam(int n) {
+		param = n;
+		
+	}
+
+
+	@Override
+	public int getParam() {
+		return param;
 	}
 
 }

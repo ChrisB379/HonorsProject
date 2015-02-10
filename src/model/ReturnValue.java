@@ -14,6 +14,8 @@ import java.util.Observable;
  */
 
 public class ReturnValue extends Observable implements IReturnValue {
+	
+	private int param;
 
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
@@ -52,6 +54,18 @@ public class ReturnValue extends Observable implements IReturnValue {
 
 		System.out.println(ex1);
 	}
+
+	@Override
+	public void setParam(int n) {
+		param = n;
+		
+	}
+
+	@Override
+	public int getParam() {
+		return param;
+	}
+
 
 
 }

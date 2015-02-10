@@ -7,7 +7,7 @@ package model;
  * @version 1.0
  */
 
-public interface IBaseCase {
+public interface IBaseCase extends IAlgorithms {
 
 	public int noBaseCase(int n);
 

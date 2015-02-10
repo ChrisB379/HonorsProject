@@ -11,6 +11,8 @@ import java.util.Observable;
  */
 
 public class BaseCase extends Observable implements IBaseCase  {
+	
+	private int param;
 
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
@@ -74,6 +76,21 @@ public class BaseCase extends Observable implements IBaseCase  {
 		System.out.println(ex1);
 		System.out.println(ex2);
 
+	}
+
+
+
+	@Override
+	public void setParam(int n) {
+		param = n;
+		
+	}
+
+
+
+	@Override
+	public int getParam() {
+		return param;
 	}
 
 }
