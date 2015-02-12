@@ -13,6 +13,8 @@ package view.ReturnValue;
 import javax.swing.JPanel;
 
 import java.awt.Color;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
@@ -30,7 +32,7 @@ import javax.swing.JTextPane;
 import controller.ReturnValueParameterController;
 import model.ReturnValue;
 
-public class ReturnValueAlgorithm extends JPanel {
+public class ReturnValueAlgorithm extends JPanel implements Observer {
 
 
 	private static final long serialVersionUID = -6312065891931236710L;
@@ -47,6 +49,7 @@ public class ReturnValueAlgorithm extends JPanel {
 	public ReturnValueAlgorithm(ReturnValue r) {
 		
 		rv = r;
+		r.addObserver(this);
 		
 		setBorder(null);
 		//blue rgb value (0,0,192)
@@ -156,6 +159,14 @@ public class ReturnValueAlgorithm extends JPanel {
 				);
 		setLayout(groupLayout);
 
+	}
+
+
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
