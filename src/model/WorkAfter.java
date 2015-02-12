@@ -32,16 +32,16 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	 * @param n an integer greater than 0 and less than 11
 	 * @since 1.1
 	 */
-	public void workAfterNew(int n){
+	public void workAfter(int n){
 
 		if(n == 1)
-			System.out.println("Base case statement " + n);
+			System.out.println("Base case statement showing the value of n is " + n);
 
 		else
-			workAfterNew(n-1);
+			workAfter(n-1);
 
 
-		System.out.println("After the recursive call " + n*2);
+		System.out.println("After the recursive call showing the result of n*2 is " + n*2);
 
 
 	}
@@ -84,7 +84,7 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	 * @return There is no return value. Simply a print statement of the value of x after the recursion is finished.
 	 * @since 1.0
 	 */
-	public void workAfter(int n){
+	public void workAfter1(int n){
 		int x = 0;
 
 		int[] numbers = new int[n];
@@ -94,7 +94,7 @@ public class WorkAfter extends Observable implements IWorkAfter {
 
 		//Recursive call
 		if(n > 1)
-			workAfter(n-1);
+			workAfter1(n-1);
 
 		//Base case
 		if(n == 1){
@@ -194,7 +194,7 @@ public class WorkAfter extends Observable implements IWorkAfter {
 
 		WorkAfter wa = new WorkAfter();
 
-		wa.workAfterNew(5);
+		wa.workAfter(5);
 
 		wa.workAfterNew2(5);
 
