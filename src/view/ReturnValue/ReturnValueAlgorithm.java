@@ -39,6 +39,8 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private JTextField txtNVal;
 	private JTextField txtRtrnVal;
 	
+	private int parameter;
+	
 	private ReturnValue rv;
 	
 
@@ -71,7 +73,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setLineWrap(true);
 		txtVariables.setEditable(false);
-		txtVariables.setText(rv.getParam() + " " + "Variables will be inserted here");
+		txtVariables.setText(parameter + " " + "Variables will be inserted here");
 
 		JTextArea txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
@@ -169,5 +171,9 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		
 	}
 
+	public void setParameter(int n){
+		parameter = n;
+		
+	}
 
 }
