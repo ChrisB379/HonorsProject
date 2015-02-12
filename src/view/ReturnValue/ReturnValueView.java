@@ -41,6 +41,7 @@ import view.ExcessiveRecomputation.ExcessiveRecompView;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import controller.ReturnValueAlgorithmController;
 import controller.ReturnValueParameterController;
 import model.ReturnValue;
 
@@ -175,12 +176,14 @@ public class ReturnValueView extends JFrame implements Observer {
 			ReturnValueExample r = new ReturnValueExample(model);
 			ReturnValueParameterController rvpController = new ReturnValueParameterController(model, r);
 			ReturnValueAlgorithm r2 = new ReturnValueAlgorithm(model);
+			ReturnValueAlgorithmController rvac = new ReturnValueAlgorithmController(model,r2);
 			ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
 			ReturnValueResults r4 = new ReturnValueResults();
 			//Used for error control
 			boolean flag;
 			public void actionPerformed(ActionEvent e) {
 				btnAdvance.addActionListener(rvpController);
+				btnAdvance.addActionListener(rvac);
 
 				if(count == 0){
 					//							System.out.println(count);

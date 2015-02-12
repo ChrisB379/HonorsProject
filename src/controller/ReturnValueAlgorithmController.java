@@ -21,10 +21,19 @@ public class ReturnValueAlgorithmController implements ActionListener {
 	private ReturnValue model;
 	
 	private ReturnValueAlgorithm view;
+	
+	public ReturnValueAlgorithmController(ReturnValue m, ReturnValueAlgorithm v) {
+		
+		model = m;
+		
+		view = v;
+	}
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		System.out.println("models value is " + model.getParam());
 		view.setParameter(model.getParam());
 		
 	}
