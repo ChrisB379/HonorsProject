@@ -24,7 +24,7 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 * There is no reason behind the algorithm/numbers used in the return statement.
 	 * Its only purpose is to do a calculation which will loop forever or until a stack overflow.
 	 * 
-	 * @param n Any integer greater than 1 and less than 10
+	 * @param n Any integer greater than 0 and less than 11
 	 * @return the value of the recursive call using the value n
 	 * @since 1.0
 	 */

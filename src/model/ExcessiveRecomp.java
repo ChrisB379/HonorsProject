@@ -27,7 +27,7 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	 * This happens several times, with several calculations needlessly being recalculated and wasting
 	 * processing time on calculations we should already have the result for.
 	 * 
-	 * @param n Any integer greater than 1 and less than 10.
+	 * @param n Any integer greater than 0 and less than 11.
 	 * @return Returns the value of the nth fibonacci number
 	 * @since 1.0
 	 */

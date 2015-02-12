@@ -1,5 +1,7 @@
 package model;
 
+import controller.ReturnValueController;
+
 
 /**
  * An interface for the return value class
@@ -11,5 +13,6 @@ package model;
 public interface IReturnValue extends IAlgorithms  {
 
 	public int factorial(int n);
+
 
 }

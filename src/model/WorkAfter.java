@@ -29,7 +29,7 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	 * Simple example of work after. If the base is not met it recurses until it's met
 	 * A print statement comes after the recursive call to show work being done after
 	 * 
-	 * @param n an integer greater than 1 and less than 10
+	 * @param n an integer greater than 0 and less than 11
 	 * @since 1.1
 	 */
 	public void workAfterNew(int n){

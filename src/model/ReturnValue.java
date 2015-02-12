@@ -25,7 +25,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 * calculate the value of 1*2*3...etc up until whatever the value of n is, in this case 8.
 	 * So the calculation would be 1*2*3*4*5*6*7*8
 	 * 
-	 * @param n Any integer greater than 1 and less than 10.
+	 * @param n Any integer greater than 0 and less than 11.
 	 * @return Returns the product of n and all integers below it
 	 * @since 1.0
 	 */
