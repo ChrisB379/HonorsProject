@@ -25,6 +25,8 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -39,11 +41,16 @@ import view.ExcessiveRecomputation.ExcessiveRecompView;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class ReturnValueView extends JFrame {
+import controller.ReturnValueParameterController;
+import model.ReturnValue;
+
+public class ReturnValueView extends JFrame implements Observer {
 
 
 	private static final long serialVersionUID = 7660595269788434327L;
 	private JPanel contentPane;
+	
+	private ReturnValue model;
 
 	/**
 	 * Launch the application.
@@ -52,7 +59,8 @@ public class ReturnValueView extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ReturnValueView frame = new ReturnValueView();
+					ReturnValue model = new ReturnValue();
+					ReturnValueView frame = new ReturnValueView(model);
 					//Centres the GUI to the middle of the screen
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
@@ -66,7 +74,10 @@ public class ReturnValueView extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ReturnValueView() {
+	public ReturnValueView(ReturnValue r) {
+		
+		model = r;
+		
 		setTitle("Tutorial 2: Return Values");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1253, 807);
@@ -157,17 +168,19 @@ public class ReturnValueView extends JFrame {
 		});
 
 		JButton btnAdvance = new JButton("Advance");
+
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
 			int count = 0;
-			ReturnValueExample r = new ReturnValueExample();
-			ReturnValueAlgorithm r2 = new ReturnValueAlgorithm();
+			ReturnValueExample r = new ReturnValueExample(model);
+			ReturnValueParameterController rvpController = new ReturnValueParameterController(model, r);
+			ReturnValueAlgorithm r2 = new ReturnValueAlgorithm(model);
 			ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
 			ReturnValueResults r4 = new ReturnValueResults();
 			//Used for error control
 			boolean flag;
 			public void actionPerformed(ActionEvent e) {
-
+				btnAdvance.addActionListener(rvpController);
 
 				if(count == 0){
 					//							System.out.println(count);
@@ -292,5 +305,11 @@ public class ReturnValueView extends JFrame {
 				);
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -36,11 +36,15 @@ import view.ReturnValue.ReturnValueView;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import model.ReturnValue;
+
 public class BaseCaseView extends JFrame {
 
 
 	private static final long serialVersionUID = 4604408229700198517L;
 	private JPanel contentPane;
+	
+	private ReturnValue model;
 
 	/**
 	 * Launch the application.
@@ -224,7 +228,7 @@ public class BaseCaseView extends JFrame {
 
 				if(count == 6){
 					dispose();
-					ReturnValueView rvv = new ReturnValueView();
+					ReturnValueView rvv = new ReturnValueView(model);
 					rvv.setVisible(true);
 					rvv.setLocationRelativeTo(null);
 					flag = true;	

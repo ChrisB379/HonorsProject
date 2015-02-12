@@ -27,6 +27,7 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 
+import model.ReturnValue;
 import view.BaseCase.BaseCaseView;
 import view.ExcessiveRecomputation.ExcessiveRecompView;
 import view.Quiz.QuizView;
@@ -40,6 +41,8 @@ public class TutorialMenu extends JFrame {
 	 */
 	private static final long serialVersionUID = -5286626654727946318L;
 	private JPanel contentPane;
+	
+	private ReturnValue model;
 
 	/**
 	 * Launch the application.
@@ -87,7 +90,7 @@ public class TutorialMenu extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				ReturnValueView rvv = new ReturnValueView();
+				ReturnValueView rvv = new ReturnValueView(model);
 				rvv.setVisible(true);
 				rvv.setLocationRelativeTo(null);
 				//new ReturnValueView().setVisible(true);

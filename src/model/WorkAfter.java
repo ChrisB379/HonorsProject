@@ -80,7 +80,7 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	 * There is only one element so the sum will be 1+5
 	 * Finally we just print the value of x which will be 6
 	 * 
-	 * @param n Any integer greater than 1 and less than 10.
+	 * @param n Any integer greater than 0 and less than 11.
 	 * @return There is no return value. Simply a print statement of the value of x after the recursion is finished.
 	 * @since 1.0
 	 */

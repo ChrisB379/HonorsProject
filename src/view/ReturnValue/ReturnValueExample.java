@@ -19,23 +19,46 @@ import view.JTextFieldLimit;
 
 import javax.swing.JTextPane;
 
+import controller.ReturnValueParameterController;
+import model.ReturnValue;
+
 import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.Observable;
+import java.util.Observer;
 
-public class ReturnValueExample extends JPanel {
+public class ReturnValueExample extends JPanel implements Observer {
 
 
 	private static final long serialVersionUID = -3578796091219375513L;
+	
+	private ReturnValue rv;
+	
+	private ReturnValueParameterController rvController;
 
 	private int parameter;
 
-	JTextField txtParameter;
+	//private JTextField txtParameter;
+	
+	private JTextField txtParameterField;
 
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueExample() {
+	public ReturnValueExample(ReturnValue r) {
+		
+		//View holds a reference to the ReturnValue model
+		rv = r;
+		
+		//register View as an observer to ReturnValue model
+		r.addObserver(this);
+		
+		//create Controller - eventHandler - with reference to ReturnValue Model
+		//and reference to ReturnValueExample View for 'call backs'
+		rvController = new ReturnValueParameterController(rv, this);
+		
+		
 		setBackground(UIManager.getColor("Panel.background"));
 		setBorder(null);
 
@@ -57,6 +80,7 @@ public class ReturnValueExample extends JPanel {
 		JTextField txtParameterField = new JTextField();
 		//Limits to only 2 digits
 		txtParameterField.setDocument(new JTextFieldLimit(2));
+		txtParameterField.addActionListener(rvController);
 		txtParameterField.addFocusListener(new FocusListener() {
 
 			@Override
@@ -113,6 +137,15 @@ public class ReturnValueExample extends JPanel {
 
 	public int getParameter(){
 		return parameter;
+	}
+
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		int p = rv.getParam();
+		
+		
 	}
 
 

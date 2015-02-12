@@ -13,6 +13,7 @@ package view.ReturnValue;
 import javax.swing.JPanel;
 
 import java.awt.Color;
+
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -22,8 +23,12 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import view.JTextFieldLimit;
+
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
+
+import controller.ReturnValueParameterController;
+import model.ReturnValue;
 
 public class ReturnValueAlgorithm extends JPanel {
 
@@ -31,12 +36,18 @@ public class ReturnValueAlgorithm extends JPanel {
 	private static final long serialVersionUID = -6312065891931236710L;
 	private JTextField txtNVal;
 	private JTextField txtRtrnVal;
+	
+	private ReturnValue rv;
+	
 
 
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueAlgorithm() {
+	public ReturnValueAlgorithm(ReturnValue r) {
+		
+		rv = r;
+		
 		setBorder(null);
 		//blue rgb value (0,0,192)
 		//purple rgb value (127,0,85)
@@ -57,7 +68,7 @@ public class ReturnValueAlgorithm extends JPanel {
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setLineWrap(true);
 		txtVariables.setEditable(false);
-		txtVariables.setText("Variables will be inserted here");
+		txtVariables.setText(rv.getParam() + " " + "Variables will be inserted here");
 
 		JTextArea txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));

@@ -1,7 +1,5 @@
 package model;
 
-import controller.ReturnValueController;
-
 
 /**
  * An interface for the return value class

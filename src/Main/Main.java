@@ -10,19 +10,13 @@ package Main;
 
 import java.awt.EventQueue;
 
-import controller.ReturnValueController;
-import model.ReturnValue;
 import view.MainMenu;
 
 public class Main {
 	
 	
 	Main(){
-		
-		ReturnValue rv = new ReturnValue();
-		ReturnValueController rvc = new ReturnValueController();
-		
-		rv.addObserver(rvc);
+
 	}
 
 

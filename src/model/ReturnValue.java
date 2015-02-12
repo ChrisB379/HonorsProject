@@ -58,6 +58,8 @@ public class ReturnValue extends Observable implements IReturnValue {
 	@Override
 	public void setParam(int n) {
 		param = n;
+		setChanged();
+		notifyObservers();
 		
 	}
 
