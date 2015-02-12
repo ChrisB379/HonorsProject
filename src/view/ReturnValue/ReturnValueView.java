@@ -200,17 +200,22 @@ public class ReturnValueView extends JFrame implements Observer {
 					flag = false;
 					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
 				}
-
+				
+				
 				if(count == 1 && r.getParameter() > 0 && r.getParameter() < 11){
 					flag = true;
 					cardPanel1.add(r2);
 					cardPanel1.remove(r);
 				} 
 
+
 				if(count == 2){
+					if(model.getParam() != 0)
+						flag = false;
+					else{
 					cardPanel1.add(r3);
 					cardPanel1.remove(r2);
-					flag = true;
+					flag = true; }
 				}
 
 				if(count == 3){

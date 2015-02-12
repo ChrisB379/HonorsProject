@@ -35,6 +35,7 @@ public class ReturnValueAlgorithmController implements ActionListener {
 		// TODO Auto-generated method stub
 		System.out.println("models value is " + model.getParam());
 		view.setParameter(model.getParam());
+		System.out.println(view.getParameter());
 		
 	}
 	

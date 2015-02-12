@@ -29,6 +29,7 @@ import view.JTextFieldLimit;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
+import controller.ReturnValueAlgorithmController;
 import controller.ReturnValueParameterController;
 import model.ReturnValue;
 
@@ -38,12 +39,13 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private static final long serialVersionUID = -6312065891931236710L;
 	private JTextField txtNVal;
 	private JTextField txtRtrnVal;
+	private JTextArea txtVariables;
 	
 	private int parameter;
 	
 	private ReturnValue rv;
 	
-
+	private ReturnValueAlgorithmController rvac;
 
 	/**
 	 * Create the panel.
@@ -51,7 +53,10 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	public ReturnValueAlgorithm(ReturnValue r) {
 		
 		rv = r;
+		//this is causing a null pointer exception
 		r.addObserver(this);
+		
+		rvac = new ReturnValueAlgorithmController(rv, this);
 		
 		setBorder(null);
 		//blue rgb value (0,0,192)
@@ -67,13 +72,12 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 				+ "<br>} </code> </html>");
 		txtFactorial.setEditable(false);
 
-		JTextArea txtVariables = new JTextArea();
+		JTextField txtVariables = new JTextField();
+		txtVariables.addActionListener(rvac);
 		txtVariables.setBorder(BorderFactory.createLineBorder(Color.black));
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
-		txtVariables.setWrapStyleWord(true);
-		txtVariables.setLineWrap(true);
 		txtVariables.setEditable(false);
-		txtVariables.setText(parameter + " " + "Variables will be inserted here");
+		txtVariables.setText(getParameter() + " " + "Variables will be inserted here");
 
 		JTextArea txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
@@ -168,11 +172,18 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
-		
+		setParameter(rv.getParam());
+		System.out.println("rv " + rv.getParam());
+		txtVariables.setText(getParameter() + " Variables will be inserted here");
 	}
 
 	public void setParameter(int n){
 		parameter = n;
+		
+	}
+	
+	public int getParameter(){
+		return parameter;
 		
 	}
 

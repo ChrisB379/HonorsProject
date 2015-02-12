@@ -36,7 +36,7 @@ public class ReturnValueParameterController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		model.setParam(view.getParameter());
-		System.out.println(model.getParam());
+		System.out.println("Parameter Controller model param shows " + model.getParam());
 		
 	}
 

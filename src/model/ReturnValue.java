@@ -58,6 +58,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 	@Override
 	public void setParam(int n) {
 		param = n;
+		System.out.println("n in return value after set para is called " + n);
 		setChanged();
 		notifyObservers();
 		
