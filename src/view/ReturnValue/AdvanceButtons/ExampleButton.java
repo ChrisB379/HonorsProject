@@ -4,6 +4,10 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+
+import model.ReturnValue;
+import view.ReturnValue.ReturnValueView;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -11,15 +15,21 @@ public class ExampleButton extends JPanel {
 
 
 	private static final long serialVersionUID = -6156974517525499165L;
+	private ReturnValueView r;
+	private ReturnValue r1;
 
 	/**
 	 * Create the panel.
 	 */
-	public ExampleButton() {
+	public ExampleButton(ReturnValueView rvv) {
+		
+		r = rvv;
 		
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				r.switchCards1();
 			}
 		});
 		

@@ -57,6 +57,8 @@ public class ReturnValueView extends JFrame implements Observer {
 	
 	private ExampleButton eb;
 	private AlgorithmButton ab;
+	
+	private ReturnValueExample r1;
 	private ReturnValueAlgorithm r2;
 	
 	private ReturnValue model;
@@ -86,6 +88,14 @@ public class ReturnValueView extends JFrame implements Observer {
 	public ReturnValueView(ReturnValue r) {
 		
 		model = r;
+		
+		ReturnValueView test = this;
+		
+		 r1 = new ReturnValueExample(model);
+		 r2 = new ReturnValueAlgorithm(model);
+		 
+		 ab = new AlgorithmButton();
+		 eb = new ExampleButton(this);
 		
 		setTitle("Tutorial 2: Return Values");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -132,7 +142,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JPanel cardPanel1 = new JPanel();
+		cardPanel1 = new JPanel();
 		cardPanel1.setBorder(null);
 
 		JPanel cardPanel2 = new JPanel();
@@ -177,6 +187,8 @@ public class ReturnValueView extends JFrame implements Observer {
 		});
 
 		JButton btnAdvance = new JButton("Advance");
+		
+
 
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
@@ -188,7 +200,7 @@ public class ReturnValueView extends JFrame implements Observer {
 			ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
 			ReturnValueResults r4 = new ReturnValueResults();
 			
-			ExampleButton eb = new ExampleButton();
+			ExampleButton eb = new ExampleButton(test);
 			//Used for error control
 			boolean flag;
 			public void actionPerformed(ActionEvent e) {
@@ -202,7 +214,7 @@ public class ReturnValueView extends JFrame implements Observer {
 					//							System.out.println(count);
 					cardPanel1.add(r);
 					cardPanel1.remove(cp1GroupPanel);
-					
+
 					cardPanel2.add(eb);
 					cardPanel2.remove(advancePanel);
 					
@@ -340,10 +352,10 @@ public class ReturnValueView extends JFrame implements Observer {
 	}
 	
 	public void switchCards1(){
-		
-		
+//		cardPanel1 = new JPanel();
+
 		cardPanel1.add(r2);
-		cardPanel1.remove(cp1GroupPanel);
+		cardPanel1.remove(r1);
 		
 		cardPanel2.add(ab);
 		cardPanel2.remove(eb);
