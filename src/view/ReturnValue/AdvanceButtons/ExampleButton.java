@@ -16,7 +16,6 @@ public class ExampleButton extends JPanel {
 
 	private static final long serialVersionUID = -6156974517525499165L;
 	private ReturnValueView r;
-	private ReturnValue r1;
 
 	/**
 	 * Create the panel.

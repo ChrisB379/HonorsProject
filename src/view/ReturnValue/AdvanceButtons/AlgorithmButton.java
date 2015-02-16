@@ -19,15 +19,15 @@ public class AlgorithmButton extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public AlgorithmButton() {
+	public AlgorithmButton(ReturnValueView rvv) {
 		
-
+		r = rvv;
 		
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				r.switchCards1();
+				r.switchCards2();
 				
 			}
 		});

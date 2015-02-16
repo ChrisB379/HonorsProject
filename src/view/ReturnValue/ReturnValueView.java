@@ -38,6 +38,7 @@ import javax.swing.JMenuItem;
 import view.About;
 import view.MainMenu;
 import view.ExcessiveRecomputation.ExcessiveRecompView;
+import view.ReturnValue.AdvanceButtons.Algorithm2Button;
 import view.ReturnValue.AdvanceButtons.AlgorithmButton;
 import view.ReturnValue.AdvanceButtons.ExampleButton;
 
@@ -53,13 +54,18 @@ public class ReturnValueView extends JFrame implements Observer {
 	private static final long serialVersionUID = 7660595269788434327L;
 	private JPanel contentPane;
 	private JPanel cardPanel1,cardPanel2;
-	private JPanel cp1GroupPanel;
+	private JPanel advancePanel;
+	
+	private JButton btnAdvance,btnMenu;
 	
 	private ExampleButton eb;
 	private AlgorithmButton ab;
+	private Algorithm2Button ab2;
 	
 	private ReturnValueExample r1;
 	private ReturnValueAlgorithm r2;
+	private ReturnValueAlgorithm2 r3;
+	private ReturnValueResults r4;
 	
 	private ReturnValue model;
 
@@ -93,9 +99,13 @@ public class ReturnValueView extends JFrame implements Observer {
 		
 		 r1 = new ReturnValueExample(model);
 		 r2 = new ReturnValueAlgorithm(model);
+		 r3 = new ReturnValueAlgorithm2();
+		 r4 = new ReturnValueResults();
 		 
-		 ab = new AlgorithmButton();
 		 eb = new ExampleButton(this);
+		 ab = new AlgorithmButton(this);
+		 ab2 = new Algorithm2Button(this);
+		 
 		
 		setTitle("Tutorial 2: Return Values");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -145,7 +155,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		cardPanel1 = new JPanel();
 		cardPanel1.setBorder(null);
 
-		JPanel cardPanel2 = new JPanel();
+		cardPanel2 = new JPanel();
 
 		JPanel cp1GroupPanel = new JPanel();
 
@@ -171,10 +181,10 @@ public class ReturnValueView extends JFrame implements Observer {
 				);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
-		JPanel advancePanel = new JPanel();
+		advancePanel = new JPanel();
 		cardPanel2.add(advancePanel, "name_12410711717075");
 
-		JButton btnMenu = new JButton("Main Menu");
+		btnMenu = new JButton("Main Menu");
 		//Only want it visible once the user is on the last tutorial slide
 		btnMenu.setVisible(false);
 		btnMenu.addActionListener(new ActionListener() {
@@ -186,33 +196,33 @@ public class ReturnValueView extends JFrame implements Observer {
 			}
 		});
 
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 		
 
 
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
 			int count = 0;
-			ReturnValueExample r = new ReturnValueExample(model);
-			ReturnValueParameterController rvpController = new ReturnValueParameterController(model, r);
-			ReturnValueAlgorithm r2 = new ReturnValueAlgorithm(model);
-			ReturnValueAlgorithmController rvac = new ReturnValueAlgorithmController(model,r2);
-			ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
-			ReturnValueResults r4 = new ReturnValueResults();
+//			ReturnValueExample r = new ReturnValueExample(model);
+//			ReturnValueParameterController rvpController = new ReturnValueParameterController(model, r);
+//			ReturnValueAlgorithm r2 = new ReturnValueAlgorithm(model);
+//			ReturnValueAlgorithmController rvac = new ReturnValueAlgorithmController(model,r2);
+//			ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
+//			ReturnValueResults r4 = new ReturnValueResults();
 			
-			ExampleButton eb = new ExampleButton(test);
+			//ExampleButton eb = new ExampleButton(test);
 			//Used for error control
 			boolean flag;
 			public void actionPerformed(ActionEvent e) {
-				btnAdvance.addActionListener(rvpController);
-				btnAdvance.addActionListener(rvac);
+//				btnAdvance.addActionListener(rvpController);
+//				btnAdvance.addActionListener(rvac);
 
 				
 				
 				
 //				if(count == 0){
 					//							System.out.println(count);
-					cardPanel1.add(r);
+					cardPanel1.add(r1);
 					cardPanel1.remove(cp1GroupPanel);
 
 					cardPanel2.add(eb);
@@ -357,8 +367,33 @@ public class ReturnValueView extends JFrame implements Observer {
 		cardPanel1.add(r2);
 		cardPanel1.remove(r1);
 		
+
 		cardPanel2.add(ab);
 		cardPanel2.remove(eb);
+		
+	}
+	
+	public void switchCards2(){
+		
+		cardPanel1.add(r3);
+		cardPanel1.remove(r2);
+		
+		cardPanel2.add(ab2);
+		cardPanel2.remove(ab);
+		
+		
+	}
+	
+	public void switchCards3(){
+		
+		cardPanel1.add(r4);
+		cardPanel1.remove(r3);
+		
+		cardPanel2.add(advancePanel);
+		btnAdvance.setVisible(false);
+		btnMenu.setVisible(true);
+		cardPanel2.remove(ab2);
+		btnMenu.setVisible(true);
 		
 	}
 }
