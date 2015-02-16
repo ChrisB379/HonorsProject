@@ -38,6 +38,8 @@ import javax.swing.JMenuItem;
 import view.About;
 import view.MainMenu;
 import view.ExcessiveRecomputation.ExcessiveRecompView;
+import view.ReturnValue.AdvanceButtons.AlgorithmButton;
+import view.ReturnValue.AdvanceButtons.ExampleButton;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
@@ -50,6 +52,12 @@ public class ReturnValueView extends JFrame implements Observer {
 
 	private static final long serialVersionUID = 7660595269788434327L;
 	private JPanel contentPane;
+	private JPanel cardPanel1,cardPanel2;
+	private JPanel cp1GroupPanel;
+	
+	private ExampleButton eb;
+	private AlgorithmButton ab;
+	private ReturnValueAlgorithm r2;
 	
 	private ReturnValue model;
 
@@ -127,7 +135,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		JPanel cardPanel1 = new JPanel();
 		cardPanel1.setBorder(null);
 
-		JPanel cardPanel3 = new JPanel();
+		JPanel cardPanel2 = new JPanel();
 
 		JPanel cp1GroupPanel = new JPanel();
 
@@ -138,7 +146,7 @@ public class ReturnValueView extends JFrame implements Observer {
 						.addGap(31)
 						.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 871, GroupLayout.PREFERRED_SIZE)
 						.addGap(32)
-						.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
 						.addGap(51))
 				);
 		gl_contentPane.setVerticalGroup(
@@ -148,13 +156,13 @@ public class ReturnValueView extends JFrame implements Observer {
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(cardPanel1, GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
 								.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-										.addComponent(cardPanel3, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
+										.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
 										.addGap(51))))
 				);
-		cardPanel3.setLayout(new CardLayout(0, 0));
+		cardPanel2.setLayout(new CardLayout(0, 0));
 
 		JPanel advancePanel = new JPanel();
-		cardPanel3.add(advancePanel, "name_12410711717075");
+		cardPanel2.add(advancePanel, "name_12410711717075");
 
 		JButton btnMenu = new JButton("Main Menu");
 		//Only want it visible once the user is on the last tutorial slide
@@ -179,63 +187,73 @@ public class ReturnValueView extends JFrame implements Observer {
 			ReturnValueAlgorithmController rvac = new ReturnValueAlgorithmController(model,r2);
 			ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
 			ReturnValueResults r4 = new ReturnValueResults();
+			
+			ExampleButton eb = new ExampleButton();
 			//Used for error control
 			boolean flag;
 			public void actionPerformed(ActionEvent e) {
 				btnAdvance.addActionListener(rvpController);
 				btnAdvance.addActionListener(rvac);
 
-				if(count == 0){
+				
+				
+				
+//				if(count == 0){
 					//							System.out.println(count);
 					cardPanel1.add(r);
 					cardPanel1.remove(cp1GroupPanel);
+					
+					cardPanel2.add(eb);
+					cardPanel2.remove(advancePanel);
+					
+//					cardPanel2.
 					//						cardPanel2.remove(cp2GroupPanel);
 					//						cardPanel3.remove(advancePanel);
 					//						advancePanel.setVisible(false); 
-					flag = true;
-				}
-
-				//Handles parameters that are not within the specified bound
-				if(count == 1 && r.getParameter() < 1 || r.getParameter() > 11){
-					flag = false;
-					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
-				}
-				
-				
-				if(count == 1 && r.getParameter() > 0 && r.getParameter() < 11){
-					flag = true;
-					cardPanel1.add(r2);
-					cardPanel1.remove(r);
-				} 
-
-
-				if(count == 2){
-					if(model.getParam() != 0)
-						flag = false;
-					else{
-					cardPanel1.add(r3);
-					cardPanel1.remove(r2);
-					flag = true; }
-				}
-
-				if(count == 3){
-					cardPanel1.add(r4);
-					cardPanel1.remove(r3);
-					btnAdvance.setText("Tutorial 3");
-					btnMenu.setVisible(true);
-					flag = true;
-				}
-
-				if(count == 4){
-					dispose();
-					ExcessiveRecompView erv = new ExcessiveRecompView();
-					erv.setVisible(true);
-					erv.setLocationRelativeTo(null);
-					flag = true;
-				}
-
-				if(flag)
-					count++;
+//					flag = true;
+//				}
+//
+//				//Handles parameters that are not within the specified bound
+//				if(count == 1 && r.getParameter() < 1 || r.getParameter() > 11){
+//					flag = false;
+//					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+//				}
+//				
+//				
+//				if(count == 1 && r.getParameter() > 0 && r.getParameter() < 11){
+//					flag = true;
+//					cardPanel1.add(r2);
+//					cardPanel1.remove(r);
+//				} 
+//
+//
+//				if(count == 2){
+//					if(model.getParam() != 0)
+//						flag = false;
+//					else{
+//					cardPanel1.add(r3);
+//					cardPanel1.remove(r2);
+//					flag = true; }
+//				}
+//
+//				if(count == 3){
+//					cardPanel1.add(r4);
+//					cardPanel1.remove(r3);
+//					btnAdvance.setText("Tutorial 3");
+//					btnMenu.setVisible(true);
+//					flag = true;
+//				}
+//
+//				if(count == 4){
+//					dispose();
+//					ExcessiveRecompView erv = new ExcessiveRecompView();
+//					erv.setVisible(true);
+//					erv.setLocationRelativeTo(null);
+//					flag = true;
+//				}
+//
+//				if(flag)
+//					count++;
 				//						System.out.println("count after increment is " + count);
 			} 
 		});
@@ -318,6 +336,17 @@ public class ReturnValueView extends JFrame implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public void switchCards1(){
+		
+		
+		cardPanel1.add(r2);
+		cardPanel1.remove(cp1GroupPanel);
+		
+		cardPanel2.add(ab);
+		cardPanel2.remove(eb);
 		
 	}
 }
