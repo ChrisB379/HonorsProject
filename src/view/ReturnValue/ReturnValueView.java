@@ -6,7 +6,7 @@ package view.ReturnValue;
  * A parameter integer can be entered to be used in the next GUI screen.
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 1.2
  * @since 1.0
  */
 
@@ -364,6 +364,23 @@ public class ReturnValueView extends JFrame implements Observer {
 		
 	}
 	
+	
+	/**
+	 * This controls the switching of panels within the card panels
+	 * 
+	 * This method is called by the ExampleButton class
+	 * 
+	 * It will proceed to the next page if the conditions are met
+	 * 
+	 * The if condition is used as a parameter check to ensure it is greater than 0 and less than 11
+	 * Otherwise a popup dialogue asks the user to change their input to match the parameters
+	 * 
+	 * The current panel is removed(returnValueExample) and replaced by the ReturnValueAlgorithm
+	 * 
+	 * The current advance button is also removed and replaced by the next button which is the AlgorithmButton
+	 * 
+	 * @since 1.2
+	 */
 	public void switchCards1(){
 
 		if(r1.getParameter() < 1 || r1.getParameter() > 11){
@@ -381,6 +398,18 @@ public class ReturnValueView extends JFrame implements Observer {
 		}
 	}
 	
+	
+	/**
+	 * This controls the switching of panels within the card panels
+	 * 
+	 * This method is called by the AlgorithmButton class
+	 * 
+	 * It removes the current panel(ReturnValueAlgorith) and replaces it with ReturnValueAlgorithm2
+	 * 
+	 * The current advance button is also removed and replaced by the next button which is the Algorithm2Button
+	 * 
+	 * @since 1.2
+	 */
 	public void switchCards2(){
 		
 		cardPanel1.add(r3);
@@ -392,22 +421,39 @@ public class ReturnValueView extends JFrame implements Observer {
 		
 	}
 	
+	/**
+	 * This controls the switching of panels within the card panels
+	 * 
+	 * This method is called by the Algorithm2Button class
+	 * 
+	 * 
+	 * It removes the current panel(ReturnValueAlgorith2) and replaces it with ReturnValueResults
+	 * 
+	 * The current advance button is also removed and replaced by the next button which is the ResultsButton
+	 * 
+	 * @since 1.2
+	 */
 	public void switchCards3(){
 		
 		cardPanel1.add(r4);
 		cardPanel1.remove(r3);
 		
 		cardPanel2.add(rb);
-//		cardPanel2.add(advancePanel);
-//		btnAdvance.setVisible(false);
-//		btnMenu.setVisible(true);
 		cardPanel2.remove(ab2);
 		btnMenu.setVisible(true);
 		
 	}
 	
+	/**
+	 * This method is used to advance the user to the next Tutorial
+	 * 
+	 * This is called by the ResultsButton class
+	 * It is used to dispose of the current frame and create a new one
+	 * The new one is the ExcessiveRecompView which is tutorial 3
+	 * 
+	 * @since 1.2
+	 */
 	public void advanceTut(){
-		
 		dispose();
 		ExcessiveRecompView erv = new ExcessiveRecompView();
 		erv.setVisible(true);
@@ -415,8 +461,17 @@ public class ReturnValueView extends JFrame implements Observer {
 		
 	}
 	
+	/**
+	 * This method is used to take the user to the main menu
+	 * 
+	 * This is called by the ResultsButton class
+	 * It is used to dispose of the current frame and create a new one
+	 * The new one is the main menu
+	 * 
+	 * @since 1.2
+	 * 
+	 */
 	public void mainMenu(){
-		
 		dispose();
 		MainMenu m = new MainMenu();
 		m.setVisible(true);
