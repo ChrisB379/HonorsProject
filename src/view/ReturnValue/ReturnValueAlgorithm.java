@@ -29,8 +29,8 @@ import view.JTextFieldLimit;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
-import controller.ReturnValueAlgorithmController;
-import controller.ReturnValueParameterController;
+import controller.ReturnValue.RVAlgorithmController;
+import controller.ReturnValue.RVParameterController;
 import model.ReturnValue;
 
 public class ReturnValueAlgorithm extends JPanel implements Observer {
@@ -39,13 +39,13 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private static final long serialVersionUID = -6312065891931236710L;
 	private JTextField txtNVal;
 	private JTextField txtRtrnVal;
-	private JTextArea txtVariables;
+	private JTextField txtVariables;
 	
 	private int parameter;
 	
 	private ReturnValue rv;
 	
-	private ReturnValueAlgorithmController rvac;
+	private RVAlgorithmController rvac;
 
 	/**
 	 * Create the panel.
@@ -56,7 +56,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		//this is causing a null pointer exception
 		r.addObserver(this);
 		
-		rvac = new ReturnValueAlgorithmController(rv, this);
+		rvac = new RVAlgorithmController(rv, this);
 		
 		setBorder(null);
 		//blue rgb value (0,0,192)
@@ -72,7 +72,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 				+ "<br>} </code> </html>");
 		txtFactorial.setEditable(false);
 
-		JTextField txtVariables = new JTextField();
+		txtVariables = new JTextField();
 		txtVariables.addActionListener(rvac);
 		txtVariables.setBorder(BorderFactory.createLineBorder(Color.black));
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));

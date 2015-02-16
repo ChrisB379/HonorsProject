@@ -45,8 +45,8 @@ import view.ReturnValue.AdvanceButtons.ResultsButton;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-import controller.ReturnValueAlgorithmController;
-import controller.ReturnValueParameterController;
+import controller.ReturnValue.RVAlgorithmController;
+import controller.ReturnValue.RVParameterController;
 import model.ReturnValue;
 
 public class ReturnValueView extends JFrame implements Observer {
@@ -104,7 +104,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		 r3 = new ReturnValueAlgorithm2();
 		 r4 = new ReturnValueResults();
 		 
-		 eb = new ExampleButton(this);
+		 eb = new ExampleButton(this,model,r1);
 		 ab = new AlgorithmButton(this);
 		 ab2 = new Algorithm2Button(this);
 		 rb = new ResultsButton(this);

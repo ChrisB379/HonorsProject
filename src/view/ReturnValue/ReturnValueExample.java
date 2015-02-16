@@ -19,7 +19,7 @@ import view.JTextFieldLimit;
 
 import javax.swing.JTextPane;
 
-import controller.ReturnValueParameterController;
+import controller.ReturnValue.RVParameterController;
 import model.ReturnValue;
 
 import java.awt.Font;
@@ -28,6 +28,8 @@ import java.awt.event.FocusListener;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.JButton;
+
 public class ReturnValueExample extends JPanel implements Observer {
 
 
@@ -35,7 +37,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 	
 	private ReturnValue rv;
 	
-	private ReturnValueParameterController rvController;
+	private RVParameterController rvController;
 
 	private int parameter;
 
@@ -56,7 +58,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 		
 		//create Controller - eventHandler - with reference to ReturnValue Model
 		//and reference to ReturnValueExample View for 'call backs'
-		rvController = new ReturnValueParameterController(rv, this);
+		rvController = new RVParameterController(rv, this);
 		
 		
 		setBackground(UIManager.getColor("Panel.background"));
@@ -98,33 +100,34 @@ public class ReturnValueExample extends JPanel implements Observer {
 			}
 		});
 
+
 		//TODO figure out what here is making such a massive gap between the 2 text areas
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-						.addGap(22)
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(txtExample, GroupLayout.PREFERRED_SIZE, 841, GroupLayout.PREFERRED_SIZE)
-								.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(txtNextPage, GroupLayout.PREFERRED_SIZE, 574, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)))
-										.addGap(63))
-				);
+					.addGap(22)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(txtExample, GroupLayout.PREFERRED_SIZE, 841, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(txtNextPage, GroupLayout.PREFERRED_SIZE, 574, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)))
+					.addGap(63))
+		);
 		groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(txtExample, GroupLayout.PREFERRED_SIZE, 683, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(txtNextPage, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
-								.addGroup(groupLayout.createSequentialGroup()
-										.addGap(11)
-										.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)))
-										.addGap(20))
-				);
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtExample, GroupLayout.PREFERRED_SIZE, 683, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(txtNextPage, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(11)
+							.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)))
+					.addGap(20))
+		);
 		setLayout(groupLayout);
 
 	}

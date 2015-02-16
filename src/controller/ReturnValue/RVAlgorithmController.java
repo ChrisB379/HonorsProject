@@ -1,4 +1,4 @@
-package controller;
+package controller.ReturnValue;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,13 +16,13 @@ import view.ReturnValue.ReturnValueAlgorithm;
  *
  */
 
-public class ReturnValueAlgorithmController implements ActionListener {
+public class RVAlgorithmController implements ActionListener {
 	
 	private ReturnValue model;
 	
 	private ReturnValueAlgorithm view;
 	
-	public ReturnValueAlgorithmController(ReturnValue m, ReturnValueAlgorithm v) {
+	public RVAlgorithmController(ReturnValue m, ReturnValueAlgorithm v) {
 		
 		model = m;
 		

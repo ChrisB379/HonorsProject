@@ -5,7 +5,9 @@ import javax.swing.JButton;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
+import controller.ReturnValue.RVParameterController;
 import model.ReturnValue;
+import view.ReturnValue.ReturnValueExample;
 import view.ReturnValue.ReturnValueView;
 
 import java.awt.event.ActionListener;
@@ -16,17 +18,29 @@ public class ExampleButton extends JPanel {
 
 	private static final long serialVersionUID = -6156974517525499165L;
 	private ReturnValueView r;
+	private ReturnValue r1;
+	private ReturnValueExample rve;
+	
+	private RVParameterController p;
 
 	/**
 	 * Create the panel.
 	 */
-	public ExampleButton(ReturnValueView rvv) {
+	public ExampleButton(ReturnValueView rvv,ReturnValue rv, ReturnValueExample reg) {
 		
 		r = rvv;
 		
+		r1 = rv;
+		
+		rve = reg;
+		
+		p = new RVParameterController(r1, rve);
+		
 		JButton btnAdvance = new JButton("Advance");
+		btnAdvance.addActionListener(p);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				
 				r.switchCards1();
 			}
