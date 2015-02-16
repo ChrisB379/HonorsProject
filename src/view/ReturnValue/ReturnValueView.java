@@ -41,6 +41,7 @@ import view.ExcessiveRecomputation.ExcessiveRecompView;
 import view.ReturnValue.AdvanceButtons.Algorithm2Button;
 import view.ReturnValue.AdvanceButtons.AlgorithmButton;
 import view.ReturnValue.AdvanceButtons.ExampleButton;
+import view.ReturnValue.AdvanceButtons.ResultsButton;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
@@ -61,6 +62,7 @@ public class ReturnValueView extends JFrame implements Observer {
 	private ExampleButton eb;
 	private AlgorithmButton ab;
 	private Algorithm2Button ab2;
+	private ResultsButton rb;
 	
 	private ReturnValueExample r1;
 	private ReturnValueAlgorithm r2;
@@ -105,6 +107,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		 eb = new ExampleButton(this);
 		 ab = new AlgorithmButton(this);
 		 ab2 = new Algorithm2Button(this);
+		 rb = new ResultsButton(this);
 		 
 		
 		setTitle("Tutorial 2: Return Values");
@@ -362,7 +365,12 @@ public class ReturnValueView extends JFrame implements Observer {
 	}
 	
 	public void switchCards1(){
-//		cardPanel1 = new JPanel();
+
+		if(r1.getParameter() < 1 || r1.getParameter() > 11){
+		JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+	}
+
+	if (r1.getParameter() > 0 && r1.getParameter() < 11){
 
 		cardPanel1.add(r2);
 		cardPanel1.remove(r1);
@@ -370,7 +378,7 @@ public class ReturnValueView extends JFrame implements Observer {
 
 		cardPanel2.add(ab);
 		cardPanel2.remove(eb);
-		
+		}
 	}
 	
 	public void switchCards2(){
@@ -389,11 +397,29 @@ public class ReturnValueView extends JFrame implements Observer {
 		cardPanel1.add(r4);
 		cardPanel1.remove(r3);
 		
-		cardPanel2.add(advancePanel);
-		btnAdvance.setVisible(false);
-		btnMenu.setVisible(true);
+		cardPanel2.add(rb);
+//		cardPanel2.add(advancePanel);
+//		btnAdvance.setVisible(false);
+//		btnMenu.setVisible(true);
 		cardPanel2.remove(ab2);
 		btnMenu.setVisible(true);
 		
+	}
+	
+	public void advanceTut(){
+		
+		dispose();
+		ExcessiveRecompView erv = new ExcessiveRecompView();
+		erv.setVisible(true);
+		erv.setLocationRelativeTo(null);
+		
+	}
+	
+	public void mainMenu(){
+		
+		dispose();
+		MainMenu m = new MainMenu();
+		m.setVisible(true);
+		m.setLocationRelativeTo(null);
 	}
 }
