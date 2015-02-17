@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
@@ -109,6 +110,12 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 */
 	public void addToArray(int nVal, int retVal){
 		
+		if(paramArray == null)
+			paramArray = new ArrayList<Integer>();
+		
+		if(returnV == null)
+			returnV = new ArrayList<Integer>();
+			
 		paramArray.add(nVal);
 		
 		returnV.add(retVal);
@@ -120,6 +127,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 * 
 	 * @param n the position of the element in the array to be fetched
 	 * @return the value held at array position n-1
+	 * @since 1.1
 	 */
 	
 	public int getParamArray(int n){
@@ -131,6 +139,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 * 
 	 * @param n the position of the element in the array to be fetched
 	 * @return the value held at array position n-1
+	 * @since 1.1
 	 */
 	public int getReturnVArray(int n){
 		return returnV.get(n-1);
@@ -139,8 +148,8 @@ public class ReturnValue extends Observable implements IReturnValue {
 
 	/**
 	 * Will be used to clear the arrays after the tutorials have been completed
-	 * This is just a safety measure in case the user finishes the tutorial and comes back to it,
-	 * only to find the array still filled from their first try.
+	 * This is just a safety measure in case the user finishes the tutorial and comes back to redo it,
+	 * only to find the array still filled from their first try causing wrong results to display.
 	 * 
 	 * @since 1.1
 	 */
@@ -148,7 +157,13 @@ public class ReturnValue extends Observable implements IReturnValue {
 		paramArray.clear();
 		returnV.clear();
 	}
+	
+	public List<Integer> retArr(){
+		return returnV;
+	}
 
-
+	public List<Integer> paramArr(){
+		return paramArray;
+	}
 
 }

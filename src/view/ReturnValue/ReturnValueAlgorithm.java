@@ -13,6 +13,8 @@ package view.ReturnValue;
 import javax.swing.JPanel;
 
 import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -28,8 +30,10 @@ import view.JTextFieldLimit;
 
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
+import javax.swing.text.rtf.RTFEditorKit;
 
 import controller.ReturnValue.RVAlgorithmController;
+import controller.ReturnValue.RVSubmitController;
 import model.IReturnValue;
 import model.ReturnValue;
 
@@ -40,25 +44,30 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private JTextField txtNVal;
 	private JTextField txtRtrnVal;
 	private JTextField txtVariables;
+	
+	private JButton btnSubmit;
 
 	private int parameter;
+	private int nVal,RtrnVal;
+	private int count;
 
-	private IReturnValue rv;
+	private IReturnValue model;
 
 	private RVAlgorithmController rvac;
+	private RVSubmitController rvsC;
 
 	/**
 	 * Create the panel.
 	 */
 	public ReturnValueAlgorithm(IReturnValue r) {
 
-		rv = r;
-		
+		model = r;
 		
 		//this is causing a null pointer exception
 		((Observable) r).addObserver(this);
 
-		rvac = new RVAlgorithmController(rv, this);
+		rvac = new RVAlgorithmController(model, this);
+		rvsC = new RVSubmitController(model, this);
 
 		setBorder(null);
 		//blue rgb value (0,0,192)
@@ -92,9 +101,27 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		//Setting a limit on how many digits can be entered.7 should suffice for this question as 10! = 3628800
 		txtNVal.setDocument(new JTextFieldLimit(7));
 		txtNVal.setColumns(10);
+		txtNVal.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				int n = Integer.parseInt(txtNVal.getText());
+				setNVal(n);
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 
-		JButton btnSubmit = new JButton("Submit");
+		btnSubmit = new JButton("Submit");
+		btnSubmit.addActionListener(rvsC);
 
+			
 		JTextArea txtrTheCurrent = new JTextArea();
 		txtrTheCurrent.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheCurrent.setWrapStyleWord(true);
@@ -106,6 +133,22 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		//Setting a limit on how many digits can be entered.7 should suffice for this question as 10! = 3628800
 		txtRtrnVal.setDocument(new JTextFieldLimit(7));
 		txtRtrnVal.setColumns(10);
+		txtRtrnVal.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				int n = Integer.parseInt(txtRtrnVal.getText());
+				setRtrnVal(n);
+				
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 
 		JLabel lblExample = new JLabel("Example 1");
 
@@ -174,8 +217,9 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
-		setParameter(rv.getParam());
-		System.out.println("rv " + rv.getParam());
+		setParameter(model.getParam());
+		System.out.println("rv " + model.getParam());
+		count = model.getParam();
 		txtVariables.setText("n = " + getParameter());
 	}
 
@@ -187,6 +231,68 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	public int getParameter(){
 		return parameter;
 
+	}
+
+	/**
+	 * Sets the nVal to be the users input
+	 * 
+	 * @param n the users input for n
+	 */
+	public void setNVal(int n){
+		nVal = n;
+	}
+
+	/**
+	 * Returns the value of the txtNVal text field to be used by the controller
+	 * 
+	 * @return the value of the txtNVal text field
+	 */
+	public int getNVal(){
+		return nVal;
+	}
+
+	/**
+	 * Sets the RtrnVal to be the users input
+	 * 
+	 * @param n the users input for n
+	 */
+	public void setRtrnVal(int n){
+		RtrnVal = n;
+	}
+	
+	/**
+	 * Returns the value of the txtRtrnVal text field to be used by the controller
+	 * 
+	 * @return the value of the txtRtrnVal text field
+	 */
+	public int getRtrnVal(){
+		return RtrnVal;
+	}
+	
+	public void setTxtVariables(){
+		int para = getParameter();
+		String stringN = "n";
+		String space = " ";
+		String equals = "=";
+		String whole = stringN + space + equals + space + para;
+		String whole2 = stringN + space + equals + space + (para--);
+		String newS = whole + space + whole2;
+		whole = whole + space + whole2;
+		txtVariables.setText(whole);
+	}
+	
+	
+	public void hideSubmit(){
+		
+		btnSubmit.setVisible(false);
+	}
+	
+	public void decrementCount(){
+		count--;
+	}
+	
+	public int getCount(){
+		return count;
 	}
 
 }

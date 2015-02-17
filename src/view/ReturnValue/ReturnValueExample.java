@@ -21,22 +21,18 @@ import javax.swing.JTextPane;
 
 import controller.ReturnValue.RVParameterController;
 import model.IReturnValue;
-import model.ReturnValue;
-
 import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.JButton;
-
 public class ReturnValueExample extends JPanel implements Observer {
 
 
 	private static final long serialVersionUID = -3578796091219375513L;
 	
-	private IReturnValue rv;
+	private IReturnValue model;
 	
 	private RVParameterController rvController;
 
@@ -52,7 +48,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 	public ReturnValueExample(IReturnValue r) {
 		
 		//View holds a reference to the ReturnValue model
-		rv = r;
+		model = r;
 		
 		
 		//register View as an observer to ReturnValue model
@@ -60,7 +56,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 		
 		//create Controller - eventHandler - with reference to ReturnValue Model
 		//and reference to ReturnValueExample View for 'call backs'
-		rvController = new RVParameterController(rv, this);
+		rvController = new RVParameterController(model, this);
 		
 		
 		setBackground(UIManager.getColor("Panel.background"));
@@ -89,7 +85,6 @@ public class ReturnValueExample extends JPanel implements Observer {
 
 			@Override
 			public void focusLost(FocusEvent e) {
-				// TODO Auto-generated method stub
 				int n = Integer.parseInt(txtParameterField.getText());
 				setParameter(n);
 
@@ -97,7 +92,6 @@ public class ReturnValueExample extends JPanel implements Observer {
 
 			@Override
 			public void focusGained(FocusEvent e) {
-				// TODO Auto-generated method stub
 
 			}
 		});
@@ -148,7 +142,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		// TODO Auto-generated method stub
-		int p = rv.getParam();
+		int p = model.getParam();
 		
 		
 	}
