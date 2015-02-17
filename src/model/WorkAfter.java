@@ -39,13 +39,13 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	public void workAfter(int n){
 
 		if(n == 1)
-			System.out.println("Base case statement showing the value of n is " + n);
+			System.out.println("Base case statement, showing the value of n is " + n);
 
 		else
 			workAfter(n-1);
 
 
-		System.out.println("After the recursive call showing the result of n*2 is " + n*2);
+		System.out.println("After the recursive call, showing the result of n*2 is " + n*2);
 
 
 	}

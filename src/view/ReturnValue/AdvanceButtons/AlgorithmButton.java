@@ -40,15 +40,15 @@ public class AlgorithmButton extends JPanel {
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(46)
-					.addComponent(btnAdvance)
-					.addContainerGap(64, Short.MAX_VALUE))
+					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(47, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(70)
-					.addComponent(btnAdvance)
-					.addContainerGap(87, Short.MAX_VALUE))
+					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(74, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 

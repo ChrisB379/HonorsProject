@@ -79,7 +79,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtVariables.setBorder(BorderFactory.createLineBorder(Color.black));
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 		txtVariables.setEditable(false);
-		txtVariables.setText(getParameter() + " " + "Variables will be inserted here");
+		txtVariables.setText("n = " + getParameter());
 
 		JTextArea txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));

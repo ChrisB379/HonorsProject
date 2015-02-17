@@ -1,5 +1,6 @@
 package model;
 
+import java.util.List;
 import java.util.Observable;
 
 
@@ -21,6 +22,9 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 * unlike the param variable which will
 	 */
 	private int Oparam; 
+	
+	private List<Integer> paramArray;
+	private List<Integer> returnV;
 
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
@@ -93,7 +97,57 @@ public class ReturnValue extends Observable implements IReturnValue {
 
 		return Oparam;
 	}
+	
+	/**
+	 * This adds user input to an arraylist. The data will be used later in the results page
+	 * 
+	 * 
+	 * @param nVal the users answer to the value of n
+	 * @param retVal the users answer to the value of the current return value 
+	 * 
+	 * @since 1.1
+	 */
+	public void addToArray(int nVal, int retVal){
+		
+		paramArray.add(nVal);
+		
+		returnV.add(retVal);
+		
+	}
+	
+	/**
+	 * Gets and returns the value stored in a position in the array
+	 * 
+	 * @param n the position of the element in the array to be fetched
+	 * @return the value held at array position n-1
+	 */
+	
+	public int getParamArray(int n){
+		return paramArray.get(n-1);
+	}
+	
+	/**
+	 * Gets and returns the value stored in a position in the array
+	 * 
+	 * @param n the position of the element in the array to be fetched
+	 * @return the value held at array position n-1
+	 */
+	public int getReturnVArray(int n){
+		return returnV.get(n-1);
+	}
+	
 
+	/**
+	 * Will be used to clear the arrays after the tutorials have been completed
+	 * This is just a safety measure in case the user finishes the tutorial and comes back to it,
+	 * only to find the array still filled from their first try.
+	 * 
+	 * @since 1.1
+	 */
+	public void clearArrays(){
+		paramArray.clear();
+		returnV.clear();
+	}
 
 
 
