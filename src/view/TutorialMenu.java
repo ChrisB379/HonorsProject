@@ -90,6 +90,7 @@ public class TutorialMenu extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
+				model = new ReturnValue();
 				ReturnValueView rvv = new ReturnValueView(model);
 				rvv.setVisible(true);
 				rvv.setLocationRelativeTo(null);

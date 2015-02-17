@@ -30,7 +30,6 @@ import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
 import controller.ReturnValue.RVAlgorithmController;
-import controller.ReturnValue.RVParameterController;
 import model.ReturnValue;
 
 public class ReturnValueAlgorithm extends JPanel implements Observer {
@@ -40,24 +39,24 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private JTextField txtNVal;
 	private JTextField txtRtrnVal;
 	private JTextField txtVariables;
-	
+
 	private int parameter;
-	
+
 	private ReturnValue rv;
-	
+
 	private RVAlgorithmController rvac;
 
 	/**
 	 * Create the panel.
 	 */
 	public ReturnValueAlgorithm(ReturnValue r) {
-		
+
 		rv = r;
 		//this is causing a null pointer exception
 		r.addObserver(this);
-		
+
 		rvac = new RVAlgorithmController(rv, this);
-		
+
 		setBorder(null);
 		//blue rgb value (0,0,192)
 		//purple rgb value (127,0,85)
@@ -179,12 +178,12 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 
 	public void setParameter(int n){
 		parameter = n;
-		
+
 	}
-	
+
 	public int getParameter(){
 		return parameter;
-		
+
 	}
 
 }

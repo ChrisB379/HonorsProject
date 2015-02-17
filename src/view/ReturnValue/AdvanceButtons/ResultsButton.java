@@ -8,7 +8,6 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ResultsButton extends JPanel {
 
