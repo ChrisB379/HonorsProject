@@ -21,7 +21,11 @@ import java.util.Observable;
 public class WorkAfter extends Observable implements IWorkAfter {
 	
 	private int param;
-
+	/*
+	 * A record of the users original input parameter. This value will not change
+	 * unlike the param variable which will
+	 */
+	private int Oparam; 
 
 	//TODO decide how appropriate the algorithms are and which to really use
 
@@ -223,6 +227,26 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	@Override
 	public int getParam() {
 		return param;
+	}
+	
+	/**
+	 * These will hold the value of the input parameter similar to the above two methods
+	 * However during the execution, the above two methods parameters values will be changed.
+	 * These two methods will hold the users original parameter value so that it can be used
+	 * for loops.
+	 * 
+	 * @since 1.1
+	 */
+	@Override
+	public void setOriginalParam(int n) {
+		Oparam = n;
+		
+	}
+
+	@Override
+	public int getOriginalParam() {
+
+		return Oparam;
 	}
 
 }

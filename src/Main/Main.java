@@ -55,3 +55,4 @@ public class Main {
 //TODO move the counters in the advance buttons so that the algorithm page can loop as much as needed
 //TODO add text to the example classes which states the parameter input must be between 1 and 10
 //TODO change input validation on parameters to be > 0 < 11 and not whatever number is used in the example page
+//TODO format the JTextField in the algorithm classes. Only textfields can have listeners but the layout is poor

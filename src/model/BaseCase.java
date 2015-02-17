@@ -6,13 +6,18 @@ import java.util.Observable;
  * This is used to show how the base case works in recursion
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 1.1
  * @since 1.0
  */
 
 public class BaseCase extends Observable implements IBaseCase  {
 	
 	private int param;
+	/*
+	 * A record of the users original input parameter. This value will not change
+	 * unlike the param variable which will
+	 */
+	private int Oparam; 
 
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
@@ -91,6 +96,26 @@ public class BaseCase extends Observable implements IBaseCase  {
 	@Override
 	public int getParam() {
 		return param;
+	}
+	
+	/**
+	 * These will hold the value of the input parameter similar to the above two methods
+	 * However during the execution, the above two methods parameters values will be changed.
+	 * These two methods will hold the users original parameter value so that it can be used
+	 * for loops.
+	 * 
+	 * @since 1.1
+	 */
+	@Override
+	public void setOriginalParam(int n) {
+		Oparam = n;
+		
+	}
+
+	@Override
+	public int getOriginalParam() {
+
+		return Oparam;
 	}
 
 }

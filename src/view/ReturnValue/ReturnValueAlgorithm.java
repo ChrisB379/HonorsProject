@@ -176,7 +176,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		// TODO Auto-generated method stub
 		setParameter(rv.getParam());
 		System.out.println("rv " + rv.getParam());
-		txtVariables.setText(getParameter() + " Variables will be inserted here");
+		txtVariables.setText("n = " + getParameter());
 	}
 
 	public void setParameter(int n){
