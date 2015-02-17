@@ -20,6 +20,7 @@ import view.JTextFieldLimit;
 import javax.swing.JTextPane;
 
 import controller.ReturnValue.RVParameterController;
+import model.IReturnValue;
 import model.ReturnValue;
 
 import java.awt.Font;
@@ -35,7 +36,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 
 	private static final long serialVersionUID = -3578796091219375513L;
 	
-	private ReturnValue rv;
+	private IReturnValue rv;
 	
 	private RVParameterController rvController;
 
@@ -48,13 +49,14 @@ public class ReturnValueExample extends JPanel implements Observer {
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueExample(ReturnValue r) {
+	public ReturnValueExample(IReturnValue r) {
 		
 		//View holds a reference to the ReturnValue model
 		rv = r;
 		
+		
 		//register View as an observer to ReturnValue model
-		r.addObserver(this);
+		((Observable) r).addObserver(this);
 		
 		//create Controller - eventHandler - with reference to ReturnValue Model
 		//and reference to ReturnValueExample View for 'call backs'

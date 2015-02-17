@@ -47,6 +47,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import controller.ReturnValue.RVAlgorithmController;
 import controller.ReturnValue.RVParameterController;
+import model.IReturnValue;
 import model.ReturnValue;
 
 public class ReturnValueView extends JFrame implements Observer {
@@ -69,7 +70,7 @@ public class ReturnValueView extends JFrame implements Observer {
 	private ReturnValueAlgorithm2 r3;
 	private ReturnValueResults r4;
 	
-	private ReturnValue model;
+	private IReturnValue model;
 
 	/**
 	 * Launch the application.
@@ -78,7 +79,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ReturnValue model = new ReturnValue();
+					IReturnValue model = new ReturnValue();
 					ReturnValueView frame = new ReturnValueView(model);
 					//Centres the GUI to the middle of the screen
 					frame.setLocationRelativeTo(null);
@@ -93,7 +94,7 @@ public class ReturnValueView extends JFrame implements Observer {
 	/**
 	 * Create the frame.
 	 */
-	public ReturnValueView(ReturnValue r) {
+	public ReturnValueView(IReturnValue r) {
 		
 		model = r;
 		

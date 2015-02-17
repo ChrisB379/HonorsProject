@@ -30,6 +30,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
 import controller.ReturnValue.RVAlgorithmController;
+import model.IReturnValue;
 import model.ReturnValue;
 
 public class ReturnValueAlgorithm extends JPanel implements Observer {
@@ -42,18 +43,20 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 
 	private int parameter;
 
-	private ReturnValue rv;
+	private IReturnValue rv;
 
 	private RVAlgorithmController rvac;
 
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueAlgorithm(ReturnValue r) {
+	public ReturnValueAlgorithm(IReturnValue r) {
 
 		rv = r;
+		
+		
 		//this is causing a null pointer exception
-		r.addObserver(this);
+		((Observable) r).addObserver(this);
 
 		rvac = new RVAlgorithmController(rv, this);
 

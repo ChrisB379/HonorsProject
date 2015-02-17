@@ -6,6 +6,7 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
 import controller.ReturnValue.RVParameterController;
+import model.IReturnValue;
 import model.ReturnValue;
 import view.ReturnValue.ReturnValueExample;
 import view.ReturnValue.ReturnValueView;
@@ -18,7 +19,7 @@ public class ExampleButton extends JPanel {
 
 	private static final long serialVersionUID = -6156974517525499165L;
 	private ReturnValueView r;
-	private ReturnValue r1;
+	private IReturnValue r1;
 	private ReturnValueExample rve;
 	
 	private RVParameterController p;
@@ -26,7 +27,7 @@ public class ExampleButton extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public ExampleButton(ReturnValueView rvv,ReturnValue rv, ReturnValueExample reg) {
+	public ExampleButton(ReturnValueView rvv,IReturnValue rv, ReturnValueExample reg) {
 		
 		r = rvv;
 		

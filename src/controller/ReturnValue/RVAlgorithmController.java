@@ -3,6 +3,7 @@ package controller.ReturnValue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import model.IReturnValue;
 import model.ReturnValue;
 import view.ReturnValue.ReturnValueAlgorithm;
 
@@ -18,11 +19,11 @@ import view.ReturnValue.ReturnValueAlgorithm;
 
 public class RVAlgorithmController implements ActionListener {
 	
-	private ReturnValue model;
+	private IReturnValue model;
 	
 	private ReturnValueAlgorithm view;
 	
-	public RVAlgorithmController(ReturnValue m, ReturnValueAlgorithm v) {
+	public RVAlgorithmController(IReturnValue m, ReturnValueAlgorithm v) {
 		
 		model = m;
 		

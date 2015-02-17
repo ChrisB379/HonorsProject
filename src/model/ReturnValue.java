@@ -2,6 +2,9 @@ package model;
 
 import java.util.Observable;
 
+import view.ReturnValue.ReturnValueAlgorithm;
+import view.ReturnValue.ReturnValueExample;
+
 
 
 /**
@@ -68,6 +71,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 	public int getParam() {
 		return param;
 	}
+
 
 
 

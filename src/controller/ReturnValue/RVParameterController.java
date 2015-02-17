@@ -2,6 +2,8 @@ package controller.ReturnValue;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import model.IReturnValue;
 import model.ReturnValue;
 import view.ReturnValue.ReturnValueExample;
 
@@ -18,11 +20,11 @@ import view.ReturnValue.ReturnValueExample;
 
 public class RVParameterController implements ActionListener {
 	
-	private ReturnValue model;
+	private IReturnValue model;
 	
 	private ReturnValueExample view;
 	
-	public RVParameterController(ReturnValue m, ReturnValueExample v){
+	public RVParameterController(IReturnValue m, ReturnValueExample v){
 		
 		model = m;
 		view = v;

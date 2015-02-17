@@ -27,6 +27,8 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 
+import model.IAlgorithms;
+import model.IReturnValue;
 import model.ReturnValue;
 import view.BaseCase.BaseCaseView;
 import view.ExcessiveRecomputation.ExcessiveRecompView;
@@ -42,6 +44,8 @@ public class TutorialMenu extends JFrame {
 	private static final long serialVersionUID = -5286626654727946318L;
 	private JPanel contentPane;
 	
+	private IAlgorithms iFace;
+	private IReturnValue iModel;
 	private ReturnValue model;
 
 	/**
@@ -90,8 +94,9 @@ public class TutorialMenu extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
+				iModel = new ReturnValue();
 				model = new ReturnValue();
-				ReturnValueView rvv = new ReturnValueView(model);
+				ReturnValueView rvv = new ReturnValueView(iModel);
 				rvv.setVisible(true);
 				rvv.setLocationRelativeTo(null);
 				//new ReturnValueView().setVisible(true);
