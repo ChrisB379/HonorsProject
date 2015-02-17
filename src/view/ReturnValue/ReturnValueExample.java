@@ -77,7 +77,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 		txtNextPage.setEditable(false);
 
 
-		JTextField txtParameterField = new JTextField();
+		txtParameterField = new JTextField();
 		//Limits to only 2 digits
 		txtParameterField.setDocument(new JTextFieldLimit(2));
 		txtParameterField.addActionListener(rvController);

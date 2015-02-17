@@ -6,7 +6,7 @@ package view.ReturnValue;
  *  This is based on the parameter entered from the previous GUi screen.
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 1.2
  * @since 1.0
  */
 
@@ -21,6 +21,7 @@ import java.util.Observer;
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JTextField;
@@ -37,6 +38,8 @@ import controller.ReturnValue.RVSubmitController;
 import model.IReturnValue;
 import model.ReturnValue;
 
+import javax.swing.LayoutStyle.ComponentPlacement;
+
 public class ReturnValueAlgorithm extends JPanel implements Observer {
 
 
@@ -44,6 +47,8 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private JTextField txtNVal;
 	private JTextField txtRtrnVal;
 	private JTextField txtVariables;
+	private JTextArea txtrTheValueOf;
+	private JTextArea txtrTheCurrent;
 	
 	private JButton btnSubmit;
 
@@ -55,6 +60,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 
 	private RVAlgorithmController rvac;
 	private RVSubmitController rvsC;
+	private JTextField txtBaseCase;
 
 	/**
 	 * Create the panel.
@@ -90,7 +96,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtVariables.setEditable(false);
 		txtVariables.setText("n = " + getParameter());
 
-		JTextArea txtrTheValueOf = new JTextArea();
+		txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
@@ -122,7 +128,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		btnSubmit.addActionListener(rvsC);
 
 			
-		JTextArea txtrTheCurrent = new JTextArea();
+		txtrTheCurrent = new JTextArea();
 		txtrTheCurrent.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheCurrent.setWrapStyleWord(true);
 		txtrTheCurrent.setLineWrap(true);
@@ -138,9 +144,14 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
-				int n = Integer.parseInt(txtRtrnVal.getText());
-				setRtrnVal(n);
+				if(txtRtrnVal.getText() == null)
+					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");
 				
+				if(txtRtrnVal.getText() != ""){
+				int n = Integer.parseInt(txtRtrnVal.getText());
+				
+				setRtrnVal(n);
+				}
 			}
 			
 			@Override
@@ -151,63 +162,68 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		});
 
 		JLabel lblExample = new JLabel("Example 1");
+		
+		txtBaseCase = new JTextField();
+		txtBaseCase.setEditable(false);
+		txtBaseCase.setText("Please click the Advance button to see your results.");
+		txtBaseCase.setColumns(10);
+		txtBaseCase.setVisible(false);
 
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-										.addGap(60)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(60)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+									.addGroup(groupLayout.createSequentialGroup()
+										.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 272, GroupLayout.PREFERRED_SIZE)
+										.addGap(112)
+										.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 390, GroupLayout.PREFERRED_SIZE))
+									.addGroup(groupLayout.createSequentialGroup()
+										.addGap(10)
 										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+											.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, 309, GroupLayout.PREFERRED_SIZE)
+											.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
 												.addGroup(groupLayout.createSequentialGroup()
-														.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																.addGroup(groupLayout.createSequentialGroup()
-																		.addGap(10)
-																		.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																				.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE)))
-																				.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 272, GroupLayout.PREFERRED_SIZE))
-																				.addGap(19)
-																				.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																						.addGroup(groupLayout.createSequentialGroup()
-																								.addGap(85)
-																								.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 390, GroupLayout.PREFERRED_SIZE))
-																								.addGroup(groupLayout.createSequentialGroup()
-																										.addGap(5)
-																										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																												.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)))))
-																												.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)))
-																												.addGroup(groupLayout.createSequentialGroup()
-																														.addGap(392)
-																														.addComponent(lblExample)))
-																														.addContainerGap(76, Short.MAX_VALUE))
-				);
+													.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE)
+													.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+													.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE))
+												.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+													.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
+													.addGap(37)
+													.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE))))))
+								.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(392)
+							.addComponent(lblExample)))
+					.addGap(68))
+		);
 		groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-										.addContainerGap()
-										.addComponent(lblExample)
-										.addGap(19)
-										.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE))
-										.addGroup(groupLayout.createSequentialGroup()
-												.addGap(54)
-												.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)))
-												.addGap(57)
-												.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-														.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-														.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-														.addGap(40)
-														.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-																.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-																.addGap(98)
-																.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-																.addContainerGap(219, Short.MAX_VALUE))
-				);
+					.addContainerGap()
+					.addComponent(lblExample)
+					.addGap(29)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE))
+					.addGap(47)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(40)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+					.addGap(37)
+					.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(41)
+					.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(219, Short.MAX_VALUE))
+		);
 		setLayout(groupLayout);
 
 	}
@@ -282,17 +298,50 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	}
 	
 	
-	public void hideSubmit(){
-		
-		btnSubmit.setVisible(false);
-	}
-	
+	/**
+	 * Decrements the count for an if condition in the controller
+	 * 
+	 * @since 1.2
+	 */
 	public void decrementCount(){
 		count--;
 	}
 	
+	
+	/**
+	 * Gets the current count to check it against if statements in the controller
+	 * These if statements trigger buttons/textfields changing/becoming visible
+	 * 
+	 * @since 1.2
+	 */
 	public int getCount(){
 		return count;
 	}
-
+	
+	/**
+	 * Changes the value of the descriptor field for txtRtrnValue to indicate that this entry will be what the user
+	 * thinks the final return value is and what their final answer will be
+	 * 
+	 * @since 1.2
+	 */
+	public void setTextField(){
+		txtrTheCurrent.setText("The final return value is ");
+	}
+	
+	/**
+	 * This is triggered at the "return statement"
+	 * i.e when the final return value has been input by the user
+	 * This hides all the other text and text boxes while adding a new one to tell the user what to do
+	 * If the text boxes are not hidden, some errors will be thrown if the user were to focus and unfocus the text boxes
+	 * 
+	 * @since 1.2
+	 */
+	public void setAfterReturnText(){
+		txtBaseCase.setVisible(true);
+		txtrTheValueOf.setVisible(false);
+		txtrTheCurrent.setVisible(false);
+		txtNVal.setVisible(false);
+		txtRtrnVal.setVisible(false);
+		btnSubmit.setVisible(false);
+	}
 }

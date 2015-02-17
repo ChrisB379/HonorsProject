@@ -3,6 +3,8 @@ package controller.ReturnValue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import view.ReturnValue.ReturnValueAlgorithm;
 import model.IReturnValue;
 
@@ -32,27 +34,44 @@ public class RVSubmitController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		if(view.getNVal() == 0)
+			JOptionPane.showMessageDialog(null, "Please enter a number greater than 0 for the value of n");
+		
+		if(view.getNVal() > 10)
+			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10 for the value of n");
+		
+		if(view.getRtrnVal() == 0)
+			JOptionPane.showMessageDialog(null, "Please enter a number for the return value");
+		
+		if(view.getNVal() != 0 && view.getNVal() < 11 && view.getRtrnVal() != 0){
 		System.out.println("getCount " + view.getCount());
 			if(view.getCount() == 0){
-				view.hideSubmit();
+				view.setAfterReturnText();
 			}
+			
+			if(view.getCount() == 1){
+				view.setTextField();;
+			}
+		
+		view.decrementCount();
 		
 		model.addToArray(view.getNVal(), view.getRtrnVal());
 		view.setTxtVariables();
 		
 		System.out.println("Return array");
 		for(int j = 0; j < model.retArr().size(); j++) {   
-		    System.out.print(model.retArr().get(j));
+		    System.out.print(model.retArr().get(j) + ",");
 		}
 		System.out.println("");
 		System.out.println("parameter n array");
 		
 		for(int k = 0; k < model.paramArr().size(); k++) {   
-		    System.out.print(model.paramArr().get(k));
+		    System.out.print(model.paramArr().get(k) + ",");
 		}
 		System.out.println("");
 		
-		view.decrementCount();
+		}
 	}
 
 }
