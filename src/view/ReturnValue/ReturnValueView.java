@@ -392,7 +392,6 @@ public class ReturnValueView extends JFrame implements Observer {
 
 		cardPanel1.add(r2);
 		cardPanel1.remove(r1);
-		
 
 		cardPanel2.add(ab);
 		cardPanel2.remove(eb);

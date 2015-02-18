@@ -46,18 +46,24 @@ public class RVSubmitController implements ActionListener {
 		
 		if(view.getNVal() != 0 && view.getNVal() < 11 && view.getRtrnVal() != 0){
 		System.out.println("getCount " + view.getCount());
-			if(view.getCount() == 0){
+			//Changes the text to tell the user to advance to the results page
+			if(view.getCount() == 1){
 				view.setAfterReturnText();
 			}
 			
-			if(view.getCount() == 1){
+			//Changes the text to tell the user this will be the final return statement
+			if(view.getCount() == 2){
 				view.setTextField();;
 			}
 		
+		//Decrements the counter	
 		view.decrementCount();
 		
+		
 		model.addToArray(view.getNVal(), view.getRtrnVal());
-		view.setTxtVariables();
+		
+		view.addArrayString();
+		view.setTxtArea();
 		
 		System.out.println("Return array");
 		for(int j = 0; j < model.retArr().size(); j++) {   

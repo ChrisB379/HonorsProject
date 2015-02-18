@@ -15,6 +15,8 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -46,7 +48,6 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private static final long serialVersionUID = -6312065891931236710L;
 	private JTextField txtNVal;
 	private JTextField txtRtrnVal;
-	private JTextField txtVariables;
 	private JTextArea txtrTheValueOf;
 	private JTextArea txtrTheCurrent;
 	
@@ -61,6 +62,16 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private RVAlgorithmController rvac;
 	private RVSubmitController rvsC;
 	private JTextField txtBaseCase;
+	private JTextArea textArea;
+	
+	//Used for setting the Text Area with the values of variables
+	private List<String> variableString = new ArrayList<String>();
+	private String stringN = "n";
+	private String space = " ";
+	private String equals = "=";
+	private String whole = stringN + space + equals + space;
+	private String newLine = "\n";
+	boolean alreadyExecuted;
 
 	/**
 	 * Create the panel.
@@ -88,13 +99,6 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 				+ "<br> <font color = rgb(127,0,85)><b>return</b></font> n * factorial(n-1); "
 				+ "<br>} </code> </html>");
 		txtFactorial.setEditable(false);
-
-		txtVariables = new JTextField();
-		txtVariables.addActionListener(rvac);
-		txtVariables.setBorder(BorderFactory.createLineBorder(Color.black));
-		txtVariables.setBackground(UIManager.getColor("Panel.background"));
-		txtVariables.setEditable(false);
-		txtVariables.setText("n = " + getParameter());
 
 		txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
@@ -168,6 +172,9 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setText("Please click the Advance button to see your results.");
 		txtBaseCase.setColumns(10);
 		txtBaseCase.setVisible(false);
+		
+		textArea = new JTextArea();
+		textArea.setEditable(false);
 
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -177,29 +184,28 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(60)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-									.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 272, GroupLayout.PREFERRED_SIZE)
-										.addGap(112)
-										.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 390, GroupLayout.PREFERRED_SIZE))
-									.addGroup(groupLayout.createSequentialGroup()
-										.addGap(10)
-										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-											.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, 309, GroupLayout.PREFERRED_SIZE)
-											.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-												.addGroup(groupLayout.createSequentialGroup()
-													.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE)
-													.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-													.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE))
-												.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-													.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
-													.addGap(37)
-													.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE))))))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 272, GroupLayout.PREFERRED_SIZE)
+									.addGap(109)
+									.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGap(10)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, 309, GroupLayout.PREFERRED_SIZE)
+										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+											.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE))
+											.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
+												.addGap(37)
+												.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)))))
 								.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(392)
 							.addComponent(lblExample)))
-					.addGap(68))
+					.addGap(388))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -208,20 +214,21 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 					.addComponent(lblExample)
 					.addGap(29)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE))
-					.addGap(47)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(40)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-					.addGap(37)
-					.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(41)
-					.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+						.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
+							.addGap(201)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(40)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+							.addGap(37)
+							.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(41)
+							.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(219, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
@@ -235,8 +242,9 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		// TODO Auto-generated method stub
 		setParameter(model.getParam());
 		System.out.println("rv " + model.getParam());
+		//A count for the submit button to keep track of how many recursive calls there has been
 		count = model.getParam();
-		txtVariables.setText("n = " + getParameter());
+		textArea.setText("n = " + getParameter());
 	}
 
 	public void setParameter(int n){
@@ -283,18 +291,6 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	 */
 	public int getRtrnVal(){
 		return RtrnVal;
-	}
-	
-	public void setTxtVariables(){
-		int para = getParameter();
-		String stringN = "n";
-		String space = " ";
-		String equals = "=";
-		String whole = stringN + space + equals + space + para;
-		String whole2 = stringN + space + equals + space + (para--);
-		String newS = whole + space + whole2;
-		whole = whole + space + whole2;
-		txtVariables.setText(whole);
 	}
 	
 	
@@ -344,4 +340,38 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtRtrnVal.setVisible(false);
 		btnSubmit.setVisible(false);
 	}
+	
+	/**
+	 * Sets the value of the text area.
+	 * Fills it with the arraylist, replacing "[", "]" and "," with nothing so it looks better
+	 * 
+	 *@since 1.2 
+	 * 
+	 */
+	public void setTxtArea(){
+		textArea.setText(variableString.toString().replace("[", "").replace("]", "").replace(",", ""));
+	}
+	
+	
+	/**
+	 * Adds a string to the arraylist each time it is called.
+	 * For one time only, the first line is set at count+1 as its the original parameter and we only want to add this one time
+	 * After that, a new string is added each time. The count decrements so acts as the value of n decreasing with each recursive call.
+	 * The if statement of count being greater than 0 stops it printing one line too many on the last sibmit button
+	 * 
+	 * @since 1.2
+	 */
+	public void addArrayString(){
+		//Sourced idea from http://stackoverflow.com/questions/2665993/is-is-possible-to-make-a-method-execute-only-once
+		//Simple boolean check, it starts false and once it has been done once then the boolean sets to true
+		//This prevents it ever being used again
+		if(!alreadyExecuted) {
+			variableString.add(space + whole + (count+1) + newLine);
+		    alreadyExecuted = true;
+		}
+		
+		if(count > 0)
+		variableString.add(whole + count + newLine);
+	}
+	
 }
