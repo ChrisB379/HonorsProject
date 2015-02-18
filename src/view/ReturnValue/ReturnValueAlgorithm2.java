@@ -213,6 +213,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 
 		line1Fact = new JTextField();
+		line1Fact.setBorder(null);
 		line1Fact.setEditable(false);
 		line1Fact.setText("fact(");
 		line1Fact.setColumns(10);
@@ -221,6 +222,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line1Input1.setColumns(10);
 
 		line1Bracket = new JTextField();
+		line1Bracket.setBorder(null);
 		line1Bracket.setEditable(false);
 		line1Bracket.setText(");");
 		line1Bracket.setColumns(10);
@@ -233,11 +235,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 
 		line2Return = new JTextField();
+		line2Return.setBorder(null);
 		line2Return.setText("return");
 		line2Return.setEditable(false);
 		line2Return.setColumns(10);
 		
 		line2Fact = new JTextField();
+		line2Fact.setBorder(null);
 		line2Fact.setText("fact(");
 		line2Fact.setEditable(false);
 		line2Fact.setColumns(10);
@@ -246,11 +250,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line2Input1.setColumns(10);
 		
 		line2mult1 = new JTextField();
+		line2mult1.setBorder(null);
 		line2mult1.setEditable(false);
 		line2mult1.setText("*");
 		line2mult1.setColumns(10);
 
 		line2Bracket = new JTextField();
+		line2Bracket.setBorder(null);
 		line2Bracket.setText(")");
 		line2Bracket.setEditable(false);
 		line2Bracket.setColumns(10);
@@ -259,6 +265,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line2Input2.setColumns(10);
 
 		line2eqReturn = new JTextField();
+		line2eqReturn.setBorder(null);
 		line2eqReturn.setText("= return");
 		line2eqReturn.setEditable(false);
 		line2eqReturn.setColumns(10);
@@ -273,11 +280,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 
 		line3Return = new JTextField();
+		line3Return.setBorder(null);
 		line3Return.setText("return");
 		line3Return.setEditable(false);
 		line3Return.setColumns(10);
 		
 		line3Fact = new JTextField();
+		line3Fact.setBorder(null);
 		line3Fact.setText("fact(");
 		line3Fact.setEditable(false);
 		line3Fact.setColumns(10);
@@ -286,12 +295,14 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line3Input1.setColumns(10);
 
 		line3mult1 = new JTextField();
+		line3mult1.setBorder(null);
 		line3mult1.setText("*");
 		line3mult1.setEditable(false);
 		line3mult1.setColumns(10);
 
 
 		line3Bracket = new JTextField();
+		line3Bracket.setBorder(null);
 		line3Bracket.setText(")");
 		line3Bracket.setEditable(false);
 		line3Bracket.setColumns(10);
@@ -301,6 +312,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line3Input2.setColumns(10);
 		
 		line3mult2 = new JTextField();
+		line3mult2.setBorder(null);
 		line3mult2.setText("*");
 		line3mult2.setEditable(false);
 		line3mult2.setColumns(10);
@@ -309,6 +321,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line3Input3.setColumns(10);
 
 		line3eqReturn = new JTextField();
+		line3eqReturn.setBorder(null);
 		line3eqReturn.setText("= return");
 		line3eqReturn.setEditable(false);
 		line3eqReturn.setColumns(10);
@@ -323,11 +336,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 		
 		line4Return = new JTextField();
+		line4Return.setBorder(null);
 		line4Return.setText("return");
 		line4Return.setEditable(false);
 		line4Return.setColumns(10);
 		
 		line4Fact = new JTextField();
+		line4Fact.setBorder(null);
 		line4Fact.setText("fact(");
 		line4Fact.setEditable(false);
 		line4Fact.setColumns(10);
@@ -336,12 +351,14 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line4Input1.setColumns(10);
 
 		line4mult1 = new JTextField();
+		line4mult1.setBorder(null);
 		line4mult1.setText("*");
 		line4mult1.setEditable(false);
 		line4mult1.setColumns(10);
 
 
 		line4Bracket = new JTextField();
+		line4Bracket.setBorder(null);
 		line4Bracket.setText(")");
 		line4Bracket.setEditable(false);
 		line4Bracket.setColumns(10);
@@ -350,6 +367,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line4Input2.setColumns(10);
 
 		line4mult2 = new JTextField();
+		line4mult2.setBorder(null);
 		line4mult2.setText("*");
 		line4mult2.setEditable(false);
 		line4mult2.setColumns(10);
@@ -358,6 +376,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line4Input3.setColumns(10);
 		
 		line4mult3 = new JTextField();
+		line4mult3.setBorder(null);
 		line4mult3.setText("*");
 		line4mult3.setEditable(false);
 		line4mult3.setColumns(10);
@@ -366,6 +385,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line4Input4.setColumns(10);
 
 		line4eqReturn = new JTextField();
+		line4eqReturn.setBorder(null);
 		line4eqReturn.setText("= return");
 		line4eqReturn.setEditable(false);
 		line4eqReturn.setColumns(10);
@@ -380,11 +400,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 		
 		line5Return = new JTextField();
+		line5Return.setBorder(null);
 		line5Return.setEditable(false);
 		line5Return.setText("return");
 		line5Return.setColumns(10);
 		
 		line5Fact = new JTextField();
+		line5Fact.setBorder(null);
 		line5Fact.setText("fact(");
 		line5Fact.setEditable(false);
 		line5Fact.setColumns(10);
@@ -393,12 +415,14 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line5Input1.setColumns(10);
 
 		line5mult1 = new JTextField();
+		line5mult1.setBorder(null);
 		line5mult1.setText("*");
 		line5mult1.setEditable(false);
 		line5mult1.setColumns(10);
 
 
 		line5Bracket = new JTextField();
+		line5Bracket.setBorder(null);
 		line5Bracket.setText(")");
 		line5Bracket.setEditable(false);
 		line5Bracket.setColumns(10);
@@ -408,6 +432,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line5Input2.setColumns(10);
 
 		line5mult2 = new JTextField();
+		line5mult2.setBorder(null);
 		line5mult2.setText("*");
 		line5mult2.setEditable(false);
 		line5mult2.setColumns(10);
@@ -416,11 +441,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line5Input3.setColumns(10);
 
 		line5mult3 = new JTextField();
+		line5mult3.setBorder(null);
 		line5mult3.setText("*");
 		line5mult3.setEditable(false);
 		line5mult3.setColumns(10);
 
 		line5mult4 = new JTextField();
+		line5mult4.setBorder(null);
 		line5mult4.setText("*");
 		line5mult4.setEditable(false);
 		line5mult4.setColumns(10);
@@ -432,6 +459,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line5Input5.setColumns(10);
 
 		line5eqReturn = new JTextField();
+		line5eqReturn.setBorder(null);
 		line5eqReturn.setText("= return");
 		line5eqReturn.setEditable(false);
 		line5eqReturn.setColumns(10);
@@ -446,11 +474,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 		
 		line6Return = new JTextField();
+		line6Return.setBorder(null);
 		line6Return.setEditable(false);
 		line6Return.setText("return");
 		line6Return.setColumns(10);
 		
 		line6Fact = new JTextField();
+		line6Fact.setBorder(null);
 		line6Fact.setText("fact(");
 		line6Fact.setEditable(false);
 		line6Fact.setColumns(10);
@@ -459,11 +489,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input1.setColumns(10);
 
 		line6mult1 = new JTextField();
+		line6mult1.setBorder(null);
 		line6mult1.setText("*");
 		line6mult1.setEditable(false);
 		line6mult1.setColumns(10);
 
 		line6Bracket = new JTextField();
+		line6Bracket.setBorder(null);
 		line6Bracket.setText(")");
 		line6Bracket.setEditable(false);
 		line6Bracket.setColumns(10);
@@ -473,6 +505,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input2.setColumns(10);
 
 		line6mult2 = new JTextField();
+		line6mult2.setBorder(null);
 		line6mult2.setText("*");
 		line6mult2.setEditable(false);
 		line6mult2.setColumns(10);
@@ -481,11 +514,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input3.setColumns(10);
 
 		line6mult3 = new JTextField();
+		line6mult3.setBorder(null);
 		line6mult3.setText("*");
 		line6mult3.setEditable(false);
 		line6mult3.setColumns(10);
 
 		line6mult4 = new JTextField();
+		line6mult4.setBorder(null);
 		line6mult4.setText("*");
 		line6mult4.setEditable(false);
 		line6mult4.setColumns(10);
@@ -497,6 +532,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input5.setColumns(10);
 
 		line6mult5 = new JTextField();
+		line6mult5.setBorder(null);
 		line6mult5.setText("*");
 		line6mult5.setEditable(false);
 		line6mult5.setColumns(10);
@@ -505,6 +541,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input6.setColumns(10);
 
 		line6eqReturn = new JTextField();
+		line6eqReturn.setBorder(null);
 		line6eqReturn.setText("= return");
 		line6eqReturn.setEditable(false);
 		line6eqReturn.setColumns(10);
@@ -519,11 +556,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 		
 		line7Return = new JTextField();
+		line7Return.setBorder(null);
 		line7Return.setEditable(false);
 		line7Return.setText("return");
 		line7Return.setColumns(10);
 		
 		line7Fact = new JTextField();
+		line7Fact.setBorder(null);
 		line7Fact.setText("fact(");
 		line7Fact.setEditable(false);
 		line7Fact.setColumns(10);
@@ -532,11 +571,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input1.setColumns(10);
 
 		line7mult1 = new JTextField();
+		line7mult1.setBorder(null);
 		line7mult1.setText("*");
 		line7mult1.setEditable(false);
 		line7mult1.setColumns(10);
 
 		line7Bracket = new JTextField();
+		line7Bracket.setBorder(null);
 		line7Bracket.setText(")");
 		line7Bracket.setEditable(false);
 		line7Bracket.setColumns(10);
@@ -546,6 +587,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input2.setColumns(10);
 
 		line7mult2 = new JTextField();
+		line7mult2.setBorder(null);
 		line7mult2.setText("*");
 		line7mult2.setEditable(false);
 		line7mult2.setColumns(10);
@@ -554,11 +596,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input3.setColumns(10);
 
 		line7mult3 = new JTextField();
+		line7mult3.setBorder(null);
 		line7mult3.setText("*");
 		line7mult3.setEditable(false);
 		line7mult3.setColumns(10);
 
 		line7mult4 = new JTextField();
+		line7mult4.setBorder(null);
 		line7mult4.setText("*");
 		line7mult4.setEditable(false);
 		line7mult4.setColumns(10);
@@ -570,6 +614,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input5.setColumns(10);
 
 		line7mult5 = new JTextField();
+		line7mult5.setBorder(null);
 		line7mult5.setText("*");
 		line7mult5.setEditable(false);
 		line7mult5.setColumns(10);
@@ -578,6 +623,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input6.setColumns(10);
 
 		line7mult6 = new JTextField();
+		line7mult6.setBorder(null);
 		line7mult6.setText("*");
 		line7mult6.setEditable(false);
 		line7mult6.setColumns(10);
@@ -586,6 +632,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input7.setColumns(10);
 
 		line7eqReturn = new JTextField();
+		line7eqReturn.setBorder(null);
 		line7eqReturn.setText("= return");
 		line7eqReturn.setEditable(false);
 		line7eqReturn.setColumns(10);
@@ -603,11 +650,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		
 		
 		line8Return = new JTextField();
+		line8Return.setBorder(null);
 		line8Return.setEditable(false);
 		line8Return.setText("return");
 		line8Return.setColumns(10);
 		
 		line8Fact = new JTextField();
+		line8Fact.setBorder(null);
 		line8Fact.setText("fact(");
 		line8Fact.setEditable(false);
 		line8Fact.setColumns(10);
@@ -616,11 +665,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input1.setColumns(10);
 
 		line8mult1 = new JTextField();
+		line8mult1.setBorder(null);
 		line8mult1.setText("*");
 		line8mult1.setEditable(false);
 		line8mult1.setColumns(10);
 
 		line8Bracket = new JTextField();
+		line8Bracket.setBorder(null);
 		line8Bracket.setText(")");
 		line8Bracket.setEditable(false);
 		line8Bracket.setColumns(10);
@@ -629,6 +680,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input2.setColumns(10);
 
 		line8mult2 = new JTextField();
+		line8mult2.setBorder(null);
 		line8mult2.setText("*");
 		line8mult2.setEditable(false);
 		line8mult2.setColumns(10);
@@ -637,11 +689,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input3.setColumns(10);
 
 		line8mult3 = new JTextField();
+		line8mult3.setBorder(null);
 		line8mult3.setText("*");
 		line8mult3.setEditable(false);
 		line8mult3.setColumns(10);
 
 		line8mult4 = new JTextField();
+		line8mult4.setBorder(null);
 		line8mult4.setText("*");
 		line8mult4.setEditable(false);
 		line8mult4.setColumns(10);
@@ -653,6 +707,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input5.setColumns(10);
 
 		line8mult5 = new JTextField();
+		line8mult5.setBorder(null);
 		line8mult5.setText("*");
 		line8mult5.setEditable(false);
 		line8mult5.setColumns(10);
@@ -661,11 +716,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input6.setColumns(10);
 		
 		line8mult6 = new JTextField();
+		line8mult6.setBorder(null);
 		line8mult6.setText("*");
 		line8mult6.setEditable(false);
 		line8mult6.setColumns(10);
 
 		line8mult7 = new JTextField();
+		line8mult7.setBorder(null);
 		line8mult7.setText("*");
 		line8mult7.setEditable(false);
 		line8mult7.setColumns(10);
@@ -677,6 +734,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input8.setColumns(10);
 
 		line8eqReturn = new JTextField();
+		line8eqReturn.setBorder(null);
 		line8eqReturn.setText("= return");
 		line8eqReturn.setEditable(false);
 		line8eqReturn.setColumns(10);
@@ -692,11 +750,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		
 		
 		line9Return = new JTextField();
+		line9Return.setBorder(null);
 		line9Return.setEditable(false);
 		line9Return.setText("return");
 		line9Return.setColumns(10);
 		
 		line9Fact = new JTextField();
+		line9Fact.setBorder(null);
 		line9Fact.setText("fact(");
 		line9Fact.setEditable(false);
 		line9Fact.setColumns(10);
@@ -705,11 +765,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input1.setColumns(10);
 		
 		line9mult1 = new JTextField();
+		line9mult1.setBorder(null);
 		line9mult1.setText("*");
 		line9mult1.setEditable(false);
 		line9mult1.setColumns(10);
 
 		line9Bracket = new JTextField();
+		line9Bracket.setBorder(null);
 		line9Bracket.setText(")");
 		line9Bracket.setEditable(false);
 		line9Bracket.setColumns(10);
@@ -718,6 +780,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input2.setColumns(10);
 
 		line9mult2 = new JTextField();
+		line9mult2.setBorder(null);
 		line9mult2.setText("*");
 		line9mult2.setEditable(false);
 		line9mult2.setColumns(10);
@@ -726,11 +789,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input3.setColumns(10);
 
 		line9mult3 = new JTextField();
+		line9mult3.setBorder(null);
 		line9mult3.setText("*");
 		line9mult3.setEditable(false);
 		line9mult3.setColumns(10);
 
 		line9mult4 = new JTextField();
+		line9mult4.setBorder(null);
 		line9mult4.setText("*");
 		line9mult4.setEditable(false);
 		line9mult4.setColumns(10);
@@ -742,6 +807,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input5.setColumns(10);
 
 		line9mult5 = new JTextField();
+		line9mult5.setBorder(null);
 		line9mult5.setText("*");
 		line9mult5.setEditable(false);
 		line9mult5.setColumns(10);
@@ -750,11 +816,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input6.setColumns(10);
 
 		line9mult6 = new JTextField();
+		line9mult6.setBorder(null);
 		line9mult6.setText("*");
 		line9mult6.setEditable(false);
 		line9mult6.setColumns(10);
 
 		line9mult7 = new JTextField();
+		line9mult7.setBorder(null);
 		line9mult7.setText("*");
 		line9mult7.setEditable(false);
 		line9mult7.setColumns(10);
@@ -767,6 +835,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input8.setColumns(10);
 
 		line9mult8 = new JTextField();
+		line9mult8.setBorder(null);
 		line9mult8.setText("*");
 		line9mult8.setEditable(false);
 		line9mult8.setColumns(10);
@@ -775,6 +844,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input9.setColumns(10);
 		
 		line9eqReturn = new JTextField();
+		line9eqReturn.setBorder(null);
 		line9eqReturn.setText("= return");
 		line9eqReturn.setEditable(false);
 		line9eqReturn.setColumns(10);
@@ -790,11 +860,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		
 		
 		line10Return = new JTextField();
+		line10Return.setBorder(null);
 		line10Return.setEditable(false);
 		line10Return.setText("return");
 		line10Return.setColumns(10);
 		
 		line10Fact = new JTextField();
+		line10Fact.setBorder(null);
 		line10Fact.setText("fact(");
 		line10Fact.setEditable(false);
 		line10Fact.setColumns(10);
@@ -803,11 +875,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input1.setColumns(10);
 
 		line10mult1 = new JTextField();
+		line10mult1.setBorder(null);
 		line10mult1.setText("*");
 		line10mult1.setEditable(false);
 		line10mult1.setColumns(10);
 
 		line10Bracket = new JTextField();
+		line10Bracket.setBorder(null);
 		line10Bracket.setText(")");
 		line10Bracket.setEditable(false);
 		line10Bracket.setColumns(10);
@@ -816,6 +890,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input2.setColumns(10);
 
 		line10mult2 = new JTextField();
+		line10mult2.setBorder(null);
 		line10mult2.setText("*");
 		line10mult2.setEditable(false);
 		line10mult2.setColumns(10);
@@ -824,11 +899,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input3.setColumns(10);
 
 		line10mult3 = new JTextField();
+		line10mult3.setBorder(null);
 		line10mult3.setText("*");
 		line10mult3.setEditable(false);
 		line10mult3.setColumns(10);
 
 		line10mult4 = new JTextField();
+		line10mult4.setBorder(null);
 		line10mult4.setText("*");
 		line10mult4.setEditable(false);
 		line10mult4.setColumns(10);
@@ -840,6 +917,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input5.setColumns(10);
 
 		line10mult5 = new JTextField();
+		line10mult5.setBorder(null);
 		line10mult5.setText("*");
 		line10mult5.setEditable(false);
 		line10mult5.setColumns(10);
@@ -848,11 +926,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input6.setColumns(10);
 
 		line10mult6 = new JTextField();
+		line10mult6.setBorder(null);
 		line10mult6.setText("*");
 		line10mult6.setEditable(false);
 		line10mult6.setColumns(10);
 
 		line10mult7 = new JTextField();
+		line10mult7.setBorder(null);
 		line10mult7.setText("*");
 		line10mult7.setEditable(false);
 		line10mult7.setColumns(10);
@@ -864,6 +944,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input8.setColumns(10);
 
 		line10mult8 = new JTextField();
+		line10mult8.setBorder(null);
 		line10mult8.setText("*");
 		line10mult8.setEditable(false);
 		line10mult8.setColumns(10);
@@ -872,6 +953,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input9.setColumns(10);
 		
 		line10mult9 = new JTextField();
+		line10mult9.setBorder(null);
 		line10mult9.setText("*");
 		line10mult9.setEditable(false);
 		line10mult9.setColumns(10);
@@ -880,6 +962,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input10.setColumns(10);
 		
 		line10eqReturn = new JTextField();
+		line10eqReturn.setBorder(null);
 		line10eqReturn.setText("= return");
 		line10eqReturn.setEditable(false);
 		line10eqReturn.setColumns(10);
@@ -894,6 +977,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 
 		line11Return = new JTextField();
+		line11Return.setBorder(null);
 		line11Return.setEditable(false);
 		line11Return.setText("return");
 		line11Return.setColumns(10);
@@ -902,6 +986,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input1.setColumns(10);
 
 		line11mult1 = new JTextField();
+		line11mult1.setBorder(null);
 		line11mult1.setText("*");
 		line11mult1.setEditable(false);
 		line11mult1.setColumns(10);
@@ -910,6 +995,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input2.setColumns(10);
 
 		line11mult2 = new JTextField();
+		line11mult2.setBorder(null);
 		line11mult2.setText("*");
 		line11mult2.setEditable(false);
 		line11mult2.setColumns(10);
@@ -918,6 +1004,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input3.setColumns(10);
 
 		line11mult3 = new JTextField();
+		line11mult3.setBorder(null);
 		line11mult3.setText("*");
 		line11mult3.setEditable(false);
 		line11mult3.setColumns(10);
@@ -926,6 +1013,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input4.setColumns(10);
 
 		line11mult4 = new JTextField();
+		line11mult4.setBorder(null);
 		line11mult4.setText("*");
 		line11mult4.setEditable(false);
 		line11mult4.setColumns(10);
@@ -934,6 +1022,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input5.setColumns(10);
 
 		line11mult5 = new JTextField();
+		line11mult5.setBorder(null);
 		line11mult5.setText("*");
 		line11mult5.setEditable(false);
 		line11mult5.setColumns(10);
@@ -942,11 +1031,13 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input6.setColumns(10);
 
 		line11mult6 = new JTextField();
+		line11mult6.setBorder(null);
 		line11mult6.setText("*");
 		line11mult6.setEditable(false);
 		line11mult6.setColumns(10);
 
 		line11mult7 = new JTextField();
+		line11mult7.setBorder(null);
 		line11mult7.setText("*");
 		line11mult7.setEditable(false);
 		line11mult7.setColumns(10);
@@ -958,6 +1049,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input8.setColumns(10);
 
 		line11mult8 = new JTextField();
+		line11mult8.setBorder(null);
 		line11mult8.setText("*");
 		line11mult8.setEditable(false);
 		line11mult8.setColumns(10);
@@ -966,6 +1058,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input9.setColumns(10);
 
 		line11mult9 = new JTextField();
+		line11mult9.setBorder(null);
 		line11mult9.setText("*");
 		line11mult9.setEditable(false);
 		line11mult9.setColumns(10);
@@ -974,6 +1067,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input10.setColumns(10);
 
 		line11eqReturn = new JTextField();
+		line11eqReturn.setBorder(null);
 		line11eqReturn.setEditable(false);
 		line11eqReturn.setText("= return");
 		line11eqReturn.setColumns(10);
@@ -985,556 +1079,562 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(347)
+							.addComponent(lblExample))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(56)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(txtExample2, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE)
 								.addGroup(groupLayout.createSequentialGroup()
-										.addGap(347)
-										.addComponent(lblExample))
+									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+										.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+											.addGroup(groupLayout.createSequentialGroup()
+												.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+													.addComponent(line3Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+													.addComponent(line4Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+													.addComponent(line5Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+													.addComponent(line6Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+													.addComponent(line7Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+													.addComponent(line8Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+													.addComponent(line9Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+													.addComponent(line11Return, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
+												.addPreferredGap(ComponentPlacement.RELATED))
+											.addComponent(line2Return, 0, 0, Short.MAX_VALUE))
+										.addComponent(line1Fact, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 										.addGroup(groupLayout.createSequentialGroup()
-												.addGap(56)
-												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(txtExample2, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE)
-														.addGroup(groupLayout.createSequentialGroup()
-																.addComponent(line1Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.RELATED)
-																.addComponent(line1Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.UNRELATED)
-																.addComponent(line1Bracket, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
-																.addGroup(groupLayout.createSequentialGroup()
-																		.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-																				.addComponent(line2Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-																				.addComponent(line3Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-																				.addComponent(line4Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-																				.addComponent(line5Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-																				.addComponent(line6Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-																				.addComponent(line7Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-																				.addComponent(line8Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-																				.addComponent(line9Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-																				.addComponent(line10Return, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-																				.addComponent(line11Return, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
-																				.addPreferredGap(ComponentPlacement.RELATED)
-																				.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																						.addGroup(groupLayout.createSequentialGroup()
-																								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-																										.addGroup(groupLayout.createSequentialGroup()
-																												.addComponent(line11Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11mult6, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11mult7, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11Input8, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11mult8, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11Input9, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11mult9, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11Input10, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addComponent(line11eqReturn, 0, 0, Short.MAX_VALUE))
-																												.addGroup(groupLayout.createSequentialGroup()
-																														.addComponent(line10Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10mult6, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10mult7, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Input8, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10mult8, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Input9, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10mult9, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addComponent(line10Input10, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
-																														.addGroup(groupLayout.createSequentialGroup()
-																																.addComponent(line8Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8mult6, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8mult7, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8Input8, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-																																.addPreferredGap(ComponentPlacement.RELATED)
-																																.addComponent(line8Input9, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
-																																.addGroup(groupLayout.createSequentialGroup()
-																																		.addComponent(line7Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7mult6, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																		.addComponent(line7Input8, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
-																																		.addGroup(groupLayout.createSequentialGroup()
-																																				.addComponent(line6Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-																																				.addPreferredGap(ComponentPlacement.RELATED)
-																																				.addComponent(line6Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
-																																				.addGroup(groupLayout.createSequentialGroup()
-																																						.addComponent(line5Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-																																						.addPreferredGap(ComponentPlacement.RELATED)
-																																						.addComponent(line5Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
-																																						.addGroup(groupLayout.createSequentialGroup()
-																																								.addComponent(line4Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																																								.addPreferredGap(ComponentPlacement.RELATED)
-																																								.addComponent(line4Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																								.addPreferredGap(ComponentPlacement.RELATED)
-																																								.addComponent(line4Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																																								.addPreferredGap(ComponentPlacement.RELATED)
-																																								.addComponent(line4mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																								.addPreferredGap(ComponentPlacement.RELATED)
-																																								.addComponent(line4Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																								.addPreferredGap(ComponentPlacement.RELATED)
-																																								.addComponent(line4mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																								.addPreferredGap(ComponentPlacement.RELATED)
-																																								.addComponent(line4Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																								.addPreferredGap(ComponentPlacement.RELATED)
-																																								.addComponent(line4mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																								.addPreferredGap(ComponentPlacement.RELATED)
-																																								.addComponent(line4Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																								.addPreferredGap(ComponentPlacement.RELATED)
-																																								.addComponent(line4eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-																																								.addPreferredGap(ComponentPlacement.RELATED)
-																																								.addComponent(line4Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
-																																								.addGroup(groupLayout.createSequentialGroup()
-																																										.addComponent(line3Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																																										.addPreferredGap(ComponentPlacement.RELATED)
-																																										.addComponent(line3Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																										.addPreferredGap(ComponentPlacement.RELATED)
-																																										.addComponent(line3Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																																										.addPreferredGap(ComponentPlacement.RELATED)
-																																										.addComponent(line3mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																										.addPreferredGap(ComponentPlacement.RELATED)
-																																										.addComponent(line3Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																										.addPreferredGap(ComponentPlacement.RELATED)
-																																										.addComponent(line3mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																										.addPreferredGap(ComponentPlacement.RELATED)
-																																										.addComponent(line3Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																										.addPreferredGap(ComponentPlacement.RELATED)
-																																										.addComponent(line3eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-																																										.addPreferredGap(ComponentPlacement.RELATED)
-																																										.addComponent(line3Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
-																																										.addGroup(groupLayout.createSequentialGroup()
-																																												.addComponent(line2Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																																												.addPreferredGap(ComponentPlacement.RELATED)
-																																												.addComponent(line2Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																												.addPreferredGap(ComponentPlacement.RELATED)
-																																												.addComponent(line2Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																																												.addPreferredGap(ComponentPlacement.RELATED)
-																																												.addComponent(line2mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																												.addPreferredGap(ComponentPlacement.RELATED)
-																																												.addComponent(line2Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																												.addPreferredGap(ComponentPlacement.RELATED)
-																																												.addComponent(line2eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-																																												.addPreferredGap(ComponentPlacement.RELATED)
-																																												.addComponent(line2Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)))
-																																												.addPreferredGap(ComponentPlacement.RELATED)
-																																												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																																														.addGroup(groupLayout.createSequentialGroup()
-																																																.addComponent(line10eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-																																																.addPreferredGap(ComponentPlacement.RELATED)
-																																																.addComponent(line10Input11, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
-																																																.addComponent(line11Input11, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)))
-																																																.addGroup(groupLayout.createSequentialGroup()
-																																																		.addComponent(line9Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9mult6, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9mult7, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Input8, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9mult8, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Input9, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-																																																		.addPreferredGap(ComponentPlacement.RELATED)
-																																																		.addComponent(line9Input10, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)))))))
-																																																		.addContainerGap(129, Short.MAX_VALUE))
-				);
-		groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(lblExample)
-						.addGap(35)
-						.addComponent(txtExample2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addGap(51)
-						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(line1Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(line1Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(line1Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(line2Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(line2Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(line2Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(line2Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(line2mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(line2Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(line2eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(line2Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-												.addComponent(line3Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(line3Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(line3Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(line3Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(line3mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(line3Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(line3mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(line3Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(line3eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addComponent(line3Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-														.addComponent(line4Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addComponent(line4Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+											.addComponent(line10Return, 0, 0, Short.MAX_VALUE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)))
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(line1Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(line1Bracket, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
+										.addGroup(Alignment.TRAILING, groupLayout.createParallelGroup(Alignment.LEADING)
+											.addGroup(groupLayout.createSequentialGroup()
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(line11Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(ComponentPlacement.RELATED)
-														.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-																.addComponent(line5Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addComponent(line5Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-																.addPreferredGap(ComponentPlacement.RELATED)
-																.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-																		.addComponent(line6Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(line6Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-																		.addPreferredGap(ComponentPlacement.RELATED)
-																		.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-																				.addComponent(line7Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7mult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(line7Input8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-																				.addPreferredGap(ComponentPlacement.RELATED)
-																				.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																						.addGroup(groupLayout.createSequentialGroup()
-																								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-																										.addComponent(line8Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																										.addComponent(line8Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																										.addComponent(line8Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																										.addComponent(line8Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																										.addComponent(line8mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																										.addComponent(line8Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																										.addComponent(line8mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-																										.addPreferredGap(ComponentPlacement.RELATED)
-																										.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-																												.addComponent(line9Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9mult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9mult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Input8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9mult8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Input9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																												.addComponent(line9Input10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-																												.addPreferredGap(ComponentPlacement.RELATED)
-																												.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-																														.addComponent(line10Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10mult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10mult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10mult8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10mult9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																														.addComponent(line10Input11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-																														.addPreferredGap(ComponentPlacement.RELATED)
-																														.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-																																.addComponent(line11Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11mult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11mult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11mult8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11mult9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																.addComponent(line11Input11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-																																.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-																																		.addComponent(line8Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8mult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8mult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8Input8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																																		.addComponent(line8Input9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-																																		.addContainerGap(289, Short.MAX_VALUE))
-				);
+														.addComponent(line11mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11mult6, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11mult7, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11Input8, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11mult8, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11Input9, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11mult9, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11Input10, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line11eqReturn, 0, 0, Short.MAX_VALUE))
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(line10Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10mult6, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10mult7, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input8, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10mult8, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input9, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10mult9, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input10, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(line8Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8mult6, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8mult7, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8Input8, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line8Input9, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(line7Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7mult6, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line7Input8, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(line6Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line6Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(line5Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line5Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(line4Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line4Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line4Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line4mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line4Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line4mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line4Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line4mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line4Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line4eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line4Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(line3Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line3Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line3Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line3mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line3Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line3mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line3Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line3eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line3Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(line2Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line2Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line2Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line2mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line2Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line2eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line2Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)))
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(line10eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(line10Input11, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
+													.addComponent(line11Input11, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)))
+											.addGroup(groupLayout.createSequentialGroup()
+												.addComponent(line9Fact, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Input1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Bracket, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9mult1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Input2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9mult2, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Input3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9mult3, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Input4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9mult4, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Input5, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9mult5, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Input6, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9mult6, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Input7, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9mult7, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Input8, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9mult8, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Input9, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9eqReturn, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(line9Input10, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))))))))
+					.addContainerGap(129, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblExample)
+					.addGap(35)
+					.addComponent(txtExample2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(51)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(line1Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line1Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line1Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(line2Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line2Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line2Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line2mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line2Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line2eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line2Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line2Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(line3Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line3Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line3Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line3Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line3mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line3Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line3mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line3Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line3eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line3Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(line4Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line4Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(line5Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line5Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(line6Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line6Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(line7Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7mult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(line7Input8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(line8Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line8Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line8Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line8Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line8mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line8Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line8mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(line9Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9mult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9mult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Input8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9mult8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Input9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line9Input10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(line10Fact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Bracket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10mult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10mult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10mult8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10mult9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Input11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line10Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(line11Return, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11mult1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11mult2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11mult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11mult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11mult8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11mult9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(line11Input11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+							.addComponent(line8Input3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8mult3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8Input4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8mult4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8Input5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8mult5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8Input6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8mult6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8Input7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8mult7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8Input8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8eqReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(line8Input9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(289, Short.MAX_VALUE))
+		);
 		setLayout(groupLayout);
 
 	}
