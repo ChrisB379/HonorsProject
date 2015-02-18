@@ -101,14 +101,16 @@ public class ReturnValueView extends JFrame implements Observer {
 		ReturnValueView test = this;
 		
 		 r1 = new ReturnValueExample(model);
-		 r2 = new ReturnValueAlgorithm(model);
-		 r3 = new ReturnValueAlgorithm2();
-		 r4 = new ReturnValueResults();
 		 
 		 eb = new ExampleButton(this,model,r1);
 		 ab = new AlgorithmButton(this);
 		 ab2 = new Algorithm2Button(this);
 		 rb = new ResultsButton(this);
+		 
+		
+		 r2 = new ReturnValueAlgorithm(model,ab);
+		 r3 = new ReturnValueAlgorithm2();
+		 r4 = new ReturnValueResults();
 		 
 		
 		setTitle("Tutorial 2: Return Values");

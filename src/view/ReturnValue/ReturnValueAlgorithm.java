@@ -30,15 +30,14 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import view.JTextFieldLimit;
+import view.ReturnValue.AdvanceButtons.AlgorithmButton;
 
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
-import javax.swing.text.rtf.RTFEditorKit;
 
 import controller.ReturnValue.RVAlgorithmController;
 import controller.ReturnValue.RVSubmitController;
 import model.IReturnValue;
-import model.ReturnValue;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
@@ -59,7 +58,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 
 	private IReturnValue model;
 
-	private RVAlgorithmController rvac;
+//	private RVAlgorithmController rvac;
 	private RVSubmitController rvsC;
 	private JTextField txtBaseCase;
 	private JTextArea textArea;
@@ -72,18 +71,23 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private String whole = stringN + space + equals + space;
 	private String newLine = "\n";
 	boolean alreadyExecuted;
+	
+	private AlgorithmButton aBut;
 
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueAlgorithm(IReturnValue r) {
+	public ReturnValueAlgorithm(IReturnValue r,AlgorithmButton ab) {
 
 		model = r;
+		
+		aBut = ab;
+		aBut.setVis();
 		
 		//this is causing a null pointer exception
 		((Observable) r).addObserver(this);
 
-		rvac = new RVAlgorithmController(model, this);
+//		rvac = new RVAlgorithmController(model, this);
 		rvsC = new RVSubmitController(model, this);
 
 		setBorder(null);
@@ -346,7 +350,6 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	 * Fills it with the arraylist, replacing "[", "]" and "," with nothing so it looks better
 	 * 
 	 *@since 1.2 
-	 * 
 	 */
 	public void setTxtArea(){
 		textArea.setText(variableString.toString().replace("[", "").replace("]", "").replace(",", ""));
@@ -372,6 +375,9 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		
 		if(count > 0)
 		variableString.add(whole + count + newLine);
+		
+		if(count == 0)
+			aBut.setViss();
 	}
 	
 }
