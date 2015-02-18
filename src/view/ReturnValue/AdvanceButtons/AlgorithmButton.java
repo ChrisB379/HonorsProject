@@ -55,11 +55,11 @@ public class AlgorithmButton extends JPanel {
 
 	}
 	
-	public void setVis(){
+	public void setNotVis(){
 		btnAdvance.setVisible(false);
 	}
 	
-	public void setViss(){
+	public void setVis(){
 		btnAdvance.setVisible(true);
 	}
 }

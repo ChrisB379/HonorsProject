@@ -57,3 +57,4 @@ public class Main {
 //TODO change input validation on parameters to be > 0 < 11 and not whatever number is used in the example page
 //TODO format the JTextField in the algorithm classes. Only textfields can have listeners but the layout is poor
 //TODO set arraylists to clear once tutorials are finished e.g in ReturnValueAlgorithm combined with the SubmitController, it doesnt seem to happen since a new instance is made each time however
+//TODO rename factorial algorithm to fact for the sake of ReturnValueAlgorithm2 class

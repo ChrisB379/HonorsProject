@@ -40,6 +40,7 @@ import controller.ReturnValue.RVSubmitController;
 import model.IReturnValue;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JScrollPane;
 
 public class ReturnValueAlgorithm extends JPanel implements Observer {
 
@@ -73,6 +74,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	boolean alreadyExecuted;
 	
 	private AlgorithmButton aBut;
+	private JTextArea txtWorking;
 
 	/**
 	 * Create the panel.
@@ -81,8 +83,9 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 
 		model = r;
 		
+		//Setting the advance button not visible until the example is complete. Stops the user from advancing accidently
 		aBut = ab;
-		aBut.setVis();
+		aBut.setNotVis();
 		
 		//this is causing a null pointer exception
 		((Observable) r).addObserver(this);
@@ -173,17 +176,24 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		
 		txtBaseCase = new JTextField();
 		txtBaseCase.setEditable(false);
-		txtBaseCase.setText("Please click the Advance button to see your results.");
+		txtBaseCase.setText("Please click the Advance button to for the next example.");
 		txtBaseCase.setColumns(10);
 		txtBaseCase.setVisible(false);
+		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
 		textArea = new JTextArea();
 		textArea.setEditable(false);
+		
+		txtWorking = new JTextArea();
+		
+		
+		JLabel lblInsertWorkingHere = new JLabel("Insert working here:");
 
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(60)
@@ -204,21 +214,29 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 											.addGroup(groupLayout.createSequentialGroup()
 												.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
 												.addGap(37)
-												.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)))))
+												.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE))))
+									.addGap(122)
+									.addComponent(txtWorking, GroupLayout.PREFERRED_SIZE, 331, GroupLayout.PREFERRED_SIZE))
 								.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(392)
 							.addComponent(lblExample)))
-					.addGap(388))
+					.addGap(579))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(640)
+					.addComponent(lblInsertWorkingHere)
+					.addContainerGap(695, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblExample)
 					.addGap(29)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
+							.addGap(261))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
 							.addGap(201)
@@ -230,10 +248,16 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 								.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
 							.addGap(37)
-							.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(41)
-							.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(219, Short.MAX_VALUE))
+							.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+					.addGap(41)
+					.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(225, Short.MAX_VALUE))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap(307, Short.MAX_VALUE)
+					.addComponent(lblInsertWorkingHere)
+					.addGap(18)
+					.addComponent(txtWorking, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)
+					.addGap(278))
 		);
 		setLayout(groupLayout);
 
@@ -377,7 +401,6 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		variableString.add(whole + count + newLine);
 		
 		if(count == 0)
-			aBut.setViss();
+			aBut.setVis();
 	}
-	
 }
