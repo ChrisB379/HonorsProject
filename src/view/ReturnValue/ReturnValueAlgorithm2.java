@@ -31,175 +31,221 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 	private static final long serialVersionUID = 558449680019022130L;
+	/*
+	 * LINE ONE
+	 */
+	
 	private JTextField line1Fact;
-	private JTextField line2Return;
-	private JTextField line3Return;
-	private JTextField line4Return;
-	private JTextField line5Return;
-	private JTextField line6Return;
-	private JTextField line7Return;
-	private JTextField line8Return;
-	private JTextField line9Return;
-	private JTextField line10Return;
 	private JTextField line1Input1;
 	private JTextField line1Bracket;
-	private JTextField line11Return;
-	private JTextField line10Fact;
-	private JTextField line9Fact;
-	private JTextField line8Fact;
-	private JTextField line7Fact;
-	private JTextField line6Fact;
-	private JTextField line5Fact;
-	private JTextField line4Fact;
-	private JTextField line3Fact;
+	
+	
+	/*
+	 * LINE TWO
+	 */
+	private JTextField line2Return;
 	private JTextField line2Fact;
 	private JTextField line2Input1;
-	private JTextField line3Input1;
-	private JTextField line4Input1;
-	private JTextField line5Input1;
-	private JTextField line6Input1;
-	private JTextField line7Input1;
-	private JTextField line8Input1;
-	private JTextField line9Input1;
-	private JTextField line10Input1;
-	private JTextField line11Input1;
 	private JTextField line2mult1;
-	private JTextField line3mult1;
-	private JTextField line4mult1;
-	private JTextField line5mult1;
-	private JTextField line6mult1;
-	private JTextField line7mult1;
-	private JTextField line8mult1;
-	private JTextField line9mult1;
-	private JTextField line10mult1;
-	private JTextField line11mult1;
 	private JTextField line2Bracket;
-	private JTextField line3Bracket;
-	private JTextField line4Bracket;
-	private JTextField line5Bracket;
-	private JTextField line6Bracket;
-	private JTextField line7Bracket;
-	private JTextField line8Bracket;
-	private JTextField line9Bracket;
-	private JTextField line10Bracket;
 	private JTextField line2Input2;
+	private JTextField line2eqReturn;
+	private JTextField line2Input3;
+	
+	/*
+	 * LINE THREE
+	 */
+	private JTextField line3Return;
+	private JTextField line3Fact;
+	private JTextField line3Input1;
+	private JTextField line3mult1;
+	private JTextField line3Bracket;
 	private JTextField line3Input2;
-	private JTextField line4Input2;
-	private JTextField line5Input2;
-	private JTextField line6Input2;
-	private JTextField line7Input2;
-	private JTextField line8Input2;
-	private JTextField line9Input2;
-	private JTextField line11Input2;
 	private JTextField line3mult2;
-	private JTextField line4mult2;
-	private JTextField line5mult2;
-	private JTextField line6mult2;
-	private JTextField line7mult2;
-	private JTextField line8mult2;
-	private JTextField line9mult2;
-	private JTextField line10mult2;
-	private JTextField line11mult2;
 	private JTextField line3Input3;
+	private JTextField line3eqReturn;
+	private JTextField line3Input4;
+	
+	/*
+	 * LINE FOUR
+	 */
+	private JTextField line4Return;
+	private JTextField line4Fact;
+	private JTextField line4Input1;
+	private JTextField line4mult1;
+	private JTextField line4Bracket;
+	private JTextField line4Input2;
+	private JTextField line4mult2;
 	private JTextField line4Input3;
-	private JTextField line5Input3;
-	private JTextField line6Input3;
-	private JTextField line7Input3;
-	private JTextField line8Input3;
-	private JTextField line9Input3;
-	private JTextField line10Input3;
-	private JTextField line11Input3;
 	private JTextField line4mult3;
-	private JTextField line5mult3;
-	private JTextField line6mult3;
-	private JTextField line7mult3;
-	private JTextField line8mult3;
-	private JTextField line9mult3;
-	private JTextField line10mult3;
-	private JTextField line11mult3;
 	private JTextField line4Input4;
+	private JTextField line4eqReturn;
+	private JTextField line4Input5;
+	
+	/*
+	 * LINE FIVE
+	 */
+	private JTextField line5Return;
+	private JTextField line5Fact;
+	private JTextField line5Input1;
+	private JTextField line5mult1;
+	private JTextField line5Bracket;
+	private JTextField line5Input2;
+	private JTextField line5mult2;
+	private JTextField line5Input3;
+	private JTextField line5mult3;
 	private JTextField line5Input4;
-	private JTextField line6Input4;
-	private JTextField line7Input4;
-	private JTextField line8Input4;
-	private JTextField line9Input4;
-	private JTextField line10Input4;
-	private JTextField line11Input4;
 	private JTextField line5mult4;
-	private JTextField line6mult4;
-	private JTextField line7mult4;
-	private JTextField line8mult4;
-	private JTextField line9mult4;
-	private JTextField line10mult4;
-	private JTextField line11mult4;
 	private JTextField line5Input5;
+	private JTextField line5eqReturn;
+	private JTextField line5Input6;
+	
+	/*
+	 * LINE SIX
+	 */
+	private JTextField line6Return;
+	private JTextField line6Fact;
+	private JTextField line6Input1;
+	private JTextField line6mult1;
+	private JTextField line6Bracket;
+	private JTextField line6Input2;
+	private JTextField line6mult2;
+	private JTextField line6Input3;
+	private JTextField line6mult3;
+	private JTextField line6Input4;
+	private JTextField line6mult4;
 	private JTextField line6Input5;
-	private JTextField line7Input5;
-	private JTextField line8Input5;
-	private JTextField line9Input5;
-	private JTextField line10Input5;
-	private JTextField line11Input5;
 	private JTextField line6mult5;
-	private JTextField line7mult5;
-	private JTextField line8mult5;
-	private JTextField line9mult5;
-	private JTextField line10mult5;
-	private JTextField line11mult5;
 	private JTextField line6Input6;
+	private JTextField line6eqReturn;
+	private JTextField line6Input7;
+	
+	/*
+	 * LINE SEVEN
+	 */
+	private JTextField line7Return;
+	private JTextField line7Fact;
+	private JTextField line7Input1;
+	private JTextField line7mult1;
+	private JTextField line7Bracket;
+	private JTextField line7Input2;
+	private JTextField line7mult2;
+	private JTextField line7Input3;
+	private JTextField line7mult3;
+	private JTextField line7Input4;
+	private JTextField line7mult4;
+	private JTextField line7Input5;
+	private JTextField line7mult5;
 	private JTextField line7Input6;
-	private JTextField line8Input6;
-	private JTextField line9Input6;
-	private JTextField line10Input6;
-	private JTextField line11Input6;
 	private JTextField line7mult6;
-	private JTextField line8mult6;
-	private JTextField line9mult6;
-	private JTextField line10mult6;
-	private JTextField line11mult6;
 	private JTextField line7Input7;
+	private JTextField line7eqReturn;
+	private JTextField line7Input8;
+	
+	/*
+	 * LINE EIGHT
+	 */
+	private JTextField line8Return;
+	private JTextField line8Fact;
+	private JTextField line8Input1;
+	private JTextField line8mult1;
+	private JTextField line8Bracket;
+	private JTextField line8Input2;
+	private JTextField line8mult2;
+	private JTextField line8Input3;
+	private JTextField line8mult3;
+	private JTextField line8Input4;
+	private JTextField line8mult4;
+	private JTextField line8Input5;
+	private JTextField line8mult5;
+	private JTextField line8Input6;
+	private JTextField line8mult6;
 	private JTextField line8Input7;
-	private JTextField line9Input7;
-	private JTextField line10Input7;
-	private JTextField line11Input7;
 	private JTextField line8mult7;
-	private JTextField line9mult7;
-	private JTextField line10mult7;
-	private JTextField line11mult7;
 	private JTextField line8Input8;
+	private JTextField line8eqReturn;
+	private JTextField line8Input9;
+	
+	/*
+	 * LINE NINE
+	 */
+	private JTextField line9Return;
+	private JTextField line9Fact;
+	private JTextField line9Input1;
+	private JTextField line9mult1;
+	private JTextField line9Bracket;
+	private JTextField line9Input2;
+	private JTextField line9mult2;
+	private JTextField line9Input3;
+	private JTextField line9mult3;
+	private JTextField line9Input4;
+	private JTextField line9mult4;
+	private JTextField line9Input5;
+	private JTextField line9mult5;
+	private JTextField line9Input6;
+	private JTextField line9mult6;
+	private JTextField line9Input7;
+	private JTextField line9mult7;
 	private JTextField line9Input8;
-	private JTextField line10Input8;
-	private JTextField line11Input8;
 	private JTextField line9mult8;
-	private JTextField line10mult8;
-	private JTextField line11mult8;
 	private JTextField line9Input9;
+	private JTextField line9eqReturn;
+	private JTextField line9Input10;
+	
+	/*
+	 * LINE TEN
+	 */
+	private JTextField line10Return;
+	private JTextField line10Fact;
+	private JTextField line10Input1;
+	private JTextField line10mult1;
+	private JTextField line10Bracket;
+	private JTextField line10mult2;
+	private JTextField line10Input3;
+	private JTextField line10mult3;
+	private JTextField line10Input4;
+	private JTextField line10mult4;
+	private JTextField line10Input5;
+	private JTextField line10mult5;
+	private JTextField line10Input6;
+	private JTextField line10mult6;
+	private JTextField line10Input7;
+	private JTextField line10mult7;
+	private JTextField line10Input8;
+	private JTextField line10mult8;
 	private JTextField line10Input9;
-	private JTextField line11Input9;
 	private JTextField line10mult9;
-	private JTextField line11mult9;
 	private JTextField line10Input10;
+	private JTextField line10eqReturn;
+	private JTextField line10Input11;
+	private JTextField line10Input2;
+	
+	/*
+	 * LINE ELEVEN
+	 */
+	private JTextField line11Return;
+	private JTextField line11Input1;
+	private JTextField line11mult1;
+	private JTextField line11Input2;
+	private JTextField line11mult2;
+	private JTextField line11Input3;
+	private JTextField line11mult3;
+	private JTextField line11Input4;
+	private JTextField line11mult4;
+	private JTextField line11Input5;
+	private JTextField line11mult5;
+	private JTextField line11Input6;
+	private JTextField line11mult6;
+	private JTextField line11Input7;
+	private JTextField line11mult7;
+	private JTextField line11Input8;
+	private JTextField line11Input9;
+	private JTextField line11mult9;
 	private JTextField line11Input10;
 	private JTextField line11eqReturn;
 	private JTextField line11Input11;
-	private JTextField line10eqReturn;
-	private JTextField line9eqReturn;
-	private JTextField line8eqReturn;
-	private JTextField line7eqReturn;
-	private JTextField line6eqReturn;
-	private JTextField line5eqReturn;
-	private JTextField line4eqReturn;
-	private JTextField line3eqReturn;
-	private JTextField line2eqReturn;
-	private JTextField line10Input11;
-	private JTextField line9Input10;
-	private JTextField line8Input9;
-	private JTextField line7Input8;
-	private JTextField line6Input7;
-	private JTextField line5Input6;
-	private JTextField line4Input5;
-	private JTextField line3Input4;
-	private JTextField line2Input3;
-	private JTextField line10Input2;
+	private JTextField line11mult8;
+
 	
 	private JTextArea txtExample2;
 	
