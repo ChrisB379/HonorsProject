@@ -15,6 +15,8 @@ public class Algorithm2Button extends JPanel {
 	private static final long serialVersionUID = -5966632202862554863L;
 	
 	private ReturnValueView r;
+	
+	private JButton btnAdvance;
 
 	/**
 	 * Create the panel.
@@ -23,7 +25,7 @@ public class Algorithm2Button extends JPanel {
 		
 		r = rvv;
 		
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -50,6 +52,14 @@ public class Algorithm2Button extends JPanel {
 		);
 		setLayout(groupLayout);
 
+	}
+	
+	public void setNotVis(){
+		btnAdvance.setVisible(false);
+	}
+	
+	public void setVis(){
+		btnAdvance.setVisible(true);
 	}
 
 }

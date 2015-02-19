@@ -10,16 +10,24 @@ package view.ReturnValue;
  * 
  */
 
+import java.util.Observable;
+import java.util.Observer;
+
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JTextField;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class ReturnValueAlgorithm2 extends JPanel {
+import model.IReturnValue;
+import view.JTextFieldLimit;
+import view.ReturnValue.AdvanceButtons.Algorithm2Button;
+
+import javax.swing.JButton;
+
+import controller.ReturnValue.RVSubmitAlg2Controller;
+
+public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 	private static final long serialVersionUID = 558449680019022130L;
@@ -192,18 +200,40 @@ public class ReturnValueAlgorithm2 extends JPanel {
 	private JTextField line3Input4;
 	private JTextField line2Input3;
 	private JTextField line10Input2;
+	
+	private JTextArea txtExample2;
+	
+	private JButton btnSubmit;
+	
+	private int parameter;
+	
+	private Algorithm2Button ab2;
+	
+	private IReturnValue model;
+	
+	private RVSubmitAlg2Controller rvs2C;
 
 	/**
 	 * Create the panel.
 	 */
-	public ReturnValueAlgorithm2() {
+	public ReturnValueAlgorithm2(IReturnValue r,Algorithm2Button ab) {
 
+		model = r;
+		
+		//Sets the button not visible, similar to the previous ReturnAlgorithm Class
+		ab2 = ab;
+		ab2.setNotVis();
+		
+		((Observable) r).addObserver(this);
+		
+		rvs2C = new RVSubmitAlg2Controller(model, this);
+		
 		JLabel lblExample = new JLabel("Example 2");
 		lblExample.setBounds(347, 11, 49, 14);
 
-		JTextArea txtExample2 = new JTextArea();
-		txtExample2.setBounds(56, 60, 500, 76);
-		txtExample2.setText("As with the previous screen, you will be using the algorithim factorial(INSERTuserINPUThere)\r\n\r\nPlease fill out each text field with the value you think corresponds to each step in the recursive call.\r\n");
+		txtExample2 = new JTextArea();
+		txtExample2.setBounds(56, 60, 575, 97);
+		txtExample2.setText("As with the previous screen, you will be using the algorithim fact("+ getParameter() + ")\r\n\r\nPlease fill out each text field with the value you think corresponds to each step in the recursive call.\r\n");
 		txtExample2.setBackground(UIManager.getColor("Panel.background"));
 		txtExample2.setWrapStyleWord(true);
 		txtExample2.setLineWrap(true);
@@ -224,6 +254,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line1Input1 = new JTextField();
 		line1Input1.setBounds(89, 187, 22, 20);
 		line1Input1.setColumns(10);
+		line1Input1.setDocument(new JTextFieldLimit(2));
 
 		line1Bracket = new JTextField();
 		line1Bracket.setBounds(121, 190, 21, 14);
@@ -256,6 +287,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line2Input1 = new JTextField();
 		line2Input1.setBounds(137, 213, 22, 20);
 		line2Input1.setColumns(10);
+		line2Input1.setDocument(new JTextFieldLimit(2));
 		
 		line2mult1 = new JTextField();
 		line2mult1.setBounds(182, 215, 12, 14);
@@ -274,6 +306,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line2Input2 = new JTextField();
 		line2Input2.setBounds(200, 212, 22, 20);
 		line2Input2.setColumns(10);
+		line2Input2.setDocument(new JTextFieldLimit(2));
 
 		line2eqReturn = new JTextField();
 		line2eqReturn.setBounds(231, 216, 50, 14);
@@ -285,6 +318,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line2Input3 = new JTextField();
 		line2Input3.setBounds(287, 213, 22, 20);
 		line2Input3.setColumns(10);
+		line2Input3.setDocument(new JTextFieldLimit(2));
 		
 		/*
 		 * 
@@ -309,6 +343,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line3Input1 = new JTextField();
 		line3Input1.setBounds(136, 237, 22, 20);
 		line3Input1.setColumns(10);
+		line3Input1.setDocument(new JTextFieldLimit(2));
 
 		line3mult1 = new JTextField();
 		line3mult1.setBounds(182, 240, 12, 14);
@@ -329,6 +364,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line3Input2 = new JTextField();
 		line3Input2.setBounds(200, 237, 22, 20);
 		line3Input2.setColumns(10);
+		line3Input2.setDocument(new JTextFieldLimit(2));
 		
 		line3mult2 = new JTextField();
 		line3mult2.setBounds(228, 240, 12, 14);
@@ -340,6 +376,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line3Input3 = new JTextField();
 		line3Input3.setBounds(246, 237, 22, 20);
 		line3Input3.setColumns(10);
+		line3Input3.setDocument(new JTextFieldLimit(2));
 
 		line3eqReturn = new JTextField();
 		line3eqReturn.setBounds(274, 240, 50, 14);
@@ -351,6 +388,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line3Input4 = new JTextField();
 		line3Input4.setBounds(330, 237, 22, 20);
 		line3Input4.setColumns(10);
+		line3Input4.setDocument(new JTextFieldLimit(2));
 
 		/*
 		 * 
@@ -375,6 +413,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line4Input1 = new JTextField();
 		line4Input1.setBounds(136, 262, 22, 20);
 		line4Input1.setColumns(10);
+		line4Input1.setDocument(new JTextFieldLimit(2));
 
 		line4mult1 = new JTextField();
 		line4mult1.setBounds(182, 265, 12, 14);
@@ -394,6 +433,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line4Input2 = new JTextField();
 		line4Input2.setBounds(200, 262, 22, 20);
 		line4Input2.setColumns(10);
+		line4Input2.setDocument(new JTextFieldLimit(2));
 
 		line4mult2 = new JTextField();
 		line4mult2.setBounds(228, 265, 12, 14);
@@ -405,6 +445,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line4Input3 = new JTextField();
 		line4Input3.setBounds(246, 262, 22, 20);
 		line4Input3.setColumns(10);
+		line4Input3.setDocument(new JTextFieldLimit(2));
 		
 		line4mult3 = new JTextField();
 		line4mult3.setBounds(274, 265, 12, 14);
@@ -416,6 +457,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line4Input4 = new JTextField();
 		line4Input4.setBounds(292, 262, 22, 20);
 		line4Input4.setColumns(10);
+		line4Input4.setDocument(new JTextFieldLimit(2));
 
 		line4eqReturn = new JTextField();
 		line4eqReturn.setBounds(320, 265, 50, 14);
@@ -427,6 +469,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line4Input5 = new JTextField();
 		line4Input5.setBounds(374, 262, 22, 20);
 		line4Input5.setColumns(10);
+		line4Input5.setDocument(new JTextFieldLimit(2));
 
 		/*
 		 * 
@@ -451,6 +494,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line5Input1 = new JTextField();
 		line5Input1.setBounds(136, 287, 22, 20);
 		line5Input1.setColumns(10);
+		line5Input1.setDocument(new JTextFieldLimit(2));
 
 		line5mult1 = new JTextField();
 		line5mult1.setBounds(182, 290, 12, 14);
@@ -471,6 +515,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line5Input2 = new JTextField();
 		line5Input2.setBounds(200, 287, 22, 20);
 		line5Input2.setColumns(10);
+		line5Input2.setDocument(new JTextFieldLimit(2));
 
 		line5mult2 = new JTextField();
 		line5mult2.setBounds(228, 290, 12, 14);
@@ -482,6 +527,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line5Input3 = new JTextField();
 		line5Input3.setBounds(246, 287, 22, 20);
 		line5Input3.setColumns(10);
+		line5Input3.setDocument(new JTextFieldLimit(2));
 
 		line5mult3 = new JTextField();
 		line5mult3.setBounds(274, 290, 12, 14);
@@ -500,10 +546,12 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line5Input4 = new JTextField();
 		line5Input4.setBounds(292, 287, 22, 20);
 		line5Input4.setColumns(10);
+		line5Input4.setDocument(new JTextFieldLimit(2));
 
 		line5Input5 = new JTextField();
 		line5Input5.setBounds(338, 287, 22, 20);
 		line5Input5.setColumns(10);
+		line5Input5.setDocument(new JTextFieldLimit(2));
 
 		line5eqReturn = new JTextField();
 		line5eqReturn.setBounds(366, 290, 50, 14);
@@ -515,6 +563,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line5Input6 = new JTextField();
 		line5Input6.setBounds(422, 287, 22, 20);
 		line5Input6.setColumns(10);
+		line5Input6.setDocument(new JTextFieldLimit(2));
 
 		/*
 		 * 
@@ -539,6 +588,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input1 = new JTextField();
 		line6Input1.setBounds(136, 312, 22, 20);
 		line6Input1.setColumns(10);
+		line6Input1.setDocument(new JTextFieldLimit(2));
 
 		line6mult1 = new JTextField();
 		line6mult1.setBounds(182, 315, 12, 14);
@@ -558,6 +608,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input2 = new JTextField();
 		line6Input2.setBounds(200, 312, 22, 20);
 		line6Input2.setColumns(10);
+		line6Input2.setDocument(new JTextFieldLimit(2));
 
 		line6mult2 = new JTextField();
 		line6mult2.setBounds(228, 315, 12, 14);
@@ -569,6 +620,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input3 = new JTextField();
 		line6Input3.setBounds(246, 312, 22, 20);
 		line6Input3.setColumns(10);
+		line6Input3.setDocument(new JTextFieldLimit(2));
 
 		line6mult3 = new JTextField();
 		line6mult3.setBounds(274, 315, 12, 14);
@@ -587,10 +639,12 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input4 = new JTextField();
 		line6Input4.setBounds(292, 312, 22, 20);
 		line6Input4.setColumns(10);
+		line6Input4.setDocument(new JTextFieldLimit(2));
 
 		line6Input5 = new JTextField();
 		line6Input5.setBounds(338, 312, 22, 20);
 		line6Input5.setColumns(10);
+		line6Input5.setDocument(new JTextFieldLimit(2));
 
 		line6mult5 = new JTextField();
 		line6mult5.setBounds(366, 315, 12, 14);
@@ -602,6 +656,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input6 = new JTextField();
 		line6Input6.setBounds(384, 312, 22, 20);
 		line6Input6.setColumns(10);
+		line6Input6.setDocument(new JTextFieldLimit(2));
 
 		line6eqReturn = new JTextField();
 		line6eqReturn.setBounds(412, 315, 50, 14);
@@ -613,6 +668,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line6Input7 = new JTextField();
 		line6Input7.setBounds(468, 312, 22, 20);
 		line6Input7.setColumns(10);
+		line6Input7.setDocument(new JTextFieldLimit(2));
 
 		/*
 		 * 
@@ -637,6 +693,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input1 = new JTextField();
 		line7Input1.setBounds(136, 337, 22, 20);
 		line7Input1.setColumns(10);
+		line7Input1.setDocument(new JTextFieldLimit(2));
 
 		line7mult1 = new JTextField();
 		line7mult1.setBounds(182, 340, 12, 14);
@@ -656,6 +713,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input2 = new JTextField();
 		line7Input2.setBounds(200, 337, 22, 20);
 		line7Input2.setColumns(10);
+		line7Input2.setDocument(new JTextFieldLimit(2));
 
 		line7mult2 = new JTextField();
 		line7mult2.setBounds(228, 340, 12, 14);
@@ -667,6 +725,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input3 = new JTextField();
 		line7Input3.setBounds(246, 337, 22, 20);
 		line7Input3.setColumns(10);
+		line7Input3.setDocument(new JTextFieldLimit(2));
 
 		line7mult3 = new JTextField();
 		line7mult3.setBounds(274, 340, 12, 14);
@@ -685,10 +744,12 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input4 = new JTextField();
 		line7Input4.setBounds(292, 337, 22, 20);
 		line7Input4.setColumns(10);
+		line7Input4.setDocument(new JTextFieldLimit(2));
 
 		line7Input5 = new JTextField();
 		line7Input5.setBounds(338, 337, 22, 20);
 		line7Input5.setColumns(10);
+		line7Input5.setDocument(new JTextFieldLimit(2));
 
 		line7mult5 = new JTextField();
 		line7mult5.setBounds(366, 340, 12, 14);
@@ -700,6 +761,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input6 = new JTextField();
 		line7Input6.setBounds(384, 337, 22, 20);
 		line7Input6.setColumns(10);
+		line7Input6.setDocument(new JTextFieldLimit(2));
 
 		line7mult6 = new JTextField();
 		line7mult6.setBounds(412, 340, 12, 14);
@@ -711,6 +773,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input7 = new JTextField();
 		line7Input7.setBounds(430, 337, 22, 20);
 		line7Input7.setColumns(10);
+		line7Input7.setDocument(new JTextFieldLimit(2));
 
 		line7eqReturn = new JTextField();
 		line7eqReturn.setBounds(458, 340, 50, 14);
@@ -722,7 +785,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line7Input8 = new JTextField();
 		line7Input8.setBounds(514, 337, 22, 20);
 		line7Input8.setColumns(10);
-
+		line7Input8.setDocument(new JTextFieldLimit(2));
 
 
 		/*
@@ -749,6 +812,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input1 = new JTextField();
 		line8Input1.setBounds(136, 362, 22, 20);
 		line8Input1.setColumns(10);
+		line8Input1.setDocument(new JTextFieldLimit(2));
 
 		line8mult1 = new JTextField();
 		line8mult1.setBounds(182, 365, 12, 14);
@@ -767,6 +831,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input2 = new JTextField();
 		line8Input2.setBounds(200, 362, 22, 20);
 		line8Input2.setColumns(10);
+		line8Input2.setDocument(new JTextFieldLimit(2));
 
 		line8mult2 = new JTextField();
 		line8mult2.setBounds(228, 365, 12, 14);
@@ -778,6 +843,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input3 = new JTextField();
 		line8Input3.setBounds(246, 362, 22, 20);
 		line8Input3.setColumns(10);
+		line8Input3.setDocument(new JTextFieldLimit(2));
 
 		line8mult3 = new JTextField();
 		line8mult3.setBounds(274, 365, 12, 14);
@@ -796,10 +862,12 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input4 = new JTextField();
 		line8Input4.setBounds(292, 362, 22, 20);
 		line8Input4.setColumns(10);
+		line8Input4.setDocument(new JTextFieldLimit(2));
 
 		line8Input5 = new JTextField();
 		line8Input5.setBounds(338, 362, 22, 20);
 		line8Input5.setColumns(10);
+		line8Input5.setDocument(new JTextFieldLimit(2));
 
 		line8mult5 = new JTextField();
 		line8mult5.setBounds(366, 365, 12, 14);
@@ -811,6 +879,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input6 = new JTextField();
 		line8Input6.setBounds(384, 362, 22, 20);
 		line8Input6.setColumns(10);
+		line8Input6.setDocument(new JTextFieldLimit(2));
 		
 		line8mult6 = new JTextField();
 		line8mult6.setBounds(412, 365, 12, 14);
@@ -829,10 +898,12 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input7 = new JTextField();
 		line8Input7.setBounds(430, 362, 22, 20);
 		line8Input7.setColumns(10);
+		line8Input7.setDocument(new JTextFieldLimit(2));
 		
 		line8Input8 = new JTextField();
 		line8Input8.setBounds(476, 362, 22, 20);
 		line8Input8.setColumns(10);
+		line8Input8.setDocument(new JTextFieldLimit(2));
 
 		line8eqReturn = new JTextField();
 		line8eqReturn.setBounds(504, 365, 50, 14);
@@ -844,6 +915,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Input9 = new JTextField();
 		line8Input9.setBounds(560, 362, 22, 20);
 		line8Input9.setColumns(10);
+		line8Input9.setDocument(new JTextFieldLimit(2));
 
 		/*
 		 * 
@@ -869,6 +941,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input1 = new JTextField();
 		line9Input1.setBounds(136, 387, 22, 20);
 		line9Input1.setColumns(10);
+		line9Input1.setDocument(new JTextFieldLimit(2));
 		
 		line9mult1 = new JTextField();
 		line9mult1.setBounds(182, 390, 12, 14);
@@ -887,6 +960,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input2 = new JTextField();
 		line9Input2.setBounds(200, 387, 22, 20);
 		line9Input2.setColumns(10);
+		line9Input2.setDocument(new JTextFieldLimit(2));
 
 		line9mult2 = new JTextField();
 		line9mult2.setBounds(228, 390, 12, 14);
@@ -898,6 +972,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input3 = new JTextField();
 		line9Input3.setBounds(246, 387, 22, 20);
 		line9Input3.setColumns(10);
+		line9Input3.setDocument(new JTextFieldLimit(2));
 
 		line9mult3 = new JTextField();
 		line9mult3.setBounds(274, 390, 12, 14);
@@ -916,10 +991,12 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input4 = new JTextField();
 		line9Input4.setBounds(292, 387, 22, 20);
 		line9Input4.setColumns(10);
+		line9Input4.setDocument(new JTextFieldLimit(2));
 
 		line9Input5 = new JTextField();
 		line9Input5.setBounds(338, 387, 22, 20);
 		line9Input5.setColumns(10);
+		line9Input5.setDocument(new JTextFieldLimit(2));
 
 		line9mult5 = new JTextField();
 		line9mult5.setBounds(366, 390, 12, 14);
@@ -931,6 +1008,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input6 = new JTextField();
 		line9Input6.setBounds(384, 387, 22, 20);
 		line9Input6.setColumns(10);
+		line9Input6.setDocument(new JTextFieldLimit(2));
 
 		line9mult6 = new JTextField();
 		line9mult6.setBounds(412, 390, 12, 14);
@@ -950,10 +1028,12 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input7 = new JTextField();
 		line9Input7.setBounds(430, 387, 22, 20);
 		line9Input7.setColumns(10);
+		line9Input7.setDocument(new JTextFieldLimit(2));
 
 		line9Input8 = new JTextField();
 		line9Input8.setBounds(476, 387, 22, 20);
 		line9Input8.setColumns(10);
+		line9Input8.setDocument(new JTextFieldLimit(2));
 
 		line9mult8 = new JTextField();
 		line9mult8.setBounds(504, 390, 12, 14);
@@ -965,6 +1045,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input9 = new JTextField();
 		line9Input9.setBounds(526, 387, 22, 20);
 		line9Input9.setColumns(10);
+		line9Input9.setDocument(new JTextFieldLimit(2));
 		
 		line9eqReturn = new JTextField();
 		line9eqReturn.setBounds(560, 390, 50, 14);
@@ -976,6 +1057,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Input10 = new JTextField();
 		line9Input10.setBounds(620, 387, 22, 20);
 		line9Input10.setColumns(10);
+		line9Input10.setDocument(new JTextFieldLimit(2));
 
 		/*
 		 * 
@@ -1001,6 +1083,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input1 = new JTextField();
 		line10Input1.setBounds(136, 412, 22, 20);
 		line10Input1.setColumns(10);
+		line10Input1.setDocument(new JTextFieldLimit(2));
 
 		line10mult1 = new JTextField();
 		line10mult1.setBounds(182, 415, 12, 14);
@@ -1019,6 +1102,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input2 = new JTextField();
 		line10Input2.setBounds(200, 412, 22, 20);
 		line10Input2.setColumns(10);
+		line10Input2.setDocument(new JTextFieldLimit(2));
 
 		line10mult2 = new JTextField();
 		line10mult2.setBounds(228, 415, 12, 14);
@@ -1030,6 +1114,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input3 = new JTextField();
 		line10Input3.setBounds(246, 412, 22, 20);
 		line10Input3.setColumns(10);
+		line10Input3.setDocument(new JTextFieldLimit(2));
 
 		line10mult3 = new JTextField();
 		line10mult3.setBounds(274, 415, 12, 14);
@@ -1048,10 +1133,12 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input4 = new JTextField();
 		line10Input4.setBounds(292, 412, 22, 20);
 		line10Input4.setColumns(10);
+		line10Input4.setDocument(new JTextFieldLimit(2));
 
 		line10Input5 = new JTextField();
 		line10Input5.setBounds(338, 412, 22, 20);
 		line10Input5.setColumns(10);
+		line10Input5.setDocument(new JTextFieldLimit(2));
 
 		line10mult5 = new JTextField();
 		line10mult5.setBounds(366, 415, 12, 14);
@@ -1063,6 +1150,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input6 = new JTextField();
 		line10Input6.setBounds(384, 412, 22, 20);
 		line10Input6.setColumns(10);
+		line10Input6.setDocument(new JTextFieldLimit(2));
 
 		line10mult6 = new JTextField();
 		line10mult6.setBounds(412, 415, 12, 14);
@@ -1081,10 +1169,12 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input7 = new JTextField();
 		line10Input7.setBounds(430, 412, 22, 20);
 		line10Input7.setColumns(10);
+		line10Input7.setDocument(new JTextFieldLimit(2));
 
 		line10Input8 = new JTextField();
 		line10Input8.setBounds(476, 412, 22, 20);
 		line10Input8.setColumns(10);
+		line10Input8.setDocument(new JTextFieldLimit(2));
 
 		line10mult8 = new JTextField();
 		line10mult8.setBounds(504, 415, 12, 14);
@@ -1096,6 +1186,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input9 = new JTextField();
 		line10Input9.setBounds(526, 412, 22, 20);
 		line10Input9.setColumns(10);
+		line10Input9.setDocument(new JTextFieldLimit(2));
 		
 		line10mult9 = new JTextField();
 		line10mult9.setBounds(558, 415, 12, 14);
@@ -1107,6 +1198,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input10 = new JTextField();
 		line10Input10.setBounds(570, 412, 22, 20);
 		line10Input10.setColumns(10);
+		line10Input10.setDocument(new JTextFieldLimit(2));
 		
 		line10eqReturn = new JTextField();
 		line10eqReturn.setBounds(604, 415, 50, 14);
@@ -1118,6 +1210,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Input11 = new JTextField();
 		line10Input11.setBounds(664, 412, 22, 20);
 		line10Input11.setColumns(10);
+		line10Input11.setDocument(new JTextFieldLimit(2));
 
 		/*
 		 * 
@@ -1135,6 +1228,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input1 = new JTextField();
 		line11Input1.setBounds(105, 489, 22, 20);
 		line11Input1.setColumns(10);
+		line11Input1.setDocument(new JTextFieldLimit(2));
 
 		line11mult1 = new JTextField();
 		line11mult1.setBounds(137, 492, 12, 14);
@@ -1146,6 +1240,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input2 = new JTextField();
 		line11Input2.setBounds(159, 489, 22, 20);
 		line11Input2.setColumns(10);
+		line11Input2.setDocument(new JTextFieldLimit(2));
 
 		line11mult2 = new JTextField();
 		line11mult2.setBounds(191, 492, 12, 14);
@@ -1157,6 +1252,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input3 = new JTextField();
 		line11Input3.setBounds(213, 489, 22, 20);
 		line11Input3.setColumns(10);
+		line11Input3.setDocument(new JTextFieldLimit(2));
 
 		line11mult3 = new JTextField();
 		line11mult3.setBounds(245, 492, 12, 14);
@@ -1168,6 +1264,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input4 = new JTextField();
 		line11Input4.setBounds(267, 489, 22, 20);
 		line11Input4.setColumns(10);
+		line11Input4.setDocument(new JTextFieldLimit(2));
 
 		line11mult4 = new JTextField();
 		line11mult4.setBounds(302, 492, 12, 14);
@@ -1179,6 +1276,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input5 = new JTextField();
 		line11Input5.setBounds(320, 489, 22, 20);
 		line11Input5.setColumns(10);
+		line11Input5.setDocument(new JTextFieldLimit(2));
 
 		line11mult5 = new JTextField();
 		line11mult5.setBounds(348, 492, 12, 14);
@@ -1190,6 +1288,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input6 = new JTextField();
 		line11Input6.setBounds(366, 489, 22, 20);
 		line11Input6.setColumns(10);
+		line11Input6.setDocument(new JTextFieldLimit(2));
 
 		line11mult6 = new JTextField();
 		line11mult6.setBounds(394, 492, 12, 14);
@@ -1208,10 +1307,12 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input7 = new JTextField();
 		line11Input7.setBounds(412, 489, 22, 20);
 		line11Input7.setColumns(10);
+		line11Input7.setDocument(new JTextFieldLimit(2));
 
 		line11Input8 = new JTextField();
 		line11Input8.setBounds(458, 489, 22, 20);
 		line11Input8.setColumns(10);
+		line11Input8.setDocument(new JTextFieldLimit(2));
 
 		line11mult8 = new JTextField();
 		line11mult8.setBounds(490, 492, 12, 14);
@@ -1223,6 +1324,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input9 = new JTextField();
 		line11Input9.setBounds(504, 489, 22, 20);
 		line11Input9.setColumns(10);
+		line11Input9.setDocument(new JTextFieldLimit(2));
 
 		line11mult9 = new JTextField();
 		line11mult9.setBounds(536, 492, 12, 14);
@@ -1234,6 +1336,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input10 = new JTextField();
 		line11Input10.setBounds(558, 489, 22, 20);
 		line11Input10.setColumns(10);
+		line11Input10.setDocument(new JTextFieldLimit(2));
 
 		line11eqReturn = new JTextField();
 		line11eqReturn.setBounds(56, 555, 50, 14);
@@ -1245,6 +1348,8 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line11Input11 = new JTextField();
 		line11Input11.setBounds(121, 552, 22, 20);
 		line11Input11.setColumns(10);
+		line11Input11.setDocument(new JTextFieldLimit(2));
+		
 		setLayout(null);
 		add(lblExample);
 		add(txtExample2);
@@ -1417,6 +1522,29 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		add(line9Input9);
 		add(line9eqReturn);
 		add(line9Input10);
+		
+		btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(38, 611, 111, 40);
+		add(btnSubmit);
+
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		setParameter(model.getParam());
+		txtExample2.setText("As with the previous screen, you will be using the algorithim fact("+ getParameter() + ").\r\n\r\nPlease fill out each text field with the value you think corresponds to each step in the recursive call.\r\n"
+				+ "\n The first box is filled out for you to get you started.");
+		line1Input1.setText(String.valueOf(getParameter()));
+		
+	}
+	
+	public void setParameter(int n){
+		parameter = n;
+
+	}
+
+	public int getParameter(){
+		return parameter;
 
 	}
 }

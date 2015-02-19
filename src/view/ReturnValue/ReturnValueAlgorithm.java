@@ -118,6 +118,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		//Setting a limit on how many digits can be entered.7 should suffice for this question as 10! = 3628800
 		txtNVal.setDocument(new JTextFieldLimit(7));
 		txtNVal.setColumns(10);
+		txtNVal.setDocument(new JTextFieldLimit(2));
 		txtNVal.addFocusListener(new FocusListener() {
 			
 			@Override
@@ -150,6 +151,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		//Setting a limit on how many digits can be entered.7 should suffice for this question as 10! = 3628800
 		txtRtrnVal.setDocument(new JTextFieldLimit(7));
 		txtRtrnVal.setColumns(10);
+		txtRtrnVal.setDocument(new JTextFieldLimit(2));
 		txtRtrnVal.addFocusListener(new FocusListener() {
 			
 			@Override
