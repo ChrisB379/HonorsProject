@@ -197,6 +197,7 @@ public class ReturnValueAlgorithm2 extends JPanel {
 	 * Create the panel.
 	 */
 	public ReturnValueAlgorithm2() {
+		setVisible(false);
 
 		JLabel lblExample = new JLabel("Example 2");
 
@@ -269,9 +270,11 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line2eqReturn.setText("= return");
 		line2eqReturn.setEditable(false);
 		line2eqReturn.setColumns(10);
+		line2eqReturn.setVisible(false);
 
 		line2Input3 = new JTextField();
 		line2Input3.setColumns(10);
+		line2Input3.setVisible(false);
 		
 		/*
 		 * 
@@ -284,50 +287,58 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line3Return.setText("return");
 		line3Return.setEditable(false);
 		line3Return.setColumns(10);
+		line3Return.setVisible(false);
 		
 		line3Fact = new JTextField();
 		line3Fact.setBorder(null);
 		line3Fact.setText("fact(");
 		line3Fact.setEditable(false);
 		line3Fact.setColumns(10);
+		line3Fact.setVisible(false);
 		
 		line3Input1 = new JTextField();
 		line3Input1.setColumns(10);
+		line3Input1.setVisible(false);
 
 		line3mult1 = new JTextField();
 		line3mult1.setBorder(null);
 		line3mult1.setText("*");
 		line3mult1.setEditable(false);
 		line3mult1.setColumns(10);
-
+		line3mult1.setVisible(false);
 
 		line3Bracket = new JTextField();
 		line3Bracket.setBorder(null);
 		line3Bracket.setText(")");
 		line3Bracket.setEditable(false);
 		line3Bracket.setColumns(10);
-
+		line3Bracket.setVisible(false);
 
 		line3Input2 = new JTextField();
 		line3Input2.setColumns(10);
+		line3Input2.setVisible(false);
 		
 		line3mult2 = new JTextField();
 		line3mult2.setBorder(null);
 		line3mult2.setText("*");
 		line3mult2.setEditable(false);
 		line3mult2.setColumns(10);
+		line3mult2.setVisible(false);
 		
 		line3Input3 = new JTextField();
 		line3Input3.setColumns(10);
-
+		line3Input3.setVisible(false);
+		
 		line3eqReturn = new JTextField();
 		line3eqReturn.setBorder(null);
 		line3eqReturn.setText("= return");
 		line3eqReturn.setEditable(false);
 		line3eqReturn.setColumns(10);
-
+		line3eqReturn.setVisible(false);
+		
 		line3Input4 = new JTextField();
 		line3Input4.setColumns(10);
+		line3Input4.setVisible(false);
 
 		/*
 		 * 
@@ -336,21 +347,25 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 		
 		line4Return = new JTextField();
+		line4Return.setVisible(false);
 		line4Return.setBorder(null);
 		line4Return.setText("return");
 		line4Return.setEditable(false);
 		line4Return.setColumns(10);
 		
 		line4Fact = new JTextField();
+		line4Fact.setVisible(false);
 		line4Fact.setBorder(null);
 		line4Fact.setText("fact(");
 		line4Fact.setEditable(false);
 		line4Fact.setColumns(10);
-
+		
 		line4Input1 = new JTextField();
+		line4Input1.setVisible(false);
 		line4Input1.setColumns(10);
 
 		line4mult1 = new JTextField();
+		line4mult1.setVisible(false);
 		line4mult1.setBorder(null);
 		line4mult1.setText("*");
 		line4mult1.setEditable(false);
@@ -364,33 +379,40 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line4Bracket.setColumns(10);
 
 		line4Input2 = new JTextField();
+		line4Input2.setVisible(false);
 		line4Input2.setColumns(10);
 
 		line4mult2 = new JTextField();
+		line4mult2.setVisible(false);
 		line4mult2.setBorder(null);
 		line4mult2.setText("*");
 		line4mult2.setEditable(false);
 		line4mult2.setColumns(10);
 
 		line4Input3 = new JTextField();
+		line4Input3.setVisible(false);
 		line4Input3.setColumns(10);
 		
 		line4mult3 = new JTextField();
+		line4mult3.setVisible(false);
 		line4mult3.setBorder(null);
 		line4mult3.setText("*");
 		line4mult3.setEditable(false);
 		line4mult3.setColumns(10);
 
 		line4Input4 = new JTextField();
+		line4Input4.setVisible(false);
 		line4Input4.setColumns(10);
 
 		line4eqReturn = new JTextField();
+		line4eqReturn.setVisible(false);
 		line4eqReturn.setBorder(null);
 		line4eqReturn.setText("= return");
 		line4eqReturn.setEditable(false);
 		line4eqReturn.setColumns(10);
 
 		line4Input5 = new JTextField();
+		line4Input5.setVisible(false);
 		line4Input5.setColumns(10);
 
 		/*
@@ -400,21 +422,25 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 		
 		line5Return = new JTextField();
+		line5Return.setVisible(false);
 		line5Return.setBorder(null);
 		line5Return.setEditable(false);
 		line5Return.setText("return");
 		line5Return.setColumns(10);
 		
 		line5Fact = new JTextField();
+		line5Fact.setVisible(false);
 		line5Fact.setBorder(null);
 		line5Fact.setText("fact(");
 		line5Fact.setEditable(false);
 		line5Fact.setColumns(10);
 
 		line5Input1 = new JTextField();
+		line5Input1.setVisible(false);
 		line5Input1.setColumns(10);
 
 		line5mult1 = new JTextField();
+		line5mult1.setVisible(false);
 		line5mult1.setBorder(null);
 		line5mult1.setText("*");
 		line5mult1.setEditable(false);
@@ -429,42 +455,51 @@ public class ReturnValueAlgorithm2 extends JPanel {
 
 
 		line5Input2 = new JTextField();
+		line5Input2.setVisible(false);
 		line5Input2.setColumns(10);
 
 		line5mult2 = new JTextField();
+		line5mult2.setVisible(false);
 		line5mult2.setBorder(null);
 		line5mult2.setText("*");
 		line5mult2.setEditable(false);
 		line5mult2.setColumns(10);
 
 		line5Input3 = new JTextField();
+		line5Input3.setVisible(false);
 		line5Input3.setColumns(10);
 
 		line5mult3 = new JTextField();
+		line5mult3.setVisible(false);
 		line5mult3.setBorder(null);
 		line5mult3.setText("*");
 		line5mult3.setEditable(false);
 		line5mult3.setColumns(10);
 
 		line5mult4 = new JTextField();
+		line5mult4.setVisible(false);
 		line5mult4.setBorder(null);
 		line5mult4.setText("*");
 		line5mult4.setEditable(false);
 		line5mult4.setColumns(10);
 
 		line5Input4 = new JTextField();
+		line5Input4.setVisible(false);
 		line5Input4.setColumns(10);
 
 		line5Input5 = new JTextField();
+		line5Input5.setVisible(false);
 		line5Input5.setColumns(10);
 
 		line5eqReturn = new JTextField();
+		line5eqReturn.setVisible(false);
 		line5eqReturn.setBorder(null);
 		line5eqReturn.setText("= return");
 		line5eqReturn.setEditable(false);
 		line5eqReturn.setColumns(10);
 
 		line5Input6 = new JTextField();
+		line5Input6.setVisible(false);
 		line5Input6.setColumns(10);
 
 		/*
@@ -474,21 +509,25 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 		
 		line6Return = new JTextField();
+		line6Return.setVisible(false);
 		line6Return.setBorder(null);
 		line6Return.setEditable(false);
 		line6Return.setText("return");
 		line6Return.setColumns(10);
 		
 		line6Fact = new JTextField();
+		line6Fact.setVisible(false);
 		line6Fact.setBorder(null);
 		line6Fact.setText("fact(");
 		line6Fact.setEditable(false);
 		line6Fact.setColumns(10);
 		
 		line6Input1 = new JTextField();
+		line6Input1.setVisible(false);
 		line6Input1.setColumns(10);
 
 		line6mult1 = new JTextField();
+		line6mult1.setVisible(false);
 		line6mult1.setBorder(null);
 		line6mult1.setText("*");
 		line6mult1.setEditable(false);
@@ -502,51 +541,62 @@ public class ReturnValueAlgorithm2 extends JPanel {
 
 
 		line6Input2 = new JTextField();
+		line6Input2.setVisible(false);
 		line6Input2.setColumns(10);
 
 		line6mult2 = new JTextField();
+		line6mult2.setVisible(false);
 		line6mult2.setBorder(null);
 		line6mult2.setText("*");
 		line6mult2.setEditable(false);
 		line6mult2.setColumns(10);
 
 		line6Input3 = new JTextField();
+		line6Input3.setVisible(false);
 		line6Input3.setColumns(10);
 
 		line6mult3 = new JTextField();
+		line6mult3.setVisible(false);
 		line6mult3.setBorder(null);
 		line6mult3.setText("*");
 		line6mult3.setEditable(false);
 		line6mult3.setColumns(10);
 
 		line6mult4 = new JTextField();
+		line6mult4.setVisible(false);
 		line6mult4.setBorder(null);
 		line6mult4.setText("*");
 		line6mult4.setEditable(false);
 		line6mult4.setColumns(10);
 
 		line6Input4 = new JTextField();
+		line6Input4.setVisible(false);
 		line6Input4.setColumns(10);
 
 		line6Input5 = new JTextField();
+		line6Input5.setVisible(false);
 		line6Input5.setColumns(10);
 
 		line6mult5 = new JTextField();
+		line6mult5.setVisible(false);
 		line6mult5.setBorder(null);
 		line6mult5.setText("*");
 		line6mult5.setEditable(false);
 		line6mult5.setColumns(10);
 
 		line6Input6 = new JTextField();
+		line6Input6.setVisible(false);
 		line6Input6.setColumns(10);
 
 		line6eqReturn = new JTextField();
+		line6eqReturn.setVisible(false);
 		line6eqReturn.setBorder(null);
 		line6eqReturn.setText("= return");
 		line6eqReturn.setEditable(false);
 		line6eqReturn.setColumns(10);
 
 		line6Input7 = new JTextField();
+		line6Input7.setVisible(false);
 		line6Input7.setColumns(10);
 
 		/*
@@ -556,21 +606,25 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 		
 		line7Return = new JTextField();
+		line7Return.setVisible(false);
 		line7Return.setBorder(null);
 		line7Return.setEditable(false);
 		line7Return.setText("return");
 		line7Return.setColumns(10);
 		
 		line7Fact = new JTextField();
+		line7Fact.setVisible(false);
 		line7Fact.setBorder(null);
 		line7Fact.setText("fact(");
 		line7Fact.setEditable(false);
 		line7Fact.setColumns(10);
 		
 		line7Input1 = new JTextField();
+		line7Input1.setVisible(false);
 		line7Input1.setColumns(10);
 
 		line7mult1 = new JTextField();
+		line7mult1.setVisible(false);
 		line7mult1.setBorder(null);
 		line7mult1.setText("*");
 		line7mult1.setEditable(false);
@@ -584,60 +638,73 @@ public class ReturnValueAlgorithm2 extends JPanel {
 
 
 		line7Input2 = new JTextField();
+		line7Input2.setVisible(false);
 		line7Input2.setColumns(10);
 
 		line7mult2 = new JTextField();
+		line7mult2.setVisible(false);
 		line7mult2.setBorder(null);
 		line7mult2.setText("*");
 		line7mult2.setEditable(false);
 		line7mult2.setColumns(10);
 
 		line7Input3 = new JTextField();
+		line7Input3.setVisible(false);
 		line7Input3.setColumns(10);
 
 		line7mult3 = new JTextField();
+		line7mult3.setVisible(false);
 		line7mult3.setBorder(null);
 		line7mult3.setText("*");
 		line7mult3.setEditable(false);
 		line7mult3.setColumns(10);
 
 		line7mult4 = new JTextField();
+		line7mult4.setVisible(false);
 		line7mult4.setBorder(null);
 		line7mult4.setText("*");
 		line7mult4.setEditable(false);
 		line7mult4.setColumns(10);
 
 		line7Input4 = new JTextField();
+		line7Input4.setVisible(false);
 		line7Input4.setColumns(10);
 
 		line7Input5 = new JTextField();
+		line7Input5.setVisible(false);
 		line7Input5.setColumns(10);
 
 		line7mult5 = new JTextField();
+		line7mult5.setVisible(false);
 		line7mult5.setBorder(null);
 		line7mult5.setText("*");
 		line7mult5.setEditable(false);
 		line7mult5.setColumns(10);
 
 		line7Input6 = new JTextField();
+		line7Input6.setVisible(false);
 		line7Input6.setColumns(10);
 
 		line7mult6 = new JTextField();
+		line7mult6.setVisible(false);
 		line7mult6.setBorder(null);
 		line7mult6.setText("*");
 		line7mult6.setEditable(false);
 		line7mult6.setColumns(10);
 
 		line7Input7 = new JTextField();
+		line7Input7.setVisible(false);
 		line7Input7.setColumns(10);
 
 		line7eqReturn = new JTextField();
+		line7eqReturn.setVisible(false);
 		line7eqReturn.setBorder(null);
 		line7eqReturn.setText("= return");
 		line7eqReturn.setEditable(false);
 		line7eqReturn.setColumns(10);
 
 		line7Input8 = new JTextField();
+		line7Input8.setVisible(false);
 		line7Input8.setColumns(10);
 
 
@@ -650,21 +717,25 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		
 		
 		line8Return = new JTextField();
+		line8Return.setVisible(false);
 		line8Return.setBorder(null);
 		line8Return.setEditable(false);
 		line8Return.setText("return");
 		line8Return.setColumns(10);
 		
 		line8Fact = new JTextField();
+		line8Fact.setVisible(false);
 		line8Fact.setBorder(null);
 		line8Fact.setText("fact(");
 		line8Fact.setEditable(false);
 		line8Fact.setColumns(10);
 		
 		line8Input1 = new JTextField();
+		line8Input1.setVisible(false);
 		line8Input1.setColumns(10);
 
 		line8mult1 = new JTextField();
+		line8mult1.setVisible(false);
 		line8mult1.setBorder(null);
 		line8mult1.setText("*");
 		line8mult1.setEditable(false);
@@ -677,69 +748,84 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line8Bracket.setColumns(10);
 
 		line8Input2 = new JTextField();
+		line8Input2.setVisible(false);
 		line8Input2.setColumns(10);
 
 		line8mult2 = new JTextField();
+		line8mult2.setVisible(false);
 		line8mult2.setBorder(null);
 		line8mult2.setText("*");
 		line8mult2.setEditable(false);
 		line8mult2.setColumns(10);
 
 		line8Input3 = new JTextField();
+		line8Input3.setVisible(false);
 		line8Input3.setColumns(10);
 
 		line8mult3 = new JTextField();
+		line8mult3.setVisible(false);
 		line8mult3.setBorder(null);
 		line8mult3.setText("*");
 		line8mult3.setEditable(false);
 		line8mult3.setColumns(10);
 
 		line8mult4 = new JTextField();
+		line8mult4.setVisible(false);
 		line8mult4.setBorder(null);
 		line8mult4.setText("*");
 		line8mult4.setEditable(false);
 		line8mult4.setColumns(10);
 
 		line8Input4 = new JTextField();
+		line8Input4.setVisible(false);
 		line8Input4.setColumns(10);
 
 		line8Input5 = new JTextField();
+		line8Input5.setVisible(false);
 		line8Input5.setColumns(10);
 
 		line8mult5 = new JTextField();
+		line8mult5.setVisible(false);
 		line8mult5.setBorder(null);
 		line8mult5.setText("*");
 		line8mult5.setEditable(false);
 		line8mult5.setColumns(10);
 
 		line8Input6 = new JTextField();
+		line8Input6.setVisible(false);
 		line8Input6.setColumns(10);
 		
 		line8mult6 = new JTextField();
+		line8mult6.setVisible(false);
 		line8mult6.setBorder(null);
 		line8mult6.setText("*");
 		line8mult6.setEditable(false);
 		line8mult6.setColumns(10);
 
 		line8mult7 = new JTextField();
+		line8mult7.setVisible(false);
 		line8mult7.setBorder(null);
 		line8mult7.setText("*");
 		line8mult7.setEditable(false);
 		line8mult7.setColumns(10);
 
 		line8Input7 = new JTextField();
+		line8Input7.setVisible(false);
 		line8Input7.setColumns(10);
 		
 		line8Input8 = new JTextField();
+		line8Input8.setVisible(false);
 		line8Input8.setColumns(10);
 
 		line8eqReturn = new JTextField();
+		line8eqReturn.setVisible(false);
 		line8eqReturn.setBorder(null);
 		line8eqReturn.setText("= return");
 		line8eqReturn.setEditable(false);
 		line8eqReturn.setColumns(10);
 
 		line8Input9 = new JTextField();
+		line8Input9.setVisible(false);
 		line8Input9.setColumns(10);
 
 		/*
@@ -750,21 +836,25 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		
 		
 		line9Return = new JTextField();
+		line9Return.setVisible(false);
 		line9Return.setBorder(null);
 		line9Return.setEditable(false);
 		line9Return.setText("return");
 		line9Return.setColumns(10);
 		
 		line9Fact = new JTextField();
+		line9Fact.setVisible(false);
 		line9Fact.setBorder(null);
 		line9Fact.setText("fact(");
 		line9Fact.setEditable(false);
 		line9Fact.setColumns(10);
 		
 		line9Input1 = new JTextField();
+		line9Input1.setVisible(false);
 		line9Input1.setColumns(10);
 		
 		line9mult1 = new JTextField();
+		line9mult1.setVisible(false);
 		line9mult1.setBorder(null);
 		line9mult1.setText("*");
 		line9mult1.setEditable(false);
@@ -777,51 +867,62 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line9Bracket.setColumns(10);
 
 		line9Input2 = new JTextField();
+		line9Input2.setVisible(false);
 		line9Input2.setColumns(10);
 
 		line9mult2 = new JTextField();
+		line9mult2.setVisible(false);
 		line9mult2.setBorder(null);
 		line9mult2.setText("*");
 		line9mult2.setEditable(false);
 		line9mult2.setColumns(10);
 
 		line9Input3 = new JTextField();
+		line9Input3.setVisible(false);
 		line9Input3.setColumns(10);
 
 		line9mult3 = new JTextField();
+		line9mult3.setVisible(false);
 		line9mult3.setBorder(null);
 		line9mult3.setText("*");
 		line9mult3.setEditable(false);
 		line9mult3.setColumns(10);
 
 		line9mult4 = new JTextField();
+		line9mult4.setVisible(false);
 		line9mult4.setBorder(null);
 		line9mult4.setText("*");
 		line9mult4.setEditable(false);
 		line9mult4.setColumns(10);
 
 		line9Input4 = new JTextField();
+		line9Input4.setVisible(false);
 		line9Input4.setColumns(10);
 
 		line9Input5 = new JTextField();
+		line9Input5.setVisible(false);
 		line9Input5.setColumns(10);
 
 		line9mult5 = new JTextField();
+		line9mult5.setVisible(false);
 		line9mult5.setBorder(null);
 		line9mult5.setText("*");
 		line9mult5.setEditable(false);
 		line9mult5.setColumns(10);
 
 		line9Input6 = new JTextField();
+		line9Input6.setVisible(false);
 		line9Input6.setColumns(10);
 
 		line9mult6 = new JTextField();
+		line9mult6.setVisible(false);
 		line9mult6.setBorder(null);
 		line9mult6.setText("*");
 		line9mult6.setEditable(false);
 		line9mult6.setColumns(10);
 
 		line9mult7 = new JTextField();
+		line9mult7.setVisible(false);
 		line9mult7.setBorder(null);
 		line9mult7.setText("*");
 		line9mult7.setEditable(false);
@@ -829,27 +930,33 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		
 
 		line9Input7 = new JTextField();
+		line9Input7.setVisible(false);
 		line9Input7.setColumns(10);
 
 		line9Input8 = new JTextField();
+		line9Input8.setVisible(false);
 		line9Input8.setColumns(10);
 
 		line9mult8 = new JTextField();
+		line9mult8.setVisible(false);
 		line9mult8.setBorder(null);
 		line9mult8.setText("*");
 		line9mult8.setEditable(false);
 		line9mult8.setColumns(10);
 
 		line9Input9 = new JTextField();
+		line9Input9.setVisible(false);
 		line9Input9.setColumns(10);
 		
 		line9eqReturn = new JTextField();
+		line9eqReturn.setVisible(false);
 		line9eqReturn.setBorder(null);
 		line9eqReturn.setText("= return");
 		line9eqReturn.setEditable(false);
 		line9eqReturn.setColumns(10);
 
 		line9Input10 = new JTextField();
+		line9Input10.setVisible(false);
 		line9Input10.setColumns(10);
 
 		/*
@@ -860,21 +967,25 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		
 		
 		line10Return = new JTextField();
+		line10Return.setVisible(false);
 		line10Return.setBorder(null);
 		line10Return.setEditable(false);
 		line10Return.setText("return");
 		line10Return.setColumns(10);
 		
 		line10Fact = new JTextField();
+		line10Fact.setVisible(false);
 		line10Fact.setBorder(null);
 		line10Fact.setText("fact(");
 		line10Fact.setEditable(false);
 		line10Fact.setColumns(10);
 		
 		line10Input1 = new JTextField();
+		line10Input1.setVisible(false);
 		line10Input1.setColumns(10);
 
 		line10mult1 = new JTextField();
+		line10mult1.setVisible(false);
 		line10mult1.setBorder(null);
 		line10mult1.setText("*");
 		line10mult1.setEditable(false);
@@ -887,87 +998,106 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		line10Bracket.setColumns(10);
 
 		line10Input2 = new JTextField();
+		line10Input2.setVisible(false);
 		line10Input2.setColumns(10);
 
 		line10mult2 = new JTextField();
+		line10mult2.setVisible(false);
 		line10mult2.setBorder(null);
 		line10mult2.setText("*");
 		line10mult2.setEditable(false);
 		line10mult2.setColumns(10);
 
 		line10Input3 = new JTextField();
+		line10Input3.setVisible(false);
 		line10Input3.setColumns(10);
 
 		line10mult3 = new JTextField();
+		line10mult3.setVisible(false);
 		line10mult3.setBorder(null);
 		line10mult3.setText("*");
 		line10mult3.setEditable(false);
 		line10mult3.setColumns(10);
 
 		line10mult4 = new JTextField();
+		line10mult4.setVisible(false);
 		line10mult4.setBorder(null);
 		line10mult4.setText("*");
 		line10mult4.setEditable(false);
 		line10mult4.setColumns(10);
 
 		line10Input4 = new JTextField();
+		line10Input4.setVisible(false);
 		line10Input4.setColumns(10);
 
 		line10Input5 = new JTextField();
+		line10Input5.setVisible(false);
 		line10Input5.setColumns(10);
 
 		line10mult5 = new JTextField();
+		line10mult5.setVisible(false);
 		line10mult5.setBorder(null);
 		line10mult5.setText("*");
 		line10mult5.setEditable(false);
 		line10mult5.setColumns(10);
 
 		line10Input6 = new JTextField();
+		line10Input6.setVisible(false);
 		line10Input6.setColumns(10);
 
 		line10mult6 = new JTextField();
+		line10mult6.setVisible(false);
 		line10mult6.setBorder(null);
 		line10mult6.setText("*");
 		line10mult6.setEditable(false);
 		line10mult6.setColumns(10);
 
 		line10mult7 = new JTextField();
+		line10mult7.setVisible(false);
 		line10mult7.setBorder(null);
 		line10mult7.setText("*");
 		line10mult7.setEditable(false);
 		line10mult7.setColumns(10);
 		
 		line10Input7 = new JTextField();
+		line10Input7.setVisible(false);
 		line10Input7.setColumns(10);
 
 		line10Input8 = new JTextField();
+		line10Input8.setVisible(false);
 		line10Input8.setColumns(10);
 
 		line10mult8 = new JTextField();
+		line10mult8.setVisible(false);
 		line10mult8.setBorder(null);
 		line10mult8.setText("*");
 		line10mult8.setEditable(false);
 		line10mult8.setColumns(10);
 
 		line10Input9 = new JTextField();
+		line10Input9.setVisible(false);
 		line10Input9.setColumns(10);
 		
 		line10mult9 = new JTextField();
+		line10mult9.setVisible(false);
 		line10mult9.setBorder(null);
 		line10mult9.setText("*");
 		line10mult9.setEditable(false);
 		line10mult9.setColumns(10);
 		
 		line10Input10 = new JTextField();
+		line10Input10.setVisible(false);
 		line10Input10.setColumns(10);
 		
 		line10eqReturn = new JTextField();
+		line10eqReturn.setVisible(false);
 		line10eqReturn.setBorder(null);
 		line10eqReturn.setText("= return");
 		line10eqReturn.setEditable(false);
 		line10eqReturn.setColumns(10);
 
 		line10Input11 = new JTextField();
+		line10Input11.setVisible(false);
 		line10Input11.setColumns(10);
 
 		/*
@@ -977,102 +1107,124 @@ public class ReturnValueAlgorithm2 extends JPanel {
 		 */
 
 		line11Return = new JTextField();
+		line11Return.setVisible(false);
 		line11Return.setBorder(null);
 		line11Return.setEditable(false);
 		line11Return.setText("return");
 		line11Return.setColumns(10);
 
 		line11Input1 = new JTextField();
+		line11Input1.setVisible(false);
 		line11Input1.setColumns(10);
 
 		line11mult1 = new JTextField();
+		line11mult1.setVisible(false);
 		line11mult1.setBorder(null);
 		line11mult1.setText("*");
 		line11mult1.setEditable(false);
 		line11mult1.setColumns(10);
 
 		line11Input2 = new JTextField();
+		line11Input2.setVisible(false);
 		line11Input2.setColumns(10);
 
 		line11mult2 = new JTextField();
+		line11mult2.setVisible(false);
 		line11mult2.setBorder(null);
 		line11mult2.setText("*");
 		line11mult2.setEditable(false);
 		line11mult2.setColumns(10);
 
 		line11Input3 = new JTextField();
+		line11Input3.setVisible(false);
 		line11Input3.setColumns(10);
 
 		line11mult3 = new JTextField();
+		line11mult3.setVisible(false);
 		line11mult3.setBorder(null);
 		line11mult3.setText("*");
 		line11mult3.setEditable(false);
 		line11mult3.setColumns(10);
 
 		line11Input4 = new JTextField();
+		line11Input4.setVisible(false);
 		line11Input4.setColumns(10);
 
 		line11mult4 = new JTextField();
+		line11mult4.setVisible(false);
 		line11mult4.setBorder(null);
 		line11mult4.setText("*");
 		line11mult4.setEditable(false);
 		line11mult4.setColumns(10);
 
 		line11Input5 = new JTextField();
+		line11Input5.setVisible(false);
 		line11Input5.setColumns(10);
 
 		line11mult5 = new JTextField();
+		line11mult5.setVisible(false);
 		line11mult5.setBorder(null);
 		line11mult5.setText("*");
 		line11mult5.setEditable(false);
 		line11mult5.setColumns(10);
 
 		line11Input6 = new JTextField();
+		line11Input6.setVisible(false);
 		line11Input6.setColumns(10);
 
 		line11mult6 = new JTextField();
+		line11mult6.setVisible(false);
 		line11mult6.setBorder(null);
 		line11mult6.setText("*");
 		line11mult6.setEditable(false);
 		line11mult6.setColumns(10);
 
 		line11mult7 = new JTextField();
+		line11mult7.setVisible(false);
 		line11mult7.setBorder(null);
 		line11mult7.setText("*");
 		line11mult7.setEditable(false);
 		line11mult7.setColumns(10);
 
 		line11Input7 = new JTextField();
+		line11Input7.setVisible(false);
 		line11Input7.setColumns(10);
 
 		line11Input8 = new JTextField();
+		line11Input8.setVisible(false);
 		line11Input8.setColumns(10);
 
 		line11mult8 = new JTextField();
+		line11mult8.setVisible(false);
 		line11mult8.setBorder(null);
 		line11mult8.setText("*");
 		line11mult8.setEditable(false);
 		line11mult8.setColumns(10);
 
 		line11Input9 = new JTextField();
+		line11Input9.setVisible(false);
 		line11Input9.setColumns(10);
 
 		line11mult9 = new JTextField();
+		line11mult9.setVisible(false);
 		line11mult9.setBorder(null);
 		line11mult9.setText("*");
 		line11mult9.setEditable(false);
 		line11mult9.setColumns(10);
 
 		line11Input10 = new JTextField();
+		line11Input10.setVisible(false);
 		line11Input10.setColumns(10);
 
 		line11eqReturn = new JTextField();
+		line11eqReturn.setVisible(false);
 		line11eqReturn.setBorder(null);
 		line11eqReturn.setEditable(false);
 		line11eqReturn.setText("= return");
 		line11eqReturn.setColumns(10);
 
 		line11Input11 = new JTextField();
+		line11Input11.setVisible(false);
 		line11Input11.setColumns(10);
 
 
