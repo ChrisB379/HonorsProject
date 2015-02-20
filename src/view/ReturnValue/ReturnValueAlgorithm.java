@@ -40,7 +40,6 @@ import controller.ReturnValue.RVSubmitController;
 import model.IReturnValue;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JScrollPane;
 
 public class ReturnValueAlgorithm extends JPanel implements Observer {
 
@@ -152,6 +151,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtRtrnVal.setDocument(new JTextFieldLimit(7));
 		txtRtrnVal.setColumns(10);
 		txtRtrnVal.setDocument(new JTextFieldLimit(2));
+		txtRtrnVal.addActionListener(rvsC);
 		txtRtrnVal.addFocusListener(new FocusListener() {
 			
 			@Override

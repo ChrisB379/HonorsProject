@@ -23,6 +23,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 * unlike the param variable which will
 	 */
 	private int Oparam; 
+	private int userRetVal, userRetVal2;
 	
 	private List<Integer> paramArray;
 	private List<Integer> returnV;
@@ -164,6 +165,56 @@ public class ReturnValue extends Observable implements IReturnValue {
 
 	public List<Integer> paramArr(){
 		return paramArray;
+	}
+
+	/**
+	 * Returns the value stored that the user set as their return value in the first algorithm page.
+	 * 
+	 * @since 1.2
+	 */
+	@Override
+	public int getUserReturnVal() {
+		
+		return userRetVal;
+	}
+
+	
+	/**
+	 * Sets userRetVal to that of the users return value that they picked in the first algorithm page.
+	 * 
+	 * @since 1.2
+	 */
+	@Override
+	public void setUserReturnVal(int n) {
+		userRetVal = n;
+//		setChanged();
+//		notifyObservers();
+		
+	}
+
+	
+	/**
+	 * Returns the value stored that the user set as their return value in the second algorithm page.
+	 * 
+	 * @since 1.2
+	 */
+	@Override
+	public int getUserRetVal2() {
+		// TODO Auto-generated method stub
+		return userRetVal2;
+	}
+	
+	/**
+	 * Sets userRetVal to that of the users return value that they picked in the second algorithm page
+	 * 
+	 * @since 1.2
+	 */
+	@Override
+	public void setUserRetVal2(int n) {
+		userRetVal2 = n;
+		setChanged();
+		notifyObservers();
+		
 	}
 
 }

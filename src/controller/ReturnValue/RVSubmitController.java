@@ -45,7 +45,7 @@ public class RVSubmitController implements ActionListener {
 			JOptionPane.showMessageDialog(null, "Please enter a number for the return value");
 		
 		if(view.getNVal() != 0 && view.getNVal() < 11 && view.getRtrnVal() != 0){
-		System.out.println("getCount " + view.getCount());
+		//System.out.println("getCount " + view.getCount());
 			//Changes the text to tell the user to advance to the results page
 			if(view.getCount() == 1){
 				view.setAfterReturnText();
@@ -62,20 +62,24 @@ public class RVSubmitController implements ActionListener {
 		
 		model.addToArray(view.getNVal(), view.getRtrnVal());
 		
+		//Sets the users returnvalue in the model
+		model.setUserReturnVal(view.getRtrnVal());
+		System.out.println("getUserReturnVal "+ model.getUserReturnVal());
+		
 		view.addArrayString();
 		view.setTxtArea();
 		
-		System.out.println("Return array");
-		for(int j = 0; j < model.retArr().size(); j++) {   
-		    System.out.print(model.retArr().get(j) + ",");
-		}
-		System.out.println("");
-		System.out.println("parameter n array");
-		
-		for(int k = 0; k < model.paramArr().size(); k++) {   
-		    System.out.print(model.paramArr().get(k) + ",");
-		}
-		System.out.println("");
+//		System.out.println("Return array");
+//		for(int j = 0; j < model.retArr().size(); j++) {   
+//		    System.out.print(model.retArr().get(j) + ",");
+//		}
+//		System.out.println("");
+//		System.out.println("parameter n array");
+//		
+//		for(int k = 0; k < model.paramArr().size(); k++) {   
+//		    System.out.print(model.paramArr().get(k) + ",");
+//		}
+//		System.out.println("");
 		
 		}
 	}

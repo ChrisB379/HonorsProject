@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import model.IReturnValue;
-import view.ReturnValue.ReturnValueAlgorithm;
 import view.ReturnValue.ReturnValueAlgorithm2;
 
 
@@ -45,6 +44,8 @@ public class RVSubmitAlg2Controller implements ActionListener {
 		if(view.getFilled())
 		view.setAdvButtonVis();
 		
+		//Sets the users return value in the model
+		model.setUserRetVal2(view.getUsersReturnValue());
 
 		
 	}

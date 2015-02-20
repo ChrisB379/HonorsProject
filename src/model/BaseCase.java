@@ -13,6 +13,7 @@ import java.util.Observable;
 public class BaseCase extends Observable implements IBaseCase  {
 	
 	private int param;
+	private int userRetVal;
 	/*
 	 * A record of the users original input parameter. This value will not change
 	 * unlike the param variable which will
@@ -116,6 +117,31 @@ public class BaseCase extends Observable implements IBaseCase  {
 	public int getOriginalParam() {
 
 		return Oparam;
+	}
+
+
+
+	/**
+	 * Returns the value stored that the user set as their return value
+	 * 
+	 * @since 1.2
+	 */
+	@Override
+	public int getUserReturnVal() {
+		
+		return userRetVal;
+	}
+
+	
+	/**
+	 * Sets userRetVal to that of the users return value that they picked.
+	 * 
+	 * @since 1.2
+	 */
+	@Override
+	public void setUserReturnVal(int n) {
+		userRetVal = n;
+		
 	}
 
 }
