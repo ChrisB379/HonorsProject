@@ -31,8 +31,10 @@ public class RVSubmitAlg2Controller implements ActionListener {
 		 * It only checks text fields which are visible otherwise non-visible ones would catch the if statement
 		 */
 		
+		//Checks all text boxes and if at least one contains nothing aka "" then a dialog box is shown
+		view.checkUserInputs();
 		
-		view.checkUserInputs2();
+		//Checks if all text fields have an input and are not ""
 		view.checkAllFieldsFilled();
 		
 		if(view.getUsersReturnValue() < 1){
