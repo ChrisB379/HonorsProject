@@ -23,6 +23,7 @@ import javax.swing.UIManager;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import model.IReturnValue;
+import javax.swing.JTextPane;
 
 public class ReturnValueResults extends JPanel implements Observer {
 
@@ -32,6 +33,9 @@ public class ReturnValueResults extends JPanel implements Observer {
 	
 	private JTextArea txtResults;
 	private JTextArea txtSummary;
+	
+	private int userRet;
+	private int param;
 
 	/**
 	 * Create the panel.
@@ -43,64 +47,52 @@ public class ReturnValueResults extends JPanel implements Observer {
 		((Observable) r).addObserver(this);
 
 		JLabel lblResults = new JLabel("Results");
+		lblResults.setBounds(327, 11, 61, 14);
 
 		txtResults = new JTextArea();
-		txtResults.setText("The results from the previous two pages are as follows: \r\n\r\nThe algorithm worked on was factorial(INSERTuserINPUThere)\r\n\r\nYour answer for factorial(INSERTuserINPUThere) was : "
-				+ "\r\n\r\nThe correct answer for factorial(INSERTuserINPUThere) is :\r\n\r\nWe get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");
+		txtResults.setBounds(47, 36, 668, 423);
+		txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+				+ "The algorithm worked on was factorial(0)\r\n\r\n"
+				+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+				+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+				+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+				+ "We get to this answer by:\r\n\r\n"
+				+ "fact(null);\r\n"
+				+ "return fact() * null\r\n"
+				+ "return fact()\r\n"
+				+ "return fact()\r\n"
+				+ "return fact()\r\n"
+				+ "return fact()\r\n"
+				+ "return fact()\r\n"
+				+ "return fact()\r\n"
+				+ "return fact()\r\n"
+				+ "return fact()\r\n"
+				+ "return   = return " );
 		txtResults.setBackground(UIManager.getColor("Panel.background"));
-		txtResults.setWrapStyleWord(true);
-		txtResults.setLineWrap(true);
 		txtResults.setEditable(false);
 
 		txtSummary = new JTextArea();
+		txtSummary.setBounds(47, 487, 668, 266);
 		txtSummary.setText("\t\t\t\t\t\t\t\t\t\tSummary\r\n\r\nIn this tutorial series, the basics of return values in recursion were presented.\r\n\r\nReturn values take two forms in basic recursive methods.\r\n\r\nFirst is the base case return value which is how we stop the recursive call going into an infinite loop and causing a stack overflow. The final calculation is then begun.\r\n\r\nThe second is the recursive value itself as seen in the factorial algorithm, the recursive call being return n * factorial(n-1).");
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
 		txtSummary.setWrapStyleWord(true);
 		txtSummary.setLineWrap(true);
 		txtSummary.setEditable(false);
-		
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-										.addGap(327)
-										.addComponent(lblResults))
-										.addGroup(groupLayout.createSequentialGroup()
-												.addGap(46)
-												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(txtSummary, GroupLayout.PREFERRED_SIZE, 618, GroupLayout.PREFERRED_SIZE)
-														.addComponent(txtResults, GroupLayout.PREFERRED_SIZE, 633, GroupLayout.PREFERRED_SIZE))))
-														.addContainerGap(104, Short.MAX_VALUE))
-				);
-		groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(lblResults)
-						.addGap(53)
-						.addComponent(txtResults, GroupLayout.PREFERRED_SIZE, 304, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(txtSummary, GroupLayout.PREFERRED_SIZE, 266, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(143, Short.MAX_VALUE))
-				);
-		setLayout(groupLayout);
+		setLayout(null);
+		add(lblResults);
+		add(txtSummary);
+		add(txtResults);
 
 	}
 
-	private int userRet;
+
 	
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		setReturnVal(model.getUserReturnVal());
-		System.out.println("getReturnVal "+ getReturnVal());
-		System.out.println("1 " + model.getUserReturnVal());
-		System.out.println("2 " + model.getUserRetVal2());
-		txtResults.setText("The results from the previous two pages are as follows: \r\n\r\nThe algorithm worked on was factorial("+ model.getParam() + ")\r\n\r\nYour answer for factorial(" + model.getParam()+ ") in the first exmaple was : " + model.getUserReturnVal()
-				+"\r\n\r\nYour answer for factorial(" + model.getParam()+ ") in the second example was : "+ model.getUserRetVal2() 
-				+ "\r\n\r\nThe correct answer for factorial("+ model.getParam() + ") is : "+ model.factorial(model.getParam()) 
-				+ "\r\n\r\nWe get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");
+		setParam(model.getParam());
+		System.out.println("RetValResults " + getParam());
+		setResultsText();
 		
 	}
 	
@@ -110,5 +102,175 @@ public class ReturnValueResults extends JPanel implements Observer {
 	
 	public int getReturnVal(){
 		return userRet;
+	}
+	
+	public int getParam(){
+		return param;
+	}
+	
+	public void setParam(int n){
+		param = n;
+	}
+	
+	public void setResultsText(){
+		
+		if(param == 1){
+			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was factorial(0)\r\n\r\n"
+					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fact("+ getParam() +");\r\n"
+					+ "return " + getParam() +  "= return " + model.factorial(model.getParam()) );
+		}
+		
+		if(param == 2){
+			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was factorial(0)\r\n\r\n"
+					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fact("+ getParam() +");\r\n"
+					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
+					+ "return " + (getParam()-1) + " * "+ getParam() +  "= return " + model.factorial(model.getParam()) );
+		}
+		
+		if(param == 3){
+			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was factorial(0)\r\n\r\n"
+					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fact("+ getParam() +");\r\n"
+					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
+					+ "return fact(" + (getParam()-2) + ") * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() +  "= return " + model.factorial(model.getParam()) );
+		}
+		
+		if(param == 4){
+			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was factorial(0)\r\n\r\n"
+					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fact("+ getParam() +");\r\n"
+					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
+					+ "return fact(" + (getParam()-2) + ") * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-3) + ") * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() +  "= return " + model.factorial(model.getParam()) );
+		}
+		
+		if(param == 5){
+			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was factorial(0)\r\n\r\n"
+					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fact("+ getParam() +");\r\n"
+					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
+					+ "return fact(" + (getParam()-2) + ") * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-3) + ") * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-4) + ") * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() +  "= return " + model.factorial(model.getParam()) );
+		}
+		
+		if(param == 6){
+			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was factorial(0)\r\n\r\n"
+					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fact("+ getParam() +");\r\n"
+					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
+					+ "return fact(" + (getParam()-2) + ") * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-3) + ") * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-4) + ") * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-5) + ") * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() +  "= return " + model.factorial(model.getParam()) );
+		}
+		
+		if(param == 7){
+			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was factorial(0)\r\n\r\n"
+					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fact("+ getParam() +");\r\n"
+					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
+					+ "return fact(" + (getParam()-2) + ") * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-3) + ") * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-4) + ") * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-5) + ") * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-6) + ") * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return " + (getParam()-6) + " * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() +  "= return " + model.factorial(model.getParam()) );
+		}
+		
+		if(param == 8){
+			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was factorial(0)\r\n\r\n"
+					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fact("+ getParam() +");\r\n"
+					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
+					+ "return fact(" + (getParam()-2) + ") * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-3) + ") * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-4) + ") * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-5) + ") * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-6) + ") * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-7) + ") * " + (getParam()-6) + " * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return " + (getParam()-7) + " * " + (getParam()-6) + " * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() +  "= return " + model.factorial(model.getParam()) );
+			
+		}
+		
+		if(param == 9){
+			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was factorial(0)\r\n\r\n"
+					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fact("+ getParam() +");\r\n"
+					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
+					+ "return fact(" + (getParam()-2) + ") * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-3) + ") * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-4) + ") * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-5) + ") * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-6) + ") * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-7) + ") * " + (getParam()-6) + " * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-8) + ") * " + (getParam()-7) + " * " + (getParam()-6) + " * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return " + (getParam()-8) + " * " + (getParam()-7) + " * " + (getParam()-6) + " * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() +  "= return " + model.factorial(model.getParam()) );
+			
+		}
+		
+		if(param == 10){
+			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was factorial(0)\r\n\r\n"
+					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
+					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
+					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fact("+ getParam() +");\r\n"
+					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
+					+ "return fact(" + (getParam()-2) + ") * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-3) + ") * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + " \r\n"
+					+ "return fact(" + (getParam()-4) + ") * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-5) + ") * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-6) + ") * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-7) + ") * " + (getParam()-6) + " * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-8) + ") * " + (getParam()-7) + " * " + (getParam()-6) + " * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return fact(" + (getParam()-9) + ") * " + (getParam()-8) + " * " + (getParam()-7) + " * " + (getParam()-6) + " * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() + "\r\n"
+					+ "return " + (getParam()-9) + " * " + (getParam()-8) + " * " + (getParam()-7) + " * " + (getParam()-6) + " * " + (getParam()-5) + " * " + (getParam()-4) + " * " + (getParam()-3) + " * " + (getParam()-2) + " * " + (getParam()-1) + " * "+ getParam() +  "= return " + model.factorial(model.getParam()) );
+			
+		}
+		
 	}
 }
