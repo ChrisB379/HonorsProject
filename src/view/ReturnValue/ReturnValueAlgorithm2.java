@@ -10,9 +10,12 @@ package view.ReturnValue;
  * 
  */
 
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
@@ -238,6 +241,9 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 	private JButton btnSubmit;
 
 	private int parameter;
+	private int usersReturnValue;
+	
+	private boolean bool;
 
 	private Algorithm2Button ab2;
 
@@ -261,7 +267,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		rvs2C = new RVSubmitAlg2Controller(model, this);
 
 		JLabel lblExample = new JLabel("Example 2");
-		lblExample.setBounds(347, 11, 49, 14);
+		lblExample.setBounds(347, 11, 77, 14);
 
 		txtExample2 = new JTextArea();
 		txtExample2.setBounds(56, 60, 575, 97);
@@ -1421,6 +1427,27 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line12Input1.setBounds(121, 552, 22, 20);
 		line12Input1.setColumns(10);
 		line12Input1.setDocument(new JTextFieldLimit(2));
+		line12Input1.addFocusListener(new FocusListener() {
+
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				// TODO Auto-generated method stub
+				int n = 0;
+				if(line12Input1.getText().equals(""))
+					JOptionPane.showMessageDialog(null, "Please enter a valid final return value.");
+				
+				if(!line12Input1.getText().equals("")){
+				n = Integer.parseInt(line12Input1.getText());
+				setUsersReturnValue(n);
+				}
+			}
+
+			@Override
+			public void focusGained(FocusEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+		});
 
 		setLayout(null);
 		add(lblExample);
@@ -1955,4 +1982,832 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11mult8.setVisible(true);
 
 	}
+
+	/**
+	 * Returns the value which the user entered as the final return value of the recursive call
+	 * 
+	 * @return an Integer which the represents the final return value of the recursive call
+	 */
+	public int getUsersReturnValue(){
+		return usersReturnValue;
+	}
+
+	/**
+	 * Sets the value the user entered as the final return value
+	 * This will be used to be passed onto the results page
+	 * 
+	 * @param n an Integer
+	 */
+	public void setUsersReturnValue(int n){
+		usersReturnValue = n;
+	}
+
+	public boolean checkLine1(){
+		if(line1Input1.getText().equals("")){
+			return true;
+		}
+		else
+			return false;
+	}
+
+	public boolean checkLine2(){
+		if(line2Input1.getText().equals("")
+				|| line2Input2.getText().equals(""))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean checkLine3(){
+		if(line3Input1.getText().equals("")
+				|| line3Input2.getText().equals("")
+				|| line3Input3.getText().equals(""))
+			return true;
+		else
+			return false;
+	}
+	public boolean checkLine4(){
+		if(line4Input1.getText().equals("")
+				|| line4Input2.getText().equals("")
+				|| line4Input3.getText().equals("")
+				|| line4Input4.getText().equals(""))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean checkLine5(){
+		if(line5Input1.getText().equals("")
+				|| line5Input2.getText().equals("")
+				|| line5Input3.getText().equals("")
+				|| line5Input4.getText().equals("")
+				|| line5Input5.getText().equals(""))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean checkLine6(){
+		if(line6Input1.getText().equals("")
+				|| line6Input2.getText().equals("")
+				|| line6Input3.getText().equals("")
+				|| line6Input4.getText().equals("")
+				|| line6Input5.getText().equals("")
+				|| line6Input6.getText().equals(""))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean checkLine7(){
+		if(line7Input1.getText().equals("")
+				|| line7Input2.getText().equals("")
+				|| line7Input3.getText().equals("")
+				|| line7Input4.getText().equals("")
+				|| line7Input5.getText().equals("")
+				|| line7Input6.getText().equals("")
+				|| line7Input7.getText().equals(""))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean checkLine8(){
+		if(line8Input1.getText().equals("")
+				|| line8Input2.getText().equals("")
+				|| line8Input3.getText().equals("")
+				|| line8Input4.getText().equals("")
+				|| line8Input5.getText().equals("")
+				|| line8Input6.getText().equals("")
+				|| line8Input7.getText().equals("")
+				|| line8Input8.getText().equals(""))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean checkLine9(){
+		if(line9Input1.getText().equals("")
+				|| line9Input2.getText().equals("")
+				|| line9Input3.getText().equals("")
+				|| line9Input4.getText().equals("")
+				|| line9Input5.getText().equals("")
+				|| line9Input6.getText().equals("")
+				|| line9Input7.getText().equals("")
+				|| line9Input8.getText().equals("")
+				|| line9Input9.getText().equals(""))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean checkLine10(){
+		if(line10Input1.getText().equals("")
+				|| line10Input2.getText().equals("")
+				|| line10Input3.getText().equals("")
+				|| line10Input4.getText().equals("")
+				|| line10Input5.getText().equals("")
+				|| line10Input6.getText().equals("")
+				|| line10Input7.getText().equals("")
+				|| line10Input8.getText().equals("")
+				|| line10Input9.getText().equals("")
+				|| line10Input10.getText().equals(""))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean checkLine11(){
+		return false;
+	}
+
+	public boolean checkLine12(){
+		if(line12Input1.getText().equals(""))
+			return true;
+		else
+			return false;
+	}
+
+	public void checkUserInputs2(){
+
+		if(getParameter() == 1){
+			if(checkLine1()
+				|| checkLine12()
+					)
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+
+		}
+
+		if(getParameter() == 2){
+			if(checkLine1()
+					|| checkLine2()	
+						)
+					JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+
+		}
+
+		if(getParameter() == 3){
+			if(checkLine1()
+					|| checkLine2()	
+					|| checkLine3()	
+						)
+					JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+
+		}
+
+		if(getParameter() == 4){
+			if(checkLine1()
+					|| checkLine2()	
+					|| checkLine3()	
+					|| checkLine4()	
+						)
+					JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+
+		}
+
+		if(getParameter() == 5){
+			if(checkLine1()
+					|| checkLine2()	
+					|| checkLine3()	
+					|| checkLine4()	
+					|| checkLine5()	
+						)
+					JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+
+		}
+
+		if(getParameter() == 6){
+			if(checkLine1()
+					|| checkLine2()	
+					|| checkLine3()	
+					|| checkLine4()	
+					|| checkLine5()	
+					|| checkLine6()	
+						)
+					JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+
+		}
+
+		if(getParameter() == 7){
+			if(checkLine1()
+					|| checkLine2()	
+					|| checkLine3()	
+					|| checkLine4()	
+					|| checkLine5()	
+					|| checkLine6()	
+					|| checkLine7()	
+						)
+					JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+
+		}
+
+		if(getParameter() == 8){
+			if(checkLine1()
+					|| checkLine2()	
+					|| checkLine3()	
+					|| checkLine4()	
+					|| checkLine5()	
+					|| checkLine6()	
+					|| checkLine7()	
+					|| checkLine8()	
+						)
+					JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+
+		}
+
+		if(getParameter() == 9){
+			if(checkLine1()
+					|| checkLine2()	
+					|| checkLine3()	
+					|| checkLine4()	
+					|| checkLine5()	
+					|| checkLine6()	
+					|| checkLine7()	
+					|| checkLine8()	
+					|| checkLine9()	
+						)
+					JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+
+		}
+
+		if(getParameter() == 10){
+			if(checkLine1()
+				|| checkLine2()	
+				|| checkLine3()	
+				|| checkLine4()	
+				|| checkLine5()	
+				|| checkLine6()	
+				|| checkLine7()	
+				|| checkLine8()	
+				|| checkLine9()	
+				|| checkLine10()	
+					)
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+
+		}
+
+
+	}
+	
+	public boolean getFilled(){
+		return bool;
+	}
+	
+	public void setFilled(boolean b){
+		bool = b;
+	}
+	
+	public void checkAllFieldsFilled(){
+
+		if(getParameter() == 1){
+			if(!checkLine1()
+				&& !checkLine12()
+					)
+				setFilled(true);
+
+		}
+		
+		if(getParameter() == 2){
+			if(!checkLine1()
+					&& !checkLine2()
+						)
+				setFilled(true);
+
+		}
+		
+		if(getParameter() == 3){
+			if(checkLine1() == false
+					&& checkLine2() == false	
+							&& checkLine3() == false	
+						)
+				setFilled(true);
+			
+		}
+		
+		if(getParameter() == 4){
+			if(!checkLine1()
+					&& !checkLine2()	
+					&& !checkLine3()	
+					&& !checkLine4()	
+						)
+				setFilled(true);
+
+		}
+		
+		if(getParameter() == 5){
+			if(!checkLine1()
+					&& !checkLine2()	
+					&& !checkLine3()	
+					&& !checkLine4()	
+					&& !checkLine5()	
+						)
+				setFilled(true);
+
+		}
+		
+		if(getParameter() == 6){
+			if(!checkLine1()
+					&& !checkLine2()	
+					&& !checkLine3()	
+					&& !checkLine4()	
+					&& !checkLine5()	
+					&& !checkLine6()	
+						)
+				setFilled(true);
+
+		}
+		
+		if(getParameter() == 7){
+			if(!checkLine1()
+					&& !checkLine2()	
+					&& !checkLine3()	
+					&& !checkLine4()	
+					&& !checkLine5()	
+					&& !checkLine6()	
+					&& !checkLine7()	
+						)
+				setFilled(true);
+
+		}
+		
+		if(getParameter() == 8){
+			if(!checkLine1()
+					&& !checkLine2()	
+					&& !checkLine3()	
+					&& !checkLine4()	
+					&& !checkLine5()	
+					&& !checkLine6()	
+					&& !checkLine7()	
+					&& !checkLine8()	
+						)
+				setFilled(true);
+
+		}
+		
+		if(getParameter() == 9){
+			if(!checkLine1()
+					&& !checkLine2()	
+					&& !checkLine3()	
+					&& !checkLine4()	
+					&& !checkLine5()	
+					&& !checkLine6()	
+					&& !checkLine7()	
+					&& !checkLine8()	
+					&& !checkLine9()	
+						)
+				setFilled(true);
+
+		}
+		
+		if(getParameter() == 10){
+			if(!checkLine1()
+					&& !checkLine2()	
+				&& !checkLine3()	
+				&& !checkLine4()	
+				&& !checkLine5()	
+				&& !checkLine6()	
+				&& !checkLine7()	
+				&& !checkLine8()	
+				&& !checkLine9()	
+				&& !checkLine10()	
+					)
+				setFilled(true);
+
+		}
+
+	}
+	
+	
+	public void checkUserInputs(){
+		if(getParameter() == 1){
+			if(line1Input1.getText().equals("")
+					|| line11Input1.getText().equals("")
+
+					|| line12Input1.getText().equals("")){
+
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+			}
+
+		}
+
+		if(getParameter() == 2){
+			if(line1Input1.getText().equals("")
+					|| line2Input1.getText().equals("")
+					|| line2Input2.getText().equals("")
+
+					|| line11Input1.getText().equals("")
+					|| line11Input2.getText().equals("")
+
+					|| line12Input1.getText().equals("")
+
+					){
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+			}
+
+		}
+
+		if(getParameter() == 3){
+			if(line1Input1.getText().equals("")
+					|| line2Input1.getText().equals("")
+					|| line2Input2.getText().equals("")
+
+					|| line3Input1.getText().equals("")
+					|| line3Input2.getText().equals("")
+					|| line3Input3.getText().equals("")
+
+					|| line11Input1.getText().equals("")
+					|| line11Input2.getText().equals("")
+					|| line11Input3.getText().equals("")
+
+					|| line12Input1.getText().equals("")
+
+					){
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+			}
+
+		}
+
+		if(getParameter() == 4){
+			if(line1Input1.getText().equals("")
+					|| line2Input1.getText().equals("")
+					|| line2Input2.getText().equals("")
+
+					|| line3Input1.getText().equals("")
+					|| line3Input2.getText().equals("")
+					|| line3Input3.getText().equals("")
+
+					|| line4Input1.getText().equals("")
+					|| line4Input2.getText().equals("")
+					|| line4Input3.getText().equals("")
+					|| line4Input4.getText().equals("")
+
+					|| line11Input1.getText().equals("")
+					|| line11Input2.getText().equals("")
+					|| line11Input3.getText().equals("")
+					|| line11Input4.getText().equals("")
+
+					|| line12Input1.getText().equals("")
+
+					){
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+			}
+
+		}
+
+		if(getParameter() == 5){
+			if(line1Input1.getText().equals("")
+					|| line2Input1.getText().equals("")
+					|| line2Input2.getText().equals("")
+
+					|| line3Input1.getText().equals("")
+					|| line3Input2.getText().equals("")
+					|| line3Input3.getText().equals("")
+
+					|| line4Input1.getText().equals("")
+					|| line4Input2.getText().equals("")
+					|| line4Input3.getText().equals("")
+					|| line4Input4.getText().equals("")
+
+					|| line5Input1.getText().equals("")
+					|| line5Input2.getText().equals("")
+					|| line5Input3.getText().equals("")
+					|| line5Input4.getText().equals("")
+					|| line5Input5.getText().equals("")
+
+					|| line11Input1.getText().equals("")
+					|| line11Input2.getText().equals("")
+					|| line11Input3.getText().equals("")
+					|| line11Input4.getText().equals("")
+					|| line11Input5.getText().equals("")
+
+					|| line12Input1.getText().equals("")
+
+					){
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+			}
+
+		}
+
+		if(getParameter() == 6){
+			if(line1Input1.getText().equals("")
+					|| line2Input1.getText().equals("")
+					|| line2Input2.getText().equals("")
+
+					|| line3Input1.getText().equals("")
+					|| line3Input2.getText().equals("")
+					|| line3Input3.getText().equals("")
+
+					|| line4Input1.getText().equals("")
+					|| line4Input2.getText().equals("")
+					|| line4Input3.getText().equals("")
+					|| line4Input4.getText().equals("")
+
+					|| line5Input1.getText().equals("")
+					|| line5Input2.getText().equals("")
+					|| line5Input3.getText().equals("")
+					|| line5Input4.getText().equals("")
+					|| line5Input5.getText().equals("")
+
+					|| line6Input1.getText().equals("")
+					|| line6Input2.getText().equals("")
+					|| line6Input3.getText().equals("")
+					|| line6Input4.getText().equals("")
+					|| line6Input5.getText().equals("")
+					|| line6Input6.getText().equals("")
+
+					|| line11Input1.getText().equals("")
+					|| line11Input2.getText().equals("")
+					|| line11Input3.getText().equals("")
+					|| line11Input4.getText().equals("")
+					|| line11Input5.getText().equals("")
+					|| line11Input6.getText().equals("")
+
+					|| line12Input1.getText().equals("")
+
+					){
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+			}
+
+		}
+
+		if(getParameter() == 7){
+
+			if(line1Input1.getText().equals("")
+					|| line2Input1.getText().equals("")
+					|| line2Input2.getText().equals("")
+
+					|| line3Input1.getText().equals("")
+					|| line3Input2.getText().equals("")
+					|| line3Input3.getText().equals("")
+
+					|| line4Input1.getText().equals("")
+					|| line4Input2.getText().equals("")
+					|| line4Input3.getText().equals("")
+					|| line4Input4.getText().equals("")
+
+					|| line5Input1.getText().equals("")
+					|| line5Input2.getText().equals("")
+					|| line5Input3.getText().equals("")
+					|| line5Input4.getText().equals("")
+					|| line5Input5.getText().equals("")
+
+					|| line6Input1.getText().equals("")
+					|| line6Input2.getText().equals("")
+					|| line6Input3.getText().equals("")
+					|| line6Input4.getText().equals("")
+					|| line6Input5.getText().equals("")
+					|| line6Input6.getText().equals("")
+
+					|| line7Input1.getText().equals("")
+					|| line7Input2.getText().equals("")
+					|| line7Input3.getText().equals("")
+					|| line7Input4.getText().equals("")
+					|| line7Input5.getText().equals("")
+					|| line7Input6.getText().equals("")
+					|| line7Input7.getText().equals("")
+
+					|| line11Input1.getText().equals("")
+					|| line11Input2.getText().equals("")
+					|| line11Input3.getText().equals("")
+					|| line11Input4.getText().equals("")
+					|| line11Input5.getText().equals("")
+					|| line11Input6.getText().equals("")
+					|| line11Input7.getText().equals("")
+
+					|| line12Input1.getText().equals("")
+
+					){
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+			}
+
+		}
+
+		if(getParameter() == 8){
+			if(line1Input1.getText().equals("")
+					|| line2Input1.getText().equals("")
+					|| line2Input2.getText().equals("")
+
+					|| line3Input1.getText().equals("")
+					|| line3Input2.getText().equals("")
+					|| line3Input3.getText().equals("")
+
+					|| line4Input1.getText().equals("")
+					|| line4Input2.getText().equals("")
+					|| line4Input3.getText().equals("")
+					|| line4Input4.getText().equals("")
+
+					|| line5Input1.getText().equals("")
+					|| line5Input2.getText().equals("")
+					|| line5Input3.getText().equals("")
+					|| line5Input4.getText().equals("")
+					|| line5Input5.getText().equals("")
+
+					|| line6Input1.getText().equals("")
+					|| line6Input2.getText().equals("")
+					|| line6Input3.getText().equals("")
+					|| line6Input4.getText().equals("")
+					|| line6Input5.getText().equals("")
+					|| line6Input6.getText().equals("")
+
+					|| line7Input1.getText().equals("")
+					|| line7Input2.getText().equals("")
+					|| line7Input3.getText().equals("")
+					|| line7Input4.getText().equals("")
+					|| line7Input5.getText().equals("")
+					|| line7Input6.getText().equals("")
+					|| line7Input7.getText().equals("")
+
+					|| line8Input1.getText().equals("")
+					|| line8Input2.getText().equals("")
+					|| line8Input3.getText().equals("")
+					|| line8Input4.getText().equals("")
+					|| line8Input5.getText().equals("")
+					|| line8Input6.getText().equals("")
+					|| line8Input7.getText().equals("")
+					|| line8Input8.getText().equals("")
+
+					|| line11Input1.getText().equals("")
+					|| line11Input2.getText().equals("")
+					|| line11Input3.getText().equals("")
+					|| line11Input4.getText().equals("")
+					|| line11Input5.getText().equals("")
+					|| line11Input6.getText().equals("")
+					|| line11Input7.getText().equals("")
+					|| line11Input8.getText().equals("")
+
+					|| line12Input1.getText().equals("")
+
+					){
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+			}
+
+		}
+
+		if(getParameter() == 9){
+
+			if(line1Input1.getText().equals("")
+					|| line2Input1.getText().equals("")
+					|| line2Input2.getText().equals("")
+
+					|| line3Input1.getText().equals("")
+					|| line3Input2.getText().equals("")
+					|| line3Input3.getText().equals("")
+
+					|| line4Input1.getText().equals("")
+					|| line4Input2.getText().equals("")
+					|| line4Input3.getText().equals("")
+					|| line4Input4.getText().equals("")
+
+					|| line5Input1.getText().equals("")
+					|| line5Input2.getText().equals("")
+					|| line5Input3.getText().equals("")
+					|| line5Input4.getText().equals("")
+					|| line5Input5.getText().equals("")
+
+					|| line6Input1.getText().equals("")
+					|| line6Input2.getText().equals("")
+					|| line6Input3.getText().equals("")
+					|| line6Input4.getText().equals("")
+					|| line6Input5.getText().equals("")
+					|| line6Input6.getText().equals("")
+
+					|| line7Input1.getText().equals("")
+					|| line7Input2.getText().equals("")
+					|| line7Input3.getText().equals("")
+					|| line7Input4.getText().equals("")
+					|| line7Input5.getText().equals("")
+					|| line7Input6.getText().equals("")
+					|| line7Input7.getText().equals("")
+
+					|| line8Input1.getText().equals("")
+					|| line8Input2.getText().equals("")
+					|| line8Input3.getText().equals("")
+					|| line8Input4.getText().equals("")
+					|| line8Input5.getText().equals("")
+					|| line8Input6.getText().equals("")
+					|| line8Input7.getText().equals("")
+					|| line8Input8.getText().equals("")
+
+					|| line9Input1.getText().equals("")
+					|| line9Input2.getText().equals("")
+					|| line9Input3.getText().equals("")
+					|| line9Input4.getText().equals("")
+					|| line9Input5.getText().equals("")
+					|| line9Input6.getText().equals("")
+					|| line9Input7.getText().equals("")
+					|| line9Input8.getText().equals("")
+					|| line9Input9.getText().equals("")
+
+					|| line11Input1.getText().equals("")
+					|| line11Input2.getText().equals("")
+					|| line11Input3.getText().equals("")
+					|| line11Input4.getText().equals("")
+					|| line11Input5.getText().equals("")
+					|| line11Input6.getText().equals("")
+					|| line11Input7.getText().equals("")
+					|| line11Input8.getText().equals("")
+					|| line11Input9.getText().equals("")
+
+					|| line12Input1.getText().equals("")
+
+					){
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+			}
+
+		}
+
+		if(getParameter() == 10){
+
+			if(line1Input1.getText().equals("")
+					|| line2Input1.getText().equals("")
+					|| line2Input2.getText().equals("")
+
+					|| line3Input1.getText().equals("")
+					|| line3Input2.getText().equals("")
+					|| line3Input3.getText().equals("")
+
+					|| line4Input1.getText().equals("")
+					|| line4Input2.getText().equals("")
+					|| line4Input3.getText().equals("")
+					|| line4Input4.getText().equals("")
+
+					|| line5Input1.getText().equals("")
+					|| line5Input2.getText().equals("")
+					|| line5Input3.getText().equals("")
+					|| line5Input4.getText().equals("")
+					|| line5Input5.getText().equals("")
+
+					|| line6Input1.getText().equals("")
+					|| line6Input2.getText().equals("")
+					|| line6Input3.getText().equals("")
+					|| line6Input4.getText().equals("")
+					|| line6Input5.getText().equals("")
+					|| line6Input6.getText().equals("")
+
+					|| line7Input1.getText().equals("")
+					|| line7Input2.getText().equals("")
+					|| line7Input3.getText().equals("")
+					|| line7Input4.getText().equals("")
+					|| line7Input5.getText().equals("")
+					|| line7Input6.getText().equals("")
+					|| line7Input7.getText().equals("")
+
+					|| line8Input1.getText().equals("")
+					|| line8Input2.getText().equals("")
+					|| line8Input3.getText().equals("")
+					|| line8Input4.getText().equals("")
+					|| line8Input5.getText().equals("")
+					|| line8Input6.getText().equals("")
+					|| line8Input7.getText().equals("")
+					|| line8Input8.getText().equals("")
+
+					|| line9Input1.getText().equals("")
+					|| line9Input2.getText().equals("")
+					|| line9Input3.getText().equals("")
+					|| line9Input4.getText().equals("")
+					|| line9Input5.getText().equals("")
+					|| line9Input6.getText().equals("")
+					|| line9Input7.getText().equals("")
+					|| line9Input8.getText().equals("")
+					|| line9Input9.getText().equals("")
+
+					|| line10Input1.getText().equals("")
+					|| line10Input2.getText().equals("")
+					|| line10Input3.getText().equals("")
+					|| line10Input4.getText().equals("")
+					|| line10Input5.getText().equals("")
+					|| line10Input6.getText().equals("")
+					|| line10Input7.getText().equals("")
+					|| line10Input8.getText().equals("")
+					|| line10Input9.getText().equals("")
+					|| line10Input10.getText().equals("")
+
+					|| line11Input1.getText().equals("")
+					|| line11Input2.getText().equals("")
+					|| line11Input3.getText().equals("")
+					|| line11Input4.getText().equals("")
+					|| line11Input5.getText().equals("")
+					|| line11Input6.getText().equals("")
+					|| line11Input7.getText().equals("")
+					|| line11Input8.getText().equals("")
+					|| line11Input9.getText().equals("")
+					|| line11Input10.getText().equals("")
+
+					|| line12Input1.getText().equals("")
+
+					){
+				JOptionPane.showMessageDialog(null, "Please enter a value in all input boxes.");
+			}
+
+		}
+
+
+	}
+
+	public void setAdvButtonVis(){
+		ab2.setVis();
+		btnSubmit.setVisible(false);
+	}
+
+
 }

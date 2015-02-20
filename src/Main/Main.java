@@ -58,3 +58,4 @@ public class Main {
 //TODO format the JTextField in the algorithm classes. Only textfields can have listeners but the layout is poor
 //TODO set arraylists to clear once tutorials are finished e.g in ReturnValueAlgorithm combined with the SubmitController, it doesnt seem to happen since a new instance is made each time however
 //TODO rename factorial algorithm to fact for the sake of ReturnValueAlgorithm2 class
+//TODO set the parameter fields to all check for if the input .equals("") and if so then make a dialog box. If not then accent the input. This fixes the issue of focus listeners

@@ -8,6 +8,7 @@ package view.ReturnValue;
  * @since 1.0
  */
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -21,6 +22,7 @@ import javax.swing.JTextPane;
 
 import controller.ReturnValue.RVParameterController;
 import model.IReturnValue;
+
 import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
@@ -85,8 +87,14 @@ public class ReturnValueExample extends JPanel implements Observer {
 
 			@Override
 			public void focusLost(FocusEvent e) {
-				int n = Integer.parseInt(txtParameterField.getText());
+				int n = 0;
+				if(txtParameterField.getText().equals(""))
+					JOptionPane.showMessageDialog(null, "Please enter a valid number for the parameter.");
+				
+				if(!txtParameterField.getText().equals(""));{
+				n = Integer.parseInt(txtParameterField.getText());
 				setParameter(n);
+				}
 
 			}
 
