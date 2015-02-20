@@ -187,8 +187,8 @@ public class ReturnValue extends Observable implements IReturnValue {
 	@Override
 	public void setUserReturnVal(int n) {
 		userRetVal = n;
-//		setChanged();
-//		notifyObservers();
+		setChanged();
+		notifyObservers();
 		
 	}
 

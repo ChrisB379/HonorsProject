@@ -74,6 +74,8 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	
 	private AlgorithmButton aBut;
 	private JTextArea txtWorking;
+	
+	private boolean doOnce;
 
 	/**
 	 * Create the panel.
@@ -273,7 +275,11 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		setParameter(model.getParam());
 		System.out.println("rv " + model.getParam());
 		//A count for the submit button to keep track of how many recursive calls there has been
+		if(!doOnce){
 		count = model.getParam();
+		doOnce = true;
+		}
+		
 		textArea.setText("n = " + getParameter());
 	}
 

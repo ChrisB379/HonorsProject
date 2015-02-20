@@ -97,8 +97,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		System.out.println("getReturnVal "+ getReturnVal());
 		System.out.println("1 " + model.getUserReturnVal());
 		System.out.println("2 " + model.getUserRetVal2());
-		txtResults.setText("The results from the previous two pages are as follows: \r\n\r\nThe algorithm worked on was factorial("+ model.getParam() + ")\r\n\r\nYour answer for factorial(" + model.getParam()+ ") was : " + model.getUserReturnVal()
-				+" "+ model.getUserRetVal2() + "\r\n\r\nThe correct answer for factorial("+ model.getParam() + ") is : "+ model.factorial(model.getParam()) + "\r\n\r\nWe get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");
+		txtResults.setText("The results from the previous two pages are as follows: \r\n\r\nThe algorithm worked on was factorial("+ model.getParam() + ")\r\n\r\nYour answer for factorial(" + model.getParam()+ ") in the first exmaple was : " + model.getUserReturnVal()
+				+"\r\n\r\nYour answer for factorial(" + model.getParam()+ ") in the second example was : "+ model.getUserRetVal2() 
+				+ "\r\n\r\nThe correct answer for factorial("+ model.getParam() + ") is : "+ model.factorial(model.getParam()) 
+				+ "\r\n\r\nWe get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");
 		
 	}
 	
