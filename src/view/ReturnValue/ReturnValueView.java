@@ -320,28 +320,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		txtrIntroduction.setContentType("text/html");
 		txtrIntroduction.setEditable(false);
 		txtrIntroduction.setBackground(UIManager.getColor("Panel.background"));
-		txtrIntroduction.setText("<html>\r\n<br>This tutorial series focuses on return values in recursive calls. A method returns to the code that invoked it when it completes all the statements in the method, reaches a return statement, or when it throws an exception.\r\n"
-				+ "<br>\r\n<br>The return value of a recursive call is the result of a recursive call after all the statements in the method have been reached which is usually a return statement which itself is a recursive call.\r\n"
-				+ "<br>\r\n"
-				+ "<br>The final return value however, is returned once the base case is met(as described in the previous tutorial) and thus a different return statement is met which does not continue the recursive calls.\r\n"
-				+ "<br>\r\n"
-				+ "<br>In this tutorial series, the factorial algorithm will be used in order to demonstrate how the final return value of a recursive call is calculated.\r\n"
-				+ "<br>\r\n"
-				+ "<br>Factorial is the product of an integer and all the integers below it; e.g. factorial four ( 4! ) is equal to 24.\r\n"
-				+ "<br>\r\n"
-				+ "<br>The Factorial algorithm is as follows:\r\n"
-				+ "<br>\r\n"
-				+ "<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int factorial(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n"
-				+ "<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n"
-				+ "<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; "
-				+ "<br>\r\n"
-				+ "<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * factorial(n-1);\r\n "
-				+ "<br>&nbsp } </code> \r\n"
-				+ "<br>\r\n"
-				+ "<br>Now we are going to move onto how the factorial algorithm works.\r\n"
-				+ "<br>\r\n"
-				+ "<br>Please click the Advance button to continue.\r\n"
-				+ "<br>\r\n</html>");
+		txtrIntroduction.setText("<html>\r\n<br>This tutorial series focuses on return values in recursive calls. A method returns to the code that invoked it when it completes all the statements in the method, reaches a return statement, or when it throws an exception.\r\n<br>\r\n<br>The return value of a recursive call is the result of a recursive call after all the statements in the method have been reached which is usually a return statement which itself is a recursive call.\r\n<br>\r\n<br>The final return value however, is returned once the base case is met(as described in the previous tutorial) and thus a different return statement is met which does not continue the recursive calls.\r\n<br>\r\n<br>In this tutorial series, the factorial algorithm will be used in order to demonstrate how the final return value of a recursive call is calculated.\r\n<br>\r\n<br>Factorial is the product of an integer and all the integers below it; e.g. factorial four ( 4! ) is equal to 24.\r\n<br>\r\n<br>The Factorial algorithm is as follows:\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n<br>\r\n<br>Now we are going to move onto how the factorial algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n<br>\r\n</html>");
 
 
 		GroupLayout gl_cp1GroupPanel = new GroupLayout(cp1GroupPanel);

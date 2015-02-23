@@ -48,7 +48,6 @@ public class Main {
 //TODO link the new abstract class to the GUIs to get the value of n on each call so it is displayed
 //TODO find more common methods to use between each algorithm class in the model
 //TODO possibly a new method to get and set any variables used in the model e.g in factorial get the value of each return on the recursive calls to store for use in the GUI to compare with the users answer
-//TODO Is parameters the right thing to do? Is it do able? If not then hard code each possible and display them that way?
 //TODO figure out how to auto generate the factorial examples text boxes. Is hard code the best way?
 //TODO change the example screen or add a new one to specific that this is the last recursive call before the base case and so ask the user what they think the final value will be. Make it clear that its the final call
 //TODO have a section on iteration v recursion, when to use them, advantages of one over the other etc

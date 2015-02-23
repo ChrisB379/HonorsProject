@@ -102,10 +102,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtFactorial.setContentType("text/html");
 		txtFactorial.setBorder(BorderFactory.createLineBorder(Color.black));
 		txtFactorial.setBackground(Color.WHITE);
-		txtFactorial.setText("<html> <code> <font color = rgb(127,0,85)> <b>public static</b> </font> int factorial(<font color = rgb(127,0,85)><b>int</b> </font> n) {   "
-				+ "<br> <font color = rgb(127,0,85)><b>if</b></font> (n == 1) <br>&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; "
-				+ "<br> <font color = rgb(127,0,85)><b>return</b></font> n * factorial(n-1); "
-				+ "<br>} </code> </html>");
+		txtFactorial.setText("<html> <code> <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   <br> <font color = rgb(127,0,85)><b>if</b></font> (n == 1) <br>&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br> <font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1); <br>} </code> </html>");
 		txtFactorial.setEditable(false);
 
 		txtrTheValueOf = new JTextArea();

@@ -73,7 +73,7 @@ public class ReturnValueResults extends JPanel implements Observer {
 
 		txtSummary = new JTextArea();
 		txtSummary.setBounds(47, 487, 668, 266);
-		txtSummary.setText("\t\t\t\t\t\t\t\t\t\tSummary\r\n\r\nIn this tutorial series, the basics of return values in recursion were presented.\r\n\r\nReturn values take two forms in basic recursive methods.\r\n\r\nFirst is the base case return value which is how we stop the recursive call going into an infinite loop and causing a stack overflow. The final calculation is then begun.\r\n\r\nThe second is the recursive value itself as seen in the factorial algorithm, the recursive call being return n * factorial(n-1).");
+		txtSummary.setText("\t\t\t\t\t\t\t\t\t\tSummary\r\n\r\nIn this tutorial series, the basics of return values in recursion were presented.\r\n\r\nReturn values take two forms in basic recursive methods.\r\n\r\nFirst is the base case return value which is how we stop the recursive call going into an infinite loop and causing a stack overflow. The final calculation is then begun.\r\n\r\nThe second is the recursive value itself as seen in the factorial algorithm, the recursive call being return n * fact(n-1).");
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
 		txtSummary.setWrapStyleWord(true);
 		txtSummary.setLineWrap(true);
