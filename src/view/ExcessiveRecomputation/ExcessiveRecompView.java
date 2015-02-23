@@ -35,9 +35,11 @@ import javax.swing.JMenuItem;
 
 import view.About;
 import view.MainMenu;
+import view.ExcessiveRecomputation.AdvanceButtons.ERAfterMemoButton;
 import view.ExcessiveRecomputation.AdvanceButtons.ERAlgorithmButton;
 import view.ExcessiveRecomputation.AdvanceButtons.ERExample2Button;
 import view.ExcessiveRecomputation.AdvanceButtons.ERExampleButton;
+import view.ExcessiveRecomputation.AdvanceButtons.ERMemoButton;
 import view.ExcessiveRecomputation.AdvanceButtons.ERResultsButton;
 import view.WorkAfter.WorkAfterView;
 
@@ -64,6 +66,8 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 	private ERExample2Button eb2;
 	private ERAlgorithmButton ab;
 	private ERResultsButton rb;
+	private ERMemoButton mb;
+	private ERAfterMemoButton amb;
 	
 	private ExcessiveRecompExample e1;
 	private ExcessiveRecompExample2 e2;
@@ -71,6 +75,10 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 	private ExcessiveRecompResult e4;
 	
 	private IExcessiveRecomp model;
+	
+	private Memoization mem;
+	private MemoizationDescription memd;
+	
 
 	/**
 	 * Launch the application.
@@ -102,13 +110,18 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		
 		e2 = new ExcessiveRecompExample2(model);
 		eb2 = new ERExample2Button(this,model,e2);
+		mb = new ERMemoButton(this);
+		amb = new ERAfterMemoButton(this);
 		
-		ab = new ERAlgorithmButton();
-		rb = new ERResultsButton();
+		ab = new ERAlgorithmButton(this);
+		rb = new ERResultsButton(this);
 		
 		e1 = new ExcessiveRecompExample();
-		e3 = new ExcessiveRecompAlgorithm();
+		e3 = new ExcessiveRecompAlgorithm(model,ab);
 		e4 = new ExcessiveRecompResult();
+		
+		 mem = new Memoization();
+		 memd = new MemoizationDescription();
 		
 		setTitle("Tutorial 3: Excessive Recomputation");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -377,19 +390,27 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 	}
 	
 	public void switchCards2(){
+		
+		if(e2.getParameter() < 1 || e2.getParameter() > 11){
+		JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+	}
+
+	if(e2.getParameter() > 0 && e2.getParameter() < 11){
+		//System.out.println("we got here " + count);
 		cardPanel1.add(e3);
-		cardPanel1.remove(e4);
+		cardPanel1.remove(e2);
 		
 		cardPanel2.add(ab);
-		cardPanel2.remove(e2);
+		cardPanel2.remove(eb2);
+	} 
+		
+
 	}
 	
 	public void switchCards3(){
+		System.out.println("switchCards3");
 		cardPanel1.add(e4);
 		cardPanel1.remove(e3);
-		btnAdvance.setText("Tutorial 4");
-		btnMenu.setVisible(true);
-		btnMemoization.setVisible(true);
 		
 		cardPanel2.add(rb);
 		cardPanel2.remove(ab);
@@ -428,6 +449,25 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		MainMenu m = new MainMenu();
 		m.setVisible(true);
 		m.setLocationRelativeTo(null);
+	}
+	
+	public void memo(){
+				cardPanel1.add(mem);
+				cardPanel1.remove(e4);
+				cardPanel1.add(mem);
+				
+				cardPanel2.add(mb);
+				cardPanel2.remove(rb);
+			
+	}
+	
+	public void memo2(){
+		cardPanel1.add(memd);
+		cardPanel1.remove(mem);
+
+		cardPanel2.add(amb);
+		cardPanel2.remove(mb);
+		
 	}
 
 }

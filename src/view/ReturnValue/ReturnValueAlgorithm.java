@@ -268,7 +268,6 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
 		setParameter(model.getParam());
 		System.out.println("rv " + model.getParam());
 		//A count for the submit button to keep track of how many recursive calls there has been

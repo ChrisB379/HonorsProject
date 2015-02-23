@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 
 
@@ -24,6 +26,9 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	 * unlike the param variable which will
 	 */
 	private int Oparam; 
+	
+	private List<Integer> paramArray;
+	private List<Integer> returnV;
 
 	/**
 	 * This is the fibonacci algorithm which will be used to show excessive recomputation.
@@ -104,6 +109,8 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	@Override
 	public void setParam(int n) {
 		param = n;
+		setChanged();
+		notifyObservers();
 		
 	}
 
@@ -155,6 +162,52 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	public void setUserReturnVal(int n) {
 		userRetVal = n;
 		
+	}
+	
+	/**
+	 * This adds user input to an arraylist. The data will be used later in the results page
+	 * 
+	 * 
+	 * @param nVal the users answer to the value of n
+	 * @param retVal the users answer to the value of the current return value 
+	 * 
+	 * @since 1.1
+	 */
+	public void addToArray(int nVal, int retVal){
+		
+		if(paramArray == null)
+			paramArray = new ArrayList<Integer>();
+		
+		if(returnV == null)
+			returnV = new ArrayList<Integer>();
+			
+		paramArray.add(nVal);
+		
+		returnV.add(retVal);
+		
+	}
+	
+	/**
+	 * Gets and returns the value stored in a position in the array
+	 * 
+	 * @param n the position of the element in the array to be fetched
+	 * @return the value held at array position n-1
+	 * @since 1.1
+	 */
+	
+	public int getParamArray(int n){
+		return paramArray.get(n-1);
+	}
+	
+	/**
+	 * Gets and returns the value stored in a position in the array
+	 * 
+	 * @param n the position of the element in the array to be fetched
+	 * @return the value held at array position n-1
+	 * @since 1.1
+	 */
+	public int getReturnVArray(int n){
+		return returnV.get(n-1);
 	}
 
 }

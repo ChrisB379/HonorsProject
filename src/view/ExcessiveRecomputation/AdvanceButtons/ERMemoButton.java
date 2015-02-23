@@ -5,60 +5,51 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 
-import view.ExcessiveRecomputation.ExcessiveRecompAlgorithm;
 import view.ExcessiveRecomputation.ExcessiveRecompView;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ERAlgorithmButton extends JPanel {
+public class ERMemoButton extends JPanel {
 
-	private static final long serialVersionUID = -5875905436774095432L;
-	
-	private JButton btnAdvance;
+
+	private static final long serialVersionUID = -610672730586583239L;
 	
 	private ExcessiveRecompView view;
 
 	/**
 	 * Create the panel.
 	 */
-	public ERAlgorithmButton(ExcessiveRecompView v) {
+	public ERMemoButton(ExcessiveRecompView v) {
 		
 		view = v;
 		
-		btnAdvance = new JButton("Advance");
-		btnAdvance.addActionListener(new ActionListener() {
+		JButton btnContinue = new JButton("Continue");
+		btnContinue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				view.memo2();
 				
-				view.switchCards3();
 			}
 		});
+		
 		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(18)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(124, Short.MAX_VALUE))
+					.addGap(20)
+					.addComponent(btnContinue, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(60, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(21)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(198, Short.MAX_VALUE))
+					.addContainerGap()
+					.addComponent(btnContinue, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(205, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 
-	}
-	
-	public void setNotVis(){
-		btnAdvance.setVisible(false);
-	}
-	
-	public void setVis(){
-		btnAdvance.setVisible(true);
 	}
 
 }
