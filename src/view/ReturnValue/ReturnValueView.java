@@ -45,6 +45,8 @@ import view.ReturnValue.AdvanceButtons.ResultsButton;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import model.ExcessiveRecomp;
+import model.IExcessiveRecomp;
 import model.IReturnValue;
 import model.ReturnValue;
 
@@ -419,7 +421,8 @@ public class ReturnValueView extends JFrame implements Observer {
 	 */
 	public void advanceTut(){
 		dispose();
-		ExcessiveRecompView erv = new ExcessiveRecompView();
+		IExcessiveRecomp iModel = new ExcessiveRecomp();
+		ExcessiveRecompView erv = new ExcessiveRecompView(iModel);
 		erv.setVisible(true);
 		erv.setLocationRelativeTo(null);
 		

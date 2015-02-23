@@ -3,7 +3,7 @@ package controller.ExcessiveRecomputation;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import model.ExcessiveRecomp;
+import model.IExcessiveRecomp;
 import view.ExcessiveRecomputation.ExcessiveRecompExample2;
 
 /**
@@ -20,11 +20,11 @@ import view.ExcessiveRecomputation.ExcessiveRecompExample2;
 
 public class ERParameterController implements ActionListener {
 	
-	private ExcessiveRecomp model;
+	private IExcessiveRecomp model;
 	private ExcessiveRecompExample2 view;
 	
 	
-	public ERParameterController(ExcessiveRecomp er, ExcessiveRecompExample2 erEx) {
+	public ERParameterController(IExcessiveRecomp er, ExcessiveRecompExample2 erEx) {
 		
 		model = er;
 		

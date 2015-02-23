@@ -27,7 +27,9 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 
+import model.ExcessiveRecomp;
 import model.IAlgorithms;
+import model.IExcessiveRecomp;
 import model.IReturnValue;
 import model.IWorkAfter;
 import model.ReturnValue;
@@ -48,8 +50,8 @@ public class TutorialMenu extends JFrame {
 	
 	private IAlgorithms iFace;
 	private IReturnValue iModel;
-	
 	private IWorkAfter iWaModel;
+	private IExcessiveRecomp iErModel;
 
 
 	/**
@@ -122,7 +124,8 @@ public class TutorialMenu extends JFrame {
 		btnReturnValue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				ExcessiveRecompView erv = new ExcessiveRecompView();
+				iErModel = new ExcessiveRecomp();
+				ExcessiveRecompView erv = new ExcessiveRecompView(iErModel);
 				erv.setVisible(true);
 				erv.setLocationRelativeTo(null);
 				//new ReturnValueView().setVisible(true);

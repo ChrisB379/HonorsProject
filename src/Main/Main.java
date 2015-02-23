@@ -58,3 +58,4 @@ public class Main {
 //TODO set arraylists to clear once tutorials are finished e.g in ReturnValueAlgorithm combined with the SubmitController, it doesnt seem to happen since a new instance is made each time however
 //TODO rename factorial algorithm to fact for the sake of ReturnValueAlgorithm2 class
 //TODO set the parameter fields to all check for if the input .equals("") and if so then make a dialog box. If not then accent the input. This fixes the issue of focus listeners
+//TODO change the switchCards internal commentary in the WorkAfterView so it doesnt say return value since its a copy and paste

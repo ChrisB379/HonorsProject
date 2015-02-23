@@ -7,7 +7,6 @@ import javax.swing.GroupLayout.Alignment;
 
 import controller.ReturnValue.RVParameterController;
 import model.IReturnValue;
-import model.ReturnValue;
 import view.ReturnValue.ReturnValueExample;
 import view.ReturnValue.ReturnValueView;
 
