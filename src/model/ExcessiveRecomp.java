@@ -161,6 +161,8 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	@Override
 	public void setUserReturnVal(int n) {
 		userRetVal = n;
+		setChanged();
+		notifyObservers();
 		
 	}
 	

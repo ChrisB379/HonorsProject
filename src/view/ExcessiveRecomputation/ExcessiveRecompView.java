@@ -118,7 +118,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		
 		e1 = new ExcessiveRecompExample();
 		e3 = new ExcessiveRecompAlgorithm(model,ab);
-		e4 = new ExcessiveRecompResult();
+		e4 = new ExcessiveRecompResult(model);
 		
 		 mem = new Memoization();
 		 memd = new MemoizationDescription();
