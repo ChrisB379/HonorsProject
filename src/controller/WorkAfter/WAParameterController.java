@@ -3,6 +3,7 @@ package controller.WorkAfter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import model.IWorkAfter;
 import model.WorkAfter;
 import view.WorkAfter.WorkAfterExample;
 
@@ -20,11 +21,11 @@ import view.WorkAfter.WorkAfterExample;
 
 public class WAParameterController implements ActionListener {
 	
-	private WorkAfter model;
+	private IWorkAfter model;
 	private WorkAfterExample view;
 	
 	
-	public WAParameterController(WorkAfter wa, WorkAfterExample wae) {
+	public WAParameterController(IWorkAfter wa, WorkAfterExample wae) {
 		
 		model = wa;
 		

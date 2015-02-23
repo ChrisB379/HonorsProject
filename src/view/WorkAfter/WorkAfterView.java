@@ -30,15 +30,34 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
+import model.IWorkAfter;
+import model.WorkAfter;
 import view.About;
 import view.MainMenu;
 import view.Summary;
+import view.WorkAfter.AdvanceButtons.WAAlgorithmButton;
+import view.WorkAfter.AdvanceButtons.WAExampleButton;
+import view.WorkAfter.AdvanceButtons.WAResultsButton;
 
 public class WorkAfterView extends JFrame {
 
 
 	private static final long serialVersionUID = -5079828832114029998L;
 	private JPanel contentPane;
+	private JPanel cardPanel1,cardPanel2;
+	private JPanel advancePanel;
+	
+	private JButton btnAdvance,btnMenu;
+	
+	private WAExampleButton eb;
+	private WAAlgorithmButton ab;
+	private WAResultsButton rb;
+	
+	private WorkAfterExample w;
+	private WorkAfterAlgorithm w2;
+	private WorkAfterResult w3;
+	
+	private IWorkAfter model;
 
 	/**
 	 * Launch the application.
@@ -47,7 +66,8 @@ public class WorkAfterView extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					WorkAfterView frame = new WorkAfterView();
+					IWorkAfter model = new WorkAfter();
+					WorkAfterView frame = new WorkAfterView(model);
 					//Centres the GUI to the middle of the screen
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
@@ -61,7 +81,20 @@ public class WorkAfterView extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public WorkAfterView() {
+	public WorkAfterView(IWorkAfter m) {
+		
+		model = m;
+		
+		w = new WorkAfterExample(model);
+		
+		ab = new WAAlgorithmButton(this);
+		w2 = new WorkAfterAlgorithm(model,ab);
+		
+		w3 = new WorkAfterResult(model);
+		
+		eb = new WAExampleButton(this,model,w);
+		rb = new WAResultsButton(this);
+		
 		setTitle("Tutorial 4: Work After ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1229, 795);
@@ -107,9 +140,9 @@ public class WorkAfterView extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JPanel cardPanel2 = new JPanel();
+		cardPanel2 = new JPanel();
 
-		JPanel cardPanel1 = new JPanel();
+		cardPanel1 = new JPanel();
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -161,10 +194,10 @@ public class WorkAfterView extends JFrame {
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
-		JPanel advancePanel = new JPanel();
+		advancePanel = new JPanel();
 		cardPanel2.add(advancePanel, "name_94944655089283");
 
-		JButton btnMenu = new JButton("Main Menu");
+		btnMenu = new JButton("Main Menu");
 		//Don't want it to be visible until the last page
 		btnMenu.setVisible(false);
 		btnMenu.addActionListener(new ActionListener() {
@@ -176,56 +209,60 @@ public class WorkAfterView extends JFrame {
 			}
 		});
 
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 
 		btnAdvance.addActionListener(new ActionListener() {
-			int count = 0;
-			WorkAfterExample w = new WorkAfterExample();
-			WorkAfterAlgorithm w2 = new WorkAfterAlgorithm();
-			WorkAfterResult w3 = new WorkAfterResult();
-
-			//Used for error control
-			boolean flag;
+//			int count = 0;
+//			WorkAfterExample w = new WorkAfterExample();
+//			WorkAfterAlgorithm w2 = new WorkAfterAlgorithm();
+//			WorkAfterResult w3 = new WorkAfterResult();
+//
+//			//Used for error control
+//			boolean flag;
 			public void actionPerformed(ActionEvent e) {
 
 
 
-				if(count == 0){
+//				if(count == 0){
 					cardPanel1.add(w);
 					cardPanel1.remove(cp1GroupPanel);
-					flag = true;
-				}
-
-				//Handles parameters that are not within the specified bound
-				if(count == 1 && w.getParameter() < 1 || w.getParameter() > 11){
-					flag = false;
-					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
-				}
-
-				if(count == 1 && w.getParameter() > 0 && w.getParameter() < 11){
-					cardPanel1.add(w2);
-					cardPanel1.remove(w);
-					flag = true;
-				} 
-
-				if(count == 2){
-					cardPanel1.add(w3);
-					cardPanel1.remove(w2);
-					btnAdvance.setText("Summary");
-					btnMenu.setVisible(true);
-					flag = true;
-				}
-
-				if(count == 3){
-					dispose();
-					Summary summ = new Summary();
-					summ.setVisible(true);
-					summ.setLocationRelativeTo(null);
-					flag = true;	
-				}
-
-				if(flag)
-					count++;
+					
+					cardPanel2.add(eb);
+					cardPanel2.remove(advancePanel);
+					
+//					flag = true;
+//				}
+//
+//				//Handles parameters that are not within the specified bound
+//				if(count == 1 && w.getParameter() < 1 || w.getParameter() > 11){
+//					flag = false;
+//					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+//				}
+//
+//				if(count == 1 && w.getParameter() > 0 && w.getParameter() < 11){
+//					cardPanel1.add(w2);
+//					cardPanel1.remove(w);
+//					flag = true;
+//				} 
+//
+//				if(count == 2){
+//					cardPanel1.add(w3);
+//					cardPanel1.remove(w2);
+//					btnAdvance.setText("Summary");
+//					btnMenu.setVisible(true);
+//					flag = true;
+//				}
+//
+//				if(count == 3){
+//					dispose();
+//					Summary summ = new Summary();
+//					summ.setVisible(true);
+//					summ.setLocationRelativeTo(null);
+//					flag = true;	
+//				}
+//
+//				if(flag)
+//					count++;
 			} 
 		});
 
@@ -252,5 +289,56 @@ public class WorkAfterView extends JFrame {
 				);
 		advancePanel.setLayout(gl_advancePanel);
 		contentPane.setLayout(gl_contentPane);
+	}
+	
+	public void switchCards1(){
+		//Handles parameters that are not within the specified bound
+		if(w.getParameter() < 1 || w.getParameter() > 11){
+			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+		}
+
+		if(w.getParameter() > 0 && w.getParameter() < 11){
+			cardPanel1.add(w2);
+			cardPanel1.remove(w);
+			
+			cardPanel2.add(ab);
+			cardPanel2.remove(eb);
+		} 
+		
+	}
+	
+	public void switchCards2(){
+		cardPanel1.add(w3);
+		cardPanel1.remove(w2);
+		btnAdvance.setText("Summary");
+		btnMenu.setVisible(true);
+		
+		cardPanel2.add(rb);
+		cardPanel2.remove(ab);
+		
+	}
+	
+	public void advanceTut(){
+		dispose();
+		Summary summ = new Summary();
+		summ.setVisible(true);
+		summ.setLocationRelativeTo(null);
+	}
+	
+	/**
+	 * This method is used to take the user to the main menu
+	 * 
+	 * This is called by the ResultsButton class
+	 * It is used to dispose of the current frame and create a new one
+	 * The new one is the main menu
+	 * 
+	 * @since 1.2
+	 * 
+	 */
+	public void mainMenu(){
+		dispose();
+		MainMenu m = new MainMenu();
+		m.setVisible(true);
+		m.setLocationRelativeTo(null);
 	}
 }

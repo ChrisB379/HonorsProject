@@ -1,33 +1,34 @@
-package view.ReturnValue.AdvanceButtons;
+package view.WorkAfter.AdvanceButtons;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
-import view.ReturnValue.ReturnValueView;
+import view.WorkAfter.WorkAfterView;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
-public class ResultsButton extends JPanel {
+public class WAResultsButton extends JPanel {
 
-
-	private static final long serialVersionUID = 8977803366756108247L;
+	private static final long serialVersionUID = -1241254451190185805L;
 	
-	private ReturnValueView r;
+	private WorkAfterView wav;
 
 	/**
 	 * Create the panel.
 	 */
-	public ResultsButton(ReturnValueView rvv) {
+	public WAResultsButton(WorkAfterView w) {
 		
-		r = rvv;
+		wav = w;
 		
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				r.advanceTut();
+				wav.advanceTut();
 				
 			}
 		});
@@ -36,34 +37,32 @@ public class ResultsButton extends JPanel {
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				r.mainMenu();
+				wav.mainMenu();
 				
 			}
 		});
-		
 		
 		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(77)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+					.addGap(42)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
 						.addComponent(btnMainMenu, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnAdvance, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(85, Short.MAX_VALUE))
+						.addComponent(btnAdvance, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
+					.addContainerGap(77, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(30)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-					.addGap(38)
-					.addComponent(btnMainMenu, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(72, Short.MAX_VALUE))
+					.addGap(35)
+					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+					.addGap(27)
+					.addComponent(btnMainMenu, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(33, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
-		
 		
 
 	}

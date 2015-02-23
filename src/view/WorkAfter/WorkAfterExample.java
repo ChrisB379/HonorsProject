@@ -10,7 +10,10 @@ package view.WorkAfter;
 
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.Observable;
+import java.util.Observer;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -22,16 +25,32 @@ import view.JTextFieldLimit;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextPane;
 
-public class WorkAfterExample extends JPanel {
+import model.IReturnValue;
+import model.IWorkAfter;
+import controller.ReturnValue.RVParameterController;
+import controller.WorkAfter.WAParameterController;
+
+public class WorkAfterExample extends JPanel implements Observer {
 
 
 	private static final long serialVersionUID = -5040691956374882581L;
 	private JTextField txtParameterField;
+	
+	private IWorkAfter model;
+	
+	private WAParameterController waController;
 
 	private int parameter;
 
 
-	public WorkAfterExample() {
+	public WorkAfterExample(IWorkAfter m) {
+		
+		model = m;
+		
+		//register View as an observer to WorkAfter model
+		((Observable) m).addObserver(this);
+		
+		waController = new WAParameterController(model, this);
 
 		JTextPane txtExample = new JTextPane();
 		txtExample.setContentType("text/html");
@@ -48,9 +67,14 @@ public class WorkAfterExample extends JPanel {
 
 			@Override
 			public void focusLost(FocusEvent e) {
-				// TODO Auto-generated method stub
-				int n = Integer.parseInt(txtParameterField.getText());
+				int n = 0;
+				if(txtParameterField.getText().equals(""))
+					JOptionPane.showMessageDialog(null, "Please enter a valid number for the parameter.");
+				
+				if(!txtParameterField.getText().equals(""));{
+				n = Integer.parseInt(txtParameterField.getText());
 				setParameter(n);
+				}
 
 			}
 
@@ -91,6 +115,12 @@ public class WorkAfterExample extends JPanel {
 
 	public int getParameter(){
 		return parameter;
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

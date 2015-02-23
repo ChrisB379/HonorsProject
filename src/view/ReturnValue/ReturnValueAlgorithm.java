@@ -156,10 +156,10 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
-				if(txtRtrnVal.getText() == null)
+				if(txtRtrnVal.getText().equals(""))
 					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");
 				
-				if(txtRtrnVal.getText() != ""){
+				if(!(txtRtrnVal.getText().equals(""))){
 				int n = Integer.parseInt(txtRtrnVal.getText());
 				
 				setRtrnVal(n);

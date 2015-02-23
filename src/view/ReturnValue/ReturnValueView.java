@@ -45,8 +45,6 @@ import view.ReturnValue.AdvanceButtons.ResultsButton;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-import controller.ReturnValue.RVAlgorithmController;
-import controller.ReturnValue.RVParameterController;
 import model.IReturnValue;
 import model.ReturnValue;
 
@@ -161,32 +159,13 @@ public class ReturnValueView extends JFrame implements Observer {
 		setContentPane(contentPane);
 
 		cardPanel1 = new JPanel();
+		cardPanel1.setBounds(36, 16, 871, 726);
 		cardPanel1.setBorder(null);
 
 		cardPanel2 = new JPanel();
+		cardPanel2.setBounds(939, 539, 242, 152);
 
 		JPanel cp1GroupPanel = new JPanel();
-
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addGap(31)
-						.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 871, GroupLayout.PREFERRED_SIZE)
-						.addGap(32)
-						.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
-						.addGap(51))
-				);
-		gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(cardPanel1, GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
-								.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-										.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
-										.addGap(51))))
-				);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 		advancePanel = new JPanel();
@@ -309,6 +288,7 @@ public class ReturnValueView extends JFrame implements Observer {
 						.addGap(32))
 				);
 		advancePanel.setLayout(gl_advancePanel);
+		contentPane.setLayout(null);
 		cardPanel1.setLayout(new CardLayout());
 
 
@@ -339,7 +319,8 @@ public class ReturnValueView extends JFrame implements Observer {
 						.addContainerGap(188, Short.MAX_VALUE))
 				);
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.add(cardPanel1);
+		contentPane.add(cardPanel2);
 	}
 
 	@Override

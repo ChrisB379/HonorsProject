@@ -65,6 +65,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 		setBorder(null);
 
 		JTextPane txtExample = new JTextPane();
+		txtExample.setBounds(22, 11, 841, 683);
 		txtExample.setContentType("text/html");
 		txtExample.setBorder(null);
 		txtExample.setBackground(UIManager.getColor("Panel.background"));
@@ -72,6 +73,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 		txtExample.setEditable(false);
 
 		JTextPane txtNextPage = new JTextPane();
+		txtNextPage.setBounds(22, 693, 574, 64);
 		txtNextPage.setContentType("text/html");
 		txtNextPage.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		txtNextPage.setBackground(UIManager.getColor("Panel.background"));
@@ -80,6 +82,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 
 
 		txtParameterField = new JTextField();
+		txtParameterField.setBounds(605, 705, 24, 34);
 		//Limits to only 2 digits
 		txtParameterField.setDocument(new JTextFieldLimit(2));
 		txtParameterField.addActionListener(rvController);
@@ -103,36 +106,10 @@ public class ReturnValueExample extends JPanel implements Observer {
 
 			}
 		});
-
-
-		//TODO figure out what here is making such a massive gap between the 2 text areas
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(22)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtExample, GroupLayout.PREFERRED_SIZE, 841, GroupLayout.PREFERRED_SIZE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(txtNextPage, GroupLayout.PREFERRED_SIZE, 574, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)))
-					.addGap(63))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(txtExample, GroupLayout.PREFERRED_SIZE, 683, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtNextPage, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(11)
-							.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)))
-					.addGap(20))
-		);
-		setLayout(groupLayout);
+		setLayout(null);
+		add(txtExample);
+		add(txtNextPage);
+		add(txtParameterField);
 
 	}
 

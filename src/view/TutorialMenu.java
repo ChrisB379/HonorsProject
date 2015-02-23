@@ -29,7 +29,9 @@ import javax.swing.JLabel;
 
 import model.IAlgorithms;
 import model.IReturnValue;
+import model.IWorkAfter;
 import model.ReturnValue;
+import model.WorkAfter;
 import view.BaseCase.BaseCaseView;
 import view.ExcessiveRecomputation.ExcessiveRecompView;
 import view.Quiz.QuizView;
@@ -46,7 +48,9 @@ public class TutorialMenu extends JFrame {
 	
 	private IAlgorithms iFace;
 	private IReturnValue iModel;
-	private ReturnValue model;
+	
+	private IWorkAfter iWaModel;
+
 
 	/**
 	 * Launch the application.
@@ -95,7 +99,6 @@ public class TutorialMenu extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				iModel = new ReturnValue();
-				model = new ReturnValue();
 				ReturnValueView rvv = new ReturnValueView(iModel);
 				rvv.setVisible(true);
 				rvv.setLocationRelativeTo(null);
@@ -131,7 +134,8 @@ public class TutorialMenu extends JFrame {
 		btnWorkAfter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				WorkAfterView wav = new WorkAfterView();
+				iWaModel = new WorkAfter();
+				WorkAfterView wav = new WorkAfterView(iWaModel);
 				wav.setVisible(true);
 				wav.setLocationRelativeTo(null);
 				//				new WorkAfterView().setVisible(true);

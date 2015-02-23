@@ -10,5 +10,9 @@ package model;
 public interface IWorkAfter extends IAlgorithms {
 
 	public void workAfter(int n);
+	public void addToArray(int nVal, int retVal);
+	public int getParamArray(int n);
+	public int getReturnVArray(int n);
+	
 
 }

@@ -37,6 +37,9 @@ import view.WorkAfter.WorkAfterView;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import model.IWorkAfter;
+import model.WorkAfter;
+
 public class ExcessiveRecompView extends JFrame {
 
 
@@ -264,7 +267,8 @@ public class ExcessiveRecompView extends JFrame {
 
 				if(count == 4){
 					dispose();
-					WorkAfterView wav = new WorkAfterView();
+					IWorkAfter iWaModel = new WorkAfter();
+					WorkAfterView wav = new WorkAfterView(iWaModel);
 					wav.setVisible(true);
 					wav.setLocationRelativeTo(null);
 					flag = true;
