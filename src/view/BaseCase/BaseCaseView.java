@@ -34,6 +34,12 @@ import javax.swing.JMenuItem;
 
 import view.About;
 import view.MainMenu;
+import view.BaseCase.AdvanceButtons.CBCAlgorithmButton;
+import view.BaseCase.AdvanceButtons.CBCExampleButton;
+import view.BaseCase.AdvanceButtons.CBCResultsButton;
+import view.BaseCase.AdvanceButtons.NBCAlgorithmButton;
+import view.BaseCase.AdvanceButtons.NBCExampleButton;
+import view.BaseCase.AdvanceButtons.NBCResultsButton;
 import view.ExcessiveRecomputation.ExcessiveRecompView;
 import view.ReturnValue.ReturnValueView;
 
@@ -57,6 +63,14 @@ public class BaseCaseView extends JFrame implements Observer {
 	private JButton btnAdvance,btnMenu;
 	
 	private IBaseCase model;
+	
+	private NBCExampleButton NBeb;
+	private NBCAlgorithmButton NBab;
+	private NBCResultsButton NBrb;
+	private CBCExampleButton Ceb;
+	private CBCAlgorithmButton Cab;
+	private CBCResultsButton Crb;
+	
 	
 	private NoBaseCaseExample bc1;
 	private NoBaseCaseAlgorithm bc2;
@@ -97,6 +111,13 @@ public class BaseCaseView extends JFrame implements Observer {
 		bc4 = new ConvergenceExample();
 		bc5 = new ConvergenceAlgorithm();
 		bc6 = new ConvergenceResult();
+		
+		NBeb = new NBCExampleButton();
+		NBab = new NBCAlgorithmButton();
+		NBrb = new NBCResultsButton();
+		Ceb = new CBCExampleButton();
+		Cab = new CBCAlgorithmButton();
+		Crb = new CBCResultsButton();
 		
 		
 		setTitle("Tutorial 1: Base Case");
@@ -215,6 +236,9 @@ public class BaseCaseView extends JFrame implements Observer {
 //				if(count == 0){
 					cardPanel1.add(bc1);
 					cardPanel1.remove(cp1GroupPanel);
+					
+					cardPanel2.add(NBeb);
+					cardPanel2.remove(advancePanel);
 					
 					
 					
@@ -344,29 +368,43 @@ public class BaseCaseView extends JFrame implements Observer {
 			//				System.out.println("we got here " + count);
 			cardPanel1.add(bc2);
 			cardPanel1.remove(bc1);
+			
+			cardPanel2.add(NBab);
+			cardPanel2.remove(NBeb);
 		}
 	}
 	
 	public void switchCards2(){
 		cardPanel1.add(bc3);
 		cardPanel1.remove(bc2);
+		
+		cardPanel2.add(NBrb);
+		cardPanel2.remove(NBab);
 	}
 	
 	public void switchCards3(){
 		cardPanel1.add(bc4);
 		cardPanel1.remove(bc3);
+		
+		
+		cardPanel2.add(Ceb);
+		cardPanel2.remove(NBrb);
 	}
 	
 	public void switchCards4(){
 		cardPanel1.add(bc5);
 		cardPanel1.remove(bc4);
+		
+		cardPanel2.add(Cab);
+		cardPanel2.remove(Ceb);
 	}
 	
 	public void switchCards5(){
 		cardPanel1.add(bc6);
 		cardPanel1.remove(bc5);
-		btnAdvance.setText("Tutorial 2");
-		btnMenu.setVisible(true);
+		
+		cardPanel2.add(Crb);
+		cardPanel2.remove(Cab);
 	}
 	
 	
