@@ -125,6 +125,154 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 				+ "We get to this answer by:\r\n\r\n"
 				+ "Insert algorithim + variables here\r\n\r\n");
 		
+		if(param == 1){
+			txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"
+					+ "Your answer for fib(" + getParam() + ") was : " + getReturnVal() + " \r\n\r\n"
+					+ "The correct answer for fib(" + getParam() + ") is : " + model.fib(model.getParam()) + "\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fib(0) =" + model.fib(model.getParam()-3) + "\r\n"
+					+ "return "  + model.fib(getParam()-1) + "= return " + model.fib(model.getParam()));
+		}
+		
+		if(param == 2){
+			txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"
+					+ "Your answer for fib(" + getParam() + ") was : " + getReturnVal() + " \r\n\r\n"
+					+ "The correct answer for fib(" + getParam() + ") is : " + model.fib(model.getParam()) + "\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fib(0) =" + model.fib(model.getParam()-3) + "\r\n"
+					+ "fib(1) =" + model.fib(model.getParam()-2) + "\r\n"
+					+ "return "  + model.fib(getParam()-2) + " + " + model.fib(getParam()-1) + "= return " + model.fib(model.getParam()));
+		}
+		
+		if(param == 3){
+			txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"
+					+ "Your answer for fib(" + getParam() + ") was : " + getReturnVal() + " \r\n\r\n"
+					+ "The correct answer for fib(" + getParam() + ") is : " + model.fib(model.getParam()) + "\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fib(0) =" + model.fib(model.getParam()-3) + "\r\n"
+					+ "fib(1) =" + model.fib(model.getParam()-2) + "\r\n"
+					+ "fib(2) =" + model.fib(model.getParam()-2) + " + " + model.fib(model.getParam()-3) + " = " + model.fib(model.getParam()-1) + "\r\n"
+					+ "return "  + model.fib(getParam()-2) + " + " + model.fib(getParam()-1) + "= return " + model.fib(model.getParam()));
+		}
+		
+		if(param == 4){
+			txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"
+					+ "Your answer for fib(" + getParam() + ") was : " + getReturnVal() + " \r\n\r\n"
+					+ "The correct answer for fib(" + getParam() + ") is : " + model.fib(model.getParam()) + "\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fib(0) =" + model.fib(model.getParam()-4) + "\r\n"
+					+ "fib(1) =" + model.fib(model.getParam()-3) + "\r\n"
+					+ "fib(2) =" + model.fib(model.getParam()-3) + " + " + model.fib(model.getParam()-4) + " = " + model.fib(model.getParam()-2) + "\r\n"
+					+ "fib(3) =" + model.fib(model.getParam()-2) + " + " + model.fib(model.getParam()-3) + " = " + model.fib(model.getParam()-1) + "\r\n"
+					+ "return "  + model.fib(getParam()-2) + " + " + model.fib(getParam()-1) + "= return " + model.fib(model.getParam()));
+		}
+		
+		if(param == 5){
+			txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"
+					+ "Your answer for fib(" + getParam() + ") was : " + getReturnVal() + " \r\n\r\n"
+					+ "The correct answer for fib(" + getParam() + ") is : " + model.fib(model.getParam()) + "\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fib(0) =" + model.fib(model.getParam()-5) + "\r\n"
+					+ "fib(1) =" + model.fib(model.getParam()-4) + "\r\n"
+					+ "fib(2) =" + model.fib(model.getParam()-4) + " + " + model.fib(model.getParam()-5) + " = " + model.fib(model.getParam()-3) + "\r\n"
+					+ "fib(3) =" + model.fib(model.getParam()-3) + " + " + model.fib(model.getParam()-4) + " = " + model.fib(model.getParam()-2) + "\r\n"
+					+ "fib(4) =" + model.fib(model.getParam()-2) + " + " + model.fib(model.getParam()-3) + " = " + model.fib(model.getParam()-1) + "\r\n"
+					+ "return "  + model.fib(getParam()-2) + " + " + model.fib(getParam()-1) + "= return " + model.fib(model.getParam()));
+		}
+		
+		if(param == 6){
+			txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"
+					+ "Your answer for fib(" + getParam() + ") was : " + getReturnVal() + " \r\n\r\n"
+					+ "The correct answer for fib(" + getParam() + ") is : " + model.fib(model.getParam()) + "\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fib(0) =" + model.fib(model.getParam()-6) + "\r\n"
+					+ "fib(1) =" + model.fib(model.getParam()-5) + "\r\n"
+					+ "fib(2) =" + model.fib(model.getParam()-5) + " + " + model.fib(model.getParam()-6) + " = " + model.fib(model.getParam()-4) + "\r\n"
+					+ "fib(3) =" + model.fib(model.getParam()-4) + " + " + model.fib(model.getParam()-5) + " = " + model.fib(model.getParam()-3) + "\r\n"
+					+ "fib(4) =" + model.fib(model.getParam()-3) + " + " + model.fib(model.getParam()-4) + " = " + model.fib(model.getParam()-2) + "\r\n"
+					+ "fib(5) =" + model.fib(model.getParam()-2) + " + " + model.fib(model.getParam()-3) + " = " + model.fib(model.getParam()-1) + "\r\n"
+					+ "return "  + model.fib(getParam()-2) + " + " + model.fib(getParam()-1) + "= return " + model.fib(model.getParam()));
+		}
+		
+		if(param == 7){
+			txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"
+					+ "Your answer for fib(" + getParam() + ") was : " + getReturnVal() + " \r\n\r\n"
+					+ "The correct answer for fib(" + getParam() + ") is : " + model.fib(model.getParam()) + "\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fib(0) =" + model.fib(model.getParam()-7) + "\r\n"
+					+ "fib(1) =" + model.fib(model.getParam()-6) + "\r\n"
+					+ "fib(2) =" + model.fib(model.getParam()-6) + " + " + model.fib(model.getParam()-7) + " = " + model.fib(model.getParam()-5) + "\r\n"
+					+ "fib(3) =" + model.fib(model.getParam()-5) + " + " + model.fib(model.getParam()-6) + " = " + model.fib(model.getParam()-4) + "\r\n"
+					+ "fib(4) =" + model.fib(model.getParam()-4) + " + " + model.fib(model.getParam()-5) + " = " + model.fib(model.getParam()-3) + "\r\n"
+					+ "fib(5) =" + model.fib(model.getParam()-3) + " + " + model.fib(model.getParam()-4) + " = " + model.fib(model.getParam()-2) + "\r\n"
+					+ "fib(6) =" + model.fib(model.getParam()-2) + " + " + model.fib(model.getParam()-3) + " = " + model.fib(model.getParam()-1) + "\r\n"
+					+ "return "  + model.fib(getParam()-2) + " + " + model.fib(getParam()-1) + "= return " + model.fib(model.getParam()));
+		}
+		
+		if(param == 8){
+			txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"
+					+ "Your answer for fib(" + getParam() + ") was : " + getReturnVal() + " \r\n\r\n"
+					+ "The correct answer for fib(" + getParam() + ") is : " + model.fib(model.getParam()) + "\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fib(0) =" + model.fib(model.getParam()-8) + "\r\n"
+					+ "fib(1) =" + model.fib(model.getParam()-7) + "\r\n"
+					+ "fib(2) =" + model.fib(model.getParam()-7) + " + " + model.fib(model.getParam()-8) + " = " + model.fib(model.getParam()-6) + "\r\n"
+					+ "fib(3) =" + model.fib(model.getParam()-6) + " + " + model.fib(model.getParam()-7) + " = " + model.fib(model.getParam()-5) + "\r\n"
+					+ "fib(4) =" + model.fib(model.getParam()-5) + " + " + model.fib(model.getParam()-6) + " = " + model.fib(model.getParam()-4) + "\r\n"
+					+ "fib(5) =" + model.fib(model.getParam()-4) + " + " + model.fib(model.getParam()-5) + " = " + model.fib(model.getParam()-3) + "\r\n"
+					+ "fib(6) =" + model.fib(model.getParam()-3) + " + " + model.fib(model.getParam()-4) + " = " + model.fib(model.getParam()-2) + "\r\n"
+					+ "fib(7) =" + model.fib(model.getParam()-2) + " + " + model.fib(model.getParam()-3) + " = " + model.fib(model.getParam()-1) + "\r\n"
+					+ "return "  + model.fib(getParam()-2) + " + " + model.fib(getParam()-1) + "= return " + model.fib(model.getParam()));
+			
+		}
+		
+		if(param == 9){
+			txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"
+					+ "Your answer for fib(" + getParam() + ") was : " + getReturnVal() + " \r\n\r\n"
+					+ "The correct answer for fib(" + getParam() + ") is : " + model.fib(model.getParam()) + "\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fib(0) =" + model.fib(model.getParam()-9) + "\r\n"
+					+ "fib(1) =" + model.fib(model.getParam()-8) + "\r\n"
+					+ "fib(2) =" + model.fib(model.getParam()-8) + " + " + model.fib(model.getParam()-9) + " = " + model.fib(model.getParam()-7) + "\r\n"
+					+ "fib(3) =" + model.fib(model.getParam()-7) + " + " + model.fib(model.getParam()-8) + " = " + model.fib(model.getParam()-6) + "\r\n"
+					+ "fib(4) =" + model.fib(model.getParam()-6) + " + " + model.fib(model.getParam()-7) + " = " + model.fib(model.getParam()-5) + "\r\n"
+					+ "fib(5) =" + model.fib(model.getParam()-5) + " + " + model.fib(model.getParam()-6) + " = " + model.fib(model.getParam()-4) + "\r\n"
+					+ "fib(6) =" + model.fib(model.getParam()-4) + " + " + model.fib(model.getParam()-5) + " = " + model.fib(model.getParam()-3) + "\r\n"
+					+ "fib(7) =" + model.fib(model.getParam()-3) + " + " + model.fib(model.getParam()-4) + " = " + model.fib(model.getParam()-2) + "\r\n"
+					+ "fib(8) =" + model.fib(model.getParam()-2) + " + " + model.fib(model.getParam()-3) + " = " + model.fib(model.getParam()-1) + "\r\n"
+					+ "return "  + model.fib(getParam()-2) + " + " + model.fib(getParam()-1) + "= return " + model.fib(model.getParam()));
+			
+		}
+		
+		if(param == 10){
+			txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+					+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"
+					+ "Your answer for fib(" + getParam() + ") was : " + getReturnVal() + " \r\n\r\n"
+					+ "The correct answer for fib(" + getParam() + ") is : " + model.fib(model.getParam()) + "\r\n\r\n"
+					+ "We get to this answer by:\r\n\r\n"
+					+ "fib(0) =" + model.fib(model.getParam()-10) + "\r\n"
+					+ "fib(1) =" + model.fib(model.getParam()-9) + "\r\n"
+					+ "fib(2) =" + model.fib(model.getParam()-9) + " + " + model.fib(model.getParam()-10) + " = " + model.fib(model.getParam()-8) + "\r\n"
+					+ "fib(3) =" + model.fib(model.getParam()-8) + " + " + model.fib(model.getParam()-9) + " = " + model.fib(model.getParam()-7) + "\r\n"
+					+ "fib(4) =" + model.fib(model.getParam()-7) + " + " + model.fib(model.getParam()-8) + " = " + model.fib(model.getParam()-6) + "\r\n"
+					+ "fib(5) =" + model.fib(model.getParam()-6) + " + " + model.fib(model.getParam()-7) + " = " + model.fib(model.getParam()-5) + "\r\n"
+					+ "fib(6) =" + model.fib(model.getParam()-5) + " + " + model.fib(model.getParam()-6) + " = " + model.fib(model.getParam()-4) + "\r\n"
+					+ "fib(7) =" + model.fib(model.getParam()-4) + " + " + model.fib(model.getParam()-5) + " = " + model.fib(model.getParam()-3) + "\r\n"
+					+ "fib(8) =" + model.fib(model.getParam()-3) + " + " + model.fib(model.getParam()-4) + " = " + model.fib(model.getParam()-2) + "\r\n"
+					+ "fib(9) =" + model.fib(model.getParam()-2) + " + " + model.fib(model.getParam()-3) + " = " + model.fib(model.getParam()-1) + "\r\n"
+					+ "return "  + model.fib(getParam()-2) + " + " + model.fib(getParam()-1) + "= return " + model.fib(model.getParam()));
+			
+		}
+		
 	}
 
 }

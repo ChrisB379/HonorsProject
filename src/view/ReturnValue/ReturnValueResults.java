@@ -34,7 +34,8 @@ public class ReturnValueResults extends JPanel implements Observer {
 	private JTextArea txtResults;
 	private JTextArea txtSummary;
 	
-	private int userRet;
+	private int userRet,userRet2;
+	private int fact;
 	private int param;
 
 	/**
@@ -68,6 +69,7 @@ public class ReturnValueResults extends JPanel implements Observer {
 				+ "return fact()\r\n"
 				+ "return fact()\r\n"
 				+ "return   = return " );
+		
 		txtResults.setBackground(UIManager.getColor("Panel.background"));
 		txtResults.setEditable(false);
 
@@ -90,7 +92,9 @@ public class ReturnValueResults extends JPanel implements Observer {
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		setReturnVal(model.getUserReturnVal());
+		setReturnVal2(model.getUserRetVal2());
 		setParam(model.getParam());
+		setFact(model.factorial(model.getParam()));
 		System.out.println("RetValResults " + getParam());
 		setResultsText();
 		
@@ -104,6 +108,14 @@ public class ReturnValueResults extends JPanel implements Observer {
 		return userRet;
 	}
 	
+	public void setReturnVal2(int n){
+		userRet2 = n;
+	}
+	
+	public int getReturnVal2(){
+		return userRet2;
+	}
+	
 	public int getParam(){
 		return param;
 	}
@@ -112,14 +124,22 @@ public class ReturnValueResults extends JPanel implements Observer {
 		param = n;
 	}
 	
+	public int getFact(){
+		return fact;
+	}
+	
+	public void setFact(int n){
+		fact = n;
+	}
+	
 	public void setResultsText(){
 		
 		if(param == 1){
 			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
-					+ "The algorithm worked on was factorial(0)\r\n\r\n"
-					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
-					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
-					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "The algorithm worked on was factorial(1)\r\n\r\n"
+					+ "Your answer for factorial(1) in the first exmaple was : "+ getReturnVal() + "\r\n\r\n"
+					+ "Your answer for factorial(1) in the second example was : "+ getReturnVal2() + "\r\n\r\n"
+					+ "The correct answer for factorial(1) is :"+ getFact()  + "\r\n\r\n"
 					+ "We get to this answer by:\r\n\r\n"
 					+ "fact("+ getParam() +");\r\n"
 					+ "return " + getParam() +  "= return " + model.factorial(model.getParam()) );
@@ -127,10 +147,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 		if(param == 2){
 			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
-					+ "The algorithm worked on was factorial(0)\r\n\r\n"
-					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
-					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
-					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "The algorithm worked on was factorial(2)\r\n\r\n"
+					+ "Your answer for factorial(2) in the first exmaple was : "+ getReturnVal() + "\r\n\r\n"
+					+ "Your answer for factorial(2) in the second example was : "+ getReturnVal2() + "\r\n\r\n"
+					+ "The correct answer for factorial(2) is : "+ getFact()  + "\r\n\r\n"
 					+ "We get to this answer by:\r\n\r\n"
 					+ "fact("+ getParam() +");\r\n"
 					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
@@ -139,10 +159,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 		if(param == 3){
 			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
-					+ "The algorithm worked on was factorial(0)\r\n\r\n"
-					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
-					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
-					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "The algorithm worked on was factorial(3)\r\n\r\n"
+					+ "Your answer for factorial(3) in the first exmaple was : "+ getReturnVal() + "\r\n\r\n"
+					+ "Your answer for factorial(3) in the second example was : "+ getReturnVal2() + "\r\n\r\n"
+					+ "The correct answer for factorial(3) is : "+ getFact()  + "\r\n\r\n"
 					+ "We get to this answer by:\r\n\r\n"
 					+ "fact("+ getParam() +");\r\n"
 					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
@@ -152,10 +172,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 		if(param == 4){
 			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
-					+ "The algorithm worked on was factorial(0)\r\n\r\n"
-					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
-					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
-					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "The algorithm worked on was factorial(4)\r\n\r\n"
+					+ "Your answer for factorial(4) in the first exmaple was : "+ getReturnVal() + "\r\n\r\n"
+					+ "Your answer for factorial(4) in the second example was : "+ getReturnVal2() + "\r\n\r\n"
+					+ "The correct answer for factorial(4) is : "+ getFact()  + "\r\n\r\n"
 					+ "We get to this answer by:\r\n\r\n"
 					+ "fact("+ getParam() +");\r\n"
 					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
@@ -166,10 +186,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 		if(param == 5){
 			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
-					+ "The algorithm worked on was factorial(0)\r\n\r\n"
-					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
-					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
-					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "The algorithm worked on was factorial(5)\r\n\r\n"
+					+ "Your answer for factorial(5) in the first exmaple was : "+ getReturnVal() + "\r\n\r\n"
+					+ "Your answer for factorial(5) in the second example was : "+ getReturnVal2() + "\r\n\r\n"
+					+ "The correct answer for factorial(5) is : "+ getFact()  + "\r\n\r\n"
 					+ "We get to this answer by:\r\n\r\n"
 					+ "fact("+ getParam() +");\r\n"
 					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
@@ -181,10 +201,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 		if(param == 6){
 			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
-					+ "The algorithm worked on was factorial(0)\r\n\r\n"
-					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
-					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
-					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "The algorithm worked on was factorial(6)\r\n\r\n"
+					+ "Your answer for factorial(6) in the first exmaple was : "+ getReturnVal() + "\r\n\r\n"
+					+ "Your answer for factorial(6) in the second example was : "+ getReturnVal2() + "\r\n\r\n"
+					+ "The correct answer for factorial(6) is : "+ getFact()  + "\r\n\r\n"
 					+ "We get to this answer by:\r\n\r\n"
 					+ "fact("+ getParam() +");\r\n"
 					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
@@ -197,10 +217,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 		if(param == 7){
 			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
-					+ "The algorithm worked on was factorial(0)\r\n\r\n"
-					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
-					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
-					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "The algorithm worked on was factorial(7)\r\n\r\n"
+					+ "Your answer for factorial(7) in the first exmaple was : "+ getReturnVal() + "\r\n\r\n"
+					+ "Your answer for factorial(7) in the second example was : "+ getReturnVal2() + "\r\n\r\n"
+					+ "The correct answer for factorial(7) is : "+ getFact()  + "\r\n\r\n"
 					+ "We get to this answer by:\r\n\r\n"
 					+ "fact("+ getParam() +");\r\n"
 					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
@@ -214,10 +234,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 		if(param == 8){
 			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
-					+ "The algorithm worked on was factorial(0)\r\n\r\n"
-					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
-					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
-					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "The algorithm worked on was factorial(8)\r\n\r\n"
+					+ "Your answer for factorial(8) in the first exmaple was : "+ getReturnVal() + "\r\n\r\n"
+					+ "Your answer for factorial(8) in the second example was : "+ getReturnVal2() + "\r\n\r\n"
+					+ "The correct answer for factorial(8) is : "+ getFact()  + "\r\n\r\n"
 					+ "We get to this answer by:\r\n\r\n"
 					+ "fact("+ getParam() +");\r\n"
 					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
@@ -233,10 +253,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 		if(param == 9){
 			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
-					+ "The algorithm worked on was factorial(0)\r\n\r\n"
-					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
-					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
-					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "The algorithm worked on was factorial(9)\r\n\r\n"
+					+ "Your answer for factorial(9) in the first exmaple was : "+ getReturnVal() + "\r\n\r\n"
+					+ "Your answer for factorial(9) in the second example was : "+ getReturnVal2() + "\r\n\r\n"
+					+ "The correct answer for factorial(9) is : "+ getFact()  + "\r\n\r\n"
 					+ "We get to this answer by:\r\n\r\n"
 					+ "fact("+ getParam() +");\r\n"
 					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
@@ -253,10 +273,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 		if(param == 10){
 			txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
-					+ "The algorithm worked on was factorial(0)\r\n\r\n"
-					+ "Your answer for factorial(0) in the first exmaple was : 0\r\n\r\n"
-					+ "Your answer for factorial(0) in the second example was : 0\r\n\r\n"
-					+ "The correct answer for factorial(0) is : 0\r\n\r\n"
+					+ "The algorithm worked on was factorial(10)\r\n\r\n"
+					+ "Your answer for factorial(10) in the first exmaple was : "+ getReturnVal() + "\r\n\r\n"
+					+ "Your answer for factorial(10) in the second example was : "+ getReturnVal2() + "\r\n\r\n"
+					+ "The correct answer for factorial(10) is : "+ getFact()  + "\r\n\r\n"
 					+ "We get to this answer by:\r\n\r\n"
 					+ "fact("+ getParam() +");\r\n"
 					+ "return fact(" + (getParam()-1) + ") * "+ getParam()+ "\r\n"
