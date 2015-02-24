@@ -199,7 +199,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 * @since 1.2
 	 */
 	@Override
-	public int getUserRetVal2() {
+	public int getUserReturnVal2() {
 		// TODO Auto-generated method stub
 		return userRetVal2;
 	}
@@ -210,7 +210,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 * @since 1.2
 	 */
 	@Override
-	public void setUserRetVal2(int n) {
+	public void setUserReturnVal2(int n) {
 		userRetVal2 = n;
 		setChanged();
 		notifyObservers();

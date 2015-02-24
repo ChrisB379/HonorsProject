@@ -10,6 +10,9 @@ package view.BaseCase;
  * @since 1.0
  */
 
+import java.util.Observable;
+import java.util.Observer;
+
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -18,28 +21,52 @@ import javax.swing.JTextArea;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.UIManager;
 
-public class NoBaseCaseResult extends JPanel {
+import model.IBaseCase;
+
+public class NoBaseCaseResult extends JPanel implements Observer {
 
 
 	private static final long serialVersionUID = 5862849225888560531L;
+	
+	private JTextArea txtResult;
+	private JTextArea txtSummary;
+	
+	private IBaseCase model;
+	
+	private int param;
+	private int userRet;
+	private int nbcResult;
 
 	/**
 	 * Create the panel.
 	 */
-	public NoBaseCaseResult() {
-
+	public NoBaseCaseResult(IBaseCase m) {
+		
+		model = m;
+		
+		((Observable) m).addObserver(this);
+		
 		JLabel lblResults = new JLabel("Results");
 
-		JTextArea txtResult = new JTextArea();
-		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\nThe algorithm worked on was noBaseCase(INSERTuserINPUThere)\r\n\r\nYour answer for noBaseCase(INSERTuserINPUThere) was : \r\n\r\nThe correct answer for noBaseCase(INSERTuserINPUThere) is :\r\n\r\nWe get to this answer by:\r\n\r\nInsert algorithim + variables here\r\n\r\n");
+		txtResult = new JTextArea();
+		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+				+ "The algorithm worked on was noBaseCase(INSERTuserINPUThere)\r\n\r\n"
+				+ "Your answer for noBaseCase(INSERTuserINPUThere) was : \r\n\r\n"
+				+ "The correct answer for noBaseCase(INSERTuserINPUThere) is :\r\n\r\n"
+				+ "We get to this answer by:\r\n\r\n"
+				+ "Insert algorithim + variables here\r\n\r\n");
 
 		txtResult.setBackground(UIManager.getColor("Panel.background"));
 		txtResult.setWrapStyleWord(true);
 		txtResult.setLineWrap(true);
 		txtResult.setEditable(false);
 
-		JTextArea txtSummary = new JTextArea();
-		txtSummary.setText("\t\t\t\tSummary\r\n\r\nIn this tutorial series, the importance of base cases in recursion were presented.\r\n\r\nA base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow, crashing any programing running the recursive call.\r\n\r\nThe next pages will cover the second algorithm in the base series. This will be about convergence.");
+		txtSummary = new JTextArea();
+		txtSummary.setText("\t\t\t\tSummary\r\n\r\n"
+				+ "In this tutorial series, the importance of base cases in recursion were presented.\r\n\r\n"
+				+ "A base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow,"
+				+ " crashing any programing running the recursive call.\r\n\r\n"
+				+ "The next pages will cover the second algorithm in the base series. This will be about convergence.");
 
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
 		txtSummary.setWrapStyleWord(true);
@@ -72,6 +99,53 @@ public class NoBaseCaseResult extends JPanel {
 						.addContainerGap(273, Short.MAX_VALUE))
 				);
 		setLayout(groupLayout);
+
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		setReturnVal(model.getUserReturnVal());
+		setParam(model.getParam());
+		setNoBaseCaseResult(model.getParam());
+		System.out.println("RetValResults " + getParam());
+		setResultsText();
+		
+	}
+	public void setReturnVal(int n){
+		userRet = n;
+	}
+	
+	public int getReturnVal(){
+		return userRet;
+	}
+	
+	
+	public int getParam(){
+		return param;
+	}
+	
+	public void setParam(int n){
+		param = n;
+	}
+	
+	public int getNoBaseCaseResult(){
+		return nbcResult;
+	}
+	
+	public void setNoBaseCaseResult(int n){
+		nbcResult = n;
+	}
+	
+
+	
+	
+	public void setResultsText(){
+		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
+				+ "The algorithm worked on was noBaseCase(" + getParam() + ")\r\n\r\n"
+				+ "Your answer for noBaseCase(" + getParam() + ") was : "+ getReturnVal() +"\r\n\r\n"
+				+ "The correct answer for noBaseCase(" + getParam() + ") is : "+ getNoBaseCaseResult() + "\r\n\r\n"
+				+ "We get to this answer by:\r\n\r\n"
+				+ "Insert algorithim + variables here\r\n\r\n");
 
 	}
 }

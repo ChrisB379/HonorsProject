@@ -106,18 +106,23 @@ public class BaseCaseView extends JFrame implements Observer {
 		model = m;
 		
 		bc1 = new NoBaseCaseExample(model);
-		bc2 = new NoBaseCaseAlgorithm();
-		bc3 = new NoBaseCaseResult();
-		bc4 = new ConvergenceExample();
-		bc5 = new ConvergenceAlgorithm();
-		bc6 = new ConvergenceResult();
 		
-		NBeb = new NBCExampleButton();
-		NBab = new NBCAlgorithmButton();
-		NBrb = new NBCResultsButton();
-		Ceb = new CBCExampleButton();
-		Cab = new CBCAlgorithmButton();
-		Crb = new CBCResultsButton();
+		NBab = new NBCAlgorithmButton(this);
+		bc2 = new NoBaseCaseAlgorithm(model,NBab);
+		
+		bc3 = new NoBaseCaseResult(model);
+		bc4 = new ConvergenceExample(model);
+		
+		Cab = new CBCAlgorithmButton(this);
+		bc5 = new ConvergenceAlgorithm(model,Cab);
+		
+		bc6 = new ConvergenceResult(model);
+		
+		NBeb = new NBCExampleButton(model,this,bc1);
+
+		NBrb = new NBCResultsButton(this);
+		Ceb = new CBCExampleButton(this);
+		Crb = new CBCResultsButton(this);
 		
 		
 		setTitle("Tutorial 1: Base Case");
@@ -360,11 +365,11 @@ public class BaseCaseView extends JFrame implements Observer {
 	
 	public void switchCards1(){
 		//Handles parameters that are not within the specified bound
-		if(bc1.getParameter() < 1 || bc1.getParameter() > 11){
-			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+		if(bc1.getParameter() < 1 || bc1.getParameter() > 5){
+			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 5");	
 		}
 
-		if(bc1.getParameter() > 0 && bc1.getParameter() < 11){
+		if(bc1.getParameter() > 0 && bc1.getParameter() < 6){
 			//				System.out.println("we got here " + count);
 			cardPanel1.add(bc2);
 			cardPanel1.remove(bc1);

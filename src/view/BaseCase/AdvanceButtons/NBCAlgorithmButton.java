@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
+
+import view.BaseCase.BaseCaseView;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -12,15 +14,22 @@ public class NBCAlgorithmButton extends JPanel {
 	private static final long serialVersionUID = -9177244209308702350L;
 	
 	private JButton btnAdvance;
+	
+	private BaseCaseView view;
+
 
 	/**
 	 * Create the panel.
 	 */
-	public NBCAlgorithmButton() {
+	public NBCAlgorithmButton(BaseCaseView v) {
+		
+		view = v;
 		
 		btnAdvance = new JButton("Advance");
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				view.switchCards2();
 				
 			}
 		});
@@ -43,6 +52,14 @@ public class NBCAlgorithmButton extends JPanel {
 		);
 		setLayout(groupLayout);
 
+	}
+	
+	public void setNotVis(){
+		btnAdvance.setVisible(false);
+	}
+	
+	public void setVis(){
+		btnAdvance.setVisible(true);
 	}
 
 }

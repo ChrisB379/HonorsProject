@@ -92,7 +92,7 @@ public class ReturnValueResults extends JPanel implements Observer {
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		setReturnVal(model.getUserReturnVal());
-		setReturnVal2(model.getUserRetVal2());
+		setReturnVal2(model.getUserReturnVal2());
 		setParam(model.getParam());
 		setFact(model.factorial(model.getParam()));
 		System.out.println("RetValResults " + getParam());

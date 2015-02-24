@@ -5,6 +5,9 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import view.BaseCase.BaseCaseView;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -14,17 +17,21 @@ public class CBCResultsButton extends JPanel {
 	
 	private JButton btnAdvance;
 	private JButton btnMainMenu;
+	
+	private BaseCaseView view;
 
 	/**
 	 * Create the panel.
 	 */
-	public CBCResultsButton() {
+	public CBCResultsButton(BaseCaseView v) {
+		
+		view = v;
 		
 		btnAdvance = new JButton("Advance");
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				view.advanceTut();
 			}
 		});
 		
@@ -33,6 +40,7 @@ public class CBCResultsButton extends JPanel {
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				view.mainMenu();
 				
 			}
 		});

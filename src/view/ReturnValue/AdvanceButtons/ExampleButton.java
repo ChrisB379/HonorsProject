@@ -17,8 +17,8 @@ public class ExampleButton extends JPanel {
 
 
 	private static final long serialVersionUID = -6156974517525499165L;
-	private ReturnValueView r;
-	private IReturnValue r1;
+	private ReturnValueView view;
+	private IReturnValue model;
 	private ReturnValueExample rve;
 	
 	private RVParameterController p;
@@ -26,15 +26,15 @@ public class ExampleButton extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public ExampleButton(ReturnValueView rvv,IReturnValue rv, ReturnValueExample reg) {
+	public ExampleButton(ReturnValueView v,IReturnValue m, ReturnValueExample reg) {
 		
-		r = rvv;
+		view = v;
 		
-		r1 = rv;
+		model = m;
 		
 		rve = reg;
 		
-		p = new RVParameterController(r1, rve);
+		p = new RVParameterController(model, rve);
 		
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.addActionListener(p);
@@ -42,7 +42,7 @@ public class ExampleButton extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 
 				
-				r.switchCards1();
+				view.switchCards1();
 			}
 		});
 		

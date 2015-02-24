@@ -45,7 +45,7 @@ public class RVSubmitAlg2Controller implements ActionListener {
 		view.setAdvButtonVis();
 		
 		//Sets the users return value in the model
-		model.setUserRetVal2(view.getUsersReturnValue());
+		model.setUserReturnVal2(view.getUsersReturnValue());
 
 		
 	}

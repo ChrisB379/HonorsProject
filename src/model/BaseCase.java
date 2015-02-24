@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 
 /**
@@ -13,12 +15,15 @@ import java.util.Observable;
 public class BaseCase extends Observable implements IBaseCase  {
 	
 	private int param;
-	private int userRetVal;
+	private int userRetVal,userRetVal2;
 	/*
 	 * A record of the users original input parameter. This value will not change
 	 * unlike the param variable which will
 	 */
 	private int Oparam; 
+	
+	private List<Integer> paramArray;
+	private List<Integer> returnV;
 
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
@@ -89,6 +94,8 @@ public class BaseCase extends Observable implements IBaseCase  {
 	@Override
 	public void setParam(int n) {
 		param = n;
+		setChanged();
+		notifyObservers();
 		
 	}
 
@@ -141,7 +148,81 @@ public class BaseCase extends Observable implements IBaseCase  {
 	@Override
 	public void setUserReturnVal(int n) {
 		userRetVal = n;
+		setChanged();
+		notifyObservers();
+		
+	}
+	
+	/**
+	 * Returns the value stored that the user set as their return value in the second algorithm page.
+	 * 
+	 * @since 1.2
+	 */
+	@Override
+	public int getUserReturnVal2() {
+		// TODO Auto-generated method stub
+		return userRetVal2;
+	}
+	
+	/**
+	 * Sets userRetVal to that of the users return value that they picked in the second algorithm page
+	 * 
+	 * @since 1.2
+	 */
+	@Override
+	public void setUserReturnVal2(int n) {
+		userRetVal2 = n;
+		setChanged();
+		notifyObservers();
 		
 	}
 
+
+
+	/**
+	 * This adds user input to an arraylist. The data will be used later in the results page
+	 * 
+	 * 
+	 * @param nVal the users answer to the value of n
+	 * @param retVal the users answer to the value of the current return value 
+	 * 
+	 * @since 1.1
+	 */
+	public void addToArray(int nVal, int retVal){
+		
+		if(paramArray == null)
+			paramArray = new ArrayList<Integer>();
+		
+		if(returnV == null)
+			returnV = new ArrayList<Integer>();
+			
+		paramArray.add(nVal);
+		
+		returnV.add(retVal);
+		
+	}
+	
+	/**
+	 * Gets and returns the value stored in a position in the array
+	 * 
+	 * @param n the position of the element in the array to be fetched
+	 * @return the value held at array position n-1
+	 * @since 1.1
+	 */
+	
+	public int getParamArray(int n){
+		return paramArray.get(n-1);
+	}
+	
+	/**
+	 * Gets and returns the value stored in a position in the array
+	 * 
+	 * @param n the position of the element in the array to be fetched
+	 * @return the value held at array position n-1
+	 * @since 1.1
+	 */
+	public int getReturnVArray(int n){
+		return returnV.get(n-1);
+	}
+	
 }

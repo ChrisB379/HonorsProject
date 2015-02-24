@@ -47,7 +47,7 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 		
 		model = m;
 		
-		//register View as an observer to ReturnValue model
+		//register View as an observer to BaseCase model
 		((Observable) m).addObserver(this);
 		
 		nbcpController = new NoBCParameterController(model, this);

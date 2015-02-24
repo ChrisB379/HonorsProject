@@ -13,4 +13,10 @@ public interface IBaseCase extends IAlgorithms {
 
 	public int convergence(int n);
 
+	public void addToArray(int nVal, int retVal);
+	public int getParamArray(int n);
+	public int getReturnVArray(int n);
+	
+	public int getUserReturnVal2();
+	public void setUserReturnVal2(int n);
 }
