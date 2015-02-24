@@ -21,6 +21,8 @@ import javax.swing.GroupLayout.Alignment;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -32,19 +34,36 @@ import javax.swing.JMenuItem;
 
 import view.About;
 import view.MainMenu;
+import view.ExcessiveRecomputation.ExcessiveRecompView;
 import view.ReturnValue.ReturnValueView;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import model.BaseCase;
+import model.ExcessiveRecomp;
+import model.IBaseCase;
+import model.IExcessiveRecomp;
+import model.IReturnValue;
 import model.ReturnValue;
 
-public class BaseCaseView extends JFrame {
+public class BaseCaseView extends JFrame implements Observer {
 
 
 	private static final long serialVersionUID = 4604408229700198517L;
 	private JPanel contentPane;
+	private JPanel cardPanel1,cardPanel2;
+	private JPanel advancePanel;
+
+	private JButton btnAdvance,btnMenu;
 	
-	private ReturnValue model;
+	private IBaseCase model;
+	
+	private NoBaseCaseExample bc1;
+	private NoBaseCaseAlgorithm bc2;
+	private NoBaseCaseResult bc3;
+	private ConvergenceExample bc4;
+	private ConvergenceAlgorithm bc5;
+	private ConvergenceResult bc6;
 
 	/**
 	 * Launch the application.
@@ -53,7 +72,8 @@ public class BaseCaseView extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BaseCaseView frame = new BaseCaseView();
+					IBaseCase iModel = new BaseCase();
+					BaseCaseView frame = new BaseCaseView(iModel);
 					//Centres the GUI to the middle of the screen
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
@@ -67,7 +87,18 @@ public class BaseCaseView extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public BaseCaseView() {
+	public BaseCaseView(IBaseCase m) {
+		
+		model = m;
+		
+		bc1 = new NoBaseCaseExample();
+		bc2 = new NoBaseCaseAlgorithm();
+		bc3 = new NoBaseCaseResult();
+		bc4 = new ConvergenceExample();
+		bc5 = new ConvergenceAlgorithm();
+		bc6 = new ConvergenceResult();
+		
+		
 		setTitle("Tutorial 1: Base Case");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1253, 802);
@@ -113,11 +144,11 @@ public class BaseCaseView extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JPanel cardPanel1 = new JPanel();
+		cardPanel1 = new JPanel();
 		//This line can prevent cards from switching. Make sure it's at the top
 		cardPanel1.setLayout(new CardLayout(0, 0));
 
-		JPanel cardPanel2 = new JPanel();
+		cardPanel2 = new JPanel();
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -149,10 +180,10 @@ public class BaseCaseView extends JFrame {
 		cardPanel1.add(cp1GroupPanel, "name_60102974363843");
 
 
-		JPanel cp2GroupPanel = new JPanel();
-		cardPanel2.add(cp2GroupPanel, "name_60155849133626");
+		advancePanel = new JPanel();
+		cardPanel2.add(advancePanel, "name_60155849133626");
 
-		JButton btnMenu = new JButton("Main Menu");
+		btnMenu = new JButton("Main Menu");
 		//Don't want it to be visible until the last page
 		btnMenu.setVisible(false);
 		btnMenu.addActionListener(new ActionListener() {
@@ -164,79 +195,83 @@ public class BaseCaseView extends JFrame {
 			}
 		});
 
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
-			int count = 0;
-			NoBaseCaseExample bc1 = new NoBaseCaseExample();
-			NoBaseCaseAlgorithm bc2 = new NoBaseCaseAlgorithm();
-			NoBaseCaseResult bc3 = new NoBaseCaseResult();
-			ConvergenceExample bc4 = new ConvergenceExample();
-			ConvergenceAlgorithm bc5 = new ConvergenceAlgorithm();
-			ConvergenceResult bc6 = new ConvergenceResult();
+//			int count = 0;
+//			NoBaseCaseExample bc1 = new NoBaseCaseExample();
+//			NoBaseCaseAlgorithm bc2 = new NoBaseCaseAlgorithm();
+//			NoBaseCaseResult bc3 = new NoBaseCaseResult();
+//			ConvergenceExample bc4 = new ConvergenceExample();
+//			ConvergenceAlgorithm bc5 = new ConvergenceAlgorithm();
+//			ConvergenceResult bc6 = new ConvergenceResult();
 
 			//Used for error control
-			boolean flag;
+//			boolean flag;
 
 			public void actionPerformed(ActionEvent e) {
 
 
-				if(count == 0){
+//				if(count == 0){
 					cardPanel1.add(bc1);
 					cardPanel1.remove(cp1GroupPanel);
-					flag = true;
-				}
-
-				//Handles parameters that are not within the specified bound
-				if(count == 1 && bc1.getParameter() < 1 || bc1.getParameter() > 11){
-					flag = false;
-					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
-				}
-
-				if(count == 1 && bc1.getParameter() > 0 && bc1.getParameter() < 11){
-					//				System.out.println("we got here " + count);
-					cardPanel1.add(bc2);
-					cardPanel1.remove(bc1);
-					flag = true;	
-				} 
-
-				if(count == 2){
-					cardPanel1.add(bc3);
-					cardPanel1.remove(bc2);
-					flag = true;	
-				}
-
-				if(count == 3){
-					cardPanel1.add(bc4);
-					cardPanel1.remove(bc3);
-					flag = true;	
-				}
-
-				if(count == 4){
-					cardPanel1.add(bc5);
-					cardPanel1.remove(bc4);
-					flag = true;
-				}
-
-				if(count == 5){
-					cardPanel1.add(bc6);
-					cardPanel1.remove(bc5);
-					btnAdvance.setText("Tutorial 2");
-					btnMenu.setVisible(true);
-					flag = true;	
-				}
-
-				if(count == 6){
-					dispose();
-					ReturnValueView rvv = new ReturnValueView(model);
-					rvv.setVisible(true);
-					rvv.setLocationRelativeTo(null);
-					flag = true;	
-				}
-
-				if(flag)
-					count++;
-				//				System.out.println("count after increment is " + count);
+					
+					
+					
+//					flag = true;
+//				}
+//
+//				//Handles parameters that are not within the specified bound
+//				if(count == 1 && bc1.getParameter() < 1 || bc1.getParameter() > 11){
+//					flag = false;
+//					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+//				}
+//
+//				if(count == 1 && bc1.getParameter() > 0 && bc1.getParameter() < 11){
+//					//				System.out.println("we got here " + count);
+//					cardPanel1.add(bc2);
+//					cardPanel1.remove(bc1);
+//					flag = true;	
+//				} 
+//
+//				if(count == 2){
+//					cardPanel1.add(bc3);
+//					cardPanel1.remove(bc2);
+//					flag = true;	
+//				}
+//
+//				if(count == 3){
+//					cardPanel1.add(bc4);
+//					cardPanel1.remove(bc3);
+//					flag = true;	
+//				}
+//
+//				if(count == 4){
+//					cardPanel1.add(bc5);
+//					cardPanel1.remove(bc4);
+//					flag = true;
+//				}
+//
+//				if(count == 5){
+//					cardPanel1.add(bc6);
+//					cardPanel1.remove(bc5);
+//					btnAdvance.setText("Tutorial 2");
+//					btnMenu.setVisible(true);
+//					flag = true;	
+//				}
+//
+//				if(count == 6){
+//					dispose();
+//					IReturnValue iRModel = new ReturnValue();
+//					ReturnValueView rvv = new ReturnValueView(iRModel);
+//					rvv.setVisible(true);
+//					rvv.setLocationRelativeTo(null);
+//					flag = true;	
+//				}
+//
+//				if(flag)
+//					count++;
+//				//				System.out.println("count after increment is " + count);
 			} 
 		});
 
@@ -244,26 +279,26 @@ public class BaseCaseView extends JFrame {
 
 
 
-		GroupLayout gl_cp2GroupPanel = new GroupLayout(cp2GroupPanel);
-		gl_cp2GroupPanel.setHorizontalGroup(
-				gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp2GroupPanel.createSequentialGroup()
+		GroupLayout gl_advancePanel = new GroupLayout(advancePanel);
+		gl_advancePanel.setHorizontalGroup(
+				gl_advancePanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_advancePanel.createSequentialGroup()
 						.addContainerGap()
-						.addGroup(gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_advancePanel.createParallelGroup(Alignment.LEADING)
 								.addComponent(btnMenu, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
 								.addComponent(btnAdvance, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
 								.addGap(20))
 				);
-		gl_cp2GroupPanel.setVerticalGroup(
-				gl_cp2GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_cp2GroupPanel.createSequentialGroup()
+		gl_advancePanel.setVerticalGroup(
+				gl_advancePanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_advancePanel.createSequentialGroup()
 						.addGap(25)
 						.addComponent(btnMenu, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
 						.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
 						.addContainerGap())
 				);
-		cp2GroupPanel.setLayout(gl_cp2GroupPanel);
+		advancePanel.setLayout(gl_advancePanel);
 
 
 
@@ -291,6 +326,83 @@ public class BaseCaseView extends JFrame {
 				);
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void switchCards1(){
+		//Handles parameters that are not within the specified bound
+		if(bc1.getParameter() < 1 || bc1.getParameter() > 11){
+			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+		}
+
+		if(bc1.getParameter() > 0 && bc1.getParameter() < 11){
+			//				System.out.println("we got here " + count);
+			cardPanel1.add(bc2);
+			cardPanel1.remove(bc1);
+		}
+	}
+	
+	public void switchCards2(){
+		cardPanel1.add(bc3);
+		cardPanel1.remove(bc2);
+	}
+	
+	public void switchCards3(){
+		cardPanel1.add(bc4);
+		cardPanel1.remove(bc3);
+	}
+	
+	public void switchCards4(){
+		cardPanel1.add(bc5);
+		cardPanel1.remove(bc4);
+	}
+	
+	public void switchCards5(){
+		cardPanel1.add(bc6);
+		cardPanel1.remove(bc5);
+		btnAdvance.setText("Tutorial 2");
+		btnMenu.setVisible(true);
+	}
+	
+	
+	/**
+	 * This method is used to advance the user to the next Tutorial
+	 * 
+	 * This is called by the BCResultsButton class
+	 * It is used to dispose of the current frame and create a new one
+	 * The new one is the ExcessiveRecompView which is tutorial 3
+	 * 
+	 * @since 1.2
+	 */
+	public void advanceTut(){
+		dispose();
+		IReturnValue iRModel = new ReturnValue();
+		ReturnValueView rvv = new ReturnValueView(iRModel);
+		rvv.setVisible(true);
+		rvv.setLocationRelativeTo(null);
+
+	}
+
+	/**
+	 * This method is used to take the user to the main menu
+	 * 
+	 * This is called by the BCResultsButton class
+	 * It is used to dispose of the current frame and create a new one
+	 * The new one is the main menu
+	 * 
+	 * @since 1.2
+	 * 
+	 */
+	public void mainMenu(){
+		dispose();
+		MainMenu m = new MainMenu();
+		m.setVisible(true);
+		m.setLocationRelativeTo(null);
 	}
 }
 

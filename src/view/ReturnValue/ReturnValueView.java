@@ -57,19 +57,19 @@ public class ReturnValueView extends JFrame implements Observer {
 	private JPanel contentPane;
 	private JPanel cardPanel1,cardPanel2;
 	private JPanel advancePanel;
-	
+
 	private JButton btnAdvance,btnMenu;
-	
+
 	private ExampleButton eb;
 	private AlgorithmButton ab;
 	private Algorithm2Button ab2;
 	private ResultsButton rb;
-	
+
 	private ReturnValueExample r1;
 	private ReturnValueAlgorithm r2;
 	private ReturnValueAlgorithm2 r3;
 	private ReturnValueResults r4;
-	
+
 	private IReturnValue model;
 
 	/**
@@ -95,26 +95,24 @@ public class ReturnValueView extends JFrame implements Observer {
 	 * Create the frame.
 	 */
 	public ReturnValueView(IReturnValue r) {
-		
+
 		model = r;
-		
-		ReturnValueView test = this;
-		
-		 r1 = new ReturnValueExample(model);
-		 
-		 eb = new ExampleButton(this,model,r1);
-		 ab2 = new Algorithm2Button(this);
-		 r3 = new ReturnValueAlgorithm2(model,ab2);
-		 ab = new AlgorithmButton(this,r3);
 
-		 rb = new ResultsButton(this);
-		 
-		
-		 r2 = new ReturnValueAlgorithm(model,ab);
+		r1 = new ReturnValueExample(model);
 
-		 r4 = new ReturnValueResults(model);
-		 
-		
+		eb = new ExampleButton(this,model,r1);
+		ab2 = new Algorithm2Button(this);
+		r3 = new ReturnValueAlgorithm2(model,ab2);
+		ab = new AlgorithmButton(this,r3);
+
+		rb = new ResultsButton(this);
+
+
+		r2 = new ReturnValueAlgorithm(model,ab);
+
+		r4 = new ReturnValueResults(model);
+
+
 		setTitle("Tutorial 2: Return Values");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1253, 807);
@@ -186,85 +184,85 @@ public class ReturnValueView extends JFrame implements Observer {
 		});
 
 		btnAdvance = new JButton("Advance");
-		
+
 
 
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
-			int count = 0;
-//			ReturnValueExample r = new ReturnValueExample(model);
-//			ReturnValueParameterController rvpController = new ReturnValueParameterController(model, r);
-//			ReturnValueAlgorithm r2 = new ReturnValueAlgorithm(model);
-//			ReturnValueAlgorithmController rvac = new ReturnValueAlgorithmController(model,r2);
-//			ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
-//			ReturnValueResults r4 = new ReturnValueResults();
-			
+			//int count = 0;
+			//			ReturnValueExample r = new ReturnValueExample(model);
+			//			ReturnValueParameterController rvpController = new ReturnValueParameterController(model, r);
+			//			ReturnValueAlgorithm r2 = new ReturnValueAlgorithm(model);
+			//			ReturnValueAlgorithmController rvac = new ReturnValueAlgorithmController(model,r2);
+			//			ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
+			//			ReturnValueResults r4 = new ReturnValueResults();
+
 			//ExampleButton eb = new ExampleButton(test);
 			//Used for error control
-			boolean flag;
+			//boolean flag;
 			public void actionPerformed(ActionEvent e) {
-//				btnAdvance.addActionListener(rvpController);
-//				btnAdvance.addActionListener(rvac);
+				//				btnAdvance.addActionListener(rvpController);
+				//				btnAdvance.addActionListener(rvac);
 
-				
-				
-				
-//				if(count == 0){
-					//							System.out.println(count);
-					cardPanel1.add(r1);
-					cardPanel1.remove(cp1GroupPanel);
 
-					cardPanel2.add(eb);
-					cardPanel2.remove(advancePanel);
-					
-//					cardPanel2.
-					//						cardPanel2.remove(cp2GroupPanel);
-					//						cardPanel3.remove(advancePanel);
-					//						advancePanel.setVisible(false); 
-//					flag = true;
-//				}
-//
-//				//Handles parameters that are not within the specified bound
-//				if(count == 1 && r.getParameter() < 1 || r.getParameter() > 11){
-//					flag = false;
-//					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
-//				}
-//				
-//				
-//				if(count == 1 && r.getParameter() > 0 && r.getParameter() < 11){
-//					flag = true;
-//					cardPanel1.add(r2);
-//					cardPanel1.remove(r);
-//				} 
-//
-//
-//				if(count == 2){
-//					if(model.getParam() != 0)
-//						flag = false;
-//					else{
-//					cardPanel1.add(r3);
-//					cardPanel1.remove(r2);
-//					flag = true; }
-//				}
-//
-//				if(count == 3){
-//					cardPanel1.add(r4);
-//					cardPanel1.remove(r3);
-//					btnAdvance.setText("Tutorial 3");
-//					btnMenu.setVisible(true);
-//					flag = true;
-//				}
-//
-//				if(count == 4){
-//					dispose();
-//					ExcessiveRecompView erv = new ExcessiveRecompView();
-//					erv.setVisible(true);
-//					erv.setLocationRelativeTo(null);
-//					flag = true;
-//				}
-//
-//				if(flag)
-//					count++;
+
+
+				//				if(count == 0){
+				//							System.out.println(count);
+				cardPanel1.add(r1);
+				cardPanel1.remove(cp1GroupPanel);
+
+				cardPanel2.add(eb);
+				cardPanel2.remove(advancePanel);
+
+				//					cardPanel2.
+				//						cardPanel2.remove(cp2GroupPanel);
+				//						cardPanel3.remove(advancePanel);
+				//						advancePanel.setVisible(false); 
+				//					flag = true;
+				//				}
+				//
+				//				//Handles parameters that are not within the specified bound
+				//				if(count == 1 && r.getParameter() < 1 || r.getParameter() > 11){
+				//					flag = false;
+				//					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+				//				}
+				//				
+				//				
+				//				if(count == 1 && r.getParameter() > 0 && r.getParameter() < 11){
+				//					flag = true;
+				//					cardPanel1.add(r2);
+				//					cardPanel1.remove(r);
+				//				} 
+				//
+				//
+				//				if(count == 2){
+				//					if(model.getParam() != 0)
+				//						flag = false;
+				//					else{
+				//					cardPanel1.add(r3);
+				//					cardPanel1.remove(r2);
+				//					flag = true; }
+				//				}
+				//
+				//				if(count == 3){
+				//					cardPanel1.add(r4);
+				//					cardPanel1.remove(r3);
+				//					btnAdvance.setText("Tutorial 3");
+				//					btnMenu.setVisible(true);
+				//					flag = true;
+				//				}
+				//
+				//				if(count == 4){
+				//					dispose();
+				//					ExcessiveRecompView erv = new ExcessiveRecompView();
+				//					erv.setVisible(true);
+				//					erv.setLocationRelativeTo(null);
+				//					flag = true;
+				//				}
+				//
+				//				if(flag)
+				//					count++;
 				//						System.out.println("count after increment is " + count);
 			} 
 		});
@@ -328,10 +326,10 @@ public class ReturnValueView extends JFrame implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
-	
+
+
 	/**
 	 * This controls the switching of panels within the card panels
 	 * 
@@ -351,20 +349,20 @@ public class ReturnValueView extends JFrame implements Observer {
 	public void switchCards1(){
 
 		if(r1.getParameter() < 1 || r1.getParameter() > 11){
-		JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
-	}
+			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
+		}
 
-	if (r1.getParameter() > 0 && r1.getParameter() < 11){
+		if (r1.getParameter() > 0 && r1.getParameter() < 11){
 
-		cardPanel1.add(r2);
-		cardPanel1.remove(r1);
+			cardPanel1.add(r2);
+			cardPanel1.remove(r1);
 
-		cardPanel2.add(ab);
-		cardPanel2.remove(eb);
+			cardPanel2.add(ab);
+			cardPanel2.remove(eb);
 		}
 	}
-	
-	
+
+
 	/**
 	 * This controls the switching of panels within the card panels
 	 * 
@@ -377,16 +375,16 @@ public class ReturnValueView extends JFrame implements Observer {
 	 * @since 1.2
 	 */
 	public void switchCards2(){
-		
+
 		cardPanel1.add(r3);
 		cardPanel1.remove(r2);
-		
+
 		cardPanel2.add(ab2);
 		cardPanel2.remove(ab);
-		
-		
+
+
 	}
-	
+
 	/**
 	 * This controls the switching of panels within the card panels
 	 * 
@@ -400,16 +398,16 @@ public class ReturnValueView extends JFrame implements Observer {
 	 * @since 1.2
 	 */
 	public void switchCards3(){
-		
+
 		cardPanel1.add(r4);
 		cardPanel1.remove(r3);
-		
+
 		cardPanel2.add(rb);
 		cardPanel2.remove(ab2);
 		btnMenu.setVisible(true);
-		
+
 	}
-	
+
 	/**
 	 * This method is used to advance the user to the next Tutorial
 	 * 
@@ -425,9 +423,9 @@ public class ReturnValueView extends JFrame implements Observer {
 		ExcessiveRecompView erv = new ExcessiveRecompView(iModel);
 		erv.setVisible(true);
 		erv.setLocationRelativeTo(null);
-		
+
 	}
-	
+
 	/**
 	 * This method is used to take the user to the main menu
 	 * 

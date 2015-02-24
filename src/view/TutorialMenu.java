@@ -27,8 +27,10 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 
+import model.BaseCase;
 import model.ExcessiveRecomp;
 import model.IAlgorithms;
+import model.IBaseCase;
 import model.IExcessiveRecomp;
 import model.IReturnValue;
 import model.IWorkAfter;
@@ -87,7 +89,8 @@ public class TutorialMenu extends JFrame {
 		btnBaseCase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				BaseCaseView bcv = new BaseCaseView();
+				IBaseCase iBModel = new BaseCase();
+				BaseCaseView bcv = new BaseCaseView(iBModel);
 				bcv.setVisible(true);
 				bcv.setLocationRelativeTo(null);
 				//				new BaseCaseView().setVisible(true);
