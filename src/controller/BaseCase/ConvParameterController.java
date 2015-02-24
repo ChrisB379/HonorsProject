@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import view.BaseCase.ConvergenceExample;
 import model.BaseCase;
+import model.IBaseCase;
 
 /**
  * This is a controller for sending the parameter back and forth from the ConvergenceExample class
@@ -20,10 +21,10 @@ import model.BaseCase;
 
 public class ConvParameterController implements ActionListener {
 	
-	private BaseCase model;
+	private IBaseCase model;
 	private ConvergenceExample view;
 	
-	public ConvParameterController(BaseCase bc, ConvergenceExample convE) {
+	public ConvParameterController(IBaseCase bc, ConvergenceExample convE) {
 
 		model = bc;
 		

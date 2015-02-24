@@ -12,7 +12,10 @@ package view.BaseCase;
 
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.Observable;
+import java.util.Observer;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -24,16 +27,30 @@ import view.JTextFieldLimit;
 
 import javax.swing.JTextPane;
 
-public class NoBaseCaseExample extends JPanel {
+import controller.BaseCase.NoBCParameterController;
+import model.IBaseCase;
+
+public class NoBaseCaseExample extends JPanel implements Observer {
 
 	private static final long serialVersionUID = -62914920035463994L;
 	private JTextField txtParameterField;
 	private int parameter;
+	
+	private IBaseCase model;
+	
+	private NoBCParameterController nbcpController;
 
 	/**
 	 * Create the panel.
 	 */
-	public NoBaseCaseExample() {
+	public NoBaseCaseExample(IBaseCase m) {
+		
+		model = m;
+		
+		//register View as an observer to ReturnValue model
+		((Observable) m).addObserver(this);
+		
+		nbcpController = new NoBCParameterController(model, this);
 
 		JTextPane txtExample1 = new JTextPane();
 		txtExample1.setContentType("text/html");
@@ -61,14 +78,20 @@ public class NoBaseCaseExample extends JPanel {
 		txtParameterField = new JTextField();
 		txtParameterField.setDocument(new JTextFieldLimit(2));
 		txtParameterField.setColumns(10);
+		txtParameterField.addActionListener(nbcpController);
 		txtParameterField.addFocusListener(new FocusListener() {
 
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
-				int n = Integer.parseInt(txtParameterField.getText());
+				int n = 0;
+				if(txtParameterField.getText().equals(""))
+					JOptionPane.showMessageDialog(null, "Please enter a valid number for the parameter.");
+				
+				if(!txtParameterField.getText().equals(""));{
+				n = Integer.parseInt(txtParameterField.getText());
 				setParameter(n);
-
+				}
 			}
 
 			@Override
@@ -108,5 +131,11 @@ public class NoBaseCaseExample extends JPanel {
 
 	public int getParameter(){
 		return parameter;
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 }

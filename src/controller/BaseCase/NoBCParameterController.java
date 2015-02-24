@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import model.BaseCase;
+import model.IBaseCase;
 import view.BaseCase.NoBaseCaseExample;
 
 /**
@@ -20,11 +21,11 @@ import view.BaseCase.NoBaseCaseExample;
 
 public class NoBCParameterController implements ActionListener {
 	
-	private BaseCase model;
+	private IBaseCase model;
 	private NoBaseCaseExample view;
 	
 	
-	public NoBCParameterController(BaseCase bc, NoBaseCaseExample nbce) {
+	public NoBCParameterController(IBaseCase bc, NoBaseCaseExample nbce) {
 		
 		model = bc;
 		

@@ -91,7 +91,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		
 		model = m;
 		
-		bc1 = new NoBaseCaseExample();
+		bc1 = new NoBaseCaseExample(model);
 		bc2 = new NoBaseCaseAlgorithm();
 		bc3 = new NoBaseCaseResult();
 		bc4 = new ConvergenceExample();
