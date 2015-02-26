@@ -12,17 +12,12 @@ package view.WorkAfter;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-import view.JTextFieldLimit;
 import view.WorkAfter.AdvanceButtons.WAAlgorithmButton;
 
 import javax.swing.JTextPane;
@@ -33,10 +28,6 @@ import model.IWorkAfter;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -94,15 +85,15 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		lblExample.setBounds(374, 11, 78, 14);
 
 		JTextPane txtAlgorithm = new JTextPane();
-		txtAlgorithm.setBounds(25, 58, 412, 268);
+		txtAlgorithm.setBounds(25, 58, 455, 268);
 		txtAlgorithm.setContentType("text/html");
-		txtAlgorithm.setText("<html>\r\n<code> \r\n<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement</font> \" + n);\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t}\r\n<br></code> \r\n\r\n</html>");
+		txtAlgorithm.setText("<html>\r\n<code> \r\n<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value \r\n<br>\t\t&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp of n is</font> \" + n);\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the \r\n<br>\t\t&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp result of n*2 is</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t}\r\n<br></code> \r\n\r\n</html>");
 
 		txtAlgorithm.setBackground(Color.WHITE);
 		txtAlgorithm.setEditable(false);
 
 		txtVariables = new JTextArea();
-		txtVariables.setBounds(465, 58, 184, 45);
+		txtVariables.setBounds(505, 67, 184, 45);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 		txtVariables.setEditable(false);
 		txtVariables.setLineWrap(true);
@@ -114,10 +105,10 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		btnSubmit.addActionListener(wasc);
 
 		JTextArea textWorking = new JTextArea();
-		textWorking.setBounds(483, 162, 341, 164);
+		textWorking.setBounds(505, 162, 341, 164);
 
 		JLabel lblInsertYourWorking = new JLabel("Insert your working here:");
-		lblInsertYourWorking.setBounds(583, 125, 149, 14);
+		lblInsertYourWorking.setBounds(613, 123, 149, 14);
 
 		txtBaseCase = new JTextField();
 		txtBaseCase.setBounds(49, 555, 377, 14);
@@ -148,24 +139,24 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		txtQuestion1.setBounds(49, 358, 355, 29);
 		add(txtQuestion1);
 
-		rdbtnQ1Option1 = new JRadioButton("Base case statement 1");
-		rdbtnQ1Option1.setBounds(59, 394, 170, 23);
+		rdbtnQ1Option1 = new JRadioButton("Base case statement, showing the value of n is 1");
+		rdbtnQ1Option1.setBounds(59, 394, 345, 23);
 		add(rdbtnQ1Option1);
 
-		rdbtnQ1Option2 = new JRadioButton("Base case statement 2");
-		rdbtnQ1Option2.setBounds(59, 420, 170, 23);
+		rdbtnQ1Option2 = new JRadioButton("Base case statement, showing the value of n is 2");
+		rdbtnQ1Option2.setBounds(59, 420, 345, 23);
 		add(rdbtnQ1Option2);
 
-		rdbtnQ1Option3 = new JRadioButton("After the recursive call 2");
-		rdbtnQ1Option3.setBounds(59, 446, 170, 23);
+		rdbtnQ1Option3 = new JRadioButton("After the recursive call, showing the result of n*2 is 2");
+		rdbtnQ1Option3.setBounds(59, 446, 345, 23);
 		add(rdbtnQ1Option3);
 
-		rdbtnQ1Option4 = new JRadioButton("After the recursive call "+ ((getParameter()-1)*2));
-		rdbtnQ1Option4.setBounds(59, 472, 170, 23);
+		rdbtnQ1Option4 = new JRadioButton("After the recursive call, showing the result of n*2 is "+ ((getParameter()-1)*2));
+		rdbtnQ1Option4.setBounds(59, 472, 345, 23);
 		add(rdbtnQ1Option4);
 
-		rdbtnQ1Option5 = new JRadioButton("After the recursive call " + getParameter());
-		rdbtnQ1Option5.setBounds(59, 498, 170, 23);
+		rdbtnQ1Option5 = new JRadioButton("After the recursive call, showing the result of n*2 is " + getParameter());
+		rdbtnQ1Option5.setBounds(59, 498, 345, 23);
 		add(rdbtnQ1Option5);
 
 		rdbtnQ1Option1.addActionListener(this);
@@ -191,24 +182,24 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		add(txtQuestion2);
 		txtQuestion2.setColumns(10);
 
-		rdbtnQ2Option1 = new JRadioButton("Base case statement 1");
-		rdbtnQ2Option1.setBounds(448, 394, 170, 23);
+		rdbtnQ2Option1 = new JRadioButton("Base case statement, showing the value of n is  1");
+		rdbtnQ2Option1.setBounds(448, 394, 361, 23);
 		add(rdbtnQ2Option1);
 
-		rdbtnQ2Option2 = new JRadioButton("Base case statement 2");
-		rdbtnQ2Option2.setBounds(448, 420, 170, 23);
+		rdbtnQ2Option2 = new JRadioButton("Base case statement, showing the value of n is  2");
+		rdbtnQ2Option2.setBounds(448, 420, 361, 23);
 		add(rdbtnQ2Option2);
 
-		rdbtnQ2Option3 = new JRadioButton("After the recursive call 2");
-		rdbtnQ2Option3.setBounds(448, 446, 170, 23);
+		rdbtnQ2Option3 = new JRadioButton("After the recursive call, showing the result of n*2 is 2");
+		rdbtnQ2Option3.setBounds(448, 446, 361, 23);
 		add(rdbtnQ2Option3);
 
 		rdbtnQ2Option4 = new JRadioButton("New radio button");
-		rdbtnQ2Option4.setBounds(448, 472, 170, 23);
+		rdbtnQ2Option4.setBounds(448, 472, 361, 23);
 		add(rdbtnQ2Option4);
 
 		rdbtnQ2Option5 = new JRadioButton("New radio button");
-		rdbtnQ2Option5.setBounds(448, 498, 170, 23);
+		rdbtnQ2Option5.setBounds(448, 498, 361, 23);
 		add(rdbtnQ2Option5);
 
 		rdbtnQ2Option1.addActionListener(this);
@@ -230,11 +221,33 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
 		setParameter(model.getParam());
-		rdbtnQ1Option4.setText("After the recursive call "+ ((getParameter()-1)*2));
-		rdbtnQ1Option5.setText("After the recursive call " + getParameter()*2);
-
-		rdbtnQ2Option4.setText("After the recursive call "+ ((getParameter()-1)*2));
-		rdbtnQ2Option5.setText("After the recursive call " + getParameter()*2);
+		rdbtnQ1Option4.setText("After the recursive call, showing the result of n*2 is "+ ((getParameter()-1)*2));
+		rdbtnQ1Option5.setText("After the recursive call, showing the result of n*2 is " + getParameter()*2);
+ 
+		rdbtnQ2Option4.setText("After the recursive call, showing the result of n*2 is "+ ((getParameter()-1)*2));
+		rdbtnQ2Option5.setText("After the recursive call, showing the result of n*2 is " + getParameter()*2);
+		
+		/*
+		 * Have to change the radio button options if the parameter is 1 or 2
+		 * This is because there would be repeat answers or obviously wrong answers
+		 */
+		if(model.getParam() == 1){
+			rdbtnQ1Option3.setText("After the recursive call, showing the result of n*2 is 1");
+			rdbtnQ1Option4.setText("After the recursive call, showing the result of n*2 is "+ (getParameter()*2));
+			rdbtnQ1Option5.setText("After the recursive call, showing the result of n*2 is " + getParameter()*4);
+			
+			rdbtnQ2Option3.setText("After the recursive call, showing the result of n*2 is 1");
+			rdbtnQ2Option4.setText("After the recursive call, showing the result of n*2 is "+ (getParameter()*2));
+			rdbtnQ2Option5.setText("After the recursive call, showing the result of n*2 is " + getParameter()*4);
+		}
+		
+		if(model.getParam() == 2){
+			rdbtnQ1Option4.setText("After the recursive call, showing the result of n*2 is "+ (getParameter()*2));
+			rdbtnQ1Option5.setText("After the recursive call, showing the result of n*2 is " + getParameter()*3);
+			
+			rdbtnQ2Option4.setText("After the recursive call, showing the result of n*2 is "+ (getParameter()*2));
+			rdbtnQ2Option5.setText("After the recursive call, showing the result of n*2 is " + getParameter()*3);
+		}
 
 		System.out.println("WorkAfterAlgorithm update method getPara value " + model.getParam());
 
@@ -325,23 +338,23 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 */
 		if(rdbtnQ1Option1.isSelected()){
 			System.out.println("Q1 1");
-			setRtrnValQ1("Base case statement 1");
+			setRtrnValQ1("Base case statement, showing the value of n is  1");
 		}
 		if(rdbtnQ1Option2.isSelected()){
 			System.out.println("Q1 2");
-			setRtrnValQ1("Base case statement 2");
+			setRtrnValQ1("Base case statement, showing the value of n is  2");
 		}
 		if(rdbtnQ1Option3.isSelected()){
 			System.out.println("Q1 3");
-			setRtrnValQ1("After the recursive call 2");
+			setRtrnValQ1("After the recursive call, showing the result of n*2 is 2");
 		}
 		if(rdbtnQ1Option4.isSelected()){
 			System.out.println("Q1 4");
-			setRtrnValQ1("After the recursive call "+ ((getParameter()-1)*2));
+			setRtrnValQ1("After the recursive call, showing the result of n*2 is  "+ ((getParameter()-1)*2));
 		}
 		if(rdbtnQ1Option5.isSelected()){
 			System.out.println("Q1 5");
-			setRtrnValQ1("After the recursive call " + getParameter()*2);
+			setRtrnValQ1("After the recursive call, showing the result of n*2 is  " + getParameter()*2);
 		}
 
 		/*
@@ -350,23 +363,23 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 
 		if(rdbtnQ2Option1.isSelected()){
 			System.out.println("Q2 1");
-			setRtrnValQ2("Base case statement 1");
+			setRtrnValQ2("Base case statement, showing the value of n is  1");
 		}
 		if(rdbtnQ2Option2.isSelected()){
 			System.out.println("Q2 2");
-			setRtrnValQ2("Base case statement 2");
+			setRtrnValQ2("Base case statement, showing the value of n is  2");
 		}
 		if(rdbtnQ2Option3.isSelected()){
 			System.out.println("Q2 3");
-			setRtrnValQ2("After the recursive call 2");
+			setRtrnValQ2("After the recursive call, showing the result of n*2 is 2");
 		}
 		if(rdbtnQ2Option4.isSelected()){
 			System.out.println("Q2 4");
-			setRtrnValQ2("After the recursive call "+ ((getParameter()-1)*2));
+			setRtrnValQ2("After the recursive call, showing the result of n*2 is "+ ((getParameter()-1)*2));
 		}
 		if(rdbtnQ2Option5.isSelected()){
 			System.out.println("Q2 5");
-			setRtrnValQ2("After the recursive call " + getParameter()*2);
+			setRtrnValQ2("After the recursive call, showing the result of n*2 is " + getParameter()*2);
 		}
 
 

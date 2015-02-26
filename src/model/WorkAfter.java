@@ -262,7 +262,7 @@ public class WorkAfter extends Observable implements IWorkAfter {
 
 		WorkAfter wa = new WorkAfter();
 
-		wa.workAfter(4);
+		wa.workAfter(1);
 
 //		wa.workAfterNew2(5);
 
