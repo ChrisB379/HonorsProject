@@ -10,6 +10,7 @@ package view.WorkAfter;
  * @since 1.0
  */
 
+import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -30,6 +31,8 @@ import controller.WorkAfter.WASubmitController;
 import model.IWorkAfter;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.util.ArrayList;
@@ -37,7 +40,9 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-public class WorkAfterAlgorithm extends JPanel implements Observer {
+import javax.swing.JRadioButton;
+
+public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListener {
 
 
 	private static final long serialVersionUID = -1965751494479483614L;
@@ -47,6 +52,11 @@ public class WorkAfterAlgorithm extends JPanel implements Observer {
 	private JTextArea txtrTheValueOf;
 	private JTextArea txtrTheCurrent;
 	private JTextArea txtVariables;
+	
+	private JRadioButton rdbtnOption1;
+	private JRadioButton rdbtnOption2;
+	private JRadioButton rdbtnOption3;
+	private JRadioButton rdbtnOption4;
 	
 	private JButton btnSubmit;
 	
@@ -86,8 +96,10 @@ public class WorkAfterAlgorithm extends JPanel implements Observer {
 		wasc = new WASubmitController(model,this);
 
 		JLabel lblExample = new JLabel("Example");
+		lblExample.setBounds(374, 11, 78, 14);
 
 		JTextPane txtAlgorithm = new JTextPane();
+		txtAlgorithm.setBounds(25, 58, 412, 268);
 		txtAlgorithm.setContentType("text/html");
 		txtAlgorithm.setText("<html>"
 				+ "\r\n<code> \r\n"
@@ -110,6 +122,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer {
 		txtAlgorithm.setEditable(false);
 
 		txtVariables = new JTextArea();
+		txtVariables.setBounds(465, 58, 184, 259);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 		txtVariables.setEditable(false);
 		txtVariables.setLineWrap(true);
@@ -117,6 +130,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer {
 		txtVariables.setText("Variables will be inserted here");
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setBounds(49, 448, 170, 29);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
@@ -124,6 +138,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf.setText("The value of n is :");
 
 		txtrTheCurrent = new JTextArea();
+		txtrTheCurrent.setBounds(49, 511, 248, 26);
 		txtrTheCurrent.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheCurrent.setWrapStyleWord(true);
 		txtrTheCurrent.setLineWrap(true);
@@ -131,6 +146,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer {
 		txtrTheCurrent.setText("The current return value is :");
 
 		txtNval = new JTextField();
+		txtNval.setBounds(312, 450, 47, 20);
 		txtNval.setDocument(new JTextFieldLimit(7));
 		txtNval.setColumns(10);
 		txtNval.addFocusListener(new FocusListener() {
@@ -151,6 +167,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer {
 		});
 
 		txtRtrnVal = new JTextField();
+		txtRtrnVal.setBounds(315, 513, 44, 20);
 		txtRtrnVal.setDocument(new JTextFieldLimit(7));
 		txtRtrnVal.setColumns(10);
 		txtRtrnVal.addActionListener(wasc);
@@ -177,89 +194,62 @@ public class WorkAfterAlgorithm extends JPanel implements Observer {
 		});
 
 		btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(49, 613, 122, 45);
 		btnSubmit.addActionListener(wasc);
 		
 		JTextArea textWorking = new JTextArea();
+		textWorking.setBounds(454, 395, 341, 164);
 		
 		JLabel lblInsertYourWorking = new JLabel("Insert your working here:");
+		lblInsertYourWorking.setBounds(551, 363, 123, 14);
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setBounds(49, 555, 377, 14);
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setText("Please click the Advance button to for the next example.");
 		txtBaseCase.setColumns(10);
 		txtBaseCase.setVisible(false);
+		setLayout(null);
+		add(lblExample);
+		add(txtAlgorithm);
+		add(txtVariables);
+		add(lblInsertYourWorking);
+		add(btnSubmit);
+		add(txtBaseCase);
+		add(txtrTheValueOf);
+		add(txtNval);
+		add(txtrTheCurrent);
+		add(txtRtrnVal);
+		add(textWorking);
 		
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(374)
-							.addComponent(lblExample))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(25)
-							.addComponent(txtAlgorithm, GroupLayout.PREFERRED_SIZE, 412, GroupLayout.PREFERRED_SIZE)
-							.addGap(28)
-							.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(218, Short.MAX_VALUE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(551, Short.MAX_VALUE)
-					.addComponent(lblInsertYourWorking)
-					.addGap(193))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(49)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap())
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, 377, GroupLayout.PREFERRED_SIZE)
-								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-									.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(txtNval, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE))
-									.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-										.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE)
-										.addGap(18)
-										.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE))))
-							.addPreferredGap(ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-							.addComponent(textWorking, GroupLayout.PREFERRED_SIZE, 341, GroupLayout.PREFERRED_SIZE)
-							.addGap(72))))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblExample)
-					.addGap(33)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 259, GroupLayout.PREFERRED_SIZE)
-							.addGap(46)
-							.addComponent(lblInsertYourWorking)
-							.addGap(18)
-							.addComponent(textWorking, GroupLayout.PREFERRED_SIZE, 164, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(txtAlgorithm, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
-							.addGap(122)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtNval, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(34)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(18)
-							.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addGap(44)
-					.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(121, Short.MAX_VALUE))
-		);
-		setLayout(groupLayout);
+		ButtonGroup btnGroup = new ButtonGroup();
+		
+		rdbtnOption1 = new JRadioButton("Base case statement 1");
+		rdbtnOption1.setBounds(343, 624, 170, 23);
+		add(rdbtnOption1);
+		
+		rdbtnOption2 = new JRadioButton("Base case statement 2");
+		rdbtnOption2.setBounds(343, 650, 170, 23);
+		add(rdbtnOption2);
+		
+		rdbtnOption3 = new JRadioButton("After the recursive call 2");
+		rdbtnOption3.setBounds(343, 673, 170, 23);
+		add(rdbtnOption3);
+		
+		rdbtnOption4 = new JRadioButton("After the recursive call 4");
+		rdbtnOption4.setBounds(343, 699, 170, 23);
+		add(rdbtnOption4);
+		
+		rdbtnOption1.addActionListener(this);
+		rdbtnOption2.addActionListener(this);
+		rdbtnOption3.addActionListener(this);
+		rdbtnOption4.addActionListener(this);
+		
+		btnGroup.add(rdbtnOption1);
+		btnGroup.add(rdbtnOption2);
+		btnGroup.add(rdbtnOption3);
+		btnGroup.add(rdbtnOption4);
 
 	}
 
@@ -404,5 +394,25 @@ public class WorkAfterAlgorithm extends JPanel implements Observer {
 		
 		if(count == 0)
 			aBut.setVis();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(rdbtnOption1.isSelected()){
+			System.out.println("1");
+		}
+		if(rdbtnOption2.isSelected()){
+			System.out.println("2");
+		}
+		if(rdbtnOption3.isSelected()){
+			System.out.println("3");
+		}
+		if(rdbtnOption4.isSelected()){
+			System.out.println("4");
+		}
+		
+		
+		
 	}
 }
