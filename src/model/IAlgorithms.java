@@ -15,10 +15,7 @@ public interface IAlgorithms {
 	public void setParam(int n);
 	
 	public int getParam();
-	
-	public void setOriginalParam(int n);
-	
-	public int getOriginalParam();
+
 	
 
 	

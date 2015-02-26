@@ -22,15 +22,6 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	
 	private int param;
 	private String userRetValQ1, userRetValQ2;
-	
-	/*
-	 * A record of the users original input parameter. This value will not change
-	 * unlike the param variable which will
-	 */
-	private int Oparam; 
-	
-	private List<Integer> paramArray;
-	private List<Integer> returnV;
 
 
 	/**
@@ -208,26 +199,6 @@ public class WorkAfter extends Observable implements IWorkAfter {
 		return param;
 	}
 	
-	/**
-	 * These will hold the value of the input parameter similar to the above two methods
-	 * However during the execution, the above two methods parameters values will be changed.
-	 * These two methods will hold the users original parameter value so that it can be used
-	 * for loops.
-	 * 
-	 * @since 1.1
-	 */
-	@Override
-	public void setOriginalParam(int n) {
-		Oparam = n;
-		
-	}
-
-	@Override
-	public int getOriginalParam() {
-
-		return Oparam;
-	}
-
 
 	/**
 	 * Returns the value stored that the user set as their return value
@@ -279,51 +250,6 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	
 	}
 	
-	/**
-	 * This adds user input to an arraylist. The data will be used later in the results page
-	 * 
-	 * 
-	 * @param nVal the users answer to the value of n
-	 * @param retVal the users answer to the value of the current return value 
-	 * 
-	 * @since 1.1
-	 */
-	public void addToArray(int nVal, int retVal){
-		
-		if(paramArray == null)
-			paramArray = new ArrayList<Integer>();
-		
-		if(returnV == null)
-			returnV = new ArrayList<Integer>();
-			
-		paramArray.add(nVal);
-		
-		returnV.add(retVal);
-		
-	}
-	
-	/**
-	 * Gets and returns the value stored in a position in the array
-	 * 
-	 * @param n the position of the element in the array to be fetched
-	 * @return the value held at array position n-1
-	 * @since 1.1
-	 */
-	
-	public int getParamArray(int n){
-		return paramArray.get(n-1);
-	}
-	
-	/**
-	 * Gets and returns the value stored in a position in the array
-	 * 
-	 * @param n the position of the element in the array to be fetched
-	 * @return the value held at array position n-1
-	 * @since 1.1
-	 */
-	public int getReturnVArray(int n){
-		return returnV.get(n-1);
-	}
 	
 	/**
 	 * Some tests. Will remove later.
@@ -353,5 +279,6 @@ public class WorkAfter extends Observable implements IWorkAfter {
 		//		wa.getAllFiles(fi);
 
 	}
+
 
 }

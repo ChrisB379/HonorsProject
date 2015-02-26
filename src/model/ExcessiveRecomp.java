@@ -21,11 +21,6 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	int helperMemory[];
 	private int param;
 	private int userRetVal;
-	/*
-	 * A record of the users original input parameter. This value will not change
-	 * unlike the param variable which will
-	 */
-	private int Oparam; 
 	
 	private List<Integer> paramArray;
 	private List<Integer> returnV;
@@ -118,26 +113,6 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	@Override
 	public int getParam() {
 		return param;
-	}
-	
-	/**
-	 * These will hold the value of the input parameter similar to the above two methods
-	 * However during the execution, the above two methods parameters values will be changed.
-	 * These two methods will hold the users original parameter value so that it can be used
-	 * for loops.
-	 * 
-	 * @since 1.1
-	 */
-	@Override
-	public void setOriginalParam(int n) {
-		Oparam = n;
-		
-	}
-
-	@Override
-	public int getOriginalParam() {
-
-		return Oparam;
 	}
 
 	

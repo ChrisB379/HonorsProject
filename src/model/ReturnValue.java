@@ -18,11 +18,7 @@ import java.util.Observable;
 public class ReturnValue extends Observable implements IReturnValue {
 	
 	private int param;
-	/*
-	 * A record of the users original input parameter. This value will not change
-	 * unlike the param variable which will
-	 */
-	private int Oparam; 
+
 	private int userRetVal, userRetVal2;
 	
 	private List<Integer> paramArray;
@@ -80,25 +76,6 @@ public class ReturnValue extends Observable implements IReturnValue {
 		return param;
 	}
 
-	/**
-	 * These will hold the value of the input parameter similar to the above two methods
-	 * However during the execution, the above two methods parameters values will be changed.
-	 * These two methods will hold the users original parameter value so that it can be used
-	 * for loops.
-	 * 
-	 * @since 1.1
-	 */
-	@Override
-	public void setOriginalParam(int n) {
-		Oparam = n;
-		
-	}
-
-	@Override
-	public int getOriginalParam() {
-
-		return Oparam;
-	}
 	
 	/**
 	 * This adds user input to an arraylist. The data will be used later in the results page
