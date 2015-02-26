@@ -33,7 +33,7 @@ public class WorkAfterResult extends JPanel implements Observer {
 	private JTextArea txtResults;
 	private JTextArea txtSummary;
 	
-	private int userRet;
+	private String userRet;
 	private int param;
 
 	/**
@@ -96,18 +96,18 @@ public class WorkAfterResult extends JPanel implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		setReturnVal(model.getUserReturnVal());
+		setReturnVal(model.getUserReturnValQ1());
 		setParam(model.getParam());
 		System.out.println("RetValResults " + getParam());
 		setResultsText();
 		
 	}
 	
-	public void setReturnVal(int n){
-		userRet = n;
+	public void setReturnVal(String s){
+		userRet = s;
 	}
 	
-	public int getReturnVal(){
+	public String getReturnVal(){
 		return userRet;
 	}
 	

@@ -7,5 +7,8 @@ public interface IExcessiveRecomp extends IAlgorithms {
 	public void addToArray(int nVal, int retVal);
 	public int getParamArray(int n);
 	public int getReturnVArray(int n);
+	
+	public int getUserReturnVal();
+	public void setUserReturnVal(int n);
 
 }

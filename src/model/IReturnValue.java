@@ -18,6 +18,9 @@ public interface IReturnValue extends IAlgorithms  {
 	public int getReturnVArray(int n);
 	public void clearArrays();
 	
+	public int getUserReturnVal();
+	public void setUserReturnVal(int n);
+	
 	public int getUserReturnVal2();
 	public void setUserReturnVal2(int n);
 	

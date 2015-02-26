@@ -46,53 +46,48 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 
 
 	private static final long serialVersionUID = -1965751494479483614L;
-	private JTextField txtNval;
-	private JTextField txtRtrnVal;
 	private JTextField txtBaseCase;
-	private JTextArea txtrTheValueOf;
-	private JTextArea txtrTheCurrent;
 	private JTextArea txtVariables;
-	
-	private JRadioButton rdbtnOption1;
-	private JRadioButton rdbtnOption2;
-	private JRadioButton rdbtnOption3;
-	private JRadioButton rdbtnOption4;
-	
+
+	private JRadioButton rdbtnQ1Option1;
+	private JRadioButton rdbtnQ1Option2;
+	private JRadioButton rdbtnQ1Option3;
+	private JRadioButton rdbtnQ1Option4;
+	private JRadioButton rdbtnQ1Option5;
+
+	private JRadioButton rdbtnQ2Option1;
+	private JRadioButton rdbtnQ2Option2;
+	private JRadioButton rdbtnQ2Option3;
+	private JRadioButton rdbtnQ2Option4;
+	private JRadioButton rdbtnQ2Option5;
+
 	private JButton btnSubmit;
-	
+
 	private IWorkAfter model;
-	
+
 	private WASubmitController wasc;
-	
+
 	private int parameter;
-	private int nVal,RtrnVal;
-	private int count;
-	
-	//Used for setting the Text Area with the values of variables
-	private List<String> variableString = new ArrayList<String>();
-	private String stringN = "n";
-	private String space = " ";
-	private String equals = "=";
-	private String whole = stringN + space + equals + space;
-	private String newLine = "\n";
-	boolean alreadyExecuted;
-	
+
+	private String RtrnValQ1, RtrnValQ2;
+
 	private WAAlgorithmButton aBut;
-	
-	private boolean doOnce;
+
+	private JTextArea txtQuestion2;
+
 
 	/**
 	 * Create the panel.
 	 */
 	public WorkAfterAlgorithm(IWorkAfter m, WAAlgorithmButton ab) {
-		
+
 		model = m;
-		
+
 		aBut = ab;
 		aBut.setNotVis();
-		
+
 		((Observable) m).addObserver(this);
-		
+
 		wasc = new WASubmitController(model,this);
 
 		JLabel lblExample = new JLabel("Example");
@@ -101,108 +96,29 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		JTextPane txtAlgorithm = new JTextPane();
 		txtAlgorithm.setBounds(25, 58, 412, 268);
 		txtAlgorithm.setContentType("text/html");
-		txtAlgorithm.setText("<html>"
-				+ "\r\n<code> \r\n"
-				+ "<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfterNew(<font color = rgb(127,0,85)><b>int</b> </font> n){"
-				+ "\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)"
-				+ "\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement</font> \" + n);"
-				+ "\r\n<br>"
-				+ "\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>"
-				+ "\r\n<br>\t\t\t&nbsp&nbsp workAfterNew(n-1);"
-				+ "\r\n<br>\t\t\r\n<br>"
-				+ "\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call</font> \" + n*2);"
-				+ "\r\n<br>"
-				+ "\t\t\r\n<br>"
-				+ "\t\t\r\n<br>"
-				+ "\t}\r\n<br>"
-				+ "</code> \r\n\r\n"
-				+ "</html>");
+		txtAlgorithm.setText("<html>\r\n<code> \r\n<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement</font> \" + n);\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t}\r\n<br></code> \r\n\r\n</html>");
 
 		txtAlgorithm.setBackground(Color.WHITE);
 		txtAlgorithm.setEditable(false);
 
 		txtVariables = new JTextArea();
-		txtVariables.setBounds(465, 58, 184, 259);
+		txtVariables.setBounds(465, 58, 184, 45);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 		txtVariables.setEditable(false);
 		txtVariables.setLineWrap(true);
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setText("Variables will be inserted here");
 
-		txtrTheValueOf = new JTextArea();
-		txtrTheValueOf.setBounds(49, 448, 170, 29);
-		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
-		txtrTheValueOf.setWrapStyleWord(true);
-		txtrTheValueOf.setLineWrap(true);
-		txtrTheValueOf.setEditable(false);
-		txtrTheValueOf.setText("The value of n is :");
-
-		txtrTheCurrent = new JTextArea();
-		txtrTheCurrent.setBounds(49, 511, 248, 26);
-		txtrTheCurrent.setBackground(UIManager.getColor("Panel.background"));
-		txtrTheCurrent.setWrapStyleWord(true);
-		txtrTheCurrent.setLineWrap(true);
-		txtrTheCurrent.setEditable(false);
-		txtrTheCurrent.setText("The current return value is :");
-
-		txtNval = new JTextField();
-		txtNval.setBounds(312, 450, 47, 20);
-		txtNval.setDocument(new JTextFieldLimit(7));
-		txtNval.setColumns(10);
-		txtNval.addFocusListener(new FocusListener() {
-			
-			@Override
-			public void focusLost(FocusEvent e) {
-				// TODO Auto-generated method stub
-				int n = Integer.parseInt(txtNval.getText());
-				setNVal(n);
-				
-			}
-			
-			@Override
-			public void focusGained(FocusEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-
-		txtRtrnVal = new JTextField();
-		txtRtrnVal.setBounds(315, 513, 44, 20);
-		txtRtrnVal.setDocument(new JTextFieldLimit(7));
-		txtRtrnVal.setColumns(10);
-		txtRtrnVal.addActionListener(wasc);
-		txtRtrnVal.addFocusListener(new FocusListener() {
-			
-			@Override
-			public void focusLost(FocusEvent e) {
-				// TODO Auto-generated method stub
-				if(txtRtrnVal.getText().equals(""))
-					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");
-				
-				if(!(txtRtrnVal.getText().equals(""))){
-				int n = Integer.parseInt(txtRtrnVal.getText());
-				
-				setRtrnVal(n);
-				}
-			}
-			
-			@Override
-			public void focusGained(FocusEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(49, 613, 122, 45);
+		btnSubmit.setBounds(49, 598, 122, 45);
 		btnSubmit.addActionListener(wasc);
-		
+
 		JTextArea textWorking = new JTextArea();
-		textWorking.setBounds(454, 395, 341, 164);
-		
+		textWorking.setBounds(483, 162, 341, 164);
+
 		JLabel lblInsertYourWorking = new JLabel("Insert your working here:");
-		lblInsertYourWorking.setBounds(551, 363, 123, 14);
-		
+		lblInsertYourWorking.setBounds(583, 125, 149, 14);
+
 		txtBaseCase = new JTextField();
 		txtBaseCase.setBounds(49, 555, 377, 14);
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -217,39 +133,96 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		add(lblInsertYourWorking);
 		add(btnSubmit);
 		add(txtBaseCase);
-		add(txtrTheValueOf);
-		add(txtNval);
-		add(txtrTheCurrent);
-		add(txtRtrnVal);
 		add(textWorking);
-		
-		ButtonGroup btnGroup = new ButtonGroup();
-		
-		rdbtnOption1 = new JRadioButton("Base case statement 1");
-		rdbtnOption1.setBounds(343, 624, 170, 23);
-		add(rdbtnOption1);
-		
-		rdbtnOption2 = new JRadioButton("Base case statement 2");
-		rdbtnOption2.setBounds(343, 650, 170, 23);
-		add(rdbtnOption2);
-		
-		rdbtnOption3 = new JRadioButton("After the recursive call 2");
-		rdbtnOption3.setBounds(343, 673, 170, 23);
-		add(rdbtnOption3);
-		
-		rdbtnOption4 = new JRadioButton("After the recursive call 4");
-		rdbtnOption4.setBounds(343, 699, 170, 23);
-		add(rdbtnOption4);
-		
-		rdbtnOption1.addActionListener(this);
-		rdbtnOption2.addActionListener(this);
-		rdbtnOption3.addActionListener(this);
-		rdbtnOption4.addActionListener(this);
-		
-		btnGroup.add(rdbtnOption1);
-		btnGroup.add(rdbtnOption2);
-		btnGroup.add(rdbtnOption3);
-		btnGroup.add(rdbtnOption4);
+
+		ButtonGroup btnGroupQ1 = new ButtonGroup();
+		ButtonGroup btnGroupQ2 = new ButtonGroup();
+
+		/* 
+		 * QUESTION ONE
+		 */
+
+		JTextArea txtQuestion1 = new JTextArea();
+		txtQuestion1.setEditable(false);
+		txtQuestion1.setText("Q1: What will be the first line of output?");
+		txtQuestion1.setBounds(49, 358, 355, 29);
+		add(txtQuestion1);
+
+		rdbtnQ1Option1 = new JRadioButton("Base case statement 1");
+		rdbtnQ1Option1.setBounds(59, 394, 170, 23);
+		add(rdbtnQ1Option1);
+
+		rdbtnQ1Option2 = new JRadioButton("Base case statement 2");
+		rdbtnQ1Option2.setBounds(59, 420, 170, 23);
+		add(rdbtnQ1Option2);
+
+		rdbtnQ1Option3 = new JRadioButton("After the recursive call 2");
+		rdbtnQ1Option3.setBounds(59, 446, 170, 23);
+		add(rdbtnQ1Option3);
+
+		rdbtnQ1Option4 = new JRadioButton("After the recursive call "+ ((getParameter()-1)*2));
+		rdbtnQ1Option4.setBounds(59, 472, 170, 23);
+		add(rdbtnQ1Option4);
+
+		rdbtnQ1Option5 = new JRadioButton("After the recursive call " + getParameter());
+		rdbtnQ1Option5.setBounds(59, 498, 170, 23);
+		add(rdbtnQ1Option5);
+
+		rdbtnQ1Option1.addActionListener(this);
+		rdbtnQ1Option2.addActionListener(this);
+		rdbtnQ1Option3.addActionListener(this);
+		rdbtnQ1Option4.addActionListener(this);
+		rdbtnQ1Option5.addActionListener(this);
+
+		btnGroupQ1.add(rdbtnQ1Option1);
+		btnGroupQ1.add(rdbtnQ1Option2);
+		btnGroupQ1.add(rdbtnQ1Option3);
+		btnGroupQ1.add(rdbtnQ1Option4);
+		btnGroupQ1.add(rdbtnQ1Option5);
+
+		/* 
+		 * QUESTION TWO 
+		 */
+
+		txtQuestion2 = new JTextArea();
+		txtQuestion2.setEditable(false);
+		txtQuestion2.setText("Q2: What will be the last line of output?");
+		txtQuestion2.setBounds(448, 360, 361, 27);
+		add(txtQuestion2);
+		txtQuestion2.setColumns(10);
+
+		rdbtnQ2Option1 = new JRadioButton("Base case statement 1");
+		rdbtnQ2Option1.setBounds(448, 394, 170, 23);
+		add(rdbtnQ2Option1);
+
+		rdbtnQ2Option2 = new JRadioButton("Base case statement 2");
+		rdbtnQ2Option2.setBounds(448, 420, 170, 23);
+		add(rdbtnQ2Option2);
+
+		rdbtnQ2Option3 = new JRadioButton("After the recursive call 2");
+		rdbtnQ2Option3.setBounds(448, 446, 170, 23);
+		add(rdbtnQ2Option3);
+
+		rdbtnQ2Option4 = new JRadioButton("New radio button");
+		rdbtnQ2Option4.setBounds(448, 472, 170, 23);
+		add(rdbtnQ2Option4);
+
+		rdbtnQ2Option5 = new JRadioButton("New radio button");
+		rdbtnQ2Option5.setBounds(448, 498, 170, 23);
+		add(rdbtnQ2Option5);
+
+		rdbtnQ2Option1.addActionListener(this);
+		rdbtnQ2Option2.addActionListener(this);
+		rdbtnQ2Option3.addActionListener(this);
+		rdbtnQ2Option4.addActionListener(this);
+		rdbtnQ2Option5.addActionListener(this);
+
+		btnGroupQ2.add(rdbtnQ2Option1);
+		btnGroupQ2.add(rdbtnQ2Option2);
+		btnGroupQ2.add(rdbtnQ2Option3);
+		btnGroupQ2.add(rdbtnQ2Option4);
+		btnGroupQ2.add(rdbtnQ2Option5);
+
 
 	}
 
@@ -257,93 +230,77 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
 		setParameter(model.getParam());
-		System.out.println("rv " + model.getParam());
-		//A count for the submit button to keep track of how many recursive calls there has been
-		if(!doOnce){
-		count = model.getParam();
-		doOnce = true;
-		}
-		
+		rdbtnQ1Option4.setText("After the recursive call "+ ((getParameter()-1)*2));
+		rdbtnQ1Option5.setText("After the recursive call " + getParameter()*2);
+
+		rdbtnQ2Option4.setText("After the recursive call "+ ((getParameter()-1)*2));
+		rdbtnQ2Option5.setText("After the recursive call " + getParameter()*2);
+
+		System.out.println("WorkAfterAlgorithm update method getPara value " + model.getParam());
+
+
 		txtVariables.setText("n = " + getParameter());
 	}
-	
+
+	/**
+	 * Sets the value of the parameter
+	 * 
+	 * 
+	 * @param n an integer which will be the value of the parameter
+	 */
 	public void setParameter(int n){
 		parameter = n;
 
 	}
 
+	/**
+	 * Returns an integer stored in parameter which is the value of the users input parameter
+	 * 
+	 * @return an integer which is the parameter
+	 */
 	public int getParameter(){
 		return parameter;
 
 	}
-	
+
 	/**
-	 * Sets the nVal to be the users input
+	 * Sets the RtrnVal to be the users selected radio button value
 	 * 
-	 * @param n the users input for n
+	 * @param s the String from the button the user selected
 	 */
-	public void setNVal(int n){
-		nVal = n;
+	public void setRtrnValQ1(String s){
+		RtrnValQ1 = s;
 	}
 
 	/**
-	 * Returns the value of the txtNVal text field to be used by the controller
+	 * Returns the value of the radio button selected by the user to be used by the controller
 	 * 
-	 * @return the value of the txtNVal text field
+	 * @return the value of the radio button selected by the user
 	 */
-	public int getNVal(){
-		return nVal;
+	public String getRtrnValQ1(){
+		return RtrnValQ1;
 	}
 
 	/**
-	 * Sets the RtrnVal to be the users input
+	 * Sets the RtrnVal to be the users selected radio button value
 	 * 
-	 * @param n the users input for n
+	 * @param s the String from the button the user selected
 	 */
-	public void setRtrnVal(int n){
-		RtrnVal = n;
+	public void setRtrnValQ2(String s){
+		RtrnValQ2 = s;
 	}
-	
+
 	/**
-	 * Returns the value of the txtRtrnVal text field to be used by the controller
+	 * Returns the value of the radio button selected by the user to be used by the controller
 	 * 
-	 * @return the value of the txtRtrnVal text field
+	 * @return the value of the radio button selected by the user
 	 */
-	public int getRtrnVal(){
-		return RtrnVal;
+	public String getRtrnValQ2(){
+		return RtrnValQ2;
 	}
-	
-	
-	/**
-	 * Decrements the count for an if condition in the controller
-	 * 
-	 * @since 1.2
-	 */
-	public void decrementCount(){
-		count--;
-	}
-	
-	
-	/**
-	 * Gets the current count to check it against if statements in the controller
-	 * These if statements trigger buttons/textfields changing/becoming visible
-	 * 
-	 * @since 1.2
-	 */
-	public int getCount(){
-		return count;
-	}
-	
-	/**
-	 * Changes the value of the descriptor field for txtRtrnValue to indicate that this entry will be what the user
-	 * thinks the final return value is and what their final answer will be
-	 * 
-	 * @since 1.2
-	 */
-	public void setTextField(){
-		txtrTheCurrent.setText("The final return value is ");
-	}
-	
+
+
+
 	/**
 	 * This is triggered at the "return statement"
 	 * i.e when the final return value has been input by the user
@@ -354,65 +311,102 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 	 */
 	public void setAfterReturnText(){
 		txtBaseCase.setVisible(true);
-		txtrTheValueOf.setVisible(false);
-		txtrTheCurrent.setVisible(false);
-		txtNval.setVisible(false);
-		txtRtrnVal.setVisible(false);
 		btnSubmit.setVisible(false);
+		aBut.setVis();
 	}
-	
-	/**
-	 * Sets the value of the text area.
-	 * Fills it with the arraylist, replacing "[", "]" and "," with nothing so it looks better
-	 * 
-	 *@since 1.2 
-	 */
-	public void setTxtArea(){
-		txtVariables.setText(variableString.toString().replace("[", "").replace("]", "").replace(",", ""));
-	}
-	
-	
-	/**
-	 * Adds a string to the arraylist each time it is called.
-	 * For one time only, the first line is set at count+1 as its the original parameter and we only want to add this one time
-	 * After that, a new string is added each time. The count decrements so acts as the value of n decreasing with each recursive call.
-	 * The if statement of count being greater than 0 stops it printing one line too many on the last sibmit button
-	 * 
-	 * @since 1.2
-	 */
-	public void addArrayString(){
-		//Sourced idea from http://stackoverflow.com/questions/2665993/is-is-possible-to-make-a-method-execute-only-once
-		//Simple boolean check, it starts false and once it has been done once then the boolean sets to true
-		//This prevents it ever being used again
-		if(!alreadyExecuted) {
-			variableString.add(space + whole + (count+1) + newLine);
-		    alreadyExecuted = true;
-		}
-		
-		if(count > 0)
-		variableString.add(whole + count + newLine);
-		
-		if(count == 0)
-			aBut.setVis();
-	}
+
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(rdbtnOption1.isSelected()){
-			System.out.println("1");
+		/*
+		 * QUESTION ONE
+		 */
+		if(rdbtnQ1Option1.isSelected()){
+			System.out.println("Q1 1");
+			setRtrnValQ1("Base case statement 1");
 		}
-		if(rdbtnOption2.isSelected()){
-			System.out.println("2");
+		if(rdbtnQ1Option2.isSelected()){
+			System.out.println("Q1 2");
+			setRtrnValQ1("Base case statement 2");
 		}
-		if(rdbtnOption3.isSelected()){
-			System.out.println("3");
+		if(rdbtnQ1Option3.isSelected()){
+			System.out.println("Q1 3");
+			setRtrnValQ1("After the recursive call 2");
 		}
-		if(rdbtnOption4.isSelected()){
-			System.out.println("4");
+		if(rdbtnQ1Option4.isSelected()){
+			System.out.println("Q1 4");
+			setRtrnValQ1("After the recursive call "+ ((getParameter()-1)*2));
 		}
-		
-		
-		
+		if(rdbtnQ1Option5.isSelected()){
+			System.out.println("Q1 5");
+			setRtrnValQ1("After the recursive call " + getParameter()*2);
+		}
+
+		/*
+		 * QUESTION TWO
+		 */
+
+		if(rdbtnQ2Option1.isSelected()){
+			System.out.println("Q2 1");
+			setRtrnValQ2("Base case statement 1");
+		}
+		if(rdbtnQ2Option2.isSelected()){
+			System.out.println("Q2 2");
+			setRtrnValQ2("Base case statement 2");
+		}
+		if(rdbtnQ2Option3.isSelected()){
+			System.out.println("Q2 3");
+			setRtrnValQ2("After the recursive call 2");
+		}
+		if(rdbtnQ2Option4.isSelected()){
+			System.out.println("Q2 4");
+			setRtrnValQ2("After the recursive call "+ ((getParameter()-1)*2));
+		}
+		if(rdbtnQ2Option5.isSelected()){
+			System.out.println("Q2 5");
+			setRtrnValQ2("After the recursive call " + getParameter()*2);
+		}
+
+
+	}
+	
+	/**
+	 * Returns a boolean based on whether any radio button has been selected or not.
+	 * This boolean refers to question 1 only.
+	 * 
+	 * @return a boolean, true if a radio button has been selected and false if no radio button has been selected for question 1
+	 */
+	public boolean question1Answered(){
+		if(rdbtnQ1Option1.isSelected()
+				||	rdbtnQ1Option2.isSelected()
+				||	rdbtnQ1Option3.isSelected()
+				||	rdbtnQ1Option4.isSelected()
+				||	rdbtnQ1Option5.isSelected()
+				){
+			return true;
+		}
+		else
+			return false;
+	}
+	
+	/**
+	 * Returns a boolean based on whether any radio button has been selected or not.
+	 * This boolean refers to question 2 only.
+	 * 
+	 * @return a boolean, true if a radio button has been selected and false if no radio button has been selected for question 1
+	 */
+	public boolean question2Answered(){
+		if(rdbtnQ2Option1.isSelected()
+				||	rdbtnQ2Option2.isSelected()
+				||	rdbtnQ2Option3.isSelected()
+				||	rdbtnQ2Option4.isSelected()
+				||	rdbtnQ2Option5.isSelected()
+				){
+			return true;
+		}
+		else
+			return false;
 	}
 }

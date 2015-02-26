@@ -14,5 +14,11 @@ public interface IWorkAfter extends IAlgorithms {
 	public int getParamArray(int n);
 	public int getReturnVArray(int n);
 	
+	public String getUserReturnValQ1();
+	public void setUserReturnValQ1(String s);
+	
+	public String getUserReturnValQ2();
+	public void setUserReturnValQ2(String s);
+	
 
 }

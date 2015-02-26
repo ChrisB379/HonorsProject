@@ -20,9 +20,7 @@ public interface IAlgorithms {
 	
 	public int getOriginalParam();
 	
-	public int getUserReturnVal();
-	
-	public void setUserReturnVal(int n);
+
 	
 	
 

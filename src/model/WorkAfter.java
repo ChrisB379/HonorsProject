@@ -21,7 +21,7 @@ import java.util.Observable;
 public class WorkAfter extends Observable implements IWorkAfter {
 	
 	private int param;
-	private int userRetVal;
+	private String userRetValQ1, userRetValQ2;
 	
 	/*
 	 * A record of the users original input parameter. This value will not change
@@ -32,7 +32,6 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	private List<Integer> paramArray;
 	private List<Integer> returnV;
 
-	//TODO decide how appropriate the algorithms are and which to really use
 
 	/**
 	 * Simple example of work after. If the base is not met it recurses until it's met
@@ -46,9 +45,10 @@ public class WorkAfter extends Observable implements IWorkAfter {
 		if(n == 1)
 			System.out.println("Base case statement, showing the value of n is " + n);
 
-		else
+		else{
+			System.out.println("going into recursive call");
 			workAfter(n-1);
-
+		}
 
 		System.out.println("After the recursive call, showing the result of n*2 is " + n*2);
 
@@ -192,34 +192,6 @@ public class WorkAfter extends Observable implements IWorkAfter {
 
 	}
 
-	/**
-	 * Some tests. Will remove later.
-	 * 
-	 * @param args
-	 * @throws IOException
-	 */
-
-	public static void main(String[] args) throws IOException{
-
-		WorkAfter wa = new WorkAfter();
-
-		wa.workAfter(5);
-
-		wa.workAfterNew2(5);
-
-		//		wa.workAfter(10);
-		//		
-		//		System.out.println();
-		//		System.out.println("New method below");
-		//		System.out.println();
-		//		
-		//		wa.workAfter2(5);
-
-		//		File fi = new File("C:/Users/Chris/Desktop/Uni/4th year/CS408 Individual Project");
-		//		
-		//		wa.getAllFiles(fi);
-
-	}
 
 
 	@Override
@@ -263,9 +235,9 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	 * @since 1.2
 	 */
 	@Override
-	public int getUserReturnVal() {
+	public String getUserReturnValQ1() {
 		
-		return userRetVal;
+		return userRetValQ1;
 	}
 
 	
@@ -275,8 +247,33 @@ public class WorkAfter extends Observable implements IWorkAfter {
 	 * @since 1.2
 	 */
 	@Override
-	public void setUserReturnVal(int n) {
-		userRetVal = n;
+	public void setUserReturnValQ1(String s) {
+		userRetValQ1 = s;
+		setChanged();
+		notifyObservers();
+	
+	}
+	
+	/**
+	 * Returns the value stored that the user set as their return value
+	 * 
+	 * @since 1.2
+	 */
+	@Override
+	public String getUserReturnValQ2() {
+		
+		return userRetValQ2;
+	}
+
+	
+	/**
+	 * Sets userRetVal to that of the users return value that they picked.
+	 * 
+	 * @since 1.2
+	 */
+	@Override
+	public void setUserReturnValQ2(String s) {
+		userRetValQ2 = s;
 		setChanged();
 		notifyObservers();
 	
@@ -328,5 +325,33 @@ public class WorkAfter extends Observable implements IWorkAfter {
 		return returnV.get(n-1);
 	}
 	
+	/**
+	 * Some tests. Will remove later.
+	 * 
+	 * @param args
+	 * @throws IOException
+	 */
+
+	public static void main(String[] args) throws IOException{
+
+		WorkAfter wa = new WorkAfter();
+
+		wa.workAfter(4);
+
+//		wa.workAfterNew2(5);
+
+		//		wa.workAfter(10);
+		//		
+		//		System.out.println();
+		//		System.out.println("New method below");
+		//		System.out.println();
+		//		
+		//		wa.workAfter2(5);
+
+		//		File fi = new File("C:/Users/Chris/Desktop/Uni/4th year/CS408 Individual Project");
+		//		
+		//		wa.getAllFiles(fi);
+
+	}
 
 }
