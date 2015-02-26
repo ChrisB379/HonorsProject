@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
@@ -35,15 +36,15 @@ import javax.swing.JTextPane;
 import controller.BaseCase.NoBCSubmitController;
 import model.IBaseCase;
 
+import javax.swing.JRadioButton;
+
 public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 
 	private static final long serialVersionUID = 2183900996591652759L;
 	private JTextField txtNVal;
-	private JTextField txtRtrnVal;
 	private JTextField txtBaseCase;
 	private JTextArea txtVariables;
 	private JTextArea txtrTheValueOf;
-	private JTextArea txtrTheReturnValue;
 
 	private JButton btnSubmit;
 
@@ -67,6 +68,13 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 
 	private boolean alreadyExecuted;
 	private boolean doOnce;
+	private JTextField txtNValDescription;
+	private JTextArea txtQuestion;
+	private JRadioButton rdbtnOption1;
+	private JRadioButton rdbtnOption2;
+	private JRadioButton rdbtnOption3;
+	private JRadioButton rdbtnOption4;
+	private JRadioButton rdbtnOption5;
 
 
 
@@ -86,6 +94,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		nbcsController = new NoBCSubmitController(model, this);
 
 		JTextPane txtAlgorithm = new JTextPane();
+		txtAlgorithm.setBounds(37, 45, 252, 110);
 		txtAlgorithm.setContentType("text/html");
 		txtAlgorithm.setText("<html>"
 				+ "\r\n<code>"
@@ -100,6 +109,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		txtAlgorithm.setEditable(false);
 
 		txtVariables = new JTextArea();
+		txtVariables.setBounds(443, 45, 101, 165);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setLineWrap(true);
@@ -107,71 +117,43 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		txtVariables.setText("Insert variables here");
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setBounds(37, 286, 203, 23);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
 		txtrTheValueOf.setEditable(false);
 		txtrTheValueOf.setText("The value of n is :");
 
-		txtrTheReturnValue = new JTextArea();
-		txtrTheReturnValue.setBackground(UIManager.getColor("Panel.background"));
-		txtrTheReturnValue.setWrapStyleWord(true);
-		txtrTheReturnValue.setLineWrap(true);
-		txtrTheReturnValue.setEditable(false);
-		txtrTheReturnValue.setText("The return value is : ");
-
 		txtNVal = new JTextField();
+		txtNVal.setBounds(243, 288, 46, 20);
 		txtNVal.setDocument(new JTextFieldLimit(2));
 		txtNVal.setColumns(10);
 		txtNVal.addFocusListener(new FocusListener() {
-			
+
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
 				int n = Integer.parseInt(txtNVal.getText());
 				setNVal(n);
-				
-			}
-			
-			@Override
-			public void focusGained(FocusEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
 
-		txtRtrnVal = new JTextField();
-		txtRtrnVal.setDocument(new JTextFieldLimit(2));
-		txtRtrnVal.setColumns(10);
-		txtRtrnVal.addActionListener(nbcsController);
-		txtRtrnVal.addFocusListener(new FocusListener() {
-			
-			@Override
-			public void focusLost(FocusEvent e) {
-				// TODO Auto-generated method stub
-				if(txtRtrnVal.getText().equals(""))
-					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 5");
-				
-				if(!(txtRtrnVal.getText().equals(""))){
-				int n = Integer.parseInt(txtRtrnVal.getText());
-				
-				setRtrnVal(n);
-				}
 			}
-			
+
 			@Override
 			public void focusGained(FocusEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 
 		btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(37, 596, 137, 35);
 		btnSubmit.addActionListener(nbcsController);
 
 		JLabel lblExample = new JLabel("Example 1");
+		lblExample.setBounds(498, 11, 49, 14);
 
 		txtBaseCase = new JTextField();
+		txtBaseCase.setBounds(37, 546, 322, 14);
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setText("Please click the Advance button to for the next example.");
 		txtBaseCase.setColumns(10);
@@ -179,76 +161,68 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setVisible(false);
 
 		JTextArea txtWorking = new JTextArea();
+		txtWorking.setBounds(682, 170, 344, 165);
 
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here: ");
+		lblInsertWorkingHere.setBounds(780, 145, 101, 14);
+		setLayout(null);
+		add(txtAlgorithm);
+		add(txtVariables);
+		add(lblExample);
+		add(txtBaseCase);
+		add(txtrTheValueOf);
+		add(btnSubmit);
+		add(txtNVal);
+		add(txtWorking);
+		add(lblInsertWorkingHere);
 
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-										.addGap(37)
-										.addComponent(txtAlgorithm, GroupLayout.PREFERRED_SIZE, 252, GroupLayout.PREFERRED_SIZE)
-										.addGap(154)
-										.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 296, GroupLayout.PREFERRED_SIZE))
-										.addGroup(groupLayout.createSequentialGroup()
-												.addGap(498)
-												.addComponent(lblExample)))
-												.addContainerGap(357, Short.MAX_VALUE))
-												.addGroup(groupLayout.createSequentialGroup()
-														.addGap(80)
-														.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, 322, GroupLayout.PREFERRED_SIZE)
-																.addGroup(groupLayout.createSequentialGroup()
-																		.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																				.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 224, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(txtrTheReturnValue, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE)
-																				.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))
-																				.addPreferredGap(ComponentPlacement.RELATED)
-																				.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-																						.addComponent(txtRtrnVal, 0, 0, Short.MAX_VALUE)
-																						.addComponent(txtNVal, GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))))
-																						.addPreferredGap(ComponentPlacement.RELATED, 277, Short.MAX_VALUE)
-																						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-																								.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-																										.addComponent(txtWorking, GroupLayout.PREFERRED_SIZE, 344, GroupLayout.PREFERRED_SIZE)
-																										.addGap(73))
-																										.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-																												.addComponent(lblInsertWorkingHere)
-																												.addGap(210))))
-				);
-		groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(lblExample)
-						.addGap(20)
-						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtAlgorithm, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 225, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addGroup(groupLayout.createSequentialGroup()
-												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-														.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-														.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-														.addGap(32)
-														.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-																.addComponent(txtrTheReturnValue, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-																.addGap(50)
-																.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																.addPreferredGap(ComponentPlacement.UNRELATED)
-																.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
-																.addGroup(groupLayout.createSequentialGroup()
-																		.addGap(67)
-																		.addComponent(lblInsertWorkingHere)
-																		.addGap(18)
-																		.addComponent(txtWorking, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)))
-																		.addContainerGap(249, Short.MAX_VALUE))
-				);
-		setLayout(groupLayout);
+		txtNValDescription = new JTextField();
+		txtNValDescription.setEditable(false);
+		txtNValDescription.setText("Please insert what you believe the next value of n is");
+		txtNValDescription.setBounds(37, 244, 319, 20);
+		add(txtNValDescription);
+		txtNValDescription.setColumns(10);
+
+		txtQuestion = new JTextArea();
+		txtQuestion.setEditable(false);
+		txtQuestion.setText("Now that the value of n == 1, what will happen next?");
+		txtQuestion.setBounds(37, 330, 492, 20);
+		add(txtQuestion);
+		txtQuestion.setColumns(10);
+		txtQuestion.setVisible(false);
+
+		ButtonGroup btnGroup = new ButtonGroup();
+
+		rdbtnOption1 = new JRadioButton("The method will return and stop recursing.");
+		rdbtnOption1.setBounds(34, 384, 366, 23);
+		rdbtnOption1.setVisible(false);
+		add(rdbtnOption1);
+
+		rdbtnOption2 = new JRadioButton("The method will continue recursing forever with the parameter n decreasing each time with no errors.");
+		rdbtnOption2.setBounds(34, 410, 599, 23);
+		rdbtnOption2.setVisible(false);
+		add(rdbtnOption2);
+
+		rdbtnOption3 = new JRadioButton("The method will continue recursing until a stack overflow error halts the program.");
+		rdbtnOption3.setBounds(34, 436, 599, 23);
+		rdbtnOption3.setVisible(false);
+		add(rdbtnOption3);
+
+		rdbtnOption4 = new JRadioButton("The method will recurse to where n == 0 and the program will crash due to a stack overflow error.");
+		rdbtnOption4.setBounds(34, 462, 599, 23);
+		rdbtnOption4.setVisible(false);
+		add(rdbtnOption4);
+
+		rdbtnOption5 = new JRadioButton("The method will recurse until the value of n is negative and an Invalid Number Exception will halt the program.");
+		rdbtnOption5.setBounds(34, 488, 599, 23);
+		rdbtnOption5.setVisible(false);
+		add(rdbtnOption5);
+
+		btnGroup.add(rdbtnOption1);
+		btnGroup.add(rdbtnOption2);
+		btnGroup.add(rdbtnOption3);
+		btnGroup.add(rdbtnOption4);
+		btnGroup.add(rdbtnOption5);
 
 	}
 
@@ -258,10 +232,10 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		System.out.println("rv " + model.getParam());
 
 		if(!doOnce){
-		count = model.getParam();
-		doOnce = true;
+			count = model.getParam();
+			doOnce = true;
 		}
-		
+
 		txtVariables.setText("n = " + getParameter());
 
 	}
@@ -333,15 +307,6 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		return count;
 	}
 
-	/**
-	 * Changes the value of the descriptor field for txtRtrnValue to indicate that this entry will be what the user
-	 * thinks the final return value is and what their final answer will be
-	 * 
-	 * @since 1.2
-	 */
-	public void setTextField(){
-		txtrTheReturnValue.setText("The final return value is ");
-	}
 
 	/**
 	 * This is triggered at the "return statement"
@@ -354,10 +319,9 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 	public void setAfterReturnText(){
 		txtBaseCase.setVisible(true);
 		txtrTheValueOf.setVisible(false);
-		txtrTheReturnValue.setVisible(false);
 		txtNVal.setVisible(false);
-		txtRtrnVal.setVisible(false);
 		btnSubmit.setVisible(false);
+		nbcaButton.setVis();
 	}
 
 	/**
@@ -391,7 +355,29 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		if(count > 0)
 			variableString.add(whole + count + newLine);
 
-		if(count == 0)
-			nbcaButton.setVis();
+	}
+
+	public void addQuestion(){
+		txtNValDescription.setVisible(false);
+		txtrTheValueOf.setVisible(false);
+		txtNVal.setVisible(false);
+
+		txtQuestion.setVisible(true);
+		rdbtnOption1.setVisible(true);
+		rdbtnOption2.setVisible(true);
+		rdbtnOption3.setVisible(true);
+		rdbtnOption4.setVisible(true);
+		rdbtnOption5.setVisible(true);
+	}
+
+	public boolean questionAnswered(){
+		if(rdbtnOption1.isSelected()
+				|| rdbtnOption2.isSelected()
+				|| rdbtnOption3.isSelected()
+				|| rdbtnOption4.isSelected()
+				|| rdbtnOption5.isSelected())
+			return true;
+		else 
+			return false;
 	}
 }

@@ -28,24 +28,20 @@ public class NoBCSubmitController implements ActionListener {
 
 		if(view.getNVal() > 5)
 			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 5 for the value of n");
+		
+		if(view.getCount() == 2)
+			view.addQuestion();
+		
+		if(view.questionAnswered())
+			view.setAfterReturnText();
+		
+		if(!view.questionAnswered() && view.getCount() < 2)
+			JOptionPane.showMessageDialog(null, "Please select one of the 5 answers");
 
-		if(view.getRtrnVal() == 0)
-			JOptionPane.showMessageDialog(null, "Please enter a number for the return value");
-
-		if(view.getNVal() != 0 && view.getNVal() < 6 && view.getRtrnVal() != 0){
+		if(view.getNVal() != 0 && view.getNVal() < 6){
 			System.out.println("getCount " + view.getCount());
 			//Sets the users returnvalue in the model
 			model.setUserReturnVal(view.getRtrnVal());
-			
-			//Changes the text to tell the user to advance to the results page
-			if(view.getCount() == 1){
-				view.setAfterReturnText();
-			}
-
-			//Changes the text to tell the user this will be the final return statement
-			if(view.getCount() == 2){
-				view.setTextField();;
-			}
 
 			System.out.println("getCount before " + view.getCount());
 			//Decrements the counter	
@@ -56,6 +52,8 @@ public class NoBCSubmitController implements ActionListener {
 
 			view.addArrayString();
 			view.setTxtArea();
+			
+
 
 		}
 	}
