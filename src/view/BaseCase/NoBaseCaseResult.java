@@ -14,11 +14,8 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.UIManager;
 
 import model.IBaseCase;
@@ -47,8 +44,10 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		((Observable) m).addObserver(this);
 		
 		JLabel lblResults = new JLabel("Results");
+		lblResults.setBounds(415, 11, 77, 14);
 
 		txtResult = new JTextArea();
+		txtResult.setBounds(28, 36, 805, 332);
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
 				+ "The algorithm worked on was noBaseCase(INSERTuserINPUThere)\r\n\r\n"
 				+ "Your answer for noBaseCase(INSERTuserINPUThere) was : \r\n\r\n"
@@ -62,6 +61,7 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		txtResult.setEditable(false);
 
 		txtSummary = new JTextArea();
+		txtSummary.setBounds(28, 409, 853, 218);
 		txtSummary.setText("\t\t\t\tSummary\r\n\r\n"
 				+ "In this tutorial series, the importance of base cases in recursion were presented.\r\n\r\n"
 				+ "A base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow,"
@@ -72,33 +72,10 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		txtSummary.setWrapStyleWord(true);
 		txtSummary.setLineWrap(true);
 		txtSummary.setEditable(false);
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-										.addGap(415)
-										.addComponent(lblResults))
-										.addGroup(groupLayout.createSequentialGroup()
-												.addGap(28)
-												.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-														.addComponent(txtSummary, GroupLayout.PREFERRED_SIZE, 853, GroupLayout.PREFERRED_SIZE)
-														.addComponent(txtResult, GroupLayout.PREFERRED_SIZE, 805, GroupLayout.PREFERRED_SIZE))))
-														.addContainerGap(74, Short.MAX_VALUE))
-				);
-		groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(lblResults)
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(txtResult, GroupLayout.PREFERRED_SIZE, 218, GroupLayout.PREFERRED_SIZE)
-						.addGap(18)
-						.addComponent(txtSummary, GroupLayout.PREFERRED_SIZE, 218, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(273, Short.MAX_VALUE))
-				);
-		setLayout(groupLayout);
+		setLayout(null);
+		add(lblResults);
+		add(txtSummary);
+		add(txtResult);
 
 	}
 
@@ -143,9 +120,12 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
 				+ "The algorithm worked on was noBaseCase(" + getParam() + ")\r\n\r\n"
 				+ "Your answer for noBaseCase(" + getParam() + ") was : "+ getReturnVal() +"\r\n\r\n"
-				+ "The correct answer for noBaseCase(" + getParam() + ") is : "+ getNoBaseCaseResult() + "\r\n\r\n"
+				+ "The correct answer for noBaseCase(" + getParam() + ") is : The method will continue recursing until a stack overflow error halts the program. \r\n\r\n"
 				+ "We get to this answer by:\r\n\r\n"
-				+ "Insert algorithim + variables here\r\n\r\n");
+				+ "As there is no base case,the method constantly recurses reducing the value of n by 1 for each recursive call. \r\n\r\n"
+				+ "Eventually so many recursive calls build up within the java runtime stack that the stack becomes full. \n\n"
+				+ "This prevents anything else being added to the stack and causes a stack overflow error which will halt the program. \n\n"
+				);
 
 	}
 }

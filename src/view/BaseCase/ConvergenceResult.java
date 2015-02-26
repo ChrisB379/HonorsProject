@@ -14,13 +14,10 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
-import javax.swing.LayoutStyle.ComponentPlacement;
-
 import model.IBaseCase;
+import javax.swing.JLabel;
 
 public class ConvergenceResult extends JPanel implements Observer {
 
@@ -47,6 +44,7 @@ public class ConvergenceResult extends JPanel implements Observer {
 		((Observable) m).addObserver(this);
 		
 		txtResult = new JTextArea();
+		txtResult.setBounds(32, 43, 948, 346);
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\nT"
 				+ "he algorithm worked on was convergence(INSERTuserINPUThere)\r\n\r\n"
 				+ "Your answer for convergence(INSERTuserINPUThere) was : \r\n\r\n"
@@ -58,35 +56,21 @@ public class ConvergenceResult extends JPanel implements Observer {
 		txtResult.setWrapStyleWord(true);
 		txtResult.setLineWrap(true);
 		txtResult.setEditable(false);
+		setLayout(null);
 
 		txtSummary = new JTextArea();
+		txtSummary.setBounds(29, 416, 1022, 308);
 		txtSummary.setText("\t\t\t\t\tSummary\r\n\r\nIn this tutorial series, the importance of base cases in recursion were presented.\r\n\r\nA base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow, crashing any programing running the recursive call.\r\n\r\nWithin the topic of bases, the idea of convergence was presented. Convergence plays an important part in bases cases, in that each recursive call must ensure that any variables being incremented/decremented should converge(get closer to) the base case. If this fails to happen then similar to what happens if there is no base case, the program can crash in an infinite loop which causes a stack overflow.\r\n\r\nThis is the end of tutortial series 1.");
 		txtSummary.setWrapStyleWord(true);
 		txtSummary.setLineWrap(true);
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
 		txtSummary.setEditable(false);
+		add(txtSummary);
+		add(txtResult);
 		
-		
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addGap(32)
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(txtSummary, GroupLayout.PREFERRED_SIZE, 1022, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtResult, GroupLayout.PREFERRED_SIZE, 948, GroupLayout.PREFERRED_SIZE))
-								.addContainerGap(41, Short.MAX_VALUE))
-				);
-		groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addGap(43)
-						.addComponent(txtResult, GroupLayout.PREFERRED_SIZE, 228, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addComponent(txtSummary, GroupLayout.PREFERRED_SIZE, 448, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(35, Short.MAX_VALUE))
-				);
-		setLayout(groupLayout);
+		JLabel lblResults = new JLabel("Results");
+		lblResults.setBounds(455, 11, 96, 14);
+		add(lblResults);
 
 	}
 
@@ -133,9 +117,12 @@ public class ConvergenceResult extends JPanel implements Observer {
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\nT"
 				+ "he algorithm worked on was convergence(" + getParam() + ")\r\n\r\n"
 				+ "Your answer for convergence(" + getParam() + ") was : " + getReturnVal() + "\r\n\r\n"
-				+ "The correct answer for convergence(" + getParam() + ") is : "+ getConvResult() +"\r\n\r\n"
+				+ "The correct answer for convergence(" + getParam() + ") is : The method will continue recursing until a stack overflow error halts the program. \r\n\r\n"
 				+ "We get to this answer by:\r\n\r\n"
-				+ "Insert algorithim + variables here\r\n\r\n");
+				+ "As the recursive call is \"convergence(n+1) + 2*n\", the value of n constantly increases as you can see by the recursive call parameter being \"n+1\" rather than \"n+1\" \n\n"
+				+ "Since the value of n is constantly increasing with each recursive call, it will never reach the base case of n == 1. \n\n"
+				+ "Eventually so many recursive calls build up within the java runtime stack that the stack becomes full. \n\n"
+				+ "This prevents anything else being added to the stack and causes a stack overflow error which will halt the program. \n\n"
+				);
 	}
-
 }

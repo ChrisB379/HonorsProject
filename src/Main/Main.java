@@ -60,3 +60,5 @@ public class Main {
 //TODO set the parameter fields to all check for if the input .equals("") and if so then make a dialog box. If not then accent the input. This fixes the issue of focus listeners
 //TODO change the switchCards internal commentary in the WorkAfterView so it doesnt say return value since its a copy and paste
 //TODO excessive recomp advance buttons move A LOT, especially going into the example page,change this
+//TODO rename convergence to non-convergence to ensure the user understands
+//TODO use absolute poisiton to move boxes and also find out how big the advance button panels in each JFrame view are

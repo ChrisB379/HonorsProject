@@ -9,6 +9,8 @@ package view.BaseCase;
  * @since 1.0
  */
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.util.ArrayList;
@@ -34,7 +36,7 @@ import model.IBaseCase;
 
 import javax.swing.JRadioButton;
 
-public class NoBaseCaseAlgorithm extends JPanel implements Observer {
+public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListener {
 
 	private static final long serialVersionUID = 2183900996591652759L;
 	private JTextField txtNVal;
@@ -68,6 +70,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 	private boolean doOnce;
 	private JTextField txtNValDescription;
 	private JTextArea txtQuestion;
+	
 	private JRadioButton rdbtnOption1;
 	private JRadioButton rdbtnOption2;
 	private JRadioButton rdbtnOption3;
@@ -120,10 +123,10 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
 		txtrTheValueOf.setEditable(false);
-		txtrTheValueOf.setText("The value of n is :");
+		txtrTheValueOf.setText("The next value of n is :");
 
 		txtNVal = new JTextField();
-		txtNVal.setBounds(243, 288, 46, 20);
+		txtNVal.setBounds(313, 288, 46, 20);
 		txtNVal.setDocument(new JTextFieldLimit(2));
 		txtNVal.setColumns(10);
 		txtNVal.addFocusListener(new FocusListener() {
@@ -162,7 +165,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		txtWorking.setBounds(682, 170, 344, 165);
 
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here: ");
-		lblInsertWorkingHere.setBounds(780, 145, 101, 14);
+		lblInsertWorkingHere.setBounds(780, 145, 177, 14);
 		setLayout(null);
 		add(txtAlgorithm);
 		add(txtVariables);
@@ -197,7 +200,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		add(rdbtnOption1);
 
 		rdbtnOption2 = new JRadioButton("The method will continue recursing forever with the parameter n decreasing each time with no errors.");
-		rdbtnOption2.setBounds(34, 410, 599, 23);
+		rdbtnOption2.setBounds(34, 410, 737, 23);
 		rdbtnOption2.setVisible(false);
 		add(rdbtnOption2);
 
@@ -207,14 +210,20 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 		add(rdbtnOption3);
 
 		rdbtnOption4 = new JRadioButton("The method will recurse to where n == 0 and the program will crash due to a stack overflow error.");
-		rdbtnOption4.setBounds(34, 462, 599, 23);
+		rdbtnOption4.setBounds(34, 462, 737, 23);
 		rdbtnOption4.setVisible(false);
 		add(rdbtnOption4);
 
 		rdbtnOption5 = new JRadioButton("The method will recurse until the value of n is negative and an Invalid Number Exception will halt the program.");
-		rdbtnOption5.setBounds(34, 488, 599, 23);
+		rdbtnOption5.setBounds(34, 488, 737, 23);
 		rdbtnOption5.setVisible(false);
 		add(rdbtnOption5);
+		
+		rdbtnOption1.addActionListener(this);
+		rdbtnOption2.addActionListener(this);
+		rdbtnOption3.addActionListener(this);
+		rdbtnOption4.addActionListener(this);
+		rdbtnOption5.addActionListener(this);
 
 		btnGroup.add(rdbtnOption1);
 		btnGroup.add(rdbtnOption2);
@@ -377,5 +386,24 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 			return true;
 		else 
 			return false;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(rdbtnOption1.isSelected())
+			setRtrnVal("The method will return and stop recursing.");
+		
+		if(rdbtnOption2.isSelected())
+			setRtrnVal("The method will continue recursing forever with the parameter n decreasing each time with no errors.");
+		
+		if(rdbtnOption3.isSelected())
+			setRtrnVal("The method will continue recursing until a stack overflow error halts the program.");
+		
+		if(rdbtnOption4.isSelected())
+			setRtrnVal("The method will recurse to where n == 0 and the program will crash due to a stack overflow error.");
+		
+		if(rdbtnOption5.isSelected())
+			setRtrnVal("The method will recurse until the value of n is negative and an Invalid Number Exception will halt the program.");
+		
 	}
 }

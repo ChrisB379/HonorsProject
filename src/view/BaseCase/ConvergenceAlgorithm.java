@@ -10,6 +10,8 @@ package view.BaseCase;
  */
 
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.util.ArrayList;
@@ -17,9 +19,8 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JTextField;
@@ -27,23 +28,34 @@ import javax.swing.JButton;
 
 import view.JTextFieldLimit;
 import view.BaseCase.AdvanceButtons.CBCAlgorithmButton;
+
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
 import model.IBaseCase;
 import controller.BaseCase.ConvSubmitController;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class ConvergenceAlgorithm extends JPanel implements Observer {
+import javax.swing.JRadioButton;
+
+public class ConvergenceAlgorithm extends JPanel implements Observer, ActionListener {
 
 
 	private static final long serialVersionUID = 8043846668298510041L;
 	private JTextField txtNVal;
 	private JTextField txtBaseCase;
+	private JTextArea txtNValDescription;
 	private JTextArea txtVariables;
 	private JTextArea txtrTheValueOf;
+	private JTextArea txtWorking;
+	
+	private JLabel lblInsertWorkingHere;
 
 	private JButton btnSubmit;
+	
+	private JRadioButton rdbtnOption1;
+	private JRadioButton rdbtnOption2;
+	private JRadioButton rdbtnOption3;
+	private JRadioButton rdbtnOption4;
 
 	private int parameter;
 	private int nVal;
@@ -67,8 +79,9 @@ public class ConvergenceAlgorithm extends JPanel implements Observer {
 
 	private boolean alreadyExecuted;
 	private boolean doOnce;
-	private JTextArea txtWorking;
-	private JLabel lblInsertWorkingHere;
+
+
+
 
 
 	/**
@@ -86,6 +99,7 @@ public class ConvergenceAlgorithm extends JPanel implements Observer {
 		convController = new ConvSubmitController(model, this);
 
 		JTextPane txtConvergence = new JTextPane();
+		txtConvergence.setBounds(53, 51, 251, 141);
 		txtConvergence.setContentType("text/html");
 		txtConvergence.setToolTipText("");
 		txtConvergence.setBackground(UIManager.getColor("Panel.background"));
@@ -93,6 +107,7 @@ public class ConvergenceAlgorithm extends JPanel implements Observer {
 		txtConvergence.setText("<html>\r\n<code>\r\n<font color = rgb(127,0,85)> <b>public int</b> </font> convergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> convergence(n+1) + 2*n;\r\n<br>\t}\r\n</code>\r\n</html>");
 
 		txtVariables = new JTextArea();
+		txtVariables.setBounds(454, 51, 98, 256);
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setLineWrap(true);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
@@ -100,13 +115,15 @@ public class ConvergenceAlgorithm extends JPanel implements Observer {
 		txtVariables.setText("Insert variables here");
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setBounds(46, 285, 203, 28);
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setEditable(false);
-		txtrTheValueOf.setText("The value of n is :");
+		txtrTheValueOf.setText("The next value of n is :");
 
 		txtNVal = new JTextField();
+		txtNVal.setBounds(294, 287, 46, 20);
 		txtNVal.setDocument(new JTextFieldLimit(2));
 		txtNVal.setColumns(10);
 		txtNVal.addFocusListener(new FocusListener() {
@@ -127,88 +144,74 @@ public class ConvergenceAlgorithm extends JPanel implements Observer {
 		});
 
 		btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(53, 584, 127, 37);
 		btnSubmit.addActionListener(convController);
 
 		JLabel lblExample = new JLabel("Example 2");
+		lblExample.setBounds(484, 11, 136, 14);
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setBounds(53, 537, 323, 14);
 		txtBaseCase.setEditable(false);
-		txtBaseCase.setText("Please click the Advance button to for the next example.");
+		txtBaseCase.setText("Please click the Advance button to see your results.");
 		txtBaseCase.setColumns(10);
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtBaseCase.setVisible(false);
 		
 		txtWorking = new JTextArea();
+		txtWorking.setBounds(634, 76, 388, 227);
 		
 		lblInsertWorkingHere = new JLabel("Insert working here:");
+		lblInsertWorkingHere.setBounds(751, 51, 187, 14);
+		setLayout(null);
+		add(lblExample);
+		add(txtConvergence);
+		add(btnSubmit);
+		add(txtBaseCase);
+		add(txtrTheValueOf);
+		add(txtNVal);
+		add(txtVariables);
+		add(txtWorking);
+		add(lblInsertWorkingHere);
 		
+		txtNValDescription = new JTextArea();
+		txtNValDescription.setEditable(false);
+		txtNValDescription.setText("The value of n does not appear to be converging on the base case, what happens next?");
+		txtNValDescription.setBounds(46, 332, 875, 20);
+		add(txtNValDescription);
+		txtNValDescription.setColumns(10);
 		
+		ButtonGroup btnGroup = new ButtonGroup();
 		
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(484)
-							.addComponent(lblExample))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(53)
-									.addComponent(txtConvergence, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(90)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
-										.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, 323, GroupLayout.PREFERRED_SIZE)
-										.addGroup(groupLayout.createSequentialGroup()
-											.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)
-											.addGap(31)
-											.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)))))
-							.addPreferredGap(ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 467, GroupLayout.PREFERRED_SIZE)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(txtWorking, GroupLayout.PREFERRED_SIZE, 388, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(71, Short.MAX_VALUE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(758, Short.MAX_VALUE)
-					.addComponent(lblInsertWorkingHere)
-					.addGap(212))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(lblExample)
-							.addGap(26)
-							.addComponent(txtConvergence, GroupLayout.PREFERRED_SIZE, 141, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(43)
-							.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 177, GroupLayout.PREFERRED_SIZE)))
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(65)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(102)
-							.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(33)
-							.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap(284, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblInsertWorkingHere)
-							.addGap(18)
-							.addComponent(txtWorking, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)
-							.addGap(160))))
-		);
-		setLayout(groupLayout);
+		rdbtnOption1 = new JRadioButton("The method returns the value 5 once the base case is met.");
+		rdbtnOption1.setBounds(53, 387, 529, 23);
+		rdbtnOption1.setVisible(false);
+		add(rdbtnOption1);
+		
+		rdbtnOption2 = new JRadioButton("The method will continue recursing until a stack overflow error halts the program.");
+		rdbtnOption2.setBounds(53, 413, 529, 23);
+		rdbtnOption2.setVisible(false);
+		add(rdbtnOption2);
+		
+		rdbtnOption3 = new JRadioButton("The method will continue recursing forever with the parameter n increasing each time with no errors.");
+		rdbtnOption3.setBounds(53, 439, 685, 23);
+		rdbtnOption3.setVisible(false);
+		add(rdbtnOption3);
+		
+		rdbtnOption4 = new JRadioButton("The method will recurse until the value of n is the maximum java allows an integer to be, before an Invalid Number Exception will halt the program.");
+		rdbtnOption4.setBounds(53, 465, 923, 23);
+		rdbtnOption4.setVisible(false);
+		add(rdbtnOption4);
+		
+		rdbtnOption1.addActionListener(this);
+		rdbtnOption2.addActionListener(this);
+		rdbtnOption3.addActionListener(this);
+		rdbtnOption4.addActionListener(this);
+
+		btnGroup.add(rdbtnOption1);
+		btnGroup.add(rdbtnOption2);
+		btnGroup.add(rdbtnOption3);
+		btnGroup.add(rdbtnOption4);
 
 	}
 	
@@ -305,9 +308,9 @@ public class ConvergenceAlgorithm extends JPanel implements Observer {
 	public void setAfterReturnText(){
 		txtBaseCase.setVisible(true);
 		txtrTheValueOf.setVisible(false);
-
 		txtNVal.setVisible(false);
 		btnSubmit.setVisible(false);
+		cbcButton.setVis();
 	}
 
 	/**
@@ -325,7 +328,7 @@ public class ConvergenceAlgorithm extends JPanel implements Observer {
 	 * Adds a string to the arraylist each time it is called.
 	 * For one time only, the first line is set at count+1 as its the original parameter and we only want to add this one time
 	 * After that, a new string is added each time. The count decrements so acts as the value of n decreasing with each recursive call.
-	 * The if statement of count being greater than 0 stops it printing one line too many on the last sibmit button
+	 * The if statement of count being greater than 0 stops it printing one line too many on the last submit button
 	 * 
 	 * @since 1.2
 	 */
@@ -341,8 +344,44 @@ public class ConvergenceAlgorithm extends JPanel implements Observer {
 		if(count > 0)
 			variableString.add(whole + count + newLine);
 
-		if(count == 0)
-			cbcButton.setVis();
+	}
+	
+	public void addQuestion(){
+		txtNValDescription.setVisible(false);
+		txtrTheValueOf.setVisible(false);
+		txtNVal.setVisible(false);
+
+		txtNValDescription.setVisible(true);
+		rdbtnOption1.setVisible(true);
+		rdbtnOption2.setVisible(true);
+		rdbtnOption3.setVisible(true);
+		rdbtnOption4.setVisible(true);
 	}
 
+	public boolean questionAnswered(){
+		if(rdbtnOption1.isSelected()
+				|| rdbtnOption2.isSelected()
+				|| rdbtnOption3.isSelected()
+				|| rdbtnOption4.isSelected())
+			return true;
+		else 
+			return false;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(rdbtnOption1.isSelected())
+			setRtrnVal("The method returns the value 5 once the base case is met.");
+		
+		if(rdbtnOption2.isSelected())
+			setRtrnVal("The method will continue recursing until a stack overflow error halts the program.");
+		
+		if(rdbtnOption3.isSelected())
+			setRtrnVal("The method will continue recursing forever with the parameter n increasing each time with no errors.");
+		
+		if(rdbtnOption4.isSelected())
+			setRtrnVal("The method will recurse until the value of n is the maximum java allows an integer to be, before an Invalid Number Exception will halt the program.");
+		
+		
+	}
 }
