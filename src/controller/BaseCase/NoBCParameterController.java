@@ -3,7 +3,6 @@ package controller.BaseCase;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import model.BaseCase;
 import model.IBaseCase;
 import view.BaseCase.NoBaseCaseExample;
 

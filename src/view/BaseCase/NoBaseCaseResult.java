@@ -34,7 +34,7 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 	private IBaseCase model;
 	
 	private int param;
-	private int userRet;
+	private String userRet;
 	private int nbcResult;
 
 	/**
@@ -111,11 +111,11 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		setResultsText();
 		
 	}
-	public void setReturnVal(int n){
-		userRet = n;
+	public void setReturnVal(String s){
+		userRet = s;
 	}
 	
-	public int getReturnVal(){
+	public String getReturnVal(){
 		return userRet;
 	}
 	

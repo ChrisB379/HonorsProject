@@ -15,10 +15,11 @@ import java.util.Observable;
 public class BaseCase extends Observable implements IBaseCase  {
 	
 	private int param;
-	private int userRetVal,userRetVal2; 
+
+	private String userRetVal,userRetVal2;
 	
 	private List<Integer> paramArray;
-	private List<Integer> returnV;
+	private List<String> returnV;
 
 	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
@@ -104,12 +105,13 @@ public class BaseCase extends Observable implements IBaseCase  {
 
 
 	/**
-	 * Returns the value stored that the user set as their return value
+	 * Returns the value stored that the user set as their return value by choosing
+	 * radio buttons
 	 * 
 	 * @since 1.2
 	 */
 	@Override
-	public int getUserReturnVal() {
+	public String getUserReturnVal() {
 		
 		return userRetVal;
 	}
@@ -121,8 +123,8 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 * @since 1.2
 	 */
 	@Override
-	public void setUserReturnVal(int n) {
-		userRetVal = n;
+	public void setUserReturnVal(String s) {
+		userRetVal = s;
 		setChanged();
 		notifyObservers();
 		
@@ -134,7 +136,7 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 * @since 1.2
 	 */
 	@Override
-	public int getUserReturnVal2() {
+	public String getUserReturnVal2() {
 		// TODO Auto-generated method stub
 		return userRetVal2;
 	}
@@ -145,8 +147,8 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 * @since 1.2
 	 */
 	@Override
-	public void setUserReturnVal2(int n) {
-		userRetVal2 = n;
+	public void setUserReturnVal2(String s) {
+		userRetVal2 = s;
 		setChanged();
 		notifyObservers();
 		
@@ -163,13 +165,13 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 * 
 	 * @since 1.1
 	 */
-	public void addToArray(int nVal, int retVal){
+	public void addToArray(int nVal, String retVal){
 		
 		if(paramArray == null)
 			paramArray = new ArrayList<Integer>();
 		
 		if(returnV == null)
-			returnV = new ArrayList<Integer>();
+			returnV = new ArrayList<String>();
 			
 		paramArray.add(nVal);
 		
@@ -196,7 +198,7 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 * @return the value held at array position n-1
 	 * @since 1.1
 	 */
-	public int getReturnVArray(int n){
+	public String getReturnVArray(int n){
 		return returnV.get(n-1);
 	}
 	

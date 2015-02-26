@@ -17,13 +17,9 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.ButtonGroup;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
@@ -49,8 +45,10 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 	private JButton btnSubmit;
 
 	private int parameter;
-	private int nVal,RtrnVal;
+	private int nVal;
 	private int count;
+	
+	private String RtrnVal;
 
 	private IBaseCase model;
 
@@ -269,20 +267,20 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer {
 	}
 
 	/**
-	 * Sets the RtrnVal to be the users input
+	 * Sets the RtrnVal to be the String of the button the user selected
 	 * 
-	 * @param n the users input for n
+	 * @param s  the String of the button the user selected
 	 */
-	public void setRtrnVal(int n){
-		RtrnVal = n;
+	public void setRtrnVal(String s){
+		RtrnVal = s;
 	}
 
 	/**
-	 * Returns the value of the txtRtrnVal text field to be used by the controller
+	 * Returns the String of the button the user selected to be used by the controller
 	 * 
-	 * @return the value of the txtRtrnVal text field
+	 * @return the String of the button the user selected
 	 */
-	public int getRtrnVal(){
+	public String getRtrnVal(){
 		return RtrnVal;
 	}
 

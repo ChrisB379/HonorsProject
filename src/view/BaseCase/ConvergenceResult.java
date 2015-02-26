@@ -33,9 +33,9 @@ public class ConvergenceResult extends JPanel implements Observer {
 	private IBaseCase model;
 	
 	private int param;
-	private int userRet;
 	private int convResult;
 
+	private String userRet;
 
 	/**
 	 * Create the panel.
@@ -101,11 +101,11 @@ public class ConvergenceResult extends JPanel implements Observer {
 		
 	}
 	
-	public void setReturnVal(int n){
-		userRet = n;
+	public void setReturnVal(String s){
+		userRet = s;
 	}
 	
-	public int getReturnVal(){
+	public String getReturnVal(){
 		return userRet;
 	}
 	

@@ -29,10 +29,9 @@ public class ConvSubmitController implements ActionListener {
 		if(view.getNVal() > 5)
 			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 5 for the value of n");
 
-		if(view.getRtrnVal() == 0)
-			JOptionPane.showMessageDialog(null, "Please enter a number for the return value");
 
-		if(view.getNVal() != 0 && view.getNVal() < 6 && view.getRtrnVal() != 0){
+
+		if(view.getNVal() != 0 && view.getNVal() < 6){
 			System.out.println("getCount " + view.getCount());
 			//Sets the users returnvalue in the model
 			model.setUserReturnVal2(view.getRtrnVal());
@@ -42,10 +41,6 @@ public class ConvSubmitController implements ActionListener {
 				view.setAfterReturnText();
 			}
 
-			//Changes the text to tell the user this will be the final return statement
-			if(view.getCount() == 2){
-				view.setTextField();;
-			}
 
 			System.out.println("getCount before " + view.getCount());
 			//Decrements the counter	
