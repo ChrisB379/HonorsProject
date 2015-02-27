@@ -11,19 +11,22 @@ package view;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JButton;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
 
 public class About extends JFrame {
 
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	
+
 
 	/**
 	 * Launch the application.
@@ -47,6 +50,8 @@ public class About extends JFrame {
 	 * Create the frame.
 	 */
 	public About() {
+		
+		
 		setLocationRelativeTo(null);
 		setTitle("About");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,8 +76,11 @@ public class About extends JFrame {
 
 			}
 		});
+		
+		
 		contentPane.setLayout(null);
 		contentPane.add(txtAbout);
 		contentPane.add(btnReturnMainMenu);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnReturnMainMenu}));
 	}
 }

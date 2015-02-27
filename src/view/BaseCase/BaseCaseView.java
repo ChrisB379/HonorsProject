@@ -46,6 +46,8 @@ import model.BaseCase;
 import model.IBaseCase;
 import model.IReturnValue;
 import model.ReturnValue;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
 
 public class BaseCaseView extends JFrame implements Observer {
 
@@ -199,83 +201,15 @@ public class BaseCaseView extends JFrame implements Observer {
 		btnAdvance.setBounds(10, 106, 127, 35);
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
-//			int count = 0;
-//			NoBaseCaseExample bc1 = new NoBaseCaseExample();
-//			NoBaseCaseAlgorithm bc2 = new NoBaseCaseAlgorithm();
-//			NoBaseCaseResult bc3 = new NoBaseCaseResult();
-//			ConvergenceExample bc4 = new ConvergenceExample();
-//			ConvergenceAlgorithm bc5 = new ConvergenceAlgorithm();
-//			ConvergenceResult bc6 = new ConvergenceResult();
-
-			//Used for error control
-//			boolean flag;
 
 			public void actionPerformed(ActionEvent e) {
 
-
-//				if(count == 0){
 					cardPanel1.add(bc1);
 					cardPanel1.remove(cp1GroupPanel);
 					
 					cardPanel2.add(NBeb);
 					cardPanel2.remove(advancePanel);
 					
-					
-					
-//					flag = true;
-//				}
-//
-//				//Handles parameters that are not within the specified bound
-//				if(count == 1 && bc1.getParameter() < 1 || bc1.getParameter() > 11){
-//					flag = false;
-//					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
-//				}
-//
-//				if(count == 1 && bc1.getParameter() > 0 && bc1.getParameter() < 11){
-//					//				System.out.println("we got here " + count);
-//					cardPanel1.add(bc2);
-//					cardPanel1.remove(bc1);
-//					flag = true;	
-//				} 
-//
-//				if(count == 2){
-//					cardPanel1.add(bc3);
-//					cardPanel1.remove(bc2);
-//					flag = true;	
-//				}
-//
-//				if(count == 3){
-//					cardPanel1.add(bc4);
-//					cardPanel1.remove(bc3);
-//					flag = true;	
-//				}
-//
-//				if(count == 4){
-//					cardPanel1.add(bc5);
-//					cardPanel1.remove(bc4);
-//					flag = true;
-//				}
-//
-//				if(count == 5){
-//					cardPanel1.add(bc6);
-//					cardPanel1.remove(bc5);
-//					btnAdvance.setText("Tutorial 2");
-//					btnMenu.setVisible(true);
-//					flag = true;	
-//				}
-//
-//				if(count == 6){
-//					dispose();
-//					IReturnValue iRModel = new ReturnValue();
-//					ReturnValueView rvv = new ReturnValueView(iRModel);
-//					rvv.setVisible(true);
-//					rvv.setLocationRelativeTo(null);
-//					flag = true;	
-//				}
-//
-//				if(flag)
-//					count++;
-//				//				System.out.println("count after increment is " + count);
 			} 
 		});
 		advancePanel.setLayout(null);
@@ -310,6 +244,8 @@ public class BaseCaseView extends JFrame implements Observer {
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
+		contentPane.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnMenu, btnAdvance}));
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{mnFile, mnAbout, btnMenu, btnAdvance, mntmMainMenu, mntmQuit, mntmAbout}));
 	}
 
 	@Override
