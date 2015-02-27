@@ -24,7 +24,7 @@ public class ERAlgorithmButton extends JPanel {
 		view = v;
 		
 		btnAdvance = new JButton("Advance");
-		btnAdvance.setBounds(38, 175, 123, 36);
+		btnAdvance.setBounds(38, 175, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				

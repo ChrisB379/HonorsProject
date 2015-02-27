@@ -31,7 +31,7 @@ public class ERExample2Button extends JPanel {
 		erpc = new ERParameterController(model, ere2);
 		
 		JButton btnAdvance = new JButton("Advance");
-		btnAdvance.setBounds(38, 175, 123, 36);
+		btnAdvance.setBounds(38, 175, 127, 35);
 		btnAdvance.addActionListener(erpc);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

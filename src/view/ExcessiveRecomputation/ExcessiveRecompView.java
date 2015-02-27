@@ -208,7 +208,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 
 		btnMenu = new JButton("Main Menu");
-		btnMenu.setBounds(38, 105, 123, 36);
+		btnMenu.setBounds(38, 105, 127, 35);
 		//Don't want it to be visible until the last page
 		btnMenu.setVisible(false);
 		btnMenu.addActionListener(new ActionListener() {
@@ -220,10 +220,10 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 			}
 		});
 		btnAdvance = new JButton("Advance");
-		btnAdvance.setBounds(38, 175, 123, 36);
+		btnAdvance.setBounds(38, 175, 127, 35);
 
 		btnMemoization = new JButton("Memoization");
-		btnMemoization.setBounds(38, 35, 123, 36);
+		btnMemoization.setBounds(38, 35, 127, 35);
 		//Only want it visible for the last page
 		btnMemoization.setVisible(false);
 		btnMemoization.addActionListener(new ActionListener() {

@@ -19,7 +19,7 @@ public class ERAfterMemoButton extends JPanel {
 	public ERAfterMemoButton(ExcessiveRecompView v) {
 		
 		JButton btnAdvance = new JButton("Advance");
-		btnAdvance.setBounds(38, 175, 123, 36);
+		btnAdvance.setBounds(38, 175, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -28,7 +28,7 @@ public class ERAfterMemoButton extends JPanel {
 		});
 		
 		JButton btnMainMenu = new JButton("Main Menu");
-		btnMainMenu.setBounds(38, 105, 123, 36);
+		btnMainMenu.setBounds(38, 105, 127, 35);
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				view.mainMenu();

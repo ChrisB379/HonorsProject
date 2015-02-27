@@ -176,7 +176,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		});
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(45, 507, 123, 36);
+		btnSubmit.setBounds(45, 507, 127, 35);
 		btnSubmit.addActionListener(ersc);
 		
 		txtBaseCase = new JTextField();

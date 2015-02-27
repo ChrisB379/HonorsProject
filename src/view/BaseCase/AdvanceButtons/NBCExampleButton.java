@@ -37,7 +37,7 @@ public class NBCExampleButton extends JPanel {
 		nbpController = new NoBCParameterController(model, nbcExample);
 		
 		btnAdvance = new JButton("Advance");
-		btnAdvance.setBounds(10, 106, 115, 38);
+		btnAdvance.setBounds(10, 106, 127, 35);
 		btnAdvance.addActionListener(nbpController);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

@@ -29,7 +29,7 @@ public class ERResultsButton extends JPanel {
 				view.advanceTut();
 			}
 		});
-		btnAdvance.setBounds(38, 175, 123, 36);
+		btnAdvance.setBounds(38, 175, 127, 35);
 		add(btnAdvance);
 		
 		JButton btnMainMenu = new JButton("Main Menu");
@@ -39,7 +39,7 @@ public class ERResultsButton extends JPanel {
 				view.mainMenu();
 			}
 		});
-		btnMainMenu.setBounds(38, 105, 123, 36);
+		btnMainMenu.setBounds(38, 105, 127, 35);
 		add(btnMainMenu);
 		
 		JButton btnMemoization = new JButton("Memoization");
@@ -49,7 +49,7 @@ public class ERResultsButton extends JPanel {
 				view.memo();
 			}
 		});
-		btnMemoization.setBounds(38, 35, 123, 36);
+		btnMemoization.setBounds(38, 35, 127, 35);
 		add(btnMemoization);
 
 	}

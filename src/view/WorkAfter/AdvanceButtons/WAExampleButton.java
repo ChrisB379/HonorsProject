@@ -10,8 +10,6 @@ import controller.WorkAfter.WAParameterController;
 import view.WorkAfter.WorkAfterExample;
 import view.WorkAfter.WorkAfterView;
 import model.IWorkAfter;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 
 public class WAExampleButton extends JPanel {
 
@@ -36,6 +34,7 @@ public class WAExampleButton extends JPanel {
 		waPc = new WAParameterController(iWa, waE);
 		
 		JButton btnAdvance = new JButton("Advance");
+		btnAdvance.setBounds(37, 90, 127, 35);
 		btnAdvance.addActionListener(waPc);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -44,22 +43,8 @@ public class WAExampleButton extends JPanel {
 				wav.switchCards1();
 			}
 		});
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addContainerGap(29, Short.MAX_VALUE)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
-					.addGap(27))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(22)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(71, Short.MAX_VALUE))
-		);
-		setLayout(groupLayout);
+		setLayout(null);
+		add(btnAdvance);
 
 	}
 }

@@ -24,7 +24,7 @@ public class NCBCResultsButton extends JPanel {
 		view = v;
 		
 		btnAdvance = new JButton("Advance");
-		btnAdvance.setBounds(10, 106, 115, 38);
+		btnAdvance.setBounds(10, 106, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -34,7 +34,7 @@ public class NCBCResultsButton extends JPanel {
 		
 		
 		btnMainMenu = new JButton("Main Menu");
-		btnMainMenu.setBounds(10, 24, 115, 35);
+		btnMainMenu.setBounds(10, 24, 127, 35);
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				

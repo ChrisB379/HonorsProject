@@ -183,7 +183,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		cardPanel2.add(advancePanel, "name_60155849133626");
 
 		btnMenu = new JButton("Main Menu");
-		btnMenu.setBounds(10, 24, 115, 38);
+		btnMenu.setBounds(10, 24, 127, 35);
 		//Don't want it to be visible until the last page
 		btnMenu.setVisible(false);
 		btnMenu.addActionListener(new ActionListener() {
@@ -196,7 +196,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		});
 
 		btnAdvance = new JButton("Advance");
-		btnAdvance.setBounds(10, 106, 115, 38);
+		btnAdvance.setBounds(10, 106, 127, 35);
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
 //			int count = 0;

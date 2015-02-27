@@ -23,7 +23,7 @@ public class ERMemoButton extends JPanel {
 		view = v;
 		
 		JButton btnContinue = new JButton("Continue");
-		btnContinue.setBounds(38, 175, 123, 36);
+		btnContinue.setBounds(38, 175, 127, 35);
 		btnContinue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				view.memo2();

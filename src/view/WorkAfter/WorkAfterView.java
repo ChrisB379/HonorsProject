@@ -22,7 +22,6 @@ import java.awt.event.ActionListener;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.JTextPane;
@@ -141,28 +140,10 @@ public class WorkAfterView extends JFrame {
 		setContentPane(contentPane);
 
 		cardPanel2 = new JPanel();
+		cardPanel2.setBounds(969, 527, 210, 150);
 
 		cardPanel1 = new JPanel();
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addGap(25)
-						.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 888, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-						.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addGap(29))
-				);
-		gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(cardPanel1, GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
-								.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-										.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-										.addGap(53))))
-				);
+		cardPanel1.setBounds(30, 16, 888, 714);
 		cardPanel1.setLayout(new CardLayout(0, 0));
 
 		JPanel cp1GroupPanel = new JPanel();
@@ -198,6 +179,7 @@ public class WorkAfterView extends JFrame {
 		cardPanel2.add(advancePanel, "name_94944655089283");
 
 		btnMenu = new JButton("Main Menu");
+		btnMenu.setBounds(37, 21, 127, 35);
 		//Don't want it to be visible until the last page
 		btnMenu.setVisible(false);
 		btnMenu.addActionListener(new ActionListener() {
@@ -210,6 +192,7 @@ public class WorkAfterView extends JFrame {
 		});
 
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setBounds(37, 90, 127, 35);
 
 		btnAdvance.addActionListener(new ActionListener() {
 //			int count = 0;
@@ -265,30 +248,12 @@ public class WorkAfterView extends JFrame {
 //					count++;
 			} 
 		});
-
-
-
-		GroupLayout gl_advancePanel = new GroupLayout(advancePanel);
-		gl_advancePanel.setHorizontalGroup(
-				gl_advancePanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_advancePanel.createSequentialGroup()
-						.addGap(37)
-						.addGroup(gl_advancePanel.createParallelGroup(Alignment.TRAILING, false)
-								.addComponent(btnMenu, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(btnAdvance, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
-								.addContainerGap(41, Short.MAX_VALUE))
-				);
-		gl_advancePanel.setVerticalGroup(
-				gl_advancePanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_advancePanel.createSequentialGroup()
-						.addGap(21)
-						.addComponent(btnMenu, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-						.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-						.addGap(28))
-				);
-		advancePanel.setLayout(gl_advancePanel);
-		contentPane.setLayout(gl_contentPane);
+		advancePanel.setLayout(null);
+		advancePanel.add(btnMenu);
+		advancePanel.add(btnAdvance);
+		contentPane.setLayout(null);
+		contentPane.add(cardPanel1);
+		contentPane.add(cardPanel2);
 	}
 	
 	public void switchCards1(){

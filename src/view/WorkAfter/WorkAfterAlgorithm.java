@@ -101,7 +101,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		txtVariables.setText("Variables will be inserted here");
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(49, 598, 122, 45);
+		btnSubmit.setBounds(49, 598, 127, 35);
 		btnSubmit.addActionListener(wasc);
 
 		JTextArea textWorking = new JTextArea();

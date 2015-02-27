@@ -1,8 +1,6 @@
 package view.WorkAfter.AdvanceButtons;
 
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 
 import view.WorkAfter.WorkAfterView;
@@ -25,6 +23,7 @@ public class WAAlgorithmButton extends JPanel {
 		wav = wa;
 		
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setBounds(37, 90, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -32,24 +31,8 @@ public class WAAlgorithmButton extends JPanel {
 				wav.switchCards2();
 			}
 		});
-		
-		
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(29)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(36, Short.MAX_VALUE))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(24)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(51, Short.MAX_VALUE))
-		);
-		setLayout(groupLayout);
+		setLayout(null);
+		add(btnAdvance);
 
 	}
 	

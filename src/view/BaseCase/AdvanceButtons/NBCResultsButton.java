@@ -24,7 +24,7 @@ public class NBCResultsButton extends JPanel {
 		view = v;
 		
 		btnAdvance = new JButton("Advance");
-		btnAdvance.setBounds(10, 106, 115, 38);
+		btnAdvance.setBounds(10, 106, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
