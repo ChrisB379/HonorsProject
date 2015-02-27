@@ -15,15 +15,10 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
-import javax.swing.LayoutStyle.ComponentPlacement;
-
 import model.IReturnValue;
-import javax.swing.JTextPane;
 
 public class ReturnValueResults extends JPanel implements Observer {
 

@@ -10,12 +10,8 @@ package view.ReturnValue;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
-import javax.swing.LayoutStyle.ComponentPlacement;
-
 import view.JTextFieldLimit;
 
 import javax.swing.JTextPane;
@@ -127,8 +123,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		// TODO Auto-generated method stub
-		int p = model.getParam();
-		
+
 		
 	}
 

@@ -35,7 +35,6 @@ import view.ReturnValue.AdvanceButtons.AlgorithmButton;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
-import controller.ReturnValue.RVAlgorithmController;
 import controller.ReturnValue.RVSubmitController;
 import model.IReturnValue;
 
