@@ -147,7 +147,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		});
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(37, 596, 137, 35);
+		btnSubmit.setBounds(37, 596, 115, 38);
 		btnSubmit.addActionListener(nbcsController);
 
 		JLabel lblExample = new JLabel("Example 1");

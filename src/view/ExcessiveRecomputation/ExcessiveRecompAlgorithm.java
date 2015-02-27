@@ -18,11 +18,8 @@ import java.util.Observer;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
@@ -85,6 +82,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		
 
 		JTextPane txtFibonacci = new JTextPane();
+		txtFibonacci.setBounds(45, 61, 288, 159);
 		txtFibonacci.setContentType("text/html");
 		txtFibonacci.setText("<html>"
 				+ "\r\n<code>"
@@ -104,6 +102,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtFibonacci.setEditable(false);
 
 		txtVariables = new JTextArea();
+		txtVariables.setBounds(487, 61, 173, 279);
 		txtVariables.setText("insert variables here");
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setLineWrap(true);
@@ -111,6 +110,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setBounds(45, 348, 188, 25);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
@@ -118,6 +118,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf.setText("The value of n is :");
 
 		txtrTheCurrent = new JTextArea();
+		txtrTheCurrent.setBounds(45, 412, 250, 29);
 		txtrTheCurrent.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheCurrent.setEditable(false);
 		txtrTheCurrent.setLineWrap(true);
@@ -125,6 +126,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtrTheCurrent.setText("The current return value is :");
 
 		txtRtrnVal = new JTextField();
+		txtRtrnVal.setBounds(339, 412, 47, 20);
 		//A limit of 2 should be enough as the 10th fibonacci number is 89 
 		txtRtrnVal.setDocument(new JTextFieldLimit(2));
 		txtRtrnVal.setColumns(10);
@@ -152,6 +154,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		});
 
 		txtNval = new JTextField();
+		txtNval.setBounds(339, 350, 47, 20);
 		//A limit of 2 should be enough as the 10th fibonacci number is 89 
 		txtNval.setDocument(new JTextFieldLimit(2));
 		txtNval.setColumns(10);
@@ -173,9 +176,11 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		});
 
 		btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(45, 507, 123, 36);
 		btnSubmit.addActionListener(ersc);
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setBounds(45, 475, 326, 14);
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setColumns(10);
 		txtBaseCase.setText("Please click the Advance button to for the next example.");
@@ -183,71 +188,21 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
 		textArea = new JTextArea();
+		textArea.setBounds(500, 386, 339, 197);
 		
 		lblInsertWorkingHere = new JLabel("Insert Working here");
-		
-		
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(45)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, 250, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtFibonacci, GroupLayout.PREFERRED_SIZE, 288, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE))
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(154)
-									.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(txtRtrnVal, 0, 0, Short.MAX_VALUE)
-										.addComponent(txtNval, GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE))
-									.addPreferredGap(ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-									.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 339, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED))))
-						.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, 326, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(90, GroupLayout.PREFERRED_SIZE))
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addContainerGap(648, Short.MAX_VALUE)
-					.addComponent(lblInsertWorkingHere, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE)
-					.addGap(203))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(61)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtFibonacci, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtVariables, GroupLayout.PREFERRED_SIZE, 279, GroupLayout.PREFERRED_SIZE))
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addPreferredGap(ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtNval, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(39)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(34)
-							.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-							.addGap(212))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(18)
-							.addComponent(lblInsertWorkingHere)
-							.addGap(14)
-							.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 197, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap())))
-		);
-		setLayout(groupLayout);
+		lblInsertWorkingHere.setBounds(598, 358, 128, 14);
+		setLayout(null);
+		add(txtrTheCurrent);
+		add(txtFibonacci);
+		add(txtrTheValueOf);
+		add(txtVariables);
+		add(txtRtrnVal);
+		add(txtNval);
+		add(textArea);
+		add(btnSubmit);
+		add(txtBaseCase);
+		add(lblInsertWorkingHere);
 
 	}
 	

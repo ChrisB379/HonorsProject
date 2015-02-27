@@ -1606,7 +1606,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(rvs2C);
-		btnSubmit.setBounds(38, 611, 111, 40);
+		btnSubmit.setBounds(38, 611, 127, 35);
 		add(btnSubmit);
 
 		JLabel lblFinalAnswer = new JLabel("Final Answer:");

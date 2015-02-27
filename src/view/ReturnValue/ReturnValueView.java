@@ -43,8 +43,6 @@ import view.ReturnValue.AdvanceButtons.AlgorithmButton;
 import view.ReturnValue.AdvanceButtons.ExampleButton;
 import view.ReturnValue.AdvanceButtons.ResultsButton;
 
-import javax.swing.LayoutStyle.ComponentPlacement;
-
 import model.ExcessiveRecomp;
 import model.IExcessiveRecomp;
 import model.IReturnValue;
@@ -172,6 +170,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		cardPanel2.add(advancePanel, "name_12410711717075");
 
 		btnMenu = new JButton("Main Menu");
+		btnMenu.setBounds(55, 11, 127, 35);
 		//Only want it visible once the user is on the last tutorial slide
 		btnMenu.setVisible(false);
 		btnMenu.addActionListener(new ActionListener() {
@@ -184,6 +183,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		});
 
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setBounds(55, 85, 127, 35);
 
 
 
@@ -266,28 +266,9 @@ public class ReturnValueView extends JFrame implements Observer {
 				//						System.out.println("count after increment is " + count);
 			} 
 		});
-
-
-		GroupLayout gl_advancePanel = new GroupLayout(advancePanel);
-		gl_advancePanel.setHorizontalGroup(
-				gl_advancePanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_advancePanel.createSequentialGroup()
-						.addGap(55)
-						.addGroup(gl_advancePanel.createParallelGroup(Alignment.TRAILING)
-								.addComponent(btnMenu, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(btnAdvance, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE))
-								.addContainerGap(60, Short.MAX_VALUE))
-				);
-		gl_advancePanel.setVerticalGroup(
-				gl_advancePanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_advancePanel.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(btnMenu, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-						.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-						.addGap(32))
-				);
-		advancePanel.setLayout(gl_advancePanel);
+		advancePanel.setLayout(null);
+		advancePanel.add(btnMenu);
+		advancePanel.add(btnAdvance);
 		contentPane.setLayout(null);
 		cardPanel1.setLayout(new CardLayout());
 

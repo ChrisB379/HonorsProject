@@ -21,8 +21,6 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.BorderFactory;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
@@ -37,8 +35,6 @@ import javax.swing.JTextPane;
 
 import controller.ReturnValue.RVSubmitController;
 import model.IReturnValue;
-
-import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ReturnValueAlgorithm extends JPanel implements Observer {
 
@@ -98,6 +94,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		//purple rgb value (127,0,85)
 
 		JTextPane txtFactorial = new JTextPane();
+		txtFactorial.setBounds(60, 54, 272, 97);
 		txtFactorial.setContentType("text/html");
 		txtFactorial.setBorder(BorderFactory.createLineBorder(Color.black));
 		txtFactorial.setBackground(Color.WHITE);
@@ -105,6 +102,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtFactorial.setEditable(false);
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setBounds(70, 352, 176, 30);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
@@ -112,6 +110,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf.setText("The value of n is :");
 
 		txtNVal = new JTextField();
+		txtNVal.setBounds(359, 354, 42, 20);
 		//Setting a limit on how many digits can be entered.7 should suffice for this question as 10! = 3628800
 		txtNVal.setDocument(new JTextFieldLimit(7));
 		txtNVal.setColumns(10);
@@ -134,10 +133,12 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		});
 
 		btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(60, 536, 127, 35);
 		btnSubmit.addActionListener(rvsC);
 
 			
 		txtrTheCurrent = new JTextArea();
+		txtrTheCurrent.setBounds(70, 422, 251, 22);
 		txtrTheCurrent.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheCurrent.setWrapStyleWord(true);
 		txtrTheCurrent.setLineWrap(true);
@@ -145,6 +146,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtrTheCurrent.setText("The current return value is :");
 
 		txtRtrnVal = new JTextField();
+		txtRtrnVal.setBounds(358, 424, 43, 20);
 		//Setting a limit on how many digits can be entered.7 should suffice for this question as 10! = 3628800
 		txtRtrnVal.setDocument(new JTextFieldLimit(7));
 		txtRtrnVal.setColumns(10);
@@ -173,8 +175,10 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		});
 
 		JLabel lblExample = new JLabel("Example 1");
+		lblExample.setBounds(392, 11, 49, 14);
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setBounds(70, 481, 309, 14);
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setText("Please click the Advance button to for the next example.");
 		txtBaseCase.setColumns(10);
@@ -182,84 +186,27 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
 		textArea = new JTextArea();
+		textArea.setBounds(441, 54, 73, 180);
 		textArea.setEditable(false);
 		
 		txtWorking = new JTextArea();
+		txtWorking.setBounds(523, 339, 331, 184);
 		
 		
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here:");
-
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(60)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 272, GroupLayout.PREFERRED_SIZE)
-									.addGap(109)
-									.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(10)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, 309, GroupLayout.PREFERRED_SIZE)
-										.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-											.addGroup(groupLayout.createSequentialGroup()
-												.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE))
-											.addGroup(groupLayout.createSequentialGroup()
-												.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE)
-												.addGap(37)
-												.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE))))
-									.addGap(122)
-									.addComponent(txtWorking, GroupLayout.PREFERRED_SIZE, 331, GroupLayout.PREFERRED_SIZE))
-								.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(392)
-							.addComponent(lblExample)))
-					.addGap(579))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(640)
-					.addComponent(lblInsertWorkingHere)
-					.addContainerGap(695, Short.MAX_VALUE))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblExample)
-					.addGap(29)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
-							.addGap(261))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(txtFactorial, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
-							.addGap(201)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtrTheValueOf, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtNVal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(40)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtrTheCurrent, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtRtrnVal, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-							.addGap(37)
-							.addComponent(txtBaseCase, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addGap(41)
-					.addComponent(btnSubmit, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(225, Short.MAX_VALUE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(307, Short.MAX_VALUE)
-					.addComponent(lblInsertWorkingHere)
-					.addGap(18)
-					.addComponent(txtWorking, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)
-					.addGap(278))
-		);
-		setLayout(groupLayout);
+		lblInsertWorkingHere.setBounds(640, 307, 98, 14);
+		setLayout(null);
+		add(txtFactorial);
+		add(textArea);
+		add(txtBaseCase);
+		add(txtrTheValueOf);
+		add(txtNVal);
+		add(txtrTheCurrent);
+		add(txtRtrnVal);
+		add(txtWorking);
+		add(btnSubmit);
+		add(lblExample);
+		add(lblInsertWorkingHere);
 
 	}
 

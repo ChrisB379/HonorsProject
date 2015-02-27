@@ -3,8 +3,6 @@ package view.ReturnValue.AdvanceButtons;
 import javax.swing.JPanel;
 
 import view.ReturnValue.ReturnValueView;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -24,6 +22,7 @@ public class ResultsButton extends JPanel {
 		r = rvv;
 		
 		JButton btnAdvance = new JButton("Advance");
+		btnAdvance.setBounds(55, 85, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -33,6 +32,7 @@ public class ResultsButton extends JPanel {
 		});
 		
 		JButton btnMainMenu = new JButton("Main Menu");
+		btnMainMenu.setBounds(55, 11, 127, 35);
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -40,29 +40,9 @@ public class ResultsButton extends JPanel {
 				
 			}
 		});
-		
-		
-		
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(77)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(btnMainMenu, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnAdvance, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(85, Short.MAX_VALUE))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(30)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-					.addGap(38)
-					.addComponent(btnMainMenu, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(72, Short.MAX_VALUE))
-		);
-		setLayout(groupLayout);
+		setLayout(null);
+		add(btnMainMenu);
+		add(btnAdvance);
 		
 		
 

@@ -150,7 +150,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		});
 
 		btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(53, 584, 127, 37);
+		btnSubmit.setBounds(53, 584, 115, 38);
 		btnSubmit.addActionListener(convController);
 
 		JLabel lblExample = new JLabel("Example 2");

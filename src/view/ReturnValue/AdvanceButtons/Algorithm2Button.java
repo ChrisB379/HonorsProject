@@ -2,9 +2,6 @@ package view.ReturnValue.AdvanceButtons;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-
 import view.ReturnValue.ReturnValueView;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -26,31 +23,15 @@ public class Algorithm2Button extends JPanel {
 		r = rvv;
 		
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setBounds(55, 85, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				r.switchCards3();
 			}
 		});
-		
-		
-		
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(58)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(62, Short.MAX_VALUE))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(70)
-					.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(97, Short.MAX_VALUE))
-		);
-		setLayout(groupLayout);
+		setLayout(null);
+		add(btnAdvance);
 
 	}
 	
