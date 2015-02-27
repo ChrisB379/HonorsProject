@@ -17,8 +17,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JButton;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
 
 public class About extends JFrame {
 
@@ -81,6 +79,5 @@ public class About extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(txtAbout);
 		contentPane.add(btnReturnMainMenu);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnReturnMainMenu}));
 	}
 }

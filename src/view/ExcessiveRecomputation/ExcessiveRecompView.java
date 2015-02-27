@@ -47,8 +47,7 @@ import model.ExcessiveRecomp;
 import model.IExcessiveRecomp;
 import model.IWorkAfter;
 import model.WorkAfter;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
+
 
 public class ExcessiveRecompView extends JFrame implements Observer {
 
@@ -329,8 +328,6 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		contentPane.setLayout(null);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
-		cardPanel2.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnMemoization, btnMenu, btnAdvance}));
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnMemoization, btnMenu, btnAdvance}));
 
 	}
 

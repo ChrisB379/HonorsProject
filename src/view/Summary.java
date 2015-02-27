@@ -24,8 +24,6 @@ import view.Quiz.QuizView;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
 
 public class Summary extends JFrame {
 
@@ -101,6 +99,5 @@ public class Summary extends JFrame {
 		contentPane.add(btnMenu);
 		contentPane.add(btnQuiz);
 		contentPane.add(btnQuit);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnMenu, btnQuiz, btnQuit}));
 	}
 }

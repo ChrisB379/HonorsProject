@@ -47,8 +47,6 @@ import model.ExcessiveRecomp;
 import model.IExcessiveRecomp;
 import model.IReturnValue;
 import model.ReturnValue;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
 
 public class ReturnValueView extends JFrame implements Observer {
 
@@ -271,7 +269,6 @@ public class ReturnValueView extends JFrame implements Observer {
 		advancePanel.setLayout(null);
 		advancePanel.add(btnMenu);
 		advancePanel.add(btnAdvance);
-		advancePanel.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnMenu, btnAdvance}));
 		contentPane.setLayout(null);
 		cardPanel1.setLayout(new CardLayout());
 
@@ -305,8 +302,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
-		cardPanel2.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnMenu, btnAdvance}));
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{mnFile, mnAbout, btnMenu, btnAdvance}));
+
 	}
 
 	@Override

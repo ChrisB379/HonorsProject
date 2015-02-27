@@ -24,8 +24,6 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.util.Observable;
 import java.util.Observer;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
 
 public class ReturnValueExample extends JPanel implements Observer {
 
@@ -108,7 +106,6 @@ public class ReturnValueExample extends JPanel implements Observer {
 		add(txtExample);
 		add(txtNextPage);
 		add(txtParameterField);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{txtParameterField}));
 
 	}
 

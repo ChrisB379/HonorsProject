@@ -46,8 +46,6 @@ import model.BaseCase;
 import model.IBaseCase;
 import model.IReturnValue;
 import model.ReturnValue;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
 
 public class BaseCaseView extends JFrame implements Observer {
 
@@ -222,7 +220,26 @@ public class BaseCaseView extends JFrame implements Observer {
 
 		JTextPane txtrThisTutorialSeries = new JTextPane();
 		txtrThisTutorialSeries.setContentType("text/html");
-		txtrThisTutorialSeries.setText("<html>\r\n<br>This tutorial series focuses on base case in recursive calls. \r\n<br>\r\n<br>The base case of a recursive call returns a value without making any subsequent recursive calls. The base case is important in recursive calls as it prevents a recursive statement falling into an infinite loop before failing due to a stack overflow.\r\n<br>\r\n<br>\r\n<br>In this tutorial series,some simple algorithms will be used in order to demonstrate how the base case of a recursive call is used. Two algorithms will be used in order to demonstrate to different important features of base cases which recursive calls must adhere to.\r\n<br>\r\n<br>\r\n<br>The algorithms are as follows:\r\n<br>\r\n<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>\t}\r\n<br> </code>\r\n<br>The second algorithm :\t\r\n<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> nonConvergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> nonConvergence(n+1) + 2*n;\r\n<br>\t}\r\n<br> </code>\r\n<br>\r\n<br>\r\n<br>Now we are going to move onto how the noBaseCase algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n</html>");
+		txtrThisTutorialSeries.setText("<html>\r\n<br>This tutorial series focuses on base case in recursive calls. \r\n<br>\r\n<br>"
+				+ "The base case of a recursive call returns a value without making any subsequent recursive calls. The base case "
+				+ "is important in recursive calls as it prevents a recursive statement falling into an infinite loop "
+				+ "before failing due to a stack overflow.\r\n<br>\r\n<br>\r\n<br>"
+				+ "In this tutorial series,some simple algorithms will be used in order to demonstrate how the base case of a recursive call is used."
+				+ " Two algorithms will be used in order to demonstrate to different important features of base cases which recursive calls must adhere to.\r\n<br>\r\n<br>\r\n<br>"
+				+ "The algorithms are as follows:\r\n<br>\r\n<br> "
+				+ "<code>\r\n<br>\t"
+				+ "<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>\t\t&nbsp"
+				+ "<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>\t}\r\n<br> "
+				+ "</code>\r\n<br>"
+				+ "The second algorithm :\t\r\n"
+				+ "<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> nonConvergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t&nbsp "
+				+ "<font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp"
+				+ "<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>\t\t&nbsp"
+				+ "<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp"
+				+ "<font color = rgb(127,0,85)> <b>return</b> </font> nonConvergence(n+1) + 2*n;\r\n<br>\t}\r\n<br> "
+				+ "</code>\r\n<br>\r\n<br>\r\n"
+				+ "<br>Now we are going to move onto how the noBaseCase algorithm works.\r\n<br>\r\n<br>"
+				+ "Please click the Advance button to continue.\r\n</html>");
 
 		txtrThisTutorialSeries.setBackground(UIManager.getColor("Panel.background"));
 		txtrThisTutorialSeries.setEditable(false);
@@ -244,8 +261,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
-		contentPane.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnMenu, btnAdvance}));
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{mnFile, mnAbout, btnMenu, btnAdvance, mntmMainMenu, mntmQuit, mntmAbout}));
+	
 	}
 
 	@Override

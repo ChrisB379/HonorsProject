@@ -29,6 +29,7 @@ import javax.swing.JButton;
 
 import controller.ReturnValue.RVSubmitAlg2Controller;
 
+
 public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
@@ -1612,7 +1613,6 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		JLabel lblFinalAnswer = new JLabel("Final Answer:");
 		lblFinalAnswer.setBounds(213, 449, 119, 20);
 		add(lblFinalAnswer);
-
 
 	}
 
