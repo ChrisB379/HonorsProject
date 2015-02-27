@@ -29,6 +29,8 @@ import javax.swing.JTextPane;
 
 import controller.BaseCase.NoBCParameterController;
 import model.IBaseCase;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
 
 public class NoBaseCaseExample extends JPanel implements Observer {
 
@@ -121,6 +123,7 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 						.addContainerGap(232, Short.MAX_VALUE))
 				);
 		setLayout(groupLayout);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{txtParameterField}));
 
 	}
 
