@@ -14,8 +14,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -61,6 +59,7 @@ public class MainMenu extends JFrame {
 		setContentPane(contentPane);
 
 		JButton btnNewButton = new JButton("Start");
+		btnNewButton.setBounds(214, 151, 80, 23);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -74,6 +73,7 @@ public class MainMenu extends JFrame {
 
 
 		JButton btnAbout = new JButton("About");
+		btnAbout.setBounds(214, 211, 80, 23);
 		btnAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				About a = new About();
@@ -85,6 +85,7 @@ public class MainMenu extends JFrame {
 		});
 
 		JButton btnQuit = new JButton("Quit");
+		btnQuit.setBounds(214, 267, 80, 23);
 
 		//Used to close the application if the quit button is pressed
 		btnQuit.addActionListener(new ActionListener() {
@@ -93,38 +94,14 @@ public class MainMenu extends JFrame {
 				System.exit(0);
 			}
 		});
+		contentPane.setLayout(null);
 
 		JLabel lblUnderstandingRecursion = new JLabel("Understanding Recursion");
+		lblUnderstandingRecursion.setBounds(91, 42, 357, 38);
 		lblUnderstandingRecursion.setFont(new Font("Arial", Font.PLAIN, 32));
-
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-				gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addContainerGap(114, Short.MAX_VALUE)
-						.addComponent(lblUnderstandingRecursion)
-						.addGap(69))
-						.addGroup(gl_contentPane.createSequentialGroup()
-								.addGap(209)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-										.addComponent(btnQuit, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-										.addComponent(btnAbout, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-										.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
-										.addGap(230))
-				);
-		gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addGap(37)
-						.addComponent(lblUnderstandingRecursion)
-						.addGap(71)
-						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-						.addGap(37)
-						.addComponent(btnAbout)
-						.addGap(33)
-						.addComponent(btnQuit)
-						.addContainerGap(80, Short.MAX_VALUE))
-				);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.add(lblUnderstandingRecursion);
+		contentPane.add(btnQuit);
+		contentPane.add(btnAbout);
+		contentPane.add(btnNewButton);
 	}
 }

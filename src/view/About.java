@@ -15,12 +15,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JButton;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class About extends JFrame {
 
@@ -59,6 +56,7 @@ public class About extends JFrame {
 		setContentPane(contentPane);
 
 		JTextArea txtAbout = new JTextArea();
+		txtAbout.setBounds(26, 29, 393, 159);
 		txtAbout.setText("Understanding Recursion is a project undertaken by a fourth year student in his final year of his BSc Honors course in Computer Science.\r\n\r\nThe goal of this application was to create an interactive application which will aid a user in understanding and learning the basics of recursion.");
 		txtAbout.setBackground(UIManager.getColor("Panel.background"));
 		txtAbout.setWrapStyleWord(true);
@@ -66,35 +64,15 @@ public class About extends JFrame {
 		txtAbout.setEditable(false);
 
 		JButton btnReturnMainMenu = new JButton("Close");
+		btnReturnMainMenu.setBounds(149, 209, 127, 30);
 		btnReturnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 
 			}
 		});
-
-
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-				gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addContainerGap(21, Short.MAX_VALUE)
-						.addComponent(txtAbout, GroupLayout.PREFERRED_SIZE, 393, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap())
-						.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-								.addGap(147)
-								.addComponent(btnReturnMainMenu, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(175, Short.MAX_VALUE))
-				);
-		gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addGap(24)
-						.addComponent(txtAbout, GroupLayout.PREFERRED_SIZE, 159, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-						.addComponent(btnReturnMainMenu)
-						.addContainerGap())
-				);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.setLayout(null);
+		contentPane.add(txtAbout);
+		contentPane.add(btnReturnMainMenu);
 	}
 }

@@ -19,10 +19,6 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
-
 import java.awt.Font;
 
 import javax.swing.JLabel;
@@ -86,6 +82,7 @@ public class TutorialMenu extends JFrame {
 		setContentPane(contentPane);
 
 		JButton btnBaseCase = new JButton("Base Case");
+		btnBaseCase.setBounds(320, 115, 205, 27);
 		btnBaseCase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -99,6 +96,7 @@ public class TutorialMenu extends JFrame {
 		btnBaseCase.setFont(new Font("Arial", Font.PLAIN, 15));
 
 		JButton btnNewButton = new JButton("Return Value");
+		btnNewButton.setBounds(320, 160, 205, 27);
 		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -112,6 +110,7 @@ public class TutorialMenu extends JFrame {
 		});
 
 		JButton btnMultipleChoiceQuiz = new JButton("Multiple Choice Quiz");
+		btnMultipleChoiceQuiz.setBounds(320, 286, 203, 27);
 		btnMultipleChoiceQuiz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -124,6 +123,7 @@ public class TutorialMenu extends JFrame {
 		btnMultipleChoiceQuiz.setFont(new Font("Arial", Font.PLAIN, 15));
 
 		JButton btnReturnValue = new JButton("Excessive Recomputation");
+		btnReturnValue.setBounds(320, 198, 205, 27);
 		btnReturnValue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -137,6 +137,7 @@ public class TutorialMenu extends JFrame {
 		btnReturnValue.setFont(new Font("Arial", Font.PLAIN, 15));
 
 		JButton btnWorkAfter = new JButton("Work After");
+		btnWorkAfter.setBounds(320, 241, 205, 27);
 		btnWorkAfter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -150,6 +151,7 @@ public class TutorialMenu extends JFrame {
 		btnWorkAfter.setFont(new Font("Arial", Font.PLAIN, 15));
 
 		JButton btnReturnToMain = new JButton("Return to Main Menu");
+		btnReturnToMain.setBounds(187, 332, 182, 27);
 		btnReturnToMain.setFont(new Font("Arial", Font.PLAIN, 15));
 		btnReturnToMain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -162,85 +164,41 @@ public class TutorialMenu extends JFrame {
 		});
 
 		JLabel lblNewLabel = new JLabel("Tutorials");
+		lblNewLabel.setBounds(223, 16, 129, 71);
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 32));
 
 		JLabel lblTutorial = new JLabel("Tutorial 1 : The Base Case");
+		lblTutorial.setBounds(29, 115, 174, 18);
 		lblTutorial.setFont(new Font("Arial", Font.PLAIN, 15));
 
 		JLabel lblTutorial_1 = new JLabel("Tutorial 2 : Return Values");
+		lblTutorial_1.setBounds(29, 164, 164, 18);
 		lblTutorial_1.setFont(new Font("Arial", Font.PLAIN, 15));
 
 		JLabel lblTutorialExcessive = new JLabel("Tutorial 3: Excessive Recomputation");
+		lblTutorialExcessive.setBounds(29, 205, 238, 18);
 		lblTutorialExcessive.setFont(new Font("Arial", Font.PLAIN, 15));
 
 		JLabel lblTutorialWork = new JLabel("Tutorial 4: Work After");
+		lblTutorialWork.setBounds(29, 245, 137, 18);
 		lblTutorialWork.setFont(new Font("Arial", Font.PLAIN, 15));
 
 		JLabel lblEndOfUnit = new JLabel("End of unit quiz");
+		lblEndOfUnit.setBounds(29, 290, 100, 18);
 		lblEndOfUnit.setFont(new Font("Arial", Font.PLAIN, 15));
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addGap(24)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblTutorial)
-								.addComponent(lblTutorialWork)
-								.addComponent(lblEndOfUnit)
-								.addComponent(lblTutorial_1)
-								.addComponent(lblTutorialExcessive))
-								.addGap(53)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(btnMultipleChoiceQuiz, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(btnWorkAfter, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(btnReturnValue, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(btnBaseCase, GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
-										.addContainerGap(14, Short.MAX_VALUE))
-										.addGroup(gl_contentPane.createSequentialGroup()
-												.addGap(182)
-												.addComponent(btnReturnToMain, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addGap(197))
-												.addGroup(gl_contentPane.createSequentialGroup()
-														.addGap(218)
-														.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)
-														.addContainerGap(214, Short.MAX_VALUE))
-				);
-		gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
-						.addGap(28)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(btnBaseCase)
-										.addGap(18)
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-												.addComponent(lblTutorial_1)
-												.addComponent(btnNewButton)))
-												.addComponent(lblTutorial))
-												.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-														.addGroup(gl_contentPane.createSequentialGroup()
-																.addGap(18)
-																.addComponent(lblTutorialExcessive))
-																.addGroup(gl_contentPane.createSequentialGroup()
-																		.addPreferredGap(ComponentPlacement.UNRELATED)
-																		.addComponent(btnReturnValue)))
-																		.addGap(16)
-																		.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-																				.addComponent(lblTutorialWork)
-																				.addComponent(btnWorkAfter))
-																				.addGap(18)
-																				.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-																						.addComponent(lblEndOfUnit)
-																						.addComponent(btnMultipleChoiceQuiz))
-																						.addPreferredGap(ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-																						.addComponent(btnReturnToMain)
-																						.addContainerGap())
-				);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.setLayout(null);
+		contentPane.add(lblTutorial);
+		contentPane.add(lblTutorialWork);
+		contentPane.add(lblEndOfUnit);
+		contentPane.add(lblTutorial_1);
+		contentPane.add(lblTutorialExcessive);
+		contentPane.add(btnMultipleChoiceQuiz);
+		contentPane.add(btnWorkAfter);
+		contentPane.add(btnReturnValue);
+		contentPane.add(btnNewButton);
+		contentPane.add(btnBaseCase);
+		contentPane.add(btnReturnToMain);
+		contentPane.add(lblNewLabel);
 	}
 
 }
