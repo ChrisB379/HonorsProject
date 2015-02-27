@@ -94,6 +94,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		//purple rgb value (127,0,85)
 
 		JTextPane txtFactorial = new JTextPane();
+		txtFactorial.setFocusable(false);
 		txtFactorial.setBounds(60, 54, 272, 97);
 		txtFactorial.setContentType("text/html");
 		txtFactorial.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -102,6 +103,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtFactorial.setEditable(false);
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(70, 352, 176, 30);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
@@ -138,6 +140,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 
 			
 		txtrTheCurrent = new JTextArea();
+		txtrTheCurrent.setFocusable(false);
 		txtrTheCurrent.setBounds(70, 422, 251, 22);
 		txtrTheCurrent.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheCurrent.setWrapStyleWord(true);
@@ -175,9 +178,11 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		});
 
 		JLabel lblExample = new JLabel("Example 1");
+		lblExample.setFocusable(false);
 		lblExample.setBounds(392, 11, 81, 14);
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(70, 481, 309, 14);
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setText("Please click the Advance button to for the next example.");
@@ -186,6 +191,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
 		textArea = new JTextArea();
+		textArea.setFocusable(false);
 		textArea.setBounds(441, 54, 73, 180);
 		textArea.setEditable(false);
 		
@@ -194,6 +200,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		
 		
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here:");
+		lblInsertWorkingHere.setFocusable(false);
 		lblInsertWorkingHere.setBounds(640, 307, 141, 14);
 		setLayout(null);
 		add(txtFactorial);

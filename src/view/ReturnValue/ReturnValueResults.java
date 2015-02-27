@@ -46,6 +46,7 @@ public class ReturnValueResults extends JPanel implements Observer {
 		lblResults.setBounds(327, 11, 61, 14);
 
 		txtResults = new JTextArea();
+		txtResults.setFocusable(false);
 		txtResults.setBounds(47, 36, 668, 423);
 		txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
 				+ "The algorithm worked on was factorial(0)\r\n\r\n"
@@ -69,6 +70,7 @@ public class ReturnValueResults extends JPanel implements Observer {
 		txtResults.setEditable(false);
 
 		txtSummary = new JTextArea();
+		txtSummary.setFocusable(false);
 		txtSummary.setBounds(47, 487, 668, 266);
 		txtSummary.setText("\t\t\t\t\t\t\t\t\t\tSummary\r\n\r\nIn this tutorial series, the basics of return values in recursion were presented.\r\n\r\nReturn values take two forms in basic recursive methods.\r\n\r\nFirst is the base case return value which is how we stop the recursive call going into an infinite loop and causing a stack overflow. The final calculation is then begun.\r\n\r\nThe second is the recursive value itself as seen in the factorial algorithm, the recursive call being return n * fact(n-1).");
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));

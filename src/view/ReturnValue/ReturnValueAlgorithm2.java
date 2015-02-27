@@ -256,6 +256,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public ReturnValueAlgorithm2(IReturnValue r,Algorithm2Button ab) {
+		setFocusable(false);
 
 		model = r;
 
@@ -268,9 +269,11 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		rvs2C = new RVSubmitAlg2Controller(model, this);
 
 		JLabel lblExample = new JLabel("Example 2");
+		lblExample.setFocusable(false);
 		lblExample.setBounds(347, 11, 77, 14);
 
 		txtExample2 = new JTextArea();
+		txtExample2.setFocusable(false);
 		txtExample2.setBounds(56, 60, 575, 97);
 		txtExample2.setText("As with the previous screen, you will be using the algorithim fact("+ getParameter() + ")\r\n\r\nPlease fill out each text field with the value you think corresponds to each step in the recursive call.\r\n");
 		txtExample2.setBackground(UIManager.getColor("Panel.background"));
@@ -284,6 +287,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line1Fact = new JTextField();
+		line1Fact.setFocusable(false);
 		line1Fact.setBounds(56, 190, 30, 14);
 		line1Fact.setBorder(null);
 		line1Fact.setEditable(false);
@@ -296,6 +300,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line1Input1.setDocument(new JTextFieldLimit(2));
 
 		line1Bracket = new JTextField();
+		line1Bracket.setFocusable(false);
 		line1Bracket.setBounds(121, 190, 21, 14);
 		line1Bracket.setBorder(null);
 		line1Bracket.setEditable(false);
@@ -310,6 +315,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line2Return = new JTextField();
+		line2Return.setFocusable(false);
 		line2Return.setVisible(false);
 		line2Return.setBounds(56, 215, 45, 14);
 		line2Return.setBorder(null);
@@ -318,6 +324,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line2Return.setColumns(10);
 
 		line2Fact = new JTextField();
+		line2Fact.setFocusable(false);
 		line2Fact.setVisible(false);
 		line2Fact.setBounds(101, 216, 30, 14);
 		line2Fact.setBorder(null);
@@ -332,6 +339,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line2Input1.setDocument(new JTextFieldLimit(2));
 
 		line2mult1 = new JTextField();
+		line2mult1.setFocusable(false);
 		line2mult1.setVisible(false);
 		line2mult1.setBounds(182, 215, 12, 14);
 		line2mult1.setBorder(null);
@@ -340,6 +348,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line2mult1.setColumns(10);
 
 		line2Bracket = new JTextField();
+		line2Bracket.setFocusable(false);
 		line2Bracket.setVisible(false);
 		line2Bracket.setBounds(165, 216, 14, 14);
 		line2Bracket.setBorder(null);
@@ -360,6 +369,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line3Return = new JTextField();
+		line3Return.setFocusable(false);
 		line3Return.setVisible(false);
 		line3Return.setBounds(56, 240, 39, 14);
 		line3Return.setBorder(null);
@@ -368,6 +378,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line3Return.setColumns(10);
 
 		line3Fact = new JTextField();
+		line3Fact.setFocusable(false);
 		line3Fact.setVisible(false);
 		line3Fact.setBounds(100, 240, 30, 14);
 		line3Fact.setBorder(null);
@@ -382,6 +393,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line3Input1.setDocument(new JTextFieldLimit(2));
 
 		line3mult1 = new JTextField();
+		line3mult1.setFocusable(false);
 		line3mult1.setVisible(false);
 		line3mult1.setBounds(182, 240, 12, 14);
 		line3mult1.setBorder(null);
@@ -391,6 +403,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line3Bracket = new JTextField();
+		line3Bracket.setFocusable(false);
 		line3Bracket.setVisible(false);
 		line3Bracket.setBounds(164, 240, 14, 14);
 		line3Bracket.setBorder(null);
@@ -406,6 +419,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line3Input2.setDocument(new JTextFieldLimit(2));
 
 		line3mult2 = new JTextField();
+		line3mult2.setFocusable(false);
 		line3mult2.setVisible(false);
 		line3mult2.setBounds(228, 240, 12, 14);
 		line3mult2.setBorder(null);
@@ -426,6 +440,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line4Return = new JTextField();
+		line4Return.setFocusable(false);
 		line4Return.setVisible(false);
 		line4Return.setBounds(56, 265, 39, 14);
 		line4Return.setBorder(null);
@@ -434,6 +449,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line4Return.setColumns(10);
 
 		line4Fact = new JTextField();
+		line4Fact.setFocusable(false);
 		line4Fact.setVisible(false);
 		line4Fact.setBounds(100, 265, 30, 14);
 		line4Fact.setBorder(null);
@@ -448,6 +464,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line4Input1.setDocument(new JTextFieldLimit(2));
 
 		line4mult1 = new JTextField();
+		line4mult1.setFocusable(false);
 		line4mult1.setVisible(false);
 		line4mult1.setBounds(182, 265, 12, 14);
 		line4mult1.setBorder(null);
@@ -457,6 +474,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line4Bracket = new JTextField();
+		line4Bracket.setFocusable(false);
 		line4Bracket.setVisible(false);
 		line4Bracket.setBounds(164, 265, 14, 14);
 		line4Bracket.setBorder(null);
@@ -471,6 +489,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line4Input2.setDocument(new JTextFieldLimit(2));
 
 		line4mult2 = new JTextField();
+		line4mult2.setFocusable(false);
 		line4mult2.setVisible(false);
 		line4mult2.setBounds(228, 265, 12, 14);
 		line4mult2.setBorder(null);
@@ -485,6 +504,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line4Input3.setDocument(new JTextFieldLimit(2));
 
 		line4mult3 = new JTextField();
+		line4mult3.setFocusable(false);
 		line4mult3.setVisible(false);
 		line4mult3.setBounds(274, 265, 12, 14);
 		line4mult3.setBorder(null);
@@ -505,6 +525,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line5Return = new JTextField();
+		line5Return.setFocusable(false);
 		line5Return.setVisible(false);
 		line5Return.setBounds(56, 290, 39, 14);
 		line5Return.setBorder(null);
@@ -513,6 +534,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line5Return.setColumns(10);
 
 		line5Fact = new JTextField();
+		line5Fact.setFocusable(false);
 		line5Fact.setVisible(false);
 		line5Fact.setBounds(100, 290, 30, 14);
 		line5Fact.setBorder(null);
@@ -527,6 +549,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line5Input1.setDocument(new JTextFieldLimit(2));
 
 		line5mult1 = new JTextField();
+		line5mult1.setFocusable(false);
 		line5mult1.setVisible(false);
 		line5mult1.setBounds(182, 290, 12, 14);
 		line5mult1.setBorder(null);
@@ -536,6 +559,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line5Bracket = new JTextField();
+		line5Bracket.setFocusable(false);
 		line5Bracket.setVisible(false);
 		line5Bracket.setBounds(162, 290, 14, 14);
 		line5Bracket.setBorder(null);
@@ -551,6 +575,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line5Input2.setDocument(new JTextFieldLimit(2));
 
 		line5mult2 = new JTextField();
+		line5mult2.setFocusable(false);
 		line5mult2.setVisible(false);
 		line5mult2.setBounds(228, 290, 12, 14);
 		line5mult2.setBorder(null);
@@ -565,6 +590,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line5Input3.setDocument(new JTextFieldLimit(2));
 
 		line5mult3 = new JTextField();
+		line5mult3.setFocusable(false);
 		line5mult3.setVisible(false);
 		line5mult3.setBounds(274, 290, 12, 14);
 		line5mult3.setBorder(null);
@@ -573,6 +599,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line5mult3.setColumns(10);
 
 		line5mult4 = new JTextField();
+		line5mult4.setFocusable(false);
 		line5mult4.setVisible(false);
 		line5mult4.setBounds(320, 290, 12, 14);
 		line5mult4.setBorder(null);
@@ -599,6 +626,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line6Return = new JTextField();
+		line6Return.setFocusable(false);
 		line6Return.setVisible(false);
 		line6Return.setBounds(56, 315, 39, 14);
 		line6Return.setBorder(null);
@@ -607,6 +635,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6Return.setColumns(10);
 
 		line6Fact = new JTextField();
+		line6Fact.setFocusable(false);
 		line6Fact.setVisible(false);
 		line6Fact.setBounds(100, 315, 30, 14);
 		line6Fact.setBorder(null);
@@ -621,6 +650,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6Input1.setDocument(new JTextFieldLimit(2));
 
 		line6mult1 = new JTextField();
+		line6mult1.setFocusable(false);
 		line6mult1.setVisible(false);
 		line6mult1.setBounds(182, 315, 12, 14);
 		line6mult1.setBorder(null);
@@ -629,6 +659,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6mult1.setColumns(10);
 
 		line6Bracket = new JTextField();
+		line6Bracket.setFocusable(false);
 		line6Bracket.setVisible(false);
 		line6Bracket.setBounds(162, 315, 14, 14);
 		line6Bracket.setBorder(null);
@@ -644,6 +675,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6Input2.setDocument(new JTextFieldLimit(2));
 
 		line6mult2 = new JTextField();
+		line6mult2.setFocusable(false);
 		line6mult2.setVisible(false);
 		line6mult2.setBounds(228, 315, 12, 14);
 		line6mult2.setBorder(null);
@@ -658,6 +690,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6Input3.setDocument(new JTextFieldLimit(2));
 
 		line6mult3 = new JTextField();
+		line6mult3.setFocusable(false);
 		line6mult3.setVisible(false);
 		line6mult3.setBounds(274, 315, 12, 14);
 		line6mult3.setBorder(null);
@@ -666,6 +699,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6mult3.setColumns(10);
 
 		line6mult4 = new JTextField();
+		line6mult4.setFocusable(false);
 		line6mult4.setVisible(false);
 		line6mult4.setBounds(320, 315, 12, 14);
 		line6mult4.setBorder(null);
@@ -686,6 +720,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6Input5.setDocument(new JTextFieldLimit(2));
 
 		line6mult5 = new JTextField();
+		line6mult5.setFocusable(false);
 		line6mult5.setVisible(false);
 		line6mult5.setBounds(366, 315, 12, 14);
 		line6mult5.setBorder(null);
@@ -706,6 +741,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line7Return = new JTextField();
+		line7Return.setFocusable(false);
 		line7Return.setVisible(false);
 		line7Return.setBounds(56, 340, 39, 14);
 		line7Return.setBorder(null);
@@ -714,6 +750,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Return.setColumns(10);
 
 		line7Fact = new JTextField();
+		line7Fact.setFocusable(false);
 		line7Fact.setVisible(false);
 		line7Fact.setBounds(100, 340, 30, 14);
 		line7Fact.setBorder(null);
@@ -728,6 +765,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Input1.setDocument(new JTextFieldLimit(2));
 
 		line7mult1 = new JTextField();
+		line7mult1.setFocusable(false);
 		line7mult1.setVisible(false);
 		line7mult1.setBounds(182, 340, 12, 14);
 		line7mult1.setBorder(null);
@@ -736,6 +774,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7mult1.setColumns(10);
 
 		line7Bracket = new JTextField();
+		line7Bracket.setFocusable(false);
 		line7Bracket.setVisible(false);
 		line7Bracket.setBounds(164, 340, 14, 14);
 		line7Bracket.setBorder(null);
@@ -751,6 +790,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Input2.setDocument(new JTextFieldLimit(2));
 
 		line7mult2 = new JTextField();
+		line7mult2.setFocusable(false);
 		line7mult2.setVisible(false);
 		line7mult2.setBounds(228, 340, 12, 14);
 		line7mult2.setBorder(null);
@@ -765,6 +805,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Input3.setDocument(new JTextFieldLimit(2));
 
 		line7mult3 = new JTextField();
+		line7mult3.setFocusable(false);
 		line7mult3.setVisible(false);
 		line7mult3.setBounds(274, 340, 12, 14);
 		line7mult3.setBorder(null);
@@ -773,6 +814,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7mult3.setColumns(10);
 
 		line7mult4 = new JTextField();
+		line7mult4.setFocusable(false);
 		line7mult4.setVisible(false);
 		line7mult4.setBounds(320, 340, 12, 14);
 		line7mult4.setBorder(null);
@@ -793,6 +835,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Input5.setDocument(new JTextFieldLimit(2));
 
 		line7mult5 = new JTextField();
+		line7mult5.setFocusable(false);
 		line7mult5.setVisible(false);
 		line7mult5.setBounds(366, 340, 12, 14);
 		line7mult5.setBorder(null);
@@ -807,6 +850,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Input6.setDocument(new JTextFieldLimit(2));
 
 		line7mult6 = new JTextField();
+		line7mult6.setFocusable(false);
 		line7mult6.setVisible(false);
 		line7mult6.setBounds(412, 340, 12, 14);
 		line7mult6.setBorder(null);
@@ -829,6 +873,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line8Return = new JTextField();
+		line8Return.setFocusable(false);
 		line8Return.setVisible(false);
 		line8Return.setBounds(56, 365, 39, 14);
 		line8Return.setBorder(null);
@@ -837,6 +882,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Return.setColumns(10);
 
 		line8Fact = new JTextField();
+		line8Fact.setFocusable(false);
 		line8Fact.setVisible(false);
 		line8Fact.setBounds(100, 365, 30, 14);
 		line8Fact.setBorder(null);
@@ -851,6 +897,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Input1.setDocument(new JTextFieldLimit(2));
 
 		line8mult1 = new JTextField();
+		line8mult1.setFocusable(false);
 		line8mult1.setVisible(false);
 		line8mult1.setBounds(182, 365, 12, 14);
 		line8mult1.setBorder(null);
@@ -859,6 +906,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8mult1.setColumns(10);
 
 		line8Bracket = new JTextField();
+		line8Bracket.setFocusable(false);
 		line8Bracket.setVisible(false);
 		line8Bracket.setBounds(164, 365, 14, 14);
 		line8Bracket.setBorder(null);
@@ -873,6 +921,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Input2.setDocument(new JTextFieldLimit(2));
 
 		line8mult2 = new JTextField();
+		line8mult2.setFocusable(false);
 		line8mult2.setVisible(false);
 		line8mult2.setBounds(228, 365, 12, 14);
 		line8mult2.setBorder(null);
@@ -887,6 +936,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Input3.setDocument(new JTextFieldLimit(2));
 
 		line8mult3 = new JTextField();
+		line8mult3.setFocusable(false);
 		line8mult3.setVisible(false);
 		line8mult3.setBounds(274, 365, 12, 14);
 		line8mult3.setBorder(null);
@@ -895,6 +945,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8mult3.setColumns(10);
 
 		line8mult4 = new JTextField();
+		line8mult4.setFocusable(false);
 		line8mult4.setVisible(false);
 		line8mult4.setBounds(320, 365, 12, 14);
 		line8mult4.setBorder(null);
@@ -915,6 +966,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Input5.setDocument(new JTextFieldLimit(2));
 
 		line8mult5 = new JTextField();
+		line8mult5.setFocusable(false);
 		line8mult5.setVisible(false);
 		line8mult5.setBounds(366, 365, 12, 14);
 		line8mult5.setBorder(null);
@@ -929,6 +981,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Input6.setDocument(new JTextFieldLimit(2));
 
 		line8mult6 = new JTextField();
+		line8mult6.setFocusable(false);
 		line8mult6.setVisible(false);
 		line8mult6.setBounds(412, 365, 12, 14);
 		line8mult6.setBorder(null);
@@ -937,6 +990,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8mult6.setColumns(10);
 
 		line8mult7 = new JTextField();
+		line8mult7.setFocusable(false);
 		line8mult7.setVisible(false);
 		line8mult7.setBounds(458, 365, 12, 14);
 		line8mult7.setBorder(null);
@@ -964,6 +1018,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line9Return = new JTextField();
+		line9Return.setFocusable(false);
 		line9Return.setVisible(false);
 		line9Return.setBounds(56, 390, 39, 14);
 		line9Return.setBorder(null);
@@ -972,6 +1027,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Return.setColumns(10);
 
 		line9Fact = new JTextField();
+		line9Fact.setFocusable(false);
 		line9Fact.setVisible(false);
 		line9Fact.setBounds(100, 390, 30, 14);
 		line9Fact.setBorder(null);
@@ -986,6 +1042,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input1.setDocument(new JTextFieldLimit(2));
 
 		line9mult1 = new JTextField();
+		line9mult1.setFocusable(false);
 		line9mult1.setVisible(false);
 		line9mult1.setBounds(182, 390, 12, 14);
 		line9mult1.setBorder(null);
@@ -994,6 +1051,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9mult1.setColumns(10);
 
 		line9Bracket = new JTextField();
+		line9Bracket.setFocusable(false);
 		line9Bracket.setVisible(false);
 		line9Bracket.setBounds(164, 390, 14, 14);
 		line9Bracket.setBorder(null);
@@ -1008,6 +1066,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input2.setDocument(new JTextFieldLimit(2));
 
 		line9mult2 = new JTextField();
+		line9mult2.setFocusable(false);
 		line9mult2.setVisible(false);
 		line9mult2.setBounds(228, 390, 12, 14);
 		line9mult2.setBorder(null);
@@ -1022,6 +1081,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input3.setDocument(new JTextFieldLimit(2));
 
 		line9mult3 = new JTextField();
+		line9mult3.setFocusable(false);
 		line9mult3.setVisible(false);
 		line9mult3.setBounds(274, 390, 12, 14);
 		line9mult3.setBorder(null);
@@ -1030,6 +1090,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9mult3.setColumns(10);
 
 		line9mult4 = new JTextField();
+		line9mult4.setFocusable(false);
 		line9mult4.setVisible(false);
 		line9mult4.setBounds(320, 390, 12, 14);
 		line9mult4.setBorder(null);
@@ -1050,6 +1111,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input5.setDocument(new JTextFieldLimit(2));
 
 		line9mult5 = new JTextField();
+		line9mult5.setFocusable(false);
 		line9mult5.setVisible(false);
 		line9mult5.setBounds(366, 390, 12, 14);
 		line9mult5.setBorder(null);
@@ -1064,6 +1126,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input6.setDocument(new JTextFieldLimit(2));
 
 		line9mult6 = new JTextField();
+		line9mult6.setFocusable(false);
 		line9mult6.setVisible(false);
 		line9mult6.setBounds(412, 390, 12, 14);
 		line9mult6.setBorder(null);
@@ -1072,6 +1135,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9mult6.setColumns(10);
 
 		line9mult7 = new JTextField();
+		line9mult7.setFocusable(false);
 		line9mult7.setVisible(false);
 		line9mult7.setBounds(458, 390, 12, 14);
 		line9mult7.setBorder(null);
@@ -1093,6 +1157,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input8.setDocument(new JTextFieldLimit(2));
 
 		line9mult8 = new JTextField();
+		line9mult8.setFocusable(false);
 		line9mult8.setVisible(false);
 		line9mult8.setBounds(504, 390, 12, 14);
 		line9mult8.setBorder(null);
@@ -1114,6 +1179,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line10Return = new JTextField();
+		line10Return.setFocusable(false);
 		line10Return.setVisible(false);
 		line10Return.setBounds(56, 415, 35, 14);
 		line10Return.setBorder(null);
@@ -1122,6 +1188,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Return.setColumns(10);
 
 		line10Fact = new JTextField();
+		line10Fact.setFocusable(false);
 		line10Fact.setVisible(false);
 		line10Fact.setBounds(100, 415, 30, 14);
 		line10Fact.setBorder(null);
@@ -1136,6 +1203,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input1.setDocument(new JTextFieldLimit(2));
 
 		line10mult1 = new JTextField();
+		line10mult1.setFocusable(false);
 		line10mult1.setVisible(false);
 		line10mult1.setBounds(182, 415, 12, 14);
 		line10mult1.setBorder(null);
@@ -1144,6 +1212,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10mult1.setColumns(10);
 
 		line10Bracket = new JTextField();
+		line10Bracket.setFocusable(false);
 		line10Bracket.setVisible(false);
 		line10Bracket.setBounds(164, 415, 14, 14);
 		line10Bracket.setBorder(null);
@@ -1158,6 +1227,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input2.setDocument(new JTextFieldLimit(2));
 
 		line10mult2 = new JTextField();
+		line10mult2.setFocusable(false);
 		line10mult2.setVisible(false);
 		line10mult2.setBounds(228, 415, 12, 14);
 		line10mult2.setBorder(null);
@@ -1172,6 +1242,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input3.setDocument(new JTextFieldLimit(2));
 
 		line10mult3 = new JTextField();
+		line10mult3.setFocusable(false);
 		line10mult3.setVisible(false);
 		line10mult3.setBounds(274, 415, 12, 14);
 		line10mult3.setBorder(null);
@@ -1180,6 +1251,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10mult3.setColumns(10);
 
 		line10mult4 = new JTextField();
+		line10mult4.setFocusable(false);
 		line10mult4.setVisible(false);
 		line10mult4.setBounds(320, 415, 12, 14);
 		line10mult4.setBorder(null);
@@ -1200,6 +1272,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input5.setDocument(new JTextFieldLimit(2));
 
 		line10mult5 = new JTextField();
+		line10mult5.setFocusable(false);
 		line10mult5.setVisible(false);
 		line10mult5.setBounds(366, 415, 12, 14);
 		line10mult5.setBorder(null);
@@ -1214,6 +1287,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input6.setDocument(new JTextFieldLimit(2));
 
 		line10mult6 = new JTextField();
+		line10mult6.setFocusable(false);
 		line10mult6.setVisible(false);
 		line10mult6.setBounds(412, 415, 12, 14);
 		line10mult6.setBorder(null);
@@ -1222,6 +1296,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10mult6.setColumns(10);
 
 		line10mult7 = new JTextField();
+		line10mult7.setFocusable(false);
 		line10mult7.setVisible(false);
 		line10mult7.setBounds(458, 415, 12, 14);
 		line10mult7.setBorder(null);
@@ -1242,6 +1317,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input8.setDocument(new JTextFieldLimit(2));
 
 		line10mult8 = new JTextField();
+		line10mult8.setFocusable(false);
 		line10mult8.setVisible(false);
 		line10mult8.setBounds(504, 415, 12, 14);
 		line10mult8.setBorder(null);
@@ -1256,6 +1332,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input9.setDocument(new JTextFieldLimit(2));
 
 		line10mult9 = new JTextField();
+		line10mult9.setFocusable(false);
 		line10mult9.setVisible(false);
 		line10mult9.setBounds(558, 415, 12, 14);
 		line10mult9.setBorder(null);
@@ -1276,6 +1353,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line11Return = new JTextField();
+		line11Return.setFocusable(false);
 		line11Return.setBounds(56, 492, 39, 14);
 		line11Return.setBorder(null);
 		line11Return.setEditable(false);
@@ -1288,6 +1366,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input1.setDocument(new JTextFieldLimit(2));
 
 		line11mult1 = new JTextField();
+		line11mult1.setFocusable(false);
 		line11mult1.setVisible(false);
 		line11mult1.setBounds(137, 492, 12, 14);
 		line11mult1.setBorder(null);
@@ -1302,6 +1381,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input2.setDocument(new JTextFieldLimit(2));
 
 		line11mult2 = new JTextField();
+		line11mult2.setFocusable(false);
 		line11mult2.setVisible(false);
 		line11mult2.setBounds(191, 492, 12, 14);
 		line11mult2.setBorder(null);
@@ -1316,6 +1396,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input3.setDocument(new JTextFieldLimit(2));
 
 		line11mult3 = new JTextField();
+		line11mult3.setFocusable(false);
 		line11mult3.setVisible(false);
 		line11mult3.setBounds(245, 492, 12, 14);
 		line11mult3.setBorder(null);
@@ -1330,6 +1411,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input4.setDocument(new JTextFieldLimit(2));
 
 		line11mult4 = new JTextField();
+		line11mult4.setFocusable(false);
 		line11mult4.setVisible(false);
 		line11mult4.setBounds(302, 492, 12, 14);
 		line11mult4.setBorder(null);
@@ -1344,6 +1426,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input5.setDocument(new JTextFieldLimit(2));
 
 		line11mult5 = new JTextField();
+		line11mult5.setFocusable(false);
 		line11mult5.setVisible(false);
 		line11mult5.setBounds(348, 492, 12, 14);
 		line11mult5.setBorder(null);
@@ -1358,6 +1441,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input6.setDocument(new JTextFieldLimit(2));
 
 		line11mult6 = new JTextField();
+		line11mult6.setFocusable(false);
 		line11mult6.setVisible(false);
 		line11mult6.setBounds(394, 492, 12, 14);
 		line11mult6.setBorder(null);
@@ -1366,6 +1450,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11mult6.setColumns(10);
 
 		line11mult7 = new JTextField();
+		line11mult7.setFocusable(false);
 		line11mult7.setVisible(false);
 		line11mult7.setBounds(440, 492, 12, 14);
 		line11mult7.setBorder(null);
@@ -1386,6 +1471,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input8.setDocument(new JTextFieldLimit(2));
 
 		line11mult8 = new JTextField();
+		line11mult8.setFocusable(false);
 		line11mult8.setVisible(false);
 		line11mult8.setBounds(490, 492, 12, 14);
 		line11mult8.setBorder(null);
@@ -1400,6 +1486,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input9.setDocument(new JTextFieldLimit(2));
 
 		line11mult9 = new JTextField();
+		line11mult9.setFocusable(false);
 		line11mult9.setVisible(false);
 		line11mult9.setBounds(536, 492, 12, 14);
 		line11mult9.setBorder(null);
@@ -1418,6 +1505,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line12eqReturn = new JTextField();
+		line12eqReturn.setFocusable(false);
 		line12eqReturn.setBounds(56, 555, 50, 14);
 		line12eqReturn.setBorder(null);
 		line12eqReturn.setEditable(false);
@@ -1611,6 +1699,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		add(btnSubmit);
 
 		JLabel lblFinalAnswer = new JLabel("Final Answer:");
+		lblFinalAnswer.setFocusable(false);
 		lblFinalAnswer.setBounds(213, 449, 119, 20);
 		add(lblFinalAnswer);
 

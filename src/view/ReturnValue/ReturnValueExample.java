@@ -61,6 +61,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 		setBorder(null);
 
 		JTextPane txtExample = new JTextPane();
+		txtExample.setFocusable(false);
 		txtExample.setBounds(22, 11, 841, 683);
 		txtExample.setContentType("text/html");
 		txtExample.setBorder(null);
@@ -69,6 +70,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 		txtExample.setEditable(false);
 
 		JTextPane txtNextPage = new JTextPane();
+		txtNextPage.setFocusable(false);
 		txtNextPage.setBounds(22, 693, 574, 64);
 		txtNextPage.setContentType("text/html");
 		txtNextPage.setFont(new Font("Tahoma", Font.PLAIN, 11));
