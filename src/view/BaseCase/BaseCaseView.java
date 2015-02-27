@@ -34,9 +34,9 @@ import javax.swing.JMenuItem;
 
 import view.About;
 import view.MainMenu;
-import view.BaseCase.AdvanceButtons.CBCAlgorithmButton;
-import view.BaseCase.AdvanceButtons.CBCExampleButton;
-import view.BaseCase.AdvanceButtons.CBCResultsButton;
+import view.BaseCase.AdvanceButtons.NCBCAlgorithmButton;
+import view.BaseCase.AdvanceButtons.NCBCExampleButton;
+import view.BaseCase.AdvanceButtons.NCBCResultsButton;
 import view.BaseCase.AdvanceButtons.NBCAlgorithmButton;
 import view.BaseCase.AdvanceButtons.NBCExampleButton;
 import view.BaseCase.AdvanceButtons.NBCResultsButton;
@@ -67,17 +67,17 @@ public class BaseCaseView extends JFrame implements Observer {
 	private NBCExampleButton NBeb;
 	private NBCAlgorithmButton NBab;
 	private NBCResultsButton NBrb;
-	private CBCExampleButton Ceb;
-	private CBCAlgorithmButton Cab;
-	private CBCResultsButton Crb;
+	private NCBCExampleButton Ceb;
+	private NCBCAlgorithmButton Cab;
+	private NCBCResultsButton Crb;
 	
 	
 	private NoBaseCaseExample bc1;
 	private NoBaseCaseAlgorithm bc2;
 	private NoBaseCaseResult bc3;
-	private ConvergenceExample bc4;
-	private ConvergenceAlgorithm bc5;
-	private ConvergenceResult bc6;
+	private NonConvergenceExample bc4;
+	private NonConvergenceAlgorithm bc5;
+	private NonConvergenceResult bc6;
 
 	/**
 	 * Launch the application.
@@ -111,18 +111,18 @@ public class BaseCaseView extends JFrame implements Observer {
 		bc2 = new NoBaseCaseAlgorithm(model,NBab);
 		
 		bc3 = new NoBaseCaseResult(model);
-		bc4 = new ConvergenceExample(model);
+		bc4 = new NonConvergenceExample(model);
 		
-		Cab = new CBCAlgorithmButton(this);
-		bc5 = new ConvergenceAlgorithm(model,Cab);
+		Cab = new NCBCAlgorithmButton(this);
+		bc5 = new NonConvergenceAlgorithm(model,Cab);
 		
-		bc6 = new ConvergenceResult(model);
+		bc6 = new NonConvergenceResult(model);
 		
 		NBeb = new NBCExampleButton(model,this,bc1);
 
 		NBrb = new NBCResultsButton(this);
-		Ceb = new CBCExampleButton(this);
-		Crb = new CBCResultsButton(this);
+		Ceb = new NCBCExampleButton(this);
+		Crb = new NCBCResultsButton(this);
 		
 		
 		setTitle("Tutorial 1: Base Case");
@@ -334,7 +334,7 @@ public class BaseCaseView extends JFrame implements Observer {
 
 		JTextPane txtrThisTutorialSeries = new JTextPane();
 		txtrThisTutorialSeries.setContentType("text/html");
-		txtrThisTutorialSeries.setText("<html>\r\n<br>This tutorial series focuses on base case in recursive calls. \r\n<br>\r\n<br>The base case of a recursive call returns a value without making any subsequent recursive calls. The base case is important in recursive calls as it prevents a recursive statement falling into an infinite loop before failing due to a stack overflow.\r\n<br>\r\n<br>\r\n<br>In this tutorial series,some simple algorithms will be used in order to demonstrate how the base case of a recursive call is used. Two algorithms will be used in order to demonstrate to different important features of base cases which recursive calls must adhere to.\r\n<br>\r\n<br>\r\n<br>The algorithms are as follows:\r\n<br>\r\n<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>\t}\r\n<br> </code>\r\n<br>The second algorithm :\t\r\n<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> convergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> convergence(n+1) + 2*n;\r\n<br>\t}\r\n<br> </code>\r\n<br>\r\n<br>\r\n<br>Now we are going to move onto how the noBaseCase algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n</html>");
+		txtrThisTutorialSeries.setText("<html>\r\n<br>This tutorial series focuses on base case in recursive calls. \r\n<br>\r\n<br>The base case of a recursive call returns a value without making any subsequent recursive calls. The base case is important in recursive calls as it prevents a recursive statement falling into an infinite loop before failing due to a stack overflow.\r\n<br>\r\n<br>\r\n<br>In this tutorial series,some simple algorithms will be used in order to demonstrate how the base case of a recursive call is used. Two algorithms will be used in order to demonstrate to different important features of base cases which recursive calls must adhere to.\r\n<br>\r\n<br>\r\n<br>The algorithms are as follows:\r\n<br>\r\n<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>\t}\r\n<br> </code>\r\n<br>The second algorithm :\t\r\n<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> nonConvergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> nonConvergence(n+1) + 2*n;\r\n<br>\t}\r\n<br> </code>\r\n<br>\r\n<br>\r\n<br>Now we are going to move onto how the noBaseCase algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n</html>");
 
 		txtrThisTutorialSeries.setBackground(UIManager.getColor("Panel.background"));
 		txtrThisTutorialSeries.setEditable(false);

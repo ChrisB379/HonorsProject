@@ -27,17 +27,17 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import view.JTextFieldLimit;
-import view.BaseCase.AdvanceButtons.CBCAlgorithmButton;
+import view.BaseCase.AdvanceButtons.NCBCAlgorithmButton;
 
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
 import model.IBaseCase;
-import controller.BaseCase.ConvSubmitController;
+import controller.BaseCase.NonConvSubmitController;
 
 import javax.swing.JRadioButton;
 
-public class ConvergenceAlgorithm extends JPanel implements Observer, ActionListener {
+public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionListener {
 
 
 	private static final long serialVersionUID = 8043846668298510041L;
@@ -65,7 +65,7 @@ public class ConvergenceAlgorithm extends JPanel implements Observer, ActionList
 
 	private IBaseCase model;
 
-	private ConvSubmitController convController;
+	private NonConvSubmitController convController;
 
 	//Used for setting the Text Area with the values of variables
 	private List<String> variableString = new ArrayList<String>();
@@ -75,7 +75,7 @@ public class ConvergenceAlgorithm extends JPanel implements Observer, ActionList
 	private String whole = stringN + space + equals + space;
 	private String newLine = "\n";
 
-	private CBCAlgorithmButton cbcButton;
+	private NCBCAlgorithmButton cbcButton;
 
 	private boolean alreadyExecuted;
 	private boolean doOnce;
@@ -87,7 +87,7 @@ public class ConvergenceAlgorithm extends JPanel implements Observer, ActionList
 	/**
 	 * Create the panel.
 	 */
-	public ConvergenceAlgorithm(IBaseCase m, CBCAlgorithmButton but) {
+	public NonConvergenceAlgorithm(IBaseCase m, NCBCAlgorithmButton but) {
 		
 		model = m;
 		
@@ -96,7 +96,7 @@ public class ConvergenceAlgorithm extends JPanel implements Observer, ActionList
 		
 		((Observable) m).addObserver(this);
 
-		convController = new ConvSubmitController(model, this);
+		convController = new NonConvSubmitController(model, this);
 
 		JTextPane txtConvergence = new JTextPane();
 		txtConvergence.setBounds(53, 51, 251, 141);
@@ -104,7 +104,13 @@ public class ConvergenceAlgorithm extends JPanel implements Observer, ActionList
 		txtConvergence.setToolTipText("");
 		txtConvergence.setBackground(UIManager.getColor("Panel.background"));
 		txtConvergence.setEditable(false);
-		txtConvergence.setText("<html>\r\n<code>\r\n<font color = rgb(127,0,85)> <b>public int</b> </font> convergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> convergence(n+1) + 2*n;\r\n<br>\t}\r\n</code>\r\n</html>");
+		txtConvergence.setText("<html>\r\n<code>\r\n"
+				+ "<font color = rgb(127,0,85)> <b>public int</b> </font> nonConvergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t&nbsp "
+				+ "<font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp"
+				+ "<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>\t\t&nbsp"
+				+ "<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp"
+				+ "<font color = rgb(127,0,85)> <b>return</b> </font> nonConvergence(n+1) + 2*n;\r\n<br>\t}\r\n"
+				+ "</code>\r\n</html>");
 
 		txtVariables = new JTextArea();
 		txtVariables.setBounds(454, 51, 98, 256);

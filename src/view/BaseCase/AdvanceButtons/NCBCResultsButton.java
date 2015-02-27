@@ -11,7 +11,7 @@ import view.BaseCase.BaseCaseView;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class CBCResultsButton extends JPanel {
+public class NCBCResultsButton extends JPanel {
 
 	private static final long serialVersionUID = -5207892100204414732L;
 	
@@ -23,7 +23,7 @@ public class CBCResultsButton extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public CBCResultsButton(BaseCaseView v) {
+	public NCBCResultsButton(BaseCaseView v) {
 		
 		view = v;
 		

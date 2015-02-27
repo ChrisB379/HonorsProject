@@ -7,13 +7,13 @@ import javax.swing.JButton;
 
 import model.IBaseCase;
 import view.BaseCase.BaseCaseView;
-import view.BaseCase.ConvergenceExample;
+import view.BaseCase.NonConvergenceExample;
 import view.BaseCase.NoBaseCaseExample;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class CBCExampleButton extends JPanel {
+public class NCBCExampleButton extends JPanel {
 
 	private static final long serialVersionUID = -8243988718005325L;
 	
@@ -25,7 +25,7 @@ public class CBCExampleButton extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public CBCExampleButton(BaseCaseView v) {
+	public NCBCExampleButton(BaseCaseView v) {
 		
 		view = v;
 		

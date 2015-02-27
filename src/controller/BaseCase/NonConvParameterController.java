@@ -3,7 +3,7 @@ package controller.BaseCase;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import view.BaseCase.ConvergenceExample;
+import view.BaseCase.NonConvergenceExample;
 import model.BaseCase;
 import model.IBaseCase;
 
@@ -19,12 +19,12 @@ import model.IBaseCase;
  */
 
 
-public class ConvParameterController implements ActionListener {
+public class NonConvParameterController implements ActionListener {
 	
 	private IBaseCase model;
-	private ConvergenceExample view;
+	private NonConvergenceExample view;
 	
-	public ConvParameterController(IBaseCase bc, ConvergenceExample convE) {
+	public NonConvParameterController(IBaseCase bc, NonConvergenceExample convE) {
 
 		model = bc;
 		

@@ -58,12 +58,12 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 * @since 1.0
 	 */
 	@Override
-	public int convergence(int n) {
+	public int nonConvergence(int n) {
 		//Base case
 		if(n == 1)
 			return 5;
 		else 
-			return convergence(n+1) + 2*n;
+			return nonConvergence(n+1) + 2*n;
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class BaseCase extends Observable implements IBaseCase  {
 		BaseCase bc = new BaseCase();
 
 		int ex1 = bc.noBaseCase(3);
-		int ex2 = bc.convergence(3);
+		int ex2 = bc.nonConvergence(3);
 
 		System.out.println(ex1);
 		System.out.println(ex2);

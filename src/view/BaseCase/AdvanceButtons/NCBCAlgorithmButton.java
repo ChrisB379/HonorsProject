@@ -10,7 +10,7 @@ import view.BaseCase.BaseCaseView;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class CBCAlgorithmButton extends JPanel {
+public class NCBCAlgorithmButton extends JPanel {
 
 	private static final long serialVersionUID = -8052047834087350997L;
 	
@@ -21,7 +21,7 @@ public class CBCAlgorithmButton extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public CBCAlgorithmButton(BaseCaseView v) {
+	public NCBCAlgorithmButton(BaseCaseView v) {
 		
 		view = v;
 		

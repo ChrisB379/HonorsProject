@@ -19,7 +19,7 @@ import javax.swing.UIManager;
 import model.IBaseCase;
 import javax.swing.JLabel;
 
-public class ConvergenceResult extends JPanel implements Observer {
+public class NonConvergenceResult extends JPanel implements Observer {
 
 
 	private static final long serialVersionUID = -6554799182952231997L;
@@ -37,7 +37,7 @@ public class ConvergenceResult extends JPanel implements Observer {
 	/**
 	 * Create the panel.
 	 */
-	public ConvergenceResult(IBaseCase m) {
+	public NonConvergenceResult(IBaseCase m) {
 
 		model = m;
 		
@@ -46,11 +46,15 @@ public class ConvergenceResult extends JPanel implements Observer {
 		txtResult = new JTextArea();
 		txtResult.setBounds(32, 43, 948, 346);
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\nT"
-				+ "he algorithm worked on was convergence(INSERTuserINPUThere)\r\n\r\n"
-				+ "Your answer for convergence(INSERTuserINPUThere) was : \r\n\r\n"
-				+ "The correct answer for convergence(INSERTuserINPUThere) is :\r\n\r\n"
+				+ "he algorithm worked on was nonConvergence(" + getParam() + ")\r\n\r\n"
+				+ "Your answer for nonConvergence(" + getParam() + ") was : " + getReturnVal() + "\r\n\r\n"
+				+ "The correct answer for nonConvergence(" + getParam() + ") is : The method will continue recursing until a stack overflow error halts the program. \r\n\r\n"
 				+ "We get to this answer by:\r\n\r\n"
-				+ "Insert algorithim + variables here\r\n\r\n");
+				+ "As the recursive call is \"nonConvergence(n+1) + 2*n\", the value of n constantly increases as you can see by the recursive call parameter being \"n+1\" rather than \"n+1\" \n\n"
+				+ "Since the value of n is constantly increasing with each recursive call, it will never reach the base case of n == 1. \n\n"
+				+ "Eventually so many recursive calls build up within the java runtime stack that the stack becomes full. \n\n"
+				+ "This prevents anything else being added to the stack and causes a stack overflow error which will halt the program. \n\n"
+				);
 		
 		txtResult.setBackground(UIManager.getColor("Panel.background"));
 		txtResult.setWrapStyleWord(true);
@@ -115,11 +119,11 @@ public class ConvergenceResult extends JPanel implements Observer {
 	
 	public void setResultsText(){
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\nT"
-				+ "he algorithm worked on was convergence(" + getParam() + ")\r\n\r\n"
-				+ "Your answer for convergence(" + getParam() + ") was : " + getReturnVal() + "\r\n\r\n"
-				+ "The correct answer for convergence(" + getParam() + ") is : The method will continue recursing until a stack overflow error halts the program. \r\n\r\n"
+				+ "he algorithm worked on was nonConvergence(" + getParam() + ")\r\n\r\n"
+				+ "Your answer for nonConvergence(" + getParam() + ") was : " + getReturnVal() + "\r\n\r\n"
+				+ "The correct answer for nonConvergence(" + getParam() + ") is : The method will continue recursing until a stack overflow error halts the program. \r\n\r\n"
 				+ "We get to this answer by:\r\n\r\n"
-				+ "As the recursive call is \"convergence(n+1) + 2*n\", the value of n constantly increases as you can see by the recursive call parameter being \"n+1\" rather than \"n+1\" \n\n"
+				+ "As the recursive call is \"nonConvergence(n+1) + 2*n\", the value of n constantly increases as you can see by the recursive call parameter being \"n+1\" rather than \"n+1\" \n\n"
 				+ "Since the value of n is constantly increasing with each recursive call, it will never reach the base case of n == 1. \n\n"
 				+ "Eventually so many recursive calls build up within the java runtime stack that the stack becomes full. \n\n"
 				+ "This prevents anything else being added to the stack and causes a stack overflow error which will halt the program. \n\n"

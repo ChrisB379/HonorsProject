@@ -11,7 +11,7 @@ public interface IBaseCase extends IAlgorithms {
 
 	public int noBaseCase(int n);
 
-	public int convergence(int n);
+	public int nonConvergence(int n);
 
 	public void addToArray(int nVal, String retVal);
 	public int getParamArray(int n);

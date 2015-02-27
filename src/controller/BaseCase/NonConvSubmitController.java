@@ -6,15 +6,15 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import model.IBaseCase;
-import view.BaseCase.ConvergenceAlgorithm;
+import view.BaseCase.NonConvergenceAlgorithm;
 
-public class ConvSubmitController implements ActionListener {
+public class NonConvSubmitController implements ActionListener {
 
 	private IBaseCase model;
 
-	private ConvergenceAlgorithm view;
+	private NonConvergenceAlgorithm view;
 
-	public ConvSubmitController(IBaseCase m,ConvergenceAlgorithm v) {
+	public NonConvSubmitController(IBaseCase m,NonConvergenceAlgorithm v) {
 
 		model = m;
 
