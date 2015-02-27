@@ -36,8 +36,6 @@ import model.IBaseCase;
 import controller.BaseCase.NonConvSubmitController;
 
 import javax.swing.JRadioButton;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
 
 public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionListener {
 
@@ -220,8 +218,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		btnGroup.add(rdbtnOption2);
 		btnGroup.add(rdbtnOption3);
 		btnGroup.add(rdbtnOption4);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{txtNVal, txtWorking, rdbtnOption1, rdbtnOption2, rdbtnOption3, rdbtnOption4, btnSubmit}));
-
+		
 	}
 	
 	@Override

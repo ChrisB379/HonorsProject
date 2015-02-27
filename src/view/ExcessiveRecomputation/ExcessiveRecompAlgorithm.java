@@ -31,8 +31,6 @@ import javax.swing.JTextPane;
 import controller.ExcessiveRecomputation.ERSubmitController;
 import model.IExcessiveRecomp;
 import javax.swing.JLabel;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
 
 public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 
@@ -205,7 +203,6 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		add(btnSubmit);
 		add(txtBaseCase);
 		add(lblInsertWorkingHere);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{txtNval, txtRtrnVal, txtWorking, btnSubmit}));
 
 	}
 	

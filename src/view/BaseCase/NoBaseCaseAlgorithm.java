@@ -35,8 +35,6 @@ import controller.BaseCase.NoBCSubmitController;
 import model.IBaseCase;
 
 import javax.swing.JRadioButton;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
 
 public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListener {
 
@@ -232,7 +230,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		btnGroup.add(rdbtnOption3);
 		btnGroup.add(rdbtnOption4);
 		btnGroup.add(rdbtnOption5);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{txtNVal, txtWorking, rdbtnOption1, rdbtnOption2, rdbtnOption3, rdbtnOption4, rdbtnOption5}));
+
 
 	}
 

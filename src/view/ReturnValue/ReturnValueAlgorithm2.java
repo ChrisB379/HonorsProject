@@ -14,7 +14,6 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -34,6 +33,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 	private static final long serialVersionUID = 558449680019022130L;
+	
 	/*
 	 * LINE ONE
 	 */
@@ -1612,6 +1612,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		JLabel lblFinalAnswer = new JLabel("Final Answer:");
 		lblFinalAnswer.setBounds(213, 449, 119, 20);
 		add(lblFinalAnswer);
+
 
 	}
 

@@ -175,7 +175,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		});
 
 		JLabel lblExample = new JLabel("Example 1");
-		lblExample.setBounds(392, 11, 49, 14);
+		lblExample.setBounds(392, 11, 81, 14);
 		
 		txtBaseCase = new JTextField();
 		txtBaseCase.setBounds(70, 481, 309, 14);
@@ -194,7 +194,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		
 		
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here:");
-		lblInsertWorkingHere.setBounds(640, 307, 98, 14);
+		lblInsertWorkingHere.setBounds(640, 307, 141, 14);
 		setLayout(null);
 		add(txtFactorial);
 		add(textArea);
