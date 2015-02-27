@@ -40,15 +40,10 @@ import view.BaseCase.AdvanceButtons.NCBCResultsButton;
 import view.BaseCase.AdvanceButtons.NBCAlgorithmButton;
 import view.BaseCase.AdvanceButtons.NBCExampleButton;
 import view.BaseCase.AdvanceButtons.NBCResultsButton;
-import view.ExcessiveRecomputation.ExcessiveRecompView;
 import view.ReturnValue.ReturnValueView;
 
-import javax.swing.LayoutStyle.ComponentPlacement;
-
 import model.BaseCase;
-import model.ExcessiveRecomp;
 import model.IBaseCase;
-import model.IExcessiveRecomp;
 import model.IReturnValue;
 import model.ReturnValue;
 
@@ -171,35 +166,13 @@ public class BaseCaseView extends JFrame implements Observer {
 		setContentPane(contentPane);
 
 		cardPanel1 = new JPanel();
+		cardPanel1.setBounds(15, 16, 1047, 730);
 		//This line can prevent cards from switching. Make sure it's at the top
 		cardPanel1.setLayout(new CardLayout(0, 0));
 
 		cardPanel2 = new JPanel();
+		cardPanel2.setBounds(1080, 560, 145, 153);
 		cardPanel2.setLayout(new CardLayout(0, 0));
-
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-				gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 1047, GroupLayout.PREFERRED_SIZE)
-						.addGap(18)
-						.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				);
-		gl_contentPane.setVerticalGroup(
-				gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addContainerGap()
-										.addComponent(cardPanel2, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE)
-										.addGap(33))
-										.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-												.addContainerGap()
-												.addComponent(cardPanel1, GroupLayout.PREFERRED_SIZE, 730, GroupLayout.PREFERRED_SIZE)))
-												.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				);
 
 
 		JPanel cp1GroupPanel = new JPanel();
@@ -210,6 +183,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		cardPanel2.add(advancePanel, "name_60155849133626");
 
 		btnMenu = new JButton("Main Menu");
+		btnMenu.setBounds(10, 24, 115, 38);
 		//Don't want it to be visible until the last page
 		btnMenu.setVisible(false);
 		btnMenu.addActionListener(new ActionListener() {
@@ -222,6 +196,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		});
 
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setBounds(10, 106, 115, 38);
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
 //			int count = 0;
@@ -303,31 +278,10 @@ public class BaseCaseView extends JFrame implements Observer {
 //				//				System.out.println("count after increment is " + count);
 			} 
 		});
-
-
-
-
-
-		GroupLayout gl_advancePanel = new GroupLayout(advancePanel);
-		gl_advancePanel.setHorizontalGroup(
-				gl_advancePanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_advancePanel.createSequentialGroup()
-						.addContainerGap()
-						.addGroup(gl_advancePanel.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnMenu, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-								.addComponent(btnAdvance, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
-								.addGap(20))
-				);
-		gl_advancePanel.setVerticalGroup(
-				gl_advancePanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_advancePanel.createSequentialGroup()
-						.addGap(25)
-						.addComponent(btnMenu, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-						.addComponent(btnAdvance, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap())
-				);
-		advancePanel.setLayout(gl_advancePanel);
+		advancePanel.setLayout(null);
+		advancePanel.add(btnMenu);
+		advancePanel.add(btnAdvance);
+		contentPane.setLayout(null);
 
 
 
@@ -354,7 +308,8 @@ public class BaseCaseView extends JFrame implements Observer {
 						.addContainerGap(15, Short.MAX_VALUE))
 				);
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.add(cardPanel1);
+		contentPane.add(cardPanel2);
 	}
 
 	@Override
