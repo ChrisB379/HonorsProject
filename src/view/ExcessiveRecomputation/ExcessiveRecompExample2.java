@@ -27,6 +27,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import model.IExcessiveRecomp;
 import controller.ExcessiveRecomputation.ERParameterController;
 import view.JTextFieldLimit;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
 
 public class ExcessiveRecompExample2 extends JPanel implements Observer {
 
@@ -103,6 +105,7 @@ public class ExcessiveRecompExample2 extends JPanel implements Observer {
 						.addContainerGap(193, Short.MAX_VALUE))
 				);
 		setLayout(groupLayout);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{txtParameterField}));
 
 	}
 

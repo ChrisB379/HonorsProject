@@ -31,6 +31,8 @@ import javax.swing.JTextPane;
 import controller.ExcessiveRecomputation.ERSubmitController;
 import model.IExcessiveRecomp;
 import javax.swing.JLabel;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
 
 public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 
@@ -62,7 +64,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 	private String newLine = "\n";
 	
 	boolean alreadyExecuted,doOnce;
-	private JTextArea textArea;
+	private JTextArea txtWorking;
 	private JLabel lblInsertWorkingHere;
 
 	/**
@@ -187,8 +189,8 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setVisible(false);
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
-		textArea = new JTextArea();
-		textArea.setBounds(500, 386, 339, 197);
+		txtWorking = new JTextArea();
+		txtWorking.setBounds(500, 386, 339, 197);
 		
 		lblInsertWorkingHere = new JLabel("Insert Working here");
 		lblInsertWorkingHere.setBounds(598, 358, 128, 14);
@@ -199,10 +201,11 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		add(txtVariables);
 		add(txtRtrnVal);
 		add(txtNval);
-		add(textArea);
+		add(txtWorking);
 		add(btnSubmit);
 		add(txtBaseCase);
 		add(lblInsertWorkingHere);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{txtNval, txtRtrnVal, txtWorking, btnSubmit}));
 
 	}
 	
