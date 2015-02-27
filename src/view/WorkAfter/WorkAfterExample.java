@@ -25,9 +25,7 @@ import view.JTextFieldLimit;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextPane;
 
-import model.IReturnValue;
 import model.IWorkAfter;
-import controller.ReturnValue.RVParameterController;
 import controller.WorkAfter.WAParameterController;
 
 public class WorkAfterExample extends JPanel implements Observer {
@@ -63,6 +61,7 @@ public class WorkAfterExample extends JPanel implements Observer {
 		txtParameterField = new JTextField();
 		txtParameterField.setDocument(new JTextFieldLimit(2));
 		txtParameterField.setColumns(10);
+		txtParameterField.addActionListener(waController);
 		txtParameterField.addFocusListener(new FocusListener() {
 
 			@Override
