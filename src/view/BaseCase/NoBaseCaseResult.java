@@ -38,15 +38,18 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public NoBaseCaseResult(IBaseCase m) {
+		setFocusable(false);
 		
 		model = m;
 		
 		((Observable) m).addObserver(this);
 		
 		JLabel lblResults = new JLabel("Results");
+		lblResults.setFocusable(false);
 		lblResults.setBounds(415, 11, 77, 14);
 
 		txtResult = new JTextArea();
+		txtResult.setFocusable(false);
 		txtResult.setBounds(28, 36, 805, 332);
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
 				+ "The algorithm worked on was noBaseCase(INSERTuserINPUThere)\r\n\r\n"
@@ -61,6 +64,7 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		txtResult.setEditable(false);
 
 		txtSummary = new JTextArea();
+		txtSummary.setFocusable(false);
 		txtSummary.setBounds(28, 409, 853, 218);
 		txtSummary.setText("\t\t\t\tSummary\r\n\r\n"
 				+ "In this tutorial series, the importance of base cases in recursion were presented.\r\n\r\n"

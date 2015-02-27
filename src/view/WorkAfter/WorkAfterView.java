@@ -136,17 +136,21 @@ public class WorkAfterView extends JFrame {
 		});
 		mnAbout.add(mntmAbout);
 		contentPane = new JPanel();
+		contentPane.setFocusable(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
 		cardPanel2 = new JPanel();
+		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(969, 527, 210, 150);
 
 		cardPanel1 = new JPanel();
+		cardPanel1.setFocusable(false);
 		cardPanel1.setBounds(30, 16, 888, 714);
 		cardPanel1.setLayout(new CardLayout(0, 0));
 
 		JPanel cp1GroupPanel = new JPanel();
+		cp1GroupPanel.setFocusable(false);
 		cardPanel1.add(cp1GroupPanel, "name_94405714894092");
 
 		JTextPane txtDescription = new JTextPane();
@@ -176,6 +180,7 @@ public class WorkAfterView extends JFrame {
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 		advancePanel = new JPanel();
+		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_94944655089283");
 
 		btnMenu = new JButton("Main Menu");

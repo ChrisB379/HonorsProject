@@ -22,8 +22,10 @@ public class ExcessiveRecompExample extends JPanel {
 	 * Create the panel.
 	 */
 	public ExcessiveRecompExample() {
+		setFocusable(false);
 
 		JTextPane txtExample1 = new JTextPane();
+		txtExample1.setFocusable(false);
 		txtExample1.setContentType("text/html");
 		txtExample1.setText("<html>"
 				+ "\r\nThe algorithm is as follows: "

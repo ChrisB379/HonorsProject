@@ -37,6 +37,7 @@ public class WorkAfterResult extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public WorkAfterResult(IWorkAfter m) {
+		setFocusable(false);
 
 		model = m;
 		
@@ -44,6 +45,7 @@ public class WorkAfterResult extends JPanel implements Observer {
 		
 		
 		txtResults = new JTextArea();
+		txtResults.setFocusable(false);
 		txtResults.setBounds(36, 36, 668, 421);
 		txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
 				+ "The algorithm worked on was workAfter(" +getParam() +")\r\n\r\n"
@@ -59,6 +61,7 @@ public class WorkAfterResult extends JPanel implements Observer {
 		setLayout(null);
 
 		txtSummary = new JTextArea();
+		txtSummary.setFocusable(false);
 		txtSummary.setBounds(36, 455, 668, 292);
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
 		txtSummary.setLineWrap(true);

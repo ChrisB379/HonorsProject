@@ -71,6 +71,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 	 * Create the panel.
 	 */
 	public WorkAfterAlgorithm(IWorkAfter m, WAAlgorithmButton ab) {
+		setFocusable(false);
 
 		model = m;
 
@@ -82,9 +83,11 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		wasc = new WASubmitController(model,this);
 
 		JLabel lblExample = new JLabel("Example");
+		lblExample.setFocusable(false);
 		lblExample.setBounds(374, 11, 78, 14);
 
 		JTextPane txtAlgorithm = new JTextPane();
+		txtAlgorithm.setFocusable(false);
 		txtAlgorithm.setBounds(25, 58, 455, 268);
 		txtAlgorithm.setContentType("text/html");
 		txtAlgorithm.setText("<html>\r\n<code> \r\n<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value \r\n<br>\t\t&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp of n is</font> \" + n);\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the \r\n<br>\t\t&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp result of n*2 is</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t}\r\n<br></code> \r\n\r\n</html>");
@@ -93,6 +96,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		txtAlgorithm.setEditable(false);
 
 		txtVariables = new JTextArea();
+		txtVariables.setFocusable(false);
 		txtVariables.setBounds(505, 67, 184, 45);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 		txtVariables.setEditable(false);
@@ -108,9 +112,11 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		textWorking.setBounds(505, 162, 341, 164);
 
 		JLabel lblInsertYourWorking = new JLabel("Insert your working here:");
+		lblInsertYourWorking.setFocusable(false);
 		lblInsertYourWorking.setBounds(613, 123, 149, 14);
 
 		txtBaseCase = new JTextField();
+		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(49, 555, 377, 14);
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtBaseCase.setEditable(false);
@@ -134,6 +140,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 */
 
 		JTextArea txtQuestion1 = new JTextArea();
+		txtQuestion1.setFocusable(false);
 		txtQuestion1.setEditable(false);
 		txtQuestion1.setText("Q1: What will be the first line of output?");
 		txtQuestion1.setBounds(49, 358, 355, 29);
@@ -176,6 +183,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 */
 
 		txtQuestion2 = new JTextArea();
+		txtQuestion2.setFocusable(false);
 		txtQuestion2.setEditable(false);
 		txtQuestion2.setText("Q2: What will be the last line of output?");
 		txtQuestion2.setBounds(448, 360, 361, 27);

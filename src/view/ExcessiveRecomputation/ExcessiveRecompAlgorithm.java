@@ -64,11 +64,13 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 	boolean alreadyExecuted,doOnce;
 	private JTextArea txtWorking;
 	private JLabel lblInsertWorkingHere;
+	private JLabel lblExample;
 
 	/**
 	 * Create the panel.
 	 */
 	public ExcessiveRecompAlgorithm(IExcessiveRecomp m, ERAlgorithmButton ab) {
+		setFocusable(false);
 		
 		model = m;
 		
@@ -82,6 +84,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		
 
 		JTextPane txtFibonacci = new JTextPane();
+		txtFibonacci.setFocusable(false);
 		txtFibonacci.setBounds(45, 61, 288, 159);
 		txtFibonacci.setContentType("text/html");
 		txtFibonacci.setText("<html>"
@@ -102,6 +105,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtFibonacci.setEditable(false);
 
 		txtVariables = new JTextArea();
+		txtVariables.setFocusable(false);
 		txtVariables.setBounds(487, 61, 173, 279);
 		txtVariables.setText("insert variables here");
 		txtVariables.setWrapStyleWord(true);
@@ -110,6 +114,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(45, 348, 188, 25);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
@@ -118,6 +123,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf.setText("The value of n is :");
 
 		txtrTheCurrent = new JTextArea();
+		txtrTheCurrent.setFocusable(false);
 		txtrTheCurrent.setBounds(45, 412, 250, 29);
 		txtrTheCurrent.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheCurrent.setEditable(false);
@@ -180,6 +186,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		btnSubmit.addActionListener(ersc);
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(45, 475, 326, 14);
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setColumns(10);
@@ -191,6 +198,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtWorking.setBounds(500, 386, 339, 197);
 		
 		lblInsertWorkingHere = new JLabel("Insert Working here");
+		lblInsertWorkingHere.setFocusable(false);
 		lblInsertWorkingHere.setBounds(598, 358, 128, 14);
 		setLayout(null);
 		add(txtrTheCurrent);
@@ -203,6 +211,10 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		add(btnSubmit);
 		add(txtBaseCase);
 		add(lblInsertWorkingHere);
+		
+		lblExample = new JLabel("Example");
+		lblExample.setBounds(411, 11, 110, 14);
+		add(lblExample);
 
 	}
 	

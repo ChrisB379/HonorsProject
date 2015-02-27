@@ -162,24 +162,29 @@ public class BaseCaseView extends JFrame implements Observer {
 		});
 		mnAbout.add(mntmAbout);
 		contentPane = new JPanel();
+		contentPane.setFocusable(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
 		cardPanel1 = new JPanel();
+		cardPanel1.setFocusable(false);
 		cardPanel1.setBounds(15, 16, 1047, 730);
 		//This line can prevent cards from switching. Make sure it's at the top
 		cardPanel1.setLayout(new CardLayout(0, 0));
 
 		cardPanel2 = new JPanel();
+		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(1080, 560, 145, 153);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 
 		JPanel cp1GroupPanel = new JPanel();
+		cp1GroupPanel.setFocusable(false);
 		cardPanel1.add(cp1GroupPanel, "name_60102974363843");
 
 
 		advancePanel = new JPanel();
+		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_60155849133626");
 
 		btnMenu = new JButton("Main Menu");
@@ -219,6 +224,7 @@ public class BaseCaseView extends JFrame implements Observer {
 
 
 		JTextPane txtrThisTutorialSeries = new JTextPane();
+		txtrThisTutorialSeries.setFocusable(false);
 		txtrThisTutorialSeries.setContentType("text/html");
 		txtrThisTutorialSeries.setText("<html>\r\n<br>This tutorial series focuses on base case in recursive calls. \r\n<br>\r\n<br>"
 				+ "The base case of a recursive call returns a value without making any subsequent recursive calls. The base case "

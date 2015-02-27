@@ -36,6 +36,7 @@ public class NonConvergenceExample extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public NonConvergenceExample(IBaseCase m) {
+		setFocusable(false);
 
 		model = m;
 		
@@ -43,6 +44,7 @@ public class NonConvergenceExample extends JPanel implements Observer {
 		((Observable) m).addObserver(this);
 		
 		txtExample2 = new JTextPane();
+		txtExample2.setFocusable(false);
 		txtExample2.setContentType("text/html");
 		txtExample2.setBackground(UIManager.getColor("Panel.background"));
 		txtExample2.setEditable(false);

@@ -83,6 +83,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 	 * Create the panel.
 	 */
 	public NoBaseCaseAlgorithm(IBaseCase m, NBCAlgorithmButton but) {
+		setFocusable(false);
 
 		model = m;
 
@@ -95,6 +96,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		nbcsController = new NoBCSubmitController(model, this);
 
 		JTextPane txtAlgorithm = new JTextPane();
+		txtAlgorithm.setFocusable(false);
 		txtAlgorithm.setBounds(37, 45, 252, 110);
 		txtAlgorithm.setContentType("text/html");
 		txtAlgorithm.setText("<html>"
@@ -110,6 +112,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtAlgorithm.setEditable(false);
 
 		txtVariables = new JTextArea();
+		txtVariables.setFocusable(false);
 		txtVariables.setBounds(443, 45, 101, 165);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 		txtVariables.setWrapStyleWord(true);
@@ -118,6 +121,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtVariables.setText("Insert variables here");
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(37, 286, 203, 23);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
@@ -151,9 +155,11 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		btnSubmit.addActionListener(nbcsController);
 
 		JLabel lblExample = new JLabel("Example 1");
-		lblExample.setBounds(498, 11, 49, 14);
+		lblExample.setFocusable(false);
+		lblExample.setBounds(498, 11, 109, 14);
 
 		txtBaseCase = new JTextField();
+		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(37, 546, 322, 14);
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setText("Please click the Advance button to for the next example.");
@@ -165,6 +171,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtWorking.setBounds(682, 170, 344, 165);
 
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here: ");
+		lblInsertWorkingHere.setFocusable(false);
 		lblInsertWorkingHere.setBounds(780, 145, 177, 14);
 		setLayout(null);
 		add(txtAlgorithm);
@@ -178,6 +185,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		add(lblInsertWorkingHere);
 
 		txtNValDescription = new JTextField();
+		txtNValDescription.setFocusable(false);
 		txtNValDescription.setEditable(false);
 		txtNValDescription.setText("Please insert what you believe the next value of n is");
 		txtNValDescription.setBounds(37, 244, 319, 20);
@@ -185,6 +193,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtNValDescription.setColumns(10);
 
 		txtQuestion = new JTextArea();
+		txtQuestion.setFocusable(false);
 		txtQuestion.setEditable(false);
 		txtQuestion.setText("Now that the value of n == 1, what will happen next?");
 		txtQuestion.setBounds(37, 330, 492, 20);

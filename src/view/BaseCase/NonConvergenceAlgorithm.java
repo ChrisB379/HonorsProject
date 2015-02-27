@@ -88,6 +88,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 	 * Create the panel.
 	 */
 	public NonConvergenceAlgorithm(IBaseCase m, NCBCAlgorithmButton but) {
+		setFocusable(false);
 		
 		model = m;
 		
@@ -99,6 +100,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		convController = new NonConvSubmitController(model, this);
 
 		JTextPane txtConvergence = new JTextPane();
+		txtConvergence.setFocusable(false);
 		txtConvergence.setBounds(53, 51, 251, 141);
 		txtConvergence.setContentType("text/html");
 		txtConvergence.setToolTipText("");
@@ -113,6 +115,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 				+ "</code>\r\n</html>");
 
 		txtVariables = new JTextArea();
+		txtVariables.setFocusable(false);
 		txtVariables.setBounds(454, 51, 98, 256);
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setLineWrap(true);
@@ -121,6 +124,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtVariables.setText("Insert variables here");
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(46, 285, 203, 28);
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
@@ -154,9 +158,11 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		btnSubmit.addActionListener(convController);
 
 		JLabel lblExample = new JLabel("Example 2");
+		lblExample.setFocusable(false);
 		lblExample.setBounds(484, 11, 136, 14);
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(53, 537, 323, 14);
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setText("Please click the Advance button to see your results.");
@@ -168,6 +174,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtWorking.setBounds(634, 76, 388, 227);
 		
 		lblInsertWorkingHere = new JLabel("Insert working here:");
+		lblInsertWorkingHere.setFocusable(false);
 		lblInsertWorkingHere.setBounds(751, 51, 187, 14);
 		setLayout(null);
 		add(lblExample);
@@ -181,6 +188,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		add(lblInsertWorkingHere);
 		
 		txtNValDescription = new JTextArea();
+		txtNValDescription.setFocusable(false);
 		txtNValDescription.setEditable(false);
 		txtNValDescription.setText("The value of n does not appear to be converging on the base case, what happens next?");
 		txtNValDescription.setBounds(46, 332, 875, 20);

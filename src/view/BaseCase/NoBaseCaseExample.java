@@ -44,6 +44,7 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public NoBaseCaseExample(IBaseCase m) {
+		setFocusable(false);
 		
 		model = m;
 		
@@ -53,6 +54,7 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 		nbcpController = new NoBCParameterController(model, this);
 
 		JTextPane txtExample1 = new JTextPane();
+		txtExample1.setFocusable(false);
 		txtExample1.setContentType("text/html");
 		txtExample1.setText("<html>"
 				+ "\r\n<br>The first of the two algorithms on base case we are going to look at is the noBaseCase method. As the name suggests, this is a simple recursive call which has no base case."

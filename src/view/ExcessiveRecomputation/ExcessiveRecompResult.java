@@ -15,12 +15,11 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 
 import model.IExcessiveRecomp;
+import javax.swing.JLabel;
 
 public class ExcessiveRecompResult extends JPanel implements Observer {
 
@@ -39,12 +38,15 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public ExcessiveRecompResult(IExcessiveRecomp m) {
+		setFocusable(false);
 		
 		model = m;
 		
 		((Observable) m).addObserver(this);
 
 		txtResult = new JTextArea();
+		txtResult.setBounds(33, 33, 751, 238);
+		txtResult.setFocusable(false);
 		txtResult.setWrapStyleWord(true);
 		txtResult.setLineWrap(true);
 		txtResult.setEditable(false);
@@ -57,6 +59,8 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 				+ "Insert algorithim + variables here\r\n\r\n");
 
 		txtSummary = new JTextArea();
+		txtSummary.setBounds(33, 310, 751, 376);
+		txtSummary.setFocusable(false);
 		txtSummary.setText("\t\t\tSummary\r\n\r\n"
 				+ "In this tutorial series, the issue of excessive recomputation was presented.\r\n\r\n"
 				+ "Excessive recomputation occurs when the same calculation is done multiple times wasting CPU resources and time because after the first time a calculation is done, it shouldn't have to be done again.\r\n\r\n"
@@ -69,26 +73,13 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 		txtSummary.setLineWrap(true);
 		txtSummary.setEditable(false);
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addGap(33)
-						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-								.addComponent(txtResult, Alignment.LEADING)
-								.addComponent(txtSummary, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE))
-								.addContainerGap(175, Short.MAX_VALUE))
-				);
-		groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addGap(33)
-						.addComponent(txtResult, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addGap(39)
-						.addComponent(txtSummary, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(71, Short.MAX_VALUE))
-				);
-		setLayout(groupLayout);
+		setLayout(null);
+		add(txtResult);
+		add(txtSummary);
+		
+		JLabel lblResults = new JLabel("Results");
+		lblResults.setBounds(440, 8, 83, 14);
+		add(lblResults);
 
 	}
 	
@@ -274,5 +265,4 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 		}
 		
 	}
-
 }
