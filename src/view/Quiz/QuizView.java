@@ -73,10 +73,16 @@ public class QuizView extends JFrame {
 	private JRadioButton rdbtnQ5A3;
 	private JRadioButton rdbtnQ5A4;
 	
-	private JLabel lblCross;
-	private JLabel lblTick;
+	private JLabel lblCrossQ1A1;
+	private JLabel lblTickQ1;
 	
 	private int score;
+	private JLabel lblCrossQ1A4;
+	private JLabel lblCrossQ1A2;
+	private JLabel lblTickQ2;
+	private JLabel lblCrossQ2A2;
+	private JLabel lblCrossQ2A3;
+	private JLabel lblCrossQ2A4;
 
 	/**
 	 * Launch the application.
@@ -165,19 +171,19 @@ public class QuizView extends JFrame {
 		ButtonGroup btnGroupQ5 = new ButtonGroup();
 
 		rdbtnQ1A1 = new JRadioButton("Recursion is a class.");
-		rdbtnQ1A1.setBounds(48, 200, 209, 23);
+		rdbtnQ1A1.setBounds(48, 200, 150, 23);
 		panel.add(rdbtnQ1A1);
 
 		rdbtnQ1A2 = new JRadioButton("Recursion is the process of defining a method that calls other methods repeatedly.");
-		rdbtnQ1A2.setBounds(48, 226, 617, 23);
+		rdbtnQ1A2.setBounds(48, 226, 508, 23);
 		panel.add(rdbtnQ1A2);
 
 		rdbtnQ1A3 = new JRadioButton("Recursion is the process of defining a method that calls itself repeatedly.");
-		rdbtnQ1A3.setBounds(48, 252, 665, 23);
+		rdbtnQ1A3.setBounds(48, 252, 455, 23);
 		panel.add(rdbtnQ1A3);
 
 		rdbtnQ1A4 = new JRadioButton("Recursion is the process of defining a method that calls other methods which in turn call again this method.");
-		rdbtnQ1A4.setBounds(48, 278, 676, 23);
+		rdbtnQ1A4.setBounds(48, 278, 658, 23);
 		panel.add(rdbtnQ1A4);
 
 		/*
@@ -190,7 +196,7 @@ public class QuizView extends JFrame {
 		btnGroupQ1.add(rdbtnQ1A4);
 
 		rdbtnQ2A1 = new JRadioButton("An infinite loop occurs");
-		rdbtnQ2A1.setBounds(48, 380, 209, 23);
+		rdbtnQ2A1.setBounds(48, 380, 171, 23);
 		panel.add(rdbtnQ2A1);
 
 		rdbtnQ2A2 = new JRadioButton("The system stops the program after some time");
@@ -198,11 +204,11 @@ public class QuizView extends JFrame {
 		panel.add(rdbtnQ2A2);
 
 		rdbtnQ2A3 = new JRadioButton("After 1000000 calls it will be automatically stopped.");
-		rdbtnQ2A3.setBounds(48, 432, 350, 23);
+		rdbtnQ2A3.setBounds(48, 432, 322, 23);
 		panel.add(rdbtnQ2A3);
 
 		rdbtnQ2A4 = new JRadioButton("None of the above");
-		rdbtnQ2A4.setBounds(48, 458, 285, 23);
+		rdbtnQ2A4.setBounds(48, 458, 138, 23);
 		panel.add(rdbtnQ2A4);
 
 		/*
@@ -340,16 +346,53 @@ public class QuizView extends JFrame {
 		txtDescription.setBounds(48, 11, 783, 142);
 		panel.add(txtDescription);
 		
-		lblCross = new JLabel("");
-		lblCross.setFocusable(false);
-		lblCross.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCross.setBounds(475, 380, 27, 23);
-		panel.add(lblCross);
+		lblCrossQ1A1 = new JLabel("");
+		lblCrossQ1A1.setFocusable(false);
+		lblCrossQ1A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ1A1.setBounds(204, 200, 27, 23);
+		panel.add(lblCrossQ1A1);
 		
-		lblTick = new JLabel("");
-		lblTick.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
-		lblTick.setBounds(593, 380, 27, 23);
-		panel.add(lblTick);
+		lblTickQ1 = new JLabel("");
+		lblTickQ1.setFocusable(false);
+		lblTickQ1.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
+		lblTickQ1.setBounds(521, 252, 27, 23);
+		panel.add(lblTickQ1);
+		
+		lblCrossQ1A4 = new JLabel("");
+		lblCrossQ1A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ1A4.setFocusable(false);
+		lblCrossQ1A4.setBounds(712, 278, 27, 23);
+		panel.add(lblCrossQ1A4);
+		
+		lblCrossQ1A2 = new JLabel("");
+		lblCrossQ1A2.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ1A2.setFocusable(false);
+		lblCrossQ1A2.setBounds(562, 226, 27, 23);
+		panel.add(lblCrossQ1A2);
+		
+		lblTickQ2 = new JLabel("");
+		lblTickQ2.setFocusable(false);
+		lblTickQ2.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
+		lblTickQ2.setBounds(225, 380, 27, 23);
+		panel.add(lblTickQ2);
+		
+		lblCrossQ2A2 = new JLabel("");
+		lblCrossQ2A2.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ2A2.setFocusable(false);
+		lblCrossQ2A2.setBounds(354, 406, 27, 23);
+		panel.add(lblCrossQ2A2);
+		
+		lblCrossQ2A3 = new JLabel("");
+		lblCrossQ2A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ2A3.setFocusable(false);
+		lblCrossQ2A3.setBounds(376, 432, 27, 23);
+		panel.add(lblCrossQ2A3);
+		
+		lblCrossQ2A4 = new JLabel("");
+		lblCrossQ2A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ2A4.setFocusable(false);
+		lblCrossQ2A4.setBounds(192, 458, 27, 23);
+		panel.add(lblCrossQ2A4);
 
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
