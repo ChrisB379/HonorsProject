@@ -91,6 +91,10 @@ public class QuizView extends JFrame {
 	private JLabel lblCrossQ4A2;
 	private JLabel lblCrossQ4A3;
 	private JLabel lblCrossQ4A4;
+	private JLabel lblTickQ5;
+	private JLabel lblCrossQ5A1;
+	private JLabel lblCrossQ5A3;
+	private JLabel lblCrossQ5A4;
 
 	/**
 	 * Launch the application.
@@ -278,19 +282,19 @@ public class QuizView extends JFrame {
 		btnGroupQ4.add(rdbtnQ4A4);
 
 		rdbtnQ5A1 = new JRadioButton("1");
-		rdbtnQ5A1.setBounds(48, 1050, 109, 23);
+		rdbtnQ5A1.setBounds(48, 1050, 35, 23);
 		panel.add(rdbtnQ5A1);
 
 		rdbtnQ5A2 = new JRadioButton("24");
-		rdbtnQ5A2.setBounds(48, 1076, 109, 23);
+		rdbtnQ5A2.setBounds(48, 1076, 40, 23);
 		panel.add(rdbtnQ5A2);
 
 		rdbtnQ5A3 = new JRadioButton("120");
-		rdbtnQ5A3.setBounds(48, 1102, 109, 23);
+		rdbtnQ5A3.setBounds(48, 1102, 50, 23);
 		panel.add(rdbtnQ5A3);
 
 		rdbtnQ5A4 = new JRadioButton("720");
-		rdbtnQ5A4.setBounds(48, 1128, 109, 23);
+		rdbtnQ5A4.setBounds(48, 1128, 50, 23);
 		panel.add(rdbtnQ5A4);
 
 		/*
@@ -449,6 +453,30 @@ public class QuizView extends JFrame {
 		lblCrossQ4A4.setFocusable(false);
 		lblCrossQ4A4.setBounds(180, 826, 27, 23);
 		panel.add(lblCrossQ4A4);
+		
+		lblTickQ5 = new JLabel("");
+		lblTickQ5.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
+		lblTickQ5.setFocusable(false);
+		lblTickQ5.setBounds(100, 1076, 27, 23);
+		panel.add(lblTickQ5);
+		
+		lblCrossQ5A1 = new JLabel("");
+		lblCrossQ5A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ5A1.setFocusable(false);
+		lblCrossQ5A1.setBounds(90, 1050, 27, 23);
+		panel.add(lblCrossQ5A1);
+		
+		lblCrossQ5A3 = new JLabel("");
+		lblCrossQ5A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ5A3.setFocusable(false);
+		lblCrossQ5A3.setBounds(100, 1102, 27, 23);
+		panel.add(lblCrossQ5A3);
+		
+		lblCrossQ5A4 = new JLabel("");
+		lblCrossQ5A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ5A4.setFocusable(false);
+		lblCrossQ5A4.setBounds(100, 1128, 27, 23);
+		panel.add(lblCrossQ5A4);
 
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
