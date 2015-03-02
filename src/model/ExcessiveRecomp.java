@@ -92,7 +92,7 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 
 		ExcessiveRecomp f = new ExcessiveRecomp();
 
-		int x = f.fib(10);
+		int x = f.fib(-1);
 		int memo = f.fibMemoization(10);
 
 		System.out.println(x);
