@@ -20,6 +20,8 @@ import javax.swing.UIManager;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
 
+import model.IQuiz;
+import model.Quiz;
 import view.Quiz.QuizView;
 
 import java.awt.event.ActionListener;
@@ -81,7 +83,8 @@ public class Summary extends JFrame {
 		btnQuiz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				QuizView qzv = new QuizView();
+				IQuiz iQModel = new Quiz();
+				QuizView qzv = new QuizView(iQModel);
 				qzv.setVisible(true);
 				qzv.setLocationRelativeTo(null);
 			}

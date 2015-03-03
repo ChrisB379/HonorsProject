@@ -18,7 +18,6 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import java.awt.Font;
 
 import javax.swing.JLabel;
@@ -28,8 +27,10 @@ import model.ExcessiveRecomp;
 import model.IAlgorithms;
 import model.IBaseCase;
 import model.IExcessiveRecomp;
+import model.IQuiz;
 import model.IReturnValue;
 import model.IWorkAfter;
+import model.Quiz;
 import model.ReturnValue;
 import model.WorkAfter;
 import view.BaseCase.BaseCaseView;
@@ -50,6 +51,7 @@ public class TutorialMenu extends JFrame {
 	private IReturnValue iModel;
 	private IWorkAfter iWaModel;
 	private IExcessiveRecomp iErModel;
+	private IQuiz iQModel;
 
 
 	/**
@@ -114,7 +116,8 @@ public class TutorialMenu extends JFrame {
 		btnMultipleChoiceQuiz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				QuizView qzv = new QuizView();
+				iQModel = new Quiz();
+				QuizView qzv = new QuizView(iQModel);
 				qzv.setVisible(true);
 				qzv.setLocationRelativeTo(null);
 				//new QuizView().setVisible(true);

@@ -38,6 +38,10 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JTextPane;
 
+import model.IQuiz;
+import model.Quiz;
+import controller.QuizController;
+
 import java.awt.CardLayout;
 
 public class QuizView extends JFrame {
@@ -120,6 +124,11 @@ public class QuizView extends JFrame {
 
 	private JScrollPane scrollPane;
 
+	private QuizResults results;
+	
+	private IQuiz model;
+	
+	private QuizController qController;
 
 
 	/**
@@ -129,7 +138,8 @@ public class QuizView extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					QuizView frame = new QuizView();
+					IQuiz model = new Quiz();
+					QuizView frame = new QuizView(model);
 					//Centres the GUI to the middle of the screen
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
@@ -143,7 +153,14 @@ public class QuizView extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public QuizView() {
+	public QuizView(IQuiz m) {
+		
+		model = m;
+		
+		results = new QuizResults(model);
+		
+		qController = new QuizController(model, this);
+		
 		setTitle("End of Unit Quiz");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 960, 757);
@@ -612,15 +629,23 @@ public class QuizView extends JFrame {
 
 
 		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.addActionListener(qController);
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Automatically scrolls back up to the top
 				if(!allQuestionsAnswered())
 					JOptionPane.showMessageDialog(null, "Please choose an answer for all questions.");	
-				
+
 				if(allQuestionsAnswered()){
 					calculateScore();
-				scrollPane.getVerticalScrollBar().setValue(0);
+					results.setScore(getScore());
+					scrollPane.getVerticalScrollBar().setValue(0);
+					cardPanel.add(results);
+					cardPanel.remove(contentPanel);
+					cardPanel.add(results);
+					btnSubmit.setVisible(false);
+					System.out.println("score " + getScore());
+
 				}
 
 			}
@@ -721,33 +746,33 @@ public class QuizView extends JFrame {
 	public void incrementScore(){
 		score++;
 	}
-	
+
 	public void calculateScore(){
 		if(rdbtnQ1A3.isSelected())
 			score++;
-		
+
 		if(rdbtnQ2A1.isSelected())
 			score++;
-		
+
 		if(rdbtnQ3A4.isSelected())
 			score++;
-		
+
 		if(rdbtnQ4A1.isSelected())
 			score++;
-		
+
 		if(rdbtnQ5A2.isSelected())
 			score++;
-		
+
 		if(rdbtnQ6A2.isSelected())
 			score++;
-		
+
 		if(rdbtnQ7A2.isSelected())
 			score++;
-		
+
 		if(rdbtnQ8A2.isSelected())
 			score++;
 	}
-	
+
 	public boolean allQuestionsAnswered(){
 		if(question1Answered()
 				&& question2Answered()
@@ -771,7 +796,7 @@ public class QuizView extends JFrame {
 		else
 			return false;
 	}
-	
+
 	public boolean question2Answered(){
 		if(rdbtnQ2A1.isSelected()
 				|| rdbtnQ2A2.isSelected()
@@ -781,7 +806,7 @@ public class QuizView extends JFrame {
 		else
 			return false;
 	}
-	
+
 	public boolean question3Answered(){
 		if(rdbtnQ3A1.isSelected()
 				|| rdbtnQ3A2.isSelected()
@@ -791,7 +816,7 @@ public class QuizView extends JFrame {
 		else
 			return false;
 	}
-	
+
 	public boolean question4Answered(){
 		if(rdbtnQ4A1.isSelected()
 				|| rdbtnQ4A2.isSelected()
@@ -801,7 +826,7 @@ public class QuizView extends JFrame {
 		else
 			return false;
 	}
-	
+
 	public boolean question5Answered(){
 		if(rdbtnQ5A1.isSelected()
 				|| rdbtnQ5A2.isSelected()
@@ -811,7 +836,7 @@ public class QuizView extends JFrame {
 		else
 			return false;
 	}
-	
+
 	public boolean question6Answered(){
 		if(rdbtnQ6A1.isSelected()
 				|| rdbtnQ6A2.isSelected()
@@ -821,7 +846,7 @@ public class QuizView extends JFrame {
 		else
 			return false;
 	}
-	
+
 	public boolean question7Answered(){
 		if(rdbtnQ7A1.isSelected()
 				|| rdbtnQ7A2.isSelected()
@@ -831,7 +856,7 @@ public class QuizView extends JFrame {
 		else
 			return false;
 	}
-	
+
 	public boolean question8Answered(){
 		if(rdbtnQ8A1.isSelected()
 				|| rdbtnQ8A2.isSelected()
