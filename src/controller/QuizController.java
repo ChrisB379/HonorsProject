@@ -31,6 +31,15 @@ public class QuizController implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		model.setScore(view.getScore());
+		
+		model.setQ1Answer(view.question1Answer());
+		model.setQ2Answer(view.question2Answer());
+		model.setQ3Answer(view.question3Answer());
+		model.setQ4Answer(view.question4Answer());
+		model.setQ5Answer(view.question5Answer());
+		model.setQ6Answer(view.question6Answer());
+		model.setQ7Answer(view.question7Answer());
+		model.setQ8Answer(view.question8Answer());
 	}
 
 }

@@ -129,6 +129,15 @@ public class QuizView extends JFrame {
 	private IQuiz model;
 	
 	private QuizController qController;
+	
+	private int question1Answer;
+	private int question2Answer;
+	private int question3Answer;
+	private int question4Answer;
+	private int question5Answer;
+	private int question6Answer;
+	private int question7Answer;
+	private int question8Answer;
 
 
 	/**
@@ -638,7 +647,17 @@ public class QuizView extends JFrame {
 
 				if(allQuestionsAnswered()){
 					calculateScore();
-					results.setScore(getScore());
+					
+					question1Answer();
+					question2Answer();
+					question3Answer();
+					question4Answer();
+					question5Answer();
+					question6Answer();
+					question7Answer();
+					question8Answer();
+					
+//					results.setScore(getScore());
 					scrollPane.getVerticalScrollBar().setValue(0);
 					cardPanel.add(results);
 					cardPanel.remove(contentPanel);
@@ -865,6 +884,152 @@ public class QuizView extends JFrame {
 		else
 			return false;
 	}
+	
+	public int question1Answer(){
+		if(rdbtnQ1A1.isSelected())
+			question1Answer = 1;
+		else
+		if(rdbtnQ1A2.isSelected())
+			question1Answer = 2;
+		else
+		if(rdbtnQ1A3.isSelected())
+			question1Answer = 3;
+		else
+		if(rdbtnQ1A4.isSelected())
+			question1Answer = 4;
+		
+		return question1Answer;
+		
+		
+	}
+	
+	public int question2Answer(){
+		if(rdbtnQ2A1.isSelected())
+			question2Answer = 1;
+		
+		if(rdbtnQ2A2.isSelected())
+			question2Answer = 2;
+		
+		if(rdbtnQ2A3.isSelected())
+			question1Answer = 3;
+		
+		if(rdbtnQ2A4.isSelected())
+			question2Answer = 4;
+		
+		return question2Answer;
+		
+		
+	}
+	
+	public int question3Answer(){
+		if(rdbtnQ3A1.isSelected())
+			question3Answer = 1;
+		
+		if(rdbtnQ3A2.isSelected())
+			question3Answer = 2;
+		
+		if(rdbtnQ3A3.isSelected())
+			question3Answer = 3;
+		
+		if(rdbtnQ3A4.isSelected())
+			question3Answer = 4;
+		
+		return question3Answer;
+		
+		
+	}
+	
+	public int question4Answer(){
+		if(rdbtnQ4A1.isSelected())
+			question4Answer = 1;
+		
+		if(rdbtnQ4A2.isSelected())
+			question4Answer = 2;
+		
+		if(rdbtnQ4A3.isSelected())
+			question4Answer = 3;
+		
+		if(rdbtnQ4A4.isSelected())
+			question4Answer = 4;
+		
+		return question4Answer;
+		
+		
+	}
+	
+	public int question5Answer(){
+		if(rdbtnQ5A1.isSelected())
+			question5Answer = 1;
+		
+		if(rdbtnQ5A2.isSelected())
+			question5Answer = 2;
+		
+		if(rdbtnQ5A3.isSelected())
+			question5Answer = 3;
+		
+		if(rdbtnQ5A4.isSelected())
+			question5Answer = 4;
+		
+		return question5Answer;
+		
+		
+	}
+	
+	public int question6Answer(){
+		if(rdbtnQ6A1.isSelected())
+			question6Answer = 1;
+		
+		if(rdbtnQ6A2.isSelected())
+			question6Answer = 2;
+		
+		if(rdbtnQ6A3.isSelected())
+			question6Answer = 3;
+		
+		if(rdbtnQ6A4.isSelected())
+			question6Answer = 4;
+		
+		return question6Answer;
+		
+		
+	}
+	
+	public int question7Answer(){
+		if(rdbtnQ7A1.isSelected())
+			question7Answer = 1;
+		
+		if(rdbtnQ7A2.isSelected())
+			question7Answer = 2;
+		
+		if(rdbtnQ7A3.isSelected())
+			question7Answer = 3;
+		
+		if(rdbtnQ7A4.isSelected())
+			question7Answer = 4;
+		
+		return question7Answer;
+		
+		
+	}
+	
+	public int question8Answer(){
+		if(rdbtnQ8A1.isSelected())
+			question8Answer = 1;
+		
+		if(rdbtnQ8A2.isSelected())
+			question8Answer = 2;
+		
+		if(rdbtnQ8A3.isSelected())
+			question8Answer = 3;
+		
+		if(rdbtnQ8A4.isSelected())
+			question8Answer = 4;
+		
+		return question8Answer;
+		
+		
+	}
+	
+
 
 
 }
