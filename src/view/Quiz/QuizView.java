@@ -30,6 +30,7 @@ import javax.swing.JRadioButton;
 
 import java.awt.Dimension;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
@@ -614,8 +615,14 @@ public class QuizView extends JFrame {
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Automatically scrolls back up to the top
+				if(!allQuestionsAnswered())
+					JOptionPane.showMessageDialog(null, "Please choose an answer for all questions.");	
+				
+				if(allQuestionsAnswered()){
+					calculateScore();
 				scrollPane.getVerticalScrollBar().setValue(0);
-				results();
+				}
+
 			}
 		});
 		btnSubmit.setBounds(420, 635, 127, 35);
@@ -631,73 +638,73 @@ public class QuizView extends JFrame {
 		txtQuestion7.setCaretPosition(0);
 		txtQuestion8.setCaretPosition(0);
 		txtDescription.setCaretPosition(0);
-		
+
 		JLabel lblTickQ6 = new JLabel("");
 		lblTickQ6.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
 		lblTickQ6.setFocusable(false);
 		lblTickQ6.setBounds(110, 1256, 27, 23);
 		contentPanel.add(lblTickQ6);
-		
+
 		JLabel lblCrossQ6A1 = new JLabel("");
 		lblCrossQ6A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ6A1.setFocusable(false);
 		lblCrossQ6A1.setBounds(110, 1230, 27, 23);
 		contentPanel.add(lblCrossQ6A1);
-		
+
 		JLabel lblCrossQ6A3 = new JLabel("");
 		lblCrossQ6A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ6A3.setFocusable(false);
 		lblCrossQ6A3.setBounds(120, 1282, 27, 23);
 		contentPanel.add(lblCrossQ6A3);
-		
+
 		JLabel lblCrossQ6A4 = new JLabel("");
 		lblCrossQ6A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ6A4.setFocusable(false);
 		lblCrossQ6A4.setBounds(110, 1308, 27, 23);
 		contentPanel.add(lblCrossQ6A4);
-		
+
 		JLabel lblTickQ7 = new JLabel("");
 		lblTickQ7.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
 		lblTickQ7.setFocusable(false);
 		lblTickQ7.setBounds(90, 1556, 27, 23);
 		contentPanel.add(lblTickQ7);
-		
+
 		JLabel lblCrossQ7A1 = new JLabel("");
 		lblCrossQ7A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ7A1.setFocusable(false);
 		lblCrossQ7A1.setBounds(90, 1530, 27, 23);
 		contentPanel.add(lblCrossQ7A1);
-		
+
 		JLabel lblCrossQ7A3 = new JLabel("");
 		lblCrossQ7A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ7A3.setFocusable(false);
 		lblCrossQ7A3.setBounds(200, 1582, 27, 23);
 		contentPanel.add(lblCrossQ7A3);
-		
+
 		JLabel lblCrossQ7A4 = new JLabel("");
 		lblCrossQ7A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ7A4.setFocusable(false);
 		lblCrossQ7A4.setBounds(100, 1608, 27, 23);
 		contentPanel.add(lblCrossQ7A4);
-		
+
 		JLabel lblTickQ8 = new JLabel("");
 		lblTickQ8.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
 		lblTickQ8.setFocusable(false);
 		lblTickQ8.setBounds(90, 1736, 27, 23);
 		contentPanel.add(lblTickQ8);
-		
+
 		JLabel lblCrossQ8A1 = new JLabel("");
 		lblCrossQ8A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ8A1.setFocusable(false);
 		lblCrossQ8A1.setBounds(90, 1710, 27, 23);
 		contentPanel.add(lblCrossQ8A1);
-		
+
 		JLabel lblCrossQ8A3 = new JLabel("");
 		lblCrossQ8A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ8A3.setFocusable(false);
 		lblCrossQ8A3.setBounds(90, 1762, 27, 23);
 		contentPanel.add(lblCrossQ8A3);
-		
+
 		JLabel lblCrossQ8A4 = new JLabel("");
 		lblCrossQ8A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ8A4.setFocusable(false);
@@ -714,9 +721,126 @@ public class QuizView extends JFrame {
 	public void incrementScore(){
 		score++;
 	}
-
-	public void results(){
-		txtDescription.setText("Congratulations, you scored "+ getScore() + " out of 5!\r\n\r\n");
-
+	
+	public void calculateScore(){
+		if(rdbtnQ1A3.isSelected())
+			score++;
+		
+		if(rdbtnQ2A1.isSelected())
+			score++;
+		
+		if(rdbtnQ3A4.isSelected())
+			score++;
+		
+		if(rdbtnQ4A1.isSelected())
+			score++;
+		
+		if(rdbtnQ5A2.isSelected())
+			score++;
+		
+		if(rdbtnQ6A2.isSelected())
+			score++;
+		
+		if(rdbtnQ7A2.isSelected())
+			score++;
+		
+		if(rdbtnQ8A2.isSelected())
+			score++;
 	}
+	
+	public boolean allQuestionsAnswered(){
+		if(question1Answered()
+				&& question2Answered()
+				&& question3Answered()
+				&& question4Answered()
+				&& question5Answered()
+				&& question6Answered()
+				&& question7Answered()
+				&& question8Answered())
+			return true;
+		else
+			return false;
+	}
+
+	public boolean question1Answered(){
+		if(rdbtnQ1A1.isSelected()
+				|| rdbtnQ1A2.isSelected()
+				|| rdbtnQ1A3.isSelected()
+				|| rdbtnQ1A4.isSelected())
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean question2Answered(){
+		if(rdbtnQ2A1.isSelected()
+				|| rdbtnQ2A2.isSelected()
+				|| rdbtnQ2A3.isSelected()
+				|| rdbtnQ2A4.isSelected())
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean question3Answered(){
+		if(rdbtnQ3A1.isSelected()
+				|| rdbtnQ3A2.isSelected()
+				|| rdbtnQ3A3.isSelected()
+				|| rdbtnQ3A4.isSelected())
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean question4Answered(){
+		if(rdbtnQ4A1.isSelected()
+				|| rdbtnQ4A2.isSelected()
+				|| rdbtnQ4A3.isSelected()
+				|| rdbtnQ4A4.isSelected())
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean question5Answered(){
+		if(rdbtnQ5A1.isSelected()
+				|| rdbtnQ5A2.isSelected()
+				|| rdbtnQ5A3.isSelected()
+				|| rdbtnQ5A4.isSelected())
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean question6Answered(){
+		if(rdbtnQ6A1.isSelected()
+				|| rdbtnQ6A2.isSelected()
+				|| rdbtnQ6A3.isSelected()
+				|| rdbtnQ6A4.isSelected())
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean question7Answered(){
+		if(rdbtnQ7A1.isSelected()
+				|| rdbtnQ7A2.isSelected()
+				|| rdbtnQ7A3.isSelected()
+				|| rdbtnQ7A4.isSelected())
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean question8Answered(){
+		if(rdbtnQ8A1.isSelected()
+				|| rdbtnQ8A2.isSelected()
+				|| rdbtnQ8A3.isSelected()
+				|| rdbtnQ8A4.isSelected())
+			return true;
+		else
+			return false;
+	}
+
+
 }
