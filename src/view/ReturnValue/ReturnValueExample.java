@@ -8,7 +8,6 @@ package view.ReturnValue;
  * @since 1.0
  */
 
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
@@ -67,7 +66,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 		txtNextPage.setContentType("text/html");
 		txtNextPage.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		txtNextPage.setBackground(UIManager.getColor("Panel.background"));
-		txtNextPage.setText("<html>Next you will be working through your own example of this algorithm. Please enter a number in the field provided which will be the parameter for your algorithm. factorial(n)\r\n</htm>");
+		txtNextPage.setText("<html>Next you will be working through your own example of this algorithm. Please enter a number between 0 and 11 in the field provided which will be the parameter for your algorithm. factorial(n)\r\n</htm>");
 		txtNextPage.setEditable(false);
 
 
@@ -81,8 +80,6 @@ public class ReturnValueExample extends JPanel implements Observer {
 			@Override
 			public void focusLost(FocusEvent e) {
 				int n = 0;
-				if(txtParameterField.getText().equals(""))
-					JOptionPane.showMessageDialog(null, "Please enter a valid number for the parameter.");
 				
 				if(!txtParameterField.getText().equals(""));{
 				n = Integer.parseInt(txtParameterField.getText());

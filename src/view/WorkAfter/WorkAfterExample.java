@@ -13,7 +13,6 @@ import java.awt.event.FocusListener;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -52,9 +51,8 @@ public class WorkAfterExample extends JPanel implements Observer {
 		waController = new WAParameterController(model, this);
 
 		JTextPane txtExample = new JTextPane();
-		txtExample.setFocusable(false);
 		txtExample.setContentType("text/html");
-		txtExample.setText("<html>\r\n<br>The algorithm is as follows: \r\n<br>\r\n<br><code> \r\n<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value of n is</font> \" + n);\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the result of n*2 is</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t}\r\n<br></code> \r\n<br>\r\n<br>How this algorithm works:\r\n<br>\r\n<br>Step 1:\tThe parameter is checked by the base case\r\n<br>Step 2:\tIf the base case is not met then we go to the else statement; the recursive call\r\n<br>Step 3:\tRecursively this method is called until the base is met\r\n<br>Step 4:\tOnce this happens the print statement in the base case is printed\r\n<br>Step 5:\tThen the work after the recursive call is done and the final print statement is printed showing n*2 for each recursive call\r\n<br>\r\n<br>Next you will be working through your own example of this algorithm. \r\n<br>Please enter a number in the field provided which will be the parameter for your algorithm workAfter(n) .\r\n</html>");
+		txtExample.setText("<html>\r\n<br>The algorithm is as follows: \r\n<br>\r\n<br><code> \r\n<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value of n is</font> \" + n);\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the result of n*2 is</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t}\r\n<br></code> \r\n<br>\r\n<br>How this algorithm works:\r\n<br>\r\n<br>Step 1:\tThe parameter is checked by the base case\r\n<br>Step 2:\tIf the base case is not met then we go to the else statement; the recursive call\r\n<br>Step 3:\tRecursively this method is called until the base is met\r\n<br>Step 4:\tOnce this happens the print statement in the base case is printed\r\n<br>Step 5:\tThen the work after the recursive call is done and the final print statement is printed showing n*2 for each recursive call\r\n<br>\r\n<br>Next you will be working through your own example of this algorithm. \r\n<br>Please enter a number between 0 and 11 in the field provided which will be the parameter for your algorithm workAfter(n) .\r\n</html>");
 
 
 		txtExample.setBackground(UIManager.getColor("Panel.background"));
@@ -69,8 +67,6 @@ public class WorkAfterExample extends JPanel implements Observer {
 			@Override
 			public void focusLost(FocusEvent e) {
 				int n = 0;
-				if(txtParameterField.getText().equals(""))
-					JOptionPane.showMessageDialog(null, "Please enter a valid number for the parameter.");
 				
 				if(!txtParameterField.getText().equals(""));{
 				n = Integer.parseInt(txtParameterField.getText());

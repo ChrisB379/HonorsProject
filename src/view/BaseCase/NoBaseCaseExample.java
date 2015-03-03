@@ -54,25 +54,8 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 		nbcpController = new NoBCParameterController(model, this);
 
 		JTextPane txtExample1 = new JTextPane();
-		txtExample1.setFocusable(false);
 		txtExample1.setContentType("text/html");
-		txtExample1.setText("<html>"
-				+ "\r\n<br>The first of the two algorithms on base case we are going to look at is the noBaseCase method. As the name suggests, this is a simple recursive call which has no base case."
-				+ "\r\n<br>\r\n<br>The implications of not having a base case are that the recursive call will never stop and will instead go into an infinite loop until a stack overflow occurs causing a crash or failure."
-				+ "\r\n<br>\r\n<br>The algorithm for this example is as follows:"
-				+ "\r\n<br>\r\n<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {"
-				+ "\r\n<br>"
-				+ "\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;"
-				+ "\r\n<br>\t}"
-				+ "\r\n<br> </code>"
-				+ "\r\n<br>\r\n<br>How it works:"
-				+ "\r\n<br>This is an extremely simple method and thus not much explanation is needed due to there only being one line of code."
-				+ "\r\n<br>"
-				+ "\r\n<br>Step 1: There is only one line of code to be executed which is the recursive call. Thus no work is done, the return statement simply recursively calls itself."
-				+ "\r\n<br>\r\n<br>Step 2: This repeats until a stack overflow occurs."
-				+ "\r\n<br>"
-				+ "\r\n<br>Next you will be working through your own example of this algorithm. Please enter a number in the field provided which will be the parameter for your algorithm. noBaseCase(n)."
-				+ "\r\n</html>");
+		txtExample1.setText("<html>\r\n<br>The first of the two algorithms on base case we are going to look at is the noBaseCase method. As the name suggests, this is a simple recursive call which has no base case.\r\n<br>\r\n<br>The implications of not having a base case are that the recursive call will never stop and will instead go into an infinite loop until a stack overflow occurs causing a crash or failure.\r\n<br>\r\n<br>The algorithm for this example is as follows:\r\n<br>\r\n<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>\t}\r\n<br> </code>\r\n<br>\r\n<br>How it works:\r\n<br>This is an extremely simple method and thus not much explanation is needed due to there only being one line of code.\r\n<br>\r\n<br>Step 1: There is only one line of code to be executed which is the recursive call. Thus no work is done, the return statement simply recursively calls itself.\r\n<br>\r\n<br>Step 2: This repeats until a stack overflow occurs.\r\n<br>\r\n<br>Next you will be working through your own example of this algorithm. Please enter a number between 0 and 6 in the field provided which will be the parameter for your algorithm. noBaseCase(n).\r\n</html>");
 
 		txtExample1.setBackground(UIManager.getColor("Panel.background"));
 		txtExample1.setEditable(false);
@@ -87,8 +70,6 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
 				int n = 0;
-				if(txtParameterField.getText().equals(""))
-					JOptionPane.showMessageDialog(null, "Please enter a valid number for the parameter.");
 				
 				if(!txtParameterField.getText().equals(""));{
 				n = Integer.parseInt(txtParameterField.getText());
