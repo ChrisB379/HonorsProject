@@ -644,7 +644,6 @@ public class QuizView extends JFrame {
 					cardPanel.remove(contentPanel);
 					cardPanel.add(results);
 					btnSubmit.setVisible(false);
-					System.out.println("score " + getScore());
 
 				}
 
