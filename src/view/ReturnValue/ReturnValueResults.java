@@ -91,8 +91,11 @@ public class ReturnValueResults extends JPanel implements Observer {
 		setReturnVal(model.getUserReturnVal());
 		setReturnVal2(model.getUserReturnVal2());
 		setParam(model.getParam());
+		
+		//Stops a stackoverflow error since it will call update before there is a parameter to be used
+		if(model.getParam() > 0)
 		setFact(model.factorial(model.getParam()));
-		System.out.println("RetValResults " + getParam());
+
 		setResultsText();
 		
 	}

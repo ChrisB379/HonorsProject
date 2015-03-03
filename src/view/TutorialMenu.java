@@ -24,7 +24,6 @@ import javax.swing.JLabel;
 
 import model.BaseCase;
 import model.ExcessiveRecomp;
-import model.IAlgorithms;
 import model.IBaseCase;
 import model.IExcessiveRecomp;
 import model.IQuiz;
@@ -47,7 +46,6 @@ public class TutorialMenu extends JFrame {
 	private static final long serialVersionUID = -5286626654727946318L;
 	private JPanel contentPane;
 	
-	private IAlgorithms iFace;
 	private IReturnValue iModel;
 	private IWorkAfter iWaModel;
 	private IExcessiveRecomp iErModel;
@@ -189,6 +187,7 @@ public class TutorialMenu extends JFrame {
 		JLabel lblEndOfUnit = new JLabel("End of unit quiz");
 		lblEndOfUnit.setBounds(29, 290, 100, 18);
 		lblEndOfUnit.setFont(new Font("Arial", Font.PLAIN, 15));
+		
 		contentPane.setLayout(null);
 		contentPane.add(lblTutorial);
 		contentPane.add(lblTutorialWork);

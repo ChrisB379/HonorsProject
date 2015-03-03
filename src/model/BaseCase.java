@@ -21,7 +21,6 @@ public class BaseCase extends Observable implements IBaseCase  {
 	private List<Integer> paramArray;
 	private List<String> returnV;
 
-	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
 	/**
 	 * Returns an integer based on the recursive call each time.
@@ -31,7 +30,7 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 * There is no reason behind the algorithm/numbers used in the return statement.
 	 * Its only purpose is to do a calculation which will loop forever or until a stack overflow.
 	 * 
-	 * @param n Any integer greater than 0 and less than 11
+	 * @param n Any integer greater than 0 and less than 6
 	 * @return the value of the recursive call using the value n
 	 * @since 1.0
 	 */
@@ -53,7 +52,7 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 * any possible confusion that may occur if the value 1 was used. The user may think returning
 	 * 1 is linked to n+1 which would be false.
 	 * 
-	 * @param n Any integer greater than 1 and less than 10
+	 * @param n Any integer greater than 0 and less than 6
 	 * @return The value of the recursive call. 
 	 * @since 1.0
 	 */

@@ -36,7 +36,7 @@ public class NonConvSubmitController implements ActionListener {
 			view.setAfterReturnText();
 		
 		if(!view.questionAnswered() && view.getCount() < 2)
-			JOptionPane.showMessageDialog(null, "Please select one of the 5 answers");
+			JOptionPane.showMessageDialog(null, "Please select one of the 4 answers");
 
 		if(view.getNVal() != 0 && view.getNVal() < 6){
 			System.out.println("getCount " + view.getCount());
