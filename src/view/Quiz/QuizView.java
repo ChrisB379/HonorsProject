@@ -522,19 +522,19 @@ public class QuizView extends JFrame {
 		txtQuestion6.setColumns(10);
 
 		rdbtnQ6A1 = new JRadioButton("Array");
-		rdbtnQ6A1.setBounds(48, 1230, 109, 23);
+		rdbtnQ6A1.setBounds(48, 1230, 60, 23);
 		contentPanel.add(rdbtnQ6A1);
 
 		rdbtnQ6A2 = new JRadioButton("Stack");
-		rdbtnQ6A2.setBounds(48, 1256, 109, 23);
+		rdbtnQ6A2.setBounds(48, 1256, 60, 23);
 		contentPanel.add(rdbtnQ6A2);
 
 		rdbtnQ6A3 = new JRadioButton("Queue");
-		rdbtnQ6A3.setBounds(48, 1282, 109, 23);
+		rdbtnQ6A3.setBounds(48, 1282, 70, 23);
 		contentPanel.add(rdbtnQ6A3);
 
 		rdbtnQ6A4 = new JRadioButton("Tree");
-		rdbtnQ6A4.setBounds(48, 1308, 109, 23);
+		rdbtnQ6A4.setBounds(48, 1308, 60, 23);
 		contentPanel.add(rdbtnQ6A4);
 
 		/*
@@ -553,20 +553,20 @@ public class QuizView extends JFrame {
 		contentPanel.add(txtQuestion7);
 
 		rdbtnQ7A1 = new JRadioButton("0");
-		rdbtnQ7A1.setBounds(48, 1530, 109, 23);
+		rdbtnQ7A1.setBounds(48, 1530, 40, 23);
 		contentPanel.add(rdbtnQ7A1);
 
 		rdbtnQ7A2 = new JRadioButton("1");
 		rdbtnQ7A2.setFocusable(false);
-		rdbtnQ7A2.setBounds(48, 1556, 109, 23);
+		rdbtnQ7A2.setBounds(48, 1556, 40, 23);
 		contentPanel.add(rdbtnQ7A2);
 
 		rdbtnQ7A3 = new JRadioButton("Stack overflow error");
-		rdbtnQ7A3.setBounds(48, 1582, 109, 23);
+		rdbtnQ7A3.setBounds(48, 1582, 150, 23);
 		contentPanel.add(rdbtnQ7A3);
 
 		rdbtnQ7A4 = new JRadioButton("720");
-		rdbtnQ7A4.setBounds(48, 1608, 109, 23);
+		rdbtnQ7A4.setBounds(48, 1608, 50, 23);
 		contentPanel.add(rdbtnQ7A4);
 
 		/*
@@ -586,19 +586,19 @@ public class QuizView extends JFrame {
 		txtQuestion8.setColumns(10);
 
 		rdbtnQ8A1 = new JRadioButton("1");
-		rdbtnQ8A1.setBounds(48, 1710, 109, 23);
+		rdbtnQ8A1.setBounds(48, 1710, 40, 23);
 		contentPanel.add(rdbtnQ8A1);
 
 		rdbtnQ8A2 = new JRadioButton("2");
-		rdbtnQ8A2.setBounds(48, 1736, 109, 23);
+		rdbtnQ8A2.setBounds(48, 1736, 40, 23);
 		contentPanel.add(rdbtnQ8A2);
 
 		rdbtnQ8A3 = new JRadioButton("3");
-		rdbtnQ8A3.setBounds(48, 1762, 109, 23);
+		rdbtnQ8A3.setBounds(48, 1762, 40, 23);
 		contentPanel.add(rdbtnQ8A3);
 
 		rdbtnQ8A4 = new JRadioButton("4");
-		rdbtnQ8A4.setBounds(48, 1788, 109, 23);
+		rdbtnQ8A4.setBounds(48, 1788, 40, 23);
 		contentPanel.add(rdbtnQ8A4);
 
 		/*
