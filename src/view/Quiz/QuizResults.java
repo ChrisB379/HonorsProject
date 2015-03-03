@@ -29,7 +29,7 @@ public class QuizResults extends JPanel implements Observer {
 	private JTextField txtQuestion6;
 	private JTextPane txtQuestion7;
 	private JTextField txtQuestion8;
-	
+
 	/*
 	 *RADIO BUTTONS 
 	 */
@@ -80,22 +80,22 @@ public class QuizResults extends JPanel implements Observer {
 	private JLabel lblTickQ1;
 	private JLabel lblCrossQ1A4;
 	private JLabel lblCrossQ1A2;
-	
+
 	private JLabel lblTickQ2;
 	private JLabel lblCrossQ2A2;
 	private JLabel lblCrossQ2A3;
 	private JLabel lblCrossQ2A4;
-	
+
 	private JLabel lblTickQ3;
 	private JLabel lblCrossQ3A2;
 	private JLabel lblCrossQ3A3;
 	private JLabel lblCrossQ3A1;
-	
+
 	private JLabel lblTickQ4;
 	private JLabel lblCrossQ4A2;
 	private JLabel lblCrossQ4A3;
 	private JLabel lblCrossQ4A4;
-	
+
 	private JLabel lblTickQ5;
 	private JLabel lblCrossQ5A1;
 	private JLabel lblCrossQ5A3;
@@ -105,17 +105,17 @@ public class QuizResults extends JPanel implements Observer {
 	private JLabel lblCrossQ6A1;
 	private JLabel lblCrossQ6A3;
 	private JLabel lblCrossQ6A4;
-	
+
 	private JLabel lblTickQ7;
 	private JLabel lblCrossQ7A1;
 	private JLabel lblCrossQ7A3;
 	private JLabel lblCrossQ7A4;
-	
+
 	private JLabel lblTickQ8;
 	private JLabel lblCrossQ8A1;
 	private JLabel lblCrossQ8A3;
 	private JLabel lblCrossQ8A4;
-	
+
 	private IQuiz model;
 	private JTextField txtAnswerQ1;
 	private JTextField txtAnswerQ2;
@@ -132,12 +132,12 @@ public class QuizResults extends JPanel implements Observer {
 	private JTextArea txtQ7Explanation;
 	private JTextField txtAnswerQ8;
 	private JTextArea txtQ8Explanation;
-	
+
 	/*
 	 * INTEGERS
 	 */
 	private int score;
-	
+
 	private int question1Answer;
 	private int question2Answer;
 	private int question3Answer;
@@ -151,11 +151,11 @@ public class QuizResults extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public QuizResults(IQuiz m) {
-		
+
 		//View holds a reference to the Quiz model
 		model = m;
-		
-		
+
+
 		//register View as an observer to Quiz model
 		((Observable) m).addObserver(this);
 
@@ -629,90 +629,90 @@ public class QuizResults extends JPanel implements Observer {
 		txtQuestion8.setCaretPosition(0);
 		txtDescription.setCaretPosition(0);
 
-		 lblTickQ6 = new JLabel("");
+		lblTickQ6 = new JLabel("");
 		lblTickQ6.setVisible(false);
 		lblTickQ6.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
 		lblTickQ6.setFocusable(false);
 		lblTickQ6.setBounds(110, 1556, 27, 23);
 		add(lblTickQ6);
 
-		 lblCrossQ6A1 = new JLabel("");
+		lblCrossQ6A1 = new JLabel("");
 		lblCrossQ6A1.setVisible(false);
 		lblCrossQ6A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ6A1.setFocusable(false);
 		lblCrossQ6A1.setBounds(110, 1530, 27, 23);
 		add(lblCrossQ6A1);
 
-		 lblCrossQ6A3 = new JLabel("");
+		lblCrossQ6A3 = new JLabel("");
 		lblCrossQ6A3.setVisible(false);
 		lblCrossQ6A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ6A3.setFocusable(false);
 		lblCrossQ6A3.setBounds(120, 1582, 27, 23);
 		add(lblCrossQ6A3);
 
-		 lblCrossQ6A4 = new JLabel("");
+		lblCrossQ6A4 = new JLabel("");
 		lblCrossQ6A4.setVisible(false);
 		lblCrossQ6A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ6A4.setFocusable(false);
 		lblCrossQ6A4.setBounds(110, 1608, 27, 23);
 		add(lblCrossQ6A4);
 
-		 lblTickQ7 = new JLabel("");
+		lblTickQ7 = new JLabel("");
 		lblTickQ7.setVisible(false);
 		lblTickQ7.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
 		lblTickQ7.setFocusable(false);
 		lblTickQ7.setBounds(90, 1906, 27, 23);
 		add(lblTickQ7);
 
-		 lblCrossQ7A1 = new JLabel("");
+		lblCrossQ7A1 = new JLabel("");
 		lblCrossQ7A1.setVisible(false);
 		lblCrossQ7A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ7A1.setFocusable(false);
 		lblCrossQ7A1.setBounds(90, 1880, 27, 23);
 		add(lblCrossQ7A1);
 
-		 lblCrossQ7A3 = new JLabel("");
+		lblCrossQ7A3 = new JLabel("");
 		lblCrossQ7A3.setVisible(false);
 		lblCrossQ7A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ7A3.setFocusable(false);
 		lblCrossQ7A3.setBounds(200, 1932, 27, 23);
 		add(lblCrossQ7A3);
 
-		 lblCrossQ7A4 = new JLabel("");
+		lblCrossQ7A4 = new JLabel("");
 		lblCrossQ7A4.setVisible(false);
 		lblCrossQ7A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ7A4.setFocusable(false);
 		lblCrossQ7A4.setBounds(100, 1958, 27, 23);
 		add(lblCrossQ7A4);
 
-		 lblTickQ8 = new JLabel("");
+		lblTickQ8 = new JLabel("");
 		lblTickQ8.setVisible(false);
 		lblTickQ8.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
 		lblTickQ8.setFocusable(false);
 		lblTickQ8.setBounds(90, 2136, 27, 23);
 		add(lblTickQ8);
 
-		 lblCrossQ8A1 = new JLabel("");
+		lblCrossQ8A1 = new JLabel("");
 		lblCrossQ8A1.setVisible(false);
 		lblCrossQ8A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ8A1.setFocusable(false);
 		lblCrossQ8A1.setBounds(90, 2110, 27, 23);
 		add(lblCrossQ8A1);
 
-		 lblCrossQ8A3 = new JLabel("");
+		lblCrossQ8A3 = new JLabel("");
 		lblCrossQ8A3.setVisible(false);
 		lblCrossQ8A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ8A3.setFocusable(false);
 		lblCrossQ8A3.setBounds(90, 2162, 27, 23);
 		add(lblCrossQ8A3);
 
-		 lblCrossQ8A4 = new JLabel("");
+		lblCrossQ8A4 = new JLabel("");
 		lblCrossQ8A4.setVisible(false);
 		lblCrossQ8A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
 		lblCrossQ8A4.setFocusable(false);
 		lblCrossQ8A4.setBounds(90, 2182, 27, 23);
 		add(lblCrossQ8A4);
-		
+
 		txtAnswerQ1 = new JTextField();
 		txtAnswerQ1.setEditable(false);
 		txtAnswerQ1.setFocusable(false);
@@ -720,7 +720,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ1.setBounds(48, 308, 500, 20);
 		add(txtAnswerQ1);
 		txtAnswerQ1.setColumns(10);
-		
+
 		JTextArea txtQ1Explanation = new JTextArea();
 		txtQ1Explanation.setText("Explanation: Recursion is the process of defining something in terms of itself. It allows us to define a method that calls itself, possibly with different arguments.\r\n\r\nAnswer D is also a form of recursion known as Mutual Recursion, however it is not the most \"basic form\".");
 		txtQ1Explanation.setFocusable(false);
@@ -729,7 +729,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtQ1Explanation.setEditable(false);
 		txtQ1Explanation.setBounds(48, 337, 730, 94);
 		add(txtQ1Explanation);
-		
+
 		txtAnswerQ2 = new JTextField();
 		txtAnswerQ2.setFocusable(false);
 		txtAnswerQ2.setEditable(false);
@@ -737,7 +737,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ2.setBounds(48, 588, 204, 20);
 		add(txtAnswerQ2);
 		txtAnswerQ2.setColumns(10);
-		
+
 		txtQ2Explanation = new JTextArea();
 		txtQ2Explanation.setText("Explanation: If a recursive method does not have a base case then it will recurse \"infinitely\" or until a stack overflow occurs and the program crashes. \r\n");
 		txtQ2Explanation.setLineWrap(true);
@@ -746,7 +746,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtQ2Explanation.setEditable(false);
 		txtQ2Explanation.setBounds(48, 617, 730, 44);
 		add(txtQ2Explanation);
-		
+
 		txtAnswerQ3 = new JTextField();
 		txtAnswerQ3.setText("Answer : Memoization is a technique which makes recursion slower and less efficient.");
 		txtAnswerQ3.setFocusable(false);
@@ -754,7 +754,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ3.setBounds(48, 817, 508, 20);
 		add(txtAnswerQ3);
 		txtAnswerQ3.setColumns(10);
-		
+
 		txtQ3Explanation = new JTextArea();
 		txtQ3Explanation.setText("Explanation : Memoization increases the speed of recursive functions by storing calculations and their results, thus removing the need to recalculate calculations.");
 		txtQ3Explanation.setWrapStyleWord(true);
@@ -763,7 +763,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtQ3Explanation.setEditable(false);
 		txtQ3Explanation.setBounds(48, 849, 730, 44);
 		add(txtQ3Explanation);
-		
+
 		txtAnswerQ4 = new JTextField();
 		txtAnswerQ4.setText("Answer: n == 0 && n == 1");
 		txtAnswerQ4.setFocusable(false);
@@ -771,7 +771,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ4.setBounds(48, 1055, 279, 20);
 		add(txtAnswerQ4);
 		txtAnswerQ4.setColumns(10);
-		
+
 		txtQ4Explanation = new JTextArea();
 		txtQ4Explanation.setText("Explanation : The use of the logical AND(&&) means the base case will never be met as n cannot be both 0 and 1 at the same time.");
 		txtQ4Explanation.setWrapStyleWord(true);
@@ -780,7 +780,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtQ4Explanation.setEditable(false);
 		txtQ4Explanation.setBounds(48, 1085, 730, 44);
 		add(txtQ4Explanation);
-		
+
 		txtAnswerQ5 = new JTextField();
 		txtAnswerQ5.setEditable(false);
 		txtAnswerQ5.setFocusable(false);
@@ -788,7 +788,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ5.setBounds(48, 1412, 100, 20);
 		add(txtAnswerQ5);
 		txtAnswerQ5.setColumns(10);
-		
+
 		txtQ5Explanation = new JTextArea();
 		txtQ5Explanation.setText("Explanation: Factorial is the product of all positive integers less than or equal to n. Thus, fact(4) can be broken down to 4*3*2*1 = 24");
 		txtQ5Explanation.setWrapStyleWord(true);
@@ -797,7 +797,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtQ5Explanation.setEditable(false);
 		txtQ5Explanation.setBounds(48, 1442, 720, 20);
 		add(txtQ5Explanation);
-		
+
 		txtAnswerQ6 = new JTextField();
 		txtAnswerQ6.setText("Answer: Stack");
 		txtAnswerQ6.setFocusable(false);
@@ -805,7 +805,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ6.setBounds(48, 1638, 120, 20);
 		add(txtAnswerQ6);
 		txtAnswerQ6.setColumns(10);
-		
+
 		txtQ6Explanation = new JTextArea();
 		txtQ6Explanation.setText("Explanation: Recursion is always managed through use of a stack");
 		txtQ6Explanation.setWrapStyleWord(true);
@@ -814,7 +814,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtQ6Explanation.setEditable(false);
 		txtQ6Explanation.setBounds(48, 1668, 500, 20);
 		add(txtQ6Explanation);
-		
+
 		txtAnswerQ7 = new JTextField();
 		txtAnswerQ7.setText("Answer: 1\r\n");
 		txtAnswerQ7.setFocusable(false);
@@ -822,7 +822,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ7.setBounds(48, 1988, 110, 20);
 		add(txtAnswerQ7);
 		txtAnswerQ7.setColumns(10);
-		
+
 		txtQ7Explanation = new JTextArea();
 		txtQ7Explanation.setText("Explanation: Factorial is the product of all positive integers less than or equal to n. Thus, fact(4) can be broken down to 4*3*2*1 = 24");
 		txtQ7Explanation.setWrapStyleWord(true);
@@ -831,7 +831,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtQ7Explanation.setEditable(false);
 		txtQ7Explanation.setBounds(48, 2018, 723, 20);
 		add(txtQ7Explanation);
-		
+
 		txtAnswerQ8 = new JTextField();
 		txtAnswerQ8.setFocusable(false);
 		txtAnswerQ8.setEditable(false);
@@ -839,7 +839,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ8.setBounds(48, 2218, 120, 20);
 		add(txtAnswerQ8);
 		txtAnswerQ8.setColumns(10);
-		
+
 		txtQ8Explanation = new JTextArea();
 		txtQ8Explanation.setText("Explanation: fact(3) can be broken down into fact(2) * 3 which then recursively becomes fact(1)*2*3 which will then reach the base case and return 1*2*3 = 6. As you can see, this took two recursive calls to achieve.");
 		txtQ8Explanation.setLineWrap(true);
@@ -850,7 +850,7 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ8Explanation);
 
 	}
-	
+
 	public int getScore(){
 		return score;
 	}
@@ -864,321 +864,321 @@ public class QuizResults extends JPanel implements Observer {
 		// TODO Auto-generated method stub
 		setScore(model.getScore());
 		txtDescription.setText("Congratulations, you scored "+ getScore() + " out of 8!");
-		
+
 		setQ1Answer(model.getQ1Answer());
 		setQ1Icons();
 
 		setQ2Answer(model.getQ2Answer());
 		setQ2Icons();
-		
+
 		setQ3Answer(model.getQ3Answer());
 		setQ3Icons();
-		
+
 		setQ4Answer(model.getQ4Answer());
 		setQ4Icons();
-		
+
 		setQ5Answer(model.getQ5Answer());
 		setQ5Icons();
-		
+
 		setQ6Answer(model.getQ6Answer());
 		setQ6Icons();
-		
+
 		setQ7Answer(model.getQ7Answer());
 		setQ7Icons();
-		
+
 		setQ8Answer(model.getQ8Answer());
 		setQ8Icons();
 	}
-	
-	 
+
+
 	public int getQ1Answer() {
 		return question1Answer;
 	}
 
-	 
+
 	public void setQ1Answer(int n) {
 		question1Answer = n;
-		
+
 	}
 
-	 
+
 	public int getQ2Answer() {
 		return question2Answer;
 	}
 
-	 
+
 	public void setQ2Answer(int n) {
 		question2Answer = n;
-		
+
 	}
 
-	 
+
 	public int getQ3Answer() {
 		return question3Answer;
 	}
 
-	 
+
 	public void setQ3Answer(int n) {
 		question3Answer = n;
-		
+
 	}
 
-	 
+
 	public int getQ4Answer() {
 		return question4Answer;
 	}
 
-	 
+
 	public void setQ4Answer(int n) {
 		question4Answer = n;
-		
+
 	}
 
-	 
+
 	public int getQ5Answer() {
 		return question5Answer;
 	}
 
-	 
+
 	public void setQ5Answer(int n) {
 		question5Answer = n;
-		
+
 	}
 
-	 
+
 	public int getQ6Answer() {
 		return question6Answer;
 	}
 
-	 
+
 	public void setQ6Answer(int n) {
 		question6Answer = n;
-		
+
 	}
 
-	 
+
 	public int getQ7Answer() {
 		return question7Answer;
 	}
 
-	 
+
 	public void setQ7Answer(int n) {
 		question7Answer = n;
-		
+
 	}
 
-	 
+
 	public int getQ8Answer() {
 		return question8Answer;
 	}
 
-	 
+
 	public void setQ8Answer(int n) {
 		question8Answer = n;
-		
+
 	}
-	
+
 	public void setQ1Icons(){
 		if(question1Answer == 1){
 			rdbtnQ1A1.setSelected(true);
 			rdbtnQ1A1.setEnabled(true);
 			lblCrossQ1A1.setVisible(true);
 		}
-		
+
 		if(question1Answer == 2){
 			rdbtnQ1A2.setSelected(true);
 			rdbtnQ1A2.setEnabled(true);
 			lblCrossQ1A2.setVisible(true);
 		}
-		
+
 		if(question1Answer == 3){
 			rdbtnQ1A3.setSelected(true);
 			rdbtnQ1A3.setEnabled(true);
 			lblTickQ1.setVisible(true);
 		}
-		
+
 		if(question1Answer == 4){
 			rdbtnQ1A4.setSelected(true);
 			rdbtnQ1A4.setEnabled(true);
 			lblCrossQ1A4.setVisible(true);
 		}
 	}
-	
+
 	public void setQ2Icons(){
 		if(question2Answer == 1){
 			rdbtnQ2A1.setSelected(true);
 			rdbtnQ2A1.setEnabled(true);
 			lblTickQ2.setVisible(true);
 		}
-		
+
 		if(question2Answer == 2){
 			rdbtnQ2A2.setSelected(true);
 			rdbtnQ2A2.setEnabled(true);
 			lblCrossQ2A2.setVisible(true);
 		}
-		
+
 		if(question2Answer == 3){
 			rdbtnQ2A3.setSelected(true);
 			rdbtnQ2A3.setEnabled(true);
 			lblCrossQ2A3.setVisible(true);
 		}
-		
+
 		if(question2Answer == 4){
 			rdbtnQ2A4.setSelected(true);
 			rdbtnQ2A4.setEnabled(true);
 			lblCrossQ2A4.setVisible(true);
 		}
 	}
-	
+
 	public void setQ3Icons(){
 		if(question3Answer == 1){
 			rdbtnQ3A1.setSelected(true);
 			rdbtnQ3A1.setEnabled(true);
 			lblCrossQ3A1.setVisible(true);
 		}
-		
+
 		if(question3Answer == 2){
 			rdbtnQ3A2.setSelected(true);
 			rdbtnQ3A2.setEnabled(true);
 			lblCrossQ3A2.setVisible(true);
 		}
-		
+
 		if(question3Answer == 3){
 			rdbtnQ3A3.setSelected(true);
 			rdbtnQ3A3.setEnabled(true);
 			lblCrossQ3A3.setVisible(true);
 		}
-		
+
 		if(question3Answer == 4){
 			rdbtnQ3A4.setSelected(true);
 			rdbtnQ3A4.setEnabled(true);
 			lblTickQ4.setVisible(true);
 		}
 	}
-	
+
 	public void setQ4Icons(){
 		if(question4Answer == 1){
 			rdbtnQ4A1.setSelected(true);
 			rdbtnQ4A1.setEnabled(true);
 			lblTickQ4.setVisible(true);
 		}
-		
+
 		if(question4Answer == 2){
 			rdbtnQ4A2.setSelected(true);
 			rdbtnQ4A2.setEnabled(true);
 			lblCrossQ4A2.setVisible(true);
 		}
-		
+
 		if(question4Answer == 3){
 			rdbtnQ4A3.setSelected(true);
 			rdbtnQ4A3.setEnabled(true);
 			lblCrossQ4A3.setVisible(true);
 		}
-		
+
 		if(question4Answer == 4){
 			rdbtnQ4A4.setSelected(true);
 			rdbtnQ4A4.setEnabled(true);
 			lblCrossQ4A4.setVisible(true);
 		}
 	}
-	
+
 	public void setQ5Icons(){
 		if(question5Answer == 1){
 			rdbtnQ5A1.setSelected(true);
 			rdbtnQ5A1.setEnabled(true);
 			lblCrossQ5A1.setVisible(true);
 		}
-		
+
 		if(question5Answer == 2){
 			rdbtnQ5A2.setSelected(true);
 			rdbtnQ5A2.setEnabled(true);
 			lblTickQ5.setVisible(true);
 		}
-		
+
 		if(question5Answer == 3){
 			rdbtnQ5A3.setSelected(true);
 			rdbtnQ5A3.setEnabled(true);
 			lblCrossQ5A3.setVisible(true);
 		}
-		
+
 		if(question5Answer == 4){
 			rdbtnQ5A4.setSelected(true);
 			rdbtnQ5A4.setEnabled(true);
 			lblCrossQ5A4.setVisible(true);
 		}
 	}
-	
+
 	public void setQ6Icons(){
 		if(question6Answer == 1){
 			rdbtnQ6A1.setSelected(true);
 			rdbtnQ6A1.setEnabled(true);
 			lblCrossQ6A1.setVisible(true);
 		}
-		
+
 		if(question6Answer == 2){
 			rdbtnQ6A2.setSelected(true);
 			rdbtnQ6A2.setEnabled(true);
 			lblTickQ6.setVisible(true);
 		}
-		
+
 		if(question6Answer == 3){
 			rdbtnQ6A3.setSelected(true);
 			rdbtnQ6A3.setEnabled(true);
 			lblCrossQ6A3.setVisible(true);
 		}
-		
+
 		if(question6Answer == 4){
 			rdbtnQ6A4.setSelected(true);
 			rdbtnQ6A4.setEnabled(true);
 			lblCrossQ6A4.setVisible(true);
 		}
 	}
-	
+
 	public void setQ7Icons(){
 		if(question7Answer == 1){
 			rdbtnQ7A1.setSelected(true);
 			rdbtnQ7A1.setEnabled(true);
 			lblCrossQ7A1.setVisible(true);
 		}
-		
+
 		if(question7Answer == 2){
 			rdbtnQ7A2.setSelected(true);
 			rdbtnQ7A2.setEnabled(true);
 			lblTickQ7.setVisible(true);
 		}
-		
+
 		if(question7Answer == 3){
 			rdbtnQ7A3.setSelected(true);
 			rdbtnQ7A3.setEnabled(true);
 			lblCrossQ7A3.setVisible(true);
 		}
-		
+
 		if(question7Answer == 4){
 			rdbtnQ7A4.setSelected(true);
 			rdbtnQ7A4.setEnabled(true);
 			lblCrossQ7A4.setVisible(true);
 		}
 	}
-	
+
 	public void setQ8Icons(){
 		if(question8Answer == 1){
 			rdbtnQ8A1.setSelected(true);
 			rdbtnQ8A1.setEnabled(true);
 			lblCrossQ8A1.setVisible(true);
 		}
-		
+
 		if(question8Answer == 2){
 			rdbtnQ8A2.setSelected(true);
 			rdbtnQ8A2.setEnabled(true);
 			lblTickQ8.setVisible(true);
 		}
-		
+
 		if(question8Answer == 3){
 			rdbtnQ8A3.setSelected(true);
 			rdbtnQ8A3.setEnabled(true);
 			lblCrossQ8A3.setVisible(true);
 		}
-		
+
 		if(question8Answer == 4){
 			rdbtnQ8A4.setSelected(true);
 			rdbtnQ8A4.setEnabled(true);

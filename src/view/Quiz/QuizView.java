@@ -34,8 +34,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import javax.swing.JTextPane;
 
 import model.IQuiz;
@@ -101,35 +99,14 @@ public class QuizView extends JFrame {
 
 	private int score;
 
-	private JLabel lblCrossQ1A1;
-	private JLabel lblTickQ1;
-	private JLabel lblCrossQ1A4;
-	private JLabel lblCrossQ1A2;
-	private JLabel lblTickQ2;
-	private JLabel lblCrossQ2A2;
-	private JLabel lblCrossQ2A3;
-	private JLabel lblCrossQ2A4;
-	private JLabel lblTickQ3;
-	private JLabel lblCrossQ3A2;
-	private JLabel lblCrossQ3A3;
-	private JLabel lblCrossQ3A1;
-	private JLabel lblTickQ4;
-	private JLabel lblCrossQ4A2;
-	private JLabel lblCrossQ4A3;
-	private JLabel lblCrossQ4A4;
-	private JLabel lblTickQ5;
-	private JLabel lblCrossQ5A1;
-	private JLabel lblCrossQ5A3;
-	private JLabel lblCrossQ5A4;
-
 	private JScrollPane scrollPane;
 
 	private QuizResults results;
-	
+
 	private IQuiz model;
-	
+
 	private QuizController qController;
-	
+
 	private int question1Answer;
 	private int question2Answer;
 	private int question3Answer;
@@ -138,6 +115,7 @@ public class QuizView extends JFrame {
 	private int question6Answer;
 	private int question7Answer;
 	private int question8Answer;
+	private JButton btnMainMenu;
 
 
 	/**
@@ -163,13 +141,13 @@ public class QuizView extends JFrame {
 	 * Create the frame.
 	 */
 	public QuizView(IQuiz m) {
-		
+
 		model = m;
-		
+
 		results = new QuizResults(model);
-		
+
 		qController = new QuizController(model, this);
-		
+
 		setTitle("End of Unit Quiz");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 960, 757);
@@ -420,126 +398,6 @@ public class QuizView extends JFrame {
 		txtDescription.setBounds(48, 11, 783, 142);
 		contentPanel.add(txtDescription);
 
-		lblCrossQ1A1 = new JLabel("");
-		lblCrossQ1A1.setFocusable(false);
-		lblCrossQ1A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ1A1.setBounds(204, 200, 27, 23);
-		contentPanel.add(lblCrossQ1A1);
-
-		lblTickQ1 = new JLabel("");
-		lblTickQ1.setFocusable(false);
-		lblTickQ1.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
-		lblTickQ1.setBounds(521, 252, 27, 23);
-		contentPanel.add(lblTickQ1);
-
-		lblCrossQ1A4 = new JLabel("");
-		lblCrossQ1A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ1A4.setFocusable(false);
-		lblCrossQ1A4.setBounds(706, 278, 27, 23);
-		contentPanel.add(lblCrossQ1A4);
-
-		lblCrossQ1A2 = new JLabel("");
-		lblCrossQ1A2.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ1A2.setFocusable(false);
-		lblCrossQ1A2.setBounds(562, 226, 27, 23);
-		contentPanel.add(lblCrossQ1A2);
-
-		lblTickQ2 = new JLabel("");
-		lblTickQ2.setFocusable(false);
-		lblTickQ2.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
-		lblTickQ2.setBounds(225, 380, 27, 23);
-		contentPanel.add(lblTickQ2);
-
-		lblCrossQ2A2 = new JLabel("");
-		lblCrossQ2A2.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ2A2.setFocusable(false);
-		lblCrossQ2A2.setBounds(354, 406, 27, 23);
-		contentPanel.add(lblCrossQ2A2);
-
-		lblCrossQ2A3 = new JLabel("");
-		lblCrossQ2A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ2A3.setFocusable(false);
-		lblCrossQ2A3.setBounds(376, 432, 27, 23);
-		contentPanel.add(lblCrossQ2A3);
-
-		lblCrossQ2A4 = new JLabel("");
-		lblCrossQ2A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ2A4.setFocusable(false);
-		lblCrossQ2A4.setBounds(192, 458, 27, 23);
-		contentPanel.add(lblCrossQ2A4);
-
-		lblTickQ3 = new JLabel("");
-		lblTickQ3.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
-		lblTickQ3.setFocusable(false);
-		lblTickQ3.setBounds(524, 638, 27, 23);
-		contentPanel.add(lblTickQ3);
-
-		lblCrossQ3A2 = new JLabel("");
-		lblCrossQ3A2.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ3A2.setFocusable(false);
-		lblCrossQ3A2.setBounds(375, 586, 27, 23);
-		contentPanel.add(lblCrossQ3A2);
-
-		lblCrossQ3A3 = new JLabel("");
-		lblCrossQ3A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ3A3.setFocusable(false);
-		lblCrossQ3A3.setBounds(690, 612, 27, 23);
-		contentPanel.add(lblCrossQ3A3);
-
-		lblCrossQ3A1 = new JLabel("");
-		lblCrossQ3A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ3A1.setFocusable(false);
-		lblCrossQ3A1.setBounds(333, 560, 27, 23);
-		contentPanel.add(lblCrossQ3A1);
-
-		lblTickQ4 = new JLabel("");
-		lblTickQ4.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
-		lblTickQ4.setFocusable(false);
-		lblTickQ4.setBounds(170, 750, 27, 23);
-		contentPanel.add(lblTickQ4);
-
-		lblCrossQ4A2 = new JLabel("");
-		lblCrossQ4A2.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ4A2.setFocusable(false);
-		lblCrossQ4A2.setBounds(160, 776, 27, 23);
-		contentPanel.add(lblCrossQ4A2);
-
-		lblCrossQ4A3 = new JLabel("");
-		lblCrossQ4A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ4A3.setFocusable(false);
-		lblCrossQ4A3.setBounds(110, 802, 27, 23);
-		contentPanel.add(lblCrossQ4A3);
-
-		lblCrossQ4A4 = new JLabel("");
-		lblCrossQ4A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ4A4.setFocusable(false);
-		lblCrossQ4A4.setBounds(180, 826, 27, 23);
-		contentPanel.add(lblCrossQ4A4);
-
-		lblTickQ5 = new JLabel("");
-		lblTickQ5.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
-		lblTickQ5.setFocusable(false);
-		lblTickQ5.setBounds(100, 1076, 27, 23);
-		contentPanel.add(lblTickQ5);
-
-		lblCrossQ5A1 = new JLabel("");
-		lblCrossQ5A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ5A1.setFocusable(false);
-		lblCrossQ5A1.setBounds(90, 1050, 27, 23);
-		contentPanel.add(lblCrossQ5A1);
-
-		lblCrossQ5A3 = new JLabel("");
-		lblCrossQ5A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ5A3.setFocusable(false);
-		lblCrossQ5A3.setBounds(100, 1102, 27, 23);
-		contentPanel.add(lblCrossQ5A3);
-
-		lblCrossQ5A4 = new JLabel("");
-		lblCrossQ5A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ5A4.setFocusable(false);
-		lblCrossQ5A4.setBounds(100, 1128, 27, 23);
-		contentPanel.add(lblCrossQ5A4);
-
 		txtQuestion6 = new JTextField();
 		txtQuestion6.setFocusable(false);
 		txtQuestion6.setEditable(false);
@@ -647,7 +505,7 @@ public class QuizView extends JFrame {
 
 				if(allQuestionsAnswered()){
 					calculateScore();
-					
+
 					question1Answer();
 					question2Answer();
 					question3Answer();
@@ -656,13 +514,14 @@ public class QuizView extends JFrame {
 					question6Answer();
 					question7Answer();
 					question8Answer();
-					
-//					results.setScore(getScore());
+
+					//					results.setScore(getScore());
 					scrollPane.getVerticalScrollBar().setValue(0);
 					cardPanel.add(results);
 					cardPanel.remove(contentPanel);
 					cardPanel.add(results);
 					btnSubmit.setVisible(false);
+					btnMainMenu.setVisible(true);
 
 				}
 
@@ -681,78 +540,20 @@ public class QuizView extends JFrame {
 		txtQuestion7.setCaretPosition(0);
 		txtQuestion8.setCaretPosition(0);
 		txtDescription.setCaretPosition(0);
-
-		JLabel lblTickQ6 = new JLabel("");
-		lblTickQ6.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
-		lblTickQ6.setFocusable(false);
-		lblTickQ6.setBounds(110, 1256, 27, 23);
-		contentPanel.add(lblTickQ6);
-
-		JLabel lblCrossQ6A1 = new JLabel("");
-		lblCrossQ6A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ6A1.setFocusable(false);
-		lblCrossQ6A1.setBounds(110, 1230, 27, 23);
-		contentPanel.add(lblCrossQ6A1);
-
-		JLabel lblCrossQ6A3 = new JLabel("");
-		lblCrossQ6A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ6A3.setFocusable(false);
-		lblCrossQ6A3.setBounds(120, 1282, 27, 23);
-		contentPanel.add(lblCrossQ6A3);
-
-		JLabel lblCrossQ6A4 = new JLabel("");
-		lblCrossQ6A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ6A4.setFocusable(false);
-		lblCrossQ6A4.setBounds(110, 1308, 27, 23);
-		contentPanel.add(lblCrossQ6A4);
-
-		JLabel lblTickQ7 = new JLabel("");
-		lblTickQ7.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
-		lblTickQ7.setFocusable(false);
-		lblTickQ7.setBounds(90, 1556, 27, 23);
-		contentPanel.add(lblTickQ7);
-
-		JLabel lblCrossQ7A1 = new JLabel("");
-		lblCrossQ7A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ7A1.setFocusable(false);
-		lblCrossQ7A1.setBounds(90, 1530, 27, 23);
-		contentPanel.add(lblCrossQ7A1);
-
-		JLabel lblCrossQ7A3 = new JLabel("");
-		lblCrossQ7A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ7A3.setFocusable(false);
-		lblCrossQ7A3.setBounds(200, 1582, 27, 23);
-		contentPanel.add(lblCrossQ7A3);
-
-		JLabel lblCrossQ7A4 = new JLabel("");
-		lblCrossQ7A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ7A4.setFocusable(false);
-		lblCrossQ7A4.setBounds(100, 1608, 27, 23);
-		contentPanel.add(lblCrossQ7A4);
-
-		JLabel lblTickQ8 = new JLabel("");
-		lblTickQ8.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
-		lblTickQ8.setFocusable(false);
-		lblTickQ8.setBounds(90, 1736, 27, 23);
-		contentPanel.add(lblTickQ8);
-
-		JLabel lblCrossQ8A1 = new JLabel("");
-		lblCrossQ8A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ8A1.setFocusable(false);
-		lblCrossQ8A1.setBounds(90, 1710, 27, 23);
-		contentPanel.add(lblCrossQ8A1);
-
-		JLabel lblCrossQ8A3 = new JLabel("");
-		lblCrossQ8A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ8A3.setFocusable(false);
-		lblCrossQ8A3.setBounds(90, 1762, 27, 23);
-		contentPanel.add(lblCrossQ8A3);
-
-		JLabel lblCrossQ8A4 = new JLabel("");
-		lblCrossQ8A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
-		lblCrossQ8A4.setFocusable(false);
-		lblCrossQ8A4.setBounds(90, 1788, 27, 23);
-		contentPanel.add(lblCrossQ8A4);
+		
+		btnMainMenu = new JButton("Main Menu");
+		btnMainMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				MainMenu m = new MainMenu();
+				m.setVisible(true);
+				m.setLocationRelativeTo(null);
+				
+			}
+		});
+		btnMainMenu.setVisible(false);
+		btnMainMenu.setBounds(420, 635, 127, 35);
+		contentPane.add(btnMainMenu);
 
 
 	}
@@ -884,151 +685,151 @@ public class QuizView extends JFrame {
 		else
 			return false;
 	}
-	
+
 	public int question1Answer(){
 		if(rdbtnQ1A1.isSelected())
 			question1Answer = 1;
 		else
-		if(rdbtnQ1A2.isSelected())
-			question1Answer = 2;
-		else
-		if(rdbtnQ1A3.isSelected())
-			question1Answer = 3;
-		else
-		if(rdbtnQ1A4.isSelected())
-			question1Answer = 4;
-		
+			if(rdbtnQ1A2.isSelected())
+				question1Answer = 2;
+			else
+				if(rdbtnQ1A3.isSelected())
+					question1Answer = 3;
+				else
+					if(rdbtnQ1A4.isSelected())
+						question1Answer = 4;
+
 		return question1Answer;
-		
-		
+
+
 	}
-	
+
 	public int question2Answer(){
 		if(rdbtnQ2A1.isSelected())
 			question2Answer = 1;
-		
+
 		if(rdbtnQ2A2.isSelected())
 			question2Answer = 2;
-		
+
 		if(rdbtnQ2A3.isSelected())
 			question1Answer = 3;
-		
+
 		if(rdbtnQ2A4.isSelected())
 			question2Answer = 4;
-		
+
 		return question2Answer;
-		
-		
+
+
 	}
-	
+
 	public int question3Answer(){
 		if(rdbtnQ3A1.isSelected())
 			question3Answer = 1;
-		
+
 		if(rdbtnQ3A2.isSelected())
 			question3Answer = 2;
-		
+
 		if(rdbtnQ3A3.isSelected())
 			question3Answer = 3;
-		
+
 		if(rdbtnQ3A4.isSelected())
 			question3Answer = 4;
-		
+
 		return question3Answer;
-		
-		
+
+
 	}
-	
+
 	public int question4Answer(){
 		if(rdbtnQ4A1.isSelected())
 			question4Answer = 1;
-		
+
 		if(rdbtnQ4A2.isSelected())
 			question4Answer = 2;
-		
+
 		if(rdbtnQ4A3.isSelected())
 			question4Answer = 3;
-		
+
 		if(rdbtnQ4A4.isSelected())
 			question4Answer = 4;
-		
+
 		return question4Answer;
-		
-		
+
+
 	}
-	
+
 	public int question5Answer(){
 		if(rdbtnQ5A1.isSelected())
 			question5Answer = 1;
-		
+
 		if(rdbtnQ5A2.isSelected())
 			question5Answer = 2;
-		
+
 		if(rdbtnQ5A3.isSelected())
 			question5Answer = 3;
-		
+
 		if(rdbtnQ5A4.isSelected())
 			question5Answer = 4;
-		
+
 		return question5Answer;
-		
-		
+
+
 	}
-	
+
 	public int question6Answer(){
 		if(rdbtnQ6A1.isSelected())
 			question6Answer = 1;
-		
+
 		if(rdbtnQ6A2.isSelected())
 			question6Answer = 2;
-		
+
 		if(rdbtnQ6A3.isSelected())
 			question6Answer = 3;
-		
+
 		if(rdbtnQ6A4.isSelected())
 			question6Answer = 4;
-		
+
 		return question6Answer;
-		
-		
+
+
 	}
-	
+
 	public int question7Answer(){
 		if(rdbtnQ7A1.isSelected())
 			question7Answer = 1;
-		
+
 		if(rdbtnQ7A2.isSelected())
 			question7Answer = 2;
-		
+
 		if(rdbtnQ7A3.isSelected())
 			question7Answer = 3;
-		
+
 		if(rdbtnQ7A4.isSelected())
 			question7Answer = 4;
-		
+
 		return question7Answer;
-		
-		
+
+
 	}
-	
+
 	public int question8Answer(){
 		if(rdbtnQ8A1.isSelected())
 			question8Answer = 1;
-		
+
 		if(rdbtnQ8A2.isSelected())
 			question8Answer = 2;
-		
+
 		if(rdbtnQ8A3.isSelected())
 			question8Answer = 3;
-		
+
 		if(rdbtnQ8A4.isSelected())
 			question8Answer = 4;
-		
+
 		return question8Answer;
-		
-		
+
+
 	}
-	
+
 
 
 
