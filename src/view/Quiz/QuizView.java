@@ -631,6 +631,78 @@ public class QuizView extends JFrame {
 		txtQuestion7.setCaretPosition(0);
 		txtQuestion8.setCaretPosition(0);
 		txtDescription.setCaretPosition(0);
+		
+		JLabel lblTickQ6 = new JLabel("");
+		lblTickQ6.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
+		lblTickQ6.setFocusable(false);
+		lblTickQ6.setBounds(110, 1256, 27, 23);
+		contentPanel.add(lblTickQ6);
+		
+		JLabel lblCrossQ6A1 = new JLabel("");
+		lblCrossQ6A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ6A1.setFocusable(false);
+		lblCrossQ6A1.setBounds(110, 1230, 27, 23);
+		contentPanel.add(lblCrossQ6A1);
+		
+		JLabel lblCrossQ6A3 = new JLabel("");
+		lblCrossQ6A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ6A3.setFocusable(false);
+		lblCrossQ6A3.setBounds(120, 1282, 27, 23);
+		contentPanel.add(lblCrossQ6A3);
+		
+		JLabel lblCrossQ6A4 = new JLabel("");
+		lblCrossQ6A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ6A4.setFocusable(false);
+		lblCrossQ6A4.setBounds(110, 1308, 27, 23);
+		contentPanel.add(lblCrossQ6A4);
+		
+		JLabel lblTickQ7 = new JLabel("");
+		lblTickQ7.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
+		lblTickQ7.setFocusable(false);
+		lblTickQ7.setBounds(90, 1556, 27, 23);
+		contentPanel.add(lblTickQ7);
+		
+		JLabel lblCrossQ7A1 = new JLabel("");
+		lblCrossQ7A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ7A1.setFocusable(false);
+		lblCrossQ7A1.setBounds(90, 1530, 27, 23);
+		contentPanel.add(lblCrossQ7A1);
+		
+		JLabel lblCrossQ7A3 = new JLabel("");
+		lblCrossQ7A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ7A3.setFocusable(false);
+		lblCrossQ7A3.setBounds(200, 1582, 27, 23);
+		contentPanel.add(lblCrossQ7A3);
+		
+		JLabel lblCrossQ7A4 = new JLabel("");
+		lblCrossQ7A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ7A4.setFocusable(false);
+		lblCrossQ7A4.setBounds(100, 1608, 27, 23);
+		contentPanel.add(lblCrossQ7A4);
+		
+		JLabel lblTickQ8 = new JLabel("");
+		lblTickQ8.setIcon(new ImageIcon(QuizView.class.getResource("/images/smallTick.png")));
+		lblTickQ8.setFocusable(false);
+		lblTickQ8.setBounds(90, 1736, 27, 23);
+		contentPanel.add(lblTickQ8);
+		
+		JLabel lblCrossQ8A1 = new JLabel("");
+		lblCrossQ8A1.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ8A1.setFocusable(false);
+		lblCrossQ8A1.setBounds(90, 1710, 27, 23);
+		contentPanel.add(lblCrossQ8A1);
+		
+		JLabel lblCrossQ8A3 = new JLabel("");
+		lblCrossQ8A3.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ8A3.setFocusable(false);
+		lblCrossQ8A3.setBounds(90, 1762, 27, 23);
+		contentPanel.add(lblCrossQ8A3);
+		
+		JLabel lblCrossQ8A4 = new JLabel("");
+		lblCrossQ8A4.setIcon(new ImageIcon(QuizView.class.getResource("/images/raemi-cross-out.png")));
+		lblCrossQ8A4.setFocusable(false);
+		lblCrossQ8A4.setBounds(90, 1788, 27, 23);
+		contentPanel.add(lblCrossQ8A4);
 
 
 	}
@@ -647,5 +719,4 @@ public class QuizView extends JFrame {
 		txtDescription.setText("Congratulations, you scored "+ getScore() + " out of 5!\r\n\r\n");
 
 	}
-
 }
