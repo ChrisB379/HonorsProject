@@ -14,6 +14,7 @@ import model.IQuiz;
 import java.awt.Dimension;
 import java.util.Observable;
 import java.util.Observer;
+import java.awt.Font;
 
 public class QuizResults extends JPanel implements Observer {
 
@@ -159,7 +160,7 @@ public class QuizResults extends JPanel implements Observer {
 		//register View as an observer to Quiz model
 		((Observable) m).addObserver(this);
 
-		setPreferredSize(new Dimension(867, 2290));
+		setPreferredSize(new Dimension(867, 2300));
 		setLayout(null);
 
 		ButtonGroup btnGroupQ1 = new ButtonGroup();
@@ -317,14 +318,18 @@ public class QuizResults extends JPanel implements Observer {
 		btnGroupQ5.add(rdbtnQ5A4);
 
 		txtQuestion1 = new JTextField();
+		txtQuestion1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtQuestion1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion1.setFocusable(false);
 		txtQuestion1.setEditable(false);
 		txtQuestion1.setText("Question 1: Which of these describes the most basic form of recursion in java?");
-		txtQuestion1.setBounds(48, 160, 450, 20);
+		txtQuestion1.setBounds(48, 160, 561, 20);
 		add(txtQuestion1);
 		txtQuestion1.setColumns(10);
 
 		txtQuestion2 = new JTextField();
+		txtQuestion2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtQuestion2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion2.setFocusable(false);
 		txtQuestion2.setEditable(false);
 		txtQuestion2.setText("Question 2:  Which of these will happen if a recursive method does not have a base case?");
@@ -333,6 +338,8 @@ public class QuizResults extends JPanel implements Observer {
 		txtQuestion2.setColumns(10);
 
 		txtQuestion3 = new JTextField();
+		txtQuestion3.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtQuestion3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion3.setFocusable(false);
 		txtQuestion3.setEditable(false);
 		txtQuestion3.setText("Question 3: Which of these is not a correct statement?");
@@ -341,12 +348,14 @@ public class QuizResults extends JPanel implements Observer {
 		txtQuestion3.setColumns(10);
 
 		txtQuestion4 = new JTextArea();
+		txtQuestion4.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtQuestion4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion4.setWrapStyleWord(true);
 		txtQuestion4.setLineWrap(true);
 		txtQuestion4.setFocusable(false);
 		txtQuestion4.setEditable(false);
 		txtQuestion4.setText("Question 4: Suppose you are going to write a method which calculates the nth number in the fibonacci sequence. fib(n) returns fib(n-1) + fib(n-2), where the fib(0) and fib(1) are both defined to be 1. What is NOT a suitable base case for this method?");
-		txtQuestion4.setBounds(48, 899, 700, 35);
+		txtQuestion4.setBounds(48, 899, 800, 35);
 		add(txtQuestion4);
 		txtQuestion4.setColumns(10);
 
@@ -354,11 +363,12 @@ public class QuizResults extends JPanel implements Observer {
 		txtQuestion5.setContentType("text/html");
 		txtQuestion5.setFocusable(false);
 		txtQuestion5.setEditable(false);
-		txtQuestion5.setText("<html>Question 5: What is the output of this program if input value of n is 4?\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</html>");
+		txtQuestion5.setText("<html><font face=\"calibri\", size = 4>\r\nQuestion 5: What is the output of this program if input value of n is 4?\r\n</font>\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</html>");
 		txtQuestion5.setBounds(48, 1140, 420, 150);
 		add(txtQuestion5);
 
 		txtDescription = new JTextArea();
+		txtDescription.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtDescription.setFocusable(false);
 		txtDescription.setWrapStyleWord(true);
 		txtDescription.setLineWrap(true);
@@ -508,10 +518,12 @@ public class QuizResults extends JPanel implements Observer {
 		add(lblCrossQ5A4);
 
 		txtQuestion6 = new JTextField();
+		txtQuestion6.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtQuestion6.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion6.setFocusable(false);
 		txtQuestion6.setEditable(false);
 		txtQuestion6.setText("Question 6: Which of these data types is used by the operating system to manage recursion in Java?");
-		txtQuestion6.setBounds(48, 1490, 575, 20);
+		txtQuestion6.setBounds(48, 1490, 650, 20);
 		add(txtQuestion6);
 		txtQuestion6.setColumns(10);
 
@@ -545,8 +557,9 @@ public class QuizResults extends JPanel implements Observer {
 
 		txtQuestion7 = new JTextPane();
 		txtQuestion7.setEditable(false);
+		txtQuestion7.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion7.setContentType("text/html");
-		txtQuestion7.setText("<html>Question 7: What is the output of this program if input value of n is 1?\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</html>");
+		txtQuestion7.setText("<html><font face=\"calibri\", size = 4>\r\nQuestion 7: What is the output of this program if input value of n is 1?\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</font>\r\n</html>");
 		txtQuestion7.setBounds(48, 1730, 500, 150);
 		add(txtQuestion7);
 
@@ -580,10 +593,12 @@ public class QuizResults extends JPanel implements Observer {
 		btnGroupQ7.add(rdbtnQ7A4);
 
 		txtQuestion8 = new JTextField();
+		txtQuestion8.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtQuestion8.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion8.setFocusable(false);
 		txtQuestion8.setEditable(false);
 		txtQuestion8.setText("Question 8: How many recursive calls are made when calculating the value of fact(3), excluding the initial call of fact(3).");
-		txtQuestion8.setBounds(48, 2070, 650, 20);
+		txtQuestion8.setBounds(48, 2070, 750, 20);
 		add(txtQuestion8);
 		txtQuestion8.setColumns(10);
 
@@ -714,14 +729,17 @@ public class QuizResults extends JPanel implements Observer {
 		add(lblCrossQ8A4);
 
 		txtAnswerQ1 = new JTextField();
+		txtAnswerQ1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtAnswerQ1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ1.setEditable(false);
 		txtAnswerQ1.setFocusable(false);
 		txtAnswerQ1.setText("Answer: Recursion is the process of defining a method that calls itself repeatedly.");
-		txtAnswerQ1.setBounds(48, 308, 500, 20);
+		txtAnswerQ1.setBounds(48, 308, 541, 20);
 		add(txtAnswerQ1);
 		txtAnswerQ1.setColumns(10);
 
 		JTextArea txtQ1Explanation = new JTextArea();
+		txtQ1Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ1Explanation.setText("Explanation: Recursion is the process of defining something in terms of itself. It allows us to define a method that calls itself, possibly with different arguments.\r\n\r\nAnswer D is also a form of recursion known as Mutual Recursion, however it is not the most \"basic form\".");
 		txtQ1Explanation.setFocusable(false);
 		txtQ1Explanation.setWrapStyleWord(true);
@@ -731,6 +749,8 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ1Explanation);
 
 		txtAnswerQ2 = new JTextField();
+		txtAnswerQ2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtAnswerQ2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ2.setFocusable(false);
 		txtAnswerQ2.setEditable(false);
 		txtAnswerQ2.setText("Answer: An infinite loop occurs");
@@ -739,6 +759,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ2.setColumns(10);
 
 		txtQ2Explanation = new JTextArea();
+		txtQ2Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ2Explanation.setText("Explanation: If a recursive method does not have a base case then it will recurse \"infinitely\" or until a stack overflow occurs and the program crashes. \r\n");
 		txtQ2Explanation.setLineWrap(true);
 		txtQ2Explanation.setWrapStyleWord(true);
@@ -748,14 +769,17 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ2Explanation);
 
 		txtAnswerQ3 = new JTextField();
+		txtAnswerQ3.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtAnswerQ3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ3.setText("Answer : Memoization is a technique which makes recursion slower and less efficient.");
 		txtAnswerQ3.setFocusable(false);
 		txtAnswerQ3.setEditable(false);
-		txtAnswerQ3.setBounds(48, 817, 508, 20);
+		txtAnswerQ3.setBounds(48, 817, 561, 20);
 		add(txtAnswerQ3);
 		txtAnswerQ3.setColumns(10);
 
 		txtQ3Explanation = new JTextArea();
+		txtQ3Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ3Explanation.setText("Explanation : Memoization increases the speed of recursive functions by storing calculations and their results, thus removing the need to recalculate calculations.");
 		txtQ3Explanation.setWrapStyleWord(true);
 		txtQ3Explanation.setLineWrap(true);
@@ -765,6 +789,8 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ3Explanation);
 
 		txtAnswerQ4 = new JTextField();
+		txtAnswerQ4.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtAnswerQ4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ4.setText("Answer: n == 0 && n == 1");
 		txtAnswerQ4.setFocusable(false);
 		txtAnswerQ4.setEditable(false);
@@ -773,6 +799,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ4.setColumns(10);
 
 		txtQ4Explanation = new JTextArea();
+		txtQ4Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ4Explanation.setText("Explanation : The use of the logical AND(&&) means the base case will never be met as n cannot be both 0 and 1 at the same time.");
 		txtQ4Explanation.setWrapStyleWord(true);
 		txtQ4Explanation.setLineWrap(true);
@@ -782,6 +809,8 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ4Explanation);
 
 		txtAnswerQ5 = new JTextField();
+		txtAnswerQ5.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtAnswerQ5.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ5.setEditable(false);
 		txtAnswerQ5.setFocusable(false);
 		txtAnswerQ5.setText("Answer: 24");
@@ -790,6 +819,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ5.setColumns(10);
 
 		txtQ5Explanation = new JTextArea();
+		txtQ5Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ5Explanation.setText("Explanation: Factorial is the product of all positive integers less than or equal to n. Thus, fact(4) can be broken down to 4*3*2*1 = 24");
 		txtQ5Explanation.setWrapStyleWord(true);
 		txtQ5Explanation.setLineWrap(true);
@@ -799,6 +829,8 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ5Explanation);
 
 		txtAnswerQ6 = new JTextField();
+		txtAnswerQ6.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtAnswerQ6.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ6.setText("Answer: Stack");
 		txtAnswerQ6.setFocusable(false);
 		txtAnswerQ6.setEditable(false);
@@ -807,6 +839,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ6.setColumns(10);
 
 		txtQ6Explanation = new JTextArea();
+		txtQ6Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ6Explanation.setText("Explanation: Recursion is always managed through use of a stack");
 		txtQ6Explanation.setWrapStyleWord(true);
 		txtQ6Explanation.setLineWrap(true);
@@ -816,6 +849,8 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ6Explanation);
 
 		txtAnswerQ7 = new JTextField();
+		txtAnswerQ7.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtAnswerQ7.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ7.setText("Answer: 1\r\n");
 		txtAnswerQ7.setFocusable(false);
 		txtAnswerQ7.setEditable(false);
@@ -824,6 +859,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ7.setColumns(10);
 
 		txtQ7Explanation = new JTextArea();
+		txtQ7Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ7Explanation.setText("Explanation: Factorial is the product of all positive integers less than or equal to n. Thus, fact(4) can be broken down to 4*3*2*1 = 24");
 		txtQ7Explanation.setWrapStyleWord(true);
 		txtQ7Explanation.setLineWrap(true);
@@ -833,6 +869,8 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ7Explanation);
 
 		txtAnswerQ8 = new JTextField();
+		txtAnswerQ8.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtAnswerQ8.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ8.setFocusable(false);
 		txtAnswerQ8.setEditable(false);
 		txtAnswerQ8.setText("Answer: 2");
@@ -841,12 +879,13 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ8.setColumns(10);
 
 		txtQ8Explanation = new JTextArea();
+		txtQ8Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ8Explanation.setText("Explanation: fact(3) can be broken down into fact(2) * 3 which then recursively becomes fact(1)*2*3 which will then reach the base case and return 1*2*3 = 6. As you can see, this took two recursive calls to achieve.");
 		txtQ8Explanation.setLineWrap(true);
 		txtQ8Explanation.setWrapStyleWord(true);
 		txtQ8Explanation.setFocusable(false);
 		txtQ8Explanation.setEditable(false);
-		txtQ8Explanation.setBounds(48, 2248, 750, 30);
+		txtQ8Explanation.setBounds(48, 2248, 750, 40);
 		add(txtQ8Explanation);
 
 	}

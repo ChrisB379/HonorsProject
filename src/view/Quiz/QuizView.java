@@ -41,6 +41,8 @@ import model.Quiz;
 import controller.QuizController;
 
 import java.awt.CardLayout;
+import javax.swing.UIManager;
+import java.awt.Font;
 
 public class QuizView extends JFrame {
 
@@ -347,14 +349,18 @@ public class QuizView extends JFrame {
 		btnGroupQ5.add(rdbtnQ5A4);
 
 		txtQuestion1 = new JTextField();
+		txtQuestion1.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtQuestion1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion1.setFocusable(false);
 		txtQuestion1.setEditable(false);
 		txtQuestion1.setText("Question 1: Which of these describes the most basic form of recursion in java?");
-		txtQuestion1.setBounds(48, 160, 450, 20);
+		txtQuestion1.setBounds(48, 160, 500, 20);
 		contentPanel.add(txtQuestion1);
 		txtQuestion1.setColumns(10);
 
 		txtQuestion2 = new JTextField();
+		txtQuestion2.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtQuestion2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion2.setFocusable(false);
 		txtQuestion2.setEditable(false);
 		txtQuestion2.setText("Question 2:  Which of these will happen if a recursive method does not have a base case?");
@@ -363,6 +369,8 @@ public class QuizView extends JFrame {
 		txtQuestion2.setColumns(10);
 
 		txtQuestion3 = new JTextField();
+		txtQuestion3.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtQuestion3.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion3.setFocusable(false);
 		txtQuestion3.setEditable(false);
 		txtQuestion3.setText("Question 3: Which of these is not a correct statement?");
@@ -371,12 +379,13 @@ public class QuizView extends JFrame {
 		txtQuestion3.setColumns(10);
 
 		txtQuestion4 = new JTextArea();
+		txtQuestion4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion4.setWrapStyleWord(true);
 		txtQuestion4.setLineWrap(true);
 		txtQuestion4.setFocusable(false);
 		txtQuestion4.setEditable(false);
 		txtQuestion4.setText("Question 4: Suppose you are going to write a method which calculates the nth number in the fibonacci sequence. fib(n) returns fib(n-1) + fib(n-2), where the fib(0) and fib(1) are both defined to be 1. What is NOT a suitable base case for this method?");
-		txtQuestion4.setBounds(48, 700, 700, 35);
+		txtQuestion4.setBounds(48, 700, 800, 35);
 		contentPanel.add(txtQuestion4);
 		txtQuestion4.setColumns(10);
 
@@ -384,11 +393,13 @@ public class QuizView extends JFrame {
 		txtQuestion5.setContentType("text/html");
 		txtQuestion5.setFocusable(false);
 		txtQuestion5.setEditable(false);
-		txtQuestion5.setText("<html>Question 5: What is the output of this program if input value of n is 4?\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</html>");
+		txtQuestion5.setText("<html><font face=\"calibri\", size = 4>\r\nQuestion 5: What is the output of this program if input value of n is 4?\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</font>\r\n</html>");
 		txtQuestion5.setBounds(48, 890, 420, 150);
 		contentPanel.add(txtQuestion5);
 
 		txtDescription = new JTextArea();
+		txtDescription.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtDescription.setBackground(UIManager.getColor("Panel.background"));
 		txtDescription.setFocusable(false);
 		txtDescription.setWrapStyleWord(true);
 		txtDescription.setLineWrap(true);
@@ -400,10 +411,12 @@ public class QuizView extends JFrame {
 		contentPanel.add(txtDescription);
 
 		txtQuestion6 = new JTextField();
+		txtQuestion6.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtQuestion6.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion6.setFocusable(false);
 		txtQuestion6.setEditable(false);
 		txtQuestion6.setText("Question 6: Which of these data types is used by the operating system to manage recursion in Java?");
-		txtQuestion6.setBounds(48, 1190, 575, 20);
+		txtQuestion6.setBounds(48, 1190, 650, 20);
 		contentPanel.add(txtQuestion6);
 		txtQuestion6.setColumns(10);
 
@@ -434,7 +447,7 @@ public class QuizView extends JFrame {
 		txtQuestion7 = new JTextPane();
 		txtQuestion7.setEditable(false);
 		txtQuestion7.setContentType("text/html");
-		txtQuestion7.setText("<html>Question 7: What is the output of this program if input value of n is 1?\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</html>");
+		txtQuestion7.setText("<html><font face=\"calibri\", size = 4>\r\nQuestion 7: What is the output of this program if input value of n is 1?\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</font>\r\n</html>");
 		txtQuestion7.setBounds(48, 1370, 500, 150);
 		contentPanel.add(txtQuestion7);
 
@@ -464,10 +477,12 @@ public class QuizView extends JFrame {
 		btnGroupQ7.add(rdbtnQ7A4);
 
 		txtQuestion8 = new JTextField();
+		txtQuestion8.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtQuestion8.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion8.setFocusable(false);
 		txtQuestion8.setEditable(false);
 		txtQuestion8.setText("Question 8: How many recursive calls are made when calculating the value of fact(3), excluding the initial call of fact(3).");
-		txtQuestion8.setBounds(48, 1670, 650, 20);
+		txtQuestion8.setBounds(48, 1670, 750, 20);
 		contentPanel.add(txtQuestion8);
 		txtQuestion8.setColumns(10);
 
