@@ -20,6 +20,7 @@ import javax.swing.UIManager;
 
 import model.IExcessiveRecomp;
 import javax.swing.JLabel;
+import java.awt.Font;
 
 public class ExcessiveRecompResult extends JPanel implements Observer {
 
@@ -32,6 +33,7 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 	
 	private int userRet;
 	private int param;
+	private JLabel lblSummary;
 	
 
 	/**
@@ -45,7 +47,8 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 		((Observable) m).addObserver(this);
 
 		txtResult = new JTextArea();
-		txtResult.setBounds(33, 33, 751, 238);
+		txtResult.setFont(new Font("Cambria", Font.PLAIN, 15));
+		txtResult.setBounds(33, 33, 751, 421);
 		txtResult.setFocusable(false);
 		txtResult.setWrapStyleWord(true);
 		txtResult.setLineWrap(true);
@@ -59,13 +62,10 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 				+ "Insert algorithim + variables here\r\n\r\n");
 
 		txtSummary = new JTextArea();
-		txtSummary.setBounds(33, 310, 751, 376);
+		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
+		txtSummary.setBounds(33, 465, 751, 255);
 		txtSummary.setFocusable(false);
-		txtSummary.setText("\t\t\tSummary\r\n\r\n"
-				+ "In this tutorial series, the issue of excessive recomputation was presented.\r\n\r\n"
-				+ "Excessive recomputation occurs when the same calculation is done multiple times wasting CPU resources and time because after the first time a calculation is done, it shouldn't have to be done again.\r\n\r\n"
-				+ "For more releveant examples in this area and more challenging, please have a look at memoization and fibonacci with memoization. \r\n\r\n"
-				+ "You can choose to do so now via the memoization button or you can continue to Tutorial 4 if you wish.\r\n\r\n");
+		txtSummary.setText("\r\n\r\nIn this tutorial series, the issue of excessive recomputation was presented.\r\n\r\nExcessive recomputation occurs when the same calculation is done multiple times wasting CPU resources and time because after the first time a calculation is done, it shouldn't have to be done again.\r\n\r\nFor more releveant examples in this area and more challenging, please have a look at memoization and fibonacci with memoization. \r\n\r\nYou can choose to do so now via the memoization button or you can continue to Tutorial 4 if you wish.\r\n\r\n");
 
 
 
@@ -74,11 +74,17 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 		txtSummary.setEditable(false);
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
 		setLayout(null);
+		
+		lblSummary = new JLabel("Summary");
+		lblSummary.setFont(new Font("Segoe UI", Font.BOLD, 15));
+		lblSummary.setBounds(384, 463, 105, 21);
+		add(lblSummary);
 		add(txtResult);
 		add(txtSummary);
 		
 		JLabel lblResults = new JLabel("Results");
-		lblResults.setBounds(440, 8, 83, 14);
+		lblResults.setFont(new Font("Segoe UI", Font.BOLD, 15));
+		lblResults.setBounds(384, 11, 83, 14);
 		add(lblResults);
 
 	}

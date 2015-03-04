@@ -47,6 +47,10 @@ import model.ExcessiveRecomp;
 import model.IExcessiveRecomp;
 import model.IWorkAfter;
 import model.WorkAfter;
+import java.awt.Font;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 
 public class ExcessiveRecompView extends JFrame implements Observer {
@@ -191,28 +195,47 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		JTextPane txtIntroduction = new JTextPane();
 		txtIntroduction.setFocusable(false);
 		txtIntroduction.setContentType("text/html");
-		txtIntroduction.setText("<html>\r\nThis tutorial series focuses on excessive recomputation in recursion.\r\n<br>\r\n<br>Excessive recomputation highlights an issue with recursion. \r\n<br>Excessive recomputation is when the same calculation is calculated multiple times throughout multiple recursive calls. \r\n<br>This can make basic recursion not very resource efficient, since it will be wasting time and CPU power calculating sums which it should already know the answer to having already did the same calculation before.\r\n<br>\r\n<br>\r\n<br>In this tutorial series, the fibonacci algorithm will be used in order to demonstrate how work can be done after a recursive call.\r\n<br>The Fibonacci sequence is a series of numbers where a number is found by adding up the two numbers before it. Starting with 0 and 1, the sequence goes 1, 1, 2, 3, 5, 8, 13, 21, 34, and so forth.\r\n<br>\r\n<br>\r\n<br>The algorithm is as follows:\r\n<br><code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> fib(<font color = rgb(127,0,85)> <b>int </b> </font>n) {\r\n<br>\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b> </font> (n == 0 || n == 1)\r\n<br>\t\t  &nbsp&nbsp &nbsp&nbsp <font color = rgb(127,0,85)> <b>return </b> </font>1;\r\n<br>\t\t\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>else</b> </font>\r\n<br>\t\t &nbsp&nbsp&nbsp&nbsp<font color = rgb(63,127,95)> //Recursive call</font>\r\n<br>\t\t   &nbsp&nbsp&nbsp&nbsp <font color = rgb(127,0,85)> <b>return</b> </font> fib(n-1) + fib(n-2);\r\n<br>\t}\r\n<br></code>\r\n<br>Now we are going to move onto how the factorial algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n</html>\r\n\r\n");
+		txtIntroduction.setText("<html><font face=\"cambria\", size = 4>\r\nThis tutorial series focuses on excessive recomputation in recursion.\r\n<br>\r\n<br>Excessive recomputation highlights an issue with recursion. \r\n<br>Excessive recomputation is when the same calculation is calculated multiple times throughout multiple recursive calls. \r\n<br>This can make basic recursion not very resource efficient, since it will be wasting time and CPU power calculating sums which it should already know the answer to having already did the same calculation before.\r\n<br>\r\n<br>\r\n<br>In this tutorial series, the fibonacci algorithm will be used in order to demonstrate how work can be done after a recursive call.\r\n<br>The Fibonacci sequence is a series of numbers where a number is found by adding up the two numbers before it. Starting with 0 and 1, the sequence goes 1, 1, 2, 3, 5, 8, 13, 21, 34, and so forth.\r\n<br>\r\n<br>\r\n<br>The algorithm is as follows:\r\n</font>\r\n</html>\r\n\r\n");
 
 
 		txtIntroduction.setBackground(UIManager.getColor("Panel.background"));
 		txtIntroduction.setEditable(false);
+		
+		JTextPane txtAdvance = new JTextPane();
+		txtAdvance.setContentType("text/html");
+		txtAdvance.setText("<font face=\"cambria\", size = 4>\r\nNow we are going to move onto how the factorial algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n</font>");
+		txtAdvance.setBackground(UIManager.getColor("Panel.background"));
+		txtAdvance.setEditable(false);
+		
+		JTextPane txtFib = new JTextPane();
+		txtFib.setContentType("text/html");
+		txtFib.setText("<code>\r\n<br>&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> fib(<font color = rgb(127,0,85)> <b>int </b> </font>n) {\r\n<br>&nbsp\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>&nbsp\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b> </font> (n == 0 || n == 1)\r\n<br>&nbsp\t\t  &nbsp&nbsp &nbsp&nbsp <font color = rgb(127,0,85)> <b>return </b> </font>1;\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp <font color = rgb(127,0,85)> <b>else</b> </font>\r\n<br>&nbsp\t\t &nbsp&nbsp&nbsp&nbsp<font color = rgb(63,127,95)> //Recursive call</font>\r\n<br>&nbsp\t\t   &nbsp&nbsp&nbsp&nbsp <font color = rgb(127,0,85)> <b>return</b> </font> fib(n-1) + fib(n-2);\r\n<br>&nbsp\t}\r\n<br></code>");
+		txtFib.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtFib.setEditable(false);
 
 
 		GroupLayout gl_cp1GroupPanel = new GroupLayout(cp1GroupPanel);
 		gl_cp1GroupPanel.setHorizontalGroup(
-				gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
+			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-						.addGap(27)
-						.addComponent(txtIntroduction, GroupLayout.PREFERRED_SIZE, 795, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(116, Short.MAX_VALUE))
-				);
+					.addGap(27)
+					.addGroup(gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
+						.addComponent(txtAdvance, GroupLayout.PREFERRED_SIZE, 446, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtFib, GroupLayout.PREFERRED_SIZE, 267, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtIntroduction, GroupLayout.PREFERRED_SIZE, 795, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(116, Short.MAX_VALUE))
+		);
 		gl_cp1GroupPanel.setVerticalGroup(
-				gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
+			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-						.addGap(21)
-						.addComponent(txtIntroduction, GroupLayout.PREFERRED_SIZE, 575, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(148, Short.MAX_VALUE))
-				);
+					.addGap(21)
+					.addComponent(txtIntroduction, GroupLayout.PREFERRED_SIZE, 280, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(txtFib, GroupLayout.PREFERRED_SIZE, 182, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(txtAdvance, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(119, Short.MAX_VALUE))
+		);
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
 
 		btnMenu = new JButton("Main Menu");
@@ -228,6 +251,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 			}
 		});
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(38, 175, 127, 35);
 
 		btnMemoization = new JButton("Memoization");

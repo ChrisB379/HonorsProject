@@ -32,6 +32,9 @@ import controller.ExcessiveRecomputation.ERSubmitController;
 import model.IExcessiveRecomp;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import java.awt.Font;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 
@@ -67,6 +70,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 	private JLabel lblInsertWorkingHere;
 	private JLabel lblExample;
 	private JScrollPane scrollPane;
+	private JLabel lblParameterValue;
 
 	/**
 	 * Create the panel.
@@ -89,26 +93,16 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtFibonacci.setFocusable(false);
 		txtFibonacci.setBounds(45, 61, 288, 159);
 		txtFibonacci.setContentType("text/html");
-		txtFibonacci.setText("<html>"
-				+ "\r\n<code>"
-				+ "\r\n<font color = rgb(127,0,85)> <b>public int</b> </font> fib(<font color = rgb(127,0,85)> <b>int </b> </font>n) {"
-				+ "\r\n<br>\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>"
-				+ "\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b> </font> (n == 0 || n == 1)"
-				+ "\r\n<br>\t\t  &nbsp&nbsp &nbsp&nbsp <font color = rgb(127,0,85)> <b>return </b> </font>1;"
-				+ "\r\n<br>"
-				+ "\t\t\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>else</b> </font>"
-				+ "\r\n<br>\t\t &nbsp&nbsp&nbsp&nbsp<font color = rgb(63,127,95)> //Recursive call</font>"
-				+ "\r\n<br>\t\t   &nbsp&nbsp&nbsp&nbsp <font color = rgb(127,0,85)> <b>return</b> </font> fib(n-1) + fib(n-2);"
-				+ "\r\n<br>\t}"
-				+ "\r\n<br></code>"
-				+ "\r\n</html>");
+		txtFibonacci.setText("<html>\r\n<code>\r\n<font color = rgb(127,0,85)> <b>public int</b> </font> fib(<font color = rgb(127,0,85)> <b>int </b> </font>n) {\r\n<br>\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b> </font> (n == 0 || n == 1)\r\n<br>\t\t  &nbsp&nbsp &nbsp&nbsp <font color = rgb(127,0,85)> <b>return </b> </font>1;\r\n<br>\t\t\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>else</b> </font>\r\n<br>\t\t &nbsp&nbsp&nbsp&nbsp<font color = rgb(63,127,95)> //Recursive call</font>\r\n<br>\t\t   &nbsp&nbsp&nbsp&nbsp <font color = rgb(127,0,85)> <b>return</b> </font> fib(n-1) + fib(n-2);\r\n<br>\t}\r\n<br></code>\r\n</html>");
 
 		txtFibonacci.setBackground(UIManager.getColor("Panel.background"));
 		txtFibonacci.setEditable(false);
 
 		txtVariables = new JTextArea();
+		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtVariables.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtVariables.setFocusable(false);
-		txtVariables.setBounds(487, 61, 173, 279);
+		txtVariables.setBounds(487, 61, 55, 279);
 		txtVariables.setText("insert variables here");
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setLineWrap(true);
@@ -116,6 +110,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(45, 348, 188, 25);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
@@ -125,6 +120,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf.setText("The value of n is :");
 
 		txtrTheCurrent = new JTextArea();
+		txtrTheCurrent.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheCurrent.setFocusable(false);
 		txtrTheCurrent.setBounds(45, 412, 250, 29);
 		txtrTheCurrent.setBackground(UIManager.getColor("Panel.background"));
@@ -134,6 +130,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtrTheCurrent.setText("The current return value is :");
 
 		txtRtrnVal = new JTextField();
+		txtRtrnVal.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtRtrnVal.setBounds(339, 412, 47, 20);
 		//A limit of 2 should be enough as the 10th fibonacci number is 89 
 		txtRtrnVal.setDocument(new JTextFieldLimit(2));
@@ -162,6 +159,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		});
 
 		txtNval = new JTextField();
+		txtNval.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNval.setBounds(339, 350, 47, 20);
 		//A limit of 2 should be enough as the 10th fibonacci number is 89 
 		txtNval.setDocument(new JTextFieldLimit(2));
@@ -184,12 +182,14 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		});
 
 		btnSubmit = new JButton("Submit");
+		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(45, 507, 127, 35);
 		btnSubmit.addActionListener(ersc);
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtBaseCase.setFocusable(false);
-		txtBaseCase.setBounds(45, 475, 326, 14);
+		txtBaseCase.setBounds(45, 475, 389, 14);
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setColumns(10);
 		txtBaseCase.setText("Please click the Advance button to for the next example.");
@@ -197,8 +197,9 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
 		lblInsertWorkingHere = new JLabel("Insert Working here");
+		lblInsertWorkingHere.setFont(new Font("Calibri", Font.PLAIN, 15));
 		lblInsertWorkingHere.setFocusable(false);
-		lblInsertWorkingHere.setBounds(598, 358, 128, 14);
+		lblInsertWorkingHere.setBounds(598, 358, 148, 14);
 		setLayout(null);
 		add(txtrTheCurrent);
 		add(txtFibonacci);
@@ -212,14 +213,21 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		add(scrollPane);
 		
 		txtWorking = new JTextArea();
+		txtWorking.setFont(new Font("Calibri", Font.PLAIN, 15));
 		scrollPane.setViewportView(txtWorking);
 		add(btnSubmit);
 		add(txtBaseCase);
 		add(lblInsertWorkingHere);
 		
 		lblExample = new JLabel("Example");
-		lblExample.setBounds(411, 11, 110, 14);
+		lblExample.setFont(new Font("Segoe UI", Font.BOLD, 15));
+		lblExample.setBounds(403, 11, 118, 25);
 		add(lblExample);
+		
+		lblParameterValue = new JLabel("Parameter Value");
+		lblParameterValue.setFont(new Font("Calibri", Font.PLAIN, 15));
+		lblParameterValue.setBounds(475, 36, 118, 14);
+		add(lblParameterValue);
 
 	}
 	

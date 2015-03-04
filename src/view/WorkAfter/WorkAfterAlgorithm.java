@@ -34,6 +34,7 @@ import java.util.Observer;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import java.awt.Font;
+import javax.swing.border.LineBorder;
 
 public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListener {
 
@@ -68,6 +69,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 
 	private JTextArea txtQuestion2;
 	private JScrollPane scrollPane;
+	private JLabel lblParameterValue;
 
 
 	/**
@@ -101,9 +103,10 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		txtAlgorithm.setEditable(false);
 
 		txtVariables = new JTextArea();
+		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtVariables.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtVariables.setFocusable(false);
-		txtVariables.setBounds(505, 67, 184, 45);
+		txtVariables.setBounds(505, 67, 43, 35);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 		txtVariables.setEditable(false);
 		txtVariables.setLineWrap(true);
@@ -248,6 +251,11 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		btnGroupQ2.add(rdbtnQ2Option3);
 		btnGroupQ2.add(rdbtnQ2Option4);
 		btnGroupQ2.add(rdbtnQ2Option5);
+		
+		lblParameterValue = new JLabel("Parameter Value");
+		lblParameterValue.setFont(new Font("Calibri", Font.PLAIN, 15));
+		lblParameterValue.setBounds(505, 42, 169, 14);
+		add(lblParameterValue);
 
 
 	}
