@@ -13,11 +13,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import javax.swing.JButton;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JLabel;
 
@@ -80,7 +82,39 @@ public class MainMenu extends JFrame {
 				a.setVisible(true);
 				a.setLocationRelativeTo(null);
 				a.setResizable(false);
+				a.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+			}
+		});
+		btnAbout.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				if(btnAbout.isFocusOwner()){
+				    if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						About a = new About();
+						a.setVisible(true);
+						a.setLocationRelativeTo(null);
+						a.setResizable(false);
+						a.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				    }
+
+					
+				}
+				
 			}
 		});
 

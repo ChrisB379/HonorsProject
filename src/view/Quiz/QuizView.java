@@ -186,6 +186,7 @@ public class QuizView extends JFrame {
 				About a = new About();
 				a.setVisible(true);
 				a.setLocationRelativeTo(null);
+				a.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			}
 		});
 		mnAbout.add(mntmAbout);

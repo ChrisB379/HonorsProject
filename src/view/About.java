@@ -48,8 +48,6 @@ public class About extends JFrame {
 	 * Create the frame.
 	 */
 	public About() {
-		
-		
 		setLocationRelativeTo(null);
 		setTitle("About");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,4 +78,5 @@ public class About extends JFrame {
 		contentPane.add(txtAbout);
 		contentPane.add(btnReturnMainMenu);
 	}
+
 }
