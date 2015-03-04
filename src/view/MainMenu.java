@@ -64,29 +64,10 @@ public class MainMenu extends JFrame {
 		btnNewButton.setBounds(214, 151, 80, 23);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
-				TutorialMenu tm = new TutorialMenu();
-				tm.setVisible(true);
-				tm.setLocationRelativeTo(null);
-				tm.setResizable(false);
-
+				tutorialMenu();
 			}
 		});
-
-
-		JButton btnAbout = new JButton("About");
-		btnAbout.setBounds(214, 211, 80, 23);
-		btnAbout.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				About a = new About();
-				a.setVisible(true);
-				a.setLocationRelativeTo(null);
-				a.setResizable(false);
-				a.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-			}
-		});
-		btnAbout.addKeyListener(new KeyListener() {
+		btnNewButton.addKeyListener(new KeyListener() {
 			
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -102,14 +83,38 @@ public class MainMenu extends JFrame {
 			
 			@Override
 			public void keyPressed(KeyEvent e) {
+				if(btnNewButton.isFocusOwner()){
+				    if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						tutorialMenu();
+				    }
+				
+			}
+			}
+		});
+
+
+		JButton btnAbout = new JButton("About");
+		btnAbout.setBounds(214, 211, 80, 23);
+		btnAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				about();
+
+			}
+		});
+		btnAbout.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
 				// TODO Auto-generated method stub
 				if(btnAbout.isFocusOwner()){
 				    if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						About a = new About();
-						a.setVisible(true);
-						a.setLocationRelativeTo(null);
-						a.setResizable(false);
-						a.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+						about();
 				    }
 
 					
@@ -119,6 +124,27 @@ public class MainMenu extends JFrame {
 		});
 
 		JButton btnQuit = new JButton("Quit");
+		btnQuit.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				if(btnQuit.isFocusOwner()){
+				    if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						System.exit(0);
+				    }
+
+					
+				}
+				
+			}
+		});
 		btnQuit.setBounds(214, 267, 80, 23);
 
 		//Used to close the application if the quit button is pressed
@@ -137,5 +163,22 @@ public class MainMenu extends JFrame {
 		contentPane.add(btnQuit);
 		contentPane.add(btnAbout);
 		contentPane.add(btnNewButton);
+	}
+	
+	public void about(){
+		About a = new About();
+		a.setVisible(true);
+		a.setLocationRelativeTo(null);
+		a.setResizable(false);
+		a.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
+	
+	public void tutorialMenu(){
+		dispose();
+		TutorialMenu tm = new TutorialMenu();
+		tm.setVisible(true);
+		tm.setLocationRelativeTo(null);
+		tm.setResizable(false);
+		
 	}
 }
