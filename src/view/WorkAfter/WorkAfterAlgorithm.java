@@ -33,6 +33,7 @@ import java.util.Observer;
 
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import java.awt.Font;
 
 public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListener {
 
@@ -85,19 +86,22 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		wasc = new WASubmitController(model,this);
 
 		JLabel lblExample = new JLabel("Example");
+		lblExample.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblExample.setFocusable(false);
-		lblExample.setBounds(374, 11, 78, 14);
+		lblExample.setBounds(402, 11, 78, 23);
 
 		JTextPane txtAlgorithm = new JTextPane();
+		txtAlgorithm.setFont(new Font("Arial", Font.PLAIN, 11));
 		txtAlgorithm.setFocusable(false);
-		txtAlgorithm.setBounds(25, 58, 455, 268);
+		txtAlgorithm.setBounds(25, 58, 455, 240);
 		txtAlgorithm.setContentType("text/html");
-		txtAlgorithm.setText("<html>\r\n<code> \r\n<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value \r\n<br>\t\t&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp of n is</font> \" + n);\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the \r\n<br>\t\t&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp result of n*2 is</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t}\r\n<br></code> \r\n\r\n</html>");
+		txtAlgorithm.setText("<html>\r\n<code> \r\n\t\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value \r\n<br>\t\t&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp of n is</font> \" + n);\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the \r\n<br>\t\t&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp result of n*2 is</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t}\r\n</code> \r\n</html>");
 
 		txtAlgorithm.setBackground(Color.WHITE);
 		txtAlgorithm.setEditable(false);
 
 		txtVariables = new JTextArea();
+		txtVariables.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtVariables.setFocusable(false);
 		txtVariables.setBounds(505, 67, 184, 45);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
@@ -107,14 +111,17 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		txtVariables.setText("Variables will be inserted here");
 
 		btnSubmit = new JButton("Submit");
+		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(49, 598, 127, 35);
 		btnSubmit.addActionListener(wasc);
 
 		JLabel lblInsertYourWorking = new JLabel("Insert your working here:");
+		lblInsertYourWorking.setFont(new Font("Calibri", Font.PLAIN, 15));
 		lblInsertYourWorking.setFocusable(false);
-		lblInsertYourWorking.setBounds(613, 123, 149, 14);
+		lblInsertYourWorking.setBounds(594, 123, 184, 14);
 
 		txtBaseCase = new JTextField();
+		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(49, 555, 377, 14);
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -135,6 +142,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		add(scrollPane);
 		
 				JTextArea textWorking = new JTextArea();
+				textWorking.setFont(new Font("Calibri", Font.PLAIN, 13));
 				scrollPane.setViewportView(textWorking);
 
 		ButtonGroup btnGroupQ1 = new ButtonGroup();
@@ -145,6 +153,8 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 */
 
 		JTextArea txtQuestion1 = new JTextArea();
+		txtQuestion1.setBackground(UIManager.getColor("Panel.background"));
+		txtQuestion1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion1.setFocusable(false);
 		txtQuestion1.setEditable(false);
 		txtQuestion1.setText("Q1: What will be the first line of output?");
@@ -152,22 +162,27 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		add(txtQuestion1);
 
 		rdbtnQ1Option1 = new JRadioButton("Base case statement, showing the value of n is 1");
+		rdbtnQ1Option1.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ1Option1.setBounds(59, 394, 345, 23);
 		add(rdbtnQ1Option1);
 
 		rdbtnQ1Option2 = new JRadioButton("Base case statement, showing the value of n is 2");
+		rdbtnQ1Option2.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ1Option2.setBounds(59, 420, 345, 23);
 		add(rdbtnQ1Option2);
 
 		rdbtnQ1Option3 = new JRadioButton("After the recursive call, showing the result of n*2 is 2");
+		rdbtnQ1Option3.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ1Option3.setBounds(59, 446, 345, 23);
 		add(rdbtnQ1Option3);
 
 		rdbtnQ1Option4 = new JRadioButton("After the recursive call, showing the result of n*2 is "+ ((getParameter()-1)*2));
+		rdbtnQ1Option4.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ1Option4.setBounds(59, 472, 345, 23);
 		add(rdbtnQ1Option4);
 
 		rdbtnQ1Option5 = new JRadioButton("After the recursive call, showing the result of n*2 is " + getParameter());
+		rdbtnQ1Option5.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ1Option5.setBounds(59, 498, 345, 23);
 		add(rdbtnQ1Option5);
 
@@ -188,6 +203,8 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 */
 
 		txtQuestion2 = new JTextArea();
+		txtQuestion2.setBackground(UIManager.getColor("Panel.background"));
+		txtQuestion2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion2.setFocusable(false);
 		txtQuestion2.setEditable(false);
 		txtQuestion2.setText("Q2: What will be the last line of output?");
@@ -196,22 +213,27 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		txtQuestion2.setColumns(10);
 
 		rdbtnQ2Option1 = new JRadioButton("Base case statement, showing the value of n is  1");
+		rdbtnQ2Option1.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ2Option1.setBounds(448, 394, 361, 23);
 		add(rdbtnQ2Option1);
 
 		rdbtnQ2Option2 = new JRadioButton("Base case statement, showing the value of n is  2");
+		rdbtnQ2Option2.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ2Option2.setBounds(448, 420, 361, 23);
 		add(rdbtnQ2Option2);
 
 		rdbtnQ2Option3 = new JRadioButton("After the recursive call, showing the result of n*2 is 2");
+		rdbtnQ2Option3.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ2Option3.setBounds(448, 446, 361, 23);
 		add(rdbtnQ2Option3);
 
 		rdbtnQ2Option4 = new JRadioButton("New radio button");
+		rdbtnQ2Option4.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ2Option4.setBounds(448, 472, 361, 23);
 		add(rdbtnQ2Option4);
 
 		rdbtnQ2Option5 = new JRadioButton("New radio button");
+		rdbtnQ2Option5.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ2Option5.setBounds(448, 498, 361, 23);
 		add(rdbtnQ2Option5);
 

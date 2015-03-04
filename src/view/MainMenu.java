@@ -61,6 +61,7 @@ public class MainMenu extends JFrame {
 		setContentPane(contentPane);
 
 		JButton btnNewButton = new JButton("Start");
+		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnNewButton.setBounds(214, 151, 80, 23);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -68,32 +69,27 @@ public class MainMenu extends JFrame {
 			}
 		});
 		btnNewButton.addKeyListener(new KeyListener() {
-			
+
 			@Override
-			public void keyTyped(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
+			public void keyTyped(KeyEvent e) {}
+
 			@Override
-			public void keyReleased(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
+			public void keyReleased(KeyEvent e) {}
+
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(btnNewButton.isFocusOwner()){
-				    if (e.getKeyCode()==KeyEvent.VK_ENTER){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
 						tutorialMenu();
-				    }
-				
-			}
+					}
+
+				}
 			}
 		});
 
 
 		JButton btnAbout = new JButton("About");
+		btnAbout.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnAbout.setBounds(214, 211, 80, 23);
 		btnAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -102,47 +98,48 @@ public class MainMenu extends JFrame {
 			}
 		});
 		btnAbout.addKeyListener(new KeyListener() {
-			
+
 			@Override
 			public void keyTyped(KeyEvent e) {}
-			
+
 			@Override
 			public void keyReleased(KeyEvent e) {}
-			
+
 			@Override
 			public void keyPressed(KeyEvent e) {
 				// TODO Auto-generated method stub
 				if(btnAbout.isFocusOwner()){
-				    if (e.getKeyCode()==KeyEvent.VK_ENTER){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
 						about();
-				    }
+					}
 
-					
+
 				}
-				
+
 			}
 		});
 
 		JButton btnQuit = new JButton("Quit");
+		btnQuit.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnQuit.addKeyListener(new KeyListener() {
-			
+
 			@Override
 			public void keyTyped(KeyEvent e) {}
-			
+
 			@Override
 			public void keyReleased(KeyEvent e) {}
-			
+
 			@Override
 			public void keyPressed(KeyEvent e) {
 				// TODO Auto-generated method stub
 				if(btnQuit.isFocusOwner()){
-				    if (e.getKeyCode()==KeyEvent.VK_ENTER){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
 						System.exit(0);
-				    }
+					}
 
-					
+
 				}
-				
+
 			}
 		});
 		btnQuit.setBounds(214, 267, 80, 23);
@@ -157,14 +154,14 @@ public class MainMenu extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblUnderstandingRecursion = new JLabel("Understanding Recursion");
-		lblUnderstandingRecursion.setBounds(91, 42, 357, 38);
-		lblUnderstandingRecursion.setFont(new Font("Arial", Font.PLAIN, 32));
+		lblUnderstandingRecursion.setBounds(78, 42, 370, 48);
+		lblUnderstandingRecursion.setFont(new Font("Segoe UI", Font.PLAIN, 32));
 		contentPane.add(lblUnderstandingRecursion);
 		contentPane.add(btnQuit);
 		contentPane.add(btnAbout);
 		contentPane.add(btnNewButton);
 	}
-	
+
 	public void about(){
 		About a = new About();
 		a.setVisible(true);
@@ -172,13 +169,13 @@ public class MainMenu extends JFrame {
 		a.setResizable(false);
 		a.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
-	
+
 	public void tutorialMenu(){
 		dispose();
 		TutorialMenu tm = new TutorialMenu();
 		tm.setVisible(true);
 		tm.setLocationRelativeTo(null);
 		tm.setResizable(false);
-		
+
 	}
 }

@@ -19,8 +19,6 @@ import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -37,6 +35,9 @@ import view.Summary;
 import view.WorkAfter.AdvanceButtons.WAAlgorithmButton;
 import view.WorkAfter.AdvanceButtons.WAExampleButton;
 import view.WorkAfter.AdvanceButtons.WAResultsButton;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import java.awt.Font;
 
 public class WorkAfterView extends JFrame {
 
@@ -155,29 +156,29 @@ public class WorkAfterView extends JFrame {
 		cardPanel1.add(cp1GroupPanel, "name_94405714894092");
 
 		JTextPane txtDescription = new JTextPane();
+		txtDescription.setBounds(10, 11, 841, 221);
 		txtDescription.setContentType("text/html");
-		txtDescription.setText("<html>\r\n<br>This tutorial series focuses on work being done after a recursive call. \r\n<br>\r\n<br>Unlike the previous tutorials, a recursive call does not need to be the end of a method.\r\n<br>As the name suggests, work after a recursive call is when there is more code to be executed after a recursive call rather than it meaning the end of a method and being a return statement.\r\n<br>\r\n<br>In this tutorial series, a custom algorithm will be used in order to demonstrate how work can be done after a recursive call.\r\n<br>\r\n<br>\r\n<br>The algorithm is as follows:\r\n<br><code>\r\n<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value of n is</font> \" + n);\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the result of n*2 is</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t}\r\n<br></code>\r\n<br>Now we are going to move onto how the factorial algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n<br>\r\n</html>");
+		txtDescription.setText("<html> <font face=\"cambria\", size = 4>\r\n<br>This tutorial series focuses on work being done after a recursive call. \r\n<br>\r\n<br>Unlike the previous tutorials, a recursive call does not need to be the end of a method.\r\n<br>As the name suggests, work after a recursive call is when there is more code to be executed after a recursive call rather than it meaning the end of a method and being a return statement.\r\n<br>\r\n<br>In this tutorial series, a custom algorithm will be used in order to demonstrate how work can be done after a recursive call.\r\n<br>\r\n<br>\r\n<br>The algorithm is as follows:\r\n</html>");
 
 		txtDescription.setBackground(UIManager.getColor("Panel.background"));
 		txtDescription.setEditable(false);
-
-
-		GroupLayout gl_cp1GroupPanel = new GroupLayout(cp1GroupPanel);
-		gl_cp1GroupPanel.setHorizontalGroup(
-				gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(txtDescription, GroupLayout.PREFERRED_SIZE, 841, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(37, Short.MAX_VALUE))
-				);
-		gl_cp1GroupPanel.setVerticalGroup(
-				gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(txtDescription, GroupLayout.PREFERRED_SIZE, 553, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(171, Short.MAX_VALUE))
-				);
-		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
+		cp1GroupPanel.setLayout(null);
+		
+		JTextPane txtAlgorithm = new JTextPane();
+		txtAlgorithm.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtAlgorithm.setContentType("text/html");
+		txtAlgorithm.setText("<code> \r\n<br>&nbsp\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>&nbsp\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value of n is</font> \" + n);\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>&nbsp\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the result of n*2 is</font> \" + n*2);\r\n<br>\t\r\n<br>&nbsp\t}\r\n<br></code>");
+		txtAlgorithm.setBounds(10, 242, 672, 240);
+		cp1GroupPanel.add(txtAlgorithm);
+		cp1GroupPanel.add(txtDescription);
+		
+		JTextPane txtAdvance = new JTextPane();
+		txtAdvance.setBackground(UIManager.getColor("Panel.background"));
+		txtAdvance.setEditable(false);
+		txtAdvance.setContentType("text/html");
+		txtAdvance.setText("<font face=\"cambria\", size = 4>\r\nNow we are going to move onto how the factorial algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n<br> \r\n</font>");
+		txtAdvance.setBounds(10, 493, 431, 85);
+		cp1GroupPanel.add(txtAdvance);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 		advancePanel = new JPanel();
@@ -198,6 +199,7 @@ public class WorkAfterView extends JFrame {
 		});
 
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(37, 90, 127, 35);
 
 		btnAdvance.addActionListener(new ActionListener() {

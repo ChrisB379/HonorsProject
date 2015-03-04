@@ -93,11 +93,11 @@ public class TutorialMenu extends JFrame {
 				bcv.setResizable(false);
 			}
 		});
-		btnBaseCase.setFont(new Font("Arial", Font.PLAIN, 15));
+		btnBaseCase.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 
 		JButton btnNewButton = new JButton("Return Value");
 		btnNewButton.setBounds(320, 160, 205, 27);
-		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 15));
+		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -121,7 +121,7 @@ public class TutorialMenu extends JFrame {
 				qzv.setResizable(false);
 			}
 		});
-		btnMultipleChoiceQuiz.setFont(new Font("Arial", Font.PLAIN, 15));
+		btnMultipleChoiceQuiz.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 
 		JButton btnReturnValue = new JButton("Excessive Recomputation");
 		btnReturnValue.setBounds(320, 198, 205, 27);
@@ -135,7 +135,7 @@ public class TutorialMenu extends JFrame {
 				erv.setResizable(false);
 			}
 		});
-		btnReturnValue.setFont(new Font("Arial", Font.PLAIN, 15));
+		btnReturnValue.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 
 		JButton btnWorkAfter = new JButton("Work After");
 		btnWorkAfter.setBounds(320, 241, 205, 27);
@@ -149,11 +149,11 @@ public class TutorialMenu extends JFrame {
 				wav.setResizable(false);
 			}
 		});
-		btnWorkAfter.setFont(new Font("Arial", Font.PLAIN, 15));
+		btnWorkAfter.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 
 		JButton btnReturnToMain = new JButton("Return to Main Menu");
 		btnReturnToMain.setBounds(187, 332, 182, 27);
-		btnReturnToMain.setFont(new Font("Arial", Font.PLAIN, 15));
+		btnReturnToMain.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnReturnToMain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -166,27 +166,27 @@ public class TutorialMenu extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("Tutorials");
 		lblNewLabel.setBounds(223, 16, 129, 71);
-		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 32));
+		lblNewLabel.setFont(new Font("Segoe UI", Font.PLAIN, 32));
 
 		JLabel lblTutorial = new JLabel("Tutorial 1 : The Base Case");
 		lblTutorial.setBounds(29, 115, 174, 18);
-		lblTutorial.setFont(new Font("Arial", Font.PLAIN, 15));
+		lblTutorial.setFont(new Font("Cambria", Font.PLAIN, 15));
 
 		JLabel lblTutorial_1 = new JLabel("Tutorial 2 : Return Values");
-		lblTutorial_1.setBounds(29, 164, 164, 18);
-		lblTutorial_1.setFont(new Font("Arial", Font.PLAIN, 15));
+		lblTutorial_1.setBounds(29, 160, 164, 18);
+		lblTutorial_1.setFont(new Font("Cambria", Font.PLAIN, 15));
 
 		JLabel lblTutorialExcessive = new JLabel("Tutorial 3: Excessive Recomputation");
-		lblTutorialExcessive.setBounds(29, 205, 238, 18);
-		lblTutorialExcessive.setFont(new Font("Arial", Font.PLAIN, 15));
+		lblTutorialExcessive.setBounds(29, 198, 238, 18);
+		lblTutorialExcessive.setFont(new Font("Cambria", Font.PLAIN, 15));
 
 		JLabel lblTutorialWork = new JLabel("Tutorial 4: Work After");
-		lblTutorialWork.setBounds(29, 245, 137, 18);
-		lblTutorialWork.setFont(new Font("Arial", Font.PLAIN, 15));
+		lblTutorialWork.setBounds(29, 241, 164, 18);
+		lblTutorialWork.setFont(new Font("Cambria", Font.PLAIN, 15));
 
 		JLabel lblEndOfUnit = new JLabel("End of unit quiz");
-		lblEndOfUnit.setBounds(29, 290, 100, 18);
-		lblEndOfUnit.setFont(new Font("Arial", Font.PLAIN, 15));
+		lblEndOfUnit.setBounds(29, 286, 100, 18);
+		lblEndOfUnit.setFont(new Font("Cambria", Font.PLAIN, 15));
 		
 		contentPane.setLayout(null);
 		contentPane.add(lblTutorial);

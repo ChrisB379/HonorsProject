@@ -19,6 +19,7 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import model.IWorkAfter;
 import javax.swing.JLabel;
+import java.awt.Font;
 
 public class WorkAfterResult extends JPanel implements Observer {
 
@@ -45,8 +46,9 @@ public class WorkAfterResult extends JPanel implements Observer {
 		
 		
 		txtResults = new JTextArea();
+		txtResults.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResults.setFocusable(false);
-		txtResults.setBounds(36, 36, 668, 421);
+		txtResults.setBounds(36, 36, 702, 478);
 		txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
 				+ "The algorithm worked on was workAfter(" +getParam() +")\r\n\r\n"
 				+ "Your answer for workAfter(" + getParam() +") was : " + getReturnValQ1() + "\r\n\r\n"
@@ -59,26 +61,27 @@ public class WorkAfterResult extends JPanel implements Observer {
 		txtResults.setLineWrap(true);
 		txtResults.setWrapStyleWord(true);
 		setLayout(null);
+		
+		JLabel lblSummary = new JLabel("Summary");
+		lblSummary.setFont(new Font("Segoe UI", Font.BOLD, 15));
+		lblSummary.setBounds(312, 507, 94, 27);
+		add(lblSummary);
 
 		txtSummary = new JTextArea();
+		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
-		txtSummary.setBounds(36, 455, 668, 292);
+		txtSummary.setBounds(36, 512, 702, 225);
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
 		txtSummary.setLineWrap(true);
 		txtSummary.setWrapStyleWord(true);
 		txtSummary.setEditable(false);
-		txtSummary.setText("\t\t\t\t\t\t\t\t\t\t\tSummary\r\n\r\n"
-				+ "In this tutorial series, the basics of doing work after a recursive call were presented.\r\n\r\n"
-				+ "Recursive calls do not need to be the end of a method. In fact work can be done after a recursive call.\r\n\r\n"
-				+ "For more releveant examples in this area and more challenging, please have a look for sorts and searches. A good example is Merge sort."
-				+ " Merge sort will split a list in one and use recursion to sort each list. Once this recursive call has been completed, the work done after "
-				+ "involves combining the two lists into one sorted list.");
+		txtSummary.setText("\r\n\r\nIn this tutorial series, the basics of doing work after a recursive call were presented.\r\n\r\nRecursive calls do not need to be the end of a method. In fact work can be done after a recursive call.\r\n\r\nFor more releveant examples in this area and more challenging, please have a look for sorts and searches. A good example is Merge sort. Merge sort will split a list in one and use recursion to sort each list. Once this recursive call has been completed, the work done after involves combining the two lists into one sorted list.");
 		add(txtSummary);
 		add(txtResults);
 		
-		JLabel lblResults = new JLabel("Results:");
-		lblResults.setEnabled(false);
-		lblResults.setBounds(339, 11, 79, 14);
+		JLabel lblResults = new JLabel("Results");
+		lblResults.setFont(new Font("Segoe UI", Font.BOLD, 15));
+		lblResults.setBounds(312, 0, 91, 21);
 		add(lblResults);
 
 	}

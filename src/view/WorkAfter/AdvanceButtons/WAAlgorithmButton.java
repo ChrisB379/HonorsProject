@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import view.WorkAfter.WorkAfterView;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class WAAlgorithmButton extends JPanel {
 
@@ -23,6 +24,7 @@ public class WAAlgorithmButton extends JPanel {
 		wav = wa;
 		
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(37, 90, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

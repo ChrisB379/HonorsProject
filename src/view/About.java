@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JButton;
+import java.awt.Font;
 
 public class About extends JFrame {
 
@@ -51,13 +52,14 @@ public class About extends JFrame {
 		setLocationRelativeTo(null);
 		setTitle("About");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 449, 267);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
 		JTextArea txtAbout = new JTextArea();
-		txtAbout.setBounds(26, 29, 393, 159);
+		txtAbout.setFont(new Font("Cambria", Font.PLAIN, 14));
+		txtAbout.setBounds(26, 29, 393, 138);
 		txtAbout.setText("Understanding Recursion is a project undertaken by a fourth year student in his final year of his BSc Honors course in Computer Science.\r\n\r\nThe goal of this application was to create an interactive application which will aid a user in understanding and learning the basics of recursion.");
 		txtAbout.setBackground(UIManager.getColor("Panel.background"));
 		txtAbout.setWrapStyleWord(true);
@@ -65,7 +67,8 @@ public class About extends JFrame {
 		txtAbout.setEditable(false);
 
 		JButton btnReturnMainMenu = new JButton("Close");
-		btnReturnMainMenu.setBounds(149, 209, 127, 30);
+		btnReturnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 11));
+		btnReturnMainMenu.setBounds(163, 178, 100, 30);
 		btnReturnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();

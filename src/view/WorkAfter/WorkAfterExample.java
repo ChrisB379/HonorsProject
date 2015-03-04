@@ -14,18 +14,18 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.UIManager;
 import javax.swing.JTextField;
 
 import view.JTextFieldLimit;
 
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextPane;
 
 import model.IWorkAfter;
 import controller.WorkAfter.WAParameterController;
+import java.awt.Font;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 public class WorkAfterExample extends JPanel implements Observer {
 
@@ -51,14 +51,17 @@ public class WorkAfterExample extends JPanel implements Observer {
 		waController = new WAParameterController(model, this);
 
 		JTextPane txtExample = new JTextPane();
+		txtExample.setBounds(21, 7, 395, 43);
+		txtExample.setFont(new Font("Calibri", Font.PLAIN, 11));
 		txtExample.setContentType("text/html");
-		txtExample.setText("<html>\r\n<br>The algorithm is as follows: \r\n<br>\r\n<br><code> \r\n<br>\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value of n is</font> \" + n);\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the result of n*2 is</font> \" + n*2);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>\t}\r\n<br></code> \r\n<br>\r\n<br>How this algorithm works:\r\n<br>\r\n<br>Step 1:\tThe parameter is checked by the base case\r\n<br>Step 2:\tIf the base case is not met then we go to the else statement; the recursive call\r\n<br>Step 3:\tRecursively this method is called until the base is met\r\n<br>Step 4:\tOnce this happens the print statement in the base case is printed\r\n<br>Step 5:\tThen the work after the recursive call is done and the final print statement is printed showing n*2 for each recursive call\r\n<br>\r\n<br>Next you will be working through your own example of this algorithm. \r\n<br>Please enter a number between 0 and 11 in the field provided which will be the parameter for your algorithm workAfter(n) .\r\n</html>");
+		txtExample.setText("<html><font face=\"cambria\", size = 4>\r\nThe algorithm is as follows: \r\n</font>\r\n</html>");
 
 
 		txtExample.setBackground(UIManager.getColor("Panel.background"));
 		txtExample.setEditable(false);
 
 		txtParameterField = new JTextField();
+		txtParameterField.setBounds(21, 519, 44, 20);
 		txtParameterField.setDocument(new JTextFieldLimit(2));
 		txtParameterField.setColumns(10);
 		txtParameterField.addActionListener(waController);
@@ -81,27 +84,25 @@ public class WorkAfterExample extends JPanel implements Observer {
 
 			}
 		});
-
-		GroupLayout groupLayout = new GroupLayout(this);
-		groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addGap(21)
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtExample, GroupLayout.PREFERRED_SIZE, 797, GroupLayout.PREFERRED_SIZE))
-								.addContainerGap(76, Short.MAX_VALUE))
-				);
-		groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(txtExample, GroupLayout.PREFERRED_SIZE, 559, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(314, Short.MAX_VALUE))
-				);
-		setLayout(groupLayout);
+		setLayout(null);
+		
+		JTextPane txtpnpublicVoidWorkafterint = new JTextPane();
+		txtpnpublicVoidWorkafterint.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtpnpublicVoidWorkafterint.setContentType("text/html");
+		txtpnpublicVoidWorkafterint.setText("<code> \r\n&nbsp\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>&nbsp\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value of n is</font> \" + n);\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>&nbsp\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the result of n*2 is</font> \" + n*2);\r\n<br>\t\t\t\r\n<br>&nbsp\t}\r\n</code> ");
+		txtpnpublicVoidWorkafterint.setEditable(false);
+		txtpnpublicVoidWorkafterint.setBounds(21, 61, 650, 211);
+		add(txtpnpublicVoidWorkafterint);
+		add(txtParameterField);
+		add(txtExample);
+		
+		JTextPane txtrHowThisAlgorithm = new JTextPane();
+		txtrHowThisAlgorithm.setBackground(UIManager.getColor("Panel.background"));
+		txtrHowThisAlgorithm.setEditable(false);
+		txtrHowThisAlgorithm.setContentType("text/html");
+		txtrHowThisAlgorithm.setText("<html><font face=\"cambria\", size = 4>\r\nHow this algorithm works:\r\n<br>\r\n<br>Step 1:\tThe parameter is checked by the base case\r\n<br>Step 2:\tIf the base case is not met then we go to the else statement; the recursive call\r\n<br>Step 3:\tRecursively this method is called until the base is met\r\n<br>Step 4:\tOnce this happens the print statement in the base case is printed\r\n<br>Step 5:\tThen the work after the recursive call is done and the final print statement is printed showing n*2 for each recursive call\r\n<br>\r\n<br>Next you will be working through your own example of this algorithm. \r\n<br>Please enter a number between 0 and 11 in the field provided which will be the parameter for your algorithm workAfter(n) .\r\n</font>\r\n</html>");
+		txtrHowThisAlgorithm.setBounds(21, 297, 810, 211);
+		add(txtrHowThisAlgorithm);
 
 	}
 

@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import view.WorkAfter.WorkAfterView;
 
 import javax.swing.JButton;
+import java.awt.Font;
 
 public class WAResultsButton extends JPanel {
 
@@ -23,6 +24,7 @@ public class WAResultsButton extends JPanel {
 		wav = w;
 		
 		JButton btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(37, 90, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -33,6 +35,7 @@ public class WAResultsButton extends JPanel {
 		});
 		
 		JButton btnMainMenu = new JButton("Main Menu");
+		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.setBounds(37, 21, 127, 35);
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

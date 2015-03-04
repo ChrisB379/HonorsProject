@@ -10,6 +10,7 @@ import controller.WorkAfter.WAParameterController;
 import view.WorkAfter.WorkAfterExample;
 import view.WorkAfter.WorkAfterView;
 import model.IWorkAfter;
+import java.awt.Font;
 
 public class WAExampleButton extends JPanel {
 
@@ -34,6 +35,7 @@ public class WAExampleButton extends JPanel {
 		waPc = new WAParameterController(iWa, waE);
 		
 		JButton btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(37, 90, 127, 35);
 		btnAdvance.addActionListener(waPc);
 		btnAdvance.addActionListener(new ActionListener() {
