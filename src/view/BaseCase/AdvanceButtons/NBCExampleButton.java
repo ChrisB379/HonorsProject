@@ -10,6 +10,7 @@ import model.IBaseCase;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class NBCExampleButton extends JPanel {
 
@@ -37,6 +38,7 @@ public class NBCExampleButton extends JPanel {
 		nbpController = new NoBCParameterController(model, nbcExample);
 		
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(10, 106, 127, 35);
 		btnAdvance.addActionListener(nbpController);
 		btnAdvance.addActionListener(new ActionListener() {

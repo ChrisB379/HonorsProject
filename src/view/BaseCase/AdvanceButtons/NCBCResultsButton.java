@@ -6,6 +6,7 @@ import view.BaseCase.BaseCaseView;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class NCBCResultsButton extends JPanel {
 
@@ -24,6 +25,7 @@ public class NCBCResultsButton extends JPanel {
 		view = v;
 		
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(10, 106, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -34,6 +36,7 @@ public class NCBCResultsButton extends JPanel {
 		
 		
 		btnMainMenu = new JButton("Main Menu");
+		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.setBounds(10, 24, 127, 35);
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

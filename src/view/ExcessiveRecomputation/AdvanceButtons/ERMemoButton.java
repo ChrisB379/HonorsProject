@@ -7,6 +7,7 @@ import view.ExcessiveRecomputation.ExcessiveRecompView;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class ERMemoButton extends JPanel {
 
@@ -23,6 +24,7 @@ public class ERMemoButton extends JPanel {
 		view = v;
 		
 		JButton btnContinue = new JButton("Continue");
+		btnContinue.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnContinue.setBounds(38, 175, 127, 35);
 		btnContinue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

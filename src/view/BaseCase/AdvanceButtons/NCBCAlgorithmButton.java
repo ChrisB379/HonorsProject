@@ -7,6 +7,7 @@ import view.BaseCase.BaseCaseView;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class NCBCAlgorithmButton extends JPanel {
 
@@ -24,6 +25,7 @@ public class NCBCAlgorithmButton extends JPanel {
 		view = v;
 		
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(10, 106, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

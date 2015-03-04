@@ -8,6 +8,7 @@ import view.ReturnValue.ReturnValueView;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class AlgorithmButton extends JPanel {
 
@@ -26,6 +27,7 @@ public class AlgorithmButton extends JPanel {
 		alg2 = alg;
 		
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(55, 85, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -8,6 +8,7 @@ import view.ExcessiveRecomputation.ExcessiveRecompExample2;
 import view.ExcessiveRecomputation.ExcessiveRecompView;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class ERExample2Button extends JPanel {
 
@@ -31,6 +32,7 @@ public class ERExample2Button extends JPanel {
 		erpc = new ERParameterController(model, ere2);
 		
 		JButton btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(38, 175, 127, 35);
 		btnAdvance.addActionListener(erpc);
 		btnAdvance.addActionListener(new ActionListener() {

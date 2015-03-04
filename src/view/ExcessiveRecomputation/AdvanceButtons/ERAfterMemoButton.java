@@ -6,6 +6,7 @@ import view.ExcessiveRecomputation.ExcessiveRecompView;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class ERAfterMemoButton extends JPanel {
 
@@ -19,6 +20,7 @@ public class ERAfterMemoButton extends JPanel {
 	public ERAfterMemoButton(ExcessiveRecompView v) {
 		
 		JButton btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(38, 175, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -28,6 +30,7 @@ public class ERAfterMemoButton extends JPanel {
 		});
 		
 		JButton btnMainMenu = new JButton("Main Menu");
+		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.setBounds(38, 105, 127, 35);
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

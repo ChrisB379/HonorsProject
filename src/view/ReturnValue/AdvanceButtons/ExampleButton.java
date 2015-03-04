@@ -9,6 +9,7 @@ import view.ReturnValue.ReturnValueView;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class ExampleButton extends JPanel {
 
@@ -34,6 +35,7 @@ public class ExampleButton extends JPanel {
 		p = new RVParameterController(model, rve);
 		
 		JButton btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(55, 85, 127, 35);
 		btnAdvance.addActionListener(p);
 		btnAdvance.addActionListener(new ActionListener() {
