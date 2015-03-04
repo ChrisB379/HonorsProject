@@ -15,9 +15,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -46,6 +43,9 @@ import model.BaseCase;
 import model.IBaseCase;
 import model.IReturnValue;
 import model.ReturnValue;
+import java.awt.Font;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 public class BaseCaseView extends JFrame implements Observer {
 
@@ -202,6 +202,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		});
 
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(10, 106, 127, 35);
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
@@ -220,52 +221,35 @@ public class BaseCaseView extends JFrame implements Observer {
 		advancePanel.add(btnMenu);
 		advancePanel.add(btnAdvance);
 		contentPane.setLayout(null);
+		cp1GroupPanel.setLayout(null);
+		
+		JTextPane txtAdvance = new JTextPane();
+		txtAdvance.setContentType("text/html");
+		txtAdvance.setText("<font face=\"cambria\", size = 4>\r\nNow we are going to move onto how the noBaseCase algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.");
+		txtAdvance.setEditable(false);
+		txtAdvance.setBounds(20, 560, 487, 78);
+		cp1GroupPanel.add(txtAdvance);
 
 
 
 
 		JTextPane txtrThisTutorialSeries = new JTextPane();
+		txtrThisTutorialSeries.setBounds(10, 11, 1016, 240);
 		txtrThisTutorialSeries.setFocusable(false);
 		txtrThisTutorialSeries.setContentType("text/html");
-		txtrThisTutorialSeries.setText("<html>\r\n<br>This tutorial series focuses on base case in recursive calls. \r\n<br>\r\n<br>"
-				+ "The base case of a recursive call returns a value without making any subsequent recursive calls. The base case "
-				+ "is important in recursive calls as it prevents a recursive statement falling into an infinite loop "
-				+ "before failing due to a stack overflow.\r\n<br>\r\n<br>\r\n<br>"
-				+ "In this tutorial series,some simple algorithms will be used in order to demonstrate how the base case of a recursive call is used."
-				+ " Two algorithms will be used in order to demonstrate to different important features of base cases which recursive calls must adhere to.\r\n<br>\r\n<br>\r\n<br>"
-				+ "The algorithms are as follows:\r\n<br>\r\n<br> "
-				+ "<code>\r\n<br>\t"
-				+ "<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>\t\t&nbsp"
-				+ "<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>\t}\r\n<br> "
-				+ "</code>\r\n<br>"
-				+ "The second algorithm :\t\r\n"
-				+ "<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> nonConvergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t&nbsp "
-				+ "<font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp"
-				+ "<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>\t\t&nbsp"
-				+ "<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>\t\t\t&nbsp&nbsp&nbsp&nbsp"
-				+ "<font color = rgb(127,0,85)> <b>return</b> </font> nonConvergence(n+1) + 2*n;\r\n<br>\t}\r\n<br> "
-				+ "</code>\r\n<br>\r\n<br>\r\n"
-				+ "<br>Now we are going to move onto how the noBaseCase algorithm works.\r\n<br>\r\n<br>"
-				+ "Please click the Advance button to continue.\r\n</html>");
+		txtrThisTutorialSeries.setText("<html><font face=\"cambria\", size = 4>\r\n<br>This tutorial series focuses on base case in recursive calls. \r\n<br>\r\n<br>The base case of a recursive call returns a value without making any subsequent recursive calls. The base case is important in recursive calls as it prevents a recursive statement falling into an infinite loop before failing due to a stack overflow.\r\n<br>\r\n<br>\r\n<br>In this tutorial series,some simple algorithms will be used in order to demonstrate how the base case of a recursive call is used. Two algorithms will be used in order to demonstrate to different important features of base cases which recursive calls must adhere to.\r\n<br>\r\n<br>\r\n<br>The algorithms are as follows:\r\n</font>\r\n</html>");
 
 		txtrThisTutorialSeries.setBackground(UIManager.getColor("Panel.background"));
 		txtrThisTutorialSeries.setEditable(false);
-		GroupLayout gl_cp1GroupPanel = new GroupLayout(cp1GroupPanel);
-		gl_cp1GroupPanel.setHorizontalGroup(
-				gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(txtrThisTutorialSeries, GroupLayout.PREFERRED_SIZE, 1016, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(21, Short.MAX_VALUE))
-				);
-		gl_cp1GroupPanel.setVerticalGroup(
-				gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(txtrThisTutorialSeries, GroupLayout.PREFERRED_SIZE, 704, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(15, Short.MAX_VALUE))
-				);
-		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
+		cp1GroupPanel.add(txtrThisTutorialSeries);
+		
+		JTextPane txtAlgorithms = new JTextPane();
+		txtAlgorithms.setContentType("text/html");
+		txtAlgorithms.setText("<code>\r\n<br>&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>&nbsp\t}\r\n<br> </code><font face=\"cambria\", size = 4>\r\n<br>The second algorithm :\t</font>\r\n<br> <code>\r\n<br>&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> nonConvergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>&nbsp\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>&nbsp\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>&nbsp\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>&nbsp\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> nonConvergence(n+1) + 2*n;\r\n<br>&nbsp\t}\r\n<br> </code>");
+		txtAlgorithms.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtAlgorithms.setEditable(false);
+		txtAlgorithms.setBounds(20, 262, 322, 287);
+		cp1GroupPanel.add(txtAlgorithms);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
 	

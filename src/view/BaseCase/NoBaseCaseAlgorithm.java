@@ -36,6 +36,7 @@ import model.IBaseCase;
 
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import java.awt.Font;
 
 public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListener {
 
@@ -78,6 +79,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 	private JRadioButton rdbtnOption4;
 	private JRadioButton rdbtnOption5;
 	private JScrollPane scrollPane;
+	private JLabel lblParameterValue;
 
 
 
@@ -115,7 +117,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 
 		txtVariables = new JTextArea();
 		txtVariables.setFocusable(false);
-		txtVariables.setBounds(443, 45, 101, 165);
+		txtVariables.setBounds(460, 81, 66, 165);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setLineWrap(true);
@@ -123,6 +125,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtVariables.setText("Insert variables here");
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(37, 286, 203, 23);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
@@ -132,6 +135,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtrTheValueOf.setText("The next value of n is :");
 
 		txtNVal = new JTextField();
+		txtNVal.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNVal.setBounds(313, 288, 46, 20);
 		txtNVal.setDocument(new JTextFieldLimit(2));
 		txtNVal.setColumns(10);
@@ -153,16 +157,19 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		});
 
 		btnSubmit = new JButton("Submit");
+		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(37, 596, 127, 35);
 		btnSubmit.addActionListener(nbcsController);
 
 		JLabel lblExample = new JLabel("Example 1");
+		lblExample.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblExample.setFocusable(false);
-		lblExample.setBounds(498, 11, 109, 14);
+		lblExample.setBounds(489, 11, 118, 23);
 
 		txtBaseCase = new JTextField();
+		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtBaseCase.setFocusable(false);
-		txtBaseCase.setBounds(37, 546, 322, 14);
+		txtBaseCase.setBounds(37, 546, 377, 14);
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setText("Please click the Advance button to for the next example.");
 		txtBaseCase.setColumns(10);
@@ -170,6 +177,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtBaseCase.setVisible(false);
 
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here: ");
+		lblInsertWorkingHere.setFont(new Font("Calibri", Font.PLAIN, 15));
 		lblInsertWorkingHere.setFocusable(false);
 		lblInsertWorkingHere.setBounds(780, 145, 177, 14);
 		setLayout(null);
@@ -186,18 +194,22 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		add(scrollPane);
 		
 				JTextArea txtWorking = new JTextArea();
+				txtWorking.setFont(new Font("Calibri", Font.PLAIN, 15));
 				scrollPane.setViewportView(txtWorking);
 		add(lblInsertWorkingHere);
 
 		txtNValDescription = new JTextField();
+		txtNValDescription.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNValDescription.setFocusable(false);
 		txtNValDescription.setEditable(false);
 		txtNValDescription.setText("Please insert what you believe the next value of n is");
-		txtNValDescription.setBounds(37, 244, 319, 20);
+		txtNValDescription.setBounds(37, 244, 377, 20);
 		add(txtNValDescription);
 		txtNValDescription.setColumns(10);
 
 		txtQuestion = new JTextArea();
+		txtQuestion.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtQuestion.setBackground(UIManager.getColor("Panel.background"));
 		txtQuestion.setFocusable(false);
 		txtQuestion.setEditable(false);
 		txtQuestion.setText("Now that the value of n == 1, what will happen next?");
@@ -209,26 +221,31 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		ButtonGroup btnGroup = new ButtonGroup();
 
 		rdbtnOption1 = new JRadioButton("The method will return and stop recursing.");
+		rdbtnOption1.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption1.setBounds(34, 384, 366, 23);
 		rdbtnOption1.setVisible(false);
 		add(rdbtnOption1);
 
 		rdbtnOption2 = new JRadioButton("The method will continue recursing forever with the parameter n decreasing each time with no errors.");
+		rdbtnOption2.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption2.setBounds(34, 410, 737, 23);
 		rdbtnOption2.setVisible(false);
 		add(rdbtnOption2);
 
 		rdbtnOption3 = new JRadioButton("The method will continue recursing until a stack overflow error halts the program.");
+		rdbtnOption3.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption3.setBounds(34, 436, 599, 23);
 		rdbtnOption3.setVisible(false);
 		add(rdbtnOption3);
 
 		rdbtnOption4 = new JRadioButton("The method will recurse to where n == 0 and the program will crash due to a stack overflow error.");
+		rdbtnOption4.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption4.setBounds(34, 462, 737, 23);
 		rdbtnOption4.setVisible(false);
 		add(rdbtnOption4);
 
 		rdbtnOption5 = new JRadioButton("The method will recurse until the value of n is negative and an Invalid Number Exception will halt the program.");
+		rdbtnOption5.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption5.setBounds(34, 488, 737, 23);
 		rdbtnOption5.setVisible(false);
 		add(rdbtnOption5);
@@ -244,6 +261,11 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		btnGroup.add(rdbtnOption3);
 		btnGroup.add(rdbtnOption4);
 		btnGroup.add(rdbtnOption5);
+		
+		lblParameterValue = new JLabel("Parameter Value");
+		lblParameterValue.setFont(new Font("Calibri", Font.PLAIN, 15));
+		lblParameterValue.setBounds(449, 57, 118, 14);
+		add(lblParameterValue);
 
 
 	}

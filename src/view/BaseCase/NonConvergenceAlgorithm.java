@@ -37,6 +37,9 @@ import controller.BaseCase.NonConvSubmitController;
 
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import java.awt.Font;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionListener {
 
@@ -81,6 +84,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 	private boolean alreadyExecuted;
 	private boolean doOnce;
 	private JScrollPane scrollPane;
+	private JLabel lblParameterVariable;
 
 
 
@@ -103,7 +107,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 
 		JTextPane txtConvergence = new JTextPane();
 		txtConvergence.setFocusable(false);
-		txtConvergence.setBounds(53, 51, 251, 141);
+		txtConvergence.setBounds(53, 51, 287, 141);
 		txtConvergence.setContentType("text/html");
 		txtConvergence.setToolTipText("");
 		txtConvergence.setBackground(UIManager.getColor("Panel.background"));
@@ -117,8 +121,9 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 				+ "</code>\r\n</html>");
 
 		txtVariables = new JTextArea();
+		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtVariables.setFocusable(false);
-		txtVariables.setBounds(454, 51, 98, 256);
+		txtVariables.setBounds(468, 77, 63, 174);
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setLineWrap(true);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
@@ -126,6 +131,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtVariables.setText("Insert variables here");
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(46, 285, 203, 28);
 		txtrTheValueOf.setWrapStyleWord(true);
@@ -135,6 +141,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtrTheValueOf.setText("The next value of n is :");
 
 		txtNVal = new JTextField();
+		txtNVal.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNVal.setBounds(294, 287, 46, 20);
 		txtNVal.setDocument(new JTextFieldLimit(2));
 		txtNVal.setColumns(10);
@@ -156,16 +163,19 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		});
 
 		btnSubmit = new JButton("Submit");
+		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(53, 584, 127, 35);
 		btnSubmit.addActionListener(convController);
 
 		JLabel lblExample = new JLabel("Example 2");
+		lblExample.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblExample.setFocusable(false);
-		lblExample.setBounds(484, 11, 136, 14);
+		lblExample.setBounds(473, 11, 147, 20);
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtBaseCase.setFocusable(false);
-		txtBaseCase.setBounds(53, 537, 323, 14);
+		txtBaseCase.setBounds(53, 537, 440, 14);
 		txtBaseCase.setEditable(false);
 		txtBaseCase.setText("Please click the Advance button to see your results.");
 		txtBaseCase.setColumns(10);
@@ -173,6 +183,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtBaseCase.setVisible(false);
 		
 		lblInsertWorkingHere = new JLabel("Insert working here:");
+		lblInsertWorkingHere.setFont(new Font("Calibri", Font.PLAIN, 15));
 		lblInsertWorkingHere.setFocusable(false);
 		lblInsertWorkingHere.setBounds(751, 51, 187, 14);
 		setLayout(null);
@@ -189,10 +200,14 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		add(scrollPane);
 		
 		txtWorking = new JTextArea();
+		txtWorking.setFont(new Font("Calibri", Font.PLAIN, 15));
 		scrollPane.setViewportView(txtWorking);
 		add(lblInsertWorkingHere);
 		
 		txtNValDescription = new JTextArea();
+		txtNValDescription.setVisible(false);
+		txtNValDescription.setBackground(UIManager.getColor("Panel.background"));
+		txtNValDescription.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNValDescription.setFocusable(false);
 		txtNValDescription.setEditable(false);
 		txtNValDescription.setText("The value of n does not appear to be converging on the base case, what happens next?");
@@ -203,21 +218,25 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		ButtonGroup btnGroup = new ButtonGroup();
 		
 		rdbtnOption1 = new JRadioButton("The method returns the value 5 once the base case is met.");
+		rdbtnOption1.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption1.setBounds(53, 387, 529, 23);
 		rdbtnOption1.setVisible(false);
 		add(rdbtnOption1);
 		
 		rdbtnOption2 = new JRadioButton("The method will continue recursing until a stack overflow error halts the program.");
+		rdbtnOption2.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption2.setBounds(53, 413, 529, 23);
 		rdbtnOption2.setVisible(false);
 		add(rdbtnOption2);
 		
 		rdbtnOption3 = new JRadioButton("The method will continue recursing forever with the parameter n increasing each time with no errors.");
+		rdbtnOption3.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption3.setBounds(53, 439, 685, 23);
 		rdbtnOption3.setVisible(false);
 		add(rdbtnOption3);
 		
 		rdbtnOption4 = new JRadioButton("The method will recurse until the value of n is the maximum java allows an integer to be, before an Invalid Number Exception will halt the program.");
+		rdbtnOption4.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption4.setBounds(53, 465, 923, 23);
 		rdbtnOption4.setVisible(false);
 		add(rdbtnOption4);
@@ -231,6 +250,11 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		btnGroup.add(rdbtnOption2);
 		btnGroup.add(rdbtnOption3);
 		btnGroup.add(rdbtnOption4);
+		
+		lblParameterVariable = new JLabel("Parameter Value");
+		lblParameterVariable.setFont(new Font("Calibri", Font.PLAIN, 15));
+		lblParameterVariable.setBounds(449, 51, 117, 14);
+		add(lblParameterVariable);
 		
 	}
 	

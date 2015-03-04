@@ -18,6 +18,7 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import model.IBaseCase;
 import javax.swing.JLabel;
+import java.awt.Font;
 
 public class NonConvergenceResult extends JPanel implements Observer {
 
@@ -33,6 +34,7 @@ public class NonConvergenceResult extends JPanel implements Observer {
 	private int convResult;
 
 	private String userRet;
+	private JLabel lblSummary;
 
 	/**
 	 * Create the panel.
@@ -45,8 +47,9 @@ public class NonConvergenceResult extends JPanel implements Observer {
 		((Observable) m).addObserver(this);
 		
 		txtResult = new JTextArea();
+		txtResult.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResult.setFocusable(false);
-		txtResult.setBounds(32, 43, 948, 346);
+		txtResult.setBounds(32, 43, 948, 421);
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\nT"
 				+ "he algorithm worked on was nonConvergence(" + getParam() + ")\r\n\r\n"
 				+ "Your answer for nonConvergence(" + getParam() + ") was : " + getReturnVal() + "\r\n\r\n"
@@ -63,11 +66,17 @@ public class NonConvergenceResult extends JPanel implements Observer {
 		txtResult.setLineWrap(true);
 		txtResult.setEditable(false);
 		setLayout(null);
+		
+		lblSummary = new JLabel("Summary");
+		lblSummary.setFont(new Font("Segoe UI", Font.BOLD, 15));
+		lblSummary.setBounds(496, 473, 96, 21);
+		add(lblSummary);
 
 		txtSummary = new JTextArea();
+		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
-		txtSummary.setBounds(29, 416, 1022, 308);
-		txtSummary.setText("\t\t\t\t\tSummary\r\n\r\nIn this tutorial series, the importance of base cases in recursion were presented.\r\n\r\nA base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow, crashing any programing running the recursive call.\r\n\r\nWithin the topic of bases, the idea of convergence was presented. Convergence plays an important part in bases cases, in that each recursive call must ensure that any variables being incremented/decremented should converge(get closer to) the base case. If this fails to happen then similar to what happens if there is no base case, the program can crash in an infinite loop which causes a stack overflow.\r\n\r\nThis is the end of tutortial series 1.");
+		txtSummary.setBounds(26, 473, 1022, 239);
+		txtSummary.setText("\r\n\r\nIn this tutorial series, the importance of base cases in recursion were presented.\r\n\r\nA base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow, crashing any programing running the recursive call.\r\n\r\nWithin the topic of bases, the idea of convergence was presented. Convergence plays an important part in bases cases, in that each recursive call must ensure that any variables being incremented/decremented should converge(get closer to) the base case. If this fails to happen then similar to what happens if there is no base case, the program can crash in an infinite loop which causes a stack overflow.\r\n\r\nThis is the end of tutortial series 1.");
 		txtSummary.setWrapStyleWord(true);
 		txtSummary.setLineWrap(true);
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
@@ -76,7 +85,8 @@ public class NonConvergenceResult extends JPanel implements Observer {
 		add(txtResult);
 		
 		JLabel lblResults = new JLabel("Results");
-		lblResults.setBounds(455, 11, 96, 14);
+		lblResults.setFont(new Font("Segoe UI", Font.BOLD, 15));
+		lblResults.setBounds(455, 11, 96, 21);
 		add(lblResults);
 
 	}

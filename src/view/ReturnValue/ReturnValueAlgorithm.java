@@ -37,6 +37,7 @@ import controller.ReturnValue.RVSubmitController;
 import model.IReturnValue;
 import javax.swing.JScrollPane;
 import java.awt.Font;
+import javax.swing.border.LineBorder;
 
 public class ReturnValueAlgorithm extends JPanel implements Observer {
 
@@ -74,6 +75,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	
 	private boolean doOnce;
 	private JScrollPane scrollPane;
+	private JLabel lblParameterValue;
 
 	/**
 	 * Create the panel.
@@ -201,9 +203,11 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
 		textArea = new JTextArea();
+		textArea.setBackground(UIManager.getColor("Panel.background"));
+		textArea.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textArea.setFont(new Font("Calibri", Font.PLAIN, 15));
 		textArea.setFocusable(false);
-		textArea.setBounds(441, 54, 73, 180);
+		textArea.setBounds(442, 79, 73, 180);
 		textArea.setEditable(false);
 		
 		
@@ -230,6 +234,11 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		add(btnSubmit);
 		add(lblExample);
 		add(lblInsertWorkingHere);
+		
+		lblParameterValue = new JLabel("Parameter Value");
+		lblParameterValue.setFont(new Font("Calibri", Font.PLAIN, 15));
+		lblParameterValue.setBounds(442, 54, 127, 14);
+		add(lblParameterValue);
 
 	}
 

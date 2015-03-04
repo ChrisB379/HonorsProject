@@ -15,7 +15,6 @@ import java.awt.event.FocusListener;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -29,6 +28,8 @@ import javax.swing.JTextPane;
 
 import controller.BaseCase.NoBCParameterController;
 import model.IBaseCase;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 public class NoBaseCaseExample extends JPanel implements Observer {
 
@@ -55,7 +56,7 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 
 		JTextPane txtExample1 = new JTextPane();
 		txtExample1.setContentType("text/html");
-		txtExample1.setText("<html>\r\n<br>The first of the two algorithms on base case we are going to look at is the noBaseCase method. As the name suggests, this is a simple recursive call which has no base case.\r\n<br>\r\n<br>The implications of not having a base case are that the recursive call will never stop and will instead go into an infinite loop until a stack overflow occurs causing a crash or failure.\r\n<br>\r\n<br>The algorithm for this example is as follows:\r\n<br>\r\n<br> <code>\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>\t}\r\n<br> </code>\r\n<br>\r\n<br>How it works:\r\n<br>This is an extremely simple method and thus not much explanation is needed due to there only being one line of code.\r\n<br>\r\n<br>Step 1: There is only one line of code to be executed which is the recursive call. Thus no work is done, the return statement simply recursively calls itself.\r\n<br>\r\n<br>Step 2: This repeats until a stack overflow occurs.\r\n<br>\r\n<br>Next you will be working through your own example of this algorithm. Please enter a number between 0 and 6 in the field provided which will be the parameter for your algorithm. noBaseCase(n).\r\n</html>");
+		txtExample1.setText("<html> <font face=\"cambria\", size = 4>\r\nThe first of the two algorithms on base case we are going to look at is the noBaseCase method. As the name suggests, this is a simple recursive call which has no base case.\r\n<br>\r\n<br>The implications of not having a base case are that the recursive call will never stop and will instead go into an infinite loop until a stack overflow occurs causing a crash or failure.\r\n<br>\r\n<br>The algorithm for this example is as follows:\r\n</font>\r\n</html>");
 
 		txtExample1.setBackground(UIManager.getColor("Panel.background"));
 		txtExample1.setEditable(false);
@@ -83,26 +84,49 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 
 			}
 		});
+		
+		JTextPane txtrpublicIntNobasecaseint = new JTextPane();
+		txtrpublicIntNobasecaseint.setContentType("text/html");
+		txtrpublicIntNobasecaseint.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtrpublicIntNobasecaseint.setEditable(false);
+		txtrpublicIntNobasecaseint.setText("<code>\r\n&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>&nbsp\t}\r\n<br> </code>");
+		
+		JTextPane txtHowItWorks = new JTextPane();
+		txtHowItWorks.setContentType("text/html");
+		txtHowItWorks.setText("<font face=\"cambria\", size = 4>\r\nHow it works:\r\n<br>This is an extremely simple method and thus not much explanation is needed due to there only being one line of code.\r\n<br>\r\n<br>Step 1: There is only one line of code to be executed which is the recursive call. Thus no work is done, the return statement simply recursively calls itself.\r\n<br>\r\n<br>Step 2: This repeats until a stack overflow occurs.\r\n<br>\r\n<br>Next you will be working through your own example of this algorithm. Please enter a number between 0 and 6 in the field provided which will be the parameter for your algorithm. noBaseCase(n).\r\n</font>");
+		txtHowItWorks.setBackground(UIManager.getColor("OptionPane.background"));
+		txtHowItWorks.setEditable(false);
 
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-						.addGap(23)
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 897, GroupLayout.PREFERRED_SIZE))
-								.addContainerGap(58, Short.MAX_VALUE))
-				);
+					.addGap(23)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(txtHowItWorks, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+								.addGroup(Alignment.LEADING, groupLayout.createParallelGroup(Alignment.TRAILING, false)
+									.addComponent(txtrpublicIntNobasecaseint, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 276, GroupLayout.PREFERRED_SIZE)
+									.addComponent(txtExample1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 897, Short.MAX_VALUE)))
+							.addContainerGap(58, Short.MAX_VALUE))))
+		);
 		groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-						.addGap(26)
-						.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 501, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(232, Short.MAX_VALUE))
-				);
+					.addGap(26)
+					.addComponent(txtExample1, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(txtrpublicIntNobasecaseint, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(txtHowItWorks, GroupLayout.PREFERRED_SIZE, 215, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(txtParameterField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(259, Short.MAX_VALUE))
+		);
 		setLayout(groupLayout);
 
 	}

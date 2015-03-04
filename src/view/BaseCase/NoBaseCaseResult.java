@@ -19,6 +19,7 @@ import javax.swing.JTextArea;
 import javax.swing.UIManager;
 
 import model.IBaseCase;
+import java.awt.Font;
 
 public class NoBaseCaseResult extends JPanel implements Observer {
 
@@ -33,6 +34,7 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 	private int param;
 	private String userRet;
 	private int nbcResult;
+	private JLabel lblSummary;
 
 	/**
 	 * Create the panel.
@@ -45,12 +47,14 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		((Observable) m).addObserver(this);
 		
 		JLabel lblResults = new JLabel("Results");
+		lblResults.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblResults.setFocusable(false);
 		lblResults.setBounds(415, 11, 77, 14);
 
 		txtResult = new JTextArea();
+		txtResult.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResult.setFocusable(false);
-		txtResult.setBounds(28, 36, 805, 332);
+		txtResult.setBounds(28, 36, 805, 389);
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
 				+ "The algorithm worked on was noBaseCase(INSERTuserINPUThere)\r\n\r\n"
 				+ "Your answer for noBaseCase(INSERTuserINPUThere) was : \r\n\r\n"
@@ -64,19 +68,21 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		txtResult.setEditable(false);
 
 		txtSummary = new JTextArea();
+		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
-		txtSummary.setBounds(28, 409, 853, 218);
-		txtSummary.setText("\t\t\t\tSummary\r\n\r\n"
-				+ "In this tutorial series, the importance of base cases in recursion were presented.\r\n\r\n"
-				+ "A base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow,"
-				+ " crashing any programing running the recursive call.\r\n\r\n"
-				+ "The next pages will cover the second algorithm in the base series. This will be about convergence.");
+		txtSummary.setBounds(28, 453, 853, 218);
+		txtSummary.setText("\r\n\r\nIn this tutorial series, the importance of base cases in recursion were presented.\r\n\r\nA base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow, crashing any programing running the recursive call.\r\n\r\nThe next pages will cover the second algorithm in the base series. This will be about convergence.");
 
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
 		txtSummary.setWrapStyleWord(true);
 		txtSummary.setLineWrap(true);
 		txtSummary.setEditable(false);
 		setLayout(null);
+		
+		lblSummary = new JLabel("Summary");
+		lblSummary.setFont(new Font("Segoe UI", Font.BOLD, 15));
+		lblSummary.setBounds(415, 452, 102, 18);
+		add(lblSummary);
 		add(lblResults);
 		add(txtSummary);
 		add(txtResult);
