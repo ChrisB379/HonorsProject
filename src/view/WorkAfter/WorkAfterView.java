@@ -293,6 +293,7 @@ public class WorkAfterView extends JFrame {
 		Summary summ = new Summary();
 		summ.setVisible(true);
 		summ.setLocationRelativeTo(null);
+		summ.setResizable(false);
 	}
 	
 	/**
@@ -310,5 +311,6 @@ public class WorkAfterView extends JFrame {
 		MainMenu m = new MainMenu();
 		m.setVisible(true);
 		m.setLocationRelativeTo(null);
+		m.setResizable(false);
 	}
 }

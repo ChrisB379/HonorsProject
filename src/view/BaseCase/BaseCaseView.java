@@ -341,6 +341,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		ReturnValueView rvv = new ReturnValueView(iRModel);
 		rvv.setVisible(true);
 		rvv.setLocationRelativeTo(null);
+		rvv.setResizable(false);
 
 	}
 
@@ -359,6 +360,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		MainMenu m = new MainMenu();
 		m.setVisible(true);
 		m.setLocationRelativeTo(null);
+		m.setResizable(false);
 	}
 }
 

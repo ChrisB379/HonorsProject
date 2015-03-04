@@ -66,7 +66,7 @@ public class MainMenu extends JFrame {
 				TutorialMenu tm = new TutorialMenu();
 				tm.setVisible(true);
 				tm.setLocationRelativeTo(null);
-				//new TutorialMenu().setVisible(true);
+				tm.setResizable(false);
 
 			}
 		});
@@ -79,7 +79,7 @@ public class MainMenu extends JFrame {
 				About a = new About();
 				a.setVisible(true);
 				a.setLocationRelativeTo(null);
-				//				new About().setVisible(true);
+				a.setResizable(false);
 
 			}
 		});

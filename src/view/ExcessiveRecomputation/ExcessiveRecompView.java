@@ -393,6 +393,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		WorkAfterView wav = new WorkAfterView(iWaModel);
 		wav.setVisible(true);
 		wav.setLocationRelativeTo(null);
+		wav.setResizable(false);
 		
 	}
 	
@@ -411,6 +412,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		MainMenu m = new MainMenu();
 		m.setVisible(true);
 		m.setLocationRelativeTo(null);
+		m.setResizable(false);
 	}
 	
 	public void memo(){

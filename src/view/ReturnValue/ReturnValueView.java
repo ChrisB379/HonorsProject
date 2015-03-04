@@ -409,6 +409,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		ExcessiveRecompView erv = new ExcessiveRecompView(iModel);
 		erv.setVisible(true);
 		erv.setLocationRelativeTo(null);
+		erv.setResizable(false);
 
 	}
 
@@ -427,5 +428,6 @@ public class ReturnValueView extends JFrame implements Observer {
 		MainMenu m = new MainMenu();
 		m.setVisible(true);
 		m.setLocationRelativeTo(null);
+		m.setResizable(false);
 	}
 }

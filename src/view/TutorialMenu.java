@@ -90,7 +90,7 @@ public class TutorialMenu extends JFrame {
 				BaseCaseView bcv = new BaseCaseView(iBModel);
 				bcv.setVisible(true);
 				bcv.setLocationRelativeTo(null);
-				//				new BaseCaseView().setVisible(true);
+				bcv.setResizable(false);
 			}
 		});
 		btnBaseCase.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -105,7 +105,7 @@ public class TutorialMenu extends JFrame {
 				ReturnValueView rvv = new ReturnValueView(iModel);
 				rvv.setVisible(true);
 				rvv.setLocationRelativeTo(null);
-				//new ReturnValueView().setVisible(true);
+				rvv.setResizable(false);
 			}
 		});
 
@@ -118,7 +118,7 @@ public class TutorialMenu extends JFrame {
 				QuizView qzv = new QuizView(iQModel);
 				qzv.setVisible(true);
 				qzv.setLocationRelativeTo(null);
-				//new QuizView().setVisible(true);
+				qzv.setResizable(false);
 			}
 		});
 		btnMultipleChoiceQuiz.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -132,7 +132,7 @@ public class TutorialMenu extends JFrame {
 				ExcessiveRecompView erv = new ExcessiveRecompView(iErModel);
 				erv.setVisible(true);
 				erv.setLocationRelativeTo(null);
-				//new ReturnValueView().setVisible(true);
+				erv.setResizable(false);
 			}
 		});
 		btnReturnValue.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -146,7 +146,7 @@ public class TutorialMenu extends JFrame {
 				WorkAfterView wav = new WorkAfterView(iWaModel);
 				wav.setVisible(true);
 				wav.setLocationRelativeTo(null);
-				//				new WorkAfterView().setVisible(true);
+				wav.setResizable(false);
 			}
 		});
 		btnWorkAfter.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -160,7 +160,7 @@ public class TutorialMenu extends JFrame {
 				MainMenu m = new MainMenu();
 				m.setVisible(true);
 				m.setLocationRelativeTo(null);
-				//new MainMenu().setVisible(true);
+				m.setResizable(false);
 			}
 		});
 
