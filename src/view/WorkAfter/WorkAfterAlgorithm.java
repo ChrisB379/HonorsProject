@@ -142,7 +142,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		add(scrollPane);
 		
 				JTextArea textWorking = new JTextArea();
-				textWorking.setFont(new Font("Calibri", Font.PLAIN, 13));
+				textWorking.setFont(new Font("Calibri", Font.PLAIN, 15));
 				scrollPane.setViewportView(textWorking);
 
 		ButtonGroup btnGroupQ1 = new ButtonGroup();

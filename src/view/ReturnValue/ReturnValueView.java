@@ -19,8 +19,6 @@ import javax.swing.border.EmptyBorder;
 
 import java.awt.CardLayout;
 
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
@@ -47,6 +45,9 @@ import model.ExcessiveRecomp;
 import model.IExcessiveRecomp;
 import model.IReturnValue;
 import model.ReturnValue;
+import java.awt.Font;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 public class ReturnValueView extends JFrame implements Observer {
 
@@ -187,6 +188,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		});
 
 		btnAdvance = new JButton("Advance");
+		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(55, 85, 127, 35);
 
 
@@ -279,32 +281,34 @@ public class ReturnValueView extends JFrame implements Observer {
 
 		cp1GroupPanel.setBorder(null);
 		cardPanel1.add(cp1GroupPanel, "name_455689991325878");
+		cp1GroupPanel.setLayout(null);
+		
+		JTextPane txtAdvance = new JTextPane();
+		txtAdvance.setContentType("text/html");
+		txtAdvance.setBackground(UIManager.getColor("Panel.background"));
+		txtAdvance.setEditable(false);
+		txtAdvance.setFont(new Font("Cambria", Font.PLAIN, 15));
+		txtAdvance.setText("<font face=\"cambria\", size = 4>\r\nNow we are going to move onto how the factorial algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n</font>");
+		txtAdvance.setBounds(10, 475, 449, 61);
+		cp1GroupPanel.add(txtAdvance);
 
 
 		JTextPane txtrIntroduction = new JTextPane();
+		txtrIntroduction.setBounds(10, 11, 839, 282);
 		txtrIntroduction.setFocusable(false);
 		txtrIntroduction.setContentType("text/html");
 		txtrIntroduction.setEditable(false);
 		txtrIntroduction.setBackground(UIManager.getColor("Panel.background"));
-		txtrIntroduction.setText("<html>\r\n<br>This tutorial series focuses on return values in recursive calls. A method returns to the code that invoked it when it completes all the statements in the method, reaches a return statement, or when it throws an exception.\r\n<br>\r\n<br>The return value of a recursive call is the result of a recursive call after all the statements in the method have been reached which is usually a return statement which itself is a recursive call.\r\n<br>\r\n<br>The final return value however, is returned once the base case is met(as described in the previous tutorial) and thus a different return statement is met which does not continue the recursive calls.\r\n<br>\r\n<br>In this tutorial series, the factorial algorithm will be used in order to demonstrate how the final return value of a recursive call is calculated.\r\n<br>\r\n<br>Factorial is the product of an integer and all the integers below it; e.g. factorial four ( 4! ) is equal to 24.\r\n<br>\r\n<br>The Factorial algorithm is as follows:\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n<br>\r\n<br>Now we are going to move onto how the factorial algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n<br>\r\n</html>");
-
-
-		GroupLayout gl_cp1GroupPanel = new GroupLayout(cp1GroupPanel);
-		gl_cp1GroupPanel.setHorizontalGroup(
-				gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(txtrIntroduction, GroupLayout.PREFERRED_SIZE, 839, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(22, Short.MAX_VALUE))
-				);
-		gl_cp1GroupPanel.setVerticalGroup(
-				gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_cp1GroupPanel.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(txtrIntroduction, GroupLayout.PREFERRED_SIZE, 548, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(188, Short.MAX_VALUE))
-				);
-		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
+		txtrIntroduction.setText("<html><font face=\"cambria\", size = 4>\r\nThis tutorial series focuses on return values in recursive calls. A method returns to the code that invoked it when it completes all the statements in the method, reaches a return statement, or when it throws an exception.\r\n<br>\r\n<br>The return value of a recursive call is the result of a recursive call after all the statements in the method have been reached which is usually a return statement which itself is a recursive call.\r\n<br>\r\n<br>The final return value however, is returned once the base case is met(as described in the previous tutorial) and thus a different return statement is met which does not continue the recursive calls.\r\n<br>\r\n<br>In this tutorial series, the factorial algorithm will be used in order to demonstrate how the final return value of a recursive call is calculated.\r\n<br>\r\n<br>Factorial is the product of an integer and all the integers below it; e.g. factorial four ( 4! ) is equal to 24.\r\n<br>\r\n<br>The Factorial algorithm is as follows:\r\n</font>\r\n</html>");
+		cp1GroupPanel.add(txtrIntroduction);
+		
+		JTextPane txtFact = new JTextPane();
+		txtFact.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtFact.setEditable(false);
+		txtFact.setContentType("text/html");
+		txtFact.setText("<font face=\"cambria\", size = 4>\r\n<code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</font>");
+		txtFact.setBounds(20, 304, 211, 130);
+		cp1GroupPanel.add(txtFact);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
 

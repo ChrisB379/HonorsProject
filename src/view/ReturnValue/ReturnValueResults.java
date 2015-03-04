@@ -19,6 +19,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import model.IReturnValue;
+import java.awt.Font;
 
 public class ReturnValueResults extends JPanel implements Observer {
 
@@ -32,6 +33,7 @@ public class ReturnValueResults extends JPanel implements Observer {
 	private int userRet,userRet2;
 	private int fact;
 	private int param;
+	private JLabel lblSummary;
 
 	/**
 	 * Create the panel.
@@ -43,9 +45,11 @@ public class ReturnValueResults extends JPanel implements Observer {
 		((Observable) r).addObserver(this);
 
 		JLabel lblResults = new JLabel("Results");
-		lblResults.setBounds(327, 11, 61, 14);
+		lblResults.setFont(new Font("Segoe UI", Font.BOLD, 15));
+		lblResults.setBounds(319, 11, 61, 14);
 
 		txtResults = new JTextArea();
+		txtResults.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResults.setFocusable(false);
 		txtResults.setBounds(47, 36, 668, 423);
 		txtResults.setText("The results from the previous two pages are as follows: \r\n\r\n"
@@ -70,14 +74,20 @@ public class ReturnValueResults extends JPanel implements Observer {
 		txtResults.setEditable(false);
 
 		txtSummary = new JTextArea();
+		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
 		txtSummary.setBounds(47, 487, 668, 266);
-		txtSummary.setText("\t\t\t\t\t\t\t\t\t\tSummary\r\n\r\nIn this tutorial series, the basics of return values in recursion were presented.\r\n\r\nReturn values take two forms in basic recursive methods.\r\n\r\nFirst is the base case return value which is how we stop the recursive call going into an infinite loop and causing a stack overflow. The final calculation is then begun.\r\n\r\nThe second is the recursive value itself as seen in the factorial algorithm, the recursive call being return n * fact(n-1).");
+		txtSummary.setText("\r\n\r\nIn this tutorial series, the basics of return values in recursion were presented.\r\n\r\nReturn values take two forms in basic recursive methods.\r\n\r\nFirst is the base case return value which is how we stop the recursive call going into an infinite loop and causing a stack overflow. The final calculation is then begun.\r\n\r\nThe second is the recursive value itself as seen in the factorial algorithm, the recursive call being return n * fact(n-1).");
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
 		txtSummary.setWrapStyleWord(true);
 		txtSummary.setLineWrap(true);
 		txtSummary.setEditable(false);
 		setLayout(null);
+		
+		lblSummary = new JLabel("Summary");
+		lblSummary.setFont(new Font("Segoe UI", Font.BOLD, 15));
+		lblSummary.setBounds(319, 491, 83, 21);
+		add(lblSummary);
 		add(lblResults);
 		add(txtSummary);
 		add(txtResults);
