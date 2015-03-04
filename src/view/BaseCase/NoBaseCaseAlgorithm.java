@@ -35,6 +35,7 @@ import controller.BaseCase.NoBCSubmitController;
 import model.IBaseCase;
 
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 
 public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListener {
 
@@ -76,6 +77,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 	private JRadioButton rdbtnOption3;
 	private JRadioButton rdbtnOption4;
 	private JRadioButton rdbtnOption5;
+	private JScrollPane scrollPane;
 
 
 
@@ -167,9 +169,6 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtBaseCase.setVisible(false);
 
-		JTextArea txtWorking = new JTextArea();
-		txtWorking.setBounds(682, 170, 344, 165);
-
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here: ");
 		lblInsertWorkingHere.setFocusable(false);
 		lblInsertWorkingHere.setBounds(780, 145, 177, 14);
@@ -181,7 +180,13 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		add(txtrTheValueOf);
 		add(btnSubmit);
 		add(txtNVal);
-		add(txtWorking);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(682, 170, 344, 165);
+		add(scrollPane);
+		
+				JTextArea txtWorking = new JTextArea();
+				scrollPane.setViewportView(txtWorking);
 		add(lblInsertWorkingHere);
 
 		txtNValDescription = new JTextField();

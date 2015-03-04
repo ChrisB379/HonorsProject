@@ -32,6 +32,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 
 public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListener {
 
@@ -65,6 +66,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 	private WAAlgorithmButton aBut;
 
 	private JTextArea txtQuestion2;
+	private JScrollPane scrollPane;
 
 
 	/**
@@ -108,9 +110,6 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		btnSubmit.setBounds(49, 598, 127, 35);
 		btnSubmit.addActionListener(wasc);
 
-		JTextArea textWorking = new JTextArea();
-		textWorking.setBounds(505, 162, 341, 164);
-
 		JLabel lblInsertYourWorking = new JLabel("Insert your working here:");
 		lblInsertYourWorking.setFocusable(false);
 		lblInsertYourWorking.setBounds(613, 123, 149, 14);
@@ -130,7 +129,13 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		add(lblInsertYourWorking);
 		add(btnSubmit);
 		add(txtBaseCase);
-		add(textWorking);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(505, 162, 341, 164);
+		add(scrollPane);
+		
+				JTextArea textWorking = new JTextArea();
+				scrollPane.setViewportView(textWorking);
 
 		ButtonGroup btnGroupQ1 = new ButtonGroup();
 		ButtonGroup btnGroupQ2 = new ButtonGroup();

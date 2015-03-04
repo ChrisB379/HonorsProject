@@ -36,6 +36,7 @@ import model.IBaseCase;
 import controller.BaseCase.NonConvSubmitController;
 
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 
 public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionListener {
 
@@ -79,6 +80,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 
 	private boolean alreadyExecuted;
 	private boolean doOnce;
+	private JScrollPane scrollPane;
 
 
 
@@ -170,9 +172,6 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtBaseCase.setVisible(false);
 		
-		txtWorking = new JTextArea();
-		txtWorking.setBounds(634, 76, 388, 227);
-		
 		lblInsertWorkingHere = new JLabel("Insert working here:");
 		lblInsertWorkingHere.setFocusable(false);
 		lblInsertWorkingHere.setBounds(751, 51, 187, 14);
@@ -184,7 +183,13 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		add(txtrTheValueOf);
 		add(txtNVal);
 		add(txtVariables);
-		add(txtWorking);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(634, 76, 388, 227);
+		add(scrollPane);
+		
+		txtWorking = new JTextArea();
+		scrollPane.setViewportView(txtWorking);
 		add(lblInsertWorkingHere);
 		
 		txtNValDescription = new JTextArea();

@@ -31,6 +31,7 @@ import javax.swing.JTextPane;
 import controller.ExcessiveRecomputation.ERSubmitController;
 import model.IExcessiveRecomp;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 
@@ -65,6 +66,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 	private JTextArea txtWorking;
 	private JLabel lblInsertWorkingHere;
 	private JLabel lblExample;
+	private JScrollPane scrollPane;
 
 	/**
 	 * Create the panel.
@@ -194,9 +196,6 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setVisible(false);
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
-		txtWorking = new JTextArea();
-		txtWorking.setBounds(500, 386, 339, 197);
-		
 		lblInsertWorkingHere = new JLabel("Insert Working here");
 		lblInsertWorkingHere.setFocusable(false);
 		lblInsertWorkingHere.setBounds(598, 358, 128, 14);
@@ -207,7 +206,13 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		add(txtVariables);
 		add(txtRtrnVal);
 		add(txtNval);
-		add(txtWorking);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(500, 386, 339, 197);
+		add(scrollPane);
+		
+		txtWorking = new JTextArea();
+		scrollPane.setViewportView(txtWorking);
 		add(btnSubmit);
 		add(txtBaseCase);
 		add(lblInsertWorkingHere);

@@ -35,6 +35,7 @@ import javax.swing.JTextPane;
 
 import controller.ReturnValue.RVSubmitController;
 import model.IReturnValue;
+import javax.swing.JScrollPane;
 
 public class ReturnValueAlgorithm extends JPanel implements Observer {
 
@@ -71,6 +72,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private JTextArea txtWorking;
 	
 	private boolean doOnce;
+	private JScrollPane scrollPane;
 
 	/**
 	 * Create the panel.
@@ -195,9 +197,6 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		textArea.setBounds(441, 54, 73, 180);
 		textArea.setEditable(false);
 		
-		txtWorking = new JTextArea();
-		txtWorking.setBounds(523, 339, 331, 184);
-		
 		
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here:");
 		lblInsertWorkingHere.setFocusable(false);
@@ -210,7 +209,13 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		add(txtNVal);
 		add(txtrTheCurrent);
 		add(txtRtrnVal);
-		add(txtWorking);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(523, 339, 331, 184);
+		add(scrollPane);
+		
+		txtWorking = new JTextArea();
+		scrollPane.setViewportView(txtWorking);
 		add(btnSubmit);
 		add(lblExample);
 		add(lblInsertWorkingHere);
