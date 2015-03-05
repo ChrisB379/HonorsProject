@@ -19,6 +19,8 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.Font;
 
 import javax.swing.JLabel;
@@ -95,6 +97,30 @@ public class TutorialMenu extends JFrame {
 				bcv.setResizable(false);
 			}
 		});
+		btnBaseCase.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnBaseCase.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						dispose();
+						IBaseCase iBModel = new BaseCase();
+						BaseCaseView bcv = new BaseCaseView(iBModel);
+						bcv.setVisible(true);
+						bcv.setLocationRelativeTo(null);
+						bcv.setResizable(false);
+					}
+
+				}
+				
+			}
+		});
 		btnBaseCase.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 
 		JButton btnNewButton = new JButton("Return Value");
@@ -110,6 +136,30 @@ public class TutorialMenu extends JFrame {
 				rvv.setResizable(false);
 			}
 		});
+		btnNewButton.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnNewButton.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						dispose();
+						iModel = new ReturnValue();
+						ReturnValueView rvv = new ReturnValueView(iModel);
+						rvv.setVisible(true);
+						rvv.setLocationRelativeTo(null);
+						rvv.setResizable(false);
+					}
+
+				}
+				
+			}
+		});
 
 		JButton btnMultipleChoiceQuiz = new JButton("Multiple Choice Quiz");
 		btnMultipleChoiceQuiz.setBounds(320, 286, 203, 27);
@@ -121,6 +171,30 @@ public class TutorialMenu extends JFrame {
 				qzv.setVisible(true);
 				qzv.setLocationRelativeTo(null);
 				qzv.setResizable(false);
+			}
+		});
+		btnMultipleChoiceQuiz.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnMultipleChoiceQuiz.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						dispose();
+						iQModel = new Quiz();
+						QuizView qzv = new QuizView(iQModel);
+						qzv.setVisible(true);
+						qzv.setLocationRelativeTo(null);
+						qzv.setResizable(false);
+					}
+
+				}
+				
 			}
 		});
 		btnMultipleChoiceQuiz.setFont(new Font("Segoe UI", Font.PLAIN, 13));
@@ -137,6 +211,30 @@ public class TutorialMenu extends JFrame {
 				erv.setResizable(false);
 			}
 		});
+		btnReturnValue.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnReturnValue.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						dispose();
+						iErModel = new ExcessiveRecomp();
+						ExcessiveRecompView erv = new ExcessiveRecompView(iErModel);
+						erv.setVisible(true);
+						erv.setLocationRelativeTo(null);
+						erv.setResizable(false);
+					}
+
+				}
+				
+			}
+		});
 		btnReturnValue.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 
 		JButton btnWorkAfter = new JButton("Work After");
@@ -149,6 +247,30 @@ public class TutorialMenu extends JFrame {
 				wav.setVisible(true);
 				wav.setLocationRelativeTo(null);
 				wav.setResizable(false);
+			}
+		});
+		btnWorkAfter.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnWorkAfter.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						dispose();
+						iWaModel = new WorkAfter();
+						WorkAfterView wav = new WorkAfterView(iWaModel);
+						wav.setVisible(true);
+						wav.setLocationRelativeTo(null);
+						wav.setResizable(false);
+					}
+
+				}
+				
 			}
 		});
 		btnWorkAfter.setFont(new Font("Segoe UI", Font.PLAIN, 13));
@@ -165,6 +287,30 @@ public class TutorialMenu extends JFrame {
 				m.setResizable(false);
 			}
 		});
+		btnReturnToMain.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnReturnToMain.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						dispose();
+						MainMenu m = new MainMenu();
+						m.setVisible(true);
+						m.setLocationRelativeTo(null);
+						m.setResizable(false);
+					}
+
+				}
+				
+			}
+		});
+		
 
 		JLabel lblNewLabel = new JLabel("Tutorials");
 		lblNewLabel.setBounds(223, 16, 129, 71);

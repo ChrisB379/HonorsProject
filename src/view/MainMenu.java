@@ -72,15 +72,15 @@ public class MainMenu extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JButton btnNewButton = new JButton("Start");
-		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-		btnNewButton.setBounds(214, 151, 80, 23);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnStart = new JButton("Start");
+		btnStart.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+		btnStart.setBounds(214, 151, 80, 23);
+		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tutorialMenu();
 			}
 		});
-		btnNewButton.addKeyListener(new KeyListener() {
+		btnStart.addKeyListener(new KeyListener() {
 
 			@Override
 			public void keyTyped(KeyEvent e) {}
@@ -90,7 +90,7 @@ public class MainMenu extends JFrame {
 
 			@Override
 			public void keyPressed(KeyEvent e) {
-				if(btnNewButton.isFocusOwner()){
+				if(btnStart.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
 						tutorialMenu();
 					}
@@ -171,7 +171,7 @@ public class MainMenu extends JFrame {
 		contentPane.add(lblUnderstandingRecursion);
 		contentPane.add(btnQuit);
 		contentPane.add(btnAbout);
-		contentPane.add(btnNewButton);
+		contentPane.add(btnStart);
 	}
 
 	public void about(){

@@ -27,6 +27,8 @@ import view.Quiz.QuizView;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class Summary extends JFrame {
 
@@ -79,6 +81,27 @@ public class Summary extends JFrame {
 				m.setLocationRelativeTo(null);
 			}
 		});
+		btnMenu.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnMenu.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						dispose();
+						MainMenu m = new MainMenu();
+						m.setVisible(true);
+						m.setLocationRelativeTo(null);
+					}
+
+				}
+			}
+		});
 
 		JButton btnQuiz = new JButton("End of Series Quiz");
 		btnQuiz.setBounds(372, 656, 140, 35);
@@ -91,12 +114,52 @@ public class Summary extends JFrame {
 				qzv.setLocationRelativeTo(null);
 			}
 		});
+		btnQuiz.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnQuiz.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						dispose();
+						IQuiz iQModel = new Quiz();
+						QuizView qzv = new QuizView(iQModel);
+						qzv.setVisible(true);
+						qzv.setLocationRelativeTo(null);
+					}
+
+				}
+			}
+		});
 
 		JButton btnQuit = new JButton("Quit");
 		btnQuit.setBounds(569, 659, 127, 35);
 		btnQuit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
+			}
+		});
+		btnQuit.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnQuit.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						System.exit(0);
+					}
+
+				}
 			}
 		});
 		contentPane.setLayout(null);
