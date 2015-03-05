@@ -35,9 +35,12 @@ import view.Summary;
 import view.WorkAfter.AdvanceButtons.WAAlgorithmButton;
 import view.WorkAfter.AdvanceButtons.WAExampleButton;
 import view.WorkAfter.AdvanceButtons.WAResultsButton;
+
 import javax.swing.border.LineBorder;
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 public class WorkAfterView extends JFrame {
 
@@ -82,7 +85,7 @@ public class WorkAfterView extends JFrame {
 	 * Create the frame.
 	 */
 	public WorkAfterView(IWorkAfter m) {
-		
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
 		model = m;
 		
 		w = new WorkAfterExample(model);

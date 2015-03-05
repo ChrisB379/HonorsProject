@@ -11,10 +11,12 @@ package view.BaseCase;
  */
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,13 +40,15 @@ import view.BaseCase.AdvanceButtons.NBCAlgorithmButton;
 import view.BaseCase.AdvanceButtons.NBCExampleButton;
 import view.BaseCase.AdvanceButtons.NBCResultsButton;
 import view.ReturnValue.ReturnValueView;
-
 import model.BaseCase;
 import model.IBaseCase;
 import model.IReturnValue;
 import model.ReturnValue;
+
 import java.awt.Font;
+
 import javax.swing.border.LineBorder;
+
 import java.awt.Color;
 
 public class BaseCaseView extends JFrame implements Observer {
@@ -97,7 +101,7 @@ public class BaseCaseView extends JFrame implements Observer {
 	 * Create the frame.
 	 */
 	public BaseCaseView(IBaseCase m) {
-		
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
 		model = m;
 		
 		bc1 = new NoBaseCaseExample(model);

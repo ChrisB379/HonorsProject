@@ -10,6 +10,7 @@ package view.Quiz;
  */
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -41,7 +42,9 @@ import model.Quiz;
 import controller.QuizController;
 
 import java.awt.CardLayout;
+
 import javax.swing.UIManager;
+
 import java.awt.Font;
 
 public class QuizView extends JFrame {
@@ -143,7 +146,7 @@ public class QuizView extends JFrame {
 	 * Create the frame.
 	 */
 	public QuizView(IQuiz m) {
-
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
 		model = m;
 
 		results = new QuizResults(model);

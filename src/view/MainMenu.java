@@ -22,6 +22,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JLabel;
+import java.awt.Toolkit;
 
 public class MainMenu extends JFrame {
 
@@ -53,6 +54,17 @@ public class MainMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public MainMenu() {
+		/*
+		 * Sourced picture from 
+		 * http://www.clker.com/clipart-green-flame-1.html#
+		 * http://www.clker.com/cliparts/K/h/G/A/p/G/green-flame-th.png
+		 * 
+		 * SHARED BY: VLADIMIR 04-08-2011
+		 * 
+		 * Resized to 16x16 using www.picresize.com/
+		 */
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
+		
 		setTitle("Main Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 538, 414);

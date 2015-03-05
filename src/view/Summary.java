@@ -12,6 +12,7 @@ package view;
  */
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -53,6 +54,7 @@ public class Summary extends JFrame {
 	 * Create the frame.
 	 */
 	public Summary() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
 		setTitle("End of Series Summary");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 940, 753);

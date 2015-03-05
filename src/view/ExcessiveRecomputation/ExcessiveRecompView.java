@@ -12,6 +12,7 @@ package view.ExcessiveRecomputation;
 
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -42,14 +43,16 @@ import view.ExcessiveRecomputation.AdvanceButtons.ERExampleButton;
 import view.ExcessiveRecomputation.AdvanceButtons.ERMemoButton;
 import view.ExcessiveRecomputation.AdvanceButtons.ERResultsButton;
 import view.WorkAfter.WorkAfterView;
-
 import model.ExcessiveRecomp;
 import model.IExcessiveRecomp;
 import model.IWorkAfter;
 import model.WorkAfter;
+
 import java.awt.Font;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.LineBorder;
+
 import java.awt.Color;
 
 
@@ -106,7 +109,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 	 * Create the frame.
 	 */
 	public ExcessiveRecompView(IExcessiveRecomp m) {
-		
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
 		model = m;
 		
 		eb = new ERExampleButton(this);

@@ -48,6 +48,7 @@ import model.ReturnValue;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 public class ReturnValueView extends JFrame implements Observer {
 
@@ -94,6 +95,7 @@ public class ReturnValueView extends JFrame implements Observer {
 	 * Create the frame.
 	 */
 	public ReturnValueView(IReturnValue r) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ReturnValueView.class.getResource("/images/rsz_green-flame-th.png")));
 
 		model = r;
 

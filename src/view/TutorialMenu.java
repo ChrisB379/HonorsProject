@@ -10,6 +10,7 @@ package view;
 
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -74,6 +75,7 @@ public class TutorialMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public TutorialMenu() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
 		setTitle("Tutorials");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 587, 414);

@@ -9,14 +9,17 @@ package view;
  */
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.JButton;
+
 import java.awt.Font;
 
 public class About extends JFrame {
@@ -49,6 +52,7 @@ public class About extends JFrame {
 	 * Create the frame.
 	 */
 	public About() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
 		setLocationRelativeTo(null);
 		setTitle("About");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
