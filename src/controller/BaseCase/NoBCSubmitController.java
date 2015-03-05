@@ -54,6 +54,14 @@ public class NoBCSubmitController implements ActionListener {
 
 
 		}
+		
+		/*
+		 * Stops the value of n being set to 0 and thus wrongly triggering a pop up box on the final hit of submit
+		 * 
+		 * Setting n to 0 is used because when the text field is cleared, the NVal still holds the previous value and would
+		 * otherwise just continue the program even though there is no input because getNVal will still hold the previous value which
+		 * was accepted
+		 */
 		if(view.getCount() >  1)
 		view.setNVal(0);
 	}

@@ -2,12 +2,15 @@ package view.WorkAfter.AdvanceButtons;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 
 import view.WorkAfter.WorkAfterView;
 
 import javax.swing.JButton;
+
 import java.awt.Font;
 
 public class WAResultsButton extends JPanel {
@@ -33,6 +36,24 @@ public class WAResultsButton extends JPanel {
 				
 			}
 		});
+		btnAdvance.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnAdvance.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						wav.advanceTut();
+					}
+
+				}
+			}
+		});
 		
 		JButton btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
@@ -42,6 +63,24 @@ public class WAResultsButton extends JPanel {
 				
 				wav.mainMenu();
 				
+			}
+		});
+		btnMainMenu.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnMainMenu.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						wav.mainMenu();
+					}
+
+				}
 			}
 		});
 		setLayout(null);

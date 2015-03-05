@@ -3,9 +3,13 @@ package view.ExcessiveRecomputation.AdvanceButtons;
 import javax.swing.JPanel;
 
 import view.ExcessiveRecomputation.ExcessiveRecompView;
+
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.Font;
 
 public class ERAfterMemoButton extends JPanel {
@@ -28,6 +32,24 @@ public class ERAfterMemoButton extends JPanel {
 				view.advanceTut();
 			}
 		});
+		btnAdvance.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnAdvance.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						view.advanceTut();
+					}
+
+				}
+			}
+		});
 		
 		JButton btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
@@ -35,6 +57,24 @@ public class ERAfterMemoButton extends JPanel {
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				view.mainMenu();
+			}
+		});
+		btnMainMenu.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnMainMenu.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						view.mainMenu();
+					}
+
+				}
 			}
 		});
 		setLayout(null);

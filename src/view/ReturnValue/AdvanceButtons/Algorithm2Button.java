@@ -2,9 +2,13 @@ package view.ReturnValue.AdvanceButtons;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
+
 import view.ReturnValue.ReturnValueView;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.Font;
 
 public class Algorithm2Button extends JPanel {
@@ -30,6 +34,25 @@ public class Algorithm2Button extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				
 				r.switchCards3();
+			}
+		});
+		btnAdvance.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnAdvance.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						r.switchCards3();
+					}
+
+				}
+				
 			}
 		});
 		setLayout(null);
