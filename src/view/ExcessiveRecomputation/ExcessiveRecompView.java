@@ -23,6 +23,8 @@ import javax.swing.GroupLayout.Alignment;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -286,74 +288,78 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 				count++;
 			}
 		});
+		btnMemoization.addKeyListener(new KeyListener() {
+			int count = 0;
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnMemoization.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						if(count == 0){
+							cardPanel1.add(mem);
+							cardPanel1.removeAll();
+							cardPanel1.add(mem);
+							btnMenu.setVisible(false);
+							btnAdvance.setVisible(false);
+						}
+
+						if(count == 1){
+							cardPanel1.add(memd);
+							cardPanel1.remove(mem);
+
+							btnMemoization.setVisible(false);
+							btnMenu.setVisible(true);
+							btnAdvance.setVisible(true);
+						}
+
+						count++;
+					}
+				}
+				
+			}
+		});
 
 
 
 		btnAdvance.addActionListener(new ActionListener() {
-//			int count = 0;
-//			ExcessiveRecompExample e1 = new ExcessiveRecompExample();
-//			ExcessiveRecompExample2 e2 = new ExcessiveRecompExample2();
-//			ExcessiveRecompAlgorithm e3 = new ExcessiveRecompAlgorithm();
-//			ExcessiveRecompResult e4 = new ExcessiveRecompResult();
-//
-//			//Used for error control
-//			boolean flag;
+
 			public void actionPerformed(ActionEvent e) {
 
-
-//				if(count == 0){
-					//				System.out.println(count);
 					cardPanel1.add(e1);
 					cardPanel1.remove(cp1GroupPanel);
 					
 					cardPanel2.add(eb);
 					cardPanel2.remove(advancePanel);
 					
-//					flag = true;
-//				}
-//				
-//				if(count == 1){
-//					cardPanel1.add(e2);
-//					cardPanel1.remove(e1);
-//					flag = true;
-//				}
-//
-//				//Handles parameters that are not within the specified bound
-//				if(count == 2 && e2.getParameter() < 1 || e2.getParameter() > 11){
-//					flag = false;
-//					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
-//				}
-//
-//				if(count == 2 && e2.getParameter() > 0 && e2.getParameter() < 11){
-//					//System.out.println("we got here " + count);
-//					cardPanel1.add(e3);
-//					cardPanel1.remove(e4);
-//					flag = true;	
-//				} 
-//
-//
-//				if(count == 3){
-//					cardPanel1.add(e4);
-//					cardPanel1.remove(e3);
-//					btnAdvance.setText("Tutorial 4");
-//					btnMenu.setVisible(true);
-//					btnMemoization.setVisible(true);
-//					flag = true;
-//				}
-//
-//				if(count == 4){
-//					dispose();
-//					IWorkAfter iWaModel = new WorkAfter();
-//					WorkAfterView wav = new WorkAfterView(iWaModel);
-//					wav.setVisible(true);
-//					wav.setLocationRelativeTo(null);
-//					flag = true;
-//				}
-//
-//				if(flag)
-//					count++;
-				//				System.out.println("count after increment is " + count);
 			} 
+		});
+		btnAdvance.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnAdvance.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						cardPanel1.add(e1);
+						cardPanel1.remove(cp1GroupPanel);
+						
+						cardPanel2.add(eb);
+						cardPanel2.remove(advancePanel);
+					}
+
+				}
+				
+			}
 		});
 		advancePanel.setLayout(null);
 		advancePanel.add(btnMemoization);

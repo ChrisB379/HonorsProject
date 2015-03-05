@@ -18,6 +18,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -206,58 +208,38 @@ public class WorkAfterView extends JFrame {
 		btnAdvance.setBounds(37, 90, 127, 35);
 
 		btnAdvance.addActionListener(new ActionListener() {
-//			int count = 0;
-//			WorkAfterExample w = new WorkAfterExample();
-//			WorkAfterAlgorithm w2 = new WorkAfterAlgorithm();
-//			WorkAfterResult w3 = new WorkAfterResult();
-//
-//			//Used for error control
-//			boolean flag;
 			public void actionPerformed(ActionEvent e) {
 
-
-
-//				if(count == 0){
 					cardPanel1.add(w);
 					cardPanel1.remove(cp1GroupPanel);
 					
 					cardPanel2.add(eb);
 					cardPanel2.remove(advancePanel);
 					
-//					flag = true;
-//				}
-//
-//				//Handles parameters that are not within the specified bound
-//				if(count == 1 && w.getParameter() < 1 || w.getParameter() > 11){
-//					flag = false;
-//					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
-//				}
-//
-//				if(count == 1 && w.getParameter() > 0 && w.getParameter() < 11){
-//					cardPanel1.add(w2);
-//					cardPanel1.remove(w);
-//					flag = true;
-//				} 
-//
-//				if(count == 2){
-//					cardPanel1.add(w3);
-//					cardPanel1.remove(w2);
-//					btnAdvance.setText("Summary");
-//					btnMenu.setVisible(true);
-//					flag = true;
-//				}
-//
-//				if(count == 3){
-//					dispose();
-//					Summary summ = new Summary();
-//					summ.setVisible(true);
-//					summ.setLocationRelativeTo(null);
-//					flag = true;	
-//				}
-//
-//				if(flag)
-//					count++;
 			} 
+		});
+		btnAdvance.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnAdvance.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						cardPanel1.add(w);
+						cardPanel1.remove(cp1GroupPanel);
+						
+						cardPanel2.add(eb);
+						cardPanel2.remove(advancePanel);
+					}
+
+				}
+				
+			}
 		});
 		advancePanel.setLayout(null);
 		advancePanel.add(btnMenu);

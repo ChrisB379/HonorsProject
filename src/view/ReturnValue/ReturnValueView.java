@@ -23,6 +23,8 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -40,13 +42,15 @@ import view.ReturnValue.AdvanceButtons.Algorithm2Button;
 import view.ReturnValue.AdvanceButtons.AlgorithmButton;
 import view.ReturnValue.AdvanceButtons.ExampleButton;
 import view.ReturnValue.AdvanceButtons.ResultsButton;
-
 import model.ExcessiveRecomp;
 import model.IExcessiveRecomp;
 import model.IReturnValue;
 import model.ReturnValue;
+
 import java.awt.Font;
+
 import javax.swing.border.LineBorder;
+
 import java.awt.Color;
 import java.awt.Toolkit;
 
@@ -200,82 +204,36 @@ public class ReturnValueView extends JFrame implements Observer {
 
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
-			//int count = 0;
-			//			ReturnValueExample r = new ReturnValueExample(model);
-			//			ReturnValueParameterController rvpController = new ReturnValueParameterController(model, r);
-			//			ReturnValueAlgorithm r2 = new ReturnValueAlgorithm(model);
-			//			ReturnValueAlgorithmController rvac = new ReturnValueAlgorithmController(model,r2);
-			//			ReturnValueAlgorithm2 r3 = new ReturnValueAlgorithm2();
-			//			ReturnValueResults r4 = new ReturnValueResults();
-
-			//ExampleButton eb = new ExampleButton(test);
-			//Used for error control
-			//boolean flag;
 			public void actionPerformed(ActionEvent e) {
-				//				btnAdvance.addActionListener(rvpController);
-				//				btnAdvance.addActionListener(rvac);
-
-
-
-
-				//				if(count == 0){
-				//							System.out.println(count);
 				cardPanel1.add(r1);
 				cardPanel1.remove(cp1GroupPanel);
 
 				cardPanel2.add(eb);
 				cardPanel2.remove(advancePanel);
-
-				//					cardPanel2.
-				//						cardPanel2.remove(cp2GroupPanel);
-				//						cardPanel3.remove(advancePanel);
-				//						advancePanel.setVisible(false); 
-				//					flag = true;
-				//				}
-				//
-				//				//Handles parameters that are not within the specified bound
-				//				if(count == 1 && r.getParameter() < 1 || r.getParameter() > 11){
-				//					flag = false;
-				//					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
-				//				}
-				//				
-				//				
-				//				if(count == 1 && r.getParameter() > 0 && r.getParameter() < 11){
-				//					flag = true;
-				//					cardPanel1.add(r2);
-				//					cardPanel1.remove(r);
-				//				} 
-				//
-				//
-				//				if(count == 2){
-				//					if(model.getParam() != 0)
-				//						flag = false;
-				//					else{
-				//					cardPanel1.add(r3);
-				//					cardPanel1.remove(r2);
-				//					flag = true; }
-				//				}
-				//
-				//				if(count == 3){
-				//					cardPanel1.add(r4);
-				//					cardPanel1.remove(r3);
-				//					btnAdvance.setText("Tutorial 3");
-				//					btnMenu.setVisible(true);
-				//					flag = true;
-				//				}
-				//
-				//				if(count == 4){
-				//					dispose();
-				//					ExcessiveRecompView erv = new ExcessiveRecompView();
-				//					erv.setVisible(true);
-				//					erv.setLocationRelativeTo(null);
-				//					flag = true;
-				//				}
-				//
-				//				if(flag)
-				//					count++;
-				//						System.out.println("count after increment is " + count);
 			} 
+		});
+		btnAdvance.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnAdvance.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						cardPanel1.add(r1);
+						cardPanel1.remove(cp1GroupPanel);
+
+						cardPanel2.add(eb);
+						cardPanel2.remove(advancePanel);
+					}
+
+				}
+				
+			}
 		});
 		advancePanel.setLayout(null);
 		advancePanel.add(btnMenu);

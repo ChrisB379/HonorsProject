@@ -20,6 +20,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -220,6 +222,27 @@ public class BaseCaseView extends JFrame implements Observer {
 					cardPanel2.remove(advancePanel);
 					
 			} 
+		});
+		btnAdvance.addKeyListener(new KeyListener() {
+			@Override
+			public void keyTyped(KeyEvent e) {}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(btnAdvance.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						cardPanel1.add(bc1);
+						cardPanel1.remove(cp1GroupPanel);
+						
+						cardPanel2.add(NBeb);
+						cardPanel2.remove(advancePanel);
+					}
+				}
+				
+			}
 		});
 		advancePanel.setLayout(null);
 		advancePanel.add(btnMenu);
