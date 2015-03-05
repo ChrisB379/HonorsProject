@@ -127,12 +127,12 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
-		txtrTheValueOf.setBounds(37, 286, 203, 23);
+		txtrTheValueOf.setBounds(37, 286, 266, 23);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
 		txtrTheValueOf.setEditable(false);
-		txtrTheValueOf.setText("The next value of n is :");
+		txtrTheValueOf.setText("The value of n after the recursive call is :");
 
 		txtNVal = new JTextField();
 		txtNVal.setFont(new Font("Calibri", Font.PLAIN, 15));

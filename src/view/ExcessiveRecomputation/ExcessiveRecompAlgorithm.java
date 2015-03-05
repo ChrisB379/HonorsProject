@@ -112,12 +112,12 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
-		txtrTheValueOf.setBounds(45, 348, 188, 25);
+		txtrTheValueOf.setBounds(45, 348, 261, 25);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
 		txtrTheValueOf.setEditable(false);
-		txtrTheValueOf.setText("The value of n is :");
+		txtrTheValueOf.setText("The value of n after the recursive call is :");
 
 		txtrTheCurrent = new JTextArea();
 		txtrTheCurrent.setFont(new Font("Calibri", Font.PLAIN, 15));
@@ -366,7 +366,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		System.out.println("rv " + model.getParam());
 		//A count for the submit button to keep track of how many recursive calls there has been
 		if(!doOnce){
-		count = model.getParam();
+		count = model.getParam()-1;
 		doOnce = true;
 		}
 		

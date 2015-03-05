@@ -109,7 +109,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 	 * Create the frame.
 	 */
 	public ExcessiveRecompView(IExcessiveRecomp m) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-FrameIcon.png")));
 		model = m;
 		
 		eb = new ERExampleButton(this);

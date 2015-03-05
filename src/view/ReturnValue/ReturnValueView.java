@@ -95,7 +95,7 @@ public class ReturnValueView extends JFrame implements Observer {
 	 * Create the frame.
 	 */
 	public ReturnValueView(IReturnValue r) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(ReturnValueView.class.getResource("/images/rsz_green-flame-th.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ReturnValueView.class.getResource("/images/green-flame-FrameIcon.png")));
 
 		model = r;
 
@@ -157,6 +157,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		});
 		mnAbout.add(mntmAbout);
 		contentPane = new JPanel();
+		contentPane.setBackground(UIManager.getColor("Panel.background"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
@@ -169,10 +170,12 @@ public class ReturnValueView extends JFrame implements Observer {
 		cardPanel2.setBounds(939, 539, 242, 152);
 
 		JPanel cp1GroupPanel = new JPanel();
+		cp1GroupPanel.setBackground(UIManager.getColor("Panel.background"));
 		cp1GroupPanel.setFocusable(false);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 		advancePanel = new JPanel();
+		advancePanel.setBackground(UIManager.getColor("Panel.background"));
 		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_12410711717075");
 

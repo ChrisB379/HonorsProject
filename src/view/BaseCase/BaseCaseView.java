@@ -101,7 +101,7 @@ public class BaseCaseView extends JFrame implements Observer {
 	 * Create the frame.
 	 */
 	public BaseCaseView(IBaseCase m) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-FrameIcon.png")));
 		model = m;
 		
 		bc1 = new NoBaseCaseExample(model);

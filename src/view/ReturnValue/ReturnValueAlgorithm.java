@@ -59,7 +59,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 //	private RVAlgorithmController rvac;
 	private RVSubmitController rvsC;
 	private JTextField txtBaseCase;
-	private JTextArea textArea;
+	private JTextArea txtVariables;
 	
 	//Used for setting the Text Area with the values of variables
 	private List<String> variableString = new ArrayList<String>();
@@ -110,12 +110,12 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
-		txtrTheValueOf.setBounds(70, 352, 176, 30);
+		txtrTheValueOf.setBounds(70, 352, 262, 30);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
 		txtrTheValueOf.setEditable(false);
-		txtrTheValueOf.setText("The value of n is :");
+		txtrTheValueOf.setText("The value of n after the recursive call is :");
 
 		txtNVal = new JTextField();
 		txtNVal.setFont(new Font("Calibri", Font.PLAIN, 15));
@@ -202,13 +202,13 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setVisible(false);
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
-		textArea = new JTextArea();
-		textArea.setBackground(UIManager.getColor("Panel.background"));
-		textArea.setBorder(new LineBorder(new Color(0, 0, 0)));
-		textArea.setFont(new Font("Calibri", Font.PLAIN, 15));
-		textArea.setFocusable(false);
-		textArea.setBounds(442, 79, 73, 180);
-		textArea.setEditable(false);
+		txtVariables = new JTextArea();
+		txtVariables.setBackground(UIManager.getColor("Panel.background"));
+		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtVariables.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtVariables.setFocusable(false);
+		txtVariables.setBounds(442, 79, 73, 180);
+		txtVariables.setEditable(false);
 		
 		
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here:");
@@ -217,7 +217,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		lblInsertWorkingHere.setBounds(627, 307, 141, 14);
 		setLayout(null);
 		add(txtFactorial);
-		add(textArea);
+		add(txtVariables);
 		add(txtBaseCase);
 		add(txtrTheValueOf);
 		add(txtNVal);
@@ -250,11 +250,11 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		System.out.println("rv " + model.getParam());
 		//A count for the submit button to keep track of how many recursive calls there has been
 		if(!doOnce){
-		count = model.getParam();
+		count = model.getParam()-1;
 		doOnce = true;
 		}
 		
-		textArea.setText("n = " + getParameter());
+		txtVariables.setText("n = " + getParameter());
 	}
 
 	public void setParameter(int n){
@@ -358,7 +358,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	 *@since 1.2 
 	 */
 	public void setTxtArea(){
-		textArea.setText(variableString.toString().replace("[", "").replace("]", "").replace(",", ""));
+		txtVariables.setText(variableString.toString().replace("[", "").replace("]", "").replace(",", ""));
 	}
 	
 	

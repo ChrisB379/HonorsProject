@@ -133,16 +133,16 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
-		txtrTheValueOf.setBounds(46, 285, 203, 28);
+		txtrTheValueOf.setBounds(46, 285, 280, 28);
 		txtrTheValueOf.setWrapStyleWord(true);
 		txtrTheValueOf.setLineWrap(true);
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setEditable(false);
-		txtrTheValueOf.setText("The next value of n is :");
+		txtrTheValueOf.setText("The value of n after the recursive call is :");
 
 		txtNVal = new JTextField();
 		txtNVal.setFont(new Font("Calibri", Font.PLAIN, 15));
-		txtNVal.setBounds(294, 287, 46, 20);
+		txtNVal.setBounds(353, 286, 46, 20);
 		txtNVal.setDocument(new JTextFieldLimit(2));
 		txtNVal.setColumns(10);
 		txtNVal.addFocusListener(new FocusListener() {

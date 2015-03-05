@@ -85,7 +85,7 @@ public class WorkAfterView extends JFrame {
 	 * Create the frame.
 	 */
 	public WorkAfterView(IWorkAfter m) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-FrameIcon.png")));
 		model = m;
 		
 		w = new WorkAfterExample(model);

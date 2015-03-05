@@ -146,7 +146,7 @@ public class QuizView extends JFrame {
 	 * Create the frame.
 	 */
 	public QuizView(IQuiz m) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-FrameIcon.png")));
 		model = m;
 
 		results = new QuizResults(model);

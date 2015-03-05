@@ -52,7 +52,7 @@ public class About extends JFrame {
 	 * Create the frame.
 	 */
 	public About() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/rsz_green-flame-th.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-FrameIcon.png")));
 		setLocationRelativeTo(null);
 		setTitle("About");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
