@@ -33,7 +33,9 @@ import java.util.Observer;
 
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+
 import java.awt.Font;
+
 import javax.swing.border.LineBorder;
 
 public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListener {
@@ -117,6 +119,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(49, 598, 127, 35);
 		btnSubmit.addActionListener(wasc);
+
 
 		JLabel lblInsertYourWorking = new JLabel("Insert your working here:");
 		lblInsertYourWorking.setFont(new Font("Calibri", Font.PLAIN, 15));

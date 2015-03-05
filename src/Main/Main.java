@@ -41,6 +41,3 @@ public class Main {
 
 }
 
-
-
-//TODO add key listeners to buttons to allow enter key use on focus
