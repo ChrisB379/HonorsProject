@@ -26,14 +26,18 @@ public class ERSubmitController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 
-		if(view.getNVal() == 0)
+		if(view.getNVal() < 1 && view.getRtrnVal() < 0)
 			JOptionPane.showMessageDialog(null, "Please enter a number greater than 0 for the value of n");
+		
 
-		if(view.getNVal() > 10)
+		if(view.getNVal() > 10 && view.getRtrnVal() > 0)
 			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10 for the value of n");
 
-		if(view.getRtrnVal() == 0)
-			JOptionPane.showMessageDialog(null, "Please enter a number for the return value");
+		if(view.getRtrnVal() < 1 && view.getNVal() > 0 && view.getNVal() < 11)
+			JOptionPane.showMessageDialog(null, "Please enter a number greater than 0 for the return value");
+		
+		if(view.getNVal() < 1 || view.getNVal() > 10 && view.getRtrnVal() < 1)
+			JOptionPane.showMessageDialog(null, "Please enter a valid number for each input");
 
 		if(view.getNVal() != 0 && view.getNVal() < 11 && view.getRtrnVal() != 0){
 			System.out.println("getCount " + view.getCount());
@@ -42,12 +46,12 @@ public class ERSubmitController implements ActionListener {
 			model.setUserReturnVal(view.getRtrnVal());
 			
 			//Changes the text to tell the user to advance to the results page
-			if(view.getCount() == 1){
+			if(view.getCount() == 1 && view.getNVal() > 0 && view.getNVal() < 11 && view.getRtrnVal() > 0){
 				view.setAfterReturnText();
 			}
 
 			//Changes the text to tell the user this will be the final return statement
-			if(view.getCount() == 2){
+			if(view.getCount() == 2 && view.getNVal() != 0 && view.getNVal() < 11 && view.getRtrnVal() != 0){
 				view.setTextField();;
 			}
 
@@ -60,8 +64,15 @@ public class ERSubmitController implements ActionListener {
 
 			view.addArrayString();
 			view.setTxtArea();
+			
+			view.clearInputs();
 
 		}
+		
+		if(view.getCount() > 0 && view.getNVal() > 0 && view.getNVal() < 11 && view.getRtrnVal() > 0){
+			view.setNVal(0);
+			view.setRtrnVal(0);
+	}
 
 	}
 

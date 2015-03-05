@@ -35,8 +35,11 @@ import javax.swing.JTextPane;
 
 import controller.ReturnValue.RVSubmitController;
 import model.IReturnValue;
+
 import javax.swing.JScrollPane;
+
 import java.awt.Font;
+
 import javax.swing.border.LineBorder;
 
 public class ReturnValueAlgorithm extends JPanel implements Observer {
@@ -129,8 +132,13 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
+				if(txtNVal.getText().equals(""))
+					setNVal(0);
+				
+				if(!(txtNVal.getText().equals(""))){
 				int n = Integer.parseInt(txtNVal.getText());
 				setNVal(n);
+				}
 				
 			}
 			
@@ -171,7 +179,8 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
 				if(txtRtrnVal.getText().equals(""))
-					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");
+					setRtrnVal(0);
+				
 				
 				if(!(txtRtrnVal.getText().equals(""))){
 				int n = Integer.parseInt(txtRtrnVal.getText());
@@ -375,14 +384,21 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		//Simple boolean check, it starts false and once it has been done once then the boolean sets to true
 		//This prevents it ever being used again
 		if(!alreadyExecuted) {
-			variableString.add(space + whole + (count+1) + newLine);
+			variableString.add(space + whole + (count+2) + newLine);
 		    alreadyExecuted = true;
 		}
 		
 		if(count > 0)
-		variableString.add(whole + count + newLine);
+		variableString.add(whole + (count+1) + newLine);
 		
-		if(count == 0)
+		if(count == 0){
 			aBut.setVis();
+			variableString.add(whole + (count+1) + newLine);
+		}
+	}
+	
+	public void clearInputs(){
+		txtNVal.setText("");
+		txtRtrnVal.setText("");
 	}
 }

@@ -29,7 +29,7 @@ public class NonConvSubmitController implements ActionListener {
 		if(view.getNVal() > 5)
 			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 5 for the value of n");
 		
-		if(view.getCount() == 2)
+		if(view.getCount() == 2  && view.getNVal() > 0 && view.getNVal() < 6)
 			view.addQuestion();
 		
 		if(view.questionAnswered())
@@ -56,6 +56,9 @@ public class NonConvSubmitController implements ActionListener {
 
 
 		}
+		
+		if(view.getCount() >  1)
+		view.setNVal(0);
 	}
 
 }

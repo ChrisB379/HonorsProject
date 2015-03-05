@@ -94,7 +94,6 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		setReturnVal(model.getUserReturnVal());
 		setParam(model.getParam());
 		setNoBaseCaseResult(model.getParam());
-		System.out.println("RetValResults " + getParam());
 		setResultsText();
 		
 	}

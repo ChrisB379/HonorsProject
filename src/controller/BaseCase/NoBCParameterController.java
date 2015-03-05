@@ -35,7 +35,7 @@ public class NoBCParameterController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		model.setParam(view.getParameter());
-		System.out.println("Parameter Controller model param shows " + model.getParam());
+//		System.out.println("Parameter Controller model param shows " + model.getParam());
 		
 	}
 

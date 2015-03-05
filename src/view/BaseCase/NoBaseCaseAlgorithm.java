@@ -36,6 +36,7 @@ import model.IBaseCase;
 
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+
 import java.awt.Font;
 
 public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListener {
@@ -144,9 +145,11 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
+				System.out.println("we get here");
 				int n = Integer.parseInt(txtNVal.getText());
+				System.out.println("n " + n);
 				setNVal(n);
-
+				txtNVal.setText("");
 			}
 
 			@Override
@@ -212,7 +215,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtQuestion.setBackground(UIManager.getColor("Panel.background"));
 		txtQuestion.setFocusable(false);
 		txtQuestion.setEditable(false);
-		txtQuestion.setText("Now that the value of n == 1, what will happen next?");
+		txtQuestion.setText("The value of n should now be n == 1, what will happen next?");
 		txtQuestion.setBounds(37, 330, 492, 20);
 		add(txtQuestion);
 		txtQuestion.setColumns(10);
@@ -273,7 +276,6 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		setParameter(model.getParam());
-		System.out.println("rv " + model.getParam());
 
 		if(!doOnce){
 			count = model.getParam();
@@ -363,6 +365,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 	public void setAfterReturnText(){
 		txtBaseCase.setVisible(true);
 		txtrTheValueOf.setVisible(false);
+		txtNValDescription.setVisible(false);
 		txtNVal.setVisible(false);
 		btnSubmit.setVisible(false);
 		nbcaButton.setVis();

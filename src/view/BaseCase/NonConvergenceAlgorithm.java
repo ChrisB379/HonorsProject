@@ -85,6 +85,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 	private boolean doOnce;
 	private JScrollPane scrollPane;
 	private JLabel lblParameterVariable;
+	private JTextField txtWhatToDo;
 
 
 
@@ -152,7 +153,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 				// TODO Auto-generated method stub
 				int n = Integer.parseInt(txtNVal.getText());
 				setNVal(n);
-				
+				txtNVal.setText("");
 			}
 			
 			@Override
@@ -256,6 +257,15 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		lblParameterVariable.setBounds(449, 51, 117, 14);
 		add(lblParameterVariable);
 		
+		txtWhatToDo = new JTextField();
+		txtWhatToDo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtWhatToDo.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtWhatToDo.setEditable(false);
+		txtWhatToDo.setText("Please insert what you believe the next value of n is below");
+		txtWhatToDo.setBounds(43, 231, 379, 20);
+		add(txtWhatToDo);
+		txtWhatToDo.setColumns(10);
+		
 	}
 	
 	@Override
@@ -352,6 +362,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtBaseCase.setVisible(true);
 		txtrTheValueOf.setVisible(false);
 		txtNVal.setVisible(false);
+		txtWhatToDo.setVisible(false);
 		btnSubmit.setVisible(false);
 		cbcButton.setVis();
 	}

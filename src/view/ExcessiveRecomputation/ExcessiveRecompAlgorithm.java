@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
@@ -142,7 +141,8 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
 				if(txtRtrnVal.getText().equals(""))
-					JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");
+					setRtrnVal(0);
+				
 				
 				if(!(txtRtrnVal.getText().equals(""))){
 				int n = Integer.parseInt(txtRtrnVal.getText());
@@ -169,8 +169,13 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
+				if(txtNval.getText().equals(""))
+					setNVal(0);
+				
+				if(!(txtNval.getText().equals(""))){
 				int n = Integer.parseInt(txtNval.getText());
 				setNVal(n);
+				}
 				
 			}
 			
@@ -349,29 +354,35 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		//Simple boolean check, it starts false and once it has been done once then the boolean sets to true
 		//This prevents it ever being used again
 		if(!alreadyExecuted) {
-			variableString.add(space + whole + (count+1) + newLine);
+			variableString.add(space + whole + (count+2) + newLine);
 		    alreadyExecuted = true;
 		}
 		
 		if(count > 0)
-		variableString.add(whole + count + newLine);
+		variableString.add(whole + (count+1) + newLine);
 		
-		if(count == 0)
+		if(count == 0){
 			aBut.setVis();
+			variableString.add(whole + (count+1) + newLine);
+		}
+			
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
 		setParameter(model.getParam());
-		System.out.println("rv " + model.getParam());
 		//A count for the submit button to keep track of how many recursive calls there has been
 		if(!doOnce){
 		count = model.getParam()-1;
 		doOnce = true;
 		}
-		
 		txtVariables.setText("n = " + getParameter());
 		
+	}
+	
+	public void clearInputs(){
+		txtNval.setText("");
+		txtRtrnVal.setText("");
 	}
 
 }
