@@ -9,7 +9,7 @@ import java.util.Observable;
  *  This will be an example of excessive recomputation shown through the fibonacci algorithm
  * 
  * @author Christopher Baillie
- * @version 1.1
+ * @version 1.5
  * @since 1.0
  */
 
@@ -83,24 +83,11 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	}
 
 	/**
-	 * Just some tests. Will be removed later.
+	 * Sets the parameter as chosen by the user. 
+	 * Also notifies any observers
 	 * 
-	 * @param args
-	 * @since 1.0
+	 * @param An int representing the users chosen parameter
 	 */
-	public static void main(String[] args){
-
-		ExcessiveRecomp f = new ExcessiveRecomp();
-
-		int x = f.fib(-1);
-		int memo = f.fibMemoization(10);
-
-		System.out.println(x);
-		System.out.println(memo);
-
-	}
-
-
 	@Override
 	public void setParam(int n) {
 		param = n;
@@ -109,7 +96,11 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 		
 	}
 
-
+	/**
+	 * Returns the parameter
+	 * 
+	 * @return an integer representing the value of the users chosen parameter
+	 */
 	@Override
 	public int getParam() {
 		return param;
@@ -119,6 +110,7 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	/**
 	 * Returns the value stored that the user set as their return value
 	 * 
+	 * @return an integer holding the value of the users return value
 	 * @since 1.2
 	 */
 	@Override
@@ -130,7 +122,9 @@ public class ExcessiveRecomp extends Observable implements IExcessiveRecomp {
 	
 	/**
 	 * Sets userRetVal to that of the users return value that they picked.
+	 * Also notifies observers
 	 * 
+	 * @param an integer holding the value of the users return value
 	 * @since 1.2
 	 */
 	@Override

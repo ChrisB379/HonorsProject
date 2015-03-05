@@ -4,7 +4,8 @@ package model;
  * An interface for the base case class
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 1.5
+ * @since 1.0
  */
 
 public interface IBaseCase extends IAlgorithms {

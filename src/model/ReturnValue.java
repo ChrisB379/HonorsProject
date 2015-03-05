@@ -16,15 +16,14 @@ import java.util.Observable;
  */
 
 public class ReturnValue extends Observable implements IReturnValue {
-	
+
 	private int param;
 
 	private int userRetVal, userRetVal2;
-	
+
 	private List<Integer> paramArray;
 	private List<Integer> returnV;
 
-	//TODO Deal with ensuring the limit on n is n>= 1 and n<= 10
 
 	/**
 	 * This is the factorial algorithm. It returns the product of an integer and all integers below it.
@@ -44,39 +43,36 @@ public class ReturnValue extends Observable implements IReturnValue {
 		else
 			//Recursive call
 			return n * factorial(n-1);
-		
+
 	}
 
 	/**
-	 * Just a test. Will remove later.
+	 * Sets the parameter as chosen by the user. 
+	 * Also notifies any observers
 	 * 
-	 * @param args
-	 * @since 1.0
+	 * @param An int representing the users chosen parameter
 	 */
-	public static void main(String[] args){
-
-		ReturnValue f = new ReturnValue();
-
-		int ex1 = f.factorial(4);
-
-		System.out.println(ex1);
-	}
-
 	@Override
 	public void setParam(int n) {
 		param = n;
 		System.out.println("n in return value after set para is called " + n);
 		setChanged();
 		notifyObservers();
-		
+
 	}
 
+
+	/**
+	 * Returns the parameter
+	 * 
+	 * @return an integer representing the value of the users chosen parameter
+	 */
 	@Override
 	public int getParam() {
 		return param;
 	}
 
-	
+
 	/**
 	 * This adds user input to an arraylist. The data will be used later in the results page
 	 * 
@@ -87,19 +83,19 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 * @since 1.1
 	 */
 	public void addToArray(int nVal, int retVal){
-		
+		//Create arraylists if they are null/not already made
 		if(paramArray == null)
 			paramArray = new ArrayList<Integer>();
-		
+
 		if(returnV == null)
 			returnV = new ArrayList<Integer>();
-			
+
 		paramArray.add(nVal);
-		
+
 		returnV.add(retVal);
-		
+
 	}
-	
+
 	/**
 	 * Gets and returns the value stored in a position in the array
 	 * 
@@ -107,11 +103,11 @@ public class ReturnValue extends Observable implements IReturnValue {
 	 * @return the value held at array position n-1
 	 * @since 1.1
 	 */
-	
+
 	public int getParamArray(int n){
 		return paramArray.get(n-1);
 	}
-	
+
 	/**
 	 * Gets and returns the value stored in a position in the array
 	 * 
@@ -122,7 +118,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 	public int getReturnVArray(int n){
 		return returnV.get(n-1);
 	}
-	
+
 
 	/**
 	 * Will be used to clear the arrays after the tutorials have been completed
@@ -135,30 +131,26 @@ public class ReturnValue extends Observable implements IReturnValue {
 		paramArray.clear();
 		returnV.clear();
 	}
-	
-	public List<Integer> retArr(){
-		return returnV;
-	}
 
-	public List<Integer> paramArr(){
-		return paramArray;
-	}
 
 	/**
 	 * Returns the value stored that the user set as their return value in the first algorithm page.
 	 * 
+	 * @return an integer representing the users return value from the first algorithm page
 	 * @since 1.2
 	 */
 	@Override
 	public int getUserReturnVal() {
-		
+
 		return userRetVal;
 	}
 
-	
+
 	/**
 	 * Sets userRetVal to that of the users return value that they picked in the first algorithm page.
+	 * Also notifies any observers
 	 * 
+	 * @param an integer representing the users return value from the first algorithm page
 	 * @since 1.2
 	 */
 	@Override
@@ -166,24 +158,26 @@ public class ReturnValue extends Observable implements IReturnValue {
 		userRetVal = n;
 		setChanged();
 		notifyObservers();
-		
+
 	}
 
-	
+
 	/**
 	 * Returns the value stored that the user set as their return value in the second algorithm page.
 	 * 
+	 * @return an integer representing the users return value from the second algorithm page
 	 * @since 1.2
 	 */
 	@Override
 	public int getUserReturnVal2() {
-		// TODO Auto-generated method stub
 		return userRetVal2;
 	}
-	
+
 	/**
 	 * Sets userRetVal to that of the users return value that they picked in the second algorithm page
+	 * Also notifies any observers
 	 * 
+	 * @param an integer representing the users return value from the second algorithm page
 	 * @since 1.2
 	 */
 	@Override
@@ -191,7 +185,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 		userRetVal2 = n;
 		setChanged();
 		notifyObservers();
-		
+
 	}
 
 }

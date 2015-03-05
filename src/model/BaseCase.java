@@ -8,7 +8,7 @@ import java.util.Observable;
  * This is used to show how the base case works in recursion
  * 
  * @author Christopher Baillie
- * @version 1.1
+ * @version 1.5
  * @since 1.0
  */
 
@@ -65,27 +65,14 @@ public class BaseCase extends Observable implements IBaseCase  {
 			return nonConvergence(n+1) + 2*n;
 	}
 
+
+
 	/**
-	 * Just some basic tests. Will be removed later
+	 * Sets the parameter as chosen by the user. 
+	 * Also notifies any observers
 	 * 
-	 * 
-	 * @since 1.0
+	 * @param An int representing the users chosen parameter
 	 */
-
-	public static void main(String[] args){
-
-		BaseCase bc = new BaseCase();
-
-		int ex1 = bc.noBaseCase(3);
-		int ex2 = bc.nonConvergence(3);
-
-		System.out.println(ex1);
-		System.out.println(ex2);
-
-	}
-
-
-
 	@Override
 	public void setParam(int n) {
 		param = n;
@@ -95,7 +82,11 @@ public class BaseCase extends Observable implements IBaseCase  {
 	}
 
 
-
+	/**
+	 * Returns the parameter
+	 * 
+	 * @return an integer representing the value of the users chosen parameter
+	 */
 	@Override
 	public int getParam() {
 		return param;
@@ -107,6 +98,7 @@ public class BaseCase extends Observable implements IBaseCase  {
 	 * Returns the value stored that the user set as their return value by choosing
 	 * radio buttons
 	 * 
+	 * @return a string holidng the users return value for no base
 	 * @since 1.2
 	 */
 	@Override
@@ -118,7 +110,9 @@ public class BaseCase extends Observable implements IBaseCase  {
 	
 	/**
 	 * Sets userRetVal to that of the users return value that they picked.
+	 * Also notifies any observers
 	 * 
+	 * @param a string holidng the users return value for no base
 	 * @since 1.2
 	 */
 	@Override
@@ -132,17 +126,19 @@ public class BaseCase extends Observable implements IBaseCase  {
 	/**
 	 * Returns the value stored that the user set as their return value in the second algorithm page.
 	 * 
+	 * @return an integer holding the users return value for non-convergence
 	 * @since 1.2
 	 */
 	@Override
 	public String getUserReturnVal2() {
-		// TODO Auto-generated method stub
 		return userRetVal2;
 	}
 	
 	/**
 	 * Sets userRetVal to that of the users return value that they picked in the second algorithm page
+	 * Also notifies any observers
 	 * 
+	 * @param a string holding the users return value for the non-convergence
 	 * @since 1.2
 	 */
 	@Override

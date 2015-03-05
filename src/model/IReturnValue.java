@@ -1,13 +1,11 @@
 package model;
 
-import java.util.List;
-
 
 /**
  * An interface for the return value class
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 1.5
  */
 
 public interface IReturnValue extends IAlgorithms  {
@@ -23,9 +21,6 @@ public interface IReturnValue extends IAlgorithms  {
 	
 	public int getUserReturnVal2();
 	public void setUserReturnVal2(int n);
-	
-	//Testing arrays work
-	public List<Integer> paramArr();
-	public List<Integer> retArr();
+
 
 }

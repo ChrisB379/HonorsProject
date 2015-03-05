@@ -1,5 +1,13 @@
 package model;
 
+/**
+ * An interface for the quiz class
+ * 
+ * @author Christopher Baillie
+ * @version 1.0
+ * @since 1.0
+ */
+
 public interface IQuiz {
 	
 	public int getScore();
