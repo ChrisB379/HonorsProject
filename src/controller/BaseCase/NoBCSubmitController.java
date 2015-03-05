@@ -1,4 +1,16 @@
 package controller.BaseCase;
+/**
+ * This is a controller for the submit button in NoBaseCaseAlgorithm
+ * 
+ * It handles errors in inputs with dialog boxes
+ * 
+ * if all input is correct then it decrements counters, adds strings to the arraylsit of parameter values
+ * and will set text and buttons visible as invisible as needed as the program progresses
+ * 
+ * @author Christopher Baillie
+ * @version 2.0
+ * @since 1.0
+ */
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

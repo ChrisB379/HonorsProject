@@ -19,24 +19,23 @@ import view.BaseCase.NoBaseCaseExample;
 
 
 public class NoBCParameterController implements ActionListener {
-	
+
 	private IBaseCase model;
 	private NoBaseCaseExample view;
-	
-	
+
+
 	public NoBCParameterController(IBaseCase bc, NoBaseCaseExample nbce) {
-		
+
 		model = bc;
-		
+
 		view = nbce;
-		
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		model.setParam(view.getParameter());
-//		System.out.println("Parameter Controller model param shows " + model.getParam());
-		
+
 	}
 
 }

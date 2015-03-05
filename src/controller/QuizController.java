@@ -8,7 +8,8 @@ import model.IQuiz;
 /**
  * Will be used as a controller for the quiz view
  * 
- * 
+ * It sets the score and also the answer to each question
+ * Question answers are set via and integer 1-4, each integer corresponding to a radio button
  * 
  * @author Christopher Baillie
  * @version 1.0

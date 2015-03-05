@@ -9,12 +9,15 @@ import view.ReturnValue.ReturnValueAlgorithm;
 import model.IReturnValue;
 
 /**
- * This is a controller for sending the users inputs back to the ReturnValue
- * in order to put them into an arraylist
+ * This is a controller for the submit button in the ReturnValueAlgorithm
  * 
+ * It deals with input validation 
+ * 
+ * If inputs are valid then it deals with the visibility of components in order to continue
+ * the programs progression in a meaningful and clean way
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  *
  */
@@ -34,7 +37,9 @@ public class RVSubmitController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		/*
+		 * Input validation with dialog boxes
+		 */
 		if(view.getNVal() < 1 && view.getRtrnVal() > 0)
 			JOptionPane.showMessageDialog(null, "Please enter a number greater than 0 for the value of n");
 		
@@ -48,6 +53,9 @@ public class RVSubmitController implements ActionListener {
 		if(view.getNVal() < 1 || view.getNVal() > 10 && view.getRtrnVal() < 1)
 			JOptionPane.showMessageDialog(null, "Please enter a valid number for each input");
 		
+		/*
+		 * If the inputs are valid then do this
+		 */
 		if(view.getNVal() != 0 && view.getNVal() < 11 && view.getRtrnVal() != 0){
 
 		//Sets the users returnvalue in the model
@@ -65,9 +73,10 @@ public class RVSubmitController implements ActionListener {
 		//Decrements the counter	
 		view.decrementCount();
 
-		
+		//Adds the inputs into an array in the model
 		model.addToArray(view.getNVal(), view.getRtrnVal());
 		
+		//Adds the new string to the arraylist and then updates the text area with this new string
 		view.addArrayString();
 		view.setTxtArea();
 		
@@ -76,6 +85,13 @@ public class RVSubmitController implements ActionListener {
 		
 		}
 		
+		/*
+		 * Stops the value of n being set to 0 and thus wrongly triggering a pop up box on the final hit of submit
+		 * 
+		 * Setting n to 0 is used because when the text field is cleared, the NVal still holds the previous value and would
+		 * otherwise just continue the program even though there is no input because getNVal will still hold the previous value which
+		 * was accepted
+		 */
 		if(view.getCount() > 0 && view.getNVal() > 0 && view.getNVal() < 11 && view.getRtrnVal() > 0){
 			view.setNVal(0);
 			view.setRtrnVal(0);

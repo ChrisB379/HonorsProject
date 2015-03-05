@@ -1,4 +1,16 @@
 package controller.BaseCase;
+/**
+ * This is a controller for the submit button in NonConvergenceAlgorithm
+ * 
+ * It handles errors in inputs with dialog boxes
+ * 
+ * if all input is correct then it decrements counters, adds strings to the arraylsit of parameter values
+ * and will set text and buttons visible as invisible as needed as the program progresses
+ * 
+ * @author Christopher Baillie
+ * @version 2.0
+ * @since 1.0
+ */
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,37 +40,44 @@ public class NonConvSubmitController implements ActionListener {
 
 		if(view.getNVal() > 5)
 			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 5 for the value of n");
-		
+
 		if(view.getCount() == 2  && view.getNVal() > 0 && view.getNVal() < 6)
 			view.addQuestion();
-		
+
 		if(view.questionAnswered())
 			view.setAfterReturnText();
-		
+
 		if(!view.questionAnswered() && view.getCount() < 2)
 			JOptionPane.showMessageDialog(null, "Please select one of the 4 answers");
 
+		// If all inputs are valid then do this
 		if(view.getNVal() != 0 && view.getNVal() < 6){
-			System.out.println("getCount " + view.getCount());
 			//Sets the users returnvalue in the model
 			model.setUserReturnVal2(view.getRtrnVal());
 
-			System.out.println("getCount before " + view.getCount());
+
 			//Decrements the counter	
 			view.decrementCount();
-			System.out.println("getCount after " + view.getCount());
+
 
 			model.addToArray(view.getNVal(), view.getRtrnVal());
 
 			view.addArrayString();
 			view.setTxtArea();
-			
+
 
 
 		}
 		
+		/*
+		 * Stops the value of n being set to 0 and thus wrongly triggering a pop up box on the final hit of submit
+		 * 
+		 * Setting n to 0 is used because when the text field is cleared, the NVal still holds the previous value and would
+		 * otherwise just continue the program even though there is no input because getNVal will still hold the previous value which
+		 * was accepted
+		 */
 		if(view.getCount() >  1)
-		view.setNVal(0);
+			view.setNVal(0);
 	}
 
 }

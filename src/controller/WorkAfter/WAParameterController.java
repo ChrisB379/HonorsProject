@@ -7,7 +7,7 @@ import model.IWorkAfter;
 import view.WorkAfter.WorkAfterExample;
 
 /**
- * This is a controller for sending the parameter back and forth from the WorkAfterExample class
+ * This is a controller for sending the parameter back from the WorkAfterExample class
  * 
  * 
  * 
@@ -35,7 +35,6 @@ public class WAParameterController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		model.setParam(view.getParameter());
-		System.out.println("Parameter Controller model param shows " + model.getParam());
 		
 	}
 

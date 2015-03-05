@@ -1,5 +1,17 @@
 package controller.ReturnValue;
 
+/**
+ * This is the submit button in ReturnValueAlgorithm2
+ * 
+ * It checks if all input boxes are filled, if not then a message is displayed telling the user to make an input
+ * 
+ * If all inputs are filled then the visibility of buttons is changed to progress the program
+ * 
+ * @author Christopher Baillie
+ * @version 1.1
+ * @since 1.0
+ */
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,7 +37,6 @@ public class RVSubmitAlg2Controller implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		/*Checks each text field to ensure it is not empty
 		 * It only checks text fields which are visible otherwise non-visible ones would catch the if statement
 		 */

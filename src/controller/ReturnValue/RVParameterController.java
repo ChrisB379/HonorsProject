@@ -7,7 +7,7 @@ import model.IReturnValue;
 import view.ReturnValue.ReturnValueExample;
 
 /**
- * This is a controller for sending the parameter back and forth from the returnValueExample class
+ * This is a controller for sending the parameter back from the ReturnValueExample class
  * 
  * 
  * 
@@ -32,9 +32,7 @@ public class RVParameterController implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		model.setParam(view.getParameter());
-		System.out.println("Parameter Controller model param shows " + model.getParam());
 		
 	}
 
