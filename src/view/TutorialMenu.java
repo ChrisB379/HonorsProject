@@ -1,7 +1,7 @@
 package view;
 
 /**
- *  This is GUI for the examples and quiz. 
+ *  This is GUI menu for choosing which tutorial to do or quiz
  * 
  * @author Christopher Baillie
  * @version 1.0
@@ -77,14 +77,27 @@ public class TutorialMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public TutorialMenu() {
+		//Sets the icon at the top right of the application to override the default java icon
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-FrameIcon.png")));
 		setTitle("Tutorials");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 587, 414);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-
+		
+		/*
+		 * The buttons used in the JFrame
+		 * Each has an action listener for if it is clicked
+		 * Each also have KeyListeners to be activated by the Enter button if it is focused(tabbed over)
+		 * 
+		 */
+		
+		
+		/*
+		 * Base Case Tutorial 1 button 
+		 */
 		JButton btnBaseCase = new JButton("Base Case");
 		btnBaseCase.setBounds(320, 115, 205, 27);
 		btnBaseCase.addActionListener(new ActionListener() {
@@ -122,11 +135,14 @@ public class TutorialMenu extends JFrame {
 			}
 		});
 		btnBaseCase.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-
-		JButton btnNewButton = new JButton("Return Value");
-		btnNewButton.setBounds(320, 160, 205, 27);
-		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-		btnNewButton.addActionListener(new ActionListener() {
+		
+		/*
+		 * Return Value Tutorial 2 button
+		 */
+		JButton btnReturnVal = new JButton("Return Value");
+		btnReturnVal.setBounds(320, 160, 205, 27);
+		btnReturnVal.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+		btnReturnVal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				iModel = new ReturnValue();
@@ -136,7 +152,7 @@ public class TutorialMenu extends JFrame {
 				rvv.setResizable(false);
 			}
 		});
-		btnNewButton.addKeyListener(new KeyListener() {
+		btnReturnVal.addKeyListener(new KeyListener() {
 			
 			@Override
 			public void keyTyped(KeyEvent e) {}
@@ -146,7 +162,7 @@ public class TutorialMenu extends JFrame {
 			
 			@Override
 			public void keyPressed(KeyEvent e) {
-				if(btnNewButton.isFocusOwner()){
+				if(btnReturnVal.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
 						dispose();
 						iModel = new ReturnValue();
@@ -160,7 +176,10 @@ public class TutorialMenu extends JFrame {
 				
 			}
 		});
-
+		
+		/*
+		 * Multiple Choice Quiz Button
+		 */
 		JButton btnMultipleChoiceQuiz = new JButton("Multiple Choice Quiz");
 		btnMultipleChoiceQuiz.setBounds(320, 286, 203, 27);
 		btnMultipleChoiceQuiz.addActionListener(new ActionListener() {
@@ -198,10 +217,13 @@ public class TutorialMenu extends JFrame {
 			}
 		});
 		btnMultipleChoiceQuiz.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-
-		JButton btnReturnValue = new JButton("Excessive Recomputation");
-		btnReturnValue.setBounds(320, 198, 205, 27);
-		btnReturnValue.addActionListener(new ActionListener() {
+		
+		/*
+		 * Excessive Recomputation Tutorial 3 Button
+		 */
+		JButton btnExcessiveRecomp = new JButton("Excessive Recomputation");
+		btnExcessiveRecomp.setBounds(320, 198, 205, 27);
+		btnExcessiveRecomp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				iErModel = new ExcessiveRecomp();
@@ -211,7 +233,7 @@ public class TutorialMenu extends JFrame {
 				erv.setResizable(false);
 			}
 		});
-		btnReturnValue.addKeyListener(new KeyListener() {
+		btnExcessiveRecomp.addKeyListener(new KeyListener() {
 			
 			@Override
 			public void keyTyped(KeyEvent e) {}
@@ -221,7 +243,7 @@ public class TutorialMenu extends JFrame {
 			
 			@Override
 			public void keyPressed(KeyEvent e) {
-				if(btnReturnValue.isFocusOwner()){
+				if(btnExcessiveRecomp.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
 						dispose();
 						iErModel = new ExcessiveRecomp();
@@ -235,8 +257,11 @@ public class TutorialMenu extends JFrame {
 				
 			}
 		});
-		btnReturnValue.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-
+		btnExcessiveRecomp.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+		
+		/*
+		 * Work After Tutorial 4 Button
+		 */
 		JButton btnWorkAfter = new JButton("Work After");
 		btnWorkAfter.setBounds(320, 241, 205, 27);
 		btnWorkAfter.addActionListener(new ActionListener() {
@@ -274,7 +299,10 @@ public class TutorialMenu extends JFrame {
 			}
 		});
 		btnWorkAfter.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-
+		
+		/*
+		 * Button to return to the main menu
+		 */
 		JButton btnReturnToMain = new JButton("Return to Main Menu");
 		btnReturnToMain.setBounds(187, 332, 182, 27);
 		btnReturnToMain.setFont(new Font("Segoe UI", Font.PLAIN, 13));
@@ -311,7 +339,9 @@ public class TutorialMenu extends JFrame {
 			}
 		});
 		
-
+		/*
+		 * Declaring and setting the labels which match with each button
+		 */
 		JLabel lblNewLabel = new JLabel("Tutorials");
 		lblNewLabel.setBounds(223, 16, 129, 71);
 		lblNewLabel.setFont(new Font("Segoe UI", Font.PLAIN, 32));
@@ -336,6 +366,9 @@ public class TutorialMenu extends JFrame {
 		lblEndOfUnit.setBounds(29, 286, 100, 18);
 		lblEndOfUnit.setFont(new Font("Cambria", Font.PLAIN, 15));
 		
+		/*
+		 * Adding the components to the contentPane
+		 */
 		contentPane.setLayout(null);
 		contentPane.add(lblTutorial);
 		contentPane.add(lblTutorialWork);
@@ -344,8 +377,8 @@ public class TutorialMenu extends JFrame {
 		contentPane.add(lblTutorialExcessive);
 		contentPane.add(btnMultipleChoiceQuiz);
 		contentPane.add(btnWorkAfter);
-		contentPane.add(btnReturnValue);
-		contentPane.add(btnNewButton);
+		contentPane.add(btnExcessiveRecomp);
+		contentPane.add(btnReturnVal);
 		contentPane.add(btnBaseCase);
 		contentPane.add(btnReturnToMain);
 		contentPane.add(lblNewLabel);

@@ -71,7 +71,17 @@ public class MainMenu extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		
+		/*
+		 * The buttons used in the JFrame
+		 * Each has an action listener for if it is clicked
+		 * Each also have KeyListeners to be activated by the Enter button if it is focused(tabbed over)
+		 * 
+		 */
 
+		/*
+		 * Start button to begin the program
+		 */
 		JButton btnStart = new JButton("Start");
 		btnStart.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnStart.setBounds(214, 151, 80, 23);
@@ -99,7 +109,9 @@ public class MainMenu extends JFrame {
 			}
 		});
 
-
+		/*
+		 * About button to open the About JFrame
+		 */
 		JButton btnAbout = new JButton("About");
 		btnAbout.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnAbout.setBounds(214, 211, 80, 23);
@@ -130,7 +142,10 @@ public class MainMenu extends JFrame {
 
 			}
 		});
-
+		
+		/*
+		 * Quit Button
+		 */
 		JButton btnQuit = new JButton("Quit");
 		btnQuit.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnQuit.addKeyListener(new KeyListener() {
@@ -164,16 +179,30 @@ public class MainMenu extends JFrame {
 			}
 		});
 		contentPane.setLayout(null);
-
+		
+		/*
+		 * The Title
+		 */
 		JLabel lblUnderstandingRecursion = new JLabel("Understanding Recursion");
 		lblUnderstandingRecursion.setBounds(78, 42, 370, 48);
 		lblUnderstandingRecursion.setFont(new Font("Segoe UI", Font.PLAIN, 32));
+		
+		/*
+		 * Adding components to the content pane
+		 */
 		contentPane.add(lblUnderstandingRecursion);
 		contentPane.add(btnQuit);
 		contentPane.add(btnAbout);
 		contentPane.add(btnStart);
 	}
-
+	
+	/*
+	 * Methods for opening the About/Tutorial Menu JFrames
+	 * 
+	 * Due to this code being needed twice, once for action and one for key listener, it was
+	 * decided it best to make a method for each so that only one method must be called per listener
+	 * thus reducing code
+	 */
 	public void about(){
 		About a = new About();
 		a.setVisible(true);

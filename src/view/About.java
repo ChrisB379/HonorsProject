@@ -27,7 +27,7 @@ public class About extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	
+
 
 
 	/**
@@ -61,15 +61,22 @@ public class About extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
+		/*
+		 * The text describing the project
+		 */
 		JTextArea txtAbout = new JTextArea();
 		txtAbout.setFont(new Font("Cambria", Font.PLAIN, 14));
 		txtAbout.setBounds(26, 29, 393, 138);
-		txtAbout.setText("Understanding Recursion is a project undertaken by a fourth year student in his final year of his BSc Honors course in Computer Science.\r\n\r\nThe goal of this application was to create an interactive application which will aid a user in understanding and learning the basics of recursion.");
+		txtAbout.setText("Understanding Recursion is a project undertaken by a fourth year student in his final year of his BSc Honors course in Computer Science.\r\n\r\n"
+				+ "The goal of this application was to create an interactive application which will aid a user in understanding and learning the basics of recursion.");
 		txtAbout.setBackground(UIManager.getColor("Panel.background"));
 		txtAbout.setWrapStyleWord(true);
 		txtAbout.setLineWrap(true);
 		txtAbout.setEditable(false);
 
+		/*
+		 * Button to close the window
+		 */
 		JButton btnReturnMainMenu = new JButton("Close");
 		btnReturnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 11));
 		btnReturnMainMenu.setBounds(163, 178, 100, 30);
@@ -79,8 +86,10 @@ public class About extends JFrame {
 
 			}
 		});
-		
-		
+
+		/*
+		 * Adding components to the contentPane
+		 */
 		contentPane.setLayout(null);
 		contentPane.add(txtAbout);
 		contentPane.add(btnReturnMainMenu);
