@@ -2,12 +2,13 @@ package view.ExcessiveRecomputation;
 
 /**
  *  The results of the excessive recomputation example.
- *  The users answer to the example will be displayed along with the actual answer.
- *  There will be an explanation of how the answer was calculated and in the case of the user inputting
- *  an incorrect answer, an explanation of the correct answer is emphasized.
+ *  The users answer to the example is displayed along with the actual answer.
+ *  An explanation to how the answer was got to, is given.
+ *  
+ *  There is also a summary of the tutorial series
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  */
 
@@ -45,7 +46,10 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 		model = m;
 		
 		((Observable) m).addObserver(this);
-
+		
+		/*
+		 * Results text area
+		 */
 		txtResult = new JTextArea();
 		txtResult.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResult.setBounds(33, 33, 751, 421);
@@ -60,12 +64,18 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 				+ "The correct answer for fib(INSERTuserINPUThere) is :\r\n\r\n"
 				+ "We get to this answer by:\r\n\r\n"
 				+ "Insert algorithim + variables here\r\n\r\n");
-
+		
+		/*
+		 * Summary text area
+		 */
 		txtSummary = new JTextArea();
 		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setBounds(33, 465, 751, 255);
 		txtSummary.setFocusable(false);
-		txtSummary.setText("\r\n\r\nIn this tutorial series, the issue of excessive recomputation was presented.\r\n\r\nExcessive recomputation occurs when the same calculation is done multiple times wasting CPU resources and time because after the first time a calculation is done, it shouldn't have to be done again.\r\n\r\nFor more releveant examples in this area and more challenging, please have a look at memoization and fibonacci with memoization. \r\n\r\nYou can choose to do so now via the memoization button or you can continue to Tutorial 4 if you wish.\r\n\r\n");
+		txtSummary.setText("\r\n\r\nIn this tutorial series, the issue of excessive recomputation was presented.\r\n\r\n"
+				+ "Excessive recomputation occurs when the same calculation is done multiple times wasting CPU resources and time because after the first time a calculation is done, it shouldn't have to be done again.\r\n\r\n"
+				+ "For more releveant examples in this area and more challenging, please have a look at memoization and fibonacci with memoization. \r\n\r\n"
+				+ "You can choose to do so now via the memoization button or you can continue to Tutorial 4 if you wish.\r\n\r\n");
 
 
 
@@ -89,18 +99,38 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 
 	}
 	
+	/**
+	 * Sets the users return value
+	 * 
+	 * @return integer return value
+	 */
 	public void setReturnVal(int n){
 		userRet = n;
 	}
 	
+	/**
+	 * Gets the users return value
+	 * 
+	 * @return integer return value
+	 */
 	public int getReturnVal(){
 		return userRet;
 	}
 	
+	/**
+	 * Gets the users parameter
+	 * 
+	 * @return integer parameter
+	 */
 	public int getParam(){
 		return param;
 	}
 	
+	/**
+	 * Sets the local parameter to the value of the users chosen parameter
+	 * 
+	 * @param n integer parameter
+	 */
 	public void setParam(int n){
 		param = n;
 	}
@@ -114,6 +144,14 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 		
 	}
 	
+	/**
+	 * Sets the text field via the update method
+	 * 
+	 * This is just a large series of if statements
+	 * 
+	 * Depending on the parameter, the text field is set to a certain value. It is completely hard coded
+	 * 
+	 */
 	public void setResultsText(){
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
 				+ "The algorithm worked on was fib(" + getParam() + ")\r\n\r\n"

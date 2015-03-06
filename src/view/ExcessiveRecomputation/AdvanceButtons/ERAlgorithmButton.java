@@ -1,5 +1,13 @@
 package view.ExcessiveRecomputation.AdvanceButtons;
 
+/**
+ * The button for the algorithm page
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -26,6 +34,9 @@ public class ERAlgorithmButton extends JPanel {
 		
 		view = v;
 		
+		/*
+		 * Advance button
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(38, 175, 127, 35);
@@ -58,6 +69,9 @@ public class ERAlgorithmButton extends JPanel {
 
 	}
 	
+	/*
+	 * Setters to make the button visible/not visible
+	 */
 	public void setNotVis(){
 		btnAdvance.setVisible(false);
 	}

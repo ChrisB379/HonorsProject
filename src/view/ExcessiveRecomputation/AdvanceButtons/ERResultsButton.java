@@ -1,5 +1,13 @@
 package view.ExcessiveRecomputation.AdvanceButtons;
 
+/**
+ * The buttons for the Results page
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -26,6 +34,9 @@ public class ERResultsButton extends JPanel {
 		
 		setLayout(null);
 		
+		/*
+		 * Advance button
+		 */
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.addActionListener(new ActionListener() {
@@ -55,6 +66,9 @@ public class ERResultsButton extends JPanel {
 		btnAdvance.setBounds(38, 175, 127, 35);
 		add(btnAdvance);
 		
+		/*
+		 * Main menu button
+		 */
 		JButton btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.addActionListener(new ActionListener() {
@@ -84,6 +98,9 @@ public class ERResultsButton extends JPanel {
 		btnMainMenu.setBounds(38, 105, 127, 35);
 		add(btnMainMenu);
 		
+		/*
+		 * Memoization button
+		 */
 		JButton btnMemoization = new JButton("Memoization");
 		btnMemoization.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMemoization.addActionListener(new ActionListener() {

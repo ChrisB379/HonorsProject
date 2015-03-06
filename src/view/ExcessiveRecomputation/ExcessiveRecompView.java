@@ -2,11 +2,11 @@ package view.ExcessiveRecomputation;
 
 /**
  * This is the initial GUI for the excessive recomputation and the fibonacci algorithm.
- * It will explain the concept of excessive recomputation, why it's bad, how it can be solved.
- * It will let the user pick a number for their parameter to be used in the next GUI.
+ * It explains the concept of excessive recomputation, why it's bad, how it can be solved.
+ * It lets the user pick a number for their parameter to be used in the next GUI.
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  */
 
@@ -67,8 +67,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 	private JPanel advancePanel;
 	
 	
-	private JButton btnAdvance,btnMenu;
-	private JButton btnMemoization;
+	private JButton btnAdvance;
 	
 	private ERExampleButton eb;
 	private ERExample2Button eb2;
@@ -134,7 +133,10 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		setTitle("Tutorial 3: Excessive Recomputation");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1239, 792);
-
+		
+		/*
+		 * The menu bar with all of its options
+		 */
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
@@ -173,17 +175,27 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 			}
 		});
 		mnAbout.add(mntmAbout);
+		
+		/*
+		 * Content Panes and panels
+		 */
 		contentPane = new JPanel();
 		contentPane.setFocusable(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-
+		
+		/*
+		 * The card panel with the actual content
+		 */
 		cardPanel1 = new JPanel();
 		cardPanel1.setFocusable(false);
 		cardPanel1.setBounds(29, 16, 938, 694);
 		//This line is what makes a card not switch out. It must be up top. NOT AT THE BOTTOM LIKE ITS AUTO GENERATED TO DO!!!!
 		cardPanel1.setLayout(new CardLayout(0, 0));
-
+		
+		/*
+		 * Card panel for the buttons
+		 */
 		cardPanel2 = new JPanel();
 		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(1004, 447, 197, 230);
@@ -196,29 +208,51 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		advancePanel = new JPanel();
 		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_99302267697702");
-
+		
+		/*
+		 * The introduction to excessive recomp
+		 */
 		JTextPane txtIntroduction = new JTextPane();
 		txtIntroduction.setFocusable(false);
 		txtIntroduction.setContentType("text/html");
-		txtIntroduction.setText("<html><font face=\"cambria\", size = 4>\r\nThis tutorial series focuses on excessive recomputation in recursion.\r\n<br>\r\n<br>Excessive recomputation highlights an issue with recursion. \r\n<br>Excessive recomputation is when the same calculation is calculated multiple times throughout multiple recursive calls. \r\n<br>This can make basic recursion not very resource efficient, since it will be wasting time and CPU power calculating sums which it should already know the answer to having already did the same calculation before.\r\n<br>\r\n<br>\r\n<br>In this tutorial series, the fibonacci algorithm will be used in order to demonstrate how work can be done after a recursive call.\r\n<br>The Fibonacci sequence is a series of numbers where a number is found by adding up the two numbers before it. Starting with 0 and 1, the sequence goes 1, 1, 2, 3, 5, 8, 13, 21, 34, and so forth.\r\n<br>\r\n<br>\r\n<br>The algorithm is as follows:\r\n</font>\r\n</html>\r\n\r\n");
+		txtIntroduction.setText("<html><font face=\"cambria\", size = 4>\r\nThis tutorial series focuses on excessive recomputation in recursion.\r\n<br>\r\n<br>"
+				+ "Excessive recomputation highlights an issue with recursion. \r\n<br>Excessive recomputation is when the same calculation is calculated multiple times throughout multiple recursive calls. \r\n<br>"
+				+ "This can make basic recursion not very resource efficient, since it will be wasting time and CPU power calculating sums which it should already know the answer to having already did the same calculation before."
+				+ "\r\n<br>\r\n<br>\r\n<br>"
+				+ "In this tutorial series, the fibonacci algorithm will be used in order to demonstrate how work can be done after a recursive call.\r\n<br>"
+				+ "The Fibonacci sequence is a series of numbers where a number is found by adding up the two numbers before it. Starting with 0 and 1, the sequence goes 1, 1, 2, 3, 5, 8, 13, 21, 34, and so forth.\r\n<br>\r\n<br>\r\n<br>"
+				+ "The algorithm is as follows:\r\n</font>\r\n</html>\r\n\r\n");
 
 
 		txtIntroduction.setBackground(UIManager.getColor("Panel.background"));
 		txtIntroduction.setEditable(false);
 		
+		/*
+		 * Tells the user to press the advance button to continue
+		 */
 		JTextPane txtAdvance = new JTextPane();
 		txtAdvance.setContentType("text/html");
-		txtAdvance.setText("<font face=\"cambria\", size = 4>\r\nNow we are going to move onto how the factorial algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.\r\n</font>");
+		txtAdvance.setText("<font face=\"cambria\", size = 4>\r\nNow we are going to move onto how the factorial algorithm works.\r\n<br>\r\n"
+				+ "<br>Please click the Advance button to continue.\r\n</font>");
 		txtAdvance.setBackground(UIManager.getColor("Panel.background"));
 		txtAdvance.setEditable(false);
 		
+		/*
+		 * Fibonacci algorithm
+		 */
 		JTextPane txtFib = new JTextPane();
 		txtFib.setContentType("text/html");
-		txtFib.setText("<code>\r\n<br>&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> fib(<font color = rgb(127,0,85)> <b>int </b> </font>n) {\r\n<br>&nbsp\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>&nbsp\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b> </font> (n == 0 || n == 1)\r\n<br>&nbsp\t\t  &nbsp&nbsp &nbsp&nbsp <font color = rgb(127,0,85)> <b>return </b> </font>1;\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp <font color = rgb(127,0,85)> <b>else</b> </font>\r\n<br>&nbsp\t\t &nbsp&nbsp&nbsp&nbsp<font color = rgb(63,127,95)> //Recursive call</font>\r\n<br>&nbsp\t\t   &nbsp&nbsp&nbsp&nbsp <font color = rgb(127,0,85)> <b>return</b> </font> fib(n-1) + fib(n-2);\r\n<br>&nbsp\t}\r\n<br></code>");
+		txtFib.setText("<code>\r\n<br>&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> fib(<font color = rgb(127,0,85)> <b>int </b> </font>n) {\r\n<br>&nbsp\t\t&nbsp "
+				+ "<font color = rgb(63,127,95)>//Base case</font>\r\n<br>&nbsp\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b> </font> (n == 0 || n == 1)\r\n<br>&nbsp\t\t  "
+				+ "&nbsp&nbsp &nbsp&nbsp <font color = rgb(127,0,85)> <b>return </b> </font>1;\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp <font color = rgb(127,0,85)> <b>else</b> </font>\r\n<br>&nbsp\t\t"
+				+ " &nbsp&nbsp&nbsp&nbsp<font color = rgb(63,127,95)> //Recursive call</font>\r\n<br>&nbsp\t\t "
+				+ "  &nbsp&nbsp&nbsp&nbsp <font color = rgb(127,0,85)> <b>return</b> </font> fib(n-1) + fib(n-2);\r\n<br>&nbsp\t}\r\n<br></code>");
 		txtFib.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtFib.setEditable(false);
 
-
+		/*
+		 * Group layout code
+		 */
 		GroupLayout gl_cp1GroupPanel = new GroupLayout(cp1GroupPanel);
 		gl_cp1GroupPanel.setHorizontalGroup(
 			gl_cp1GroupPanel.createParallelGroup(Alignment.LEADING)
@@ -242,94 +276,21 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 					.addContainerGap(119, Short.MAX_VALUE))
 		);
 		cp1GroupPanel.setLayout(gl_cp1GroupPanel);
-
-		btnMenu = new JButton("Main Menu");
-		btnMenu.setBounds(38, 105, 127, 35);
-		//Don't want it to be visible until the last page
-		btnMenu.setVisible(false);
-		btnMenu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				MainMenu m = new MainMenu();
-				m.setVisible(true);
-				m.setLocationRelativeTo(null);
-			}
-		});
+		
+		/*
+		 * Advance button
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(38, 175, 127, 35);
 
-		btnMemoization = new JButton("Memoization");
-		btnMemoization.setBounds(38, 35, 127, 35);
-		//Only want it visible for the last page
-		btnMemoization.setVisible(false);
-		btnMemoization.addActionListener(new ActionListener() {
-			Memoization mem = new Memoization();
-			MemoizationDescription memd = new MemoizationDescription();
-			int count = 0;
-			public void actionPerformed(ActionEvent e) {
-				if(count == 0){
-					cardPanel1.add(mem);
-					cardPanel1.removeAll();
-					cardPanel1.add(mem);
-					btnMenu.setVisible(false);
-					btnAdvance.setVisible(false);
-				}
-
-				if(count == 1){
-					cardPanel1.add(memd);
-					cardPanel1.remove(mem);
-
-					btnMemoization.setVisible(false);
-					btnMenu.setVisible(true);
-					btnAdvance.setVisible(true);
-				}
-
-				count++;
-			}
-		});
-		btnMemoization.addKeyListener(new KeyListener() {
-			int count = 0;
-			@Override
-			public void keyTyped(KeyEvent e) {}
-			
-			@Override
-			public void keyReleased(KeyEvent e) {}
-			
-			@Override
-			public void keyPressed(KeyEvent e) {
-				if(btnMemoization.isFocusOwner()){
-					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						if(count == 0){
-							cardPanel1.add(mem);
-							cardPanel1.removeAll();
-							cardPanel1.add(mem);
-							btnMenu.setVisible(false);
-							btnAdvance.setVisible(false);
-						}
-
-						if(count == 1){
-							cardPanel1.add(memd);
-							cardPanel1.remove(mem);
-
-							btnMemoization.setVisible(false);
-							btnMenu.setVisible(true);
-							btnAdvance.setVisible(true);
-						}
-
-						count++;
-					}
-				}
-				
-			}
-		});
-
-
-
+		/*
+		 * Advance button listeners
+		 */
 		btnAdvance.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-
+					//Switches to the example panel with the relevant buttons
 					cardPanel1.add(e1);
 					cardPanel1.remove(cp1GroupPanel);
 					
@@ -362,9 +323,8 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 			}
 		});
 		advancePanel.setLayout(null);
-		advancePanel.add(btnMemoization);
-		advancePanel.add(btnMenu);
 		advancePanel.add(btnAdvance);
+		
 		contentPane.setLayout(null);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
@@ -377,6 +337,9 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		
 	}
 	
+	/**
+	 * Switches to the second example page with the relevant buttons
+	 */
 	public void switchCards1(){
 		cardPanel1.add(e2);
 		cardPanel1.remove(e1);
@@ -385,6 +348,9 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		cardPanel2.remove(eb);
 	}
 	
+	/**
+	 * Switches to the algorithm page if the parameter input is accepted with the relevant buttons
+	 */
 	public void switchCards2(){
 		
 		if(e2.getParameter() < 1 || e2.getParameter() > 11){
@@ -392,7 +358,6 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 	}
 
 	if(e2.getParameter() > 0 && e2.getParameter() < 11){
-		//System.out.println("we got here " + count);
 		cardPanel1.add(e3);
 		cardPanel1.remove(e2);
 		
@@ -403,8 +368,11 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 
 	}
 	
+	/**
+	 * Switches to the Results page with the relevant buttons
+	 * 
+	 */
 	public void switchCards3(){
-		System.out.println("switchCards3");
 		cardPanel1.add(e4);
 		cardPanel1.remove(e3);
 		
@@ -449,6 +417,9 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		m.setResizable(false);
 	}
 	
+	/**
+	 * Switches to the memoization tutorial from the results page
+	 */
 	public void memo(){
 				cardPanel1.add(mem);
 				cardPanel1.remove(e4);
@@ -459,6 +430,10 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 			
 	}
 	
+	/**
+	 * Switches from the first memoization page to the second along with its buttons
+	 * 
+	 */
 	public void memo2(){
 		cardPanel1.add(memd);
 		cardPanel1.remove(mem);

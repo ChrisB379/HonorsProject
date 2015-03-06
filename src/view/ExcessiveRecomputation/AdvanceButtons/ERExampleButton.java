@@ -1,5 +1,13 @@
 package view.ExcessiveRecomputation.AdvanceButtons;
 
+/**
+ * The buttons for the Example page
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -25,6 +33,9 @@ public class ERExampleButton extends JPanel {
 		
 		view = v;
 		
+		/*
+		 * Advance button
+		 */
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(38, 175, 127, 35);

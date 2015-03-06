@@ -1,5 +1,13 @@
 package view.ExcessiveRecomputation.AdvanceButtons;
 
+/**
+ * The button for the second memoization page
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 
 import view.ExcessiveRecomputation.ExcessiveRecompView;
@@ -23,6 +31,9 @@ public class ERAfterMemoButton extends JPanel {
 	 */
 	public ERAfterMemoButton(ExcessiveRecompView v) {
 		
+		/*
+		 * Advance button
+		 */
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(38, 175, 127, 35);
@@ -51,6 +62,9 @@ public class ERAfterMemoButton extends JPanel {
 			}
 		});
 		
+		/*
+		 * Main Menu button
+		 */
 		JButton btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.setBounds(38, 105, 127, 35);

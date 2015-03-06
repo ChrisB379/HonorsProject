@@ -1,11 +1,11 @@
 package view.ExcessiveRecomputation;
 
 /**
- * This is fourth GUI to excessive recomputation and will show the fibonacci algorithm.
- * The user will be able to work through it based on their parameter input from the previous screen.
+ * This is fourth GUI to excessive recomputation and shows the fibonacci algorithm.
+ * The user is able to work through it based on their parameter input from the previous screen.
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  */
 
@@ -87,7 +87,9 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		
 		ersc = new ERSubmitController(model,this);
 		
-
+		/*
+		 * The fibonacci algorithm
+		 */
 		JTextPane txtFibonacci = new JTextPane();
 		txtFibonacci.setFocusable(false);
 		txtFibonacci.setBounds(45, 61, 288, 159);
@@ -96,7 +98,10 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 
 		txtFibonacci.setBackground(UIManager.getColor("Panel.background"));
 		txtFibonacci.setEditable(false);
-
+		
+		/*
+		 * Shows the parameter after each recursive call
+		 */
 		txtVariables = new JTextArea();
 		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtVariables.setFont(new Font("Calibri", Font.PLAIN, 15));
@@ -107,7 +112,10 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtVariables.setLineWrap(true);
 		txtVariables.setEditable(false);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
-
+		
+		/*
+		 * Descriptor for the text inputs
+		 */
 		txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
@@ -117,7 +125,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf.setLineWrap(true);
 		txtrTheValueOf.setEditable(false);
 		txtrTheValueOf.setText("The value of n after the recursive call is :");
-
+		
 		txtrTheCurrent = new JTextArea();
 		txtrTheCurrent.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheCurrent.setFocusable(false);
@@ -127,7 +135,10 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtrTheCurrent.setLineWrap(true);
 		txtrTheCurrent.setWrapStyleWord(true);
 		txtrTheCurrent.setText("The current return value is :");
-
+		
+		/*
+		 * Input field for the return value
+		 */
 		txtRtrnVal = new JTextField();
 		txtRtrnVal.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtRtrnVal.setBounds(339, 412, 47, 20);
@@ -157,7 +168,10 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 				
 			}
 		});
-
+		
+		/*
+		 * Input field for the parameter value
+		 */
 		txtNval = new JTextField();
 		txtNval.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNval.setBounds(339, 350, 47, 20);
@@ -185,7 +199,10 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 				
 			}
 		});
-
+		
+		/*
+		 * Submit button to submit and save the users input
+		 */
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(45, 507, 127, 35);
@@ -213,10 +230,17 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		add(txtRtrnVal);
 		add(txtNval);
 		
+		/*
+		 * Scrollpane for the working area to give a large enough areas
+		 */
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(500, 386, 339, 197);
 		add(scrollPane);
 		
+		/*
+		 * An editable text area that the user can type in to do some working
+		 * if they so choose
+		 */
 		txtWorking = new JTextArea();
 		txtWorking.setFont(new Font("Calibri", Font.PLAIN, 15));
 		scrollPane.setViewportView(txtWorking);
@@ -236,11 +260,21 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 
 	}
 	
+	/**
+	 * Sets the local parameter to the value of the users chosen parameter
+	 * 
+	 * @param n integer parameter
+	 */
 	public void setParameter(int n){
 		parameter = n;
 
 	}
-
+	
+	/**
+	 * Gets the users parameter
+	 * 
+	 * @return integer parameter
+	 */
 	public int getParameter(){
 		return parameter;
 
@@ -380,6 +414,10 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		
 	}
 	
+	/**
+	 * Sets the text fields to blank once the submit button has been hit 
+	 * and the inputs are valid
+	 */
 	public void clearInputs(){
 		txtNval.setText("");
 		txtRtrnVal.setText("");

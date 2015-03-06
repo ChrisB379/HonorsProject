@@ -1,5 +1,13 @@
 package view.ExcessiveRecomputation.AdvanceButtons;
 
+/**
+ * The buttons for the memoization page
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -25,6 +33,9 @@ public class ERMemoButton extends JPanel {
 		
 		view = v;
 		
+		/*
+		 * Continue button
+		 */
 		JButton btnContinue = new JButton("Continue");
 		btnContinue.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnContinue.setBounds(38, 175, 127, 35);
