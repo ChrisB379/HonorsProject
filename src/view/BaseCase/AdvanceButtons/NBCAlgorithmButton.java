@@ -1,5 +1,14 @@
 package view.BaseCase.AdvanceButtons;
 
+/**
+ * This is the button panel for the NoBaseCase algorithm
+ * It allows the user to go to the results page
+ * 
+ * @author Christopher Baillie
+ * @version 1.0
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -27,6 +36,9 @@ public class NBCAlgorithmButton extends JPanel {
 		
 		view = v;
 		
+		/*
+		 * Advance button with listeners
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(10, 106, 127, 35);
@@ -60,6 +72,9 @@ public class NBCAlgorithmButton extends JPanel {
 
 	}
 	
+	/*
+	 * Methods for making the button visible/not visible
+	 */
 	public void setNotVis(){
 		btnAdvance.setVisible(false);
 	}

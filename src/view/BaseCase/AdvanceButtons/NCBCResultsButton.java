@@ -1,5 +1,14 @@
 package view.BaseCase.AdvanceButtons;
 
+/**
+ * This is the button panel for the NonConvergence results
+ * It allows the user to go to the main menu or advance to the next tutorial
+ * 
+ * @author Christopher Baillie
+ * @version 1.0
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -27,6 +36,9 @@ public class NCBCResultsButton extends JPanel {
 		
 		view = v;
 		
+		/*
+		 * Advance Button
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(10, 106, 127, 35);
@@ -55,7 +67,9 @@ public class NCBCResultsButton extends JPanel {
 			}
 		});
 		
-		
+		/*
+		 * Main Menu Button
+		 */
 		btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.setBounds(10, 24, 127, 35);

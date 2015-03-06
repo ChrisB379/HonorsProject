@@ -1,5 +1,14 @@
 package view.BaseCase.AdvanceButtons;
 
+/**
+ * This is the button panel for the No Base Case Example
+ * It allows the user to go to advance to the algorithm page
+ * 
+ * @author Christopher Baillie
+ * @version 1.0
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -39,6 +48,9 @@ public class NBCExampleButton extends JPanel {
 		
 		nbpController = new NoBCParameterController(model, nbcExample);
 		
+		/*
+		 * Advance button
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(10, 106, 127, 35);

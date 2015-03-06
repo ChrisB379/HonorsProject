@@ -1,5 +1,15 @@
 package view.BaseCase.AdvanceButtons;
 
+/**
+ * This is the button panel for the No Base Case Results
+ * 
+ * It allows the user to advance to the non-covergence example
+ * 
+ * @author Christopher Baillie
+ * @version 1.0
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -26,6 +36,9 @@ public class NBCResultsButton extends JPanel {
 		
 		view = v;
 		
+		/*
+		 * Advance button
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(10, 106, 127, 35);
