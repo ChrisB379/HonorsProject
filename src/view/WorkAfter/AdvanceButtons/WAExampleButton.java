@@ -1,5 +1,13 @@
 package view.WorkAfter.AdvanceButtons;
 
+/**
+ * Button for the example panel in work after
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -37,6 +45,9 @@ public class WAExampleButton extends JPanel {
 		
 		waPc = new WAParameterController(iWa, waE);
 		
+		/*
+		 * Advance button
+		 */
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(37, 90, 127, 35);

@@ -1,5 +1,13 @@
 package view.WorkAfter.AdvanceButtons;
 
+/**
+ * Buttons for the results panel in work after
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -26,6 +34,9 @@ public class WAResultsButton extends JPanel {
 		
 		wav = w;
 		
+		/*
+		 * Advance button to go to the next tutorial
+		 */
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(37, 90, 127, 35);
@@ -55,6 +66,9 @@ public class WAResultsButton extends JPanel {
 			}
 		});
 		
+		/*
+		 * Main Menu button
+		 */
 		JButton btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.setBounds(37, 21, 127, 35);

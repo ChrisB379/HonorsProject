@@ -3,11 +3,11 @@ package view.WorkAfter;
 /**
  * Shows the results of the work after example algorithm.
  * Shows the users answer, the correct answer along with an explanation of how the answer was found.
- * This is emphasised if the user got an incorrect answer.
+ * 
  * A brief summary of the topic is also included for what the user should have learned.
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 1.5
  * @since 1.0
  */
 
@@ -44,7 +44,9 @@ public class WorkAfterResult extends JPanel implements Observer {
 		
 		((Observable) m).addObserver(this);
 		
-		
+		/*
+		 * Results text field
+		 */
 		txtResults = new JTextArea();
 		txtResults.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResults.setFocusable(false);
@@ -67,6 +69,9 @@ public class WorkAfterResult extends JPanel implements Observer {
 		lblSummary.setBounds(312, 507, 94, 27);
 		add(lblSummary);
 
+		/*
+		 * Summary text field
+		 */
 		txtSummary = new JTextArea();
 		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
@@ -75,7 +80,11 @@ public class WorkAfterResult extends JPanel implements Observer {
 		txtSummary.setLineWrap(true);
 		txtSummary.setWrapStyleWord(true);
 		txtSummary.setEditable(false);
-		txtSummary.setText("\r\n\r\nIn this tutorial series, the basics of doing work after a recursive call were presented.\r\n\r\nRecursive calls do not need to be the end of a method. In fact work can be done after a recursive call.\r\n\r\nFor more releveant examples in this area and more challenging, please have a look for sorts and searches. A good example is Merge sort. Merge sort will split a list in one and use recursion to sort each list. Once this recursive call has been completed, the work done after involves combining the two lists into one sorted list.");
+		txtSummary.setText("\r\n\r\nIn this tutorial series, the basics of doing work after a recursive call were presented.\r\n\r\n"
+				+ "Recursive calls do not need to be the end of a method. In fact work can be done after a recursive call.\r\n\r\n"
+				+ "For more releveant examples in this area and more challenging, please have a look for sorts and searches. "
+				+ "A good example is Merge sort. Merge sort will split a list in one and use recursion to sort each list. "
+				+ "Once this recursive call has been completed, the work done after involves combining the two lists into one sorted list.");
 		add(txtSummary);
 		add(txtResults);
 		

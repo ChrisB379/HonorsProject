@@ -52,7 +52,7 @@ public class WorkAfterView extends JFrame {
 	private JPanel cardPanel1,cardPanel2;
 	private JPanel advancePanel;
 	
-	private JButton btnAdvance,btnMenu;
+	private JButton btnAdvance;
 	
 	private WAExampleButton eb;
 	private WAAlgorithmButton ab;
@@ -87,7 +87,9 @@ public class WorkAfterView extends JFrame {
 	 * Create the frame.
 	 */
 	public WorkAfterView(IWorkAfter m) {
+		//Set the icon for the JFrame
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-FrameIcon.png")));
+		
 		model = m;
 		
 		w = new WorkAfterExample(model);
@@ -104,6 +106,9 @@ public class WorkAfterView extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1229, 795);
 
+		/*
+		 * Menu bar with all of the options and drop down options
+		 */
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
@@ -142,15 +147,25 @@ public class WorkAfterView extends JFrame {
 			}
 		});
 		mnAbout.add(mntmAbout);
+		
+		/*
+		 * Content pane and other panels
+		 */
 		contentPane = new JPanel();
 		contentPane.setFocusable(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-
+		
+		/*
+		 * Card panel for swapping in buttons
+		 */
 		cardPanel2 = new JPanel();
 		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(969, 527, 210, 150);
 
+		/*
+		 * Card panel for swapping in the actual tutorial content
+		 */
 		cardPanel1 = new JPanel();
 		cardPanel1.setFocusable(false);
 		cardPanel1.setBounds(30, 16, 888, 714);
@@ -159,24 +174,41 @@ public class WorkAfterView extends JFrame {
 		JPanel cp1GroupPanel = new JPanel();
 		cp1GroupPanel.setFocusable(false);
 		cardPanel1.add(cp1GroupPanel, "name_94405714894092");
-
+		
+		/*
+		 * Describes what this chapter is about
+		 */
 		JTextPane txtDescription = new JTextPane();
 		txtDescription.setBounds(10, 11, 841, 221);
 		txtDescription.setContentType("text/html");
-		txtDescription.setText("<html> <font face=\"cambria\", size = 4>\r\n<br>This tutorial series focuses on work being done after a recursive call. \r\n<br>\r\n<br>Unlike the previous tutorials, a recursive call does not need to be the end of a method.\r\n<br>As the name suggests, work after a recursive call is when there is more code to be executed after a recursive call rather than it meaning the end of a method and being a return statement.\r\n<br>\r\n<br>In this tutorial series, a custom algorithm will be used in order to demonstrate how work can be done after a recursive call.\r\n<br>\r\n<br>\r\n<br>The algorithm is as follows:\r\n</html>");
+		txtDescription.setText("<html> <font face=\"cambria\", size = 4>\r\n<br>This tutorial series focuses on work being done after a recursive call. \r\n<br>\r\n<br>"
+				+ "Unlike the previous tutorials, a recursive call does not need to be the end of a method.\r\n<br>As the name suggests, "
+				+ "work after a recursive call is when there is more code to be executed after a recursive call rather than it meaning the end of a method and being a return statement.\r\n<br>\r\n<br>"
+				+ "In this tutorial series, a custom algorithm will be used in order to demonstrate how work can be done after a recursive call.\r\n<br>\r\n<br>\r\n<br>"
+				+ "The algorithm is as follows:\r\n</html>");
 
 		txtDescription.setBackground(UIManager.getColor("Panel.background"));
 		txtDescription.setEditable(false);
 		cp1GroupPanel.setLayout(null);
 		
+		/*
+		 * The work after algorithm
+		 */
 		JTextPane txtAlgorithm = new JTextPane();
 		txtAlgorithm.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtAlgorithm.setContentType("text/html");
-		txtAlgorithm.setText("<code> \r\n<br>&nbsp\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n){\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>&nbsp\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>Base case statement, showing the value of n is</font> \" + n);\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)><b>else</b> </font>\r\n<br>&nbsp\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println(\"<font color = rgb(0,0,192)>After the recursive call, showing the result of n*2 is</font> \" + n*2);\r\n<br>\t\r\n<br>&nbsp\t}\r\n<br></code>");
+		txtAlgorithm.setText("<code> \r\n<br>&nbsp\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n)"
+				+ "{\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)><b>if</b> </font>(n == 1)\r\n<br>&nbsp\t\t\t&nbsp&nbsp System.<font color = rgb(0,0,192)>out</font>."
+				+ "println(\"<font color = rgb(0,0,192)>Base case statement, showing the value of n is</font> \" + n);\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)>"
+				+ "<b>else</b> </font>\r\n<br>&nbsp\t\t\t&nbsp&nbsp workAfter(n-1);\r\n<br>\t\t\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp System.<font color = rgb(0,0,192)>out</font>.println"
+				+ "(\"<font color = rgb(0,0,192)>After the recursive call, showing the result of n*2 is</font> \" + n*2);\r\n<br>\t\r\n<br>&nbsp\t}\r\n<br></code>");
 		txtAlgorithm.setBounds(10, 242, 672, 240);
 		cp1GroupPanel.add(txtAlgorithm);
 		cp1GroupPanel.add(txtDescription);
 		
+		/*
+		 * Tells the user how to progress
+		 */
 		JTextPane txtAdvance = new JTextPane();
 		txtAdvance.setBackground(UIManager.getColor("Panel.background"));
 		txtAdvance.setEditable(false);
@@ -189,20 +221,10 @@ public class WorkAfterView extends JFrame {
 		advancePanel = new JPanel();
 		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_94944655089283");
-
-		btnMenu = new JButton("Main Menu");
-		btnMenu.setBounds(37, 21, 127, 35);
-		//Don't want it to be visible until the last page
-		btnMenu.setVisible(false);
-		btnMenu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				MainMenu m = new MainMenu();
-				m.setVisible(true);
-				m.setLocationRelativeTo(null);
-			}
-		});
-
+		
+		/*
+		 * Advance button
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(37, 90, 127, 35);
@@ -242,13 +264,16 @@ public class WorkAfterView extends JFrame {
 			}
 		});
 		advancePanel.setLayout(null);
-		advancePanel.add(btnMenu);
 		advancePanel.add(btnAdvance);
 		contentPane.setLayout(null);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
 	}
 	
+	/**
+	 * Switches to the algorithm panel with its relevant buttons
+	 * This is assuming the parameter was valid and accepted
+	 */
 	public void switchCards1(){
 		//Handles parameters that are not within the specified bound
 		if(w.getParameter() < 1 || w.getParameter() > 11){
@@ -265,17 +290,23 @@ public class WorkAfterView extends JFrame {
 		
 	}
 	
+	/**
+	 * Switches to the Results panel with its relevant buttons
+	 * 
+	 */
 	public void switchCards2(){
 		cardPanel1.add(w3);
 		cardPanel1.remove(w2);
 		btnAdvance.setText("Summary");
-		btnMenu.setVisible(true);
 		
 		cardPanel2.add(rb);
 		cardPanel2.remove(ab);
 		
 	}
 	
+	/**
+	 * Disposes this view and opens up the summary which is the next in the series
+	 */
 	public void advanceTut(){
 		dispose();
 		Summary summ = new Summary();

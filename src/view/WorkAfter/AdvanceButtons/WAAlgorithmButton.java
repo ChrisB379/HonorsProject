@@ -1,5 +1,13 @@
 package view.WorkAfter.AdvanceButtons;
 
+/**
+ * Button for the algorithm panel in work after
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -26,6 +34,9 @@ public class WAAlgorithmButton extends JPanel {
 		
 		wav = wa;
 		
+		/*
+		 * Advance button
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(37, 90, 127, 35);
@@ -59,7 +70,9 @@ public class WAAlgorithmButton extends JPanel {
 
 	}
 	
-	
+	/*
+	 * Setters to make the button visible/invisible
+	 */
 	public void setNotVis(){
 		btnAdvance.setVisible(false);
 	}
