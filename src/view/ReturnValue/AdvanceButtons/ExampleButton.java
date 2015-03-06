@@ -1,5 +1,13 @@
 package view.ReturnValue.AdvanceButtons;
 
+/**
+ * Button for the example page of return value
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -37,6 +45,9 @@ public class ExampleButton extends JPanel {
 		
 		p = new RVParameterController(model, rve);
 		
+		/*
+		 * Advance button
+		 */
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(55, 85, 127, 35);

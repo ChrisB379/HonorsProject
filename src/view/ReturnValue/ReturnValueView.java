@@ -6,7 +6,7 @@ package view.ReturnValue;
  * A parameter integer can be entered to be used in the next GUI screen.
  * 
  * @author Christopher Baillie
- * @version 1.2
+ * @version 1.5
  * @since 1.0
  */
 
@@ -62,7 +62,7 @@ public class ReturnValueView extends JFrame implements Observer {
 	private JPanel cardPanel1,cardPanel2;
 	private JPanel advancePanel;
 
-	private JButton btnAdvance,btnMenu;
+	private JButton btnAdvance;
 
 	private ExampleButton eb;
 	private AlgorithmButton ab;
@@ -99,6 +99,7 @@ public class ReturnValueView extends JFrame implements Observer {
 	 * Create the frame.
 	 */
 	public ReturnValueView(IReturnValue r) {
+		//Setting the JFrames Icon
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ReturnValueView.class.getResource("/images/green-flame-FrameIcon.png")));
 
 		model = r;
@@ -112,16 +113,18 @@ public class ReturnValueView extends JFrame implements Observer {
 
 		rb = new ResultsButton(this);
 
-
 		r2 = new ReturnValueAlgorithm(model,ab);
-
 		r4 = new ReturnValueResults(model);
 
 
 		setTitle("Tutorial 2: Return Values");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1253, 807);
-
+		
+		
+		/*
+		 * Menu bar and all of its drop down options
+		 */
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
@@ -160,15 +163,25 @@ public class ReturnValueView extends JFrame implements Observer {
 			}
 		});
 		mnAbout.add(mntmAbout);
+		
+		/*
+		 * Content panel and card panels
+		 */
 		contentPane = new JPanel();
 		contentPane.setBackground(UIManager.getColor("Panel.background"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-
+		
+		/*
+		 * Card panel that contains the actual content
+		 */
 		cardPanel1 = new JPanel();
 		cardPanel1.setBounds(36, 16, 871, 726);
 		cardPanel1.setBorder(null);
 
+		/*
+		 * Card Panel that contains the buttons to be switched in
+		 */
 		cardPanel2 = new JPanel();
 		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(939, 539, 242, 152);
@@ -183,24 +196,12 @@ public class ReturnValueView extends JFrame implements Observer {
 		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_12410711717075");
 
-		btnMenu = new JButton("Main Menu");
-		btnMenu.setBounds(55, 11, 127, 35);
-		//Only want it visible once the user is on the last tutorial slide
-		btnMenu.setVisible(false);
-		btnMenu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				MainMenu m = new MainMenu();
-				m.setVisible(true);
-				m.setLocationRelativeTo(null);
-			}
-		});
-
+		/*
+		 * Advance button and listeners
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(55, 85, 127, 35);
-
-
 
 		//Changing the cards to advance to the next screen
 		btnAdvance.addActionListener(new ActionListener() {
@@ -236,7 +237,6 @@ public class ReturnValueView extends JFrame implements Observer {
 			}
 		});
 		advancePanel.setLayout(null);
-		advancePanel.add(btnMenu);
 		advancePanel.add(btnAdvance);
 		contentPane.setLayout(null);
 		cardPanel1.setLayout(new CardLayout());
@@ -246,6 +246,9 @@ public class ReturnValueView extends JFrame implements Observer {
 		cardPanel1.add(cp1GroupPanel, "name_455689991325878");
 		cp1GroupPanel.setLayout(null);
 		
+		/*
+		 * Advance text telling the user how to progress
+		 */
 		JTextPane txtAdvance = new JTextPane();
 		txtAdvance.setContentType("text/html");
 		txtAdvance.setBackground(UIManager.getColor("Panel.background"));
@@ -255,21 +258,34 @@ public class ReturnValueView extends JFrame implements Observer {
 		txtAdvance.setBounds(10, 475, 449, 61);
 		cp1GroupPanel.add(txtAdvance);
 
-
+		/*
+		 * An introduction to the return values
+		 */
 		JTextPane txtrIntroduction = new JTextPane();
 		txtrIntroduction.setBounds(10, 11, 839, 282);
 		txtrIntroduction.setFocusable(false);
 		txtrIntroduction.setContentType("text/html");
 		txtrIntroduction.setEditable(false);
 		txtrIntroduction.setBackground(UIManager.getColor("Panel.background"));
-		txtrIntroduction.setText("<html><font face=\"cambria\", size = 4>\r\nThis tutorial series focuses on return values in recursive calls. A method returns to the code that invoked it when it completes all the statements in the method, reaches a return statement, or when it throws an exception.\r\n<br>\r\n<br>The return value of a recursive call is the result of a recursive call after all the statements in the method have been reached which is usually a return statement which itself is a recursive call.\r\n<br>\r\n<br>The final return value however, is returned once the base case is met(as described in the previous tutorial) and thus a different return statement is met which does not continue the recursive calls.\r\n<br>\r\n<br>In this tutorial series, the factorial algorithm will be used in order to demonstrate how the final return value of a recursive call is calculated.\r\n<br>\r\n<br>Factorial is the product of an integer and all the integers below it; e.g. factorial four ( 4! ) is equal to 24.\r\n<br>\r\n<br>The Factorial algorithm is as follows:\r\n</font>\r\n</html>");
+		txtrIntroduction.setText("<html><font face=\"cambria\", size = 4>\r\nThis tutorial series focuses on return values in recursive calls. "
+				+ "A method returns to the code that invoked it when it completes all the statements in the method, reaches a return statement, or when it throws an exception.\r\n<br>\r\n<br>"
+				+ "The return value of a recursive call is the result of a recursive call after all the statements in the method have been reached which is usually a return statement which itself is a recursive call.\r\n<br>\r\n<br>"
+				+ "The final return value however, is returned once the base case is met(as described in the previous tutorial) and thus a different return statement is met which does not continue the recursive calls.\r\n<br>\r\n<br>"
+				+ "In this tutorial series, the factorial algorithm will be used in order to demonstrate how the final return value of a recursive call is calculated.\r\n<br>\r\n<br>"
+				+ "Factorial is the product of an integer and all the integers below it; e.g. factorial four ( 4! ) is equal to 24.\r\n<br>\r\n<br>"
+				+ "The Factorial algorithm is as follows:\r\n</font>\r\n</html>");
 		cp1GroupPanel.add(txtrIntroduction);
 		
+		/*
+		 * Factorial algorithm in HTML
+		 */
 		JTextPane txtFact = new JTextPane();
 		txtFact.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtFact.setEditable(false);
 		txtFact.setContentType("text/html");
-		txtFact.setText("<font face=\"cambria\", size = 4>\r\n<code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</font>");
+		txtFact.setText("<font face=\"cambria\", size = 4>\r\n<code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {  "
+				+ " \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> "
+				+ "&nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</font>");
 		txtFact.setBounds(20, 304, 211, 130);
 		cp1GroupPanel.add(txtFact);
 		contentPane.add(cardPanel1);
@@ -358,7 +374,6 @@ public class ReturnValueView extends JFrame implements Observer {
 
 		cardPanel2.add(rb);
 		cardPanel2.remove(ab2);
-		btnMenu.setVisible(true);
 
 	}
 

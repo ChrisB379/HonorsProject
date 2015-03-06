@@ -1,5 +1,13 @@
 package view.ReturnValue.AdvanceButtons;
 
+/**
+ * Button for the algorithm page in return value
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
@@ -28,6 +36,9 @@ public class AlgorithmButton extends JPanel {
 		r = rvv;
 		alg2 = alg;
 		
+		/*
+		 * Advance Button
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(55, 85, 127, 35);
@@ -269,7 +280,9 @@ public class AlgorithmButton extends JPanel {
 		add(btnAdvance);
 
 	}
-	
+		/*
+		 * Setters to make the button visible/invisible
+		 */
 	public void setNotVis(){
 		btnAdvance.setVisible(false);
 	}

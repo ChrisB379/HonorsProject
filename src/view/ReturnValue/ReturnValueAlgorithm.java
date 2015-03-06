@@ -3,7 +3,7 @@ package view.ReturnValue;
 /**
  *  Displays the factorial algorithm as the example the user can work through for the
  *  return value examples section.
- *  This is based on the parameter entered from the previous GUi screen.
+ *  This is based on the parameter entered from the previous GUI screen.
  * 
  * @author Christopher Baillie
  * @version 1.2
@@ -93,22 +93,27 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		//this is causing a null pointer exception
 		((Observable) r).addObserver(this);
 
-//		rvac = new RVAlgorithmController(model, this);
 		rvsC = new RVSubmitController(model, this);
 
 		setBorder(null);
-		//blue rgb value (0,0,192)
-		//purple rgb value (127,0,85)
 
+		/*
+		 * Factorial algorithm
+		 */
 		JTextPane txtFactorial = new JTextPane();
 		txtFactorial.setFocusable(false);
 		txtFactorial.setBounds(60, 54, 272, 97);
 		txtFactorial.setContentType("text/html");
 		txtFactorial.setBorder(BorderFactory.createLineBorder(Color.black));
 		txtFactorial.setBackground(Color.WHITE);
-		txtFactorial.setText("<html> \r\n<code> &nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {  \r\n<br> &nbsp <font color = rgb(127,0,85)><b>if</b></font> (n == 1) \r\n<br>&nbsp &nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; \r\n<br> &nbsp <font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> </html>");
+		txtFactorial.setText("<html> \r\n<code> &nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) "
+				+ "{  \r\n<br> &nbsp <font color = rgb(127,0,85)><b>if</b></font> (n == 1) \r\n<br>&nbsp &nbsp <font color = rgb(127,0,85)><b>return</b></font> 1;"
+				+ " \r\n<br> &nbsp <font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> </html>");
 		txtFactorial.setEditable(false);
 
+		/*
+		 * Descriptor for the input for the n value
+		 */
 		txtrTheValueOf = new JTextArea();
 		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
@@ -119,6 +124,9 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf.setEditable(false);
 		txtrTheValueOf.setText("The value of n after the recursive call is :");
 
+		/*
+		 * Input field for the n value
+		 */
 		txtNVal = new JTextField();
 		txtNVal.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNVal.setBounds(359, 354, 42, 20);
@@ -147,13 +155,18 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 				
 			}
 		});
-
+		
+		/*
+		 * Submit button
+		 */
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(60, 536, 127, 35);
 		btnSubmit.addActionListener(rvsC);
 
-			
+		/*
+		 * descriptor for the return value input	
+		 */
 		txtrTheCurrent = new JTextArea();
 		txtrTheCurrent.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheCurrent.setFocusable(false);
@@ -164,6 +177,9 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtrTheCurrent.setEditable(false);
 		txtrTheCurrent.setText("The current return value is :");
 
+		/*
+		 * Input field for the return value
+		 */
 		txtRtrnVal = new JTextField();
 		txtRtrnVal.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtRtrnVal.setBounds(358, 424, 43, 20);
@@ -200,6 +216,9 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		lblExample.setFocusable(false);
 		lblExample.setBounds(373, 11, 100, 20);
 		
+		/*
+		 * Descriptor telling the user what to do next
+		 */
 		txtBaseCase = new JTextField();
 		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtBaseCase.setFocusable(false);
@@ -255,7 +274,6 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		setParameter(model.getParam());
-		System.out.println("rv " + model.getParam());
 		//A count for the submit button to keep track of how many recursive calls there has been
 		if(!doOnce){
 		count = model.getParam()-1;
@@ -264,12 +282,22 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		
 		txtVariables.setText("n = " + getParameter());
 	}
-
+	
+	/**
+	 * Sets the local parameter to the value of the users chosen parameter
+	 * 
+	 * @param n integer parameter
+	 */
 	public void setParameter(int n){
 		parameter = n;
 
 	}
 
+	/**
+	 * Gets the users parameter
+	 * 
+	 * @return integer parameter
+	 */
 	public int getParameter(){
 		return parameter;
 
@@ -396,6 +424,10 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		}
 	}
 	
+	/**
+	 * Sets the text fields to empty once the submit button is clicks
+	 * This is handled in the submit controller
+	 */
 	public void clearInputs(){
 		txtNVal.setText("");
 		txtRtrnVal.setText("");

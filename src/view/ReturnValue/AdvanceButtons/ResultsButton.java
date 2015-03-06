@@ -1,5 +1,13 @@
 package view.ReturnValue.AdvanceButtons;
 
+/**
+ * Buttons for the results page of return value
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ * @since 1.0
+ */
+
 import javax.swing.JPanel;
 
 import view.ReturnValue.ReturnValueView;
@@ -26,6 +34,9 @@ public class ResultsButton extends JPanel {
 		
 		r = rvv;
 		
+		/*
+		 * Advance Button
+		 */
 		JButton btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(55, 85, 127, 35);
@@ -55,6 +66,9 @@ public class ResultsButton extends JPanel {
 			}
 		});
 		
+		/*
+		 * Main Menu Button
+		 */
 		JButton btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.setBounds(55, 11, 127, 35);

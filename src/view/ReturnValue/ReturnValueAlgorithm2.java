@@ -5,7 +5,7 @@ package view.ReturnValue;
  * 
  * 
  * @author Christopher Baillie
- * @version 1.2
+ * @version 1.5
  * @since 1.0
  * 
  */
@@ -1869,12 +1869,22 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line1Input1.setText(String.valueOf(getParameter()));
 
 	}
-
+	
+	/**
+	 * Sets the local parameter to the value of the users chosen parameter
+	 * 
+	 * @param n integer parameter
+	 */
 	public void setParameter(int n){
 		parameter = n;
 
 	}
-
+	
+	/**
+	 * Gets the users parameter
+	 * 
+	 * @return integer parameter
+	 */
 	public int getParameter(){
 		return parameter;
 

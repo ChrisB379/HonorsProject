@@ -3,11 +3,10 @@ package view.ReturnValue;
 /**
  * The results of the users example work through.
  * The correct answer and users answer is displayed.
- * An incorrect answer shows an explation of how the correct answer was found.
  * There is a summary of the return value topic and all that was covered.
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 1.5
  * @since 1.0
  */
 
@@ -47,7 +46,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		JLabel lblResults = new JLabel("Results");
 		lblResults.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblResults.setBounds(319, 11, 61, 14);
-
+		
+		/*
+		 * Results text area
+		 */
 		txtResults = new JTextArea();
 		txtResults.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResults.setFocusable(false);
@@ -72,7 +74,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 		txtResults.setBackground(UIManager.getColor("Panel.background"));
 		txtResults.setEditable(false);
-
+		
+		/*
+		 * Summary text area
+		 */
 		txtSummary = new JTextArea();
 		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
@@ -110,30 +115,65 @@ public class ReturnValueResults extends JPanel implements Observer {
 		
 	}
 	
+	/**
+	 * Sets the users return value
+	 * 
+	 * @return integer return value
+	 */
 	public void setReturnVal(int n){
 		userRet = n;
 	}
 	
+	/**
+	 * Gets the users return value
+	 * 
+	 * @return integer return value
+	 */
 	public int getReturnVal(){
 		return userRet;
 	}
 	
+	/**
+	 * Sets the users second return value
+	 * 
+	 * @return integer second return value
+	 */
 	public void setReturnVal2(int n){
 		userRet2 = n;
 	}
 	
+	/**
+	 * Gets the users second return value
+	 * 
+	 * @return integer second return value
+	 */
 	public int getReturnVal2(){
 		return userRet2;
 	}
 	
+	/**
+	 * Gets the users parameter
+	 * 
+	 * @return integer parameter
+	 */
 	public int getParam(){
 		return param;
 	}
 	
+	/**
+	 * Sets the users parameter
+	 * 
+	 * @return integer parameter
+	 */
 	public void setParam(int n){
 		param = n;
 	}
 	
+	/**
+	 * Gets factorial answer
+	 * 
+	 * @return integer factorial
+	 */
 	public int getFact(){
 		return fact;
 	}
@@ -142,6 +182,10 @@ public class ReturnValueResults extends JPanel implements Observer {
 		fact = n;
 	}
 	
+	/**
+	 * Hard coded set of id statements for each possible parameter
+	 * Depending on the parameter, the corresponding if statement sets the text field
+	 */
 	public void setResultsText(){
 		
 		if(param == 1){
