@@ -115,7 +115,10 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 
 		txtAlgorithm.setBackground(UIManager.getColor("Panel.background"));
 		txtAlgorithm.setEditable(false);
-
+		
+		/*
+		 * Two descriptor text areas
+		 */
 		txtVariables = new JTextArea();
 		txtVariables.setFocusable(false);
 		txtVariables.setBounds(460, 81, 66, 165);
@@ -134,7 +137,10 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtrTheValueOf.setLineWrap(true);
 		txtrTheValueOf.setEditable(false);
 		txtrTheValueOf.setText("The value of n after the recursive call is :");
-
+		
+		/*
+		 * The input field for the parameter
+		 */
 		txtNVal = new JTextField();
 		txtNVal.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNVal.setBounds(313, 288, 46, 20);
@@ -144,19 +150,13 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 
 			@Override
 			public void focusLost(FocusEvent e) {
-				// TODO Auto-generated method stub
-				System.out.println("we get here");
 				int n = Integer.parseInt(txtNVal.getText());
-				System.out.println("n " + n);
 				setNVal(n);
 				txtNVal.setText("");
 			}
 
 			@Override
-			public void focusGained(FocusEvent e) {
-				// TODO Auto-generated method stub
-
-			}
+			public void focusGained(FocusEvent e) {}
 		});
 
 		btnSubmit = new JButton("Submit");
@@ -201,7 +201,11 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 				scrollPane.setViewportView(txtWorking);
 		add(lblInsertWorkingHere);
 
+		/*
+		 * Descriptor for the first question
+		 */
 		txtNValDescription = new JTextField();
+		txtNValDescription.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtNValDescription.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNValDescription.setFocusable(false);
 		txtNValDescription.setEditable(false);
@@ -210,6 +214,9 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		add(txtNValDescription);
 		txtNValDescription.setColumns(10);
 
+		/*
+		 * Descriptor for the multiple choice question
+		 */
 		txtQuestion = new JTextArea();
 		txtQuestion.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion.setBackground(UIManager.getColor("Panel.background"));
@@ -220,6 +227,10 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		add(txtQuestion);
 		txtQuestion.setColumns(10);
 		txtQuestion.setVisible(false);
+		
+		/*
+		 * Radio buttons for multiple choice questions
+		 */
 
 		ButtonGroup btnGroup = new ButtonGroup();
 
@@ -285,12 +296,22 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtVariables.setText("n = " + getParameter());
 
 	}
-
+	
+	/**
+	 * Sets the users parameter
+	 * 
+	 * @param n integer parameter set in NoBaseCaseExample
+	 */
 	public void setParameter(int n){
 		parameter = n;
 
 	}
-
+	
+	/**
+	 * Gets the users parameter
+	 * 
+	 * @return the integer parameter
+	 */
 	public int getParameter(){
 		return parameter;
 
@@ -403,7 +424,11 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 			variableString.add(whole + count + newLine);
 
 	}
-
+	
+	/**
+	 * Makes the radio buttons visible for the multiple choice question
+	 * Hides the first questions of asking for the next value of the parameter
+	 */
 	public void addQuestion(){
 		txtNValDescription.setVisible(false);
 		txtrTheValueOf.setVisible(false);
@@ -416,7 +441,16 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		rdbtnOption4.setVisible(true);
 		rdbtnOption5.setVisible(true);
 	}
-
+	
+	/**
+	 * Checks if the question has been answered
+	 * 
+	 * Returns true if atleast one button is selected
+	 * 
+	 * Returns false if no radio buttons are selected
+	 * 
+	 * @return true or false
+	 */
 	public boolean questionAnswered(){
 		if(rdbtnOption1.isSelected()
 				|| rdbtnOption2.isSelected()
@@ -428,6 +462,11 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 			return false;
 	}
 
+	/**
+	 * Listener for the radio buttons
+	 * 
+	 * Sets the return value based on which radio button was chosen
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(rdbtnOption1.isSelected())

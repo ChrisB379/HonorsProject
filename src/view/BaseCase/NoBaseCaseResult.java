@@ -3,7 +3,8 @@ package view.BaseCase;
 /**
  *  The results of the no base example is displayed.
  *  The users final answer is displayed along with the correct answer.
- *  A wrong answer will mean an explanation of the correct answer is emphasized as to how it came about.
+ *  
+ *  A summary of no base case is also provided
  * 
  * @author Christopher Baillie
  * @version 1.0
@@ -33,7 +34,7 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 	
 	private int param;
 	private String userRet;
-	private int nbcResult;
+
 	private JLabel lblSummary;
 
 	/**
@@ -50,7 +51,10 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		lblResults.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblResults.setFocusable(false);
 		lblResults.setBounds(415, 11, 77, 14);
-
+		
+		/*
+		 * The results text field
+		 */
 		txtResult = new JTextArea();
 		txtResult.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResult.setFocusable(false);
@@ -67,11 +71,17 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		txtResult.setLineWrap(true);
 		txtResult.setEditable(false);
 
+		/*
+		 * The summary text field
+		 */
 		txtSummary = new JTextArea();
 		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
 		txtSummary.setBounds(28, 453, 853, 218);
-		txtSummary.setText("\r\n\r\nIn this tutorial series, the importance of base cases in recursion were presented.\r\n\r\nA base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop and thus creating a stack overflow, crashing any programing running the recursive call.\r\n\r\nThe next pages will cover the second algorithm in the base series. This will be about convergence.");
+		txtSummary.setText("\r\n\r\nIn this tutorial series, the importance of base cases in recursion were presented.\r\n\r\n"
+				+ "A base case is vital in recursive statements as a way to control how many times a recursive call happens. It also prevents the recursive call falling into an infinite loop "
+				+ "and thus creating a stack overflow, crashing any programing running the recursive call.\r\n\r\n"
+				+ "The next pages will cover the second algorithm in the base series. This will be about convergence.");
 
 		txtSummary.setBackground(UIManager.getColor("Panel.background"));
 		txtSummary.setWrapStyleWord(true);
@@ -93,38 +103,55 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 	public void update(Observable o, Object arg) {
 		setReturnVal(model.getUserReturnVal());
 		setParam(model.getParam());
-		setNoBaseCaseResult(model.getParam());
 		setResultsText();
 		
 	}
+	
+	/**
+	 * Returns the users return value
+	 * 
+	 * @param s The string of the radio button the user chose
+	 */
 	public void setReturnVal(String s){
 		userRet = s;
 	}
 	
+	/**
+	 * Gets the users return value
+	 * 
+	 * @return the String the user chose from the radio buttons
+	 */
 	public String getReturnVal(){
 		return userRet;
 	}
 	
-	
+	/**
+	 * Returns the parameter the user chose in NoBaseCaseExample
+	 * 
+	 * @return integer parameter
+	 */
 	public int getParam(){
 		return param;
 	}
 	
+	/**
+	 * Sets the parameter the use chose in NoBaseCaseExample
+	 * 
+	 * @param n integer which is the users parameter
+	 */
 	public void setParam(int n){
 		param = n;
 	}
 	
-	public int getNoBaseCaseResult(){
-		return nbcResult;
-	}
-	
-	public void setNoBaseCaseResult(int n){
-		nbcResult = n;
-	}
 	
 
 	
-	
+	/**
+	 * Sets the results text field when called in the update method
+	 * 
+	 * It is in its own method to prevent the update method being cluttered
+	 * 
+	 */
 	public void setResultsText(){
 		txtResult.setText("The results from the previous two pages are as follows: \r\n\r\n"
 				+ "The algorithm worked on was noBaseCase(" + getParam() + ")\r\n\r\n"

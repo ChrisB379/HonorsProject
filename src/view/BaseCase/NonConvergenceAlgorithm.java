@@ -2,10 +2,11 @@ package view.BaseCase;
 
 /**
  *  This is the second last GUI for the base case series. 
- *  It shows the algorithm used that lets the user work through it
+ *  It shows the algorithm used and lets the user enter the parameter of the next recursive call.
+ *  After a few iterations it gives the user a multiple choice question to answer
  * 
  * @author Christopher Baillie
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  */
 
@@ -64,6 +65,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 	private int parameter;
 	private int nVal;
 	private int count;
+	private int nonConvCount;
 	
 	private String RtrnVal;
 
@@ -83,11 +85,10 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 
 	private boolean alreadyExecuted;
 	private boolean doOnce;
+	
 	private JScrollPane scrollPane;
 	private JLabel lblParameterVariable;
 	private JTextField txtWhatToDo;
-
-
 
 
 
@@ -99,6 +100,9 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		
 		model = m;
 		
+		/*
+		 * Sets the button invisible until it is needed
+		 */
 		cbcButton = but;
 		cbcButton.setNotVis();
 		
@@ -140,7 +144,10 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtrTheValueOf.setBackground(UIManager.getColor("Panel.background"));
 		txtrTheValueOf.setEditable(false);
 		txtrTheValueOf.setText("The value of n after the recursive call is :");
-
+		
+		/*
+		 * The input field for the parameter value n
+		 */
 		txtNVal = new JTextField();
 		txtNVal.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNVal.setBounds(353, 286, 46, 20);
@@ -150,18 +157,25 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 			
 			@Override
 			public void focusLost(FocusEvent e) {
-				// TODO Auto-generated method stub
 				int n = Integer.parseInt(txtNVal.getText());
 				setNVal(n);
+				//Resets the input box once the input has been accepted
 				txtNVal.setText("");
 			}
 			
 			@Override
-			public void focusGained(FocusEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void focusGained(FocusEvent e) {}
 		});
+		
+		txtBaseCase = new JTextField();
+		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtBaseCase.setFocusable(false);
+		txtBaseCase.setBounds(53, 537, 440, 14);
+		txtBaseCase.setEditable(false);
+		txtBaseCase.setText("Please click the Advance button to see your results.");
+		txtBaseCase.setColumns(10);
+		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtBaseCase.setVisible(false);
 
 		btnSubmit = new JButton("Submit");
 		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
@@ -173,15 +187,6 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		lblExample.setFocusable(false);
 		lblExample.setBounds(473, 11, 147, 20);
 		
-		txtBaseCase = new JTextField();
-		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
-		txtBaseCase.setFocusable(false);
-		txtBaseCase.setBounds(53, 537, 440, 14);
-		txtBaseCase.setEditable(false);
-		txtBaseCase.setText("Please click the Advance button to see your results.");
-		txtBaseCase.setColumns(10);
-		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		txtBaseCase.setVisible(false);
 		
 		lblInsertWorkingHere = new JLabel("Insert working here:");
 		lblInsertWorkingHere.setFont(new Font("Calibri", Font.PLAIN, 15));
@@ -196,15 +201,25 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		add(txtNVal);
 		add(txtVariables);
 		
+		/*
+		 * A scrollpane for the working area so that the user cant type outwith the bounds of the box and thus
+		 * not be able to see what they write
+		 */
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(634, 76, 388, 227);
 		add(scrollPane);
 		
+		/*
+		 * A text field that a user can type into if they want to do any working
+		 */
 		txtWorking = new JTextArea();
 		txtWorking.setFont(new Font("Calibri", Font.PLAIN, 15));
 		scrollPane.setViewportView(txtWorking);
 		add(lblInsertWorkingHere);
 		
+		/*
+		 * The question presented once the user has finished the first part of the task
+		 */
 		txtNValDescription = new JTextArea();
 		txtNValDescription.setVisible(false);
 		txtNValDescription.setBackground(UIManager.getColor("Panel.background"));
@@ -215,6 +230,11 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtNValDescription.setBounds(46, 332, 875, 20);
 		add(txtNValDescription);
 		txtNValDescription.setColumns(10);
+		
+		/*
+		 * Radio buttons
+		 * These are used for multiple choice questions
+		 */
 		
 		ButtonGroup btnGroup = new ButtonGroup();
 		
@@ -257,6 +277,9 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		lblParameterVariable.setBounds(449, 51, 117, 14);
 		add(lblParameterVariable);
 		
+		/*
+		 * descriptor text field
+		 */
 		txtWhatToDo = new JTextField();
 		txtWhatToDo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtWhatToDo.setFont(new Font("Calibri", Font.PLAIN, 15));
@@ -271,10 +294,10 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		setParameter(model.getParam());
-		System.out.println("rv " + model.getParam());
-
+		//Only do this once to prevent the counter resetting multiple times
 		if(!doOnce){
 		count = model.getParam();
+		nonConvCount = model.getParam();
 		doOnce = true;
 		}
 		
@@ -343,10 +366,31 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 	 * Gets the current count to check it against if statements in the controller
 	 * These if statements trigger buttons/textfields changing/becoming visible
 	 * 
+	 * @return count integer which is a counter
 	 * @since 1.2
 	 */
 	public int getCount(){
 		return count;
+	}
+	
+	/**
+	 * Same as counter however it increments to show how the parameter gets further away from the base case
+	 * 
+	 * @return nonConvcount integer which is a counter
+	 * @since 1.2
+	 */
+	public int getNonConvCount(){
+		return nonConvCount;
+	}
+	
+	/**
+	 * Same as counter however it increments to show how the parameter gets further away from the base case
+	 * 
+	 * @return nonConvcount integer which is a counter
+	 * @since 1.2
+	 */
+	public void setNonConvCount(int n){
+		nonConvCount = n;
 	}
 
 
@@ -395,15 +439,21 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 			alreadyExecuted = true;
 		}
 
-		if(count > 0)
-			variableString.add(whole + count + newLine);
+		if(count > 0){
+			variableString.add(whole + (nonConvCount+1) + newLine);
+			nonConvCount++;
+		}
 
 	}
 	
+	/**
+	 * Adds the multiple choice question and hides the parameter question
+	 */
 	public void addQuestion(){
 		txtNValDescription.setVisible(false);
 		txtrTheValueOf.setVisible(false);
 		txtNVal.setVisible(false);
+		txtWhatToDo.setVisible(false);
 
 		txtNValDescription.setVisible(true);
 		rdbtnOption1.setVisible(true);
@@ -411,7 +461,15 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		rdbtnOption3.setVisible(true);
 		rdbtnOption4.setVisible(true);
 	}
-
+	
+	/**
+	 * Checks the user has selected a radio button as an answer
+	 * Returns true if one of the radio buttons are selected
+	 * 
+	 * Returns false if none are selected
+	 * 
+	 * @return a boolean true or false
+	 */
 	public boolean questionAnswered(){
 		if(rdbtnOption1.isSelected()
 				|| rdbtnOption2.isSelected()
@@ -421,7 +479,11 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		else 
 			return false;
 	}
-
+	
+	/**
+	 * Action performed listener for radio buttons
+	 * It sets the return value depending on which button the user selected
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(rdbtnOption1.isSelected())

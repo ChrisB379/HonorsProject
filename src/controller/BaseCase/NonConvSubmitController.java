@@ -38,10 +38,10 @@ public class NonConvSubmitController implements ActionListener {
 		if(view.getNVal() == 0)
 			JOptionPane.showMessageDialog(null, "Please enter a number greater than 0 for the value of n");
 
-		if(view.getNVal() > 5)
-			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 5 for the value of n");
+		if(view.getNVal() > 10)
+			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10 for the value of n");
 
-		if(view.getCount() == 2  && view.getNVal() > 0 && view.getNVal() < 6)
+		if(view.getCount() == 2  && view.getNVal() > 0 && view.getNVal() < 11)
 			view.addQuestion();
 
 		if(view.questionAnswered())
@@ -51,7 +51,7 @@ public class NonConvSubmitController implements ActionListener {
 			JOptionPane.showMessageDialog(null, "Please select one of the 4 answers");
 
 		// If all inputs are valid then do this
-		if(view.getNVal() != 0 && view.getNVal() < 6){
+		if(view.getNVal() != 0 && view.getNVal() < 11){
 			//Sets the users returnvalue in the model
 			model.setUserReturnVal2(view.getRtrnVal());
 

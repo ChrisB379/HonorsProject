@@ -61,7 +61,7 @@ public class BaseCaseView extends JFrame implements Observer {
 	private JPanel cardPanel1,cardPanel2;
 	private JPanel advancePanel;
 
-	private JButton btnAdvance,btnMenu;
+	private JButton btnAdvance;
 	
 	private IBaseCase model;
 	
@@ -129,7 +129,10 @@ public class BaseCaseView extends JFrame implements Observer {
 		setTitle("Tutorial 1: Base Case");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1253, 802);
-
+		
+		/*
+		 * Menu bar with each option and drop down options
+		 */
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
@@ -168,17 +171,27 @@ public class BaseCaseView extends JFrame implements Observer {
 			}
 		});
 		mnAbout.add(mntmAbout);
+		
+		/*
+		 * Content pane and other panels
+		 */
 		contentPane = new JPanel();
 		contentPane.setFocusable(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
+		/*
+		 * The card panel for the general content
+		 */
 		cardPanel1 = new JPanel();
 		cardPanel1.setFocusable(false);
 		cardPanel1.setBounds(15, 16, 1047, 730);
 		//This line can prevent cards from switching. Make sure it's at the top
 		cardPanel1.setLayout(new CardLayout(0, 0));
-
+		
+		/*
+		 * The card panel for the buttons
+		 */
 		cardPanel2 = new JPanel();
 		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(1080, 560, 145, 153);
@@ -193,20 +206,10 @@ public class BaseCaseView extends JFrame implements Observer {
 		advancePanel = new JPanel();
 		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_60155849133626");
-
-		btnMenu = new JButton("Main Menu");
-		btnMenu.setBounds(10, 24, 127, 35);
-		//Don't want it to be visible until the last page
-		btnMenu.setVisible(false);
-		btnMenu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				MainMenu m = new MainMenu();
-				m.setVisible(true);
-				m.setLocationRelativeTo(null);
-			}
-		});
-
+		
+		/*
+		 * Advance button with listeners
+		 */
 		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(10, 106, 127, 35);
@@ -245,11 +248,13 @@ public class BaseCaseView extends JFrame implements Observer {
 			}
 		});
 		advancePanel.setLayout(null);
-		advancePanel.add(btnMenu);
 		advancePanel.add(btnAdvance);
 		contentPane.setLayout(null);
 		cp1GroupPanel.setLayout(null);
 		
+		/*
+		 * Tells the user to advance via the button
+		 */
 		JTextPane txtAdvance = new JTextPane();
 		txtAdvance.setContentType("text/html");
 		txtAdvance.setText("<font face=\"cambria\", size = 4>\r\nNow we are going to move onto how the noBaseCase algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.");
@@ -259,20 +264,35 @@ public class BaseCaseView extends JFrame implements Observer {
 
 
 
-
+		/*
+		 * Initial descriptor
+		 */
 		JTextPane txtrThisTutorialSeries = new JTextPane();
 		txtrThisTutorialSeries.setBounds(10, 11, 1016, 240);
 		txtrThisTutorialSeries.setFocusable(false);
 		txtrThisTutorialSeries.setContentType("text/html");
-		txtrThisTutorialSeries.setText("<html><font face=\"cambria\", size = 4>\r\n<br>This tutorial series focuses on base case in recursive calls. \r\n<br>\r\n<br>The base case of a recursive call returns a value without making any subsequent recursive calls. The base case is important in recursive calls as it prevents a recursive statement falling into an infinite loop before failing due to a stack overflow.\r\n<br>\r\n<br>\r\n<br>In this tutorial series,some simple algorithms will be used in order to demonstrate how the base case of a recursive call is used. Two algorithms will be used in order to demonstrate to different important features of base cases which recursive calls must adhere to.\r\n<br>\r\n<br>\r\n<br>The algorithms are as follows:\r\n</font>\r\n</html>");
+		txtrThisTutorialSeries.setText("<html><font face=\"cambria\", size = 4>\r\n<br>This tutorial series focuses on base case in recursive calls. \r\n<br>\r\n<br>"
+				+ "The base case of a recursive call returns a value without making any subsequent recursive calls. The base case is important in recursive calls as it prevents a recursive "
+				+ "statement falling into an infinite loop before failing due to a stack overflow.\r\n<br>\r\n<br>\r\n<br>In this tutorial series,some simple algorithms will be used in order "
+				+ "to demonstrate how the base case of a recursive call is used. Two algorithms will be used in order to demonstrate to different important features of base cases which recursive calls must adhere to.\r\n<br>\r\n<br>\r\n<br>"
+				+ "The algorithms are as follows:\r\n</font>\r\n</html>");
 
 		txtrThisTutorialSeries.setBackground(UIManager.getColor("Panel.background"));
 		txtrThisTutorialSeries.setEditable(false);
 		cp1GroupPanel.add(txtrThisTutorialSeries);
 		
+		/*
+		 * Shows both algorithms
+		 */
 		JTextPane txtAlgorithms = new JTextPane();
 		txtAlgorithms.setContentType("text/html");
-		txtAlgorithms.setText("<code>\r\n<br>&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>&nbsp\t}\r\n<br> </code><font face=\"cambria\", size = 4>\r\n<br>The second algorithm :\t</font>\r\n<br> <code>\r\n<br>&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> nonConvergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>&nbsp\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>&nbsp\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>&nbsp\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> 5;\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>&nbsp\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> nonConvergence(n+1) + 2*n;\r\n<br>&nbsp\t}\r\n<br> </code>");
+		txtAlgorithms.setText("<code>\r\n<br>&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) "
+				+ "{\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>&nbsp\t}\r\n<br> </code><font face=\"cambria\","
+				+ " size = 4>\r\n<br>The second algorithm :\t</font>\r\n<br> <code>\r\n<br>&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> "
+				+ "nonConvergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>&nbsp\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>&nbsp\t\t&nbsp "
+				+ "<font color = rgb(127,0,85)> <b>if</b></font>(n == 1)\r\n<br>&nbsp\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> 5;"
+				+ "\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)> <b>else</b> </font> \r\n<br>&nbsp\t\t\t&nbsp&nbsp&nbsp&nbsp<font color = rgb(127,0,85)> <b>return</b>"
+				+ " </font> nonConvergence(n+1) + 2*n;\r\n<br>&nbsp\t}\r\n<br> </code>");
 		txtAlgorithms.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtAlgorithms.setEditable(false);
 		txtAlgorithms.setBounds(20, 262, 322, 287);
@@ -288,6 +308,11 @@ public class BaseCaseView extends JFrame implements Observer {
 		
 	}
 	
+	/**
+	 * Switches cards in the card panel
+	 * 
+	 * Switches to the NoBaseCaseAlgorithm and its buttons
+	 */
 	public void switchCards1(){
 		//Handles parameters that are not within the specified bound
 		if(bc1.getParameter() < 1 || bc1.getParameter() > 5){
@@ -295,7 +320,6 @@ public class BaseCaseView extends JFrame implements Observer {
 		}
 
 		if(bc1.getParameter() > 0 && bc1.getParameter() < 6){
-			//				System.out.println("we got here " + count);
 			cardPanel1.add(bc2);
 			cardPanel1.remove(bc1);
 			
@@ -304,6 +328,11 @@ public class BaseCaseView extends JFrame implements Observer {
 		}
 	}
 	
+	/**
+	 * Switches cards in the card panel
+	 * 
+	 * Switches to the NoBaseCaseResult and its buttons
+	 */
 	public void switchCards2(){
 		cardPanel1.add(bc3);
 		cardPanel1.remove(bc2);
@@ -312,6 +341,11 @@ public class BaseCaseView extends JFrame implements Observer {
 		cardPanel2.remove(NBab);
 	}
 	
+	/**
+	 * Switches cards in the card panel
+	 * 
+	 * Switches to the NonConvergenceExample and its buttons
+	 */
 	public void switchCards3(){
 		cardPanel1.add(bc4);
 		cardPanel1.remove(bc3);
@@ -321,6 +355,11 @@ public class BaseCaseView extends JFrame implements Observer {
 		cardPanel2.remove(NBrb);
 	}
 	
+	/**
+	 * Switches cards in the card panel
+	 * 
+	 * Switches to the NonConvergenceAlgorithm and its buttons
+	 */
 	public void switchCards4(){
 		cardPanel1.add(bc5);
 		cardPanel1.remove(bc4);
@@ -329,6 +368,11 @@ public class BaseCaseView extends JFrame implements Observer {
 		cardPanel2.remove(Ceb);
 	}
 	
+	/**
+	 * Switches cards in the card panel
+	 * 
+	 * Switches to the NonConvergenceResult and its buttons
+	 */
 	public void switchCards5(){
 		cardPanel1.add(bc6);
 		cardPanel1.remove(bc5);

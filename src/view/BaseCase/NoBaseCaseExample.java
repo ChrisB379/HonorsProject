@@ -2,7 +2,7 @@ package view.BaseCase;
 
 /**
  * This is the GUI for the explanation of base cases, in this cause when there is no base case.
- * It will explain why its bad and why a base case is required.
+ * It explains why its bad and why a base case is required.
  * The user will be able to pick a parameter for the algorithm in the next GUI screen.
  * 
  * @author Christopher Baillie
@@ -60,7 +60,10 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 
 		txtExample1.setBackground(UIManager.getColor("Panel.background"));
 		txtExample1.setEditable(false);
-
+		
+		/*
+		 * The input field for the parameter
+		 */
 		txtParameterField = new JTextField();
 		txtParameterField.setDocument(new JTextFieldLimit(2));
 		txtParameterField.setColumns(10);
@@ -79,10 +82,7 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 			}
 
 			@Override
-			public void focusGained(FocusEvent e) {
-				// TODO Auto-generated method stub
-
-			}
+			public void focusGained(FocusEvent e) {}
 		});
 		
 		JTextPane txtrpublicIntNobasecaseint = new JTextPane();
@@ -96,7 +96,10 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 		txtHowItWorks.setText("<font face=\"cambria\", size = 4>\r\nHow it works:\r\n<br>This is an extremely simple method and thus not much explanation is needed due to there only being one line of code.\r\n<br>\r\n<br>Step 1: There is only one line of code to be executed which is the recursive call. Thus no work is done, the return statement simply recursively calls itself.\r\n<br>\r\n<br>Step 2: This repeats until a stack overflow occurs.\r\n<br>\r\n<br>Next you will be working through your own example of this algorithm. Please enter a number between 0 and 6 in the field provided which will be the parameter for your algorithm. noBaseCase(n).\r\n</font>");
 		txtHowItWorks.setBackground(UIManager.getColor("OptionPane.background"));
 		txtHowItWorks.setEditable(false);
-
+		
+		/*
+		 * Code for setting up the grou layout
+		 */
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -131,11 +134,21 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 
 	}
 
+	/**
+	 * Sets the users chosen parameter
+	 * 
+	 * @param n integer which is the users parameter
+	 */
 	public void setParameter(int n){
 		parameter = n;
 
 	}
-
+	
+	/**
+	 * Gets the users parameter
+	 * 
+	 * @return the integer parameter
+	 */
 	public int getParameter(){
 		return parameter;
 	}
