@@ -1,5 +1,14 @@
 package view.Quiz;
 
+/**
+ * This page displays the results to the users answers to the quiz
+ * Each question shows the correct answer and an explanation for that answer
+ * A tick/cross is shown beside the users chosen answer to signify if it was correct or not
+ * 
+ * @author Christopher Baillie
+ * @version 1.5
+ */
+
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -162,7 +171,11 @@ public class QuizResults extends JPanel implements Observer {
 
 		setPreferredSize(new Dimension(867, 2300));
 		setLayout(null);
-
+		
+		
+		/*
+		 * Radio buttons representing multiple choice questions
+		 */
 		ButtonGroup btnGroupQ1 = new ButtonGroup();
 		ButtonGroup btnGroupQ2 = new ButtonGroup();
 		ButtonGroup btnGroupQ3 = new ButtonGroup();
@@ -376,7 +389,10 @@ public class QuizResults extends JPanel implements Observer {
 		txtDescription.setEditable(false);
 		txtDescription.setBounds(48, 11, 772, 101);
 		add(txtDescription);
-
+		
+		/*
+		 * Labels which icons are set to ticks and crosses for correct/incorrect answers
+		 */
 		lblCrossQ1A1 = new JLabel("");
 		lblCrossQ1A1.setVisible(false);
 		lblCrossQ1A1.setFocusable(false);
@@ -727,7 +743,10 @@ public class QuizResults extends JPanel implements Observer {
 		lblCrossQ8A4.setFocusable(false);
 		lblCrossQ8A4.setBounds(90, 2182, 27, 23);
 		add(lblCrossQ8A4);
-
+		
+		/*
+		 * text fields containing the answer to each question and then a seperate field for the explanations
+		 */
 		txtAnswerQ1 = new JTextField();
 		txtAnswerQ1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAnswerQ1.setFont(new Font("Calibri", Font.PLAIN, 15));
@@ -889,11 +908,21 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ8Explanation);
 
 	}
-
+	
+	/**
+	 * Gets the users score
+	 * 
+	 * @return integer score
+	 */
 	public int getScore(){
 		return score;
 	}
-
+	
+	/**
+	 * Sets the local score to the value of the users score for the text message the user recieves
+	 * 
+	 * @param n integer score
+	 */
 	public void setScore(int n){
 		score = n;
 	}
@@ -929,7 +958,11 @@ public class QuizResults extends JPanel implements Observer {
 		setQ8Icons();
 	}
 
-
+	/*
+	 * Getters and setters for the answer to each question
+	 * The names of the methods correspond to the question number
+	 * e.g getQ1Answer is question 1 and so on
+	 */
 	public int getQ1Answer() {
 		return question1Answer;
 	}
@@ -1016,7 +1049,12 @@ public class QuizResults extends JPanel implements Observer {
 		question8Answer = n;
 
 	}
-
+	
+	/*
+	 * Sets the tick/cross labels visible/invisible for each question
+	 * The answer that the user selected is set selected to make sure they know which answer they picked
+	 * The label is then displayed beside that answer, tick if correct, cross if incorrect
+	 */
 	public void setQ1Icons(){
 		if(question1Answer == 1){
 			rdbtnQ1A1.setSelected(true);

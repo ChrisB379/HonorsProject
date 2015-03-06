@@ -1,7 +1,7 @@
 package view.Quiz;
 
 /**
- * This will be the screen that has the multiple choice quiz.
+ * This is the screen that has the multiple choice quiz.
  * It has multiple questions that the user can answer by click the answer they think is correct.
  * 
  * @author Christopher Baillie
@@ -156,7 +156,10 @@ public class QuizView extends JFrame {
 		setTitle("End of Unit Quiz");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 960, 757);
-
+		
+		/*
+		 * The menu bar with its drop down options
+		 */
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
@@ -195,7 +198,10 @@ public class QuizView extends JFrame {
 			}
 		});
 		mnAbout.add(mntmAbout);
-
+		
+		/*
+		 * Content pane and panels
+		 */
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -216,6 +222,10 @@ public class QuizView extends JFrame {
 		contentPanel.setLayout(null);
 		contentPanel.setPreferredSize(new Dimension(800, 1820));
 		cardPanel.add(contentPanel, "name_165769048447621");
+		
+		/*
+		 * Radio buttons for each question and their corresponding button groups
+		 */
 
 		ButtonGroup btnGroupQ1 = new ButtonGroup();
 		ButtonGroup btnGroupQ2 = new ButtonGroup();
@@ -351,6 +361,9 @@ public class QuizView extends JFrame {
 		btnGroupQ5.add(rdbtnQ5A3);
 		btnGroupQ5.add(rdbtnQ5A4);
 
+		/*
+		 * Text fields with the questions
+		 */
 		txtQuestion1 = new JTextField();
 		txtQuestion1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -513,7 +526,10 @@ public class QuizView extends JFrame {
 		btnGroupQ8.add(rdbtnQ8A3);
 		btnGroupQ8.add(rdbtnQ8A4);
 
-
+		/*
+		 * Submit button
+		 * It calculates the users score if all questions have been answered and stores each questions answer
+		 */
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(qController);
 		btnSubmit.addActionListener(new ActionListener() {
@@ -549,7 +565,7 @@ public class QuizView extends JFrame {
 		btnSubmit.setBounds(420, 635, 127, 35);
 		contentPane.add(btnSubmit);
 
-		//Moves the caret to the top since text fields etc move it
+		//Moves the caret to the top since text fields etc move it halfway down the screen to start
 		txtQuestion1.setCaretPosition(0);
 		txtQuestion2.setCaretPosition(0);
 		txtQuestion3.setCaretPosition(0);
@@ -560,6 +576,9 @@ public class QuizView extends JFrame {
 		txtQuestion8.setCaretPosition(0);
 		txtDescription.setCaretPosition(0);
 		
+		/*
+		 * Main menu button
+		 */
 		btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -576,15 +595,28 @@ public class QuizView extends JFrame {
 
 
 	}
-
+	
+	/**
+	 * Gets the users score
+	 * 
+	 * @return integer score
+	 */
 	public int getScore(){
 		return score;
 	}
-
+	
+	/**
+	 * Increments the score by 1
+	 */
 	public void incrementScore(){
 		score++;
 	}
-
+	
+	/**
+	 * Increments the score if the correct radio button was selected
+	 * This is how the users total score is calculated
+	 * One is added for each correct answer
+	 */
 	public void calculateScore(){
 		if(rdbtnQ1A3.isSelected())
 			score++;
@@ -610,7 +642,13 @@ public class QuizView extends JFrame {
 		if(rdbtnQ8A2.isSelected())
 			score++;
 	}
-
+	
+	/*
+	 * Boolean checks to see if questions are answered
+	 * The allQuestionsAnswered combines each individual boolean to give one easy answer
+	 * This is then used as a check to see if the user is allowed to progress to the results page
+	 * if they entered an answer for all questions
+	 */
 	public boolean allQuestionsAnswered(){
 		if(question1Answered()
 				&& question2Answered()
@@ -704,7 +742,12 @@ public class QuizView extends JFrame {
 		else
 			return false;
 	}
-
+	
+	/*
+	 * Each of these methods store the answer to their corresponding question
+	 * Each radio button option is tied to an integer 1,2,3 or 4
+	 * The integer variable is then set to that variable to the question it corresponds to
+	 */
 	public int question1Answer(){
 		if(rdbtnQ1A1.isSelected())
 			question1Answer = 1;
