@@ -56,7 +56,7 @@ public class Summary extends JFrame {
 	 * Create the frame.
 	 */
 	public Summary() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-FrameIcon.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-frameIcon.png")));
 		setTitle("End of Series Summary");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 940, 753);

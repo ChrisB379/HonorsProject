@@ -13,11 +13,9 @@ import java.awt.EventQueue;
 import view.MainMenu;
 
 public class Main {
-	
-	
-	Main(){
 
-	}
+
+	Main(){}
 
 
 	/**

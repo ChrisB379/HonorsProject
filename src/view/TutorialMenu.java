@@ -78,7 +78,7 @@ public class TutorialMenu extends JFrame {
 	 */
 	public TutorialMenu() {
 		//Sets the icon at the top right of the application to override the default java icon
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-FrameIcon.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/images/green-flame-frameIcon.png")));
 		setTitle("Tutorials");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 587, 414);

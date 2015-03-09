@@ -100,7 +100,7 @@ public class ReturnValueView extends JFrame implements Observer {
 	 */
 	public ReturnValueView(IReturnValue r) {
 		//Setting the JFrames Icon
-		setIconImage(Toolkit.getDefaultToolkit().getImage(ReturnValueView.class.getResource("/images/green-flame-FrameIcon.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ReturnValueView.class.getResource("/images/green-flame-frameIcon.png")));
 
 		model = r;
 
