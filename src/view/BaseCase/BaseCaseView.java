@@ -256,6 +256,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		 * Tells the user to advance via the button
 		 */
 		JTextPane txtAdvance = new JTextPane();
+		txtAdvance.setBackground(UIManager.getColor("Panel.background"));
 		txtAdvance.setContentType("text/html");
 		txtAdvance.setText("<font face=\"cambria\", size = 4>\r\nNow we are going to move onto how the noBaseCase algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.");
 		txtAdvance.setEditable(false);

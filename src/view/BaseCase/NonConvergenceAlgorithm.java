@@ -272,7 +272,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		btnGroup.add(rdbtnOption3);
 		btnGroup.add(rdbtnOption4);
 		
-		lblParameterVariable = new JLabel("Parameter Value");
+		lblParameterVariable = new JLabel("Current n Value");
 		lblParameterVariable.setFont(new Font("Calibri", Font.PLAIN, 15));
 		lblParameterVariable.setBounds(449, 51, 117, 14);
 		add(lblParameterVariable);

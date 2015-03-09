@@ -276,7 +276,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		btnGroup.add(rdbtnOption4);
 		btnGroup.add(rdbtnOption5);
 		
-		lblParameterValue = new JLabel("Parameter Value");
+		lblParameterValue = new JLabel("Current n Value");
 		lblParameterValue.setFont(new Font("Calibri", Font.PLAIN, 15));
 		lblParameterValue.setBounds(449, 57, 118, 14);
 		add(lblParameterValue);

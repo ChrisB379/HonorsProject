@@ -78,6 +78,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	private boolean doOnce;
 	private JScrollPane scrollPane;
 	private JLabel lblParameterValue;
+	private JTextField txtWhatToDo;
 
 	/**
 	 * Create the panel.
@@ -237,11 +238,15 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtVariables.setBounds(442, 79, 73, 180);
 		txtVariables.setEditable(false);
 		
-		
+		/*
+		 * Text field to describe to the user what the input is for
+		 */
 		JLabel lblInsertWorkingHere = new JLabel("Insert working here:");
 		lblInsertWorkingHere.setFont(new Font("Calibri", Font.PLAIN, 15));
 		lblInsertWorkingHere.setFocusable(false);
+		lblInsertWorkingHere.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		lblInsertWorkingHere.setBounds(627, 307, 141, 14);
+		
 		setLayout(null);
 		add(txtFactorial);
 		add(txtVariables);
@@ -262,10 +267,19 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		add(lblExample);
 		add(lblInsertWorkingHere);
 		
-		lblParameterValue = new JLabel("Parameter Value");
+		lblParameterValue = new JLabel("Current n Value");
 		lblParameterValue.setFont(new Font("Calibri", Font.PLAIN, 15));
 		lblParameterValue.setBounds(442, 54, 127, 14);
 		add(lblParameterValue);
+		
+		txtWhatToDo = new JTextField();
+		txtWhatToDo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtWhatToDo.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtWhatToDo.setEditable(false);
+		txtWhatToDo.setText("Please insert what you think the next value of n will be :");
+		txtWhatToDo.setBounds(67, 304, 389, 20);
+		add(txtWhatToDo);
+		txtWhatToDo.setColumns(10);
 
 	}
 

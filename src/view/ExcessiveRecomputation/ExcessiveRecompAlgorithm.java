@@ -70,6 +70,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 	private JLabel lblExample;
 	private JScrollPane scrollPane;
 	private JLabel lblParameterValue;
+	private JTextField txtWhatToDo;
 
 	/**
 	 * Create the panel.
@@ -253,10 +254,22 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		lblExample.setBounds(403, 11, 118, 25);
 		add(lblExample);
 		
-		lblParameterValue = new JLabel("Parameter Value");
+		lblParameterValue = new JLabel("Current n Value");
 		lblParameterValue.setFont(new Font("Calibri", Font.PLAIN, 15));
 		lblParameterValue.setBounds(475, 36, 118, 14);
 		add(lblParameterValue);
+		
+		/*
+		 * Text field describing to the user what they have to do for inputs
+		 */
+		txtWhatToDo = new JTextField();
+		txtWhatToDo.setFont(new Font("Calibri", Font.PLAIN, 15));
+		txtWhatToDo.setText("Please insert what you believe the next value of n is below");
+		txtWhatToDo.setEditable(false);
+		txtWhatToDo.setBounds(45, 298, 389, 20);
+		txtWhatToDo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		add(txtWhatToDo);
+		txtWhatToDo.setColumns(10);
 
 	}
 	
