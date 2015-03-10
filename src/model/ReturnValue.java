@@ -42,7 +42,7 @@ public class ReturnValue extends Observable implements IReturnValue {
 			return 1;
 		else
 			//Recursive call
-			return n * factorial(n-1);
+			return factorial(n-1) * n;
 
 	}
 
@@ -55,7 +55,6 @@ public class ReturnValue extends Observable implements IReturnValue {
 	@Override
 	public void setParam(int n) {
 		param = n;
-		System.out.println("n in return value after set para is called " + n);
 		setChanged();
 		notifyObservers();
 

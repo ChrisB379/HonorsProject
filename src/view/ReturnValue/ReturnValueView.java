@@ -53,6 +53,8 @@ import javax.swing.border.LineBorder;
 
 import java.awt.Color;
 import java.awt.Toolkit;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class ReturnValueView extends JFrame implements Observer {
 
@@ -176,6 +178,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		 * Card panel that contains the actual content
 		 */
 		cardPanel1 = new JPanel();
+		cardPanel1.setOpaque(false);
 		cardPanel1.setBounds(36, 16, 871, 726);
 		cardPanel1.setBorder(null);
 
@@ -183,15 +186,18 @@ public class ReturnValueView extends JFrame implements Observer {
 		 * Card Panel that contains the buttons to be switched in
 		 */
 		cardPanel2 = new JPanel();
+		cardPanel2.setOpaque(false);
 		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(939, 539, 242, 152);
 
 		JPanel cp1GroupPanel = new JPanel();
+		cp1GroupPanel.setOpaque(false);
 		cp1GroupPanel.setBackground(UIManager.getColor("Panel.background"));
 		cp1GroupPanel.setFocusable(false);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 		advancePanel = new JPanel();
+		advancePanel.setOpaque(false);
 		advancePanel.setBackground(UIManager.getColor("Panel.background"));
 		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_12410711717075");
@@ -262,6 +268,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		 * An introduction to the return values
 		 */
 		JTextPane txtrIntroduction = new JTextPane();
+		txtrIntroduction.setOpaque(false);
 		txtrIntroduction.setBounds(10, 11, 839, 282);
 		txtrIntroduction.setFocusable(false);
 		txtrIntroduction.setContentType("text/html");
@@ -290,6 +297,11 @@ public class ReturnValueView extends JFrame implements Observer {
 		cp1GroupPanel.add(txtFact);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\Chris\\Desktop\\background5.jpg"));
+		label.setBounds(0, 0, 1237, 736);
+		contentPane.add(label);
 
 	}
 

@@ -23,6 +23,7 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JLabel;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class MainMenu extends JFrame {
 
@@ -194,6 +195,11 @@ public class MainMenu extends JFrame {
 		contentPane.add(btnQuit);
 		contentPane.add(btnAbout);
 		contentPane.add(btnStart);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Chris\\Desktop\\background4.jpg"));
+		lblNewLabel.setBounds(0, 0, 522, 375);
+		contentPane.add(lblNewLabel);
 	}
 	
 	/*

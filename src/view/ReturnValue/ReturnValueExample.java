@@ -43,6 +43,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public ReturnValueExample(IReturnValue r) {
+		setOpaque(false);
 		
 		//View holds a reference to the ReturnValue model
 		model = r;
@@ -63,6 +64,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 		 * Tells the user to go to the next page and describes what to input for the parameter
 		 */
 		JTextPane txtNextPage = new JTextPane();
+		txtNextPage.setOpaque(false);
 		txtNextPage.setFocusable(false);
 		txtNextPage.setBounds(22, 614, 662, 64);
 		txtNextPage.setContentType("text/html");
@@ -104,6 +106,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 			 * Explaining how the algorithm works
 			 */
 				JTextPane txtExample = new JTextPane();
+				txtExample.setOpaque(false);
 				txtExample.setLocation(22, 147);
 				txtExample.setSize(831, 438);
 				txtExample.setFocusable(false);

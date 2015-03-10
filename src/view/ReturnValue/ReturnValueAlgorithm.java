@@ -84,6 +84,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public ReturnValueAlgorithm(IReturnValue r,AlgorithmButton ab) {
+		setOpaque(false);
 
 		model = r;
 		
@@ -394,6 +395,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	 */
 	public void setAfterReturnText(){
 		txtBaseCase.setVisible(true);
+		txtWhatToDo.setVisible(false);
 		txtrTheValueOf.setVisible(false);
 		txtrTheCurrent.setVisible(false);
 		txtNVal.setVisible(false);
