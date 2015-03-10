@@ -312,7 +312,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		
 		JLabel lblBackground = new JLabel("");
 		lblBackground.setIcon(new ImageIcon(BaseCaseView.class.getResource("/images/General Background.jpg")));
-		lblBackground.setBounds(0, 0, 1237, 740);
+		lblBackground.setBounds(0, 0, 1250, 750);
 		contentPane.add(lblBackground);
 	
 	}

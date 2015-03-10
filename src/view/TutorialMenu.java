@@ -40,6 +40,7 @@ import view.ExcessiveRecomputation.ExcessiveRecompView;
 import view.Quiz.QuizView;
 import view.ReturnValue.ReturnValueView;
 import view.WorkAfter.WorkAfterView;
+import javax.swing.ImageIcon;
 
 public class TutorialMenu extends JFrame {
 
@@ -382,6 +383,11 @@ public class TutorialMenu extends JFrame {
 		contentPane.add(btnBaseCase);
 		contentPane.add(btnReturnToMain);
 		contentPane.add(lblNewLabel);
+		
+		JLabel lblBackground = new JLabel("");
+		lblBackground.setIcon(new ImageIcon(TutorialMenu.class.getResource("/images/General Background.jpg")));
+		lblBackground.setBounds(0, 0, 585, 385);
+		contentPane.add(lblBackground);
 	}
 
 }

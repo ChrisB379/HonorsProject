@@ -15,6 +15,7 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -43,9 +44,12 @@ import controller.QuizController;
 
 import java.awt.CardLayout;
 
-import javax.swing.UIManager;
-
 import java.awt.Font;
+
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+
+import java.awt.Color;
 
 public class QuizView extends JFrame {
 
@@ -121,6 +125,7 @@ public class QuizView extends JFrame {
 	private int question7Answer;
 	private int question8Answer;
 	private JButton btnMainMenu;
+	private JLabel lblBackground;
 
 
 	/**
@@ -203,11 +208,14 @@ public class QuizView extends JFrame {
 		 * Content pane and panels
 		 */
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setOpaque(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
 		scrollPane.setBounds(25, 11, 886, 613);
 		//Setting the scroll speed as the default is rather slow
 		scrollPane.getVerticalScrollBar().setUnitIncrement(16);
@@ -218,6 +226,7 @@ public class QuizView extends JFrame {
 		cardPanel.setLayout(new CardLayout(0, 0));
 
 		JPanel contentPanel = new JPanel();
+		contentPanel.setBackground(Color.WHITE);
 		contentPanel.setFocusable(false);
 		contentPanel.setLayout(null);
 		contentPanel.setPreferredSize(new Dimension(800, 1820));
@@ -238,19 +247,23 @@ public class QuizView extends JFrame {
 
 
 		rdbtnQ1A1 = new JRadioButton("Recursion is a class.");
+		rdbtnQ1A1.setBackground(Color.WHITE);
 		rdbtnQ1A1.setBounds(48, 200, 150, 23);
 		contentPanel.add(rdbtnQ1A1);
 
 
 		rdbtnQ1A2 = new JRadioButton("Recursion is the process of defining a method that calls other methods repeatedly.");
+		rdbtnQ1A2.setBackground(Color.WHITE);
 		rdbtnQ1A2.setBounds(48, 226, 508, 23);
 		contentPanel.add(rdbtnQ1A2);
 
 		rdbtnQ1A3 = new JRadioButton("Recursion is the process of defining a method that calls itself repeatedly.");
+		rdbtnQ1A3.setBackground(Color.WHITE);
 		rdbtnQ1A3.setBounds(48, 252, 455, 23);
 		contentPanel.add(rdbtnQ1A3);
 
 		rdbtnQ1A4 = new JRadioButton("Recursion is the process of defining a method that calls other methods which in turn call again this method.");
+		rdbtnQ1A4.setBackground(Color.WHITE);
 		rdbtnQ1A4.setBounds(48, 278, 658, 23);
 		contentPanel.add(rdbtnQ1A4);
 
@@ -263,18 +276,22 @@ public class QuizView extends JFrame {
 		btnGroupQ1.add(rdbtnQ1A4);
 
 		rdbtnQ2A1 = new JRadioButton("An infinite loop occurs");
+		rdbtnQ2A1.setBackground(Color.WHITE);
 		rdbtnQ2A1.setBounds(48, 380, 171, 23);
 		contentPanel.add(rdbtnQ2A1);
 
 		rdbtnQ2A2 = new JRadioButton("The system stops the program after some time");
+		rdbtnQ2A2.setBackground(Color.WHITE);
 		rdbtnQ2A2.setBounds(48, 406, 300, 23);
 		contentPanel.add(rdbtnQ2A2);
 
 		rdbtnQ2A3 = new JRadioButton("After 1000000 calls it will be automatically stopped.");
+		rdbtnQ2A3.setBackground(Color.WHITE);
 		rdbtnQ2A3.setBounds(48, 432, 322, 23);
 		contentPanel.add(rdbtnQ2A3);
 
 		rdbtnQ2A4 = new JRadioButton("None of the above");
+		rdbtnQ2A4.setBackground(Color.WHITE);
 		rdbtnQ2A4.setBounds(48, 458, 138, 23);
 		contentPanel.add(rdbtnQ2A4);
 
@@ -288,18 +305,22 @@ public class QuizView extends JFrame {
 
 
 		rdbtnQ3A1 = new JRadioButton("A recursive method must have a base case.");
+		rdbtnQ3A1.setBackground(Color.WHITE);
 		rdbtnQ3A1.setBounds(48, 560, 279, 23);
 		contentPanel.add(rdbtnQ3A1);
 
 		rdbtnQ3A2 = new JRadioButton("Recursion always uses a stack behind the scenes.");
+		rdbtnQ3A2.setBackground(Color.WHITE);
 		rdbtnQ3A2.setBounds(48, 586, 320, 23);
 		contentPanel.add(rdbtnQ3A2);
 
 		rdbtnQ3A3 = new JRadioButton("Recursive methods are faster than a programmers written loop to call the function repeatedly using a stack.");
+		rdbtnQ3A3.setBackground(Color.WHITE);
 		rdbtnQ3A3.setBounds(48, 612, 636, 23);
 		contentPanel.add(rdbtnQ3A3);
 
 		rdbtnQ3A4 = new JRadioButton("Memoization is a technique which makes recursion slower and less efficient.");
+		rdbtnQ3A4.setBackground(Color.WHITE);
 		rdbtnQ3A4.setBounds(48, 638, 470, 23);
 		contentPanel.add(rdbtnQ3A4);
 
@@ -313,18 +334,22 @@ public class QuizView extends JFrame {
 
 
 		rdbtnQ4A1 = new JRadioButton("n == 0 && n == 1");
+		rdbtnQ4A1.setBackground(Color.WHITE);
 		rdbtnQ4A1.setBounds(48, 750, 120, 23);
 		contentPanel.add(rdbtnQ4A1);
 
 		rdbtnQ4A2 = new JRadioButton("n == 0 || n == 1");
+		rdbtnQ4A2.setBackground(Color.WHITE);
 		rdbtnQ4A2.setBounds(48, 776, 110, 23);
 		contentPanel.add(rdbtnQ4A2);
 
 		rdbtnQ4A3 = new JRadioButton("n <= 1");
+		rdbtnQ4A3.setBackground(Color.WHITE);
 		rdbtnQ4A3.setBounds(48, 802, 60, 23);
 		contentPanel.add(rdbtnQ4A3);
 
 		rdbtnQ4A4 = new JRadioButton("None of the above");
+		rdbtnQ4A4.setBackground(Color.WHITE);
 		rdbtnQ4A4.setBounds(48, 826, 130, 23);
 		contentPanel.add(rdbtnQ4A4);
 
@@ -338,18 +363,22 @@ public class QuizView extends JFrame {
 		btnGroupQ4.add(rdbtnQ4A4);
 
 		rdbtnQ5A1 = new JRadioButton("1");
+		rdbtnQ5A1.setBackground(Color.WHITE);
 		rdbtnQ5A1.setBounds(48, 1050, 35, 23);
 		contentPanel.add(rdbtnQ5A1);
 
 		rdbtnQ5A2 = new JRadioButton("24");
+		rdbtnQ5A2.setBackground(Color.WHITE);
 		rdbtnQ5A2.setBounds(48, 1076, 40, 23);
 		contentPanel.add(rdbtnQ5A2);
 
 		rdbtnQ5A3 = new JRadioButton("120");
+		rdbtnQ5A3.setBackground(Color.WHITE);
 		rdbtnQ5A3.setBounds(48, 1102, 50, 23);
 		contentPanel.add(rdbtnQ5A3);
 
 		rdbtnQ5A4 = new JRadioButton("720");
+		rdbtnQ5A4.setBackground(Color.WHITE);
 		rdbtnQ5A4.setBounds(48, 1128, 50, 23);
 		contentPanel.add(rdbtnQ5A4);
 
@@ -365,6 +394,7 @@ public class QuizView extends JFrame {
 		 * Text fields with the questions
 		 */
 		txtQuestion1 = new JTextField();
+		txtQuestion1.setBackground(Color.WHITE);
 		txtQuestion1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion1.setFocusable(false);
@@ -375,6 +405,7 @@ public class QuizView extends JFrame {
 		txtQuestion1.setColumns(10);
 
 		txtQuestion2 = new JTextField();
+		txtQuestion2.setBackground(Color.WHITE);
 		txtQuestion2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion2.setFocusable(false);
@@ -385,6 +416,7 @@ public class QuizView extends JFrame {
 		txtQuestion2.setColumns(10);
 
 		txtQuestion3 = new JTextField();
+		txtQuestion3.setBackground(Color.WHITE);
 		txtQuestion3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion3.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion3.setFocusable(false);
@@ -395,6 +427,7 @@ public class QuizView extends JFrame {
 		txtQuestion3.setColumns(10);
 
 		txtQuestion4 = new JTextArea();
+		txtQuestion4.setBackground(Color.WHITE);
 		txtQuestion4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion4.setWrapStyleWord(true);
 		txtQuestion4.setLineWrap(true);
@@ -406,6 +439,8 @@ public class QuizView extends JFrame {
 		txtQuestion4.setColumns(10);
 
 		txtQuestion5 = new JTextPane();
+		txtQuestion5.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtQuestion5.setBackground(Color.WHITE);
 		txtQuestion5.setContentType("text/html");
 		txtQuestion5.setFocusable(false);
 		txtQuestion5.setEditable(false);
@@ -415,7 +450,7 @@ public class QuizView extends JFrame {
 
 		txtDescription = new JTextArea();
 		txtDescription.setFont(new Font("Calibri", Font.PLAIN, 15));
-		txtDescription.setBackground(UIManager.getColor("Panel.background"));
+		txtDescription.setBackground(new Color(255, 255, 255));
 		txtDescription.setFocusable(false);
 		txtDescription.setWrapStyleWord(true);
 		txtDescription.setLineWrap(true);
@@ -427,6 +462,7 @@ public class QuizView extends JFrame {
 		contentPanel.add(txtDescription);
 
 		txtQuestion6 = new JTextField();
+		txtQuestion6.setBackground(Color.WHITE);
 		txtQuestion6.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion6.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion6.setFocusable(false);
@@ -437,18 +473,22 @@ public class QuizView extends JFrame {
 		txtQuestion6.setColumns(10);
 
 		rdbtnQ6A1 = new JRadioButton("Array");
+		rdbtnQ6A1.setBackground(Color.WHITE);
 		rdbtnQ6A1.setBounds(48, 1230, 60, 23);
 		contentPanel.add(rdbtnQ6A1);
 
 		rdbtnQ6A2 = new JRadioButton("Stack");
+		rdbtnQ6A2.setBackground(Color.WHITE);
 		rdbtnQ6A2.setBounds(48, 1256, 60, 23);
 		contentPanel.add(rdbtnQ6A2);
 
 		rdbtnQ6A3 = new JRadioButton("Queue");
+		rdbtnQ6A3.setBackground(Color.WHITE);
 		rdbtnQ6A3.setBounds(48, 1282, 70, 23);
 		contentPanel.add(rdbtnQ6A3);
 
 		rdbtnQ6A4 = new JRadioButton("Tree");
+		rdbtnQ6A4.setBackground(Color.WHITE);
 		rdbtnQ6A4.setBounds(48, 1308, 60, 23);
 		contentPanel.add(rdbtnQ6A4);
 
@@ -461,6 +501,8 @@ public class QuizView extends JFrame {
 		btnGroupQ6.add(rdbtnQ6A4);
 
 		txtQuestion7 = new JTextPane();
+		txtQuestion7.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtQuestion7.setBackground(Color.WHITE);
 		txtQuestion7.setEditable(false);
 		txtQuestion7.setContentType("text/html");
 		txtQuestion7.setText("<html><font face=\"calibri\", size = 4>\r\nQuestion 7: What is the output of this program if input value of n is 1?\r\n<br>\r\n<br><code>&nbsp <font color = rgb(127,0,85)> <b>public static</b> </font> int fact(<font color = rgb(127,0,85)><b>int</b> </font> n) {   \r\n<br>&nbsp <font color = rgb(127,0,85)>&nbsp<b>if</b></font> (n == 1) \r\n<br>&nbsp&nbsp&nbsp <font color = rgb(127,0,85)><b>return</b></font> 1; <br>\r\n<br> &nbsp&nbsp&nbsp<font color = rgb(127,0,85)><b>return</b></font> n * fact(n-1);\r\n <br>&nbsp } </code> \r\n</font>\r\n</html>");
@@ -468,19 +510,23 @@ public class QuizView extends JFrame {
 		contentPanel.add(txtQuestion7);
 
 		rdbtnQ7A1 = new JRadioButton("0");
+		rdbtnQ7A1.setBackground(Color.WHITE);
 		rdbtnQ7A1.setBounds(48, 1530, 40, 23);
 		contentPanel.add(rdbtnQ7A1);
 
 		rdbtnQ7A2 = new JRadioButton("1");
+		rdbtnQ7A2.setBackground(Color.WHITE);
 		rdbtnQ7A2.setFocusable(false);
 		rdbtnQ7A2.setBounds(48, 1556, 40, 23);
 		contentPanel.add(rdbtnQ7A2);
 
 		rdbtnQ7A3 = new JRadioButton("Stack overflow error");
+		rdbtnQ7A3.setBackground(Color.WHITE);
 		rdbtnQ7A3.setBounds(48, 1582, 150, 23);
 		contentPanel.add(rdbtnQ7A3);
 
 		rdbtnQ7A4 = new JRadioButton("720");
+		rdbtnQ7A4.setBackground(Color.WHITE);
 		rdbtnQ7A4.setBounds(48, 1608, 50, 23);
 		contentPanel.add(rdbtnQ7A4);
 
@@ -493,6 +539,7 @@ public class QuizView extends JFrame {
 		btnGroupQ7.add(rdbtnQ7A4);
 
 		txtQuestion8 = new JTextField();
+		txtQuestion8.setBackground(Color.WHITE);
 		txtQuestion8.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion8.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion8.setFocusable(false);
@@ -503,18 +550,22 @@ public class QuizView extends JFrame {
 		txtQuestion8.setColumns(10);
 
 		rdbtnQ8A1 = new JRadioButton("1");
+		rdbtnQ8A1.setBackground(Color.WHITE);
 		rdbtnQ8A1.setBounds(48, 1710, 40, 23);
 		contentPanel.add(rdbtnQ8A1);
 
 		rdbtnQ8A2 = new JRadioButton("2");
+		rdbtnQ8A2.setBackground(Color.WHITE);
 		rdbtnQ8A2.setBounds(48, 1736, 40, 23);
 		contentPanel.add(rdbtnQ8A2);
 
 		rdbtnQ8A3 = new JRadioButton("3");
+		rdbtnQ8A3.setBackground(Color.WHITE);
 		rdbtnQ8A3.setBounds(48, 1762, 40, 23);
 		contentPanel.add(rdbtnQ8A3);
 
 		rdbtnQ8A4 = new JRadioButton("4");
+		rdbtnQ8A4.setBackground(Color.WHITE);
 		rdbtnQ8A4.setBounds(48, 1788, 40, 23);
 		contentPanel.add(rdbtnQ8A4);
 
@@ -592,6 +643,11 @@ public class QuizView extends JFrame {
 		btnMainMenu.setVisible(false);
 		btnMainMenu.setBounds(420, 635, 127, 35);
 		contentPane.add(btnMainMenu);
+		
+		lblBackground = new JLabel("");
+		lblBackground.setIcon(new ImageIcon(QuizView.class.getResource("/images/General Background.jpg")));
+		lblBackground.setBounds(0, 0, 955, 710);
+		contentPane.add(lblBackground);
 
 
 	}

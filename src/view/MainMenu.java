@@ -198,13 +198,19 @@ public class MainMenu extends JFrame {
 		
 		/*
 		 * Sourced image for the background from
-		 * http://www.psdgraphics.com/backgrounds/abstract-flow-background/
+		 * http://www.psdgraphics.com/backgrounds/light-green-waves-background/
+		 * http://www.psdgraphics.com/file/light-green-waves-background.jpg
 		 * I DO NOT claim this as my own
 		 * I simply resized it to fit
+		 * 
+		 * Another image I used was 
+		 * http://www.psdgraphics.com/backgrounds/abstract-flow-background/
+		 * 
+		 * Once again I used http://picresize.com/ to resize the picture
 		 */
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(MainMenu.class.getResource("/images/MainMenuBackground.jpg")));
-		lblNewLabel.setBounds(0, 0, 522, 375);
+		lblNewLabel.setIcon(new ImageIcon(MainMenu.class.getResource("/images/General Background.jpg")));
+		lblNewLabel.setBounds(0, 0, 535, 385);
 		contentPane.add(lblNewLabel);
 	}
 	

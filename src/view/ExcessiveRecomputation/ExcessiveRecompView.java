@@ -340,7 +340,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		
 		JLabel lblBackground = new JLabel("");
 		lblBackground.setIcon(new ImageIcon(ExcessiveRecompView.class.getResource("/images/General Background.jpg")));
-		lblBackground.setBounds(0, 0, 1230, 740);
+		lblBackground.setBounds(0, 0, 1235, 745);
 		contentPane.add(lblBackground);
 
 	}

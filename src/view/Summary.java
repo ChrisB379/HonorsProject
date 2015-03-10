@@ -29,6 +29,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.ImageIcon;
 
 public class Summary extends JFrame {
 
@@ -68,6 +71,7 @@ public class Summary extends JFrame {
 		 * Text pane with the text summary
 		 */
 		JTextPane txtrCongratulationsYouHave = new JTextPane();
+		txtrCongratulationsYouHave.setOpaque(false);
 		txtrCongratulationsYouHave.setBounds(24, 16, 794, 622);
 		txtrCongratulationsYouHave.setContentType("text/html");
 		txtrCongratulationsYouHave.setBackground(UIManager.getColor("Panel.background"));
@@ -103,6 +107,7 @@ public class Summary extends JFrame {
 		 * Main Menu button
 		 */
 		JButton btnMenu = new JButton("Main Menu");
+		btnMenu.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnMenu.setBounds(157, 658, 127, 35);
 		btnMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -138,7 +143,8 @@ public class Summary extends JFrame {
 		 * Quiz Button
 		 */
 		JButton btnQuiz = new JButton("End of Series Quiz");
-		btnQuiz.setBounds(372, 656, 140, 35);
+		btnQuiz.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+		btnQuiz.setBounds(372, 656, 149, 35);
 		btnQuiz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -175,7 +181,8 @@ public class Summary extends JFrame {
 		 * Quit button
 		 */
 		JButton btnQuit = new JButton("Quit");
-		btnQuit.setBounds(569, 659, 127, 35);
+		btnQuit.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+		btnQuit.setBounds(596, 658, 127, 35);
 		btnQuit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
@@ -208,5 +215,10 @@ public class Summary extends JFrame {
 		contentPane.add(btnMenu);
 		contentPane.add(btnQuiz);
 		contentPane.add(btnQuit);
+		
+		JLabel lblBackground = new JLabel("");
+		lblBackground.setIcon(new ImageIcon(Summary.class.getResource("/images/General Background.jpg")));
+		lblBackground.setBounds(0, 0, 940, 730);
+		contentPane.add(lblBackground);
 	}
 }

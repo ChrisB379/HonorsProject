@@ -24,6 +24,7 @@ import java.awt.Dimension;
 import java.util.Observable;
 import java.util.Observer;
 import java.awt.Font;
+import java.awt.Color;
 
 public class QuizResults extends JPanel implements Observer {
 
@@ -161,6 +162,7 @@ public class QuizResults extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public QuizResults(IQuiz m) {
+		setBackground(Color.WHITE);
 
 		//View holds a reference to the Quiz model
 		model = m;
@@ -187,22 +189,26 @@ public class QuizResults extends JPanel implements Observer {
 
 
 		rdbtnQ1A1 = new JRadioButton("Recursion is a class.");
+		rdbtnQ1A1.setBackground(Color.WHITE);
 		rdbtnQ1A1.setEnabled(false);
 		rdbtnQ1A1.setBounds(48, 200, 150, 23);
 		add(rdbtnQ1A1);
 
 
 		rdbtnQ1A2 = new JRadioButton("Recursion is the process of defining a method that calls other methods repeatedly.");
+		rdbtnQ1A2.setBackground(Color.WHITE);
 		rdbtnQ1A2.setEnabled(false);
 		rdbtnQ1A2.setBounds(48, 226, 508, 23);
 		add(rdbtnQ1A2);
 
 		rdbtnQ1A3 = new JRadioButton("Recursion is the process of defining a method that calls itself repeatedly.");
+		rdbtnQ1A3.setBackground(Color.WHITE);
 		rdbtnQ1A3.setEnabled(false);
 		rdbtnQ1A3.setBounds(48, 252, 455, 23);
 		add(rdbtnQ1A3);
 
 		rdbtnQ1A4 = new JRadioButton("Recursion is the process of defining a method that calls other methods which in turn call again this method.");
+		rdbtnQ1A4.setBackground(Color.WHITE);
 		rdbtnQ1A4.setEnabled(false);
 		rdbtnQ1A4.setBounds(48, 278, 658, 23);
 		add(rdbtnQ1A4);
@@ -216,21 +222,25 @@ public class QuizResults extends JPanel implements Observer {
 		btnGroupQ1.add(rdbtnQ1A4);
 
 		rdbtnQ2A1 = new JRadioButton("An infinite loop occurs");
+		rdbtnQ2A1.setBackground(Color.WHITE);
 		rdbtnQ2A1.setEnabled(false);
 		rdbtnQ2A1.setBounds(48, 479, 171, 23);
 		add(rdbtnQ2A1);
 
 		rdbtnQ2A2 = new JRadioButton("The system stops the program after some time");
+		rdbtnQ2A2.setBackground(Color.WHITE);
 		rdbtnQ2A2.setEnabled(false);
 		rdbtnQ2A2.setBounds(48, 505, 300, 23);
 		add(rdbtnQ2A2);
 
 		rdbtnQ2A3 = new JRadioButton("After 1000000 calls it will be automatically stopped.");
+		rdbtnQ2A3.setBackground(Color.WHITE);
 		rdbtnQ2A3.setEnabled(false);
 		rdbtnQ2A3.setBounds(48, 531, 322, 23);
 		add(rdbtnQ2A3);
 
 		rdbtnQ2A4 = new JRadioButton("None of the above");
+		rdbtnQ2A4.setBackground(Color.WHITE);
 		rdbtnQ2A4.setEnabled(false);
 		rdbtnQ2A4.setBounds(48, 557, 138, 23);
 		add(rdbtnQ2A4);
@@ -245,21 +255,25 @@ public class QuizResults extends JPanel implements Observer {
 
 
 		rdbtnQ3A1 = new JRadioButton("A recursive method must have a base case.");
+		rdbtnQ3A1.setBackground(Color.WHITE);
 		rdbtnQ3A1.setEnabled(false);
 		rdbtnQ3A1.setBounds(48, 709, 279, 23);
 		add(rdbtnQ3A1);
 
 		rdbtnQ3A2 = new JRadioButton("Recursion always uses a stack behind the scenes.");
+		rdbtnQ3A2.setBackground(Color.WHITE);
 		rdbtnQ3A2.setEnabled(false);
 		rdbtnQ3A2.setBounds(48, 735, 320, 23);
 		add(rdbtnQ3A2);
 
 		rdbtnQ3A3 = new JRadioButton("Recursive methods are faster than a programmers written loop to call the function repeatedly using a stack.");
+		rdbtnQ3A3.setBackground(Color.WHITE);
 		rdbtnQ3A3.setEnabled(false);
 		rdbtnQ3A3.setBounds(48, 761, 636, 23);
 		add(rdbtnQ3A3);
 
 		rdbtnQ3A4 = new JRadioButton("Memoization is a technique which makes recursion slower and less efficient.");
+		rdbtnQ3A4.setBackground(Color.WHITE);
 		rdbtnQ3A4.setEnabled(false);
 		rdbtnQ3A4.setBounds(48, 787, 470, 23);
 		add(rdbtnQ3A4);
@@ -274,21 +288,25 @@ public class QuizResults extends JPanel implements Observer {
 
 
 		rdbtnQ4A1 = new JRadioButton("n == 0 && n == 1");
+		rdbtnQ4A1.setBackground(Color.WHITE);
 		rdbtnQ4A1.setEnabled(false);
 		rdbtnQ4A1.setBounds(48, 949, 120, 23);
 		add(rdbtnQ4A1);
 
 		rdbtnQ4A2 = new JRadioButton("n == 0 || n == 1");
+		rdbtnQ4A2.setBackground(Color.WHITE);
 		rdbtnQ4A2.setEnabled(false);
 		rdbtnQ4A2.setBounds(48, 975, 110, 23);
 		add(rdbtnQ4A2);
 
 		rdbtnQ4A3 = new JRadioButton("n <= 1");
+		rdbtnQ4A3.setBackground(Color.WHITE);
 		rdbtnQ4A3.setEnabled(false);
 		rdbtnQ4A3.setBounds(48, 1001, 60, 23);
 		add(rdbtnQ4A3);
 
 		rdbtnQ4A4 = new JRadioButton("None of the above");
+		rdbtnQ4A4.setBackground(Color.WHITE);
 		rdbtnQ4A4.setEnabled(false);
 		rdbtnQ4A4.setBounds(48, 1025, 130, 23);
 		add(rdbtnQ4A4);
@@ -303,21 +321,25 @@ public class QuizResults extends JPanel implements Observer {
 		btnGroupQ4.add(rdbtnQ4A4);
 
 		rdbtnQ5A1 = new JRadioButton("1");
+		rdbtnQ5A1.setBackground(Color.WHITE);
 		rdbtnQ5A1.setEnabled(false);
 		rdbtnQ5A1.setBounds(48, 1300, 35, 23);
 		add(rdbtnQ5A1);
 
 		rdbtnQ5A2 = new JRadioButton("24");
+		rdbtnQ5A2.setBackground(Color.WHITE);
 		rdbtnQ5A2.setEnabled(false);
 		rdbtnQ5A2.setBounds(48, 1326, 40, 23);
 		add(rdbtnQ5A2);
 
 		rdbtnQ5A3 = new JRadioButton("120");
+		rdbtnQ5A3.setBackground(Color.WHITE);
 		rdbtnQ5A3.setEnabled(false);
 		rdbtnQ5A3.setBounds(48, 1352, 50, 23);
 		add(rdbtnQ5A3);
 
 		rdbtnQ5A4 = new JRadioButton("720");
+		rdbtnQ5A4.setBackground(Color.WHITE);
 		rdbtnQ5A4.setEnabled(false);
 		rdbtnQ5A4.setBounds(48, 1378, 50, 23);
 		add(rdbtnQ5A4);
@@ -331,6 +353,7 @@ public class QuizResults extends JPanel implements Observer {
 		btnGroupQ5.add(rdbtnQ5A4);
 
 		txtQuestion1 = new JTextField();
+		txtQuestion1.setBackground(Color.WHITE);
 		txtQuestion1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion1.setFocusable(false);
@@ -341,6 +364,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtQuestion1.setColumns(10);
 
 		txtQuestion2 = new JTextField();
+		txtQuestion2.setBackground(Color.WHITE);
 		txtQuestion2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion2.setFocusable(false);
@@ -351,6 +375,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtQuestion2.setColumns(10);
 
 		txtQuestion3 = new JTextField();
+		txtQuestion3.setBackground(Color.WHITE);
 		txtQuestion3.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion3.setFocusable(false);
@@ -361,6 +386,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtQuestion3.setColumns(10);
 
 		txtQuestion4 = new JTextArea();
+		txtQuestion4.setBackground(Color.WHITE);
 		txtQuestion4.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion4.setWrapStyleWord(true);
@@ -381,13 +407,14 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQuestion5);
 
 		txtDescription = new JTextArea();
+		txtDescription.setBackground(Color.WHITE);
 		txtDescription.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtDescription.setFocusable(false);
 		txtDescription.setWrapStyleWord(true);
 		txtDescription.setLineWrap(true);
 		txtDescription.setText("Congratulations, you scored X out of 8!");
 		txtDescription.setEditable(false);
-		txtDescription.setBounds(48, 11, 772, 101);
+		txtDescription.setBounds(218, 11, 300, 101);
 		add(txtDescription);
 		
 		/*
@@ -534,6 +561,7 @@ public class QuizResults extends JPanel implements Observer {
 		add(lblCrossQ5A4);
 
 		txtQuestion6 = new JTextField();
+		txtQuestion6.setBackground(Color.WHITE);
 		txtQuestion6.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion6.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion6.setFocusable(false);
@@ -544,21 +572,25 @@ public class QuizResults extends JPanel implements Observer {
 		txtQuestion6.setColumns(10);
 
 		rdbtnQ6A1 = new JRadioButton("Array");
+		rdbtnQ6A1.setBackground(Color.WHITE);
 		rdbtnQ6A1.setEnabled(false);
 		rdbtnQ6A1.setBounds(48, 1530, 60, 23);
 		add(rdbtnQ6A1);
 
 		rdbtnQ6A2 = new JRadioButton("Stack");
+		rdbtnQ6A2.setBackground(Color.WHITE);
 		rdbtnQ6A2.setEnabled(false);
 		rdbtnQ6A2.setBounds(48, 1556, 60, 23);
 		add(rdbtnQ6A2);
 
 		rdbtnQ6A3 = new JRadioButton("Queue");
+		rdbtnQ6A3.setBackground(Color.WHITE);
 		rdbtnQ6A3.setEnabled(false);
 		rdbtnQ6A3.setBounds(48, 1582, 70, 23);
 		add(rdbtnQ6A3);
 
 		rdbtnQ6A4 = new JRadioButton("Tree");
+		rdbtnQ6A4.setBackground(Color.WHITE);
 		rdbtnQ6A4.setEnabled(false);
 		rdbtnQ6A4.setBounds(48, 1608, 60, 23);
 		add(rdbtnQ6A4);
@@ -572,6 +604,7 @@ public class QuizResults extends JPanel implements Observer {
 		btnGroupQ6.add(rdbtnQ6A4);
 
 		txtQuestion7 = new JTextPane();
+		txtQuestion7.setBackground(Color.WHITE);
 		txtQuestion7.setEditable(false);
 		txtQuestion7.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion7.setContentType("text/html");
@@ -580,22 +613,26 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQuestion7);
 
 		rdbtnQ7A1 = new JRadioButton("0");
+		rdbtnQ7A1.setBackground(Color.WHITE);
 		rdbtnQ7A1.setEnabled(false);
 		rdbtnQ7A1.setBounds(48, 1880, 40, 23);
 		add(rdbtnQ7A1);
 
 		rdbtnQ7A2 = new JRadioButton("1");
+		rdbtnQ7A2.setBackground(Color.WHITE);
 		rdbtnQ7A2.setEnabled(false);
 		rdbtnQ7A2.setFocusable(false);
 		rdbtnQ7A2.setBounds(48, 1906, 40, 23);
 		add(rdbtnQ7A2);
 
 		rdbtnQ7A3 = new JRadioButton("Stack overflow error");
+		rdbtnQ7A3.setBackground(Color.WHITE);
 		rdbtnQ7A3.setEnabled(false);
 		rdbtnQ7A3.setBounds(48, 1932, 150, 23);
 		add(rdbtnQ7A3);
 
 		rdbtnQ7A4 = new JRadioButton("720");
+		rdbtnQ7A4.setBackground(Color.WHITE);
 		rdbtnQ7A4.setEnabled(false);
 		rdbtnQ7A4.setBounds(48, 1958, 50, 23);
 		add(rdbtnQ7A4);
@@ -609,6 +646,7 @@ public class QuizResults extends JPanel implements Observer {
 		btnGroupQ7.add(rdbtnQ7A4);
 
 		txtQuestion8 = new JTextField();
+		txtQuestion8.setBackground(Color.WHITE);
 		txtQuestion8.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtQuestion8.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion8.setFocusable(false);
@@ -619,21 +657,25 @@ public class QuizResults extends JPanel implements Observer {
 		txtQuestion8.setColumns(10);
 
 		rdbtnQ8A1 = new JRadioButton("1");
+		rdbtnQ8A1.setBackground(Color.WHITE);
 		rdbtnQ8A1.setEnabled(false);
 		rdbtnQ8A1.setBounds(48, 2110, 40, 23);
 		add(rdbtnQ8A1);
 
 		rdbtnQ8A2 = new JRadioButton("2");
+		rdbtnQ8A2.setBackground(Color.WHITE);
 		rdbtnQ8A2.setEnabled(false);
 		rdbtnQ8A2.setBounds(48, 2136, 40, 23);
 		add(rdbtnQ8A2);
 
 		rdbtnQ8A3 = new JRadioButton("3");
+		rdbtnQ8A3.setBackground(Color.WHITE);
 		rdbtnQ8A3.setEnabled(false);
 		rdbtnQ8A3.setBounds(48, 2162, 40, 23);
 		add(rdbtnQ8A3);
 
 		rdbtnQ8A4 = new JRadioButton("4");
+		rdbtnQ8A4.setBackground(Color.WHITE);
 		rdbtnQ8A4.setEnabled(false);
 		rdbtnQ8A4.setBounds(48, 2188, 40, 23);
 		add(rdbtnQ8A4);
@@ -748,6 +790,7 @@ public class QuizResults extends JPanel implements Observer {
 		 * text fields containing the answer to each question and then a seperate field for the explanations
 		 */
 		txtAnswerQ1 = new JTextField();
+		txtAnswerQ1.setBackground(Color.WHITE);
 		txtAnswerQ1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAnswerQ1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ1.setEditable(false);
@@ -758,6 +801,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ1.setColumns(10);
 
 		JTextArea txtQ1Explanation = new JTextArea();
+		txtQ1Explanation.setBackground(Color.WHITE);
 		txtQ1Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ1Explanation.setText("Explanation: Recursion is the process of defining something in terms of itself. It allows us to define a method that calls itself, possibly with different arguments.\r\n\r\nAnswer D is also a form of recursion known as Mutual Recursion, however it is not the most \"basic form\".");
 		txtQ1Explanation.setFocusable(false);
@@ -768,6 +812,7 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ1Explanation);
 
 		txtAnswerQ2 = new JTextField();
+		txtAnswerQ2.setBackground(Color.WHITE);
 		txtAnswerQ2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAnswerQ2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ2.setFocusable(false);
@@ -778,6 +823,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ2.setColumns(10);
 
 		txtQ2Explanation = new JTextArea();
+		txtQ2Explanation.setBackground(Color.WHITE);
 		txtQ2Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ2Explanation.setText("Explanation: If a recursive method does not have a base case then it will recurse \"infinitely\" or until a stack overflow occurs and the program crashes. \r\n");
 		txtQ2Explanation.setLineWrap(true);
@@ -788,6 +834,7 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ2Explanation);
 
 		txtAnswerQ3 = new JTextField();
+		txtAnswerQ3.setBackground(Color.WHITE);
 		txtAnswerQ3.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAnswerQ3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ3.setText("Answer : Memoization is a technique which makes recursion slower and less efficient.");
@@ -798,6 +845,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ3.setColumns(10);
 
 		txtQ3Explanation = new JTextArea();
+		txtQ3Explanation.setBackground(Color.WHITE);
 		txtQ3Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ3Explanation.setText("Explanation : Memoization increases the speed of recursive functions by storing calculations and their results, thus removing the need to recalculate calculations.");
 		txtQ3Explanation.setWrapStyleWord(true);
@@ -808,6 +856,7 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ3Explanation);
 
 		txtAnswerQ4 = new JTextField();
+		txtAnswerQ4.setBackground(Color.WHITE);
 		txtAnswerQ4.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAnswerQ4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ4.setText("Answer: n == 0 && n == 1");
@@ -818,6 +867,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ4.setColumns(10);
 
 		txtQ4Explanation = new JTextArea();
+		txtQ4Explanation.setBackground(Color.WHITE);
 		txtQ4Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ4Explanation.setText("Explanation : The use of the logical AND(&&) means the base case will never be met as n cannot be both 0 and 1 at the same time.");
 		txtQ4Explanation.setWrapStyleWord(true);
@@ -828,6 +878,7 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ4Explanation);
 
 		txtAnswerQ5 = new JTextField();
+		txtAnswerQ5.setBackground(Color.WHITE);
 		txtAnswerQ5.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAnswerQ5.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ5.setEditable(false);
@@ -838,6 +889,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ5.setColumns(10);
 
 		txtQ5Explanation = new JTextArea();
+		txtQ5Explanation.setBackground(Color.WHITE);
 		txtQ5Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ5Explanation.setText("Explanation: Factorial is the product of all positive integers less than or equal to n. Thus, fact(4) can be broken down to 4*3*2*1 = 24");
 		txtQ5Explanation.setWrapStyleWord(true);
@@ -848,6 +900,7 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ5Explanation);
 
 		txtAnswerQ6 = new JTextField();
+		txtAnswerQ6.setBackground(Color.WHITE);
 		txtAnswerQ6.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAnswerQ6.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ6.setText("Answer: Stack");
@@ -858,6 +911,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ6.setColumns(10);
 
 		txtQ6Explanation = new JTextArea();
+		txtQ6Explanation.setBackground(Color.WHITE);
 		txtQ6Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ6Explanation.setText("Explanation: Recursion is always managed through use of a stack");
 		txtQ6Explanation.setWrapStyleWord(true);
@@ -868,6 +922,7 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ6Explanation);
 
 		txtAnswerQ7 = new JTextField();
+		txtAnswerQ7.setBackground(Color.WHITE);
 		txtAnswerQ7.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAnswerQ7.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ7.setText("Answer: 1\r\n");
@@ -878,6 +933,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ7.setColumns(10);
 
 		txtQ7Explanation = new JTextArea();
+		txtQ7Explanation.setBackground(Color.WHITE);
 		txtQ7Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ7Explanation.setText("Explanation: Factorial is the product of all positive integers less than or equal to n. Thus, fact(4) can be broken down to 4*3*2*1 = 24");
 		txtQ7Explanation.setWrapStyleWord(true);
@@ -888,6 +944,7 @@ public class QuizResults extends JPanel implements Observer {
 		add(txtQ7Explanation);
 
 		txtAnswerQ8 = new JTextField();
+		txtAnswerQ8.setBackground(Color.WHITE);
 		txtAnswerQ8.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAnswerQ8.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtAnswerQ8.setFocusable(false);
@@ -898,6 +955,7 @@ public class QuizResults extends JPanel implements Observer {
 		txtAnswerQ8.setColumns(10);
 
 		txtQ8Explanation = new JTextArea();
+		txtQ8Explanation.setBackground(Color.WHITE);
 		txtQ8Explanation.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtQ8Explanation.setText("Explanation: fact(3) can be broken down into fact(2) * 3 which then recursively becomes fact(1)*2*3 which will then reach the base case and return 1*2*3 = 6. As you can see, this took two recursive calls to achieve.");
 		txtQ8Explanation.setLineWrap(true);
