@@ -39,6 +39,7 @@ public class NBCExampleButton extends JPanel {
 	 * Create the panel.
 	 */
 	public NBCExampleButton(IBaseCase m, BaseCaseView v, NoBaseCaseExample nbce) {
+		setOpaque(false);
 		
 		model = m;
 		

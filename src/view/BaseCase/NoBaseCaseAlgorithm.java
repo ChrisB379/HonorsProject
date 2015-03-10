@@ -36,8 +36,10 @@ import model.IBaseCase;
 
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import javax.swing.border.LineBorder;
 
 import java.awt.Font;
+import java.awt.Color;
 
 public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListener {
 
@@ -88,6 +90,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 	 * Create the panel.
 	 */
 	public NoBaseCaseAlgorithm(IBaseCase m, NBCAlgorithmButton but) {
+		setOpaque(false);
 		setFocusable(false);
 
 		model = m;
@@ -100,11 +103,12 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 
 		nbcsController = new NoBCSubmitController(model, this);
 
-		JTextPane txtAlgorithm = new JTextPane();
-		txtAlgorithm.setFocusable(false);
-		txtAlgorithm.setBounds(37, 45, 252, 110);
-		txtAlgorithm.setContentType("text/html");
-		txtAlgorithm.setText("<html>"
+		JTextPane txtNoBaseCase = new JTextPane();
+		txtNoBaseCase.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtNoBaseCase.setFocusable(false);
+		txtNoBaseCase.setBounds(37, 45, 252, 110);
+		txtNoBaseCase.setContentType("text/html");
+		txtNoBaseCase.setText("<html>"
 				+ "\r\n<code>"
 				+ "\r\n<br>\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {"
 				+ "\r\n<br>"
@@ -113,13 +117,14 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 				+ "\t}\r\n</code>\r\n"
 				+ "</html>");
 
-		txtAlgorithm.setBackground(UIManager.getColor("Panel.background"));
-		txtAlgorithm.setEditable(false);
+		txtNoBaseCase.setBackground(Color.WHITE);
+		txtNoBaseCase.setEditable(false);
 		
 		/*
 		 * Two descriptor text areas
 		 */
 		txtVariables = new JTextArea();
+		txtVariables.setOpaque(false);
 		txtVariables.setFocusable(false);
 		txtVariables.setBounds(460, 81, 66, 165);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
@@ -129,6 +134,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		txtVariables.setText("Insert variables here");
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setOpaque(false);
 		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(37, 286, 266, 23);
@@ -170,6 +176,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		lblExample.setBounds(489, 11, 118, 23);
 
 		txtBaseCase = new JTextField();
+		txtBaseCase.setOpaque(false);
 		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(37, 546, 377, 14);
@@ -184,7 +191,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		lblInsertWorkingHere.setFocusable(false);
 		lblInsertWorkingHere.setBounds(780, 145, 177, 14);
 		setLayout(null);
-		add(txtAlgorithm);
+		add(txtNoBaseCase);
 		add(txtVariables);
 		add(lblExample);
 		add(txtBaseCase);
@@ -205,6 +212,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		 * Descriptor for the first question
 		 */
 		txtNValDescription = new JTextField();
+		txtNValDescription.setOpaque(false);
 		txtNValDescription.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtNValDescription.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtNValDescription.setFocusable(false);
@@ -218,6 +226,7 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		 * Descriptor for the multiple choice question
 		 */
 		txtQuestion = new JTextArea();
+		txtQuestion.setOpaque(false);
 		txtQuestion.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion.setBackground(UIManager.getColor("Panel.background"));
 		txtQuestion.setFocusable(false);
@@ -235,30 +244,35 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		ButtonGroup btnGroup = new ButtonGroup();
 
 		rdbtnOption1 = new JRadioButton("The method will return and stop recursing.");
+		rdbtnOption1.setOpaque(false);
 		rdbtnOption1.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption1.setBounds(34, 384, 366, 23);
 		rdbtnOption1.setVisible(false);
 		add(rdbtnOption1);
 
 		rdbtnOption2 = new JRadioButton("The method will continue recursing forever with the parameter n decreasing each time with no errors.");
+		rdbtnOption2.setOpaque(false);
 		rdbtnOption2.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption2.setBounds(34, 410, 737, 23);
 		rdbtnOption2.setVisible(false);
 		add(rdbtnOption2);
 
 		rdbtnOption3 = new JRadioButton("The method will continue recursing until a stack overflow error halts the program.");
+		rdbtnOption3.setOpaque(false);
 		rdbtnOption3.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption3.setBounds(34, 436, 599, 23);
 		rdbtnOption3.setVisible(false);
 		add(rdbtnOption3);
 
 		rdbtnOption4 = new JRadioButton("The method will recurse to where n == 0 and the program will crash due to a stack overflow error.");
+		rdbtnOption4.setOpaque(false);
 		rdbtnOption4.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption4.setBounds(34, 462, 737, 23);
 		rdbtnOption4.setVisible(false);
 		add(rdbtnOption4);
 
 		rdbtnOption5 = new JRadioButton("The method will recurse until the value of n is negative and an Invalid Number Exception will halt the program.");
+		rdbtnOption5.setOpaque(false);
 		rdbtnOption5.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption5.setBounds(34, 488, 737, 23);
 		rdbtnOption5.setVisible(false);

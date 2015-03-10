@@ -96,6 +96,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 	 * Create the panel.
 	 */
 	public NonConvergenceAlgorithm(IBaseCase m, NCBCAlgorithmButton but) {
+		setOpaque(false);
 		setFocusable(false);
 		
 		model = m;
@@ -111,11 +112,12 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		convController = new NonConvSubmitController(model, this);
 
 		JTextPane txtConvergence = new JTextPane();
+		txtConvergence.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtConvergence.setFocusable(false);
 		txtConvergence.setBounds(53, 51, 287, 141);
 		txtConvergence.setContentType("text/html");
 		txtConvergence.setToolTipText("");
-		txtConvergence.setBackground(UIManager.getColor("Panel.background"));
+		txtConvergence.setBackground(Color.WHITE);
 		txtConvergence.setEditable(false);
 		txtConvergence.setText("<html>\r\n<code>\r\n"
 				+ "<font color = rgb(127,0,85)> <b>public int</b> </font> nonConvergence(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t&nbsp "
@@ -126,6 +128,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 				+ "</code>\r\n</html>");
 
 		txtVariables = new JTextArea();
+		txtVariables.setOpaque(false);
 		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtVariables.setFocusable(false);
 		txtVariables.setBounds(468, 77, 63, 174);
@@ -136,6 +139,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		txtVariables.setText("Insert variables here");
 
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setOpaque(false);
 		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(46, 285, 280, 28);
@@ -168,6 +172,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		});
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setOpaque(false);
 		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(53, 537, 440, 14);
@@ -221,6 +226,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		 * The question presented once the user has finished the first part of the task
 		 */
 		txtNValDescription = new JTextArea();
+		txtNValDescription.setOpaque(false);
 		txtNValDescription.setVisible(false);
 		txtNValDescription.setBackground(UIManager.getColor("Panel.background"));
 		txtNValDescription.setFont(new Font("Calibri", Font.PLAIN, 15));
@@ -239,24 +245,28 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		ButtonGroup btnGroup = new ButtonGroup();
 		
 		rdbtnOption1 = new JRadioButton("The method returns the value 5 once the base case is met.");
+		rdbtnOption1.setOpaque(false);
 		rdbtnOption1.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption1.setBounds(53, 387, 529, 23);
 		rdbtnOption1.setVisible(false);
 		add(rdbtnOption1);
 		
 		rdbtnOption2 = new JRadioButton("The method will continue recursing until a stack overflow error halts the program.");
+		rdbtnOption2.setOpaque(false);
 		rdbtnOption2.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption2.setBounds(53, 413, 529, 23);
 		rdbtnOption2.setVisible(false);
 		add(rdbtnOption2);
 		
 		rdbtnOption3 = new JRadioButton("The method will continue recursing forever with the parameter n increasing each time with no errors.");
+		rdbtnOption3.setOpaque(false);
 		rdbtnOption3.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption3.setBounds(53, 439, 685, 23);
 		rdbtnOption3.setVisible(false);
 		add(rdbtnOption3);
 		
 		rdbtnOption4 = new JRadioButton("The method will recurse until the value of n is the maximum java allows an integer to be, before an Invalid Number Exception will halt the program.");
+		rdbtnOption4.setOpaque(false);
 		rdbtnOption4.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnOption4.setBounds(53, 465, 923, 23);
 		rdbtnOption4.setVisible(false);
@@ -281,6 +291,7 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		 * descriptor text field
 		 */
 		txtWhatToDo = new JTextField();
+		txtWhatToDo.setOpaque(false);
 		txtWhatToDo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtWhatToDo.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtWhatToDo.setEditable(false);

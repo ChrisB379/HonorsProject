@@ -33,6 +33,7 @@ public class NBCResultsButton extends JPanel {
 	 * Create the panel.
 	 */
 	public NBCResultsButton(BaseCaseView v) {
+		setOpaque(false);
 		
 		view = v;
 		

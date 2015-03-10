@@ -303,7 +303,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		
 		JLabel lblBackground = new JLabel("");
 		lblBackground.setIcon(new ImageIcon(ReturnValueView.class.getResource("/images/General Background.jpg")));
-		lblBackground.setBounds(0, 0, 1237, 745);
+		lblBackground.setBounds(0, 0, 1250, 750);
 		contentPane.add(lblBackground);
 
 	}

@@ -52,6 +52,8 @@ import java.awt.Font;
 import javax.swing.border.LineBorder;
 
 import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class BaseCaseView extends JFrame implements Observer {
 
@@ -176,6 +178,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		 * Content pane and other panels
 		 */
 		contentPane = new JPanel();
+		contentPane.setOpaque(false);
 		contentPane.setFocusable(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -184,6 +187,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		 * The card panel for the general content
 		 */
 		cardPanel1 = new JPanel();
+		cardPanel1.setOpaque(false);
 		cardPanel1.setFocusable(false);
 		cardPanel1.setBounds(15, 16, 1047, 730);
 		//This line can prevent cards from switching. Make sure it's at the top
@@ -193,17 +197,20 @@ public class BaseCaseView extends JFrame implements Observer {
 		 * The card panel for the buttons
 		 */
 		cardPanel2 = new JPanel();
+		cardPanel2.setOpaque(false);
 		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(1080, 560, 145, 153);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 
 		JPanel cp1GroupPanel = new JPanel();
+		cp1GroupPanel.setOpaque(false);
 		cp1GroupPanel.setFocusable(false);
 		cardPanel1.add(cp1GroupPanel, "name_60102974363843");
 
 
 		advancePanel = new JPanel();
+		advancePanel.setOpaque(false);
 		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_60155849133626");
 		
@@ -256,6 +263,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		 * Tells the user to advance via the button
 		 */
 		JTextPane txtAdvance = new JTextPane();
+		txtAdvance.setOpaque(false);
 		txtAdvance.setBackground(UIManager.getColor("Panel.background"));
 		txtAdvance.setContentType("text/html");
 		txtAdvance.setText("<font face=\"cambria\", size = 4>\r\nNow we are going to move onto how the noBaseCase algorithm works.\r\n<br>\r\n<br>Please click the Advance button to continue.");
@@ -269,6 +277,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		 * Initial descriptor
 		 */
 		JTextPane txtrThisTutorialSeries = new JTextPane();
+		txtrThisTutorialSeries.setOpaque(false);
 		txtrThisTutorialSeries.setBounds(10, 11, 1016, 240);
 		txtrThisTutorialSeries.setFocusable(false);
 		txtrThisTutorialSeries.setContentType("text/html");
@@ -300,6 +309,11 @@ public class BaseCaseView extends JFrame implements Observer {
 		cp1GroupPanel.add(txtAlgorithms);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
+		
+		JLabel lblBackground = new JLabel("");
+		lblBackground.setIcon(new ImageIcon(BaseCaseView.class.getResource("/images/General Background.jpg")));
+		lblBackground.setBounds(0, 0, 1237, 740);
+		contentPane.add(lblBackground);
 	
 	}
 

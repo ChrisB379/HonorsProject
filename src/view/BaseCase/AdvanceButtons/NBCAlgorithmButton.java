@@ -33,6 +33,7 @@ public class NBCAlgorithmButton extends JPanel {
 	 * Create the panel.
 	 */
 	public NBCAlgorithmButton(BaseCaseView v) {
+		setOpaque(false);
 		
 		view = v;
 		

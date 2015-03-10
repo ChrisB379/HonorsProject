@@ -41,6 +41,7 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public NoBaseCaseResult(IBaseCase m) {
+		setOpaque(false);
 		setFocusable(false);
 		
 		model = m;
@@ -56,6 +57,7 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		 * The results text field
 		 */
 		txtResult = new JTextArea();
+		txtResult.setOpaque(false);
 		txtResult.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResult.setFocusable(false);
 		txtResult.setBounds(28, 36, 805, 389);
@@ -75,6 +77,7 @@ public class NoBaseCaseResult extends JPanel implements Observer {
 		 * The summary text field
 		 */
 		txtSummary = new JTextArea();
+		txtSummary.setOpaque(false);
 		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
 		txtSummary.setBounds(28, 453, 853, 218);

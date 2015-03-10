@@ -196,6 +196,12 @@ public class MainMenu extends JFrame {
 		contentPane.add(btnAbout);
 		contentPane.add(btnStart);
 		
+		/*
+		 * Sourced image for the background from
+		 * http://www.psdgraphics.com/backgrounds/abstract-flow-background/
+		 * I DO NOT claim this as my own
+		 * I simply resized it to fit
+		 */
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(MainMenu.class.getResource("/images/MainMenuBackground.jpg")));
 		lblNewLabel.setBounds(0, 0, 522, 375);

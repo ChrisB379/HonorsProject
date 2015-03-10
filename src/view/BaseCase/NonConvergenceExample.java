@@ -36,6 +36,7 @@ public class NonConvergenceExample extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public NonConvergenceExample(IBaseCase m) {
+		setOpaque(false);
 		setFocusable(false);
 
 		model = m;
@@ -45,6 +46,7 @@ public class NonConvergenceExample extends JPanel implements Observer {
 		setLayout(null);
 		
 		txtExample2 = new JTextPane();
+		txtExample2.setOpaque(false);
 		txtExample2.setBounds(10, 10, 868, 156);
 		txtExample2.setFocusable(false);
 		txtExample2.setContentType("text/html");
@@ -71,6 +73,7 @@ public class NonConvergenceExample extends JPanel implements Observer {
 		 * An explanation of the algorithm
 		 */
 		JTextPane txtHowItWorks = new JTextPane();
+		txtHowItWorks.setOpaque(false);
 		txtHowItWorks.setBackground(UIManager.getColor("Panel.background"));
 		txtHowItWorks.setContentType("text/html");
 		txtHowItWorks.setText("<font face=\"cambria\", size = 4>\r\nHow it works:\r\n<br>For this example, lets assume the value of n starts at the integer value 4.\r\n<br>\r\n<br>"

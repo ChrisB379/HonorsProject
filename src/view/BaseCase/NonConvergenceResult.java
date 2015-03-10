@@ -41,6 +41,7 @@ public class NonConvergenceResult extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public NonConvergenceResult(IBaseCase m) {
+		setOpaque(false);
 		setFocusable(false);
 
 		model = m;
@@ -55,6 +56,7 @@ public class NonConvergenceResult extends JPanel implements Observer {
 		 *If update fails and isn't called then an error message will show in its place
 		 */
 		txtResult = new JTextArea();
+		txtResult.setOpaque(false);
 		txtResult.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResult.setFocusable(false);
 		txtResult.setBounds(32, 43, 948, 421);
@@ -75,6 +77,7 @@ public class NonConvergenceResult extends JPanel implements Observer {
 		 * The summary text area
 		 */
 		txtSummary = new JTextArea();
+		txtSummary.setOpaque(false);
 		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
 		txtSummary.setBounds(26, 473, 1022, 239);

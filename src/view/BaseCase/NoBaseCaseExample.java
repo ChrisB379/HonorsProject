@@ -45,6 +45,7 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public NoBaseCaseExample(IBaseCase m) {
+		setOpaque(false);
 		setFocusable(false);
 		
 		model = m;
@@ -55,6 +56,7 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 		nbcpController = new NoBCParameterController(model, this);
 
 		JTextPane txtExample1 = new JTextPane();
+		txtExample1.setOpaque(false);
 		txtExample1.setContentType("text/html");
 		txtExample1.setText("<html> <font face=\"cambria\", size = 4>\r\nThe first of the two algorithms on base case we are going to look at is the noBaseCase method. As the name suggests, this is a simple recursive call which has no base case.\r\n<br>\r\n<br>The implications of not having a base case are that the recursive call will never stop and will instead go into an infinite loop until a stack overflow occurs causing a crash or failure.\r\n<br>\r\n<br>The algorithm for this example is as follows:\r\n</font>\r\n</html>");
 
@@ -92,6 +94,7 @@ public class NoBaseCaseExample extends JPanel implements Observer {
 		txtrpublicIntNobasecaseint.setText("<code>\r\n&nbsp\t<font color = rgb(127,0,85)> <b>public int</b> </font> noBaseCase(<font color = rgb(127,0,85)><b>int </b> </font> n) {\r\n<br>\t\t\r\n<br>&nbsp\t\t&nbsp<font color = rgb(127,0,85)> <b>return</b> </font> noBaseCase(n-1) + n;\r\n<br>&nbsp\t}\r\n<br> </code>");
 		
 		JTextPane txtHowItWorks = new JTextPane();
+		txtHowItWorks.setOpaque(false);
 		txtHowItWorks.setContentType("text/html");
 		txtHowItWorks.setText("<font face=\"cambria\", size = 4>\r\nHow it works:\r\n<br>This is an extremely simple method and thus not much explanation is needed due to there only being one line of code.\r\n<br>\r\n<br>Step 1: There is only one line of code to be executed which is the recursive call. Thus no work is done, the return statement simply recursively calls itself.\r\n<br>\r\n<br>Step 2: This repeats until a stack overflow occurs.\r\n<br>\r\n<br>Next you will be working through your own example of this algorithm. Please enter a number between 0 and 6 in the field provided which will be the parameter for your algorithm. noBaseCase(n).\r\n</font>");
 		txtHowItWorks.setBackground(UIManager.getColor("OptionPane.background"));

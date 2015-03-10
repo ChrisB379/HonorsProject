@@ -280,7 +280,7 @@ public class WorkAfterView extends JFrame {
 		
 		JLabel lblBackground = new JLabel("");
 		lblBackground.setIcon(new ImageIcon(WorkAfterView.class.getResource("/images/General Background.jpg")));
-		lblBackground.setBounds(0, 0, 1213, 735);
+		lblBackground.setBounds(0, 0, 1220, 740);
 		contentPane.add(lblBackground);
 	}
 	
