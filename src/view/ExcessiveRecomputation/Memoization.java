@@ -24,12 +24,14 @@ public class Memoization extends JPanel {
 	 * Create the panel.
 	 */
 	public Memoization() {
+		setOpaque(false);
 		setFocusable(false);
 		
 		/*
 		 * Introduction to memoization
 		 */
 		JTextPane txtMemoAlgorithm = new JTextPane();
+		txtMemoAlgorithm.setOpaque(false);
 		txtMemoAlgorithm.setBackground(UIManager.getColor("Panel.background"));
 		txtMemoAlgorithm.setFocusable(false);
 		txtMemoAlgorithm.setContentType("text/html");

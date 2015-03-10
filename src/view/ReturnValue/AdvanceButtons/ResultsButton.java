@@ -31,6 +31,7 @@ public class ResultsButton extends JPanel {
 	 * Create the panel.
 	 */
 	public ResultsButton(ReturnValueView rvv) {
+		setOpaque(false);
 		
 		r = rvv;
 		

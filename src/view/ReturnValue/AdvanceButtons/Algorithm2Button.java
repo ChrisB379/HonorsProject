@@ -32,6 +32,7 @@ public class Algorithm2Button extends JPanel {
 	 * Create the panel.
 	 */
 	public Algorithm2Button(ReturnValueView rvv) {
+		setOpaque(false);
 		
 		r = rvv;
 		

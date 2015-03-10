@@ -30,6 +30,7 @@ public class ERAfterMemoButton extends JPanel {
 	 * Create the panel.
 	 */
 	public ERAfterMemoButton(ExcessiveRecompView v) {
+		setOpaque(false);
 		
 		/*
 		 * Advance button

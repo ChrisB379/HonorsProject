@@ -43,6 +43,7 @@ public class WorkAfterExample extends JPanel implements Observer {
 
 
 	public WorkAfterExample(IWorkAfter m) {
+		setOpaque(false);
 		setFocusable(false);
 		
 		model = m;
@@ -56,6 +57,7 @@ public class WorkAfterExample extends JPanel implements Observer {
 		 * Just setting up presenting the algorithm
 		 */
 		JTextPane txtExample = new JTextPane();
+		txtExample.setOpaque(false);
 		txtExample.setBounds(21, 7, 395, 43);
 		txtExample.setFont(new Font("Calibri", Font.PLAIN, 11));
 		txtExample.setContentType("text/html");
@@ -99,6 +101,7 @@ public class WorkAfterExample extends JPanel implements Observer {
 		 * The work after algorithm
 		 */
 		JTextPane txtWorkAfter = new JTextPane();
+		txtWorkAfter.setOpaque(false);
 		txtWorkAfter.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtWorkAfter.setContentType("text/html");
 		txtWorkAfter.setText("<code> \r\n&nbsp\t<font color = rgb(127,0,85)><b>public void</b></font> workAfter(<font color = rgb(127,0,85)><b>int</b> </font> n)"
@@ -117,6 +120,7 @@ public class WorkAfterExample extends JPanel implements Observer {
 		 * Describing how the algorithm works
 		 */
 		JTextPane txtHowItWorks = new JTextPane();
+		txtHowItWorks.setOpaque(false);
 		txtHowItWorks.setBackground(UIManager.getColor("Panel.background"));
 		txtHowItWorks.setEditable(false);
 		txtHowItWorks.setContentType("text/html");

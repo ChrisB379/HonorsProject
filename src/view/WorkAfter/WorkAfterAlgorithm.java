@@ -78,6 +78,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 	 * Create the panel.
 	 */
 	public WorkAfterAlgorithm(IWorkAfter m, WAAlgorithmButton ab) {
+		setOpaque(false);
 		setFocusable(false);
 
 		model = m;
@@ -102,6 +103,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 * The work after algorithm
 		 */
 		JTextPane txtAlgorithm = new JTextPane();
+		txtAlgorithm.setOpaque(false);
 		txtAlgorithm.setFont(new Font("Arial", Font.PLAIN, 11));
 		txtAlgorithm.setFocusable(false);
 		txtAlgorithm.setBounds(25, 58, 455, 240);
@@ -118,6 +120,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		txtAlgorithm.setEditable(false);
 
 		txtVariables = new JTextArea();
+		txtVariables.setOpaque(false);
 		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtVariables.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtVariables.setFocusable(false);
@@ -143,6 +146,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 * Telling the user how to progress
 		 */
 		txtBaseCase = new JTextField();
+		txtBaseCase.setOpaque(false);
 		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(49, 555, 377, 14);
@@ -179,6 +183,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 * Question
 		 */
 		JTextArea txtQuestion1 = new JTextArea();
+		txtQuestion1.setOpaque(false);
 		txtQuestion1.setBackground(UIManager.getColor("Panel.background"));
 		txtQuestion1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion1.setFocusable(false);
@@ -191,26 +196,31 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 * Radio buttons representing multiple choice answers
 		 */
 		rdbtnQ1Option1 = new JRadioButton("Base case statement, showing the value of n is 1");
+		rdbtnQ1Option1.setOpaque(false);
 		rdbtnQ1Option1.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ1Option1.setBounds(59, 394, 345, 23);
 		add(rdbtnQ1Option1);
 
 		rdbtnQ1Option2 = new JRadioButton("Base case statement, showing the value of n is 2");
+		rdbtnQ1Option2.setOpaque(false);
 		rdbtnQ1Option2.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ1Option2.setBounds(59, 420, 345, 23);
 		add(rdbtnQ1Option2);
 
 		rdbtnQ1Option3 = new JRadioButton("After the recursive call, showing the result of n*2 is 2");
+		rdbtnQ1Option3.setOpaque(false);
 		rdbtnQ1Option3.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ1Option3.setBounds(59, 446, 345, 23);
 		add(rdbtnQ1Option3);
 
 		rdbtnQ1Option4 = new JRadioButton("After the recursive call, showing the result of n*2 is "+ ((getParameter()-1)*2));
+		rdbtnQ1Option4.setOpaque(false);
 		rdbtnQ1Option4.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ1Option4.setBounds(59, 472, 345, 23);
 		add(rdbtnQ1Option4);
 
 		rdbtnQ1Option5 = new JRadioButton("After the recursive call, showing the result of n*2 is " + getParameter());
+		rdbtnQ1Option5.setOpaque(false);
 		rdbtnQ1Option5.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ1Option5.setBounds(59, 498, 345, 23);
 		add(rdbtnQ1Option5);
@@ -235,6 +245,7 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 * Question
 		 */
 		txtQuestion2 = new JTextArea();
+		txtQuestion2.setOpaque(false);
 		txtQuestion2.setBackground(UIManager.getColor("Panel.background"));
 		txtQuestion2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtQuestion2.setFocusable(false);
@@ -248,26 +259,31 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		 * Radio buttons representing multiple choice answers
 		 */
 		rdbtnQ2Option1 = new JRadioButton("Base case statement, showing the value of n is  1");
+		rdbtnQ2Option1.setOpaque(false);
 		rdbtnQ2Option1.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ2Option1.setBounds(448, 394, 361, 23);
 		add(rdbtnQ2Option1);
 
 		rdbtnQ2Option2 = new JRadioButton("Base case statement, showing the value of n is  2");
+		rdbtnQ2Option2.setOpaque(false);
 		rdbtnQ2Option2.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ2Option2.setBounds(448, 420, 361, 23);
 		add(rdbtnQ2Option2);
 
 		rdbtnQ2Option3 = new JRadioButton("After the recursive call, showing the result of n*2 is 2");
+		rdbtnQ2Option3.setOpaque(false);
 		rdbtnQ2Option3.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ2Option3.setBounds(448, 446, 361, 23);
 		add(rdbtnQ2Option3);
 
 		rdbtnQ2Option4 = new JRadioButton("New radio button");
+		rdbtnQ2Option4.setOpaque(false);
 		rdbtnQ2Option4.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ2Option4.setBounds(448, 472, 361, 23);
 		add(rdbtnQ2Option4);
 
 		rdbtnQ2Option5 = new JRadioButton("New radio button");
+		rdbtnQ2Option5.setOpaque(false);
 		rdbtnQ2Option5.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		rdbtnQ2Option5.setBounds(448, 498, 361, 23);
 		add(rdbtnQ2Option5);

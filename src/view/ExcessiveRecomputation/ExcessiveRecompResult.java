@@ -41,6 +41,7 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public ExcessiveRecompResult(IExcessiveRecomp m) {
+		setOpaque(false);
 		setFocusable(false);
 		
 		model = m;
@@ -51,6 +52,7 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 		 * Results text area
 		 */
 		txtResult = new JTextArea();
+		txtResult.setOpaque(false);
 		txtResult.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResult.setBounds(33, 33, 751, 421);
 		txtResult.setFocusable(false);
@@ -69,6 +71,7 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 		 * Summary text area
 		 */
 		txtSummary = new JTextArea();
+		txtSummary.setOpaque(false);
 		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setBounds(33, 465, 751, 255);
 		txtSummary.setFocusable(false);

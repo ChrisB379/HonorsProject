@@ -257,6 +257,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public ReturnValueAlgorithm2(IReturnValue r,Algorithm2Button ab) {
+		setOpaque(false);
 		setFocusable(false);
 
 		model = r;
@@ -275,6 +276,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		lblExample.setBounds(347, 11, 87, 20);
 
 		txtExample2 = new JTextArea();
+		txtExample2.setOpaque(false);
 		txtExample2.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtExample2.setFocusable(false);
 		txtExample2.setBounds(56, 60, 667, 97);
@@ -290,6 +292,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line1Fact = new JTextField();
+		line1Fact.setOpaque(false);
 		line1Fact.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line1Fact.setFocusable(false);
 		line1Fact.setBounds(56, 190, 30, 14);
@@ -305,6 +308,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line1Input1.setDocument(new JTextFieldLimit(2));
 
 		line1Bracket = new JTextField();
+		line1Bracket.setOpaque(false);
 		line1Bracket.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line1Bracket.setFocusable(false);
 		line1Bracket.setBounds(121, 190, 21, 14);
@@ -321,6 +325,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line2Return = new JTextField();
+		line2Return.setOpaque(false);
 		line2Return.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line2Return.setFocusable(false);
 		line2Return.setVisible(false);
@@ -331,6 +336,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line2Return.setColumns(10);
 
 		line2Fact = new JTextField();
+		line2Fact.setOpaque(false);
 		line2Fact.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line2Fact.setFocusable(false);
 		line2Fact.setVisible(false);
@@ -348,6 +354,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line2Input1.setDocument(new JTextFieldLimit(2));
 
 		line2mult1 = new JTextField();
+		line2mult1.setOpaque(false);
 		line2mult1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line2mult1.setFocusable(false);
 		line2mult1.setVisible(false);
@@ -358,6 +365,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line2mult1.setColumns(10);
 
 		line2Bracket = new JTextField();
+		line2Bracket.setOpaque(false);
 		line2Bracket.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line2Bracket.setFocusable(false);
 		line2Bracket.setVisible(false);
@@ -381,6 +389,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line3Return = new JTextField();
+		line3Return.setOpaque(false);
 		line3Return.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line3Return.setFocusable(false);
 		line3Return.setVisible(false);
@@ -391,6 +400,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line3Return.setColumns(10);
 
 		line3Fact = new JTextField();
+		line3Fact.setOpaque(false);
 		line3Fact.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line3Fact.setFocusable(false);
 		line3Fact.setVisible(false);
@@ -408,6 +418,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line3Input1.setDocument(new JTextFieldLimit(2));
 
 		line3mult1 = new JTextField();
+		line3mult1.setOpaque(false);
 		line3mult1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line3mult1.setFocusable(false);
 		line3mult1.setVisible(false);
@@ -419,6 +430,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line3Bracket = new JTextField();
+		line3Bracket.setOpaque(false);
 		line3Bracket.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line3Bracket.setFocusable(false);
 		line3Bracket.setVisible(false);
@@ -437,6 +449,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line3Input2.setDocument(new JTextFieldLimit(2));
 
 		line3mult2 = new JTextField();
+		line3mult2.setOpaque(false);
 		line3mult2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line3mult2.setFocusable(false);
 		line3mult2.setVisible(false);
@@ -460,6 +473,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line4Return = new JTextField();
+		line4Return.setOpaque(false);
 		line4Return.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line4Return.setFocusable(false);
 		line4Return.setVisible(false);
@@ -470,6 +484,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line4Return.setColumns(10);
 
 		line4Fact = new JTextField();
+		line4Fact.setOpaque(false);
 		line4Fact.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line4Fact.setFocusable(false);
 		line4Fact.setVisible(false);
@@ -487,6 +502,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line4Input1.setDocument(new JTextFieldLimit(2));
 
 		line4mult1 = new JTextField();
+		line4mult1.setOpaque(false);
 		line4mult1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line4mult1.setFocusable(false);
 		line4mult1.setVisible(false);
@@ -498,6 +514,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line4Bracket = new JTextField();
+		line4Bracket.setOpaque(false);
 		line4Bracket.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line4Bracket.setFocusable(false);
 		line4Bracket.setVisible(false);
@@ -515,6 +532,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line4Input2.setDocument(new JTextFieldLimit(2));
 
 		line4mult2 = new JTextField();
+		line4mult2.setOpaque(false);
 		line4mult2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line4mult2.setFocusable(false);
 		line4mult2.setVisible(false);
@@ -532,6 +550,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line4Input3.setDocument(new JTextFieldLimit(2));
 
 		line4mult3 = new JTextField();
+		line4mult3.setOpaque(false);
 		line4mult3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line4mult3.setFocusable(false);
 		line4mult3.setVisible(false);
@@ -555,6 +574,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line5Return = new JTextField();
+		line5Return.setOpaque(false);
 		line5Return.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line5Return.setFocusable(false);
 		line5Return.setVisible(false);
@@ -565,6 +585,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line5Return.setColumns(10);
 
 		line5Fact = new JTextField();
+		line5Fact.setOpaque(false);
 		line5Fact.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line5Fact.setFocusable(false);
 		line5Fact.setVisible(false);
@@ -582,6 +603,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line5Input1.setDocument(new JTextFieldLimit(2));
 
 		line5mult1 = new JTextField();
+		line5mult1.setOpaque(false);
 		line5mult1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line5mult1.setFocusable(false);
 		line5mult1.setVisible(false);
@@ -593,6 +615,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line5Bracket = new JTextField();
+		line5Bracket.setOpaque(false);
 		line5Bracket.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line5Bracket.setFocusable(false);
 		line5Bracket.setVisible(false);
@@ -611,6 +634,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line5Input2.setDocument(new JTextFieldLimit(2));
 
 		line5mult2 = new JTextField();
+		line5mult2.setOpaque(false);
 		line5mult2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line5mult2.setFocusable(false);
 		line5mult2.setVisible(false);
@@ -628,6 +652,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line5Input3.setDocument(new JTextFieldLimit(2));
 
 		line5mult3 = new JTextField();
+		line5mult3.setOpaque(false);
 		line5mult3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line5mult3.setFocusable(false);
 		line5mult3.setVisible(false);
@@ -638,6 +663,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line5mult3.setColumns(10);
 
 		line5mult4 = new JTextField();
+		line5mult4.setOpaque(false);
 		line5mult4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line5mult4.setFocusable(false);
 		line5mult4.setVisible(false);
@@ -668,6 +694,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line6Return = new JTextField();
+		line6Return.setOpaque(false);
 		line6Return.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line6Return.setFocusable(false);
 		line6Return.setVisible(false);
@@ -678,6 +705,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6Return.setColumns(10);
 
 		line6Fact = new JTextField();
+		line6Fact.setOpaque(false);
 		line6Fact.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line6Fact.setFocusable(false);
 		line6Fact.setVisible(false);
@@ -695,6 +723,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6Input1.setDocument(new JTextFieldLimit(2));
 
 		line6mult1 = new JTextField();
+		line6mult1.setOpaque(false);
 		line6mult1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line6mult1.setFocusable(false);
 		line6mult1.setVisible(false);
@@ -705,6 +734,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6mult1.setColumns(10);
 
 		line6Bracket = new JTextField();
+		line6Bracket.setOpaque(false);
 		line6Bracket.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line6Bracket.setFocusable(false);
 		line6Bracket.setVisible(false);
@@ -723,6 +753,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6Input2.setDocument(new JTextFieldLimit(2));
 
 		line6mult2 = new JTextField();
+		line6mult2.setOpaque(false);
 		line6mult2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line6mult2.setFocusable(false);
 		line6mult2.setVisible(false);
@@ -740,6 +771,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6Input3.setDocument(new JTextFieldLimit(2));
 
 		line6mult3 = new JTextField();
+		line6mult3.setOpaque(false);
 		line6mult3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line6mult3.setFocusable(false);
 		line6mult3.setVisible(false);
@@ -750,6 +782,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6mult3.setColumns(10);
 
 		line6mult4 = new JTextField();
+		line6mult4.setOpaque(false);
 		line6mult4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line6mult4.setFocusable(false);
 		line6mult4.setVisible(false);
@@ -774,6 +807,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line6Input5.setDocument(new JTextFieldLimit(2));
 
 		line6mult5 = new JTextField();
+		line6mult5.setOpaque(false);
 		line6mult5.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line6mult5.setFocusable(false);
 		line6mult5.setVisible(false);
@@ -797,6 +831,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line7Return = new JTextField();
+		line7Return.setOpaque(false);
 		line7Return.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line7Return.setFocusable(false);
 		line7Return.setVisible(false);
@@ -807,6 +842,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Return.setColumns(10);
 
 		line7Fact = new JTextField();
+		line7Fact.setOpaque(false);
 		line7Fact.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line7Fact.setFocusable(false);
 		line7Fact.setVisible(false);
@@ -824,6 +860,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Input1.setDocument(new JTextFieldLimit(2));
 
 		line7mult1 = new JTextField();
+		line7mult1.setOpaque(false);
 		line7mult1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line7mult1.setFocusable(false);
 		line7mult1.setVisible(false);
@@ -834,6 +871,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7mult1.setColumns(10);
 
 		line7Bracket = new JTextField();
+		line7Bracket.setOpaque(false);
 		line7Bracket.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line7Bracket.setFocusable(false);
 		line7Bracket.setVisible(false);
@@ -852,6 +890,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Input2.setDocument(new JTextFieldLimit(2));
 
 		line7mult2 = new JTextField();
+		line7mult2.setOpaque(false);
 		line7mult2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line7mult2.setFocusable(false);
 		line7mult2.setVisible(false);
@@ -869,6 +908,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Input3.setDocument(new JTextFieldLimit(2));
 
 		line7mult3 = new JTextField();
+		line7mult3.setOpaque(false);
 		line7mult3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line7mult3.setFocusable(false);
 		line7mult3.setVisible(false);
@@ -879,6 +919,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7mult3.setColumns(10);
 
 		line7mult4 = new JTextField();
+		line7mult4.setOpaque(false);
 		line7mult4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line7mult4.setFocusable(false);
 		line7mult4.setVisible(false);
@@ -903,6 +944,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Input5.setDocument(new JTextFieldLimit(2));
 
 		line7mult5 = new JTextField();
+		line7mult5.setOpaque(false);
 		line7mult5.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line7mult5.setFocusable(false);
 		line7mult5.setVisible(false);
@@ -920,6 +962,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line7Input6.setDocument(new JTextFieldLimit(2));
 
 		line7mult6 = new JTextField();
+		line7mult6.setOpaque(false);
 		line7mult6.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line7mult6.setFocusable(false);
 		line7mult6.setVisible(false);
@@ -945,6 +988,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line8Return = new JTextField();
+		line8Return.setOpaque(false);
 		line8Return.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line8Return.setFocusable(false);
 		line8Return.setVisible(false);
@@ -955,6 +999,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Return.setColumns(10);
 
 		line8Fact = new JTextField();
+		line8Fact.setOpaque(false);
 		line8Fact.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line8Fact.setFocusable(false);
 		line8Fact.setVisible(false);
@@ -972,6 +1017,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Input1.setDocument(new JTextFieldLimit(2));
 
 		line8mult1 = new JTextField();
+		line8mult1.setOpaque(false);
 		line8mult1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line8mult1.setFocusable(false);
 		line8mult1.setVisible(false);
@@ -982,6 +1028,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8mult1.setColumns(10);
 
 		line8Bracket = new JTextField();
+		line8Bracket.setOpaque(false);
 		line8Bracket.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line8Bracket.setFocusable(false);
 		line8Bracket.setVisible(false);
@@ -999,6 +1046,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Input2.setDocument(new JTextFieldLimit(2));
 
 		line8mult2 = new JTextField();
+		line8mult2.setOpaque(false);
 		line8mult2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line8mult2.setFocusable(false);
 		line8mult2.setVisible(false);
@@ -1016,6 +1064,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Input3.setDocument(new JTextFieldLimit(2));
 
 		line8mult3 = new JTextField();
+		line8mult3.setOpaque(false);
 		line8mult3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line8mult3.setFocusable(false);
 		line8mult3.setVisible(false);
@@ -1026,6 +1075,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8mult3.setColumns(10);
 
 		line8mult4 = new JTextField();
+		line8mult4.setOpaque(false);
 		line8mult4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line8mult4.setFocusable(false);
 		line8mult4.setVisible(false);
@@ -1050,6 +1100,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Input5.setDocument(new JTextFieldLimit(2));
 
 		line8mult5 = new JTextField();
+		line8mult5.setOpaque(false);
 		line8mult5.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line8mult5.setFocusable(false);
 		line8mult5.setVisible(false);
@@ -1067,6 +1118,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8Input6.setDocument(new JTextFieldLimit(2));
 
 		line8mult6 = new JTextField();
+		line8mult6.setOpaque(false);
 		line8mult6.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line8mult6.setFocusable(false);
 		line8mult6.setVisible(false);
@@ -1077,6 +1129,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line8mult6.setColumns(10);
 
 		line8mult7 = new JTextField();
+		line8mult7.setOpaque(false);
 		line8mult7.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line8mult7.setFocusable(false);
 		line8mult7.setVisible(false);
@@ -1108,6 +1161,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line9Return = new JTextField();
+		line9Return.setOpaque(false);
 		line9Return.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9Return.setFocusable(false);
 		line9Return.setVisible(false);
@@ -1118,6 +1172,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Return.setColumns(10);
 
 		line9Fact = new JTextField();
+		line9Fact.setOpaque(false);
 		line9Fact.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9Fact.setFocusable(false);
 		line9Fact.setVisible(false);
@@ -1135,6 +1190,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input1.setDocument(new JTextFieldLimit(2));
 
 		line9mult1 = new JTextField();
+		line9mult1.setOpaque(false);
 		line9mult1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9mult1.setFocusable(false);
 		line9mult1.setVisible(false);
@@ -1145,6 +1201,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9mult1.setColumns(10);
 
 		line9Bracket = new JTextField();
+		line9Bracket.setOpaque(false);
 		line9Bracket.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9Bracket.setFocusable(false);
 		line9Bracket.setVisible(false);
@@ -1162,6 +1219,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input2.setDocument(new JTextFieldLimit(2));
 
 		line9mult2 = new JTextField();
+		line9mult2.setOpaque(false);
 		line9mult2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9mult2.setFocusable(false);
 		line9mult2.setVisible(false);
@@ -1179,6 +1237,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input3.setDocument(new JTextFieldLimit(2));
 
 		line9mult3 = new JTextField();
+		line9mult3.setOpaque(false);
 		line9mult3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9mult3.setFocusable(false);
 		line9mult3.setVisible(false);
@@ -1189,6 +1248,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9mult3.setColumns(10);
 
 		line9mult4 = new JTextField();
+		line9mult4.setOpaque(false);
 		line9mult4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9mult4.setFocusable(false);
 		line9mult4.setVisible(false);
@@ -1213,6 +1273,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input5.setDocument(new JTextFieldLimit(2));
 
 		line9mult5 = new JTextField();
+		line9mult5.setOpaque(false);
 		line9mult5.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9mult5.setFocusable(false);
 		line9mult5.setVisible(false);
@@ -1230,6 +1291,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input6.setDocument(new JTextFieldLimit(2));
 
 		line9mult6 = new JTextField();
+		line9mult6.setOpaque(false);
 		line9mult6.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9mult6.setFocusable(false);
 		line9mult6.setVisible(false);
@@ -1240,6 +1302,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9mult6.setColumns(10);
 
 		line9mult7 = new JTextField();
+		line9mult7.setOpaque(false);
 		line9mult7.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9mult7.setFocusable(false);
 		line9mult7.setVisible(false);
@@ -1265,6 +1328,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line9Input8.setDocument(new JTextFieldLimit(2));
 
 		line9mult8 = new JTextField();
+		line9mult8.setOpaque(false);
 		line9mult8.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line9mult8.setFocusable(false);
 		line9mult8.setVisible(false);
@@ -1289,6 +1353,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 		line10Return = new JTextField();
+		line10Return.setOpaque(false);
 		line10Return.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10Return.setFocusable(false);
 		line10Return.setVisible(false);
@@ -1299,6 +1364,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Return.setColumns(10);
 
 		line10Fact = new JTextField();
+		line10Fact.setOpaque(false);
 		line10Fact.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10Fact.setFocusable(false);
 		line10Fact.setVisible(false);
@@ -1316,6 +1382,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input1.setDocument(new JTextFieldLimit(2));
 
 		line10mult1 = new JTextField();
+		line10mult1.setOpaque(false);
 		line10mult1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10mult1.setFocusable(false);
 		line10mult1.setVisible(false);
@@ -1326,6 +1393,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10mult1.setColumns(10);
 
 		line10Bracket = new JTextField();
+		line10Bracket.setOpaque(false);
 		line10Bracket.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10Bracket.setFocusable(false);
 		line10Bracket.setVisible(false);
@@ -1343,6 +1411,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input2.setDocument(new JTextFieldLimit(2));
 
 		line10mult2 = new JTextField();
+		line10mult2.setOpaque(false);
 		line10mult2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10mult2.setFocusable(false);
 		line10mult2.setVisible(false);
@@ -1360,6 +1429,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input3.setDocument(new JTextFieldLimit(2));
 
 		line10mult3 = new JTextField();
+		line10mult3.setOpaque(false);
 		line10mult3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10mult3.setFocusable(false);
 		line10mult3.setVisible(false);
@@ -1370,6 +1440,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10mult3.setColumns(10);
 
 		line10mult4 = new JTextField();
+		line10mult4.setOpaque(false);
 		line10mult4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10mult4.setFocusable(false);
 		line10mult4.setVisible(false);
@@ -1394,6 +1465,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input5.setDocument(new JTextFieldLimit(2));
 
 		line10mult5 = new JTextField();
+		line10mult5.setOpaque(false);
 		line10mult5.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10mult5.setFocusable(false);
 		line10mult5.setVisible(false);
@@ -1411,6 +1483,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input6.setDocument(new JTextFieldLimit(2));
 
 		line10mult6 = new JTextField();
+		line10mult6.setOpaque(false);
 		line10mult6.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10mult6.setFocusable(false);
 		line10mult6.setVisible(false);
@@ -1421,6 +1494,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10mult6.setColumns(10);
 
 		line10mult7 = new JTextField();
+		line10mult7.setOpaque(false);
 		line10mult7.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10mult7.setFocusable(false);
 		line10mult7.setVisible(false);
@@ -1445,6 +1519,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input8.setDocument(new JTextFieldLimit(2));
 
 		line10mult8 = new JTextField();
+		line10mult8.setOpaque(false);
 		line10mult8.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10mult8.setFocusable(false);
 		line10mult8.setVisible(false);
@@ -1462,6 +1537,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line10Input9.setDocument(new JTextFieldLimit(2));
 
 		line10mult9 = new JTextField();
+		line10mult9.setOpaque(false);
 		line10mult9.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line10mult9.setFocusable(false);
 		line10mult9.setVisible(false);
@@ -1485,6 +1561,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line11Return = new JTextField();
+		line11Return.setOpaque(false);
 		line11Return.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line11Return.setFocusable(false);
 		line11Return.setBounds(56, 492, 39, 14);
@@ -1500,6 +1577,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input1.setDocument(new JTextFieldLimit(2));
 
 		line11mult1 = new JTextField();
+		line11mult1.setOpaque(false);
 		line11mult1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line11mult1.setFocusable(false);
 		line11mult1.setVisible(false);
@@ -1517,6 +1595,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input2.setDocument(new JTextFieldLimit(2));
 
 		line11mult2 = new JTextField();
+		line11mult2.setOpaque(false);
 		line11mult2.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line11mult2.setFocusable(false);
 		line11mult2.setVisible(false);
@@ -1534,6 +1613,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input3.setDocument(new JTextFieldLimit(2));
 
 		line11mult3 = new JTextField();
+		line11mult3.setOpaque(false);
 		line11mult3.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line11mult3.setFocusable(false);
 		line11mult3.setVisible(false);
@@ -1551,6 +1631,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input4.setDocument(new JTextFieldLimit(2));
 
 		line11mult4 = new JTextField();
+		line11mult4.setOpaque(false);
 		line11mult4.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line11mult4.setFocusable(false);
 		line11mult4.setVisible(false);
@@ -1568,6 +1649,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input5.setDocument(new JTextFieldLimit(2));
 
 		line11mult5 = new JTextField();
+		line11mult5.setOpaque(false);
 		line11mult5.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line11mult5.setFocusable(false);
 		line11mult5.setVisible(false);
@@ -1585,6 +1667,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input6.setDocument(new JTextFieldLimit(2));
 
 		line11mult6 = new JTextField();
+		line11mult6.setOpaque(false);
 		line11mult6.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line11mult6.setFocusable(false);
 		line11mult6.setVisible(false);
@@ -1595,6 +1678,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11mult6.setColumns(10);
 
 		line11mult7 = new JTextField();
+		line11mult7.setOpaque(false);
 		line11mult7.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line11mult7.setFocusable(false);
 		line11mult7.setVisible(false);
@@ -1619,6 +1703,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input8.setDocument(new JTextFieldLimit(2));
 
 		line11mult8 = new JTextField();
+		line11mult8.setOpaque(false);
 		line11mult8.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line11mult8.setFocusable(false);
 		line11mult8.setVisible(false);
@@ -1636,6 +1721,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line11Input9.setDocument(new JTextFieldLimit(2));
 
 		line11mult9 = new JTextField();
+		line11mult9.setOpaque(false);
 		line11mult9.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line11mult9.setFocusable(false);
 		line11mult9.setVisible(false);
@@ -1657,6 +1743,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		 */
 
 		line12eqReturn = new JTextField();
+		line12eqReturn.setOpaque(false);
 		line12eqReturn.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line12eqReturn.setFocusable(false);
 		line12eqReturn.setBounds(56, 555, 50, 14);
@@ -1848,6 +1935,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		add(line9Input9);
 
 		btnSubmit = new JButton("Submit");
+		btnSubmit.setOpaque(false);
 		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.addActionListener(rvs2C);
 		btnSubmit.setBounds(38, 611, 127, 35);

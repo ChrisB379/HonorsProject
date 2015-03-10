@@ -38,6 +38,7 @@ public class ReturnValueResults extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public ReturnValueResults(IReturnValue r) {
+		setOpaque(false);
 		
 		model = r;
 		
@@ -51,6 +52,7 @@ public class ReturnValueResults extends JPanel implements Observer {
 		 * Results text area
 		 */
 		txtResults = new JTextArea();
+		txtResults.setOpaque(false);
 		txtResults.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResults.setFocusable(false);
 		txtResults.setBounds(47, 36, 668, 423);
@@ -79,6 +81,7 @@ public class ReturnValueResults extends JPanel implements Observer {
 		 * Summary text area
 		 */
 		txtSummary = new JTextArea();
+		txtSummary.setOpaque(false);
 		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
 		txtSummary.setBounds(47, 487, 668, 266);

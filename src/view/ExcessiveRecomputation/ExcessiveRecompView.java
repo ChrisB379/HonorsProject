@@ -56,6 +56,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.LineBorder;
 
 import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 
 public class ExcessiveRecompView extends JFrame implements Observer {
@@ -180,6 +182,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		 * Content Panes and panels
 		 */
 		contentPane = new JPanel();
+		contentPane.setOpaque(false);
 		contentPane.setFocusable(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -188,6 +191,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		 * The card panel with the actual content
 		 */
 		cardPanel1 = new JPanel();
+		cardPanel1.setOpaque(false);
 		cardPanel1.setFocusable(false);
 		cardPanel1.setBounds(29, 16, 938, 694);
 		//This line is what makes a card not switch out. It must be up top. NOT AT THE BOTTOM LIKE ITS AUTO GENERATED TO DO!!!!
@@ -197,15 +201,18 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		 * Card panel for the buttons
 		 */
 		cardPanel2 = new JPanel();
+		cardPanel2.setOpaque(false);
 		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(1004, 447, 197, 230);
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 		JPanel cp1GroupPanel = new JPanel();
+		cp1GroupPanel.setOpaque(false);
 		cp1GroupPanel.setFocusable(false);
 		cardPanel1.add(cp1GroupPanel, "name_99260177086740");
 
 		advancePanel = new JPanel();
+		advancePanel.setOpaque(false);
 		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_99302267697702");
 		
@@ -213,6 +220,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		 * The introduction to excessive recomp
 		 */
 		JTextPane txtIntroduction = new JTextPane();
+		txtIntroduction.setOpaque(false);
 		txtIntroduction.setFocusable(false);
 		txtIntroduction.setContentType("text/html");
 		txtIntroduction.setText("<html><font face=\"cambria\", size = 4>\r\nThis tutorial series focuses on excessive recomputation in recursion.\r\n<br>\r\n<br>"
@@ -231,6 +239,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		 * Tells the user to press the advance button to continue
 		 */
 		JTextPane txtAdvance = new JTextPane();
+		txtAdvance.setOpaque(false);
 		txtAdvance.setContentType("text/html");
 		txtAdvance.setText("<font face=\"cambria\", size = 4>\r\nNow we are going to move onto how the factorial algorithm works.\r\n<br>\r\n"
 				+ "<br>Please click the Advance button to continue.\r\n</font>");
@@ -328,6 +337,11 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 		contentPane.setLayout(null);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
+		
+		JLabel lblBackground = new JLabel("");
+		lblBackground.setIcon(new ImageIcon(ExcessiveRecompView.class.getResource("/images/General Background.jpg")));
+		lblBackground.setBounds(0, 0, 1230, 740);
+		contentPane.add(lblBackground);
 
 	}
 

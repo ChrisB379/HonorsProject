@@ -117,6 +117,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		 * Descriptor for the input for the n value
 		 */
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setOpaque(false);
 		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(70, 352, 262, 30);
@@ -170,6 +171,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		 * descriptor for the return value input	
 		 */
 		txtrTheCurrent = new JTextArea();
+		txtrTheCurrent.setOpaque(false);
 		txtrTheCurrent.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheCurrent.setFocusable(false);
 		txtrTheCurrent.setBounds(70, 422, 251, 22);
@@ -222,6 +224,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		 * Descriptor telling the user what to do next
 		 */
 		txtBaseCase = new JTextField();
+		txtBaseCase.setOpaque(false);
 		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(70, 481, 403, 14);
@@ -232,6 +235,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtBaseCase.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
 		txtVariables = new JTextArea();
+		txtVariables.setOpaque(false);
 		txtVariables.setBackground(UIManager.getColor("Panel.background"));
 		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtVariables.setFont(new Font("Calibri", Font.PLAIN, 15));
@@ -274,6 +278,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		add(lblParameterValue);
 		
 		txtWhatToDo = new JTextField();
+		txtWhatToDo.setOpaque(false);
 		txtWhatToDo.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtWhatToDo.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtWhatToDo.setEditable(false);

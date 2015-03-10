@@ -36,6 +36,7 @@ public class ExampleButton extends JPanel {
 	 * Create the panel.
 	 */
 	public ExampleButton(ReturnValueView v,IReturnValue m, ReturnValueExample reg) {
+		setOpaque(false);
 		
 		view = v;
 		

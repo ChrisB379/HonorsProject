@@ -38,6 +38,7 @@ public class WorkAfterResult extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public WorkAfterResult(IWorkAfter m) {
+		setOpaque(false);
 		setFocusable(false);
 
 		model = m;
@@ -48,6 +49,7 @@ public class WorkAfterResult extends JPanel implements Observer {
 		 * Results text field
 		 */
 		txtResults = new JTextArea();
+		txtResults.setOpaque(false);
 		txtResults.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtResults.setFocusable(false);
 		txtResults.setBounds(36, 36, 702, 478);
@@ -73,6 +75,7 @@ public class WorkAfterResult extends JPanel implements Observer {
 		 * Summary text field
 		 */
 		txtSummary = new JTextArea();
+		txtSummary.setOpaque(false);
 		txtSummary.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtSummary.setFocusable(false);
 		txtSummary.setBounds(36, 512, 702, 225);

@@ -22,6 +22,7 @@ public class ExcessiveRecompExample extends JPanel {
 	 * Create the panel.
 	 */
 	public ExcessiveRecompExample() {
+		setOpaque(false);
 		setFocusable(false);
 		setLayout(null);
 
@@ -29,6 +30,7 @@ public class ExcessiveRecompExample extends JPanel {
 		 * Just a single line to say this is the algorithm
 		 */
 		JTextPane txtIntroduction = new JTextPane();
+		txtIntroduction.setOpaque(false);
 		txtIntroduction.setBounds(19, 30, 194, 52);
 		txtIntroduction.setFocusable(false);
 		txtIntroduction.setContentType("text/html");
@@ -42,6 +44,7 @@ public class ExcessiveRecompExample extends JPanel {
 		 * Explaining how the algorithm works
 		 */
 		JTextPane txtHowItWorks = new JTextPane();
+		txtHowItWorks.setOpaque(false);
 		txtHowItWorks.setBackground(UIManager.getColor("Panel.background"));
 		txtHowItWorks.setContentType("text/html");
 		txtHowItWorks.setEditable(false);

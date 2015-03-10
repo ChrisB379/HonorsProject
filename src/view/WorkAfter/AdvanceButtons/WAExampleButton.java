@@ -38,6 +38,7 @@ public class WAExampleButton extends JPanel {
 	 * Create the panel.
 	 */
 	public WAExampleButton(WorkAfterView w, IWorkAfter iW, WorkAfterExample view) {
+		setOpaque(false);
 		
 		wav = w;
 		iWa = iW;

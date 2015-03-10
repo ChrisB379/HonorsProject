@@ -76,6 +76,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public ExcessiveRecompAlgorithm(IExcessiveRecomp m, ERAlgorithmButton ab) {
+		setOpaque(false);
 		setFocusable(false);
 		
 		model = m;
@@ -93,17 +94,19 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		 */
 		JTextPane txtFibonacci = new JTextPane();
 		txtFibonacci.setFocusable(false);
+		txtFibonacci.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtFibonacci.setBounds(45, 61, 288, 159);
 		txtFibonacci.setContentType("text/html");
 		txtFibonacci.setText("<html>\r\n<code>\r\n<font color = rgb(127,0,85)> <b>public int</b> </font> fib(<font color = rgb(127,0,85)> <b>int </b> </font>n) {\r\n<br>\t\t&nbsp <font color = rgb(63,127,95)>//Base case</font>\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>if</b> </font> (n == 0 || n == 1)\r\n<br>\t\t  &nbsp&nbsp &nbsp&nbsp <font color = rgb(127,0,85)> <b>return </b> </font>1;\r\n<br>\t\t\r\n<br>\t\t&nbsp <font color = rgb(127,0,85)> <b>else</b> </font>\r\n<br>\t\t &nbsp&nbsp&nbsp&nbsp<font color = rgb(63,127,95)> //Recursive call</font>\r\n<br>\t\t   &nbsp&nbsp&nbsp&nbsp <font color = rgb(127,0,85)> <b>return</b> </font> fib(n-1) + fib(n-2);\r\n<br>\t}\r\n<br></code>\r\n</html>");
 
-		txtFibonacci.setBackground(UIManager.getColor("Panel.background"));
+		txtFibonacci.setBackground(Color.WHITE);
 		txtFibonacci.setEditable(false);
 		
 		/*
 		 * Shows the parameter after each recursive call
 		 */
 		txtVariables = new JTextArea();
+		txtVariables.setOpaque(false);
 		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtVariables.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtVariables.setFocusable(false);
@@ -118,6 +121,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		 * Descriptor for the text inputs
 		 */
 		txtrTheValueOf = new JTextArea();
+		txtrTheValueOf.setOpaque(false);
 		txtrTheValueOf.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheValueOf.setFocusable(false);
 		txtrTheValueOf.setBounds(45, 348, 261, 25);
@@ -128,6 +132,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtrTheValueOf.setText("The value of n after the recursive call is :");
 		
 		txtrTheCurrent = new JTextArea();
+		txtrTheCurrent.setOpaque(false);
 		txtrTheCurrent.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtrTheCurrent.setFocusable(false);
 		txtrTheCurrent.setBounds(45, 412, 250, 29);
@@ -210,6 +215,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		btnSubmit.addActionListener(ersc);
 		
 		txtBaseCase = new JTextField();
+		txtBaseCase.setOpaque(false);
 		txtBaseCase.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtBaseCase.setFocusable(false);
 		txtBaseCase.setBounds(45, 475, 389, 14);
@@ -263,6 +269,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		 * Text field describing to the user what they have to do for inputs
 		 */
 		txtWhatToDo = new JTextField();
+		txtWhatToDo.setOpaque(false);
 		txtWhatToDo.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtWhatToDo.setText("Please insert what you believe the next value of n is below");
 		txtWhatToDo.setEditable(false);

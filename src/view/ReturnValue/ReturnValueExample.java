@@ -135,6 +135,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 				 * Factorial algorithm
 				 */
 				JTextPane txtFactorial = new JTextPane();
+				txtFactorial.setOpaque(false);
 				txtFactorial.setBorder(new LineBorder(new Color(0, 0, 0)));
 				txtFactorial.setSize(300, 127);
 				txtFactorial.setLocation(22, 11);

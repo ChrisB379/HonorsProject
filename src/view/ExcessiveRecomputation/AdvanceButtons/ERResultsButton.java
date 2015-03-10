@@ -29,6 +29,7 @@ public class ERResultsButton extends JPanel {
 	 * Create the panel.
 	 */
 	public ERResultsButton(ExcessiveRecompView erv) {
+		setOpaque(false);
 		
 		view = erv;
 		

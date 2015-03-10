@@ -197,7 +197,7 @@ public class MainMenu extends JFrame {
 		contentPane.add(btnStart);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Chris\\Desktop\\background4.jpg"));
+		lblNewLabel.setIcon(new ImageIcon(MainMenu.class.getResource("/images/MainMenuBackground.jpg")));
 		lblNewLabel.setBounds(0, 0, 522, 375);
 		contentPane.add(lblNewLabel);
 	}

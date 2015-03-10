@@ -31,6 +31,7 @@ public class ERAlgorithmButton extends JPanel {
 	 * Create the panel.
 	 */
 	public ERAlgorithmButton(ExcessiveRecompView v) {
+		setOpaque(false);
 		
 		view = v;
 		

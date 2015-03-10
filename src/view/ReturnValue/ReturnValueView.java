@@ -170,6 +170,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		 * Content panel and card panels
 		 */
 		contentPane = new JPanel();
+		contentPane.setOpaque(false);
 		contentPane.setBackground(UIManager.getColor("Panel.background"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -256,6 +257,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		 * Advance text telling the user how to progress
 		 */
 		JTextPane txtAdvance = new JTextPane();
+		txtAdvance.setOpaque(false);
 		txtAdvance.setContentType("text/html");
 		txtAdvance.setBackground(UIManager.getColor("Panel.background"));
 		txtAdvance.setEditable(false);
@@ -287,6 +289,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		 * Factorial algorithm in HTML
 		 */
 		JTextPane txtFact = new JTextPane();
+		txtFact.setOpaque(false);
 		txtFact.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtFact.setEditable(false);
 		txtFact.setContentType("text/html");
@@ -298,10 +301,10 @@ public class ReturnValueView extends JFrame implements Observer {
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
 		
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\Chris\\Desktop\\background5.jpg"));
-		label.setBounds(0, 0, 1237, 736);
-		contentPane.add(label);
+		JLabel lblBackground = new JLabel("");
+		lblBackground.setIcon(new ImageIcon(ReturnValueView.class.getResource("/images/General Background.jpg")));
+		lblBackground.setBounds(0, 0, 1237, 745);
+		contentPane.add(lblBackground);
 
 	}
 

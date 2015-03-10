@@ -43,6 +43,8 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class WorkAfterView extends JFrame {
 
@@ -152,6 +154,7 @@ public class WorkAfterView extends JFrame {
 		 * Content pane and other panels
 		 */
 		contentPane = new JPanel();
+		contentPane.setOpaque(false);
 		contentPane.setFocusable(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -160,6 +163,7 @@ public class WorkAfterView extends JFrame {
 		 * Card panel for swapping in buttons
 		 */
 		cardPanel2 = new JPanel();
+		cardPanel2.setOpaque(false);
 		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(969, 527, 210, 150);
 
@@ -167,11 +171,13 @@ public class WorkAfterView extends JFrame {
 		 * Card panel for swapping in the actual tutorial content
 		 */
 		cardPanel1 = new JPanel();
+		cardPanel1.setOpaque(false);
 		cardPanel1.setFocusable(false);
 		cardPanel1.setBounds(30, 16, 888, 714);
 		cardPanel1.setLayout(new CardLayout(0, 0));
 
 		JPanel cp1GroupPanel = new JPanel();
+		cp1GroupPanel.setOpaque(false);
 		cp1GroupPanel.setFocusable(false);
 		cardPanel1.add(cp1GroupPanel, "name_94405714894092");
 		
@@ -179,6 +185,7 @@ public class WorkAfterView extends JFrame {
 		 * Describes what this chapter is about
 		 */
 		JTextPane txtDescription = new JTextPane();
+		txtDescription.setOpaque(false);
 		txtDescription.setBounds(10, 11, 841, 221);
 		txtDescription.setContentType("text/html");
 		txtDescription.setText("<html> <font face=\"cambria\", size = 4>\r\n<br>This tutorial series focuses on work being done after a recursive call. \r\n<br>\r\n<br>"
@@ -210,6 +217,7 @@ public class WorkAfterView extends JFrame {
 		 * Tells the user how to progress
 		 */
 		JTextPane txtAdvance = new JTextPane();
+		txtAdvance.setOpaque(false);
 		txtAdvance.setBackground(UIManager.getColor("Panel.background"));
 		txtAdvance.setEditable(false);
 		txtAdvance.setContentType("text/html");
@@ -219,6 +227,7 @@ public class WorkAfterView extends JFrame {
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 		advancePanel = new JPanel();
+		advancePanel.setOpaque(false);
 		advancePanel.setFocusable(false);
 		cardPanel2.add(advancePanel, "name_94944655089283");
 		
@@ -268,6 +277,11 @@ public class WorkAfterView extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(cardPanel1);
 		contentPane.add(cardPanel2);
+		
+		JLabel lblBackground = new JLabel("");
+		lblBackground.setIcon(new ImageIcon(WorkAfterView.class.getResource("/images/General Background.jpg")));
+		lblBackground.setBounds(0, 0, 1213, 735);
+		contentPane.add(lblBackground);
 	}
 	
 	/**

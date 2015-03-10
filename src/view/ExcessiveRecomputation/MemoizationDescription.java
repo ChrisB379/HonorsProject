@@ -23,12 +23,14 @@ public class MemoizationDescription extends JPanel {
 	 * Create the panel.
 	 */
 	public MemoizationDescription() {
+		setOpaque(false);
 		setFocusable(false);
 		
 		/*
 		 * Textpane with the description of memoization
 		 */
 		JTextPane txtMemoDesc = new JTextPane();
+		txtMemoDesc.setOpaque(false);
 		txtMemoDesc.setFocusable(false);
 		txtMemoDesc.setBackground(UIManager.getColor("Panel.background"));
 		txtMemoDesc.setContentType("text/html");

@@ -30,6 +30,7 @@ public class ERExampleButton extends JPanel {
 	 * Create the panel.
 	 */
 	public ERExampleButton(ExcessiveRecompView v) {
+		setOpaque(false);
 		
 		view = v;
 		

@@ -31,6 +31,7 @@ public class WAAlgorithmButton extends JPanel {
 	 * Create the panel.
 	 */
 	public WAAlgorithmButton(WorkAfterView wa) {
+		setOpaque(false);
 		
 		wav = wa;
 		

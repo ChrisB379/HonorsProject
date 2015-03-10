@@ -30,6 +30,7 @@ public class ERMemoButton extends JPanel {
 	 * Create the panel.
 	 */
 	public ERMemoButton(ExcessiveRecompView v) {
+		setOpaque(false);
 		
 		view = v;
 		

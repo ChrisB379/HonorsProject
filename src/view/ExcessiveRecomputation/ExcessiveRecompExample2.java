@@ -39,6 +39,7 @@ public class ExcessiveRecompExample2 extends JPanel implements Observer {
 	 * Create the panel.
 	 */
 	public ExcessiveRecompExample2(IExcessiveRecomp m) {
+		setOpaque(false);
 		setFocusable(false);
 		
 		model = m;
@@ -52,6 +53,7 @@ public class ExcessiveRecompExample2 extends JPanel implements Observer {
 		 * Description of excessive recomputation with a diagram
 		 */
 		JTextArea txtExample2 = new JTextArea();
+		txtExample2.setOpaque(false);
 		txtExample2.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtExample2.setBounds(33, 31, 875, 499);
 		txtExample2.setFocusable(false);

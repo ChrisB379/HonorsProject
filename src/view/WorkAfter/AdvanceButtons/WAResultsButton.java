@@ -31,6 +31,7 @@ public class WAResultsButton extends JPanel {
 	 * Create the panel.
 	 */
 	public WAResultsButton(WorkAfterView w) {
+		setOpaque(false);
 		
 		wav = w;
 		
