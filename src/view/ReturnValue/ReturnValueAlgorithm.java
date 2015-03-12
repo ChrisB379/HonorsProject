@@ -206,7 +206,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		 */
 		txtRtrnVal = new JTextField();
 		txtRtrnVal.setFont(new Font("Calibri", Font.PLAIN, 15));
-		txtRtrnVal.setBounds(358, 424, 43, 20);
+		txtRtrnVal.setBounds(358, 424, 57, 20);
 		//Setting a limit on how many digits can be entered.7 should suffice for this question as 10! = 3628800
 		txtRtrnVal.setDocument(new JTextFieldLimit(7));
 		txtRtrnVal.setColumns(10);

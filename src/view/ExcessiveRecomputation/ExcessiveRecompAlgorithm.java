@@ -153,7 +153,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		 */
 		txtRtrnVal = new JTextField();
 		txtRtrnVal.setFont(new Font("Calibri", Font.PLAIN, 15));
-		txtRtrnVal.setBounds(339, 412, 47, 20);
+		txtRtrnVal.setBounds(339, 412, 57, 20);
 		//A limit of 2 should be enough as the 10th fibonacci number is 89 
 		txtRtrnVal.setDocument(new JTextFieldLimit(10));
 		txtRtrnVal.setColumns(10);

@@ -1758,7 +1758,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 		line12Input1 = new JTextField();
 		line12Input1.setFont(new Font("Calibri", Font.PLAIN, 15));
-		line12Input1.setBounds(121, 552, 22, 20);
+		line12Input1.setBounds(121, 552, 57, 20);
 		line12Input1.setColumns(10);
 		line12Input1.setDocument(new JTextFieldLimit(7));
 		line12Input1.addFocusListener(new FocusListener() {
