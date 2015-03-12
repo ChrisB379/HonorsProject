@@ -289,7 +289,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		 * Factorial algorithm in HTML
 		 */
 		JTextPane txtFact = new JTextPane();
-		txtFact.setOpaque(false);
+		txtFact.setBackground(Color.WHITE);
 		txtFact.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtFact.setEditable(false);
 		txtFact.setContentType("text/html");
