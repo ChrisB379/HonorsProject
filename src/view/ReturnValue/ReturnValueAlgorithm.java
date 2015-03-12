@@ -15,6 +15,8 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -166,6 +168,24 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(60, 536, 127, 35);
 		btnSubmit.addActionListener(rvsC);
+		btnSubmit.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				if(btnSubmit.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						btnSubmit.doClick();
+					}
+				}
+			}
+		});
 
 		/*
 		 * descriptor for the return value input	
@@ -190,7 +210,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		//Setting a limit on how many digits can be entered.7 should suffice for this question as 10! = 3628800
 		txtRtrnVal.setDocument(new JTextFieldLimit(7));
 		txtRtrnVal.setColumns(10);
-		txtRtrnVal.setDocument(new JTextFieldLimit(2));
+		txtRtrnVal.setDocument(new JTextFieldLimit(7));
 		txtRtrnVal.addActionListener(rvsC);
 		txtRtrnVal.addFocusListener(new FocusListener() {
 			

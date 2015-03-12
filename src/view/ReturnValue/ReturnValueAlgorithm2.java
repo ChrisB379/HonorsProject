@@ -12,8 +12,11 @@ package view.ReturnValue;
 
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Observable;
 import java.util.Observer;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -28,6 +31,7 @@ import view.ReturnValue.AdvanceButtons.Algorithm2Button;
 import javax.swing.JButton;
 
 import controller.ReturnValue.RVSubmitAlg2Controller;
+
 import java.awt.Font;
 
 
@@ -35,7 +39,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 
 
 	private static final long serialVersionUID = 558449680019022130L;
-	
+
 	/*
 	 * LINE ONE
 	 */
@@ -1756,7 +1760,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line12Input1.setFont(new Font("Calibri", Font.PLAIN, 15));
 		line12Input1.setBounds(121, 552, 22, 20);
 		line12Input1.setColumns(10);
-		line12Input1.setDocument(new JTextFieldLimit(2));
+		line12Input1.setDocument(new JTextFieldLimit(7));
 		line12Input1.addFocusListener(new FocusListener() {
 
 			@Override
@@ -1938,6 +1942,24 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		btnSubmit.setOpaque(false);
 		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.addActionListener(rvs2C);
+		btnSubmit.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				if(btnSubmit.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						btnSubmit.doClick();
+					}
+				}
+			}
+		});
 		btnSubmit.setBounds(38, 611, 127, 35);
 		add(btnSubmit);
 
@@ -1957,7 +1979,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		line1Input1.setText(String.valueOf(getParameter()));
 
 	}
-	
+
 	/**
 	 * Sets the local parameter to the value of the users chosen parameter
 	 * 
@@ -1967,7 +1989,7 @@ public class ReturnValueAlgorithm2 extends JPanel implements Observer {
 		parameter = n;
 
 	}
-	
+
 	/**
 	 * Gets the users parameter
 	 * 

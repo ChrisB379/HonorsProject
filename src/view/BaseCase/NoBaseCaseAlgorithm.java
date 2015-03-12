@@ -13,6 +13,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -169,6 +171,24 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(37, 596, 127, 35);
 		btnSubmit.addActionListener(nbcsController);
+		btnSubmit.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				if(btnSubmit.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						btnSubmit.doClick();
+					}
+				}
+			}
+		});
 
 		JLabel lblExample = new JLabel("Example 1");
 		lblExample.setFont(new Font("Segoe UI", Font.BOLD, 15));

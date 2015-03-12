@@ -11,6 +11,8 @@ package view.ExcessiveRecomputation;
 
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -29,10 +31,14 @@ import javax.swing.JTextPane;
 
 import controller.ExcessiveRecomputation.ERSubmitController;
 import model.IExcessiveRecomp;
+
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+
 import java.awt.Font;
+
 import javax.swing.border.LineBorder;
+
 import java.awt.Color;
 
 public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
@@ -149,7 +155,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtRtrnVal.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtRtrnVal.setBounds(339, 412, 47, 20);
 		//A limit of 2 should be enough as the 10th fibonacci number is 89 
-		txtRtrnVal.setDocument(new JTextFieldLimit(2));
+		txtRtrnVal.setDocument(new JTextFieldLimit(10));
 		txtRtrnVal.setColumns(10);
 		txtRtrnVal.addActionListener(ersc);
 		txtRtrnVal.addFocusListener(new FocusListener() {
@@ -213,6 +219,24 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(45, 507, 127, 35);
 		btnSubmit.addActionListener(ersc);
+		btnSubmit.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				if(btnSubmit.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						btnSubmit.doClick();
+					}
+				}
+			}
+		});
 		
 		txtBaseCase = new JTextField();
 		txtBaseCase.setOpaque(false);

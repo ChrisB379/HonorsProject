@@ -28,6 +28,8 @@ import model.IWorkAfter;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -135,6 +137,24 @@ public class WorkAfterAlgorithm extends JPanel implements Observer,ActionListene
 		btnSubmit.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnSubmit.setBounds(49, 598, 127, 35);
 		btnSubmit.addActionListener(wasc);
+		btnSubmit.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyTyped(KeyEvent e) {}
+
+			@Override
+			public void keyReleased(KeyEvent e) {}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				if(btnSubmit.isFocusOwner()){
+					if (e.getKeyCode()==KeyEvent.VK_ENTER){
+						btnSubmit.doClick();
+					}
+				}
+			}
+		});
 
 
 		JLabel lblInsertYourWorking = new JLabel("Insert your working here:");
