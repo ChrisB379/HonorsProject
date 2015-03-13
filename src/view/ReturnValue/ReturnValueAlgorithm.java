@@ -60,7 +60,6 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 
 	private IReturnValue model;
 
-//	private RVAlgorithmController rvac;
 	private RVSubmitController rvsC;
 	private JTextField txtBaseCase;
 	private JTextArea txtVariables;

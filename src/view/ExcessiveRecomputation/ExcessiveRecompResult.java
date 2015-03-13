@@ -142,7 +142,6 @@ public class ExcessiveRecompResult extends JPanel implements Observer {
 	public void update(Observable o, Object arg) {
 		setReturnVal(model.getUserReturnVal());
 		setParam(model.getParam());
-		System.out.println("RetValResults " + getParam());
 		setResultsText();
 		
 	}
