@@ -333,7 +333,7 @@ public class ReturnValueView extends JFrame implements Observer {
 	 */
 	public void switchCards1(){
 
-		if(r1.getParameter() < 1 || r1.getParameter() > 11){
+		if(r1.getParameter() < 1 || r1.getParameter() > 10){
 			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
 		}
 
