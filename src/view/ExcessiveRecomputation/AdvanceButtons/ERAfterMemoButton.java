@@ -56,7 +56,7 @@ public class ERAfterMemoButton extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if(btnAdvance.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						view.advanceTut();
+						btnAdvance.doClick();
 					}
 
 				}
@@ -86,7 +86,7 @@ public class ERAfterMemoButton extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if(btnMainMenu.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						view.mainMenu();
+						btnMainMenu.doClick();
 					}
 
 				}

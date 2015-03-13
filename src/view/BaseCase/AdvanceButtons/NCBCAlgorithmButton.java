@@ -60,7 +60,7 @@ public class NCBCAlgorithmButton extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if(btnAdvance.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						view.switchCards5();
+						btnAdvance.doClick();
 					}
 
 				}

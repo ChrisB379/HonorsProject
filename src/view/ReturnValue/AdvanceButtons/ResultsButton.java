@@ -60,7 +60,7 @@ public class ResultsButton extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if(btnAdvance.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						r.advanceTut();
+						btnAdvance.doClick();
 					}
 
 				}
@@ -92,7 +92,7 @@ public class ResultsButton extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if(btnMainMenu.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						r.mainMenu();
+						btnMainMenu.doClick();
 					}
 
 				}

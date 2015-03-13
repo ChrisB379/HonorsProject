@@ -67,7 +67,7 @@ public class RVSubmitController implements ActionListener {
 			
 			//Changes the text to tell the user this will be the final return statement
 			if(view.getCount() == 2 && view.getNVal() != 0 && view.getNVal() < 11 && view.getRtrnVal() != 0){
-				view.setTextField();;
+				view.setTextField();
 			}
 		
 		//Decrements the counter	

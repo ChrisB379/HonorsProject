@@ -116,7 +116,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtVariables.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtVariables.setFocusable(false);
-		txtVariables.setBounds(487, 61, 55, 279);
+		txtVariables.setBounds(487, 61, 55, 249);
 		txtVariables.setText("insert variables here");
 		txtVariables.setWrapStyleWord(true);
 		txtVariables.setLineWrap(true);

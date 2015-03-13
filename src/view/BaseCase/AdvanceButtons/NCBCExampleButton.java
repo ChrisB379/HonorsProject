@@ -61,7 +61,7 @@ public class NCBCExampleButton extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if(btnAdvance.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						view.switchCards4();
+						btnAdvance.doClick();
 					}
 
 				}

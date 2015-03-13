@@ -62,7 +62,7 @@ public class NBCAlgorithmButton extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if(btnAdvance.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						view.switchCards2();
+						btnAdvance.doClick();
 					}
 
 				}

@@ -60,7 +60,7 @@ public class Algorithm2Button extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if(btnAdvance.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						r.switchCards3();
+						btnAdvance.doClick();
 					}
 
 				}

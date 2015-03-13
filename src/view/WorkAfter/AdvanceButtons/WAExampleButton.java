@@ -72,7 +72,7 @@ public class WAExampleButton extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if(btnAdvance.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						wav.switchCards1();
+						btnAdvance.doClick();
 					}
 
 				}

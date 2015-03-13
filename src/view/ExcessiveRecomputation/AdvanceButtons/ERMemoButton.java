@@ -58,7 +58,7 @@ public class ERMemoButton extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if(btnContinue.isFocusOwner()){
 					if (e.getKeyCode()==KeyEvent.VK_ENTER){
-						view.memo2();
+						btnContinue.doClick();
 					}
 
 				}

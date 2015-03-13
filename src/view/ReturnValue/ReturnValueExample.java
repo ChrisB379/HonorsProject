@@ -87,7 +87,7 @@ public class ReturnValueExample extends JPanel implements Observer {
 			@Override
 			public void focusLost(FocusEvent e) {
 				int n = 0;
-				
+
 				if(!txtParameterField.getText().equals(""));{
 				n = Integer.parseInt(txtParameterField.getText());
 				setParameter(n);

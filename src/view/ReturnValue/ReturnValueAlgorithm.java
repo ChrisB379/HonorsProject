@@ -260,7 +260,7 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 		txtVariables.setBorder(new LineBorder(new Color(0, 0, 0)));
 		txtVariables.setFont(new Font("Calibri", Font.PLAIN, 15));
 		txtVariables.setFocusable(false);
-		txtVariables.setBounds(442, 79, 73, 180);
+		txtVariables.setBounds(442, 79, 73, 194);
 		txtVariables.setEditable(false);
 		
 		/*
