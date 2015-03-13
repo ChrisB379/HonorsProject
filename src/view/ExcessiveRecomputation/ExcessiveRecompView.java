@@ -367,7 +367,7 @@ public class ExcessiveRecompView extends JFrame implements Observer {
 	 */
 	public void switchCards2(){
 		
-		if(e2.getParameter() < 1 || e2.getParameter() > 11){
+		if(e2.getParameter() < 1 || e2.getParameter() > 10){
 		JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
 	}
 

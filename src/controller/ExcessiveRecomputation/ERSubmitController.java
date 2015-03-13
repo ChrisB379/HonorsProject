@@ -42,7 +42,7 @@ public class ERSubmitController implements ActionListener {
 		/*
 		 * Dialog boxes to handle input validation
 		 */
-		if(view.getNVal() < 1 && view.getRtrnVal() < 0)
+		if(view.getNVal() < 1 && view.getRtrnVal() > 0)
 			JOptionPane.showMessageDialog(null, "Please enter a number greater than 0 for the value of n");
 		
 

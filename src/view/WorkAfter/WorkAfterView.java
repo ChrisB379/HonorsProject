@@ -290,7 +290,7 @@ public class WorkAfterView extends JFrame {
 	 */
 	public void switchCards1(){
 		//Handles parameters that are not within the specified bound
-		if(w.getParameter() < 1 || w.getParameter() > 11){
+		if(w.getParameter() < 1 || w.getParameter() > 10){
 			JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 10");	
 		}
 
