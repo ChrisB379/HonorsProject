@@ -51,7 +51,7 @@ public class NoBCSubmitController implements ActionListener {
 			JOptionPane.showMessageDialog(null, "Please select one of the 5 answers");
 
 		if(view.getNVal() > 0 && view.getNVal() < 6){
-
+			System.out.println("we get here");
 			//Sets the users returnvalue in the model
 			model.setUserReturnVal(view.getRtrnVal());
 
