@@ -33,6 +33,8 @@ public class WAExampleButton extends JPanel {
 	private WorkAfterExample waE;
 	
 	private WAParameterController waPc;
+	
+	private JButton btnAdvance;
 
 	/**
 	 * Create the panel.
@@ -49,7 +51,7 @@ public class WAExampleButton extends JPanel {
 		/*
 		 * Advance button
 		 */
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(37, 90, 127, 35);
 		btnAdvance.addActionListener(waPc);

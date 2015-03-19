@@ -36,7 +36,13 @@ import javax.swing.ImageIcon;
 public class Summary extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	
 	private JPanel contentPane;
+	
+	private JButton btnMenu;
+	private JButton btnQuiz;
+	private JButton btnQuit;
+
 
 	/**
 	 * Launch the application.
@@ -106,7 +112,7 @@ public class Summary extends JFrame {
 		/*
 		 * Main Menu button
 		 */
-		JButton btnMenu = new JButton("Main Menu");
+		btnMenu = new JButton("Main Menu");
 		btnMenu.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnMenu.setBounds(157, 658, 127, 35);
 		btnMenu.addActionListener(new ActionListener() {
@@ -142,7 +148,7 @@ public class Summary extends JFrame {
 		/*
 		 * Quiz Button
 		 */
-		JButton btnQuiz = new JButton("End of Series Quiz");
+		btnQuiz = new JButton("End of Series Quiz");
 		btnQuiz.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnQuiz.setBounds(372, 656, 149, 35);
 		btnQuiz.addActionListener(new ActionListener() {
@@ -180,7 +186,7 @@ public class Summary extends JFrame {
 		/*
 		 * Quit button
 		 */
-		JButton btnQuit = new JButton("Quit");
+		btnQuit = new JButton("Quit");
 		btnQuit.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnQuit.setBounds(596, 658, 127, 35);
 		btnQuit.addActionListener(new ActionListener() {

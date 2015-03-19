@@ -32,6 +32,9 @@ public class MainMenu extends JFrame {
 	 */
 	private static final long serialVersionUID = 8282570358801343346L;
 	private JPanel contentPane;
+	private JButton btnStart;
+	private JButton btnAbout;
+	private JButton btnQuit;
 
 	/**
 	 * Launch the application.
@@ -83,7 +86,7 @@ public class MainMenu extends JFrame {
 		/*
 		 * Start button to begin the program
 		 */
-		JButton btnStart = new JButton("Start");
+		btnStart = new JButton("Start");
 		btnStart.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnStart.setBounds(214, 151, 80, 23);
 		btnStart.addActionListener(new ActionListener() {
@@ -113,7 +116,7 @@ public class MainMenu extends JFrame {
 		/*
 		 * About button to open the About JFrame
 		 */
-		JButton btnAbout = new JButton("About");
+		btnAbout = new JButton("About");
 		btnAbout.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnAbout.setBounds(214, 211, 80, 23);
 		btnAbout.addActionListener(new ActionListener() {
@@ -147,7 +150,7 @@ public class MainMenu extends JFrame {
 		/*
 		 * Quit Button
 		 */
-		JButton btnQuit = new JButton("Quit");
+		btnQuit = new JButton("Quit");
 		btnQuit.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnQuit.addKeyListener(new KeyListener() {
 

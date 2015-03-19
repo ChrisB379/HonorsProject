@@ -55,6 +55,8 @@ public class QuizView extends JFrame {
 
 	private static final long serialVersionUID = 5172182919142981596L;
 	private JPanel contentPane;
+	private JPanel cardPanel;
+	private JPanel contentPanel;
 
 	private JTextArea txtDescription;
 	private JTextField txtQuestion1;
@@ -125,6 +127,7 @@ public class QuizView extends JFrame {
 	private int question7Answer;
 	private int question8Answer;
 	private JButton btnMainMenu;
+	private JButton btnSubmit;
 	private JLabel lblBackground;
 
 
@@ -221,11 +224,11 @@ public class QuizView extends JFrame {
 		scrollPane.getVerticalScrollBar().setUnitIncrement(16);
 		contentPane.add(scrollPane);
 
-		JPanel cardPanel = new JPanel();
+		cardPanel = new JPanel();
 		scrollPane.setViewportView(cardPanel);
 		cardPanel.setLayout(new CardLayout(0, 0));
 
-		JPanel contentPanel = new JPanel();
+		contentPanel = new JPanel();
 		contentPanel.setBackground(Color.WHITE);
 		contentPanel.setFocusable(false);
 		contentPanel.setLayout(null);
@@ -581,7 +584,7 @@ public class QuizView extends JFrame {
 		 * Submit button
 		 * It calculates the users score if all questions have been answered and stores each questions answer
 		 */
-		JButton btnSubmit = new JButton("Submit");
+		btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(qController);
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

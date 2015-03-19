@@ -25,6 +25,8 @@ public class ERMemoButton extends JPanel {
 	private static final long serialVersionUID = -610672730586583239L;
 	
 	private ExcessiveRecompView view;
+	
+	private JButton btnContinue;
 
 	/**
 	 * Create the panel.
@@ -37,7 +39,7 @@ public class ERMemoButton extends JPanel {
 		/*
 		 * Continue button
 		 */
-		JButton btnContinue = new JButton("Continue");
+		btnContinue = new JButton("Continue");
 		btnContinue.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnContinue.setBounds(38, 175, 127, 35);
 		btnContinue.addActionListener(new ActionListener() {

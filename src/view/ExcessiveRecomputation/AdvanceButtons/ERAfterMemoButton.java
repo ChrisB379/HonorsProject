@@ -25,6 +25,9 @@ public class ERAfterMemoButton extends JPanel {
 	private static final long serialVersionUID = 8753151140462745881L;
 	
 	private ExcessiveRecompView view;
+	
+	private JButton btnAdvance;
+	private JButton btnMainMenu;
 
 	/**
 	 * Create the panel.
@@ -35,7 +38,7 @@ public class ERAfterMemoButton extends JPanel {
 		/*
 		 * Advance button
 		 */
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(38, 175, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
@@ -66,7 +69,7 @@ public class ERAfterMemoButton extends JPanel {
 		/*
 		 * Main Menu button
 		 */
-		JButton btnMainMenu = new JButton("Main Menu");
+		btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.setBounds(38, 105, 127, 35);
 		btnMainMenu.addActionListener(new ActionListener() {

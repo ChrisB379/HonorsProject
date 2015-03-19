@@ -63,6 +63,7 @@ public class ReturnValueView extends JFrame implements Observer {
 	private JPanel contentPane;
 	private JPanel cardPanel1,cardPanel2;
 	private JPanel advancePanel;
+	private JPanel cp1GroupPanel;
 
 	private JButton btnAdvance;
 
@@ -191,7 +192,7 @@ public class ReturnValueView extends JFrame implements Observer {
 		cardPanel2.setFocusable(false);
 		cardPanel2.setBounds(939, 539, 242, 152);
 
-		JPanel cp1GroupPanel = new JPanel();
+		cp1GroupPanel = new JPanel();
 		cp1GroupPanel.setOpaque(false);
 		cp1GroupPanel.setBackground(UIManager.getColor("Panel.background"));
 		cp1GroupPanel.setFocusable(false);

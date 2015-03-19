@@ -26,6 +26,9 @@ public class ResultsButton extends JPanel {
 	private static final long serialVersionUID = 8977803366756108247L;
 	
 	private ReturnValueView r;
+	
+	private JButton btnAdvance;
+	private JButton btnMainMenu;
 
 	/**
 	 * Create the panel.
@@ -38,7 +41,7 @@ public class ResultsButton extends JPanel {
 		/*
 		 * Advance Button
 		 */
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(55, 85, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
@@ -70,7 +73,7 @@ public class ResultsButton extends JPanel {
 		/*
 		 * Main Menu Button
 		 */
-		JButton btnMainMenu = new JButton("Main Menu");
+		btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.setBounds(55, 11, 127, 35);
 		btnMainMenu.addActionListener(new ActionListener() {

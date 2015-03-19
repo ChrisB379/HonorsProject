@@ -24,6 +24,10 @@ public class ERResultsButton extends JPanel {
 	private static final long serialVersionUID = -3383501131991740233L;
 	
 	private ExcessiveRecompView view;
+	
+	private JButton btnAdvance;
+	private JButton btnMainMenu;
+	private JButton btnMemoization;
 
 	/**
 	 * Create the panel.
@@ -38,7 +42,7 @@ public class ERResultsButton extends JPanel {
 		/*
 		 * Advance button
 		 */
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -70,7 +74,7 @@ public class ERResultsButton extends JPanel {
 		/*
 		 * Main menu button
 		 */
-		JButton btnMainMenu = new JButton("Main Menu");
+		btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -102,7 +106,7 @@ public class ERResultsButton extends JPanel {
 		/*
 		 * Memoization button
 		 */
-		JButton btnMemoization = new JButton("Memoization");
+		btnMemoization = new JButton("Memoization");
 		btnMemoization.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMemoization.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

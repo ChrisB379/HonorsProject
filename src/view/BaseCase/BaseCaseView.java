@@ -62,6 +62,7 @@ public class BaseCaseView extends JFrame implements Observer {
 	private JPanel contentPane;
 	private JPanel cardPanel1,cardPanel2;
 	private JPanel advancePanel;
+	private JPanel cp1GroupPanel;
 
 	private JButton btnAdvance;
 	
@@ -203,7 +204,7 @@ public class BaseCaseView extends JFrame implements Observer {
 		cardPanel2.setLayout(new CardLayout(0, 0));
 
 
-		JPanel cp1GroupPanel = new JPanel();
+		cp1GroupPanel = new JPanel();
 		cp1GroupPanel.setOpaque(false);
 		cp1GroupPanel.setFocusable(false);
 		cardPanel1.add(cp1GroupPanel, "name_60102974363843");

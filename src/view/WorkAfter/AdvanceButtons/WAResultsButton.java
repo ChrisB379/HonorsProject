@@ -26,6 +26,8 @@ public class WAResultsButton extends JPanel {
 	private static final long serialVersionUID = -1241254451190185805L;
 	
 	private WorkAfterView wav;
+	private JButton btnAdvance;
+	private JButton btnMainMenu;
 
 	/**
 	 * Create the panel.
@@ -38,7 +40,7 @@ public class WAResultsButton extends JPanel {
 		/*
 		 * Advance button to go to the next tutorial
 		 */
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(37, 90, 127, 35);
 		btnAdvance.addActionListener(new ActionListener() {
@@ -70,7 +72,7 @@ public class WAResultsButton extends JPanel {
 		/*
 		 * Main Menu button
 		 */
-		JButton btnMainMenu = new JButton("Main Menu");
+		btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnMainMenu.setBounds(37, 21, 127, 35);
 		btnMainMenu.addActionListener(new ActionListener() {

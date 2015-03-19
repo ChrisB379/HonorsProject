@@ -31,6 +31,8 @@ public class ERExample2Button extends JPanel {
 	private ExcessiveRecompExample2 ere2;
 	
 	private ERParameterController erpc;
+	
+	private JButton btnAdvance;
 
 	/**
 	 * Create the panel.
@@ -47,7 +49,7 @@ public class ERExample2Button extends JPanel {
 		/*
 		 * Advance button
 		 */
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(38, 175, 127, 35);
 		btnAdvance.addActionListener(erpc);

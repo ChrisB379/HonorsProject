@@ -53,6 +53,7 @@ public class WorkAfterView extends JFrame {
 	private JPanel contentPane;
 	private JPanel cardPanel1,cardPanel2;
 	private JPanel advancePanel;
+	private JPanel cp1GroupPanel;
 	
 	private JButton btnAdvance;
 	
@@ -176,7 +177,7 @@ public class WorkAfterView extends JFrame {
 		cardPanel1.setBounds(30, 16, 888, 714);
 		cardPanel1.setLayout(new CardLayout(0, 0));
 
-		JPanel cp1GroupPanel = new JPanel();
+		cp1GroupPanel = new JPanel();
 		cp1GroupPanel.setOpaque(false);
 		cp1GroupPanel.setFocusable(false);
 		cardPanel1.add(cp1GroupPanel, "name_94405714894092");

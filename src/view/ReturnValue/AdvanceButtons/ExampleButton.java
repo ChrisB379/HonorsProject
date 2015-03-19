@@ -31,6 +31,8 @@ public class ExampleButton extends JPanel {
 	private ReturnValueExample rve;
 	
 	private RVParameterController p;
+	
+	private JButton btnAdvance;
 
 	/**
 	 * Create the panel.
@@ -49,7 +51,7 @@ public class ExampleButton extends JPanel {
 		/*
 		 * Advance button
 		 */
-		JButton btnAdvance = new JButton("Advance");
+		btnAdvance = new JButton("Advance");
 		btnAdvance.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAdvance.setBounds(55, 85, 127, 35);
 		btnAdvance.addActionListener(p);

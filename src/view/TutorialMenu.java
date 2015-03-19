@@ -54,6 +54,13 @@ public class TutorialMenu extends JFrame {
 	private IWorkAfter iWaModel;
 	private IExcessiveRecomp iErModel;
 	private IQuiz iQModel;
+	
+	private JButton btnBaseCase;
+	private JButton btnReturnVal;
+	private JButton btnMultipleChoiceQuiz;
+	private JButton btnExcessiveRecomp;
+	private JButton btnWorkAfter;
+	private JButton btnReturnToMain;
 
 
 	/**
@@ -99,7 +106,7 @@ public class TutorialMenu extends JFrame {
 		/*
 		 * Base Case Tutorial 1 button 
 		 */
-		JButton btnBaseCase = new JButton("Base Case");
+		btnBaseCase = new JButton("Base Case");
 		btnBaseCase.setBounds(320, 115, 205, 27);
 		btnBaseCase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -140,7 +147,7 @@ public class TutorialMenu extends JFrame {
 		/*
 		 * Return Value Tutorial 2 button
 		 */
-		JButton btnReturnVal = new JButton("Return Value");
+		btnReturnVal = new JButton("Return Value");
 		btnReturnVal.setBounds(320, 160, 205, 27);
 		btnReturnVal.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnReturnVal.addActionListener(new ActionListener() {
@@ -181,7 +188,7 @@ public class TutorialMenu extends JFrame {
 		/*
 		 * Multiple Choice Quiz Button
 		 */
-		JButton btnMultipleChoiceQuiz = new JButton("Multiple Choice Quiz");
+		btnMultipleChoiceQuiz = new JButton("Multiple Choice Quiz");
 		btnMultipleChoiceQuiz.setBounds(320, 286, 203, 27);
 		btnMultipleChoiceQuiz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -222,7 +229,7 @@ public class TutorialMenu extends JFrame {
 		/*
 		 * Excessive Recomputation Tutorial 3 Button
 		 */
-		JButton btnExcessiveRecomp = new JButton("Excessive Recomputation");
+		btnExcessiveRecomp = new JButton("Excessive Recomputation");
 		btnExcessiveRecomp.setBounds(320, 198, 205, 27);
 		btnExcessiveRecomp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -263,7 +270,7 @@ public class TutorialMenu extends JFrame {
 		/*
 		 * Work After Tutorial 4 Button
 		 */
-		JButton btnWorkAfter = new JButton("Work After");
+		btnWorkAfter = new JButton("Work After");
 		btnWorkAfter.setBounds(320, 241, 205, 27);
 		btnWorkAfter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -304,7 +311,7 @@ public class TutorialMenu extends JFrame {
 		/*
 		 * Button to return to the main menu
 		 */
-		JButton btnReturnToMain = new JButton("Return to Main Menu");
+		btnReturnToMain = new JButton("Return to Main Menu");
 		btnReturnToMain.setBounds(187, 332, 182, 27);
 		btnReturnToMain.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		btnReturnToMain.addActionListener(new ActionListener() {
