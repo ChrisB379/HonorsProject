@@ -471,5 +471,6 @@ public class ReturnValueAlgorithm extends JPanel implements Observer {
 	public void clearInputs(){
 		txtNVal.setText("");
 		txtRtrnVal.setText("");
+		txtNVal.requestFocus();
 	}
 }

@@ -62,7 +62,7 @@ public class NoBCSubmitController implements ActionListener {
 
 			view.addArrayString();
 			view.setTxtArea();
-			
+			view.setFocus();
 
 
 		}

@@ -534,4 +534,12 @@ public class NonConvergenceAlgorithm extends JPanel implements Observer, ActionL
 		
 		
 	}
+	
+	/**
+	 * Sets the focus on the txtNVal text field once an answer has been submitted.
+	 * This prevents the user from having to constantly click the text field over and over to insert input
+	 */
+	public void setFocus(){
+		txtNVal.requestFocus();
+	}
 }

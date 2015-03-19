@@ -64,7 +64,7 @@ public class NonConvSubmitController implements ActionListener {
 
 			view.addArrayString();
 			view.setTxtArea();
-
+			view.setFocus();
 
 
 		}

@@ -465,6 +465,7 @@ public class ExcessiveRecompAlgorithm extends JPanel implements Observer {
 	public void clearInputs(){
 		txtNval.setText("");
 		txtRtrnVal.setText("");
+		txtNval.requestFocus();
 	}
 
 }

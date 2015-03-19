@@ -519,4 +519,12 @@ public class NoBaseCaseAlgorithm extends JPanel implements Observer, ActionListe
 			setRtrnVal("The method will recurse until the value of n is negative and an Invalid Number Exception will halt the program.");
 		
 	}
+	
+	/**
+	 * Sets the focus on the txtNVal text field once an answer has been submitted.
+	 * This prevents the user from having to constantly click the text field over and over to insert input
+	 */
+	public void setFocus(){
+		txtNVal.requestFocus();
+	}
 }
